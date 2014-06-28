@@ -8,3 +8,6 @@ auto-save-list
 tramp
 .\#*
 
+*.aux
+*.log
+*.toc

@@ -228,7 +228,7 @@
 \newcommand\eeq{\end{equation}}
 \newcommand\beqa{\begin{eqnarray*}}
 \newcommand\eeqa{\end{eqnarray*}}
-\newcommand\foo\{foo}
+%\newcommand\foo\{foo}
 
 \setcounter{secnumdepth}{2}
 \DeclareRobustCommand{\SkipTocEntry}[4]{}
@@ -241,7 +241,7 @@
 %     \begingroup \hyphenpenalty\@M
 %     \@ifempty{#4}{%
 %       \@tempdima\csname r@tocindent\number#1\endcsname\relax
-%     }{%
+%     
 %       \@tempdima#4\relax
 %     }%
 %     \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
@@ -489,7 +489,7 @@ $$
 where $\widehat{N_{B^{\circ} / X^\circ}}_{B^\circ}$, $\widehat{N_{F_{p_i}^{\circ} / X^\circ}}_{F_{p_i}^{\circ}}$ are the formal completions of the normal bundles $N_{B^\circ / X^\circ}$, $N_{F_{p_i}^{\circ} / X^\circ}$ along their zero sections $B^\circ$, $F_{p_i}^{\circ}$.
 \end{lemma}
 \begin{proof}
-For the fibres we proved this rigorously using sections of $\O / \I^{r+1} \rightarrow \O / \I^{r}$ pulled back from the base $B$. This requires flatness of $\pi$. For the section we use Davesh's argument.
+For the fibres we proved this rigorously using sections of $\O / \I^{r+1} \rightarrow \O / \I^{r}$ pulled back from the base $B$. This requires flatness of $\pi$. For the section we use Davesh's argument.\todo{We have to be careful here because of the discussions in the first two weeks of July/the discussions with Davesh. Something like this presumably only works on open affine pieces. That should be enough though since we first remove the nodes.}
 \end{proof}
 
 Lemmas \ref{lem3}, \ref{lem4}, \ref{lem5} allow us write

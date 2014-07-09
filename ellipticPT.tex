@@ -2,6 +2,8 @@
 %\documentclass[12pt]{article}
 
 \usepackage[english]{babel}
+\usepackage{verbatim}
+%\usepackage{diagrams}
 
 %\usepackage[pdftex,paper=a4paper,portrait=true,textwidth=450pt,textheight=675pt,tmargin=3cm,marginratio=1:1]{geometry}
 \usepackage[pdftex,textwidth=400pt,marginratio=1:1]{geometry}
@@ -283,7 +285,7 @@ Let $X$ be a smooth projective 3-fold, $\chi \in \Z$, and $\beta \in H_2(X)$ a c
 %\[
 %\II^\mdot = [\O_{P_\chi(X,\beta) \times X} \rightarrow \FF].
 %\]
-The deformation-obstruction theory of stable pairs \emph{does not} provide a perfect obstruction theory for $P_\chi(X,\beta)$. R.~P.~Thomas and R.~Pandharipande realize $P_\chi(X,\beta)$ as a component of the moduli space of complexes in $D^b(X)$ with trivial determinant. Viewed as a moduli space of complexes $P_\chi(X,\beta)$ \emph{does} have a perfect obstruction theory \cite{PT1}. When $X$ is in addition Calabi-Yau, this perfect obstruction theory is symmetric and the stable pair invariants of $X$ are defined as the degree of the virtual cycle
+The deformation-obstruction theory of stable pairs \emph{does not} provide a perfect obstruction theory for $P_\chi(X,\beta)$. R.~P.~Thomas and R.~Pandharipande realize $P_\chi(X,\beta)$ as a component of the moduli space of complexes in $D^b(X)$ with trivial determinant. Viewed as a moduli space of complexes $P_\chi(X,\beta)$ \emph{does} have a perfect obstruction theory \cite{Pandharipande-Thomas1}. When $X$ is in addition Calabi-Yau, this perfect obstruction theory is symmetric and the stable pair invariants of $X$ are defined as the degree of the virtual cycle
 \[
 P_{\chi,\beta}(X) := \int_{[P_\chi(X,\beta)]^{\vir}} 1.
 \]
@@ -307,7 +309,7 @@ Z^{\mdot P}(q,y) &:= \sum_{d \geq 0} \sum_{\chi} P_{\chi, B+dF}(X) q^{\chi} y^d,
 P_{\chi, B+dF}(X) &:= e(P_{\chi}(X,B+dF)).
 \end{split}
 \end{align}
-The connected generating function is defined as \cite{PT1}
+The connected generating function is defined as \cite{Pandharipande-Thomas1}
 \begin{align}
 \begin{split} \label{con}
 Z^{P}(q,y) &:= \frac{\sum_{d \geq 0} \sum_{\chi} P_{\chi,B+dF}(X) q^{\chi} y^d}{\sum_{d \geq 0} \sum_{\chi} P_{\chi,dF}(X) q^{\chi} y^d}, \\
@@ -316,9 +318,9 @@ P_{\chi,dF}(X) &:= e(P_{\chi}(X,dF)),
 \end{align}
 where $P_{\chi,0}(X) = 1$ for all $\chi$. Our main result is the following.
 \begin{theorem} \label{mainthm}
-Let $X = \mathrm{Tot}(K_S)$ where $S \rightarrow B$ is an elliptic surface with section $B$ of genus $g(B)$ and $N$ 1-nodal fibres. Then
+Let $X = \mathrm{Tot}(K_S)$ where $S \rightarrow B$ is an elliptic surface with section $B$ of genus $g$ and let $e=e (S)$ be the topological Euler characteristic of $S$. Then
 \begin{align*}
-Z^{P}(q,y) = \bigg( \frac{q}{(1-q)^2} \bigg)^{1-g(B)} \prod_{i=1}^{\infty} \frac{1}{(1-y^i)^{N - 2e(B)} (1 - q y^i)^{e(B)} (1 - q^{-1} y^i)^{e(B)}}.
+Z^{P}(q,y) = \left( \frac{q}{(1-q)^2} \right)^{1-g} \prod_{i=1}^{\infty} \frac{1}{(1-y^i)^{e-4+4g} (1 - q y^i)^{2-2g} (1 - q^{-1} y^i)^{2-2g}}.
 \end{align*}
 \end{theorem}
 The proof is divided into five movements: \\
@@ -330,6 +332,60 @@ The proof is divided into five movements: \\
 
 
 \section{Stratification}
+
+\subsection{Some geometry of curves on elliptic surfaces}\label{subsec: geometry of curves on elliptic surfaces}
+
+In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =F+dF$.
+
+\begin{lemma}\label{lem: H0 (pi* (D) (B))=H0 (pi* (D))}
+For any line bundle $\epsilon $ on $B$, multiplication by the
+canonical section of $\O (B)$ induces an isomorphism
+\[
+H^{0} (S,\pi ^{*} (\epsilon ) (B)) \cong H^{0} (S,\pi ^{*} (\epsilon )).
+\]
+\end{lemma}
+
+\begin{corollary}\label{cor: chow(beta) = sym (B)}
+Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
+the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
+$\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
+$B+\sum _{i}d_{i}\pi ^{-1} (x_{i}) $.
+\end{corollary}
+
+\begin{proof}
+The corollary follows immediately from the lemma since the Chow
+variety is the space of effective divisors and the lemma implies that
+any effective divisor in the class $\beta $ is a union of the section
+$B$ with an effective divisor pulled by from the base.
+
+To prove lemma~\ref{lem: H0 (pi* (D) (B))=H0 (pi* (D))} we proceed as
+follows. For any line bundle $\delta $ on $B$, the Leray spectral
+sequence yields the short exact sequence:
+\[
+0\to H^{0} (B,\delta \otimes R^{1}\pi _{*}\O )\to H^{1} (S,\pi ^{*}\delta )\Rt{\alpha } H^{1} (B,\delta )\to 0,
+\]
+in particular, $\alpha $ is a surjection.
+
+Then the long exact cohomology sequence associated to 
+\[
+0\to \pi ^{*}\delta \otimes \O (-B)\to \pi ^{*}\delta \to \O _{B}\otimes \pi ^{*}\delta \to 0
+\]
+is
+\[
+\dotsb \to H^{1} (S,\pi ^{*} (\delta ))\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,\pi ^{*}\delta \otimes \O (-B))\to H^{2} (S,\pi ^{*}\delta )\to 0,
+\]
+and since $\alpha $ is a surjection, we get an isomorphism of the last
+two terms. We apply Serre duality to that isomorphism and we use the
+fact that $K_{S} = \pi ^{*} (K_{B}\otimes L)$ where $L = \left(R\pi
+_{*}\O _{S} \right)^{\vee }$ \cite[prop?]{Fr-Mo} to obtain
+\[
+H^{0} (S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+\]
+Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
+proved.
+\end{proof}
+
+
 
 Let $\beta$ be Poincar\'e dual to $B+dF$. The projections
 \[
@@ -595,13 +651,13 @@ In this subsection we focus attention on $e(P_{\chi}(\widehat{X}_{q_j},\p)_{\bsl
 $$
 P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda} \subset P_{\chi}(\widehat{X}_{q_j},\p)
 $$
-invariant. The fixed point locus $P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}$ consists of \emph{isolated} fixed points which can be counted using the vertex/edge formalism for stable pairs developed by R.~Pandharipande and R.~P.~Thomas \cite{PT2}. Note that the fixed loci indeed consist of isolated reduced points since one leg is always empty \cite{PT2}. There are two cases: \\
+invariant. The fixed point locus $P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}$ consists of \emph{isolated} fixed points which can be counted using the vertex/edge formalism for stable pairs developed by R.~Pandharipande and R.~P.~Thomas \cite{Pandharipande-Thomas2}. Note that the fixed loci indeed consist of isolated reduced points since one leg is always empty \cite{Pandharipande-Thomas2}. There are two cases: \\
 
-\noindent \textbf{Case 1:} $q_j$ is a node of a nodal fibre $F_{p_i}$. In this case the legs of the elements of $P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}$ are fixed by the partitions $(\lambda_i, \lambda_{i}^{t}, \varnothing)$ where $(\cdot)^{t}$ denotes the dual partition and we use the ordering convention of \cite{ORV}. The generating function is given by the stable pairs vertex\todo{\cite{PT2, ORV} are signed Euler chars, whereas for the moment we are doing ordinary Euler chars. $W_{\lambda,\mu,\nu}(q)$ are understood in this way for now.}
+\noindent \textbf{Case 1:} $q_j$ is a node of a nodal fibre $F_{p_i}$. In this case the legs of the elements of $P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}$ are fixed by the partitions $(\lambda_i, \lambda_{i}^{t}, \varnothing)$ where $(\cdot)^{t}$ denotes the dual partition and we use the ordering convention of \cite{Ok-Re-Va}. The generating function is given by the stable pairs vertex\todo{\cite{Pandharipande-Thomas2, Ok-Re-Va} are signed Euler chars, whereas for the moment we are doing ordinary Euler chars. $W_{\lambda,\mu,\nu}(q)$ are understood in this way for now.}
 \begin{equation} \label{formalgenfun1}
 W_{\lambda_i, \lambda_{i}^{t}, \varnothing}(q) = \sum_{\chi} e(P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}) q^{\chi} =  \sum_{ \cQ \in P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}} w(\cQ) q^{l(\cQ) + 2 |\lambda_i|},
 \end{equation}
-where we use the notation of \cite{PT2}. \\
+where we use the notation of \cite{Pandharipande-Thomas2}. \\
 
 \noindent \textbf{Case 2:} $q_j$ is a node arising from $B$ intersecting a fibre $F_{p_i}$. In this case the legs of the elements of $P_{\chi}(\widehat{X}_{q_j},\p)_{\bslambda}^{\C^{*3}}$ are fixed by the partitions $(\lambda_i, (1), \varnothing)$. The generating function is given by the stable pairs vertex
 \begin{equation} \label{formalgenfun2}
@@ -615,7 +671,7 @@ In this subsection we consider $e(P_{\chi}(X^{\circ},\p)_{\bslambda})$ for any $
 $$
 P_{\chi}(N_{B^{\circ} / X^\circ}, \p)_{\bslambda} \subset P_{\chi}(N_{B^{\circ} / X^\circ}, \p), \ P_{\chi}(N_{F_{p_i}^{\circ} / X^\circ}, \p)_{\lambda} \subset P_{\chi}(N_{F_{p_i}^{\circ} / X^\circ}, \p)
 $$
-with specified ``cross-sections'' $\bslambda$ of the underlying Cohen-Macaulay curves. Since the Cohen-Macaulay curves underlying the stable pairs in $P_{\chi}(N_{B^{\circ} / X^\circ}, \p)$ have multiplicity 1, this space is just a Hilbert scheme of points on $B^\circ$ \cite{PT3}
+with specified ``cross-sections'' $\bslambda$ of the underlying Cohen-Macaulay curves. Since the Cohen-Macaulay curves underlying the stable pairs in $P_{\chi}(N_{B^{\circ} / X^\circ}, \p)$ have multiplicity 1, this space is just a Hilbert scheme of points on $B^\circ$ \cite{Pandharipande-Thomas3}
 \[
 P_{\chi}(N_{B^{\circ} / X^\circ}, \p) \cong \Hilb^n(B^{\circ})
 \]
@@ -730,7 +786,7 @@ The connected generating series $Z^{P}(q,y)$ for stable pairs of $X = \mathrm{To
 \begin{align*}
 \bigg( \frac{q}{(1-q)^2} \bigg)^{1-g(B)} \Bigg( \frac{(1-q) \sum_{\lambda} \frac{W_{\lambda, (1), \varnothing}(q)}{W_{\lambda,\varnothing,\varnothing}(q)} y^{|\lambda|}}{\sum_{\lambda} y^{|\lambda|}} \Bigg)^{e(B) - N} \cdot \Bigg( \frac{(1-q) \sum_{\lambda} \frac{W_{\lambda, \lambda^{t}, \varnothing}(q) W_{\lambda, (1), \varnothing}(q)}{W_{\lambda,\varnothing,\varnothing}(q)} y^{|\lambda|}}{\sum_{\lambda} W_{\lambda, \lambda^{t}, \varnothing}(q) y^{|\lambda|}} \Bigg)^{N},
 \end{align*}
-where $W_{\lambda, \mu, \nu}(q)$ is the stable pairs vertex of \cite{PT2}.
+where $W_{\lambda, \mu, \nu}(q)$ is the stable pairs vertex of \cite{Pandharipande-Thomas2}.
 \end{proposition}
 
 The various generating functions of vertices appearing in this proposition can be computed. Obviously
@@ -745,7 +801,7 @@ The following identity holds\todo{I have not checked whether the overall $q^{...
 \]
 \end{lemma}
 \begin{proof}
-\cite{ORV} and \cite{MacD} or exercise in \cite{Sta}.
+\cite{Ok-Re-Va} and \cite{Macdonald} or exercise in \cite{Sta}.
 \end{proof}
 Less trivial is the following lemma.
 \begin{lemma} \label{lem10}
@@ -755,7 +811,7 @@ The following identity holds
 \]
 \end{lemma}
 \begin{proof}
-First apply \cite{ORV}. The remaining sum appears in \cite{BO} as pointed out by P.~Johnson answering a MathOverflow question. 
+First apply \cite{Ok-Re-Va}. The remaining sum appears in \cite{BO} as pointed out by P.~Johnson answering a MathOverflow question. 
 \end{proof}
 The hardest is the following lemma\todo{STUCK ON THIS. Do we need help from Andrei, Paul, or Ben?}.
 \begin{lemma} \label{lem11}
@@ -774,6 +830,12 @@ Combine Proposition \ref{mainprop} and Lemmas \ref{lem9}, \ref{lem10}, and \ref{
 
 \newpage
 
+      
+\bibliography{mainbiblio}
+\bibliographystyle{plain}
+
+
+\begin{comment}
 
 \begin{thebibliography}{MNOP2}
 %\bibitem[ACGH]{ACGH} E.~Arbarello, M.~Cornalba, P.~A.~Griffiths, and J.~Harris, \textit{Geometry of algebraic curves}, Volume I, Springer-Verlag (1985).
@@ -858,6 +920,10 @@ Combine Proposition \ref{mainprop} and Lemmas \ref{lem9}, \ref{lem10}, and \ref{
 %\bibitem[Voi]{Voi} C.~Voisin, \textit{Hodge loci}, Handbook of moduli (to appear).
 %\bibitem[Wit]{Wit} E.~Witten, \textit{Monopoles and four-manifolds}, Math.~Res.~Lett.~1 769--796 (1994). \\
 \end{thebibliography}
+
+
+\end{comment}
+
 \end{document}
 
 

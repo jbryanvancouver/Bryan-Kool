@@ -1,0 +1,41 @@
+\begin{thebibliography}{1}
+
+\bibitem{Fr-Mo}
+R.~Friedman and J.~Morgan.
+\newblock {\em Smooth Four-manifolds and Complex Surfaces}, volume~27 of {\em
+  Ergebnisse der Mathematik und ihrer Grenzgebiete}.
+\newblock Springer-Verlag, 1994.
+
+\bibitem{Macdonald}
+I.~G. Macdonald.
+\newblock {\em Symmetric functions and {H}all polynomials}.
+\newblock Oxford Mathematical Monographs. The Clarendon Press Oxford University
+  Press, New York, second edition, 1995.
+\newblock With contributions by A. Zelevinsky, Oxford Science Publications.
+
+\bibitem{Ok-Re-Va}
+Andrei Okounkov, Nikolai Reshetikhin, and Cumrun Vafa.
+\newblock Quantum {C}alabi-{Y}au and classical crystals.
+\newblock In {\em The unity of mathematics}, volume 244 of {\em Progr. Math.},
+  pages 597--618. Birkh\"auser Boston, Boston, MA, 2006.
+\newblock arXiv:hep-th/0309208.
+
+\bibitem{Pandharipande-Thomas1}
+R.~Pandharipande and R.~P. Thomas.
+\newblock Curve counting via stable pairs in the derived category.
+\newblock {\em Invent. Math.}, 178(2):407--447, 2009.
+\newblock arXiv:math/0707.2348.
+
+\bibitem{Pandharipande-Thomas3}
+R.~Pandharipande and R.~P. Thomas.
+\newblock Stable pairs and {BPS} invariants.
+\newblock {\em J. Amer. Math. Soc.}, 23(1):267--297, 2010.
+\newblock arXiv:math/0711.3899.
+
+\bibitem{Pandharipande-Thomas2}
+Rahul Pandharipande and Richard~P. Thomas.
+\newblock The 3-fold vertex via stable pairs.
+\newblock {\em Geom. Topol.}, 13(4):1835--1876, 2009.
+\newblock arXiv:math/0709.3823.
+
+\end{thebibliography}

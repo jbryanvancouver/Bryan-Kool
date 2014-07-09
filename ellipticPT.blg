@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.5)
+The top-level auxiliary file: ellipticPT.aux
+The style file: plain.bst
+Database file #1: mainbiblio.bib
+Warning--I didn't find a database entry for "LeP"
+Warning--I didn't find a database entry for "Beh"
+Warning--I didn't find a database entry for "Mir"
+Warning--I didn't find a database entry for "GP"
+Warning--I didn't find a database entry for "MacP"
+Warning--I didn't find a database entry for "Har"
+Warning--I didn't find a database entry for "BT"
+Warning--I didn't find a database entry for "Sta"
+Warning--I didn't find a database entry for "BO"
+You've used 6 entries,
+            2118 wiz_defined-function locations,
+            591 strings with 5359 characters,
+and the built_in function-call counts, 2111 in all, are:
+= -- 222
+> -- 77
+< -- 3
++ -- 31
+- -- 24
+* -- 151
+:= -- 347
+add.period$ -- 25
+call.type$ -- 6
+change.case$ -- 29
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 83
+empty$ -- 171
+format.name$ -- 24
+if$ -- 448
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 8
+newline$ -- 38
+num.names$ -- 12
+pop$ -- 23
+preamble$ -- 1
+purify$ -- 24
+quote$ -- 0
+skip$ -- 55
+stack$ -- 0
+substring$ -- 144
+swap$ -- 19
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 20
+warning$ -- 0
+while$ -- 21
+width$ -- 7
+write$ -- 83
+(There were 9 warnings)

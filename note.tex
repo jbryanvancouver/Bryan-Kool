@@ -1,0 +1,472 @@
+\documentclass[12pt]{amsart}
+%\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+
+%\usepackage[pdftex,paper=a4paper,portrait=true,textwidth=450pt,textheight=675pt,tmargin=3cm,marginratio=1:1]{geometry}
+\usepackage[pdftex,textwidth=400pt,marginratio=1:1]{geometry}
+
+\usepackage{amsfonts}
+
+\usepackage[dvips]{graphics}
+
+\usepackage{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{amssymb}
+
+\usepackage{eufrak}
+
+\usepackage{cancel}
+
+\usepackage{color}
+
+\usepackage[curve]{xypic}
+
+%\usepackage{mnsymbol}
+
+%\usepackage{stmaryrd}
+
+%\input xy
+
+%\xyoption{all}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newtheorem{proposition}[theorem]{Proposition}
+
+\newtheorem{proposition-definition}[theorem]{Proposition-Definition}
+
+
+\newtheorem{lemma}[theorem]{Lemma}
+
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newtheorem{assumption}[theorem]{Assumption}
+
+\newtheorem{remark}[theorem]{Remark}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{property}
+
+\newtheorem{property}[theorem]{Property}
+
+\makeatletter
+\newcommand{\contraction}[5][1ex]{%
+  \mathchoice
+    {\contraction@\displaystyle{#2}{#3}{#4}{#5}{#1}}%
+    {\contraction@\textstyle{#2}{#3}{#4}{#5}{#1}}%
+    {\contraction@\scriptstyle{#2}{#3}{#4}{#5}{#1}}%
+    {\contraction@\scriptscriptstyle{#2}{#3}{#4}{#5}{#1}}}%
+\newcommand{\contraction@}[6]{%
+  \setbox0=\hbox{$#1#2$}%
+  \setbox2=\hbox{$#1#3$}%
+  \setbox4=\hbox{$#1#4$}%
+  \setbox6=\hbox{$#1#5$}%
+  \dimen0=\wd2%
+  \advance\dimen0 by \wd6%
+  \divide\dimen0 by 2%
+  \advance\dimen0 by \wd4%
+  \vbox{%
+    \hbox to 0pt{%
+      \kern \wd0%
+      \kern 0.5\wd2%
+      \contraction@@{\dimen0}{#6}%
+      \hss}%
+    \vskip 0.5ex%  how far above the line starts
+    \vskip\ht2}}
+\newcommand{\contracted}[5][1ex]{%
+  \contraction[#1]{#2}{#3}{#4}{#5}\ensuremath{#2#3#4#5}}
+\newcommand{\contraction@@}[3][0.05em]{%
+% the 1st parameter (explicitely inserted) is the width % of the contraction line
+  \hbox{%
+    \vrule width #1 height 0pt depth #3%
+    \vrule width #2 height 0pt depth #1%
+    \vrule width #1 height 0pt depth #3%
+    \relax}}
+\makeatother
+
+%%Richard's macros%%
+\DeclareFontFamily{OT1}{rsfs}{}
+\DeclareFontShape{OT1}{rsfs}{n}{it}{<-> rsfs10}{}
+\DeclareMathAlphabet{\curly}{OT1}{rsfs}{n}{it}
+
+%\newcommand{\nocontentsline}[3]{}
+%\newcommand{\tocless}[2]{\bgroup\let\addcontentsline=\nocontentsline#1{#2}\egroup}
+
+
+%\newcommand\A{\mathcal A}
+%\newcommand\I{\curly I}
+\newcommand\I{\mathcal I}
+\newcommand\J{\mathcal J}
+
+\newcommand\K{K\"ahler~}
+\renewcommand\L{\mathcal L}
+\newcommand\LL{\mathbb L}
+\renewcommand\S{\mathcal S}
+\renewcommand\O{\mathcal O}
+\newcommand\PP{\mathbb P}
+
+\newcommand\cP{\curly P}
+\newcommand\Pb{\mathcal P_\beta}
+
+\newcommand\Db{\overline{\!D}}
+
+\newcommand\D{\mathcal D}
+
+\newcommand\cE{\mathcal E}
+
+\newcommand\F{\mathcal F}
+
+\newcommand\G{\mathcal G}
+
+\newcommand\U{\mathfrak U}
+
+\newcommand\X{\mathfrak X}
+
+\newcommand\Mb{\,\overline{\!M}}
+\newcommand\MMb{\,\overline{\!\mathcal M}}
+\newcommand\Xb{\,\overline{\!X}}
+\newcommand\XXb{\,\overline{\!\mathcal X}}
+\newcommand\C{\mathbb C}
+
+\newcommand\cB{\mathcal B}
+
+\newcommand\cC{\mathcal C}
+
+\newcommand\A{\mathbb A}
+
+\newcommand\mdot{{\scriptscriptstyle\bullet}}
+
+\newcommand\FF{\mathbb F}
+
+\newcommand\II{\mathbb I}
+
+\newcommand\HH{\mathbb H}
+
+\newcommand\Q{\mathbb Q}
+
+\newcommand\Pg{\mathcal P_\gamma}
+
+\newcommand\R{\mathbb R}
+\newcommand\Z{\mathbb Z}
+
+\newcommand\cX{\mathcal X}
+
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\m{\mathfrak m}
+
+\newcommand{\rt}[1]{\stackrel{#1\,}{\rightarrow}}
+\newcommand{\Rt}[1]{\stackrel{#1\,}{\longrightarrow}}
+\newcommand\To{\longrightarrow}
+\newcommand\into{\hookrightarrow}
+\newcommand\Into{\ar@{^(->}[r]<-.3ex>}
+\newcommand\acts{\curvearrowright}
+\newcommand\so{\ \ \Longrightarrow\ }
+\newcommand\res{\arrowvert^{}_}
+\newcommand\ip{\lrcorner\,}
+\newcommand\comp{{\,}_{{}^\circ}}
+\renewcommand\_{^{}_}
+\newcommand\take{\backslash}
+\newcommand{\mat}[4]{\left(\begin{array}{cc} \!\!#1 & #2\!\! \\ \!\!#3 &
+#4\!\!\end{array}\right)}
+\newcommand\bull{{\scriptscriptstyle\bullet}}
+\newcommand\udot{^\bull}
+\newcommand\dbar{\overline\partial}
+\newcommand\rk{\operatorname{rank}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\coker{\operatorname{coker}}
+\newcommand\im{\operatorname{im}}
+\newcommand\Td{\operatorname{Td}}
+\newcommand\ev{\operatorname{ev}}
+\renewcommand\div{\operatorname{div}}
+\newcommand\id{\operatorname{id}}
+\newcommand\vol{\operatorname{vol}}
+
+\newcommand\Coh{\operatorname{Coh}}
+
+\renewcommand\Im{\operatorname{Im}}
+\newcommand\Hom{\operatorname{Hom}}
+\renewcommand\hom{\curly H\!om}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\ext{\curly Ext}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\ob{\operatorname{ob}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\Proj{\operatorname{Proj}\,}
+\newcommand\Spec{\operatorname{Spec}\,}
+\newcommand\Hilb{\operatorname{Hilb}}
+\renewcommand\Re{\operatorname{Re}}
+\newcommand\Sym{\operatorname{Sym}}
+\newcommand\beq[1]{\begin{equation}\label{#1}}
+\newcommand\eeq{\end{equation}}
+\newcommand\beqa{\begin{eqnarray*}}
+\newcommand\eeqa{\end{eqnarray*}}
+
+\setcounter{secnumdepth}{2}
+\DeclareRobustCommand{\SkipTocEntry}[4]{}
+% \makeatletter
+% \newcommand\@dotsep{4.5}
+% \def\@tocline#1#2#3#4#5#6#7{\relax
+%   \ifnum #1>\c@tocdepth % then omit
+%   \else
+%     \par \addpenalty\@secpenalty\addvspace{#2}%
+%     \begingroup \hyphenpenalty\@M
+%     \@ifempty{#4}{%
+%       \@tempdima\csname r@tocindent\number#1\endcsname\relax
+%     }{%
+%       \@tempdima#4\relax
+%     }%
+%     \parindent\z@ \leftskip#3\relax \advance\leftskip\@tempdima\relax
+%     \rightskip\@pnumwidth plus1em \parfillskip-\@pnumwidth
+%     #5\leavevmode\hskip-\@tempdima #6\relax
+%     \leaders\hbox{$\m@th
+%       \mkern \@dotsep mu\hbox{.}\mkern \@dotsep mu$}\hfill
+%     \hbox to\@pnumwidth{\@tocpagenum{#7}}\par
+%     \nobreak
+%     \endgroup
+%   \fi}
+% \makeatother 
+
+\begin{document}
+\begin{proposition} \label{formaliso}
+Let $Z \hookrightarrow X$ be a regular embedding of $\C$-schemes of finite type, and let $\I$ be the ideal sheaf of $Z$. Let $\widehat{X}_Z$ be the formal neighbourhood and $N_{Z/X}$ the normal bundle of $Z$ in $X$. Denote by $\widehat{N_{Z/X}}_Z$ the formal neighbourhood of the zero-section $Z$ in $N_{Z/X}$. Then there exists an isomorphism of sheaves of ring $\O_{\widehat{X}_{Z}} \cong \O_{\widehat{N_{Z/X}}_Z}$ commuting with the structure maps to $\O_Z$ if and only if for each $r \geq 1$ there exists a morphism of sheaves of abelian groups
+$$
+s : \O_X / \I^r \longrightarrow \O_X / \I^{r+1}
+$$
+with the following properties:
+\begin{enumerate}
+\item $s$ is a section of the quotient map $\pi : \O_X / \I^{r+1} \longrightarrow \O_X / \I^r$,
+\item for each $p \in X$ at the level of stalks at $p$ we have $s(1)=1$ and for any  $i,j,a,b \geq 0$ such that $i+a = j+b$, $x \in \I_{p}^{i} / \I_{p}^{i+1}$, $y \in \I_{p}^{j} / \I_{p}^{j+1}$ we have
+$$
+s^a(x) \cdot s^b(y) = \left\{ \begin{array}{cc} s^{a-j}(x \cdot y) & \mathrm{if} \ a \geq j \\ 0 & \mathrm{otherwise} \end{array} \right.,
+$$ 
+where $s^a = s \circ \cdots \circ s$ denotes the $a$-fold composition of $s$, $s^a(x) \cdot s^b(y) \in \O_{X,p} / \I_{p}^{a+i}$, and $x \cdot y \in \I^{i+j} / \I^{i+j+1}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+In this proof we abbreviate $N:=N_{Z/X}$, $\widehat{X} := \widehat{X}_Z$, and $\widehat{N} := \widehat{N_{Z/X}}_Z$. By definition $N = \mathbf{Spec} \ \Sym^{\mdot} \I / \I^2$. Since the embedding is regular we have an isomorphism \cite[B.7.1]{Ful}
+$$
+\Sym^{\mdot} \I / \I^2 \cong \bigoplus_{i \geq 0} \I^i / \I^{i+1}, 
+$$
+where $\I^0 := \O_X$. We denote the ideal inside $\bigoplus_{i \geq 0} \I^i / \I^{i+1}$ generated by $\I / \I^2$ by $\langle \I \rangle$. Then $\langle \I \rangle$ is the ideal of the zero-section $Z \hookrightarrow N$.
+
+We first prove the ``only if'' part. Throughout we often use the canonical isomorphism 
+$$
+\O_{\widehat{X}} / \widehat{\I}^r \cong \O_X / \I^r,
+$$
+for all $r \geq 1$ \cite[Cor.~II.9.8]{Har}. Since the isomorphism $\O_{\widehat{X}} \cong \O_{\widehat{N}}$ commutes with the structure maps to $\O_Z$ it induces isomorphisms
+$$
+\O_{\widehat{X}} / \widehat{\I}^r \cong \O_{\widehat{N} / \widehat{\langle \I \rangle}^r},
+$$
+for all $r \geq 1$. We obtain the following commutative diagram
+\begin{displaymath}
+\xymatrix
+{
+\O_X / \I^{r+1} \ar[r] \ar_{\cong}[d] & \O_X / \I^r \ar_{\cong}[d] \\
+\O_{\widehat{X}} / \widehat{\I}^{r+1} \ar[r] \ar_{\cong}[d] & \O_{\widehat{X}} / \widehat{\I}^r \ar_{\cong}[d] \\
+\O_{\widehat{N}} / \widehat{\langle \I \rangle}^{r+1} \ar[r] \ar_{\cong}[d] & \O_{\widehat{N}} / \widehat{\langle \I \rangle}^r \ar_{\cong}[d] \\
+\bigoplus_{i=0}^{r} \I^i / \I^{i+1} \ar[r] & \bigoplus_{i=0}^{r-1} \I^i / \I^{i+1}.
+}
+\end{displaymath}
+The bottom map clearly has a section. It induces the desired section
+$$
+s : \O_X / \I^r \longrightarrow \O_X / \I^{r+1}
+$$
+by the diagram. Property (2) is easily verified for these sections.
+
+We now turn to the ``if'' part. We first construct an isomorphism of \emph{sheaves of abelian groups} $\O_{\widehat{N}} \cong \O_{\widehat{X}}$ commuting with the structure maps to $\O_Z$. This part does not use property (2). By definition 
+\begin{align*}
+\O_{\widehat{X}} &:= \varprojlim \O_X / \I^i \\ 
+\O_{\widehat{N}} &:=\varprojlim \O_{N} / \langle \I \rangle^i \cong \prod_{i=0}^{\infty} \I^i / \I^{i+1},
+\end{align*}
+where $\I^0 := \O_X$. Define the following morphism of sheaves of abelian groups (e.g.~on the level of stalks)
+\begin{align}
+\begin{split} \label{keymap}
+&\prod_{i=0}^{\infty} \I^i / \I^{i+1} \longrightarrow \varprojlim \O_X / \I^i \\
+&\{x_i\}_{i=0}^{\infty} \mapsto \Big\{ \sum_{j=0}^{i} s^{i-j}(x_j) \Big\}_{i=0}^{\infty},
+\end{split}
+\end{align}
+where $s^{i-j} = s \circ \cdots \circ s$ denotes the $(i-j)$-fold composition of $s$. This is well-defined because each $s$ is a section and for any $x \in \I^i / \I^{i+1} \subset \O_X / \I^{i+1}$ we have $\pi(x) = 0$. Injectivity of this map is immediate. For given $\{y_i\}_{i=0}^{\infty} \in \varprojlim \O_X / \I^i$ it is easy to solve
+$$
+\Big\{y_i = \sum_{j=0}^{i} s^{i-j}(x_j) \Big\}_{i=0}^{\infty},
+$$
+for $x_i \in \O_X / \I^{i+1}$. The projective limit property implies $x_i \in \I^i / \I^{i+1} \subset \O_X / \I^{i+1}$. This proves surjectivity.
+
+It is not hard to check that condition (2) is equivalent to \eqref{keymap} being a \emph{ring homorphism}. 
+\end{proof}
+
+Let $\pi : S \rightarrow B$ be a flat morphism of smooth varieties with $\dim(B)=1$ (but $S$ of any dimension) and $F \subset S$ any fibre. There is no reason why $\C^*$ has to act on $F$. Surprisingly the previous proposition can be used to construct an action of $\C^*$ on the \emph{formal neighbourhood} $\widehat{S}_F$ of $F \subset S$. E.g.~when $\pi : S \rightarrow B$ is an elliptic surface this gives $\C^*$-actions on the formal neighbourhood of the fibres even though the fibres themselves need not have natural $\C^*$-actions.
+\begin{corollary}
+Let $\pi : S \rightarrow B$ be a flat morphism of smooth varieties with $\dim(B)=1$ and let $F$ be any fibre. Denote by $\widehat{\C}_0$ the formal neighbourhood of $\{0\} \subset \C$. Then
+$$
+\widehat{S}_F \cong F \times \widehat{\C}_0.
+$$
+In particular, the natural scaling action of $\C^*$ on $\widehat{\C}_0$ induces an action of $\C^*$ on $\widehat{S}_F$.
+\end{corollary}
+\begin{proof}
+Let $p \in B$ be a closed point with ideal sheaf $\I_p$. Then $$\O_B / \I_{p}^{r} \cong \C[\![t]\!] / (t)^r$$ and the natural quotient map
+$$
+\O_B / \I_{p}^{r+1} \longrightarrow \O_B / \I_{p}^{r}
+$$
+is just the natural quotient map
+$$
+\C[\![t]\!] / (t)^{r+1} \longrightarrow \C[\![t]\!] / (t)^r.
+$$
+This has an obvious section 
+$$
+s : \sum_{i=0}^{r-1} a_i t^i \in \C[\![t]\!] / (t)^r \mapsto \sum_{i=0}^{r-1} a_i t^i \in \C[\![t]\!] / (t)^{r+1}. 
+$$
+These sections satisfy property (2) of Proposition \ref{formaliso}. Let $\I_F$ be the ideal sheaf of $F \subset X$. Note that $\I_p \cong \O_B(-p)$ and $\I_F \cong \O_S(-F)$ so
+$$
+\pi^* \I_{p}^r \cong \I_{F}^{r}.
+$$
+Since $\pi$ is flat 
+$$
+\pi^* \big( \O_B / \I_{p}^r \big) \cong \pi^*\O_B / \pi^* \I_{p}^r \cong \O_S / \I_{F}^{r}.
+$$
+Therefore $\pi^* (s)$ are sections of the natural quotient maps
+$$
+\O_S / \I_{F}^{r+1} \longrightarrow \O_S / \I_{F}^{r}
+$$
+satisfying property (2). By Proposition \ref{formaliso}
+$$
+\widehat{S}_F \cong \widehat{N_{F/S}}_F.
+$$
+
+Since $\pi$ is flat 
+$$
+N_{F/S} \cong \pi^* N_{\{p\}/B} \cong \O_F.
+$$
+We claim this implies
+$$
+F \times \widehat{\C}_0 \cong \widehat{N_{F/S}}_F.
+$$
+This follows by showing that for each closed point $p \in F$ we have an isomorphism 
+$$
+(\O_{X,p} / \I_{p})[\![z]\!] \cong \prod_{i=0}^{\infty} \I_{p}^{i} / \I_{p}^{i+1}.
+$$
+This can be seen by writing $\I_p = (s)$ for some $s \in \O_{X,p}^{*}$ and sending
+$$
+\sum_{i=0}^{\infty} a_i z^i \mapsto \Big\{ \sum_{i=0}^{\infty} a_i s^i \Big\}_{i=0}^{\infty}.
+$$
+The corollary follows.
+\end{proof}
+
+A less surprising corollary is the following.
+\begin{corollary}
+Let $Z \hookrightarrow S$ be a regular embedding of $\C$-schemes of finite type, let $\I$ be the ideal sheaf of $Z$, and let $\L$ be a line bundle on $S$. Let $X = \mathrm{Tot}(\L)$ and denote the formal completion of $S$ resp.~$X$ along $Z$ by $\widehat{S}_Z$, $\widehat{X}_Z$. Suppose
+$$
+\widehat{S}_Z \cong \widehat{N_{Z/S}}_Z,
+$$
+and the isomorphism commutes with the structure maps to $\O_Z$. Then 
+$$
+\widehat{X}_Z \cong \widehat{N_{Z/X}}_Z,
+$$
+and the isomorphism commutes with the structure maps to $\O_Z$.
+\end{corollary}
+\begin{proof}
+The ideal sheaf of $Z \hookrightarrow X$ is
+$$
+\J := \I \oplus \L^* \oplus \L^{*2} \oplus \cdots.
+$$
+Therefore 
+\begin{equation} \label{idealJ}
+\O_X / \J^r \cong \O_S / \I^r \oplus \L^* / \I^{r-1}\L^* \oplus \cdots \oplus \L^{*(r-1)} / \I \L^{*(r-1)}.
+\end{equation}
+By Proposition \ref{formaliso} we have sections 
+$$
+\O_S / \I^r \longrightarrow \O_S / \I^{r+1}
+$$
+for all $r \geq 1$ satisfying property (2). Using \eqref{idealJ} we easily construct induced sections
+$$
+\O_X / \J^r \longrightarrow \O_X / \J^{r+1}
+$$
+satisfying property (2). The corollary follows from Proposition \ref{formaliso}.
+\end{proof}
+
+
+\begin{thebibliography}{MNOP2}
+%\bibitem[ACGH]{ACGH} E.~Arbarello, M.~Cornalba, P.~A.~Griffiths, and J.~Harris, \textit{Geometry of algebraic curves}, Volume I, Springer-Verlag (1985).
+%\bibitem[AIK]{AIK} A.~Altman, A.~Iarrobino, and S.~Kleiman, \textit{Irreducibility of the compactified Jacobian}, Real and complex singularities (Proc. Ninth Nordic Summer School/NAVF Sympos.~Math., Oslo, 1976) 1--12 (1977).
+%\bibitem[Beh]{Beh} K.~Behrend, \textit{Gromov-Witten invariants in algebraic geometry}, Invent.~Math.~127 601--617 (1997). arXiv:alg-geom/9601011v1.
+%\bibitem[BF]{BF} K.~Behrend and B.~Fantechi, \textit{The intrinsic normal cone}, Invent.~Math.~128 45--88 (1997). arXiv:alg-geom/9601010v1.
+%\bibitem[BGS]{BGS} J.~Brian\c{c}on, M.~Granger, J.-P.~Speder, \textit{Sur le sch\'ema de Hilbert d'une courbe plane}, Ann.~Sci.~de l'~\'Ecole Normale Sup\'erieure 4 14 1--25 (1981).
+%\bibitem[BL1]{BL1} J.~Bryan, C.~Leung, \textit{The enumerative geometry of K3 surfaces and modular forms}, J.~Amer.~Math.~Soc.~13 371--410 (2000).
+%\bibitem[BL]{BL} J.~Bryan and C.~Leung, \textit{Generating functions for the number of curves on abelian surfaces}, Duke Math.~J.~99 311--328 (1999). arXiv:math/9802125v1.
+%\bibitem[Blo]{Blo} S.~Bloch, \textit{Semi-regularity and de Rham cohomology}, Invent.~Math.~17 51--66 (1972).
+%\bibitem[BM]{BM} K.~Behrend, Yu.~Manin, \textit{Stacks of stable maps and Gromov--Witten invariants}, Duke Math.~J.~85 1 1--60 (1996).
+%\bibitem[BPV]{BPV} W.~Barth, C.~Peters, and A.~van de Ven, \textit{Compact complex surfaces}, Springer-Verlag (1984).
+%\bibitem[Bri]{Bri} T.~Bridgeland, \textit{Hall algebras and curve counting}, JAMS 24 969--998 (2011).
+%\bibitem[BS]{BS} M.~Beltrametti and A.~J.~Sommese, \textit{Zero cycles and $k$th order embeddings of smooth projective surfaces. With an appendix by Lothar G\"ottsche}, Problems in the theory of surfaces and their classification (Cortona, 1988) Sympos.~Math.~32 33--48 Academic Press (1991).
+%\bibitem[Che]{Che} J.~Cheah, \textit{The cohomology of smooth nested Hilbert schemes of points, thesis}, Chicago (1994).
+%\bibitem[CK]{CK} H.-l.~Chang and Y.-H.~Kiem, \textit{Poincar\'e invariants are Seiberg-Witten invariants}, to appear in Geom.~and Topol., arXiv:1205.0848.
+%\bibitem[DKO]{DKO} M.~D\"urr, A.~Kabanov, and C. Okonek, \textit{Poincar\'e invariants}, Topology 46 225--294 (2007).
+%\bibitem[Don]{Don} S.~K.~Donaldson, \textit{Irrationality and the $h$-cobordism conjecture}, J.~Diff.~Geom.~26 141--168 (1987).
+%\bibitem[EG]{EG} Edidin and Graham, equivariant GRR.
+%\bibitem[EGL]{EGL} G.~Ellingsrud, L.~G\"ottsche, and M.~Lehn, \textit{On the cobordism class of the Hilbert scheme of a surface}, Jour.~Alg.~Geom.~10 81-100 (2001). %arXiv:math/9904095v1.
+%\bibitem[FM]{FM} R.~Friedman and J.~W.~Morgan, \textit{Obstruction bundles, semiregularity and Seiberg-Witten invariants}, Comm.~Anal.~Geom.~7 451--495 (1999).
+\bibitem[Ful]{Ful} W.~Fulton, \textit{Intersection theory}, Springer-Verlag (1998).
+%\bibitem[GH]{GH} Ph.~Griffiths, J.~Harris, \textit{Principles of algebraic geometry}, Wiley Classics Library (1994).
+%\bibitem[Got]{Got} L.~G\"ottsche, \textit{A conjectural generating function for numbers of curves on surfaces}, Comm.~Math.~Phys.~196 523-533 (1998).
+%\bibitem[GP]{GP} T.~Graber and R.~Pandharipande, \textit{Localization of virtual classes}, Invent.~Math.~135 487--518 (1999). %arXiv:alg-geom/9708001v2.
+%\bibitem[GV1]{GV1} R.~Gopakumar and C.~Vafa, \textit{M-theory and topological strings---I}, hep-th/9809187.
+%\bibitem[GV2]{GV2} R.~Gopakumar and C.~Vafa, \textit{M-theory and topological strings---II}, hep-th/9812127.
+\bibitem[Har]{Har} R.~Hartshorne, \textit{Algebraic geometry}, Springer-Verlag (1977).
+%\bibitem[HL]{HL} D.~Huybrechts, M.~Lehn, \textit{The geometry of moduli spaces of sheaves}, Cambridge University Press (2010).
+%\bibitem[HTT]{HTT} Y.~Hinohara, K.~Takahashi, H.~Terakawa, \textit{On tensor products of $k$-very ample line bundles}, Proc.~Amer.~Math.~Soc.~133 687--692 (2004).
+%\bibitem[HM]{HM} J.~Harris, I.~Morrison, \textit{Moduli of curves}, Springer-Verlag (1998).
+%\bibitem[HT]{HT} D.~Huybrechts and R.~P.~Thomas, \textit{Deformation-obstruction theory for complexes via Atiyah and Kodaira-Spencer classes}, Math. Ann. 346 545--569 (2010).
+%\bibitem[Iar]{Iar} A.~Iarrobino, \textit{Punctual Hilbert schemes}, Bull.~Amer.~Math.~Soc.~78 819--823 (1972).
+%\bibitem[Ill]{Ill} L.~Illusie, \textit{Complexe cotangent et d\'eformations I}, Lecture Notes in Math.~239 Springer-Verlag (1971).
+%\bibitem[Jun]{Jun} Jun Li, \textit{A note on enumerating rational curves in a K3 surface}, in ``Geometry and nonlinear partial differential equations'' AMS/IP Studies in Adv.~Math.~29 (2002).
+%\bibitem[JS]{JS} D.~Joyce and Y.~Song, \textit{A theory of generalized {D}onaldson-{T}homas invariants}, Memoirs of the AMS (2012). arXiv:0810.5645.
+%\bibitem[KL1]{KL1} Y.-H.~Kiem and J.~Li, \textit{Gromov-Witten invariants of varieties with holomorphic 2-forms}, arXiv:0707.2986v1.
+%\bibitem[KL2]{KL2} Y.-H.~Kiem and J.~Li, \textit{Localizing virtual cycles by cosections}, JAMS 26 1025--1050 (2013).
+%\bibitem[KNS]{KNS} K.~Kodaira, L.~Nirenberg, D.~C.~Spencer, \textit{On the existence of deformations of complex analytic structures}, Ann.~Math.~68 450--459 (1958).
+%\bibitem[KS]{KS} K.~Kodaira, D.~C.~Spencer, \textit{A theorem of completeness for complex analytic fibre spaces}, Acta Math.~100 281--294 (1958). 
+%\bibitem[KST]{KST} M.~Kool, V.~Shende and R.~P.~Thomas, \textit{A short proof of the G\"ottsche conjecture}, Geom.~Topol.~15 397--406 (2011). arXiv:1010.3211v2.
+%\bibitem[Kod]{Kod} K.~Kodaira, \textit{On the structure of compact complex analytic surfaces, I}, Am.~J.~Math.~86 751--798 (1964).
+%\bibitem[KT1]{KT1} M.~Kool and R.~P.~Thomas, \textit{Reduced classes and curve counting on surfaces I: theory}, arXiv:1112.3069. 
+%\bibitem[KT2]{KT2} M.~Kool and R.~P.~Thomas, \textit{Reduced classes and curve counting on surfaces II: calculations}, arXiv:1112.3070. 
+%\bibitem[Kur]{Kur} M.~Kuranishi, \textit{On the locally complete families of complex analytic structures}, Ann.~Math.~75 536--577 (1962).
+%\bibitem[Lee]{Lee} J.~Lee, \textit{Family Gromov-Witten invariants for K\"ahler surfaces}, Duke Math.~Jour.~ 123 209--233 (2004).
+%\bibitem[LP]{LP} J.~Lee and T.~Parker, \textit{A structure theorem for the Gromov-Witten invariants of K\"ahler surfaces}, J.~Diff.~Geom.~77 483--513 (2007). 
+%\bibitem[LT]{LT} J.~Li and G.~Tian, \textit{Virtual moduli cycles and Gromov-Witten invariants of algebraic varieties},  J.~Amer.~Math.~Soc.~11 119--174 (1998). arXiv:alg-geom/9602007v6.
+%\bibitem[Man]{Man} M.~Manetti, \textit{Lectures on deformations of complex manifolds}, Rend.~Mat.~Appl.~24 1--183 (2004).
+%\bibitem[MNOP1]{MNOP1} D.~Maulik, N.~Nekrasov, A.~Okounkov, and R.~Pandharipande, \textit{Gromov-{W}itten theory and {D}onaldson-{T}homas theory, {I}}, Compos.~Math.~142 1263--1285 (2006). %arXiv:math/0312059v3.
+%\bibitem[MNOP2]{MNOP2} D.~Maulik, N.~Nekrasov, A.~Okounkov, and R.~Pandharipande, \textit{Gromov-{W}itten theory and {D}onaldson-{T}homas theory, {II}}, Compos.~Math.~142 1286--1304 (2006). %arXiv:math/0406092v2.
+%\bibitem[MOOP]{MOOP} D.~Maulik, A.~Oblomkov, A.~Okounkov, and R.~Pandharipande, \textit{Gromov-{W}itten/{D}onaldson-{T}homas correspondence for toric 3-folds}, Invent.~Math.~186 435--479 (2011).
+%\bibitem[Moo]{Moo} J.D.~Moore, \textit{Lectures on Seiberg-Witten invariants}, Lecture Notes in Mathematics 1629, Springer-Verlag (1996).
+%\bibitem[MP1]{MP1}  D.~Maulik and R.~Pandharipande, \textit{New calculations in Gromov-Witten theory}, Pure Appl.~Math.~Q.~4, Special Issue: In honor of Fedor Bogomolov, 469--500 (2008). 
+%\bibitem[MP2]{MP2} D.~Maulik, R.~Pandharipande, \textit{Gromov-Witten theory and Noether-Lefschetz theory}, arXiv:0705.1653 (2010).
+%\bibitem[MPT]{MPT} D.~Maulik, R.~Pandharipande and R.~P.~Thomas, \textit{Curves on K3 surfaces and modular forms}, J.~Topol.~3 937--996 (2010). 
+%\bibitem[Mum]{Mum} D.~Mumford, \textit{Lectures on curves on an algebraic surface}, Princeton University Press 1966.
+%\bibitem[Pot]{Pot} J.~Le Potier, \textit{Faisceaux semi-stables de dimension 1 sur le plan projectif}, Rev.~Roumaine Math.~Pures Appl.~38 635--678 (1993).
+%\bibitem[Pid]{Pid} V.~Ya.~Pidstrigach, \textit{Deformations of instanton surfaces}, Izv.~Akad.~Nauk SSSR Ser.~Mat.~55 318--338 (1991).
+%\bibitem[PP1]{PP1} R.~Pandharipande and A.~Pixton, \textit{Gromov-Witten/Pairs descendent correspondence for toric 3-folds}, arXiv:1203.0468.
+%\bibitem[PP2]{PP2} R.~Pandharipande and A.~Pixton, \textit{Gromov-Witten/Pairs correspondence for the quintic 3-fold}, arXiv:1206.5490.
+%\bibitem[PT1]{PT1} R.~Pandharipande and R.~P.~Thomas, \textit{Curve counting via stable pairs in the derived category}, Invent.~Math.~178 407--447 (2009). %arXiv:0707.2348v3.
+%\bibitem[PT2]{PT2} R.~Pandharipande and R.~P.~Thomas, \textit{The 3-fold vertex via stable pairs}, Geom.~and Topol.~13 1835--1876 (2009).
+%\bibitem[PT3]{PT3} R.~Pandharipande and R.~P.~Thomas, \textit{Stable pairs and BPS invariants}, J.~Amer.~Math.~Soc.~23 267--297 (2010). %arXiv:0711.3899v3.
+%\bibitem[PT4]{PT4} R.~Pandharipande and R.~P.~Thomas, \emph{in preparation}.
+%\bibitem[Ran]{Ran} Z.~Ran, \textit{Semiregularity, obstructions and deformations of Hodge classes}, Ann.~Scuola Norm.~Sup.~Pisa Cl.~Sci.~4 28 809--820 (1999).
+%\bibitem[Sie]{Sie} B.~Siebert, \textit{Virtual fundamental classes, global normal cones and Fulton's canonical classes}, in: Frobenius manifolds, ed.~K.~Hertling and M.~Marcolli, Aspects Math.~36 341--358, Vieweg (2004).
+%\bibitem[Spi]{Spi} H.~Spielberg, \textit{Une formule pour les invariants de Gromov-Witten des vari\'et\'es toriques}, PhD Thesis Universit\'e Louis Pasteur (1999).
+%\bibitem[Tau1]{Tau1} C.~H.~Taubes, \textit{The Seiberg-Witten and Gromov invariants}, Math.~Res.~Lett.~2 221--238 (1995).
+%\bibitem[Tau2]{Tau2} C.~H.~Taubes, \textit{Gr=SW: counting curves and connections}, J.~Diff.~Geom.~52 453-609 (1999). 
+%\bibitem[Tod]{Tod} Y.~Toda, \textit{Curve counting theories via stable objects I.~DT/PT correspondence}, J.~Amer.~Math.~Soc.~23 1119--1157 (2010). 
+%\bibitem[Voi1]{Voi1} C.~Voisin, \textit{Hodge theory and complex algebraic geometry I}, Cambridge University Press (2002).
+%\bibitem[Voi]{Voi} C.~Voisin, \textit{Hodge loci}, Handbook of moduli (to appear).
+%\bibitem[Wit]{Wit} E.~Witten, \textit{Monopoles and four-manifolds}, Math.~Res.~Lett.~1 769--796 (1994). \\
+\end{thebibliography}
+\end{document}
+

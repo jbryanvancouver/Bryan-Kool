@@ -1,0 +1,130 @@
+\documentclass{amsart}
+
+
+
+%\usepackage{diagrams}
+%\usepackage{eepic,epic}
+
+\usepackage{amsmath}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{times}
+%\usepackage{amstex}
+
+\usepackage[margin=1in]{geometry}
+
+%\newtheorem{thm}{Theorem}%[section]
+\newtheorem{theorem}{Theorem}%[section]
+\newenvironment{primedtheorem}[1]
+  {\renewcommand{\thetheorem}{\ref{#1}$'$}%
+   \addtocounter{theorem}{-1}%
+   \begin{theorem}}
+  {\end{theorem}}
+\newtheorem{lem}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{rem}[theorem]{Remark}
+
+\newtheorem{def-theorem}[theorem]{Definition-Theorem}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmpl}[theorem]{Example}
+
+\newcommand{\cnums} {{\mathbb C}}          % complex numbers
+\newcommand{\nnums} {{\mathbb N}}		% natural numbers
+\newcommand{\rnums} {{\mathbb R}}		% real numbers
+\newcommand{\znums} {{\mathbb Z}}		% integers
+\newcommand{\qnums} {{\mathbb Q}}		% rationals
+
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\im}{\operatorname{Im}}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\M}{\overline{\mathcal{M}}}
+\newcommand{\smargin}[1]{\marginpar{\tiny{#1}}}
+
+
+\begin{document}
+
+
+\section{Definitions of $P_{\alpha } (Q)$ and $R_{\alpha } (Q)$}
+
+Let $\alpha =(\alpha _{1}\geq  \alpha _{2}\geq \dots )$ be a
+partition. We define a Laurent polynomial $P_{\alpha } (Q)$ as follows
+\[
+P_{\alpha } (Q) = \sum _{k=1}^{\infty } ( Q^{-\alpha _{k}+k-1}-Q^{-\alpha _{k}+k} ).
+\]
+Note that this is a Laurent \emph{polynomial} since the sum telescopes
+for large $k$. Its leading term is $Q^{-\alpha _{1}}$. It can be
+expressed in terms of the topological vertex as follows:
+\[
+P_{\alpha } (Q) = (1-Q)\frac{V_{\alpha ,\square,\emptyset }}{V_{\alpha
+,\emptyset ,\emptyset }}.
+\]
+A closely related quantity shows up in Okounkov's papers. For example
+in Okounkov-Pandharipande (math/0204305) page 33, the eigenvalues of
+the operator $\mathcal{E}_{0} (z)$ (acting on $|\alpha\rangle $) is
+given by $e (\alpha ,z)$ which is equal to $P_{\alpha } (Q)$ upto a
+factor of $(Q^{-1/2}-Q^{1/2})$ under the substitution $Q=e^{-z}$.
+
+The second important quantity we consider is $R_{\alpha } (Q)$. We can
+define it as follows:
+\[
+R_{\alpha } (Q) = \sum _{\eta } Q^{|\alpha |-|\eta |} \left(S_{\alpha /\eta } (\mathbf{Q}) \right)^{2}
+\]
+where $S_{\alpha /\eta }$ is the skew Schur function and $S_{\alpha
+/\eta } (\mathbf{Q}) = S_{\alpha /\eta } (1,Q,Q^{2},Q^{3},\dots )$.
+In terms of the (PT) vertex, $R_{\alpha }$ is the vertex $V_{\emptyset
+,\alpha ,\alpha '}$ normalized to be a series starting with 1.
+
+$R_{\alpha } (Q)$ is a rational function in $Q$. These functions satisfy the following symmetry relation
+\[
+P_{\alpha } (Q)=P_{\alpha '} (Q^{-1}) \quad \quad R_{\alpha } (Q)=R_{\alpha '} (Q^{-1}) 
+\]
+where $\alpha '$ is the conjugate partition.
+
+\section{The main conjecture, related propostions, equivalent formulations}
+
+\begin{proposition}
+The follow product formulas hold.
+\begin{align*}
+\sum _{\alpha } u^{|\alpha |} =& \prod _{i=1}^{\infty } (1-u^{i})^{-1}\\
+\sum _{\alpha } R_{\alpha } (Q) u^{|\alpha |} =&\prod _{i=1}^{\infty }\left( (1-u^{i})^{-1}\cdot\prod _{m=1}^{\infty } (1-u^{i}Q^{m})^{-m} \right)\\
+\sum _{\alpha }P_{\alpha } (Q)u^{|\alpha |}=&\prod _{i=1}^{\infty } (1-u^{i}) (1-Qu^{i})^{-1} (1-Q^{-1}u^{i})^{-1}.
+\end{align*}
+\end{proposition}
+The first formula is elementary and well known, the second formula
+follows from the orthogonality properties of skew Schur functions. The
+third formula follows easily from Theorem 6.5 of Bloch-Okounkov
+(9712009v2). Our main conjecture, extensively checked with Maple (it's
+certainly true) is
+\begin{conj}
+The following formula holds
+\[
+\sum _{\alpha } P_{\alpha '} (Q) R_{\alpha } (Q ) u^{|\alpha |} = \prod _{i=1}^{\infty }\left((1-Qu^{i})^{-1} (1-Q^{-1}u^{i})^{-1}\prod _{m=1}^{\infty } (1-Q^{m}u^{i})^{-m} \right).
+\]
+\end{conj}
+
+Using the formulas in the proposition, the above formula is equivalent
+to the following weirdly symmetric looking formula
+\[
+\sum _{\alpha } P_{\alpha '} (Q) R_{\alpha } (Q) u^{|\alpha |}  = \sum _{\alpha ,\mu } P_{\alpha '} (Q) R_{\mu } (Q) u^{|\alpha |+|\mu |}.
+\]
+Note the presense of the transpose partition $\alpha '$ in the
+subscript of $P$ on the left hand sides of the conjecture
+formulas. The conjecture is false without it.
+
+
+   
+\end{document}
+
+

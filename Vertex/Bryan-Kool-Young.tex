@@ -1,0 +1,234 @@
+\documentclass{amsart}
+
+\title{Donaldson-Thomas invariants of local elliptic surfaces via the topological vertex}
+\author{Jim Bryan and Martijn Kool}
+\date{\today}
+\address{
+Department of Mathematics\\
+University of British Columbia \\
+Room 121, 1984 Mathematics Road  \\
+Vancouver, B.C., Canada V6T 1Z2  
+}
+
+
+%\usepackage{diagrams}
+%\usepackage{eepic,epic}
+
+\usepackage{amsmath}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{times}
+\usepackage[all]{xy}
+%\usepackage{amstex}
+
+
+%\newtheorem{thm}{Theorem}%[section]
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+
+\newtheorem{def-theorem}[theorem]{Definition-Theorem}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+
+\newcommand{\CC} {\mathbb{C}}          % complex numbers
+\newcommand{\NN} {\mathbb{N}}		% natural numbers
+\newcommand{\RR} {\mathbb{R}}		% real numbers
+\newcommand{\ZZ} {\mathbb{Z}}		% integers
+\newcommand{\QQ} {\mathbb{Q}}		% rationals
+\newcommand{\PP} {\mathbb{P}}
+\renewcommand{\AA} {\mathbb{A}}
+\newcommand{\LL} {\mathbb{L}}
+\newcommand{\FF} {\mathbb{F}}
+\renewcommand{\O}{\mathcal{O}}
+
+
+\newcommand{\rt}[1]{\stackrel{#1\,}{\rightarrow}}
+\newcommand{\Rt}[1]{\stackrel{#1\,}{\longrightarrow}}
+\newcommand\To{\longrightarrow}
+\newcommand\into{\hookrightarrow}
+\newcommand\Into{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+\newcommand\INTO{\ar@{^{(}->}[r]}
+\newcommand\acts{\curvearrowright}
+
+
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\M}{\overline{\mathcal{M}}}
+\newcommand{\smargin}[1]{\marginpar{\tiny{#1}}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Coh}{\operatorname{Coh}}
+
+
+\begin{document}
+
+\begin{abstract}
+We compute the Donaldson-Thomas invariants of a local elliptic surface
+with section. We introduce a new computational technique which is a
+mixture of motivic and toric methods. This allows us to write the
+partition function for the invariants in terms of the topological
+vertex. Utilizing identities for the topological vertex (some
+previously known, some new), we derive product formulas for the
+partition functions. In the special case where the elliptic surface is
+a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
+\end{abstract}
+
+\maketitle 
+
+%\markboth{???}  {???}
+%\renewcommand{\sectionmark}[1]{}
+
+
+%\tableofcontents
+%\pagebreak
+
+
+\section{Introduction}
+
+\appendix
+\section{Odds and Ends}\label{appendix: odds and ends}
+
+
+\subsection{Weighted Euler characteristics of symmetric products}
+
+In this section we prove the following formula for the weighted Euler
+characteristic of symmetric products.
+
+\begin{lemma}\label{lem: formula for euler char of sym products}
+Let $S$ be a scheme of finite type over $\CC $ and let $e (S)$ be its
+topological Euler characteristic. Let $g:\ZZ _{\geq 0}\to \ZZ ((Q))$
+be any function with $g (0)=1$. Let $f_{d}:\Sym ^{d} (S)\to \ZZ ((Q))$
+be the constructible function defined by $f_{d} (\sum_{i}
+a_{i}x_{i})=\prod _{i}g (a_{i})$. Then
+\[
+\sum _{d=0}^{\infty } u^{d} \int _{\Sym ^{d} (S)} f_{d} de =
+\left(\sum _{a=0}^{\infty }g (a) u^{a} \right)^{e (S)}.
+\]
+\end{lemma}
+
+\begin{remark}
+In the special case where $g=f_{d}\equiv  1$, the lemma recovers
+Macdonald's formula: $\sum _{d=1}^{\infty }e (\Sym ^{d} (S)) u^{d} =
+(1-u)^{-e (S)}$. 
+
+The lemma is essentially a consequence of the existence of a power
+structure on the Grothendieck group of varieties definited by
+symmetric products and the compatibility of the Euler characteristic
+homomorphism with that power structure \cite{}. For convenience's
+sake, we provide a direct proof here.
+\end{remark}
+\begin{proof}
+The $d$th symmetric product admits a stratification with strata
+labelled by partitions of $d$. Associated to any partition of $d$ is a
+unique tuple $(m_{1},m_{2},\dots )$ of non-negative integers with
+$\sum _{j=1}^{\infty }j m_{j}=d$. The stratum labelled by
+$(m_{1},m_{2},\dots )$ parameterizes collections of points where there
+are $m_{j}$ points of multiplicity $j$. The full stratification is
+given by:
+\[
+\Sym ^{d} (S) = \bigsqcup_{\begin{smallmatrix} (m_{1},m_{2},\dots )\\
+\sum _{j=1}^{\infty }j m_{j}=d  \end{smallmatrix}} \left\{\left(\prod _{j=1}^{\infty }S^{m_{j}} \right) -\Delta  \right\}/ \prod _{j=1}^{\infty }\sigma _{m_{j}} 
+\]
+where by convention, $S^{0}$ is a point, $\Delta $ is the large
+diagonal, and $\sigma _{m}$ is the $m$th symmetric group. Note that
+the function $f_{d}$ is constant on each stratum and has value $\prod
+_{j=1}^{\infty }g (j)^{m_{j}}$. Note also that the action of $\prod
+_{j=1}^{\infty }\sigma _{m_{j}}$ on each stratum is free. 
+
+For schemes over $\CC $, topological Euler characteristic is additive
+under stratification and multiplicative under maps which are
+(topological) fibrations. Thus
+\[
+\int _{\Sym ^{d} (S)} f_{d}\,\, de = \sum _{\begin{smallmatrix}(m_{1},m_{2},\dots )\\
+\sum _{j=1}^{\infty }j m_{j}=d   \end{smallmatrix}} \left(\prod _{j=1}^{\infty } g (j)^{m_{j}} \right) \frac{e (S^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\, m_{2}!\, m_{3}!\dots }.
+\]
+
+For any natural number $N$, the projection $S^{N}-\Delta \to
+S^{N-1}-\Delta $ has fibers of the form $S-\{N-1\text{ points}
+\}$. The fibers have constant Euler characteristic given by $e (S)-
+(N-1)$ and consequently, $e (S^{N}-\Delta )= (e (S)- (N-1))\cdot e
+(S^{N-1}-\Delta )$. Thus by induction, we find $e (S^{N}-\Delta ) = e
+(S)\cdot (e (S)-1)\cdots (e (S)- (N-1))$ and so 
+\[
+\frac{e (S^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\,m_{2}!\,m_{3}!\cdots } = \binom{e (S)}{m_{1},m_{2},m_{3},\cdots }
+\]
+where the right hand side is the generalized multinomial coefficient.
+
+Putting it together and applying the generalized multinomial theorem,
+we find
+\begin{align*}
+\sum _{d=0}^{\infty } \int _{\Sym ^{d} (S)}f_{d}\,\,de & = \sum _{(m_{1},m_{2},\dots )} \prod _{j=1}^{\infty } \left(g (j) u^{j} \right)^{m_{j}} \binom{e (S)}{m_{1},m_{2},m_{3},\dots }\\
+&=\left(1+\sum _{j=1}^{\infty }g (j) u^{j} \right)^{e (S)}
+\end{align*}
+which proves the lemma.   
+\end{proof}
+
+\subsection{Some geometry of curves on elliptic surfaces}\label{subsec: geometry of curves on elliptic surfaces}
+
+In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =B+dF$.
+
+\begin{lemma}\label{lem: H0 (pi* (D) (B))=H0 (pi* (D))}
+For any line bundle $\epsilon $ on $B$, multiplication by the
+canonical section of $\O (B)$ induces an isomorphism
+\[
+H^{0} (S,\pi ^{*} (\epsilon ) (B)) \cong H^{0} (S,\pi ^{*} (\epsilon )).
+\]
+\end{lemma}
+
+\begin{corollary}\label{cor: chow(beta) = sym (B)}
+Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
+the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
+$\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
+$B+\sum _{i}d_{i}\pi ^{-1} (x_{i}) $.
+\end{corollary}
+
+\begin{proof}
+The corollary follows immediately from the lemma since the Chow
+variety is the space of effective divisors and the lemma implies that
+any effective divisor in the class $\beta $ is a union of the section
+$B$ with an effective divisor pulled by from the base.
+
+To prove lemma~\ref{lem: H0 (pi* (D) (B))=H0 (pi* (D))} we proceed as
+follows. For any line bundle $\delta $ on $B$, the Leray spectral
+sequence yields the short exact sequence:
+\[
+0\to H^{0} (B,\delta \otimes R^{1}\pi _{*}\O )\to H^{1} (S,\pi ^{*}\delta )\Rt{\alpha } H^{1} (B,\delta )\to 0,
+\]
+in particular, $\alpha $ is a surjection.
+
+Then the long exact cohomology sequence associated to 
+\[
+0\to \pi ^{*}\delta \otimes \O (-B)\to \pi ^{*}\delta \to \O _{B}\otimes \pi ^{*}\delta \to 0
+\]
+is
+\[
+\dotsb \to H^{1} (S,\pi ^{*} (\delta ))\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,\pi ^{*}\delta \otimes \O (-B))\to H^{2} (S,\pi ^{*}\delta )\to 0,
+\]
+and since $\alpha $ is a surjection, we get an isomorphism of the last
+two terms. We apply Serre duality to that isomorphism and we use the
+fact that $K_{S} = \pi ^{*} (K_{B}\otimes L)$ where $L = \left(R\pi
+_{*}\O _{S} \right)^{\vee }$ \cite[prop?]{Fr-Mo} to obtain
+\[
+H^{0} (S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+\]
+Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
+proved.
+\end{proof}
+
+
+     
+\bibliography{mainbiblio}
+\bibliographystyle{plain}
+
+\end{document}
+

@@ -1,7 +1,7 @@
 \documentclass{amsart}
 
-\title{A topological vertex identity}
-\author{Jim Bryan and Martijn Kool}
+\title{A topological vertex identity and the Katz-Klemm-Vafa formula}
+\author{Jim Bryan, Martijn Kool and Benjamin Young}
 \date{\today}
 \address{
 Department of Mathematics\\
@@ -16,6 +16,7 @@ Vancouver, B.C., Canada V6T 1Z2
 
 \usepackage{amsmath}
 \usepackage{amsmath,amsthm,amsfonts}
+\usepackage{amssymb}
 \usepackage{times}
 \usepackage[all]{xy}
 %\usepackage{amstex}
@@ -73,14 +74,7 @@ Vancouver, B.C., Canada V6T 1Z2
 \begin{document}
 
 \begin{abstract}
-We compute the Donaldson-Thomas invariants of a local elliptic surface
-with section. We introduce a new computational technique which is a
-mixture of motivic and toric methods. This allows us to write the
-partition function for the invariants in terms of the topological
-vertex. Utilizing identities for the topological vertex (some
-previously known, some new), we derive product formulas for the
-partition functions. In the special case where the elliptic surface is
-a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
+Motivated by a new calculation of the Katz-Klemm-Vafa formula (primitive case), the first two authors conjectured a product formula for a certain generating function involving the topological vertex. In this paper we prove this formula using the infinite wedge formalism. The method is by writing the generating function as a trace and then combining standard commutation relations of vertex operators with cyclicity of trace. This trick was picked up by the third author from a paper of J.~Bouttier, G.~Chapuy and S.~Corteel. The techniques of this paper are useful for calculating generating functions of Donaldson-Thomas or stable pair invariants in numerous geometric settings.
 \end{abstract}
 
 \maketitle 
@@ -95,135 +89,93 @@ a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 
 \section{Introduction}
 
-\appendix
-\section{Odds and Ends}\label{appendix: odds and ends}
+\noindent \textbf{Acknowledgements.} Paul Johnson, PIMS, ...
 
 
-\subsection{Weighted Euler characteristics of symmetric products}
+\section{Review of the infinite wedge formalism}
 
-In this section we prove the following formula for the weighted Euler
-characteristic of symmetric products.
+We start with a brief review of the infinite wedge formalism, various operators and their commutation relations of vertex operators appearing in the work of A.~Okounkov, R.~Pandharipande \cite{OP} and Okounov, N.~Reshetikhin \cite{OR2}. See also \cite{Kac} and \cite{You}. This section is transcribed from these references. We include it in order to establish our sign conventions and for the readers convenience.
 
-\begin{lemma}\label{lem: formula for euler char of sym products}
-Let $S$ be a scheme of finite type over $\CC $ and let $e (S)$ be its
-topological Euler characteristic. Let $g:\ZZ _{\geq 0}\to \ZZ ((Q))$
-be any function with $g (0)=1$. Let $f_{d}:\Sym ^{d} (S)\to \ZZ ((Q))$
-be the constructible function defined by $f_{d} (\sum_{i}
-a_{i}x_{i})=\prod _{i}g (a_{i})$. Then
-\[
-\sum _{d=0}^{\infty } u^{d} \int _{\Sym ^{d} (S)} f_{d} de =
-\left(\sum _{a=0}^{\infty }g (a) u^{a} \right)^{e (S)}.
-\]
-\end{lemma}
+Let $V$ be the complex vector space spanned by $\underline{k}$, where $k \in \ZZ + \frac{1}{2}$. By definition, the infinite wedge space $\Lambda^{\frac{\infty}{2}} V$ is the complex vector space spanned by vectors
+$$
+v_S := \underline{s_1} \wedge \underline{s_2} \wedge \cdots
+$$
+where $S = \{s_1 > s_2 > \cdots\} \subset \ZZ + \frac{1}{2}$ for which both 
+$$
+S_+ = S \setminus \Big(\ZZ_{\leq 0} - \frac{1}{2} \Big), \ S_- = \Big(\ZZ_{\leq 0} - \frac{1}{2} \Big) \setminus S
+$$ 
+are finite. The subspace spanned $v_S$ for which $|S_+| = |S_-|$ is known as the zero charge space and denoted by $\Lambda^{\frac{\infty}{2}}_{0} V$. The collection of subset $S = \{s_1 > s_2 > \cdots\} \subset \ZZ + \frac{1}{2}$ for which $|S_+| = |S_-|$ is in natural bijection with the collection of plane partitions $\lambda = \{\lambda_1 \geq \lambda_2 \geq \cdots\} \subset \ZZ_{\geq 0}$ via the mapping \cite[2.1.3]{OR}
+$$
+\lambda \mapsto \mathfrak{S}(\lambda) = \Big\{ \lambda_i - i + \frac{1}{2} \Big\}_i \subset \ZZ + \frac{1}{2}.
+$$
+These are known as modified Frobenius coordinates. We denote partitions by $\lambda, \mu, \nu, \eta,  \ldots$ and define 
+$$|\lambda\rangle := v_{\mathfrak{S}(\lambda)}.$$
+In particular, the vacuum vector is given by
+$$
+|\varnothing \rangle := \underline{-\frac{1}{2}} \wedge \underline{-\frac{3}{2}} \wedge \cdots.
+$$
+Denote by $\langle \cdot | \cdot \rangle$ the complex inner product for which
+$$
+\langle \lambda | \mu \rangle = \delta_{\lambda\mu},
+$$
+where $\delta_{\lambda\mu}$ is the Kronecker delta. 
 
-\begin{remark}
-In the special case where $g=f_{d}\equiv  1$, the lemma recovers
-Macdonald's formula: $\sum _{d=1}^{\infty }e (\Sym ^{d} (S)) u^{d} =
-(1-u)^{-e (S)}$. 
-
-The lemma is essentially a consequence of the existence of a power
-structure on the Grothendieck group of varieties definited by
-symmetric products and the compatibility of the Euler characteristic
-homomorphism with that power structure \cite{}. For convenience's
-sake, we provide a direct proof here.
-\end{remark}
-\begin{proof}
-The $d$th symmetric product admits a stratification with strata
-labelled by partitions of $d$. Associated to any partition of $d$ is a
-unique tuple $(m_{1},m_{2},\dots )$ of non-negative integers with
-$\sum _{j=1}^{\infty }j m_{j}=d$. The stratum labelled by
-$(m_{1},m_{2},\dots )$ parameterizes collections of points where there
-are $m_{j}$ points of multiplicity $j$. The full stratification is
-given by:
-\[
-\Sym ^{d} (S) = \bigsqcup_{\begin{smallmatrix} (m_{1},m_{2},\dots )\\
-\sum _{j=1}^{\infty }j m_{j}=d  \end{smallmatrix}} \left\{\left(\prod _{j=1}^{\infty }S^{m_{j}} \right) -\Delta  \right\}/ \prod _{j=1}^{\infty }\sigma _{m_{j}} 
-\]
-where by convention, $S^{0}$ is a point, $\Delta $ is the large
-diagonal, and $\sigma _{m}$ is the $m$th symmetric group. Note that
-the function $f_{d}$ is constant on each stratum and has value $\prod
-_{j=1}^{\infty }g (j)^{m_{j}}$. Note also that the action of $\prod
-_{j=1}^{\infty }\sigma _{m_{j}}$ on each stratum is free. 
-
-For schemes over $\CC $, topological Euler characteristic is additive
-under stratification and multiplicative under maps which are
-(topological) fibrations. Thus
-\[
-\int _{\Sym ^{d} (S)} f_{d}\,\, de = \sum _{\begin{smallmatrix}(m_{1},m_{2},\dots )\\
-\sum _{j=1}^{\infty }j m_{j}=d   \end{smallmatrix}} \left(\prod _{j=1}^{\infty } g (j)^{m_{j}} \right) \frac{e (S^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\, m_{2}!\, m_{3}!\dots }.
-\]
-
-For any natural number $N$, the projection $S^{N}-\Delta \to
-S^{N-1}-\Delta $ has fibers of the form $S-\{N-1\text{ points}
-\}$. The fibers have constant Euler characteristic given by $e (S)-
-(N-1)$ and consequently, $e (S^{N}-\Delta )= (e (S)- (N-1))\cdot e
-(S^{N-1}-\Delta )$. Thus by induction, we find $e (S^{N}-\Delta ) = e
-(S)\cdot (e (S)-1)\cdots (e (S)- (N-1))$ and so 
-\[
-\frac{e (S^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\,m_{2}!\,m_{3}!\cdots } = \binom{e (S)}{m_{1},m_{2},m_{3},\cdots }
-\]
-where the right hand side is the generalized multinomial coefficient.
-
-Putting it together and applying the generalized multinomial theorem,
-we find
+For each $k \in \ZZ + \frac{1}{2}$ one defines the operator (on $\Lambda^{\frac{\infty}{2}} V$)
+$$
+\psi_k := \underline{k} \wedge \cdot
+$$
+and its adjoint is denoted by $\psi_{k}^{*}$. These operators satisfy the anti-commutation relations
 \begin{align*}
-\sum _{d=0}^{\infty } \int _{\Sym ^{d} (S)}f_{d}\,\,de & = \sum _{(m_{1},m_{2},\dots )} \prod _{j=1}^{\infty } \left(g (j) u^{j} \right)^{m_{j}} \binom{e (S)}{m_{1},m_{2},m_{3},\dots }\\
-&=\left(1+\sum _{j=1}^{\infty }g (j) u^{j} \right)^{e (S)}
+\psi_k \psi_l + \psi_l \psi_k = \psi_{k}^{*} \psi_{l}^{*} + \psi_{l}^{*} \psi_{k}^{*} = 0, \\ 
+\psi_k \psi_{l}^{*} + \psi_{l}^{*} \psi_{k} = \delta_{kl}.  
 \end{align*}
-which proves the lemma.   
-\end{proof}
+These operators can be combined to
+$$
+\psi(a) := \sum_{k \in \ZZ + \frac{1}{2}} \psi_k a^k, \ \psi^*(a) := \sum_{k \in \ZZ + \frac{1}{2}} \psi_{k}^{*} a^{-k}. 
+$$
+Next consider the operators 
+$$
+\alpha_n := \sum_{k \in \ZZ + \frac{1}{2}} \psi_{k+n} \psi_{k}^{*}, \ n \in \ZZ.
+$$
+These satisfy the Heisenberg commutation relations $[\alpha_n,\alpha_m] = -n \delta_{n,-m}$ and
+$$
+[\alpha_n, \psi(a)] = a^{-n} \psi(a), \ [\alpha_n, \psi^*(a)] =  - a^{-n} \psi^*(a). 
+$$
 
-\subsection{Some geometry of curves on elliptic surfaces}\label{subsec: geometry of curves on elliptic surfaces}
+We are interested in the vertex operators
+$$
+\Gamma_{\pm}(q) := \exp \Big( \sum_{n \geq 1} \frac{q^n}{n!} \alpha_\pm \Big).
+$$
+These acts on $\Lambda^{\frac{\infty}{2}}_{0} V$ as follows
+\begin{align*}
+\Gamma_-(q) |\mu \rangle &= \sum_{\lambda \succ \mu} q^{|\lambda| - |\mu|} |\lambda \rangle, \\ 
+\Gamma_+(q) | \lambda \rangle &= \sum_{\lambda \succ \mu} q^{|\lambda| - |\mu|} |\mu \rangle.
+\end{align*}
+Here $|\lambda|:=\sum_i \lambda_i$ is the size of the partition and $\lambda \succ \mu$ means $\lambda$ interlaces $\mu$, i.e.
+$$
+\lambda_1 \geq \mu_1 \geq \lambda_2 \geq \mu_2 \geq \cdots.
+$$
+Equivalently, the skew diagram $\lambda \setminus \mu$ is a disjoint union of horizontal strips (see \cite{You} for details). Therefore we think of $\Gamma_-(q) |\mu\rangle$ as adding horizontal strips from $\mu$ and $\Gamma_+(q) |\lambda\rangle$ as removing horizontal strips from $\lambda$. 
 
-In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =B+dF$.
+We will use the following commutation relations from Okounkov and Reshetikhin \cite{OR2}
+\begin{align*}
+\Gamma_+(a) \psi(b) &= (1-a b^{-1})^{-1} \psi(b) \Gamma_+(a), \\
+\Gamma_-(a) \psi(b) &= (1-a b)^{-1} \psi(b) \Gamma_-(a), \\
+\Gamma_+(a) \psi^*(b) &= (1-a b^{-1}) \psi^*(b) \Gamma_+(a), \\
+\Gamma_-(a) \psi^*(b) &= (1-a b) \psi^*(b) \Gamma_-(a)
+\end{align*}
+\begin{align*}
+\Gamma_+(a)\Gamma_-(b) = (1-ab) \Gamma_-(b)\Gamma_+(a)
+\end{align*}
 
-\begin{lemma}\label{lem: H0 (pi* (D) (B))=H0 (pi* (D))}
-For any line bundle $\epsilon $ on $B$, multiplication by the
-canonical section of $\O (B)$ induces an isomorphism
-\[
-H^{0} (S,\pi ^{*} (\epsilon ) (B)) \cong H^{0} (S,\pi ^{*} (\epsilon )).
-\]
-\end{lemma}
 
-\begin{corollary}\label{cor: chow(beta) = sym (B)}
-Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
-the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
-$\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
-$B+\sum _{i}d_{i}\pi ^{-1} (x_{i}) $.
-\end{corollary}
+\section{Operators and commutation relations}
 
-\begin{proof}
-The corollary follows immediately from the lemma since the Chow
-variety is the space of effective divisors and the lemma implies that
-any effective divisor in the class $\beta $ is a union of the section
-$B$ with an effective divisor pulled by from the base.
+Define our bold face operators with their commutation relations derived from previous section. Reference to Bloch-Okounkov. Possibly derivation MacMahon and 2 leg DT=PT as warm-up examples?
 
-To prove lemma~\ref{lem: H0 (pi* (D) (B))=H0 (pi* (D))} we proceed as
-follows. For any line bundle $\delta $ on $B$, the Leray spectral
-sequence yields the short exact sequence:
-\[
-0\to H^{0} (B,\delta \otimes R^{1}\pi _{*}\O )\to H^{1} (S,\pi ^{*}\delta )\Rt{\alpha } H^{1} (B,\delta )\to 0,
-\]
-in particular, $\alpha $ is a surjection.
+\section{Calculation}
 
-Then the long exact cohomology sequence associated to 
-\[
-0\to \pi ^{*}\delta \otimes \O (-B)\to \pi ^{*}\delta \to \O _{B}\otimes \pi ^{*}\delta \to 0
-\]
-is
-\[
-\dotsb \to H^{1} (S,\pi ^{*} (\delta ))\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,\pi ^{*}\delta \otimes \O (-B))\to H^{2} (S,\pi ^{*}\delta )\to 0,
-\]
-and since $\alpha $ is a surjection, we get an isomorphism of the last
-two terms. We apply Serre duality to that isomorphism and we use the
-fact that $K_{S} = \pi ^{*} (K_{B}\otimes L)$ where $L = \left(R\pi
-_{*}\O _{S} \right)^{\vee }$ \cite[prop?]{Fr-Mo} to obtain
-\[
-H^{0} (S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
-\]
-Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
-proved.
-\end{proof}
+The disconnected series (known identity) first using the trace trick. Our new formula second.
 
 
      

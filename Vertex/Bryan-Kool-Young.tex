@@ -14,6 +14,9 @@ Vancouver, B.C., Canada V6T 1Z2
 %\usepackage{diagrams}
 %\usepackage{eepic,epic}
 
+%\usepackage[bbgreekl]{mathbbol}
+\usepackage{color}
+
 \usepackage{amsmath}
 \usepackage{amsmath,amsthm,amsfonts}
 \usepackage{amssymb}
@@ -47,6 +50,13 @@ Vancouver, B.C., Canada V6T 1Z2
 \newcommand{\FF} {\mathbb{F}}
 \renewcommand{\O}{\mathcal{O}}
 
+\newcommand{\bfGamma} {\mathbf{\Gamma}}
+\newcommand{\DT}{\mathrm{DT}}
+\newcommand{\PT}{\mathrm{PT}}
+\newcommand{\sm}{\mathrm{sm}}
+\newcommand{\sing}{\mathrm{sing}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\EE}{\mathbb{E}}
 
 \newcommand{\rt}[1]{\stackrel{#1\,}{\rightarrow}}
 \newcommand{\Rt}[1]{\stackrel{#1\,}{\longrightarrow}}
@@ -74,7 +84,7 @@ Vancouver, B.C., Canada V6T 1Z2
 \begin{document}
 
 \begin{abstract}
-Motivated by a new calculation of the Katz-Klemm-Vafa formula (primitive case), the first two authors conjectured a product formula for a certain generating function involving the topological vertex. In this paper we prove this formula using the infinite wedge formalism. The method is by writing the generating function as a trace and then combining standard commutation relations of vertex operators with cyclicity of trace. This trick was picked up by the third author from a paper of J.~Bouttier, G.~Chapuy and S.~Corteel. The techniques of this paper are useful for calculating generating functions of Donaldson-Thomas or stable pair invariants in numerous geometric settings.
+Motivated by a new calculation of the Katz-Klemm-Vafa formula (primitive case), the first two authors conjectured a product formula for a certain generating function involving the topological vertex. In this paper we prove this formula using the infinite wedge formalism. The method is by writing the generating function as the trace of an operator and combining standard commutation relations of vertex operators with cyclicity of trace. This trick was picked up by the third author from a paper of J.~Bouttier, G.~Chapuy and S.~Corteel. The techniques of this paper are useful for calculating generating functions of Donaldson-Thomas or stable pair invariants in numerous geometric settings.
 \end{abstract}
 
 \maketitle 
@@ -89,12 +99,71 @@ Motivated by a new calculation of the Katz-Klemm-Vafa formula (primitive case), 
 
 \section{Introduction}
 
-\noindent \textbf{Acknowledgements.} Paul Johnson, PIMS, ...
+\subsection{Motivation from geometry} Let $S \rightarrow \PP^1$ be an elliptic surface with a section and at worst 1-nodal fibres. Interesting examples include the elliptical K3 surface and the rational elliptic surface. The total space of the canonical bundle $X = \mathrm{Tot}(K_S)$ is a non-compact Calabi-Yau 3-fold. 
+
+Let $F^{\sm}$ and $F^{\sing}$ be a smooth and singular fibre of $S$, and let $B$ be the section. Consider moduli spaces 
+$$
+I_\chi(X,F^{\sm},d), I_\chi(X,F^{\sing},d), I_\chi(X,F^{\sm} \cup B,d), I_\chi(X,F^{\sing} \cup B,d) 
+$$
+of ideal sheaves on $X$ with proper support $Y$ with underlying reduced support $F^{\sm}$, $F^{\sing}$, $F^{\sm} \cup B$, $F^{\sing} \cup B$ respectively, and with multiplicity $d$ along the fibre and $\chi(\O_Y) = \chi$. Denoting (topological) Euler characteristic by $e(\cdot)$, and consider the corresponding generating functions
+\begin{align*}
+Z(F^{\sm}) &= \sum_{\chi, d} e(I_\chi(X,F^{\sm},d)) p^\chi q^d, \\
+Z(F^{\sing}) &= \sum_{\chi, d} e(I_\chi(X,F^{\sing},d)) p^\chi q^d, \\
+Z(F^{\sm} \cup B) &= \sum_{\chi, d} e(I_\chi(X,F^{\sm} \cup B,d)) p^\chi q^d, \\
+Z(F^{\sing} \cup B) &= \sum_{\chi, d} e(I_\chi(X,F^{\sing} \cup B,d)) p^\chi q^d.
+\end{align*}
+Now let $B$ denote the homology class of the section and $F$ the homology class of the fibre and let $I_\chi(X,\epsilon B+dF)$ be the moduli space of ideal sheaves on $X$ with proper support $Y$ of class $\epsilon B+dF$ and $\chi(\O_Y) = \chi$. Using the fibre $\CC^*$ action and stratification arguments, the first two authors show in \cite{BK} that 
+\begin{align*}
+\frac{\sum_{\chi, d} e(I_\chi(X,B+dF)) p^\chi q^d}{\sum_{\chi, d} e(I_\chi(X,dF)) p^\chi q^d} = \left( \frac{Z(F^{\sm} \cup B)}{Z(F^{\sm})} \right)^{2-N} \left( \frac{Z(F^{\sing} \cup B)}{Z(F^{\sing})} \right)^N,
+\end{align*}
+where $N$ is the number of singular fibres. Here the right hand side can be seen as a connected Donaldson-Thomas type generating function. If the Euler characteristics were weighted by the Behrend function, the right hand side would indeed be a generating function of connected Donaldson-Thomas invariants\footnote{The authors expect that weighing by the Behrend function amounts to replacing $p$ by $-p$.}. 
+
+Denote by $\tilde{W}_{\lambda,\mu,\nu}(p)$ the Donaldson-Thomas vertex of \cite{MNOP1, MNOP2}, where $\lambda, \mu, \nu$ denote (2D) partitions. The tilde indicates that we do \emph{not} count with signs. In \cite{BK} it is shown that
+\begin{align} \label{Z}
+\begin{split}
+Z(F^{\sm}) &= \sum_\lambda q^{|\lambda|}, \\
+Z(F^{\sing}) &= \sum_\lambda \tilde{W}_{\lambda,\lambda',\varnothing}(p) q^{|\lambda|}, \\
+Z(F^{\sm} \cup B) &= (1-p) \sum_\lambda \frac{\tilde{W}_{\lambda, (1), \varnothing}(p)}{\tilde{W}_{\lambda, \varnothing, \varnothing}(p)} q^{|\lambda|}, \\
+Z(F^{\sing} \cup B) &= (1-p) \sum_\lambda \frac{\tilde{W}_{\lambda, \lambda', \varnothing}(p) \tilde{W}_{\lambda, (1), \varnothing}(p)}{\tilde{W}_{\lambda, \varnothing, \varnothing}(p)} q^{|\lambda|},
+\end{split}
+\end{align}
+where $|\lambda|$ denotes the size of the partition, $\lambda'$ denotes the transposed of $\lambda$, $\varnothing$ denotes the empty partition and $(1)$ denotes the partition consisting of a single box. For the purposes of this paper, we take the above equalities as \emph{definitions}.
+
+\subsection{Results} In this paper we use the infinite wedge formalism to compute the generating functions \eqref{Z}. We use the standard vertex operators $\Gamma_{\pm}(p)$, the operators $\E_0(p)$ of A.~Okounkov and R.~Pandharipande \cite{OP} and a standard diagonal operator $\QQ$. Using ``souped up'' versions $\bfGamma_{\pm}(p)$, $\EE_0(p)$ of these operators, we show (Proposition \ref{})
+\begin{align} \label{Z}
+\begin{split}
+Z(F^{\sm}) &= \tr(\QQ), \\
+Z(F^{\sing}) &= M(p) \tr(\bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) \QQ), \\
+Z(F^{\sm} \cup B) &= \tr(\EE_0(p) \QQ), \\
+Z(F^{\sing} \cup B) &= M(p) \tr(\bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) \EE_0(p) \QQ). 
+\end{split}
+\end{align}
+The first generating function is trivial and the second follows from a result of S.~Bloch and A.~Okounkov \cite{BO} 
+\begin{align*} 
+Z(F^{\sm}) &= \prod_{k=1}^{\infty} \frac{1}{1-q^k}, \\
+Z(F^{\sm} \cup B) &= \prod_{k=1}^{\infty} \frac{(1-q^k)}{(1-p q^k)(1-p^{-1} q^k)}.
+\end{align*}
+The generating function $Z(F^{\sing})$ can be computed by expressing it in terms of Schur functions and using a standard identity. Instead, we compute $Z(F^{\sing})$, $Z(F^{\sing} \cup B)$ directly by combining standard commutation relations among the operators and cyclicity of trace. This type of manipulation was picked up by the third author from a paper of J.~Bouttier, G.~Chapuy and S.~Corteel \cite{BCC}. The result is 
+\begin{theorem} \label{main}
+\begin{align*} 
+Z(F^{\sing}) &= M(p) \prod_{k=1}^{\infty} \left( \frac{1}{1-q^k} \prod_{l=1}^{\infty} \frac{1}{(1-q^k p^l)^l} \right), \\
+Z(F^{\sing} \cup B) &= M(p) \prod_{k=1}^{\infty} \left( \frac{1}{(1-p q^k)(1-p^{-1} q^k)} \prod_{l=1}^{\infty} \frac{1}{(1-q^k p^l)^l} \right), 
+\end{align*}
+where 
+\begin{align*}
+M(p) = \prod_{k>0} \frac{1}{(1-p^k)^k}
+\end{align*}
+is the MacMahon function.
+\end{theorem}
+
+\subsection{Consequences} ... \\
+
+\noindent \textbf{Acknowledgements.} We are grateful to Paul Johnson for pointing out that $Z(F^{\sm} \cup B)$ is computed in \cite{BO}. We also thanks ... for useful discussion. During this research the second author was supported by a PIMS Postdoctoral Fellowship (CRG ``Geometry and Physics''). ...
 
 
 \section{Review of the infinite wedge formalism}
 
-We start with a brief review of the infinite wedge formalism, various operators and their commutation relations of vertex operators appearing in the work of A.~Okounkov, R.~Pandharipande \cite{OP} and Okounov, N.~Reshetikhin \cite{OR2}. See also \cite{Kac} and \cite{You}. This section is transcribed from these references. We include it in order to establish our sign conventions and for the readers convenience.
+We start with a brief review of the infinite wedge formalism, vertex operators and their commutation relations as appearing in the work of Okounkov, Pandharipande \cite{OP} and Okounov, N.~Reshetikhin \cite{OR2}. See also \cite{Kac} and \cite{You}. This section is transcribed from these references. We include it in order to establish our sign conventions and for the readers convenience.
 
 Let $V$ be the complex vector space spanned by $\underline{k}$, where $k \in \ZZ + \frac{1}{2}$. By definition, the infinite wedge space $\Lambda^{\frac{\infty}{2}} V$ is the complex vector space spanned by vectors
 $$
@@ -104,7 +173,7 @@ where $S = \{s_1 > s_2 > \cdots\} \subset \ZZ + \frac{1}{2}$ for which both
 $$
 S_+ = S \setminus \Big(\ZZ_{\leq 0} - \frac{1}{2} \Big), \ S_- = \Big(\ZZ_{\leq 0} - \frac{1}{2} \Big) \setminus S
 $$ 
-are finite. The subspace spanned $v_S$ for which $|S_+| = |S_-|$ is known as the zero charge space and denoted by $\Lambda^{\frac{\infty}{2}}_{0} V$. The collection of subset $S = \{s_1 > s_2 > \cdots\} \subset \ZZ + \frac{1}{2}$ for which $|S_+| = |S_-|$ is in natural bijection with the collection of plane partitions $\lambda = \{\lambda_1 \geq \lambda_2 \geq \cdots\} \subset \ZZ_{\geq 0}$ via the mapping \cite[2.1.3]{OR}
+are finite. The subspace spanned $v_S$ for which $|S_+| = |S_-|$ is known as the zero charge space and denoted by $\Lambda^{\frac{\infty}{2}}_{0} V$. The collection of sets $S = \{s_1 > s_2 > \cdots\} \subset \ZZ + \frac{1}{2}$ for which $|S_+| = |S_-|$ is in natural bijection with the collection of plane partitions $\lambda = \{\lambda_1 \geq \lambda_2 \geq \cdots\} \subset \ZZ_{\geq 0}$ via the mapping \cite[2.1.3]{OR}
 $$
 \lambda \mapsto \mathfrak{S}(\lambda) = \Big\{ \lambda_i - i + \frac{1}{2} \Big\}_i \subset \ZZ + \frac{1}{2}.
 $$
@@ -114,66 +183,238 @@ In particular, the vacuum vector is given by
 $$
 |\varnothing \rangle := \underline{-\frac{1}{2}} \wedge \underline{-\frac{3}{2}} \wedge \cdots.
 $$
-Denote by $\langle \cdot | \cdot \rangle$ the complex inner product for which
+Denote by $\langle \cdot | \cdot \rangle$ the complex inner product determined by
 $$
 \langle \lambda | \mu \rangle = \delta_{\lambda\mu},
 $$
 where $\delta_{\lambda\mu}$ is the Kronecker delta. 
 
-For each $k \in \ZZ + \frac{1}{2}$ one defines the operator (on $\Lambda^{\frac{\infty}{2}} V$)
+For each $k \in \ZZ + \frac{1}{2}$ one defines the operator 
 $$
 \psi_k := \underline{k} \wedge \cdot
 $$
-and its adjoint is denoted by $\psi_{k}^{*}$. These operators satisfy the anti-commutation relations
+on $\Lambda^{\frac{\infty}{2}} V$ and its adjoint is denoted by $\psi_{k}^{*}$. These operators satisfy the anti-commutation relations
 \begin{align*}
-\psi_k \psi_l + \psi_l \psi_k = \psi_{k}^{*} \psi_{l}^{*} + \psi_{l}^{*} \psi_{k}^{*} = 0, \\ 
-\psi_k \psi_{l}^{*} + \psi_{l}^{*} \psi_{k} = \delta_{kl}.  
+\psi_k \psi_l + \psi_l \psi_k &= \psi_{k}^{*} \psi_{l}^{*} + \psi_{l}^{*} \psi_{k}^{*} = 0, \\ 
+\psi_k \psi_{l}^{*} + \psi_{l}^{*} \psi_{k} &= \delta_{kl}.  
 \end{align*}
 These operators can be combined to
 $$
-\psi(a) := \sum_{k \in \ZZ + \frac{1}{2}} \psi_k a^k, \ \psi^*(a) := \sum_{k \in \ZZ + \frac{1}{2}} \psi_{k}^{*} a^{-k}. 
+\psi(z) := \sum_{k \in \ZZ + \frac{1}{2}} \psi_k z^k, \ \psi^*(z) := \sum_{k \in \ZZ + \frac{1}{2}} \psi_{k}^{*} z^{-k}. 
 $$
 Next consider the operators 
 $$
-\alpha_n := \sum_{k \in \ZZ + \frac{1}{2}} \psi_{k+n} \psi_{k}^{*}, \ n \in \ZZ.
+\alpha_n := \sum_{k \in \ZZ + \frac{1}{2}} \psi_{k-n} \psi_{k}^{*}, \ n \in \ZZ.
 $$
 These satisfy the Heisenberg commutation relations $[\alpha_n,\alpha_m] = -n \delta_{n,-m}$ and
 $$
-[\alpha_n, \psi(a)] = a^{-n} \psi(a), \ [\alpha_n, \psi^*(a)] =  - a^{-n} \psi^*(a). 
+[\alpha_n, \psi(z)] = z^{n} \psi(z), \ [\alpha_n, \psi^*(z)] =  - z^{n} \psi^*(z). 
 $$
 
 We are interested in the vertex operators
 $$
-\Gamma_{\pm}(q) := \exp \Big( \sum_{n \geq 1} \frac{q^n}{n!} \alpha_\pm \Big).
+\Gamma_{\pm}(p) := \exp \Big( \sum_{n \geq 1} \frac{p^n}{n} \alpha_\pm \Big).
 $$
 These acts on $\Lambda^{\frac{\infty}{2}}_{0} V$ as follows
-\begin{align*}
-\Gamma_-(q) |\mu \rangle &= \sum_{\lambda \succ \mu} q^{|\lambda| - |\mu|} |\lambda \rangle, \\ 
-\Gamma_+(q) | \lambda \rangle &= \sum_{\lambda \succ \mu} q^{|\lambda| - |\mu|} |\mu \rangle.
-\end{align*}
+\begin{align} \label{add/remove}
+\begin{split} 
+\Gamma_-(p) |\mu \rangle &= \sum_{\lambda \succ \mu} p^{|\lambda| - |\mu|} |\lambda \rangle, \\ 
+\Gamma_+(p) | \lambda \rangle &= \sum_{\lambda \succ \mu} p^{|\lambda| - |\mu|} |\mu \rangle.
+\end{split}
+\end{align}
 Here $|\lambda|:=\sum_i \lambda_i$ is the size of the partition and $\lambda \succ \mu$ means $\lambda$ interlaces $\mu$, i.e.
 $$
 \lambda_1 \geq \mu_1 \geq \lambda_2 \geq \mu_2 \geq \cdots.
 $$
-Equivalently, the skew diagram $\lambda \setminus \mu$ is a disjoint union of horizontal strips (see \cite{You} for details). Therefore we think of $\Gamma_-(q) |\mu\rangle$ as adding horizontal strips from $\mu$ and $\Gamma_+(q) |\lambda\rangle$ as removing horizontal strips from $\lambda$. 
+Equivalently, the skew diagram $\lambda \setminus \mu$ is a disjoint union of horizontal strips (see \cite{You} for details). Therefore we think of $\Gamma_-(q) |\mu\rangle$ as adding horizontal strips to $\mu$ and $\Gamma_+(q) |\lambda\rangle$ as removing horizontal strips from $\lambda$. 
 
 We will use the following commutation relations from Okounkov and Reshetikhin \cite{OR2}
-\begin{align*}
-\Gamma_+(a) \psi(b) &= (1-a b^{-1})^{-1} \psi(b) \Gamma_+(a), \\
-\Gamma_-(a) \psi(b) &= (1-a b)^{-1} \psi(b) \Gamma_-(a), \\
-\Gamma_+(a) \psi^*(b) &= (1-a b^{-1}) \psi^*(b) \Gamma_+(a), \\
-\Gamma_-(a) \psi^*(b) &= (1-a b) \psi^*(b) \Gamma_-(a)
-\end{align*}
-\begin{align*}
-\Gamma_+(a)\Gamma_-(b) = (1-ab) \Gamma_-(b)\Gamma_+(a)
-\end{align*}
+\begin{align} \label{gammapsi}
+\begin{split}
+\Gamma_+(p) \psi(z) &= (1-p z)^{-1} \psi(z) \Gamma_+(p), \\
+\Gamma_-(p) \psi(z) &= (1-p^{-1} z)^{-1} \psi(z) \Gamma_-(p), \\
+\Gamma_+(p) \psi^*(z) &= (1-p z) \psi^*(z) \Gamma_+(p), \\
+\Gamma_-(p) \psi^*(z) &= (1-p^{-1} z) \psi^*(z) \Gamma_-(p)
+\end{split}
+\end{align}
+\begin{align} \label{gammapm}
+\Gamma_+(p)\Gamma_-(p') = (1-p p')^{-1} \Gamma_-(p')\Gamma_+(p)
+\end{align}
+
+We end this section by introducing some more operators. For any $a \in \RR$, consider the following diagonal operator on $\Lambda^{\frac{\infty}{2}}_{0} V$ 
+$$
+\QQ^a |\lambda\rangle = q^{a|\lambda|} |\lambda\rangle.
+$$
+From \eqref{add/remove} it is clear that
+\begin{align} \label{gammaQ}
+\Gamma_{\pm}(p) \QQ^a = \QQ^a \Gamma_{\pm}(q^{\pm a} p).
+\end{align}
+Finally, for any $r \in \ZZ$, we use the following operators of Okounkov and Pandharipande \cite{OP}
+$$
+\E_r(q) := \sum_{k \in \ZZ + \frac{1}{2}} q^{\frac{r}{2} - k} \psi_{k-r} \psi_{k}^{*}.
+$$  
+%Up to $e^z = 1/q$ and normal ordering ::.
 
 
 \section{Operators and commutation relations}
 
+In this section we introduce vertex operators relevant for Donaldson-Thomas theory and consider their basic commutation relations.
+
+\begin{definition} 
+Define
+\begin{align*}
+\mathbf{\Gamma}_{-}(p^{-\rho}) &:= \Gamma_{-}(p^{\frac{1}{2}}) \Gamma_{-}(p^{\frac{3}{2}}) \Gamma_{-}(p^{\frac{5}{2}}) \cdots \\
+\mathbf{\Gamma}_{+}(p^{-\rho}) &:=  \cdots \Gamma_{+}(p^{\frac{5}{2}}) \Gamma_{+}(p^{\frac{3}{2}}) \Gamma_{+}(p^{\frac{1}{2}}).
+\end{align*}
+%Jim's notes: $\mathbf{\Gamma}_{+}(p^{-\rho}) := \Gamma_{+}(p^{\frac{1}{2}}) \Gamma_{+}(p^{\frac{3}{2}}) \Gamma_{+}(p^{\frac{5}{2}}) \cdots$. I think the order should be as above, see Example 1 below.
+We also write $q p^{-\rho} = (q p^{\frac{1}{2}}, q p^{\frac{3}{2}},  \ldots)$. Furthermore, define
+\begin{align*}
+\EE_r(p) &:=(p^{-\frac{1}{2}} - p^{\frac{1}{2}}) p^{-\frac{n}{2}} \E_r(p), \\
+\EE(a,p) &:=\sum_{r \in \ZZ} \EE_r(p) a^{-r} = (p^{-\frac{1}{2}} - p^{\frac{1}{2}}) \psi(a) \psi^*(a p).
+\end{align*}
+\end{definition}
+
+Define the refined MacMahon function
+$$
+M(q,p) := \prod_{k=1}^{\infty} \frac{1}{(1-q p^k)^k}
+$$
+
+\begin{proposition}
+\begin{align} 
+\bfGamma_{\pm}(p) \QQ &= \QQ \bfGamma_{\pm}(q^{\pm} p), \label{bfgammaQ} \\
+\bfGamma_+(q p^{-\rho}) \mathbf{\Gamma}_-(p^{-\rho}) &= M(q,p) \bfGamma_-(p^{-\rho}) \bfGamma_+(q p^{-\rho}), \label{bfgammapm} \\
+\EE(a,p) \QQ &= \QQ \EE(q^{-1} a,p) \label{EQ}, \\
+\bfGamma_+(q p^{-\rho}) \EE(a,p) &= (1-q p^{\frac{1}{2}} a)^{-1} \EE(a,p)\bfGamma_+(q p^{-\rho}), \label{bfgamma+E} \\
+\bfGamma_-(q p^{-\rho}) \EE(a,p) &= (1-q p^{-\frac{1}{2}} a^{-1}) \EE(a,p)\bfGamma_-(q p^{-\rho}) \label{bfgamma-E}.
+\end{align}
+\end{proposition}
+\begin{proof}
+Equation \eqref{bfgammaQ} is immediate from \eqref{gammaQ}. Equation \eqref{bfgammapm} follows from \eqref{gammapm}. Equation \eqref{EQ} follows from the definition of $\EE(a,p)$ and
+\begin{align*}
+\psi_{k-n} \psi_{k}^{*} \QQ | \lambda \rangle &= \left\{ \begin{array}{cc} (-1)^{i-1} q^{|\lambda|} \underline{\lambda_1 - \frac{1}{2}} \wedge \underline{\lambda_{2} - \frac{3}{2}} \wedge \cdots \wedge \underline{\lambda_i - i + \frac{1}{2} - n} \wedge \cdots & \mathrm{if \ } k = \lambda_i - i + \frac{1}{2} \\ 0 & \mathrm{otherwise}, \end{array} \right. \\
+\QQ \psi_{k-n} \psi_{k}^{*} | \lambda \rangle &= \left\{ \begin{array}{cc} (-1)^{i-1} q^{|\lambda|-n} \underline{\lambda_1 - \frac{1}{2}} \wedge \underline{\lambda_{2} - \frac{3}{2}} \wedge \cdots \wedge \underline{\lambda_i - i + \frac{1}{2} - n} \wedge \cdots & \mathrm{if \ } k = \lambda_i - i + \frac{1}{2} \\ 0 & \mathrm{otherwise}. \end{array} \right.
+\end{align*}
+For \eqref{bfgamma+E} we use \eqref{gammapsi}
+\begin{align*}
+\cdots \Gamma_+(q p^{\frac{3}{2}}) \Gamma_+(q p^{\frac{1}{2}}) \psi(a) \psi^*(a p) &= \bigg( \prod_{i \geq 0} \frac{1}{1-q p^{\frac{1}{2}+i} a} \bigg) \psi(a) \cdots \Gamma_+(q p^{\frac{3}{2}}) \Gamma_+(q p^{\frac{1}{2}}) \psi^*(a p) \\
+&= \bigg( \prod_{i \geq 0} \frac{1}{1-q p^{\frac{1}{2}+i} a} \bigg) \bigg( \prod_{j > 0} (1-q p^{\frac{1}{2}+j} a) \bigg) \psi(a) \psi^*(a p) \cdots \Gamma_+(q p^{\frac{3}{2}}) \Gamma_+(q p^{\frac{1}{2}}) \\
+&= (1-q p^{\frac{1}{2}} a)^{-1} \psi(a) \psi^*(a p) \cdots \Gamma_+(q p^{\frac{3}{2}}) \Gamma_+(q p^{\frac{1}{2}}).
+\end{align*}
+Equation \eqref{bfgamma-E} follows similarly.
+\end{proof}
+
+A well-known application of the first commutation relation of the previous proposition is the following example (cf.~\cite{ORV}).
+\begin{example} \label{MacMah}
+The following is a well-known application of commutation relation \eqref{bfgammapm}. 
+\begin{align} \label{3D}
+\sum_{\pi \ \mathrm{plane \ partitions}} p^{|\pi|}.
+\end{align}
+For any real number $a$ define $\PP^a |\lambda\rangle = p^{a|\lambda|} |\lambda\rangle$. Plane partitions $\pi$ are in 1-1 correspondence with sequences of interlaced (2D) partitions by taking slicings along the line $y=x+k$ for $k \in \ZZ$ (cf.~\cite[Lem.~3.3.2]{You}). Therefore using \eqref{add/remove} gives 
+\begin{align*}
+\eqref{3D} &=\langle \varnothing | \cdots \PP \Gamma_+(1) \ \PP \Gamma_+(1) \ \PP \Gamma_+(1) \ \PP \Gamma_-(1) \ \PP \Gamma_-(1) \ \PP \Gamma_-(1) \cdots |\varnothing\rangle \\
+&= \langle \varnothing | \cdots \PP \Gamma_+(1) \ \PP \Gamma_+(1) \ \PP \Gamma_+(1) \PP^{\frac{1}{2}} \ \PP^{\frac{1}{2}} \Gamma_-(1) \ \PP \Gamma_-(1) \ \PP \Gamma_-(1) \cdots |\varnothing\rangle \\
+&= \langle \varnothing | \cdots \PP \Gamma_+(1) \ \PP \Gamma_+(1) \ \PP^{\frac{3}{2}} \Gamma_+(p^{\frac{1}{2}}) \ \Gamma_-(p^{\frac{1}{2}})\PP^{\frac{3}{2}} \ \Gamma_-(1) \PP \Gamma_-(1) \cdots |\varnothing\rangle \\
+&= \cdots = \langle \varnothing | \mathbf{\Gamma}_{+}(p^{-\rho}) \mathbf{\Gamma}_{-}(p^{-\rho}) | \varnothing \rangle,
+\end{align*}
+where we (repeatedly) used \eqref{gammaQ} to get the last equality. Using \eqref{bfgammapm}, this equals
+\begin{align*}
+M(1,p) \langle \varnothing | \mathbf{\Gamma}_{-}(p^{-\rho}) \mathbf{\Gamma}_{+}(p^{-\rho}) | \varnothing \rangle &= M(1,p) \langle \varnothing | \mathbf{\Gamma}_{-}(p^{-\rho}) | \varnothing \rangle \\ 
+&= M(1,p) \langle \varnothing | \varnothing \rangle \\
+&= M(1,p).
+\end{align*}
+\end{example} 
+
+\begin{definition}
+For any three partitions $\lambda, \mu, \nu$, we denote by $W_{\lambda,\mu,\nu}(p)$ the Donaldson-Thomas vertex introduced by \cite{MNOP1} 
+%and by $W_{\lambda,\mu,\nu}^{\PT}(p)$ the stable pair vertex introduced by \cite{PT2} 
+under the Calabi-Yau specialization $s_1+s_2+s_3=0$\footnote{In $W_{\lambda,\mu,\nu}(p)$, $\lambda$ corresponds to the cross-section of the curve along the $x$-axis, $\mu$ corresponds to the cross-section along the $y$-axis and $\nu$ corresponds to the cross-section along the $z$-axis.} 
+%Should we say more about orientation of the partitions, i.e.~the framing in [ORV]?}}. These are \emph{signed} counts of the components of the fixed locus indexed by $(\lambda,\mu,\nu)$
+%\footnote{For PT theory this depends on two conjectures \cite{PT2}.}. 
+We denote by $\tilde{W}_{\lambda,\mu,\nu}(p)$, 
+%$\tilde{W}_{\lambda,\mu,\nu}^{\PT}(p)$ 
+the corresponding counts omitting the signs.
+\end{definition}
+
+\begin{proposition} \label{2legs}
+For any partitions $\lambda, \mu$
+\begin{align*}
+\tilde{W}_{\lambda,\mu,\varnothing}(p) = p^{-\frac{1}{2} |\lambda| + \frac{1}{2} |\mu|} \langle \mu | \mathbf{\Gamma}_+(p^{-\rho}) \mathbf{\Gamma}_-(p^{-\rho}) | \lambda \rangle.
+%\tilde{W}_{\varnothing,\lambda,\mu}^{\PT}(p) = \langle \mu | \mathbf{\Gamma}_-(p^{-\rho}) \mathbf{\Gamma}_+(p^{-\rho}) | \lambda \rangle
+%Proof for this?????
+\end{align*}
+\end{proposition}
+\begin{proof}
+For any $M,N$, \eqref{add/remove} gives
+\begin{align*}
+\sum_{\mu = \mu_M \prec \cdots \prec \mu_1 \prec \lambda_1 \succ \cdots \succ \lambda_N \succ \lambda} p^{\sum_{i=1}^{M} |\mu_i| + \sum_{i=1}^{N} |\lambda_i|} = \langle \mu | (\PP \Gamma_+(1))^M (\PP \Gamma_-(1))^N | \lambda \rangle.
+\end{align*}
+Using the same manipulations as in Example \ref{MacMah}, this is equal to
+\begin{align*}
+p^{(M+\frac{1}{2})|\mu|+(N-\frac{1}{2})|\lambda|} \langle \mu | \Gamma_+(p^{M - \frac{1}{2}}) \cdots \Gamma_+(p^{\frac{1}{2}}) \Gamma_-(p^{\frac{1}{2}}) \cdots \Gamma_-(p^{N - \frac{1}{2}}) | \lambda \rangle.
+\end{align*}
+The result follows from the fact that
+\begin{align*}
+\tilde{W}_{\varnothing,\lambda,\mu}(p) = \lim_{M,N \rightarrow \infty} \sum_{\mu = \mu_M \prec \cdots \prec \mu_1 \prec \lambda_1 \succ \cdots \succ \lambda_N \succ \lambda} p^{\sum_{i=1}^{M} (|\mu_i|-|\mu|) + \sum_{i=1}^{N} (|\lambda_i|-|\lambda|)}.
+\end{align*}
+\end{proof}
+
+In the introduction we introduced generating functions $Z(F^{\sm})$, $Z(F^{\sing})$, $Z(F^{\sm}\cup B)$, $Z(F^{\sing}\cup B)$. For the purposes of this paper one can take \eqref{Z} as their definition. Clearly $Z(F^{\sm}) = \tr(\QQ)$. The other generating functions can be written as traces as follows
+\begin{proposition}
+\begin{align} 
+Z(F^{\sm} \cup B) &= \tr(\EE_0(p) \QQ), \label{ZsmB} \\
+Z(F^{\sing}) &= M(p) \tr(\bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) \QQ), \label{Zsing} \\
+Z(F^{\sing} \cup B) &= M(p) \tr(\bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) \EE_0(p) \QQ) \label{ZsingB}. 
+\end{align}
+\end{proposition}
+\begin{proof}
+On the one hand
+\begin{align*} 
+p^{-k} \psi_k \psi_{k}^{*} | \lambda \rangle = \left\{ \begin{array}{cc} p^{-(\lambda_i - i + \frac{1}{2})} | \lambda \rangle & \mathrm{if \ } k = \lambda_i-i+\frac{1}{2} \\ 0 & \mathrm{otherwise} \end{array} \right.
+\end{align*}
+and therefore we have
+\begin{align*}
+\langle \lambda | \EE_0(p) \QQ | \lambda \rangle = (p^{-\frac{1}{2}} - p^{\frac{1}{2}}) \sum_{i \geq 1} p^{-(\lambda_i-i+\frac{1}{2})} q^{|\lambda|}.
+\end{align*}
+On the other hand we have \cite[(3.20)]{ORV}\footnote{In \cite{ORV}, $\tilde{W}_{\lambda,\mu,\nu}$ is denoted by $P_{\lambda,\mu,\nu}$.}
+%Is the footnote true? Are the conventions compatible? I think yes: i.e.~(3.20) is in term of Schur functions, where we have only one convention!
+\begin{align} \label{ORV}
+\frac{\tilde{W}_{\varnothing,(1),\lambda'}(p)}{\tilde{W}_{\varnothing, \lambda, \varnothing}(p)} = \sum_{i \geq 1} p^{-\lambda_i+i-1},
+\end{align}
+and therefore
+\begin{align*}
+Z(F^{\sm} \cup B) &= (1-p) \sum_\lambda \frac{\tilde{W}_{\lambda, (1), \varnothing}(p)}{\tilde{W}_{\lambda, \varnothing, \varnothing}(p)} q^{|\lambda|} \\
+&= (1-p) \sum_\lambda \frac{\tilde{W}_{\varnothing,(1),\lambda'}(p)}{\tilde{W}_{\varnothing, \lambda, \varnothing}(p)} q^{|\lambda|} \\
+&= (p^{-\frac{1}{2}} - p^{\frac{1}{2}}) \sum_{\lambda} \sum_{i \geq 1} p^{-(\lambda_i-i+\frac{1}{2})} q^{|\lambda|}.
+\end{align*} 
+This proves \eqref{ZsmB}. 
+
+Clearly
+\begin{align*}
+\tr(\bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) \QQ) = \sum_\lambda \langle \lambda | \mathbf{\Gamma}_-(p^{-\rho}) \mathbf{\Gamma}_+(p^{-\rho}) | \lambda \rangle q^{|\lambda|}.
+\end{align*}
+By Proposition \ref{2legs} and \eqref{bfgammapm}
+\begin{align*}
+Z(F^{\sing}) = \sum_\lambda \tilde{W}_{\lambda,\lambda',\varnothing}^{\DT}(p) q^{|\lambda|} &= \sum_\lambda \langle \lambda | \mathbf{\Gamma}_+(p^{-\rho}) \mathbf{\Gamma}_-(p^{-\rho}) | \lambda \rangle q^{|\lambda|}  \\
+&= M(p) \sum_\lambda \langle \lambda | \mathbf{\Gamma}_-(p^{-\rho}) \mathbf{\Gamma}_+(p^{-\rho}) | \lambda \rangle q^{|\lambda|}. 
+\end{align*}
+Equation \eqref{Zsing} follows. 
+
+Finally 
+\begin{align*}
+M(p) \tr(\bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) \EE_0(p) \QQ) &= (p^{-\frac{1}{2}} - p^{\frac{1}{2}}) M(p) \sum_{\lambda} \sum_{i \geq 1} \langle \lambda | \bfGamma_-(p^{-\rho}) \bfGamma_+(p^{-\rho}) | \lambda \rangle p^{-(\lambda_i-i+\frac{1}{2})} q^{|\lambda|} \\
+&= (p^{-\frac{1}{2}} - p^{\frac{1}{2}}) \sum_{\lambda} \sum_{i \geq 1} \langle \lambda | \bfGamma_+(p^{-\rho}) \bfGamma_-(p^{-\rho}) | \lambda \rangle p^{-(\lambda_i-i+\frac{1}{2})} q^{|\lambda|} \\
+&= (p^{-\frac{1}{2}} - p^{\frac{1}{2}}) \sum_{\lambda} \sum_{i \geq 1} \tilde{W}_{\lambda,\lambda',\varnothing}(p) p^{-(\lambda_i-i+\frac{1}{2})} q^{|\lambda|} \\
+&= (1 - p) \sum_{\lambda} \frac{\tilde{W}_{\lambda,\lambda',\varnothing}(p) \tilde{W}_{\varnothing,(1),\lambda'}(p)}{\tilde{W}_{\varnothing, \lambda, \varnothing}(p)} q^{|\lambda|},
+\end{align*}
+where we used \eqref{bfgammapm}, Proposition \ref{2legs} and \eqref{ORV}
+\end{proof}
+
+
+\newpage
+
 Define our bold face operators with their commutation relations derived from previous section. Reference to Bloch-Okounkov. Possibly derivation MacMahon and 2 leg DT=PT as warm-up examples?
 
-\section{Calculation}
+\section{Proof of Theorem \ref{main}}
 
 The disconnected series (known identity) first using the trace trick. Our new formula second.
 

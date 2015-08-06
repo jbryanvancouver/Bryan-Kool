@@ -19,6 +19,8 @@ Vancouver, B.C., Canada V6T 1Z2
 \usepackage{times}
 \usepackage[all]{xy}
 %\usepackage{amstex}
+\usepackage[colorinlistoftodos]{todonotes}
+
 
 
 %\newtheorem{thm}{Theorem}%[section]
@@ -68,11 +70,18 @@ Vancouver, B.C., Canada V6T 1Z2
 \newcommand{\smargin}[1]{\marginpar{\tiny{#1}}}
 \newcommand{\Sym}{\operatorname{Sym}}
 \newcommand{\Coh}{\operatorname{Coh}}
-
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\DT}{\operatorname{DT}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
 
 \begin{document}
 
 \begin{abstract}
+%Jim's original:
+
 We compute the Donaldson-Thomas invariants of a local elliptic surface
 with section. We introduce a new computational technique which is a
 mixture of motivic and toric methods. This allows us to write the
@@ -95,10 +104,132 @@ a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 
 \section{Introduction}
 
-I really need to start working on this.
+\section{Definitions}
+
+Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$ of genus $g$. We make two assumptions:
+\begin{itemize}
+\item $p$ has a section $B \hookrightarrow S$,
+\item all singular fibres of $\pi$ are of Kodaira type $I_1$, i.e.~rational nodal fibres. 
+\end{itemize}
+We denote the classes of the fibre and section by $B, F \in H^2(S,\ZZ)$. Interesting examples are the elliptic surfaces $E(n)$, where $B = \PP^1$ and $S$ has $12n$ nodal fibres. Then $E(1)$ is the rational elliptic surface and $E(2)$ is the elliptic K3 surface.
+
+Let $\beta \in H_2(S)$ be Poincar\'e dual to $B+hF$, where $h \geq 0$. 
+%Then
+%$$
+%\beta^2 = 2h + B^2
+%$$
+Now let $X = \mathrm{Tot}(K_S)$ be the total space of the canonical bundle over $S$. Then $X$ is a non-compact Calabi-Yau 3-fold. Let
+$$
+\Hilb^{\beta,n}(X) = \{ Z \subset X \ : \ [Z] = \beta, \ \chi(\O_Z) = n\}
+$$
+denote the Hilbert scheme of proper subschemes $Z \subset X$ with fixed homology class and holomorphic Euler characteristics. K.~Behrend associates to any $\CC$-scheme of finite type $Y$ a constructible function $\nu : Y \rightarrow \ZZ$ \cite{Beh}. Applied to $\Hilb^{\beta,n}(X)$, the Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$ is a compact Calabi-Yau 3-fold, R.P.~Thomas's original definition of DT invariants is by the degree of the virtual cycle of $\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed that this is the same as $e(\Hilb^{\beta,n}(X),\nu)$ \cite{Beh}. The advantage of the definition by means of virtual cycles is that the construction works relative to a base. This implies deformation invariance of the invariants.} 
+$$
+\DT_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} \nu \ de := \sum_{k \in \ZZ} k \ e(\nu^{-1}(\{k\})),
+$$
+where $e(\cdot)$ denotes topological Euler characteristic. Many of the key properties of DT invariants are already captured by the more classical Euler characteristic version\footnote{From the point of view of \cite{Joy, Bri}: there are two natural integration maps on the semi-classical Hall-algebra. One corresponds to weighing by the Behrend function and the other to weighing by the ``trivial'' constructible function which is constant equal to 1.}
+$$
+\widehat{\DT}_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} 1 \ de = e(\Hilb^{\beta,n}(X)).
+$$
+For brevity, we define
+\begin{align*}
+\Hilb^{h,n}(X) &:=\Hilb^{B+hF,n}(X), \\
+\DT_{\beta,n}(X) &:= \DT_{B+hF,n}(X), \\
+\widehat{\DT}_{h,n}(X) &:= \DT_{B+hF,n}(X).
+\end{align*}
+The generating functions of interest are
+\begin{align*}
+\DT(X) &:= \sum_{h \geq 0} \DT_h(X) q^h := \sum_{h \geq 0} \sum_{n \in \ZZ} \DT_{h,n}(X) p^n q^h, \\
+\widehat{\DT}(X) &:= \sum_{h \geq 0} \widehat{\DT}_h(X) q^h := \sum_{h \geq 0} \sum_{n \in \ZZ} \widehat{\DT}_{h,n}(X) p^n q^h.
+\end{align*}
+
+Since we are dealing with generating functions and our calculations involve cut-paste methods on the moduli space, it is useful to introduce the following notation. We define
+\begin{align*}
+[\Hilb^{h,\bullet}(X)] := \sum_{n \in \ZZ} [\Hilb^{h,n}(X)] p^n,
+\end{align*}
+which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with coefficients in the Grothendieck group of varieties. We also write $\Hilb^{h,\bullet}(X)$ to denote the union of all $\Hilb^{h,n}(X)$. Therefore $\Hilb^{h,\bullet}(X)$ is a $\CC$-scheme which is locally of finite type.
 
 
+\section{Reduction to strata with fixed curve class}
 
+\subsection{$\CC^*$-localization} The scaling action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{h,\bullet}(X)$. Therefore
+$$
+e(\Hilb^{h,\bullet}(X)) = e(\Hilb^{h,\bullet}(X)^{\CC^*}).
+$$
+Therefore, we only need to restrict attention to $\Hilb^{h,\bullet}(X)^{\CC^*}$. 
+
+Using the map $\pi : X \rightarrow S$, a quasi-coherent sheaf on $X$ can be viewed as a quasi-coherent sheaf $\F$ on $S$ together with a morphism $\F \otimes K_{S}^{-1} \rightarrow \F$. A $\CC^*$-equivariant structure on $\F$ translates into a $\ZZ$-grading
+$$
+\pi_* \F = \bigoplus_{i \in \ZZ} \F_i,
+$$
+such that $\F \otimes K_{S}^{-1} \rightarrow \F$ is graded, i.e.
+$$
+\F_i \otimes K_{S}^{-1} \longrightarrow \F_{i-1}.
+$$
+The structure sheaf $\O_X$ corresponds to 
+$$
+\pi_* \O_X = \bigoplus_{i=0}^{\infty} K_{S}^{-i}.
+$$
+Therefore a $\CC^*$-fixed morphism $\F \rightarrow \O_X$ corresponds to a graded sheaf $\F$ as above together with maps
+\begin{displaymath}
+\xymatrix
+{
+\cdots & \F_1 & \oplus & \F_0 \ar[d] & \oplus & \F_{-1} \ar[d] & \oplus & \F_{-2} \ar[d] & \cdots \\
+& & & \O_S & \oplus & K_{S}^{-1} & \oplus & K_{S}^{-2} & \cdots 
+}
+\end{displaymath}
+It is useful to re-define $\G_i := \F_{-i} \otimes K_{S}^{i}$. Then the data of a $\CC^*$-fixed morphism $\F \rightarrow \O_X$ is equivalent to the following data:
+\begin{itemize}
+\item coherent sheaves $\{\G_i\}_{i \in \ZZ}$ on $S$,
+\item morphisms $\{\G_i \rightarrow \G_{i+1}\}_{i \in \ZZ}$,
+\item morphisms $\G_i \rightarrow \O_S$ such that the following diagram commutes:
+\end{itemize}
+\begin{displaymath}
+\xymatrix
+{
+\cdots & \G_{-1} \ar[r] & \G_0 \ar[r] \ar[d] & \G_{-1} \ar[r] \ar[d] & \G_{-2} \ar[r] \ar[d] & \cdots \\
+& & \O_S \ar@{=}[r]& \O_S \ar@{=}[r] & \O_S \ar@{=}[r] & \cdots 
+}
+\end{displaymath}
+In the case of interest to us $\G \rightarrow \O_X$ is an ideal sheaf $I_Z \hookrightarrow \O_X$ cutting out $Z \subset X$. In the above language, this means $\G_i = 0$ for $i<0$, the morphisms $\G_i \rightarrow \O_S$ are injective (hence $\G_i = I_{Z_i}$ is an ideal sheaf cutting out $Z_i \subset S$), and the morphisms $\G_i \rightarrow \G_{i+1}$ are injective (hence $I_{Z_i} \subset I_{Z_{i+1}}$, i.e.~$Z_{i} \supset Z_{i+1}$). We conclude:
+\begin{lemma}
+A closed point $Z$ of $\Hilb^{h,\bullet}(X)^{\CC^*}$ corresponds to a finite nesting of closed subschemes of $S$
+$$
+Z_{0} \supset Z_{1} \supset \cdots \supset Z_{l},
+$$
+for some $l \geq 0$, such such that
+$$
+\sum_{i=0}^{l} [Z_i] = B + hF \in H_2(S).
+$$
+\end{lemma}
+
+In the above lemma, each $Z_i$ contains a maximal Cohen-Macaulay subcurve $D_i$ such that $Z_i \setminus D_i$ is 0-dimensional. For $i=0$, $D_0$ is the union of the section $B$ and a $\lambda_0$ thickening of some fibre $F \subset S$ (by Corollary \ref{cor: chow(beta) = sym (B)} of the appendix). Next, for all $i \geq 1$, $D_i$ is a $\lambda_i \leq \lambda_{i-1}$ times thickening of the same fibre $F$. We conclude:
+\begin{lemma}
+To each closed point $Z$ of $\Hilb^{h,\bullet}(X)^{\CC^*}$ corresponds to a 2D partition $\lambda = (\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_l)$. The maximal Cohen-Macaulay subcurve of $Z$ is defined by the scheme-theoretic union of the zero section $B$ and a scheme with ideal sheaf
+\begin{equation} \label{CMcurve}
+\bigoplus_{i=0}^{l} \O_{S}(-\lambda_i F) \otimes K_{S}^{-i},
+\end{equation}
+for some fibre of $F \subset S$.
+\end{lemma}
+This leads to the following proposition:
+\begin{proposition}
+There exists a stratification
+$$
+\Hilb^{h,\bullet}(X)^{\CC^*} = \coprod_{\lambda \vdash h} \Hilb^{h,\bullet}_{\lambda}(X)^{\CC^*},
+$$
+where $\Hilb^{h,\bullet}_{\lambda}(X)^{\CC^*}$ is the locally closed subset of subschemes $Z \subset X$ with maximal Cohen-Macaulay curve defined by the scheme-theoretic union of $B$ and a scheme with ideal sheaf of the form \eqref{CMcurve} for some fibre $F \subset S$.
+\end{proposition}
+
+
+\subsection{Stratifying over the base} Denote by $\Sym^h(B)$ the $h$th symmetric product of $B$. Recall that we have projections 
+$$
+X \stackrel{\pi}{\longrightarrow} S \stackrel{p}{\longrightarrow} B.
+$$
+A subscheme $Z$ of $ \Hilb^{h,\bullet}(X)^{\CC^*}$ always contains the zero section $B \subset S \subset X$. We can remove it and consider the scheme $\overline{Z \setminus B}$. There exists a morphism\todo{Can/do we want to write this easier?}
+\begin{align*}
+\pi_{h} : \Hilb^{h,\bullet}(X)^{\CC^*} &\longrightarrow \Sym^h(B), \\
+Z &\mapsto \mathrm{supp}( p_* \pi_* \O_{\overline{Z \setminus B}} ),
+\end{align*}
+where $\supp(\cdot)$ takes the scheme theoretic support, which is a divisor on $B$... 
    
 
 \appendix
@@ -191,11 +322,11 @@ H^{0} (S,\pi ^{*} (\epsilon ) (B)) \cong H^{0} (S,\pi ^{*} (\epsilon )).
 \]
 \end{lemma}
 
-\begin{corollary}\label{cor: chow(beta) = sym (B)}
+\begin{corollary} \label{cor: chow(beta) = sym (B)}
 Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
 the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
 $\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
-$B+\sum _{i}d_{i}\pi ^{-1} (x_{i}) $.
+$B+\sum _{i}d_{i} F_{x_{i}}$.
 \end{corollary}
 
 \begin{proof}

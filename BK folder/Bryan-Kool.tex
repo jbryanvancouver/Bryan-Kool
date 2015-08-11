@@ -153,7 +153,7 @@ which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with co
 
 
 
-\section{Reduction to strata with fixed curve class}
+\section{Push-forward to the symmetric product}
 
 The scaling action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. Therefore
 $$
@@ -191,40 +191,42 @@ We are interested in the calculation of
 $$
 \widehat{\DT}(X) = \sum_{d \geq 0} \widehat{\DT}_d(X) q^d =\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de.
 $$
-We prove that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ has two multiplicative properties. The first is one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres $F_x$ are smooth and by $B^{\sing}$ the $N$ points over which the fibres $F_x$ are singular.
+We prove that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ has two multiplicative properties. The first is one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres $F_x$ are smooth and by $B^{\sing}$ the $N$ points over which the fibres $F_x$ are singular. We can consider the restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and $\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(q)$ the MacMahon function.
 \begin{lemma} \label{mult1}
-Let $d_1, d_2 \geq 0$ be such that $d_1+d_2 = d$. Then there are constructible functions
-\begin{align*}
-g_{d_1} : \Sym^{d_1}(B^{\sm}) &\longrightarrow \ZZ(\!(p)\!) \\
-h_{d_2} : \Sym^{d_2}(B^{\sing}) &\longrightarrow \ZZ(\!(p)\!),
-\end{align*}
-such that for any $\sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d_2}(B^{\sing})$ \todo{Forgot: points which can are off the curve.}
+Let $d_1, d_2 \geq 0$ be such that $d_1+d_2 = d$. Then 
+%there are constructible functions
+%\begin{align*}
+%g_{d_1} : \Sym^{d_1}(B^{\sm}) &\longrightarrow \ZZ(\!(p)\!) \\
+%h_{d_2} : \Sym^{d_2}(B^{\sing}) &\longrightarrow \ZZ(\!(p)\!),
+%\end{align*}
+%such that for any $\sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d_2}(B^{\sing})$ \todo{Forgot: points which can are off the curve.}
 $$ 
-f_d\Big(\sum_i a_i x_i + \sum_j b_j y_j \Big) = g_{d_1}\Big(\sum_i a_i x_i\Big) \cdot h_{d_2}\Big(\sum_j b_j y_j \Big). 
+f_d\Big(\sum_i a_i x_i + \sum_j b_j y_j \Big) = M(q)^{e(X)} f_{d_1}\Big(\sum_i a_i x_i\Big) \cdot f_{d_2}\Big(\sum_j b_j y_j \Big), 
 $$
+for any $\sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d_2}(B^{\sing})$. 
 \end{lemma}
 We prove this lemma in \ref{}. The following product formula is an immediate consequence of this result
 \begin{equation} \label{firstprod}
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} g_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} h_d \ de \Big). 
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = M(q)^{e(X)} \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
 \end{equation}
-The constructible functions $g_d, h_d  : \Sym^d(B) \rightarrow \ZZ$ satisfy further multiplicative properties:
+The restrictions constructible functions $f_d  : \Sym^d(B^{\sm}) \rightarrow \ZZ$ and $f_d  : \Sym^d(B^{\sing}) \rightarrow \ZZ$ satisfy further multiplicative properties:
 \begin{lemma} \label{mult2}
 There exist functions $g : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ and $h : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$, such that $g(0)=1$, $h(0)=1$, and
 \begin{align*}
-g_{d}\Big(\sum_i a_i x_i\Big) &= \prod_{i} g(a_i), \\
-h_{d}\Big(\sum_j b_j y_j\Big) &= \prod_{j} h(b_j), 
+f_{d}\Big(\sum_i a_i x_i\Big) &= \prod_{i} g(a_i), \\
+f_{d}\Big(\sum_j b_j y_j\Big) &= \prod_{j} h(b_j), 
 \end{align*}
 for all $\sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
 \end{lemma}
 We prove this lemma in \ref{}. Together with Lemma \ref{} from the appendix, this lemma and \eqref{firstprod} gives
 $$
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = M(q)^{N} \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
 $$
 We want to prove Lemmas \ref{}, \ref{} and find formulae for $g(a)$, $h(b)$. This requires a better understanding of the strata
 $$
 \rho_{d}^{-1} \Big(\sum_i a_i x_i + \sum_j b_j y_j \Big) \subset \Hilb^{d, \bullet}(X)^{\CC^*},
 $$
-for all $\sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d_1}(B^{\sing})$ with $d_1+d_2=d$. We start with a more careful study of the $\CC^*$-fixed locus.
+for all $\sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d_2}(B^{\sing})$ with $d_1+d_2=d$. We start with a more careful study of the $\CC^*$-fixed locus.
 
 
 \section{The $\CC^*$-fixed locus} As we already noted, the scaling action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. 
@@ -309,6 +311,28 @@ for all $i = 1, \ldots, n$.
 %\end{proposition}
 
 %In this proposition, the number of points $n$ and the position of the points $x_1, \ldots, x_n \in B$ can still vary freely. We now want to refine the stratification by fixing the position of these points.
+
+In the previous section, we considered the stratum
+$$
+\rho_{d}^{-1} \Big(\sum_i a_i x_i + \sum_j b_j y_j \Big) \subset \Hilb^{d, \bullet}(X)^{\CC^*},
+$$
+for any $\sum_{i=1}^{m} a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_{j=1}^{n} b_j y_j \in \Sym^{d_2}(B^{\sing})$ with $d_1+d_2=d$. By the previous lemma, it has a further stratification into locally closed subsets
+$$
+\coprod_{{\scriptsize{\begin{array}{c} \lambda^{(1)} \vdash a_1 \\ \cdots \\ \lambda^{(m)} \vdash a_m \end{array}}}} \coprod_{\scriptsize{\begin{array}{c} \mu^{(1)} \vdash b_1 \\ \cdots \\ \mu^{(m)} \vdash b_m \end{array}}} \Sigma(x_1, \ldots, x_m, y_1, \ldots, y_n, \lambda^{(1)}, \ldots, \lambda^{(m)}, \mu^{(1)}, \ldots, \mu^{(n)}).
+$$
+We abbreviate a stratum on the RHS by $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. It should be viewed as the stratum of $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ has been fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. We are after the Euler characteristics of these strata. We will see this Euler characteristic does not depend on the exact location of the points $x_i$ and $y_j$, but only on their number $m$ and $n$ and the partitions $\lambda^{(i)}$ and $\mu^{(j)}$.
+
+
+\section{Restriction to formal neighbourhoods}
+
+In the previous two sections, we reduced our consideration to the stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ of $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ is fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. In this section, we further break down this stratum by cutting it up in pieces covered by formal neighbourhoods. For notational simplicity, we consider the case where the base point is 
+$$
+a x + b y \in \Sym^2(B),
+$$
+where $x \in B^{\sm}$ and $y \in B^{\sing}$. Therefore we consider $\Sigma(x,y,\lambda,\mu)$. The reader will easily see how to generalize to arbitrary $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$.
+
+
+\subsection{Splitting off floating points}
 
 
    

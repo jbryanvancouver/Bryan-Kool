@@ -16,6 +16,7 @@ Vancouver, B.C., Canada V6T 1Z2
 
 \usepackage{amsmath}
 \usepackage{amsmath,amsthm,amsfonts}
+\usepackage{amssymb}
 \usepackage{times}
 \usepackage[all]{xy}
 %\usepackage{amstex}
@@ -47,6 +48,7 @@ Vancouver, B.C., Canada V6T 1Z2
 \newcommand{\LL} {\mathbb{L}}
 \newcommand{\FF} {\mathbb{F}}
 \renewcommand{\O}{\mathcal{O}}
+\newcommand{\sfV}{\mathsf{V}}
 
 
 \newcommand{\rt}[1]{\stackrel{#1\,}{\rightarrow}}
@@ -77,6 +79,7 @@ Vancouver, B.C., Canada V6T 1Z2
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\sm}{\operatorname{sm}}
 \newcommand{\sing}{\operatorname{sing}}
+\newcommand{\conn}{\operatorname{conn}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\G}{\mathcal{G}}
 
@@ -107,11 +110,30 @@ a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 
 \section{Introduction}
 
+\begin{theorem}
+$$
+\widehat{\DT}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \bigg( \sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|} \bigg)^{e(B) - N}  \bigg( \sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu,\varnothing}(p)}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|} \bigg)^{N}.
+$$
+
+$$
+\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{\sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \bigg( \frac{\sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu,\varnothing}(p)}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|}}{\sum_{\mu} \sfV_{\mu, \mu, \varnothing}(p) q^{|\mu|}} \Bigg)^{N}.
+$$
+
+\end{theorem}
+
+\begin{corollary}[Bryan-Kool-Young]
+$$
+\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{2}} \prod_{k=1}^{\infty} \frac{1}{(1-p q^k)^2 (1-p^{-1} q^k)^2 (1-q)^{12N-4}}.
+$$
+
+\end{corollary}
+
+
 \section{Definitions}
 
 Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$ of genus $g$. We make two assumptions:
 \begin{itemize}
-\item $p$ has a \emph{unique} section $B \hookrightarrow S$,\todo{Drop uniqueness... generating function becomes product with contribution from multiple sections.}
+\item $p$ has a \emph{unique} section $B \hookrightarrow S$,\todo{Drop uniqueness so generating function becomes product with contribution from multiple sections?}
 \item all singular fibres of $\pi$ are of Kodaira type $I_1$, i.e.~rational nodal fibres. 
 \end{itemize}
 We write $F_x$ for the fibre $p^{-1}(\{x\})$, for all closed points $x \in B$. We denote the classes of the fibre and section by $B, F \in H^2(S,\ZZ)$. Interesting examples are the elliptic surfaces $E(n)$, where $B = \PP^1$ and $S$ has $12n$ nodal fibres. Then $E(1)$ is the rational elliptic surface and $E(2)$ is the elliptic K3 surface.
@@ -154,7 +176,7 @@ which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with co
 
 
 
-\section{Push-forward to the symmetric product} \ref{sym}
+\section{Push-forward to the symmetric product} \label{sym}
 
 The scaling action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. Therefore
 $$
@@ -170,7 +192,7 @@ Denote by $\Sym^d(B)$ the $d$th symmetric product of $B$. Recall that we have pr
 $$
 X \stackrel{\pi}{\longrightarrow} S \stackrel{p}{\longrightarrow} B.
 $$
-A subscheme $Z$ of $ \Hilb^{d,\bullet}(X)^{\CC^*}$ always contains the zero section $B \subset S \subset X$. We can remove it and consider the scheme $\overline{Z \setminus B}$. There exists a morphism\todo{Can/do we want to write this easier?}
+A subscheme $Z$ of $ \Hilb^{d,\bullet}(X)^{\CC^*}$ always contains the zero section $B \subset S \subset X$. We can remove it and consider the scheme $\overline{Z \setminus B}$. There exists a morphism
 \begin{align*}
 \rho_{d} : &\Hilb^{d,\bullet}(X)^{\CC^*} \longrightarrow \Sym^d(B), \\
 &Z \mapsto \mathrm{supp}( p_* \pi_* \O_{\overline{Z \setminus B}} ),
@@ -202,26 +224,26 @@ Let $d_1, d_2 \geq 0$ be such that $d_1+d_2 = d$. Then
 %\end{align*}
 %such that for any $\sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\sum_j b_j y_j \in \Sym^{d_2}(B^{\sing})$ \todo{Forgot: points which can are off the curve.}
 $$ 
-f_d(\mathfrak{a} + \mathfrak{b}) =\frac{(1-q)^{e(B)}}{M(q)^{e(X\setminus B)}} \cdot f_{d_1}(\mathfrak{a}) \cdot f_{d_2}(\mathfrak{b}), 
+f_d(\mathfrak{a} + \mathfrak{b}) =\frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}} \cdot f_{d_1}(\mathfrak{a}) \cdot f_{d_2}(\mathfrak{b}), 
 $$
 for any $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(B^{\sing})$. 
 \end{proposition}
 We prove this proposition in Section \ref{formal}. The following product formula is an immediate consequence of this result
 \begin{equation} \label{firstprod}
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{(1-q)^{e(B)}}{M(q)^{e(X\setminus B)}}  \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
 \end{equation}
 The restricted constructible functions $f_d  : \Sym^d(B^{\sm}) \rightarrow \ZZ$ and $f_d  : \Sym^d(B^{\sing}) \rightarrow \ZZ$ satisfy further multiplicative properties:
 \begin{proposition} \label{mult2}
 There exist functions $g : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ and $h : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$, such that $g(0)=1$, $h(0)=1$, and
 \begin{align*}
-f_{d}(\mathfrak{a}) &= \frac{M(q)^{e(X\setminus B)}}{(1-q)^{e(B)}} \cdot \prod_{i} g(a_i), \\
-f_{d}(\mathfrak{b}) &= \frac{M(q)^{e(X\setminus B)}}{(1-q)^{e(B)}} \cdot \prod_{j} h(b_j), 
+f_{d}(\mathfrak{a}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{i} g(a_i), \\
+f_{d}(\mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{j} h(b_j), 
 \end{align*}
 for all $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
 \end{proposition}
-We prove this proposition in \ref{}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and \eqref{firstprod} gives\todo{Incorporate lemma appendix in main text?}
+We prove this proposition in \ref{}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and \eqref{firstprod} gives
 $$
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{M(q)^{e(X\setminus B)}}{(1-q)^{e(B)}} \cdot \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
 $$
 We want to prove Lemmas \ref{mult1}, \ref{mult2} and find formulae for $g(a)$, $h(b)$. This requires a better understanding of the strata
 $$
@@ -330,42 +352,42 @@ We abbreviate a stratum on the RHS by $\Sigma(\boldsymbol{x};\boldsymbol{y};\bol
 
 \section{Restriction to formal neighbourhoods} \label{formal}
 
-In the previous two sections, we reduced our consideration to the stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ of $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ is fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. In this section, we further break down this stratum by cutting it up in pieces covered by formal neighbourhoods. For notational simplicity, we first consider the case where the base point is 
+In the previous two sections, we reduced our consideration to the stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ containing $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ is fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. In this section, we further break down this stratum by cutting it up in pieces covered by formal neighbourhoods. For notational simplicity, we first consider the case where the base point is 
 $$
 a x + b y \in \Sym^2(B),
 $$
-where $x \in B^{\sm}$ and $y \in B^{\sing}$ and compute the Euler characteristic of $\Sigma(x,y,\lambda,\mu)$. Once this is eastablished, it is not hard to calculate the Euler characteristic of any stratum  $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. This leads to a proof of Propositions \ref{mult1}, \ref{mult2}, and a geometric characterization of the functions $g(a)$, $h(b)$ of Section \ref{sym}.
+with $x \in B^{\sm}$ and $y \in B^{\sing}$ and compute the Euler characteristic of $\Sigma(x,y,\lambda,\mu)$. Once this is eastablished, it is not hard to calculate the Euler characteristic of any stratum  $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. This leads to a proof of Propositions \ref{mult1}, \ref{mult2}, and a geometric characterization of the functions $g(a)$, $h(b)$ of Section \ref{sym}.
 
 
 \subsection{Fpqc cover}
 
 The idea is to use an appropriate cover of $X$ and calculate on pieces of the cover. We first give a complex analytic definition of the cover to aid the intuition and then give the actual ``algebro-geometric cover'': 
 \begin{itemize}
-\item The reduced support $B \cup F_x \cup F_y$ has three singular points: $x,y, F_{y}^{\sing}$. We take small balls $U_1, U_2, U_3$ around these points.
-\item Consider the punctured space $X \setminus \{x,y, F_{y}^{\sing}\}$ and the following three disjoint closed curves in it $B \setminus \{x,y\}$, $F_x \setminus \{x\}$, $F_y \setminus \{y,F_{y}^{\sing}\}$. We take small tubular neighbourhoods $V_1, V_2, V_3$ of each of these curves. Note how the $U_i$ and $V_i$ together cover the reduced support  $B \cup F_x \cup F_y$.
+\item The reduced support $B \cup F_x \cup F_y$ has three singular points: $x,y, F_{y}^{\sing}$. We take small open balls $U_1, U_2, U_3$ around these points.
+\item Consider the punctured space $X \setminus \{x,y, F_{y}^{\sing}\}$ and the following three disjoint closed curves in it $B \setminus \{x,y\}$, $F_x \setminus \{x\}$, $F_y \setminus \{y,F_{y}^{\sing}\}$. We take small tubular neighbourhoods $V_1, V_2, V_3$ of each of these curves. Note how the union of the $U_i$ and $V_i$ covers the reduced support  $B \cup F_x \cup F_y$.
 \item Finally we take $W = X \setminus (B \cup F_x \cup F_y)$. 
 \end{itemize}
 
-In order to work in algebraic geometry, we take $U_1$ to be the formal neighbourhood of $\{x\}$ in $X$. If $R$ is the local ring at $x$, then we mean by $U_1$ the actual (non-noetherian) scheme
+In order to work in algebraic geometry, we let $U_1$ be the formal neighbourhood of $\{x\}$ in $X$. If $R$ is the local ring at $x$, then we mean by $U_1$ the (non-noetherian) scheme
 $$
-\Spec( \varprojlim R / \mathfrak{m}^n )
+\Spec \varprojlim R / \mathfrak{m}^n 
 $$
-and \emph{not} the formal scheme $\mathrm{Spf} (\varprojlim R / \mathfrak{m}^n)$. Similarly, we take $U_2$ to be the formal neighbourhood of $\{y\}$ on $X$ and $U_3$ the formal neighbourhood of $F_{y}^{\sing}$ in $X$. Note that as formal schemes
+and \emph{not} the formal scheme $\mathrm{Spf} \varprojlim R / \mathfrak{m}^n$. Similarly, we let $U_2$ be the formal neighbourhood of $\{y\}$ on $X$ and $U_3$ the formal neighbourhood of $F_{y}^{\sing}$ in $X$. Note that 
 $$
-U_i \cong\Spec( \CC[\![x_1,x_2,x_3]\!]).
+U_i \cong\Spec \CC[\![x_1,x_2,x_3]\!],
 $$
-The point of taking spec is that the maps $U_i \rightarrow X$ is an fpqc morphism \cite{Vis}. Flatness follows from the fact that localization and formal completion are flat operations \cite[Cor.~3.6, Prop.~10.12, Prop.~10.13]{AM}. 
+for all $i=1,2,3$. Even though the $U_i$ are non-noetherian, the maps $U_i \rightarrow X$ are fpqc morphisms \cite{Vis}, so can be used as part of a cover. Flatness follows from the fact that localization and formal completion are exact operations \cite[Cor.~3.6, Prop.~10.12, Prop.~10.13]{AM}. 
 
-Next, in the punctured space $X \setminus \{x,y,F_{y}^{\sing}\}$, we take $V_1$ to be the formal neighbourhood of $B \setminus \{x,y\}$. Similarly, we take $V_2$ to be the formal neighbourhood of $F_x \setminus \{x\}$ in $X \setminus \{x,y,F_{y}^{\sing}\}$ and $V_3$ the formal neighbourhood of $F_y \setminus \{x, F_{y}^{\sing}\}$ in $X \setminus \{x,y,F_{y}^{\sing}\}$. Again, formal neighbourhoods are meant in the sense of taking spec of of inverse limits as above. Finally, $W = X \setminus (B \cup F_x \cup F_y)$. Now
+Next, in the punctured space $X \setminus \{x,y,F_{y}^{\sing}\}$, we let $V_1$ be the formal neighbourhood of $B \setminus \{x,y\}$. Similarly, let $V_2$ be the formal neighbourhood of $F_x \setminus \{x\}$ in $X \setminus \{x,y,F_{y}^{\sing}\}$ and $V_3$ the formal neighbourhood of $F_y \setminus \{x, F_{y}^{\sing}\}$ in $X \setminus \{x,y,F_{y}^{\sing}\}$. Again, formal neighbourhoods are meant in the sense of taking Spec of of inverse limits as above. Finally, $W = X \setminus (B \cup F_x \cup F_y)$. Then
 $$
 \mathfrak{U} = \{U_1 \rightarrow X, U_2 \rightarrow X, U_3 \rightarrow X, V_1 \rightarrow X, V_2 \rightarrow X, V_3 \rightarrow X, W \subset X\}
 $$
-forms an fpqc cover of $X$. This means the data of a coherent sheaf on $X$ is equivalent to the data of coherent sheaves on each of the open of $\mathfrak{U}$ together gluing isomorphisms on overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
+forms an fpqc cover of $X$. This means the data of a quasicoherent sheaf on $X$ is equivalent to the data of quasicoherent sheaves on each of the opens of $\mathfrak{U}$ together gluing isomorphisms on overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
 
 
 \subsection{Local moduli spaces} \label{localmod}
 
-We now introduce moduli spaces of closed subschemes of dimension $\leq 1$ on each of the pieces of the cover $\mathfrak{U}$. Consider $U_1 \cong \Spec(\CC[\![ x_1,x_2,x_3]\!])$ and assume the coordinates are chosen such that $x_2=x_3=0$ corresponds to the intersection of $U_1 \times_X B$ and $x_1=x_3=0$ corresponds to $U_1 \times_X F_x$. Define
+We now introduce moduli spaces of closed subschemes of dimension $\leq 1$ on each of the pieces of the cover $\mathfrak{U}$. Consider $U_1 \cong \Spec \CC[\![ x_1,x_2,x_3]\!]$ and assume the coordinates are chosen such that $x_2=x_3=0$ corresponds to the intersection of $U_1 \times_X B$ and $x_1=x_3=0$ corresponds to $U_1 \times_X F_x$. Define
 $$
 \Hilb^{(1,d),n}(U_1) = \big\{ I_Z \subset \O_{U_1} \ : \ [Z] = [U_1 \times_X B] + d [U_1 \times_X F_x] \ {\rm{and}} \ h^0(I_{Z_{CM}} / I_Z) = n \big\}.
 $$
@@ -373,15 +395,15 @@ Here the equation
 $$
 [Z] = [U_1 \times_X B] + d [U_1 \times_X F_x]
 $$
-means $Z$ is supported along $(U_1 \times_X B) \cup (U_1 \times_X F_x)$ with multiplicity 1 along $(U_1 \times_X B)$ and multiplicity $d$ along $(U_1 \times_X F_x)$. Furthermore, $Z_{CM}$ denotes the maximal Cohen-Macaulay subcurve of $Z$ which fits in a short exact sequence
+means $Z$ is supported along $(U_1 \times_X B) \cup (U_1 \times_X F_x)$ with multiplicity 1 along $(U_1 \times_X B)$ and multiplicity $d$ along $(U_1 \times_X F_x)$. Furthermore, $Z_{CM}$ denotes the maximal Cohen-Macaulay subcurve of $Z$ which fits into a short exact sequence
 $$
 0 \longrightarrow I_{Z} \longrightarrow I_{Z_{CM}} \longrightarrow Q \longrightarrow 0, 
 $$
-where $Q$ is a 0-dimensional scheme. The Hilbert scheme $\Hilb^{(1,d),n}(U_2)$ is defined likewise replacing the point $x$ by $y$. Recall that $x,y$ are intersections of $B$ with the fibres $F_x$, $F_y$. For the point $F_{y}^{\sing}$ and its formal neighbourhood $U_3$ we define
+where $Q$ is a 0-dimensional. The Hilbert scheme $\Hilb^{(1,d),n}(U_2)$ is defined likewise replacing the point $x$ by $y$. (Recall that $x,y$ are intersections of $B$ with the fibres $F_x$, $F_y$.) For the point $F_{y}^{\sing}$ and its formal neighbourhood $U_3$, we define
 $$
 \Hilb^{d,n}(U_3) = \big\{ I_Z \subset \O_{U_3} \ : \ [Z] = d [U_3 \times_X F_y] \ {\rm{and}} \ h^0(I_{Z_{CM}} / I_Z) = n \big\}.
 $$
-Each $U_i$ has an action of $\CC^*$ compatible with the fibre scaling on $X$ and this action lifts to the moduli space. Moreover, since $U_i \cong \Spec(\CC[\![x_1,x_2,x_3]\!])$ the bigger torus $\CC^{*3}$ acts on $U_i$ and lifts to the moduli space. The existence of these ``extra actions'' are one of the main tricks in our paper and will be used in Section \ref{}.
+Each $U_i$ has an action of $\CC^*$ compatible with the fibre scaling on $X$. This action lifts to the moduli space. Moreover, since $U_i \cong \Spec \CC[\![x_1,x_2,x_3]\!]$ the bigger torus $\CC^{*3}$ acts on $U_i$ and lifts to the moduli space. The existence of these ``extra actions'' are one of our main computational tools and will be used in Section \ref{}.
 
 Next consider $V_1$, the formal neighbourhood of the punctured zero section $B \subset X$. Define
 $$
@@ -395,9 +417,9 @@ Finally, for $W$ we define
 $$
 \Hilb^{0,n}(W) = \big\{ I_Z \subset \O_{V_1} \ : \ \dim(Z) = 0 \ {\rm{and}} \ h^0(\O_Z) = n \big\}.
 $$
-Each $V_i$, $W$ also has an action of $\CC^*$ compatible with the fibre scaling on $X$. These actions lift to the moduli space. However, \emph{unlike} the $U_i$, no additional tori act on $V_i$, $W$.
+Each $V_i$ and $W$ also have an action of $\CC^*$ compatible with the fibre scaling on $X$. These actions lift to the moduli space. However, \emph{unlike} the $U_i$, no additional tori act on $V_i$, $W$.
 
-As before, we use the notation $\Hilb^{(1,d),\bullet}(U_1)$ for the union of all $\Hilb^{(1,d),n}(U_1)$ (and similar for all other moduli spaces of this section). Like in Section \ref{fixedlocus}, the components of the $\CC^*$-fixed locus of $\Hilb^{(1,d),\bullet}(U_1)$ are indexed by partitions $\lambda \vdash d$
+As before, we use the notation $\Hilb^{(1,d),\bullet}(U_1)$ for the union of all $\Hilb^{(1,d),n}(U_1)$ (and similarly for all other moduli spaces of this section). Like in Section \ref{fixedlocus}, the components of the $\CC^*$-fixed locus of $\Hilb^{(1,d),\bullet}(U_1)$ are indexed by partitions $\lambda \vdash d$
 $$
 \Hilb^{(1,d),\bullet}(U_1)^{\CC^*} = \coprod_{\lambda \vdash d} \Hilb^{(1,d),\bullet}(U_1)_{\lambda}^{\CC^*}.
 $$
@@ -420,63 +442,185 @@ Restriction along $U_i \rightarrow X$, $V_i \longrightarrow X$, $W \subset X$ gi
 
 Since $\mathfrak{U}$ is an fpqc cover, fpqc descent implies that any ideal sheaf $I_Z \subset \O_X$ is entirely determined by its restriction along $U_i \rightarrow X$, $V_i \longrightarrow X$, $W \subset X$ proving injectivity.
 
-Conversely, given local ideal sheaves in the image of \eqref{restr}, their restrictions to overlaps only depend on the underlying Cohen-Macaulay curve (and not on the embedded points). Since we chose the strata such that the underlying Cohen-Macauly curve automatically glues, there are no further gluing conditions and fpqc descent implies the morphism is surjective.
+Conversely, given local ideal sheaves in the image of \eqref{restr}, their restrictions to overlaps only depend on the underlying Cohen-Macaulay curve (and not on the embedded points). Since we chose the strata such that the underlying Cohen-Macauly curve automatically glues, there are no further gluing conditions and fpqc descent implies surjectivity.
 \end{proof}
    
 \begin{remark}
-Note that the argument of Proposition \ref{bij} is purely set-theoretic in nature and no statements about the scheme structure are made. 
+Note that the argument of Proposition \ref{bij} is purely set-theoretic in nature. We do \emph{not} claim \eqref{restr} is an isomorphism of schemes. 
 \end{remark}
 
-Proposition \ref{bij} allows us to calculate the Euler characteristic of the stratum $\Sigma(x,y,\lambda,\mu)$. Recall that $a = |\lambda|$, $b=|\mu|$ so $d=a+b$. Then by \eqref{comps} and Proposition \ref{bij}
+\begin{remark}
+It is important to relate holomorphic Euler characteristic of domain and target in \eqref{restr}. For any subscheme $Z$ in the domain $\Sigma(x,y,\lambda,\mu)$, denote the corresponding maximal Cohen-Macaulay curve by $Z_{CM}$ \ref{}. Then
+$$
+\chi(\O_Z) = \chi(\O_{Z_{CM}}) + \chi(I_{Z_{CM}} / I_{Z}).
+$$ 
+Recall that $Z_{CM}$ is entirely determined by the data $x,y, \lambda, \mu$, where $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$ and $\mu = (\mu_0 \geq \mu_1 \geq \cdots)$ are 2D partitions \ref{}. An easy calculation shows 
+$$
+\chi(\O_{Z_{CM}}) = \chi(\O_B) - \lambda_0 - \mu_0.
+$$
+We conclude
+\begin{equation} \label{relchi}
+\chi(\O_Z) = -\frac{e(B)}{2} - \lambda_0 - \mu_0 + \chi(I_{Z_{CM}} / I_{Z}).
+\end{equation}
+\end{remark}
+
+Proposition \ref{bij} allows us to calculate the Euler characteristic of the stratum $\Sigma(x,y,\lambda,\mu)$. Recall that $a = |\lambda|$, $b=|\mu|$ so $d=a+b$. Then by \eqref{comps}, Proposition \ref{bij}, and \eqref{relchi}
+\begin{align}
+\begin{split} \label{fdintermediate}
+f_d(ax+by) = \ &e(\rho_{d}^{-1}(ax+by)) \\
+= \ &p^{-\frac{e(B)}{2}} e(\Hilb^{1,\bullet}(V_1)^{\CC^*}) e(\Hilb^{0,\bullet}(W)^{\CC^*}) \times \\
+&\sum_{\lambda \vdash a} \sum_{\mu \vdash b} p^{-\frac{e(B)}{2} - \lambda_0 - \mu_0 } e(\Hilb^{(1,a),\bullet}(U_1)_{\lambda}^{\CC^*}) e(\Hilb^{(1,b),\bullet}(U_2)_{\mu}^{\CC^*}) \times \\
+&\qquad\qquad e(\Hilb^{b,\bullet}(U_3)_{\mu}^{\CC^*}) e(\Hilb^{a,\bullet}(V_2)_{\lambda}^{\CC^*}) e(\Hilb^{b,\bullet}(V_3)_{\mu}^{\CC^*}).
+\end{split}
+\end{align}
+
+Before we proceed, we need the following lemma:
+\begin{lemma}
+The following equalities hold
 \begin{align*}
-&f_d(ax+by) = e(\rho_{d}^{-1}(ax+by)) = e(\Hilb^{1,\bullet}(V_1)^{\CC^*}) e(\Hilb^{0,\bullet}(W)^{\CC^*}) \times \\
-&\sum_{\lambda \vdash a} \sum_{\mu \vdash b} e(\Hilb^{(1,a),\bullet}(U_1)_{\lambda}^{\CC^*}) e(\Hilb^{(1,b),\bullet}(U_2)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U_3)_{\mu}^{\CC^*}) e(\Hilb^{a,\bullet}(V_2)_{\lambda}^{\CC^*}) e(\Hilb^{b,\bullet}(V_3)_{\mu}^{\CC^*}).
+e(\Hilb^{0,\bullet}(W)^{\CC^*}) &= M(p)^{e(W)}, \\
+e(\Hilb^{1,\bullet}(V_1)^{\CC^*}) &= \bigg( \frac{M(p)}{(1-p)} \bigg)^{e(B \setminus \{x,y\})}.
 \end{align*}
-For any smooth quasi-projective 3-fold $W$, J.~Cheah proves \ref{}
+\end{lemma}
+\begin{proof}
+The first equality follows from J.~Cheah's formula \cite{}: for any smooth quasi-projective 3-fold $W$
 $$
-e(\Hilb^{\bullet}(X)) = M(p)^{e(X)},
+e(\Hilb^{\bullet}(W)) = M(p)^{e(W)},
 $$
-where $\Hilb^{n}(X)$ denotes the Hilbert schemes of $n$ points on $X$. Moreover, for any smooth quasi-projective curve $C$, we have (Remark \ref{MacD})
+For the second equality, let $C$ be any smooth curve in a smooth quasi-projective 3-fold $W$. Let $p \in C$ and consider the formal neighbourhoods $V$ of $C$ in $W$ and $\tilde{V}$ of $C \setminus \{p\}$ in $W \setminus \{p\}$. Moreover, let $U \cong \Spec \CC [x_1,x_2,x_3]$ the formal neighbourhood of $p$ in $W$. Denote by $\Hilb^{1,n}(V)$ the Hilbert scheme of subschemes $Z \subset V$, such that $Z_{CM} = C$ and $\chi(I_{Z_{CM}} / I_Z) = n$. Here $Z_{CM}$ denotes the maximal Cohen-Macaulay subscheme contained in $Z$ as in \ref{}. Define $\Hilb^{1,n}(\tilde{V})$ and $\Hilb^{1,n}(U)$ accordingly. Since $U \rightarrow V$, $\tilde{V} \rightarrow V$ forms an fpqc cover and restriction gives a bijective morphism (as in Proposition \ref{})  
 $$
-e(\Hilb^{\bullet}(C)) = \frac{1}{(1-q)^{e(C)}},
+\Hilb^{1,\bullet}(V) \rightarrow \Hilb^{1,\bullet}(\tilde{V}) \times \Hilb^{1,\bullet}(U).
 $$
-where $\Hilb^{n}(C)$ denotes the Hilbert schemes of $n$ points on $C$. Rewriting gives
+Since $U$ has an action of $\CC^{*3}$, it lifts to the moduli space and 
+$$
+e(\Hilb^{1,\bullet}(U)) = e(\Hilb^{1,\bullet}(U)^{\CC^{*3}}) = \sfV_{\square,\varnothing,\varnothing}(p) = \frac{M(p)}{1-p},
+$$
+where $\sfV_{\square,\varnothing,\varnothing}(p)$ is the topological vertex of \cite{}. 
+
+Hence ..... \todo{FINISH}
+$$
+e(\Hilb^{1,\bullet}(V)) = \bigg( \frac{M(p)}{(1-p)} \bigg)^{e(C)}.
+$$
+\end{proof}
+
+Using this Lemma \ref{}, \eqref{fdinternediate} becomes
 \begin{align*}
-f_d(ax+by) = \frac{M(q)^{e(X \setminus B)}}{(1-q)^{e(B)}} &\Big( (1-q) M(q) \sum_{\lambda \vdash a} e(\Hilb^{(1,a),\bullet}(U_1)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V_2)_{\lambda}^{\CC^*}) \Big) \times \\
-&\Big( (1-q) \sum_{\mu \vdash b} e(\Hilb^{(1,b),\bullet}(U_2)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U_3)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(V_3)_{\mu}^{\CC^*}) \Big).
+f_d(ax+by) = \ &M(p)^{e(X)} \frac{1}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \Big( (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U_1)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V_2)_{\lambda}^{\CC^*}) \Big) \times \\
+&\Big( (1-p) M(p)^{-1} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U_2)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U_3)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(V_3)_{\mu}^{\CC^*}) \Big).
 \end{align*}
 
    
 \subsection{Geometric characterization of $g(a)$ and $h(b)$}
 
-The arguments of the preceding two sections are immediately modified to any stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. Let $U$ be the formal neighbourhood of any point on $B \subset S \subset X$ and define $\Hilb^{(1,a),\bullet}(U)$ as in Section \ref{localmod}. Let $U'$ be the formal neighbourhood of the singular point of any singular fibre $F \subset S \subset X$ and define $\Hilb^{b,\bullet}(U')$ as in Section \ref{localmod}. Let $V$ be the formal neighbourhood of any smooth fibre $F \setminus B$ in $X \setminus B$ and define $\Hilb^{a,\bullet}(V)$ as in Section \ref{localmod}. Let $V'$ be the formal neighbourhood of any singular fibre $F \setminus (B \cup F^{\sing})$ in $X \setminus (B \setminus F^{\sing})$ and define $\Hilb^{b,\bullet}(V')$ as in Section \ref{localmod}. 
+The arguments of the preceding two sections are straightforwardly modified to any stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. Let $U$ be the formal neighbourhood of any point on $B \subset S \subset X$ and define $\Hilb^{(1,a),\bullet}(U)$ as in Section \ref{localmod}. Let $U'$ be the formal neighbourhood of the singular point of any singular fibre $F \subset S \subset X$ and define $\Hilb^{b,\bullet}(U')$ as in Section \ref{localmod}. Let $V$ be the formal neighbourhood of any smooth fibre $F \setminus B$ in $X \setminus B$ and define $\Hilb^{a,\bullet}(V)$ as in Section \ref{localmod}. Let $V'$ be the formal neighbourhood of any singular fibre $F \setminus (B \cup F^{\sing})$ in $X \setminus (B \cup F^{\sing})$ and define $\Hilb^{b,\bullet}(V')$ as in Section \ref{localmod}. 
 
 \begin{proposition}
 For any $a,b>0$ define
 \begin{align}
 \begin{split} \label{gh}
-g(a) &:= (1-p) M(p) \sum_{\lambda \vdash a} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*}) \in \ZZ[\![p]\!], \\
-h(b) &:= (1-p) \sum_{\mu \vdash b} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U')_{\lambda}^{\CC^*}) e(\Hilb^{b,\bullet}(V')_{\lambda}^{\CC^*})  \in \ZZ[\![p]\!],
+g(a) &:= (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*}), \\
+h(b) &:= (1-p) M(p)^{-1} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U')_{\lambda}^{\CC^*}) e(\Hilb^{b,\bullet}(V')_{\lambda}^{\CC^*}),
 \end{split}
 \end{align}
 and let $g(0) := 1$, $h(0) :=1$. Then
 \begin{align*}
-f_{d}(\mathfrak{a} + \mathfrak{b}) &= \frac{M(q)^{e(X\setminus B)}}{(1-q)^{e(B)}} \cdot \prod_{i} g(a_i) \cdot \prod_{j} h(b_j), 
+f_{d}(\mathfrak{a} + \mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{i} g(a_i) \cdot \prod_{j} h(b_j), 
 \end{align*}
 for any $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
 \end{proposition}
    
 We immediately deduce:  
 \begin{corollary}
-Propositions \ref{mult1}, \ref{mult2} are true for $g(a)$ and $h(b)$ defined by \eqref{gh}.
+Propositions \ref{mult1} and \ref{mult2} are true for $g(a)$ and $h(b)$ defined by \eqref{gh}.
 \end{corollary}   
    
    
 \section{Reduction to the topological vertex}   
 
 In this section, we prove Theorem \ref{main} of the introduction by expressing $g(a)$ and $h(b)$ in terms of the topological vertex. 
+
+\subsection{The topological vertex and point contributions}   
    
-   
+\subsection{Fibre contribution}
+
+Recall that we denote by $V$ the formal neighbourhood of any smooth fibre $F \setminus B$ in $X \setminus B$ and by $V'$ be the formal neighbourhood of any singular fibre $F \setminus (B \cup F^{\sing})$ in $X \setminus (B \cup F^{\sing})$. 
+\begin{proposition}
+For any $\lambda \vdash a$ and $\mu \vdash b$, we have
+\begin{align*}
+e(\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*}) &= \frac{1}{\sfV_{\lambda,\varnothing,\varnothing}(p)}, \\
+e(\Hilb^{b,\bullet}(V')_{\mu}^{\CC^*}) &= \frac{1}{\sfV_{\mu,\varnothing,\varnothing}(p)}.
+\end{align*}
+\end{proposition}
+\begin{proof}
+We start with the first equation. Let $F = F_x \subset S$ be a smooth fibre over a closed point $x \in B$. Consider the auxiliary surface $\tilde{S} = B \times F$ ($F$ a smooth elliptic curve) and $\tilde{X} = \mathrm{Tot}(K_{\tilde{S}})$. let $e \in F$ be any point and consider the embeddings 
+\begin{align*}
+B &\hookrightarrow \tilde{S}, \ b \mapsto (b,e) \\
+\tilde{S} &\hookrightarrow \tilde{X}, \ p \mapsto (p,0).
+\end{align*}
+Consider the embeddings $B \subset \tilde{S} \subset \tilde{X}$ (where $\tilde{S} \subset \tilde{X}$ is the zero section) and $B \subset S \subset X$. Denote by $T$ a formal neighbourhood of $F \subset S \subset X$ and $\tilde{T}$ a formal neighbourhood of $F \cong \{x\} \times F \subset \tilde{S} \tilde{X}$ ($T$ stands for ``tubular''). Certainly $T$ and $\tilde{T}$ are \emph{not} isomorphic. Next, denote by $V$ the formal neighbourhood of $F \setminus B$ on $X \setminus B$ and by $\tilde{V}$ the formal neighbourhood of $F \setminus B$ on $\tilde{X} \setminus B$ (using the same embeddings as above). Then 
+\begin{equation} \label{isopuncturednghs}
+V \cong \tilde{V}.
+\end{equation}
+We are interested in the moduli space $\Hilb^{a,\bullet}(V)$ and the correspondingly defined moduli space $\Hilb^{a,\bullet}(\tilde{V})$. Since $V$, $\tilde{V}$ have (compatible) $\CC^*$-actions coming from scaling the fibres of $X$, $\tilde{X}$, we can consider their fixed loci and stratify them according to 2D partitions \ref{}. By \eqref{isopuncturednghs}, we have    
+$$
+\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*} \cong \Hilb^{a,\bullet}(\tilde{V})_{\lambda}^{\CC^*}.
+$$
+This observation allows us to work in the much simpler geometry of $\tilde{X}$.
+
+Let $F \cong \{x\} \times F \subset \tilde{S}$ as above. Denote the zero section by $\tilde{S} \subset \tilde{X}$. We will use the following formal neighbourhoods (in the sense of Section \ref{}): 
+\begin{itemize}
+\item Let $\tilde{U}$ be the formal neighbourhood of $(x,e,0) \in \tilde{X}$.
+\item Let $\tilde{V}$ be the formal neighbourhood of $F \setminus \{(x,e,0)\}$ inside $\tilde{X} \setminus \{(b,e,0)\}$ (introduced above).
+\item Let $\tilde{T}$ be the formula neighbourhood of $F$ inside $\tilde{X}$ (introduced above).
+\end{itemize}
+Then $\tilde{U} \rightarrow \tilde{T}$, $\tilde{V} \rightarrow \tilde{T}$ forms an fpqc cover of $\tilde{T}$. Note that $\tilde{U} \cong \Spec \CC[x_1,x_2,x_3]$. On these pieces, we introduce moduli spaces 
+\begin{align*}
+\Hilb^{a,\bullet}(\tilde{U}), \ \Hilb^{a,\bullet}(\tilde{V}), \ \Hilb^{a,\bullet}(\tilde{T})
+\end{align*}
+exactly as in Section \ref{}. As in Section \ref{}, restriction gives a bijective morphism on closed points
+$$
+\Hilb^{a,\bullet}(\tilde{T})^{\CC^*}_{\lambda} \rightarrow \Hilb^{a,\bullet}(\tilde{U})^{\CC^*}_{\lambda} \times \Hilb^{a,\bullet}(\tilde{V})^{\CC^*}_{\lambda}.
+$$
+
+Recall that $\tilde{S} = B \times F$. Therefore $F$ does not only act on $F \subset \tilde{S}$, but for any thickening $d F \subset \tilde{S}$ it acts on $d F$. This is because
+$$
+\O_{dF} = \O_{db} \otimes \O_F,
+$$
+where $db \subset B$ denotes the $d$ times thickening of $b \in B$. Moreover, $F$ acts on the thickened curve $\lambda F \subset \tilde{X}$ defined by
+$$
+\bigoplus_{k=0}^{\infty} \O_{\tilde{S}}(-\lambda_k F) \otimes K_{\tilde{S}}^{-k}.
+$$
+Since the action of $F$ on itself is fixed-point-free, it lifts to a free action on acts freely on $\Hilb^{a,\bullet}(\tilde{T})^{\CC^*}_{\lambda}$. Since $e(F)=0$, we deduce
+$$
+e(\Hilb^{a,\bullet}(\tilde{T})^{\CC^*}_{\lambda}) = 1,
+$$ 
+where 1 comes $\bullet = 0$.
+
+Finally, since $U \cong \Spec \CC[x_1,x_2,x_3]$, we have an action of $\CC^{*3}$ on it and 
+$$
+e(\Hilb^{a,\bullet}(\tilde{U})^{\CC^*}_{\lambda}) = e(\Hilb^{a,\bullet}(\tilde{U})^{\CC^{*3}}_{\lambda}) = \sfV_{\lambda,\varnothing,\varnothing}(p).
+$$
+
+The equation for $e(\Hilb^{b,\bullet}(V')_{\mu}^{\CC^*})$ follows similarly. This time, the smooth fibre $F \subset S \subset X$ is replaced by the punctured singular fibre $F' \setminus F^{\prime \sing} \subset S \setminus F^{\prime \sing} \subset X \setminus F^{\prime \sing}$. Note that
+$$
+F' \setminus F^{\prime \sing} \cong \PP^1 \setminus \{2 \ \rm{points}\} \cong \CC^*.
+$$
+Therefore, we again have a free action of $F' \setminus F^{\prime \sing}$ on itself and $e(F' \setminus F^{\prime \sing}) = 0$. The proof follows the same steps.
+\end{proof}   
+
+
+\subsection{Proof of Theorem \ref{}}
+
+\begin{proposition}
+For any $a,b>0$ 
+\begin{align}
+\begin{split} \label{gh}
+g(a) &:= (1-p) M(p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} \in \ZZ[\![p]\!], \\
+h(b) &:= (1-p) \sum_{\mu \vdash b} \frac{\sfV_{\lambda,\square,\varnothing}(p) \sfV_{\lambda,\lambda,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)}  \in \ZZ[\![p]\!],
+\end{split}
+\end{align}
+\end{proposition}
+
 
 \appendix
 \section{Odds and Ends}\label{appendix: odds and ends}
@@ -605,7 +749,7 @@ _{*}\O _{S} \right)^{\vee }$ \cite[prop?]{Fr-Mo} to obtain
 H^{0} (S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,\pi ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
 \]
 Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
-proved.
+proved. 
 \end{proof}
 
 

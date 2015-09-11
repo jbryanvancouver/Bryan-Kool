@@ -110,13 +110,13 @@ a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 
 \section{Introduction}
 
-\begin{theorem}
+\begin{theorem} \label{main}
 $$
-\widehat{\DT}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \bigg( \sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|} \bigg)^{e(B) - N}  \bigg( \sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu,\varnothing}(p)}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|} \bigg)^{N}.
+\widehat{\DT}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|} \Bigg)^{e(B) - N}  \Bigg( \sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} +|\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|} \Bigg)^{N}.
 $$
 
 $$
-\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{\sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \bigg( \frac{\sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu,\varnothing}(p)}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|}}{\sum_{\mu} \sfV_{\mu, \mu, \varnothing}(p) q^{|\mu|}} \Bigg)^{N}.
+\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{\sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \Bigg( \frac{\sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} +|\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|}}{\sum_{\mu} \sfV_{\mu, \mu', \varnothing}(p) p^{\binom{\mu}{2} +|\mu|} q^{|\mu|}} \Bigg)^{N}.
 $$
 
 \end{theorem}
@@ -228,10 +228,13 @@ f_d(\mathfrak{a} + \mathfrak{b}) =\frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(
 $$
 for any $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(B^{\sing})$. 
 \end{proposition}
-We prove this proposition in Section \ref{formal}. The following product formula is an immediate consequence of this result
-\begin{equation} \label{firstprod}
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
-\end{equation}
+We prove this proposition in Section \ref{chargh}. The following product formula is an immediate consequence of this result
+\begin{align}
+\begin{split} \label{firstprod}
+&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de \\
+&= \frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
+\end{split}
+\end{align}
 The restricted constructible functions $f_d  : \Sym^d(B^{\sm}) \rightarrow \ZZ$ and $f_d  : \Sym^d(B^{\sing}) \rightarrow \ZZ$ satisfy further multiplicative properties:
 \begin{proposition} \label{mult2}
 There exist functions $g : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ and $h : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$, such that $g(0)=1$, $h(0)=1$, and
@@ -241,9 +244,9 @@ f_{d}(\mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{
 \end{align*}
 for all $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
 \end{proposition}
-We prove this proposition in \ref{}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and \eqref{firstprod} gives
+We prove this proposition in \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and \eqref{firstprod} gives
 $$
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{M(p)^{N}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
 $$
 We want to prove Lemmas \ref{mult1}, \ref{mult2} and find formulae for $g(a)$, $h(b)$. This requires a better understanding of the strata
 $$
@@ -317,7 +320,7 @@ $$
 D_k = \lambda_{k}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{k}^{(n)} F_{x_n}.
 $$
 We conclude:
-\begin{proposition}
+\begin{proposition} \label{ZCM}
 To each closed point $Z$ of $\Hilb^{d,\bullet}(X)^{\CC^*}$ correspond distinct closed points $x_1, \ldots, x_n \in B$ for some $n$ and (finite) 2D partitions $\lambda^{(1)}, \ldots, \lambda^{(n)}$ such that
 $$
 \sum_{i=1}^{n} |\lambda^{(i)}| = d.
@@ -403,7 +406,7 @@ where $Q$ is a 0-dimensional. The Hilbert scheme $\Hilb^{(1,d),n}(U_2)$ is defin
 $$
 \Hilb^{d,n}(U_3) = \big\{ I_Z \subset \O_{U_3} \ : \ [Z] = d [U_3 \times_X F_y] \ {\rm{and}} \ h^0(I_{Z_{CM}} / I_Z) = n \big\}.
 $$
-Each $U_i$ has an action of $\CC^*$ compatible with the fibre scaling on $X$. This action lifts to the moduli space. Moreover, since $U_i \cong \Spec \CC[\![x_1,x_2,x_3]\!]$ the bigger torus $\CC^{*3}$ acts on $U_i$ and lifts to the moduli space. The existence of these ``extra actions'' are one of our main computational tools and will be used in Section \ref{}.
+Each $U_i$ has an action of $\CC^*$ compatible with the fibre scaling on $X$. This action lifts to the moduli space. Moreover, since $U_i \cong \Spec \CC[\![x_1,x_2,x_3]\!]$ the bigger torus $\CC^{*3}$ acts on $U_i$ and lifts to the moduli space. The existence of these ``extra actions'' are one of our main computational tools and will be used in Section \ref{vertex}.
 
 Next consider $V_1$, the formal neighbourhood of the punctured zero section $B \subset X$. Define
 $$
@@ -450,11 +453,11 @@ Note that the argument of Proposition \ref{bij} is purely set-theoretic in natur
 \end{remark}
 
 \begin{remark}
-It is important to relate holomorphic Euler characteristic of domain and target in \eqref{restr}. For any subscheme $Z$ in the domain $\Sigma(x,y,\lambda,\mu)$, denote the corresponding maximal Cohen-Macaulay curve by $Z_{CM}$ \ref{}. Then
+It is important to relate holomorphic Euler characteristic of domain and target in \eqref{restr}. For any subscheme $Z$ in the domain $\Sigma(x,y,\lambda,\mu)$, denote the corresponding maximal Cohen-Macaulay curve by $Z_{CM}$ (Proposition \ref{ZCM}). Then
 $$
 \chi(\O_Z) = \chi(\O_{Z_{CM}}) + \chi(I_{Z_{CM}} / I_{Z}).
 $$ 
-Recall that $Z_{CM}$ is entirely determined by the data $x,y, \lambda, \mu$, where $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$ and $\mu = (\mu_0 \geq \mu_1 \geq \cdots)$ are 2D partitions \ref{}. An easy calculation shows 
+Recall that $Z_{CM}$ is entirely determined by the data $x,y, \lambda, \mu$, where $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$ and $\mu = (\mu_0 \geq \mu_1 \geq \cdots)$ are 2D partitions \eqref{comps}. An easy calculation shows 
 $$
 \chi(\O_{Z_{CM}}) = \chi(\O_B) - \lambda_0 - \mu_0.
 $$
@@ -474,43 +477,48 @@ f_d(ax+by) = \ &e(\rho_{d}^{-1}(ax+by)) \\
 \end{split}
 \end{align}
 
-Before we proceed, we need the following lemma:
-\begin{lemma}
-The following equalities hold
-\begin{align*}
-e(\Hilb^{0,\bullet}(W)^{\CC^*}) &= M(p)^{e(W)}, \\
-e(\Hilb^{1,\bullet}(V_1)^{\CC^*}) &= \bigg( \frac{M(p)}{(1-p)} \bigg)^{e(B \setminus \{x,y\})}.
-\end{align*}
-\end{lemma}
+Before we proceed, we need to calculate $e(\Hilb^{0,\bullet}(W)^{\CC^*})$ and $e(\Hilb^{1,\bullet}(V_1)^{\CC^*})$. The first follows from a formula of J.~Cheah \cite{} 
+\begin{equation} \label{Cheah}
+e(\Hilb^{0,\bullet}(W)^{\CC^*}) = M(p)^{e(W)}.
+\end{equation}
+For the second we use the following proposition:
+\begin{proposition} \label{section}
+Let $B^{\circ}$ be the section $B \subset S \subset X$ with any number of punctures and let $X^\circ$ be obtained from $X$ by removing the same punctures. Let $V$ be the formal neighbourhoods $V$ of $B^\circ$ in $X^\circ$. Define $\Hilb^{1,n}(V)$ as the Hilbert scheme of subschemes $Z \subset V$, such that $Z_{CM} = C$ and $\chi(I_{Z_{CM}} / I_Z) = n$, where $Z_{CM}$ denotes the maximal Cohen-Macaulay subscheme contained in $Z$ (Proposition \ref{ZCM}). Then
+$$
+e(\Hilb^{1,\bullet}(V)) = \bigg( \frac{M(p)}{(1-p)} \bigg)^{e(B^\circ)}.
+$$
+\end{proposition}
 \begin{proof}
-The first equality follows from J.~Cheah's formula \cite{}: for any smooth quasi-projective 3-fold $W$
+Let $p \in B^\circ$ and let $U \cong \Spec \CC [x_1,x_2,x_3]$ the formal neighbourhood of $p$ in $X^\circ$. Denote by $\Hilb^{1,n}(U)$ the Hilbert scheme of subschemes $Z \subset U$, such that $Z_{CM} = \{x_2=x_3=0\}$ and $\chi(I_{Z_{CM}} / I_Z) = n$. We have projections
 $$
-e(\Hilb^{\bullet}(W)) = M(p)^{e(W)},
+X^\circ \longrightarrow S^\circ \longrightarrow B^\circ.
 $$
-For the second equality, let $C$ be any smooth curve in a smooth quasi-projective 3-fold $W$. Let $p \in C$ and consider the formal neighbourhoods $V$ of $C$ in $W$ and $\tilde{V}$ of $C \setminus \{p\}$ in $W \setminus \{p\}$. Moreover, let $U \cong \Spec \CC [x_1,x_2,x_3]$ the formal neighbourhood of $p$ in $W$. Denote by $\Hilb^{1,n}(V)$ the Hilbert scheme of subschemes $Z \subset V$, such that $Z_{CM} = C$ and $\chi(I_{Z_{CM}} / I_Z) = n$. Here $Z_{CM}$ denotes the maximal Cohen-Macaulay subscheme contained in $Z$ as in \ref{}. Define $\Hilb^{1,n}(\tilde{V})$ and $\Hilb^{1,n}(U)$ accordingly. Since $U \rightarrow V$, $\tilde{V} \rightarrow V$ forms an fpqc cover and restriction gives a bijective morphism (as in Proposition \ref{})  
+Similar to Proposition \ref{bij}, this map induces a morphism
 $$
-\Hilb^{1,\bullet}(V) \rightarrow \Hilb^{1,\bullet}(\tilde{V}) \times \Hilb^{1,\bullet}(U).
+\Hilb^{1,d}(V) \longrightarrow \Sym^d(B^\circ).
 $$
-Since $U$ has an action of $\CC^{*3}$, it lifts to the moduli space and 
+The fibre over a point $\mathfrak{a} = \sum_i a_i x_i$ equals
 $$
-e(\Hilb^{1,\bullet}(U)) = e(\Hilb^{1,\bullet}(U)^{\CC^{*3}}) = \sfV_{\square,\varnothing,\varnothing}(p) = \frac{M(p)}{1-p},
+\prod_{i} e(\Hilb^{1,a_i}(U)).
 $$
-where $\sfV_{\square,\varnothing,\varnothing}(p)$ is the topological vertex of \cite{}. 
-
-Hence ..... \todo{FINISH}
+This follows by using an appropriate fpqc cover of $B^\circ$ similar to Proposition \ref{bij}. Therefore, Lemma \ref{lem: formula for euler char of sym products} of the appendix implies
 $$
-e(\Hilb^{1,\bullet}(V)) = \bigg( \frac{M(p)}{(1-p)} \bigg)^{e(C)}.
+e(\Hilb^{1,\bullet}(V)) = \Bigg( \sum_{a=0}^{\infty} e(\Hilb^{1,a}(U)) p^a \Bigg)^{e(B^\circ)}.
+$$
+Now $U$ has an action of $\CC^{*3}$ which lifts to $\Hilb^{1,a}(U)$. The fixed locus consists of a finite number of points counted by the topological vertex (discussed in general in Section \ref{vertex})
+$$
+\sfV_{\square,\varnothing,\varnothing}(p) = \frac{M(p)}{(1-p)}.
 $$
 \end{proof}
 
-Using this Lemma \ref{}, \eqref{fdinternediate} becomes
+Using \eqref{Cheah} and Proposition \ref{section}, equation \eqref{fdintermediate} becomes
 \begin{align*}
-f_d(ax+by) = \ &M(p)^{e(X)} \frac{1}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \Big( (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U_1)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V_2)_{\lambda}^{\CC^*}) \Big) \times \\
+f_d(ax+by) = \ &\frac{M(p)^{e(X)}}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \Big( (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U_1)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V_2)_{\lambda}^{\CC^*}) \Big) \times \\
 &\Big( (1-p) M(p)^{-1} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U_2)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U_3)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(V_3)_{\mu}^{\CC^*}) \Big).
 \end{align*}
 
    
-\subsection{Geometric characterization of $g(a)$ and $h(b)$}
+\subsection{Geometric characterization of $g(a)$ and $h(b)$} \label{chargh}
 
 The arguments of the preceding two sections are straightforwardly modified to any stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. Let $U$ be the formal neighbourhood of any point on $B \subset S \subset X$ and define $\Hilb^{(1,a),\bullet}(U)$ as in Section \ref{localmod}. Let $U'$ be the formal neighbourhood of the singular point of any singular fibre $F \subset S \subset X$ and define $\Hilb^{b,\bullet}(U')$ as in Section \ref{localmod}. Let $V$ be the formal neighbourhood of any smooth fibre $F \setminus B$ in $X \setminus B$ and define $\Hilb^{a,\bullet}(V)$ as in Section \ref{localmod}. Let $V'$ be the formal neighbourhood of any singular fibre $F \setminus (B \cup F^{\sing})$ in $X \setminus (B \cup F^{\sing})$ and define $\Hilb^{b,\bullet}(V')$ as in Section \ref{localmod}. 
 
@@ -519,7 +527,7 @@ For any $a,b>0$ define
 \begin{align}
 \begin{split} \label{gh}
 g(a) &:= (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*}), \\
-h(b) &:= (1-p) M(p)^{-1} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U')_{\lambda}^{\CC^*}) e(\Hilb^{b,\bullet}(V')_{\lambda}^{\CC^*}),
+h(b) &:= (1-p) M(p)^{-1} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(V')_{\mu}^{\CC^*}),
 \end{split}
 \end{align}
 and let $g(0) := 1$, $h(0) :=1$. Then
@@ -530,16 +538,26 @@ for any $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} 
 \end{proposition}
    
 We immediately deduce:  
-\begin{corollary}
+\begin{corollary} 
 Propositions \ref{mult1} and \ref{mult2} are true for $g(a)$ and $h(b)$ defined by \eqref{gh}.
 \end{corollary}   
    
    
-\section{Reduction to the topological vertex}   
+\section{Reduction to the topological vertex}  \label{vertex} 
 
 In this section, we prove Theorem \ref{main} of the introduction by expressing $g(a)$ and $h(b)$ in terms of the topological vertex. 
 
 \subsection{The topological vertex and point contributions}   
+
+\todo{Finish this subsection.}
+
+\begin{align*}
+p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) &= \sfV_{\lambda,\varnothing,\varnothing}(p), \\
+p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) &= \sfV_{\mu,\varnothing,\varnothing}(p), \\
+e(\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}) &= p^{\binom{\mu}{2} + |\mu|} \sfV_{\mu,\mu',\varnothing}(p),
+\end{align*}
+where $\mu'$ denotes the transposed partition \footnote{ORV}.
+
    
 \subsection{Fibre contribution}
 
@@ -561,13 +579,13 @@ Consider the embeddings $B \subset \tilde{S} \subset \tilde{X}$ (where $\tilde{S
 \begin{equation} \label{isopuncturednghs}
 V \cong \tilde{V}.
 \end{equation}
-We are interested in the moduli space $\Hilb^{a,\bullet}(V)$ and the correspondingly defined moduli space $\Hilb^{a,\bullet}(\tilde{V})$. Since $V$, $\tilde{V}$ have (compatible) $\CC^*$-actions coming from scaling the fibres of $X$, $\tilde{X}$, we can consider their fixed loci and stratify them according to 2D partitions \ref{}. By \eqref{isopuncturednghs}, we have    
+We are interested in the moduli space $\Hilb^{a,\bullet}(V)$ and the correspondingly defined moduli space $\Hilb^{a,\bullet}(\tilde{V})$. Since $V$, $\tilde{V}$ have (compatible) $\CC^*$-actions coming from scaling the fibres of $X$, $\tilde{X}$, we can consider their fixed loci and stratify them according to 2D partitions as in \ref{comps}. By \eqref{isopuncturednghs}, we have    
 $$
 \Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*} \cong \Hilb^{a,\bullet}(\tilde{V})_{\lambda}^{\CC^*}.
 $$
 This observation allows us to work in the much simpler geometry of $\tilde{X}$.
 
-Let $F \cong \{x\} \times F \subset \tilde{S}$ as above. Denote the zero section by $\tilde{S} \subset \tilde{X}$. We will use the following formal neighbourhoods (in the sense of Section \ref{}): 
+Let $F \cong \{x\} \times F \subset \tilde{S}$ as above. Denote the zero section by $\tilde{S} \subset \tilde{X}$. We will use the following formal neighbourhoods (in the sense of Section \ref{formal}): 
 \begin{itemize}
 \item Let $\tilde{U}$ be the formal neighbourhood of $(x,e,0) \in \tilde{X}$.
 \item Let $\tilde{V}$ be the formal neighbourhood of $F \setminus \{(x,e,0)\}$ inside $\tilde{X} \setminus \{(b,e,0)\}$ (introduced above).
@@ -577,7 +595,7 @@ Then $\tilde{U} \rightarrow \tilde{T}$, $\tilde{V} \rightarrow \tilde{T}$ forms 
 \begin{align*}
 \Hilb^{a,\bullet}(\tilde{U}), \ \Hilb^{a,\bullet}(\tilde{V}), \ \Hilb^{a,\bullet}(\tilde{T})
 \end{align*}
-exactly as in Section \ref{}. As in Section \ref{}, restriction gives a bijective morphism on closed points
+exactly as in Section \ref{formal}. As in Proposition \ref{bij}, restriction gives a bijective morphism on closed points
 $$
 \Hilb^{a,\bullet}(\tilde{T})^{\CC^*}_{\lambda} \rightarrow \Hilb^{a,\bullet}(\tilde{U})^{\CC^*}_{\lambda} \times \Hilb^{a,\bullet}(\tilde{V})^{\CC^*}_{\lambda}.
 $$
@@ -609,14 +627,14 @@ Therefore, we again have a free action of $F' \setminus F^{\prime \sing}$ on its
 \end{proof}   
 
 
-\subsection{Proof of Theorem \ref{}}
+\subsection{Proof of Theorem \ref{main}}
 
 \begin{proposition}
 For any $a,b>0$ 
 \begin{align}
 \begin{split} \label{gh}
-g(a) &:= (1-p) M(p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} \in \ZZ[\![p]\!], \\
-h(b) &:= (1-p) \sum_{\mu \vdash b} \frac{\sfV_{\lambda,\square,\varnothing}(p) \sfV_{\lambda,\lambda,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)}  \in \ZZ[\![p]\!],
+g(a) &:= (1-p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)}, \\
+h(b) &:= (1-p)M(p)^{-1} \sum_{\mu \vdash b} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} + |\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)}.
 \end{split}
 \end{align}
 \end{proposition}

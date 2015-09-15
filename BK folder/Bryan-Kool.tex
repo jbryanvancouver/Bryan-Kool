@@ -94,7 +94,7 @@ mixture of motivic and toric methods. This allows us to write the
 partition function for the invariants in terms of the topological
 vertex. Utilizing identities for the topological vertex (some
 previously known, some new), we derive product formulas for the
-partition functions. In the special case where the elliptic surface is
+partition functions in a companion paper with B.~Young. In the special case where the elliptic surface is
 a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 \end{abstract}
 
@@ -110,48 +110,81 @@ a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 
 \section{Introduction}
 
+Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$. We assume $p$ has a unique section \todo{Drop uniqueness so generating function becomes product with contribution from multiple sections?} and all singular fibres are rational nodal curves. Let $N$ be the number of singular fibres. An important example is the elliptically fibred K3 surface $p : S \rightarrow \PP^1$ for which $N=24$.
+
+We are interested in the Donaldson-Thomas invariants of $X = \mathrm{Tot}(K_S)$, i.e.~the total space of the canonical bundle $K_S$. This is a non-compact Calabi-Yau 3-fold. Let $\beta$ be an effective curve class on $S$. Consider the Hilbert scheme 
+$$
+\Hilb^{\beta,n}(X) = \{ Z \subset X \ : \ [Z] = \beta, \ \chi(\O_Z) = n\}
+$$
+of proper subschemes $Z \subset X$ with homology class $\beta$ and holomorphic Euler characteristics $n$. The DT invariants of $X$ can be defined as
+$$
+\DT_{\beta,n}(X) := e(\Hilb^{\beta,n}(X), \nu) := \sum_{k \in \ZZ} k \ e(\nu^{-1}(\{k\})),
+$$
+where $e(\cdot)$ denotes topological Euler characteristic and $\nu : \Hilb^{\beta,n}(X) \rightarrow \ZZ$ is Behrend's constructible function \cite{Beh}. We consider an Euler characteristic version of these invariants
+$$
+\widehat{\DT}_{\beta,n}(X) := e(\Hilb^{\beta,n}(X)).
+$$
+We focus on primitive classes $\beta = B + dF$, where $B$ is the class of the section and $F$ the class of the fibre. Let 
+\begin{align*}
+\widehat{\DT}(X) := \sum_{d \geq 0} \widehat{\DT}_d(X) q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \widehat{\DT}_{B+dF,n}(X) p^n q^d.
+\end{align*}
+Our main result is an explicit expression for this generating function (and its connected analog $\widehat{\DT}^{\conn}(X)$). Before phrasing the result, we introduce some notation: for a 2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we write $\lambda'$ for the corresponding transposed partition and 
+\begin{align*}
+|\lambda| &:= \sum_{k=0}^{\infty} \lambda_k, \\
+|\!|\lambda|\!| &:= \sum_{k=0}^{\infty} \lambda_{k}^{2}.
+\end{align*}
 \begin{theorem} \label{main}
-$$
-\widehat{\DT}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|} \Bigg)^{e(B) - N}  \Bigg( \sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} +|\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|} \Bigg)^{N}.
-$$
-
-$$
-\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{\sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \Bigg( \frac{\sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} +|\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|}}{\sum_{\mu} \sfV_{\mu, \mu', \varnothing}(p) p^{\binom{\mu}{2} +|\mu|} q^{|\mu|}} \Bigg)^{N}.
-$$
-
+%For any elliptic surface $p : S \rightarrow B$ over a smooth projective curve $B$ with unique section, $N$ rational nodal fibres and no further singular fibres, we have
+\begin{align*}
+\widehat{\DT}(X) &= \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|} \Bigg)^{e(B) - N}  \Bigg( \sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|} \Bigg)^{N} \\
+\widehat{\DT}^{\conn}(X) &= \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{\sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \Bigg( \frac{\sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} +|\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|}}{\sum_{\mu} \sfV_{\mu, \mu', \varnothing}(p) p^{|\!|\mu|\!|} q^{|\mu|}} \Bigg)^{N}.
+\end{align*}
+where the sums are over all 2D partitions and where $\sfV_{\lambda,\mu,\nu}(p)$ denotes the topological vertex.
 \end{theorem}
 
+It turns out the sums over partitions in Theorem \ref{main} can be computed. They can be expressed in terms of traces of certain natural operators on Fock space. Some of them are known and some of them are new. The way to compute these traces is of independent interest and forms the subject of a purely combinatorial companion paper with B.~Young \cite{BKY}. Combining Theorem \ref{main} with the calculations of \cite{BKY} gives:
 \begin{corollary}[Bryan-Kool-Young]
 $$
 \widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{2}} \prod_{k=1}^{\infty} \frac{1}{(1-p q^k)^2 (1-p^{-1} q^k)^2 (1-q)^{12N-4}}.
 $$
-
 \end{corollary}
+In the case $S \rightarrow \PP^1$ is the elliptically fibred K3 surface, this provides a new derivation of the famous Katz-Klemm-Vafa formula (recently proved in all curve classes in \cite{PT}). This is the first derivation of the KKV formula, which does \emph{not} depend on the Kawai-Yoshioka formula \cite{KY}.
+
+The most important result of this paper is perhaps not so much the formula, but rather the method of calculation. Even though our geometry is not toric, we combine $\CC^*$-localization, motivic methods, formal methods, and $\CC^{*3}$-localization to end up with expressions, which only depend on the topological vertex, $e(B)$, and $N$. Here is a rough sketch of our method:
+\begin{enumerate}
+\item[(A)] The action of $\CC^*$ on the fibres of $X$ lifts to the moduli space\footnote{The bullet indicates that we take the union of $\Hilb^{B+dF,n}(X)$ over all $n$.} $\Hilb^{B+dF,\bullet}(X)$. Therefore, we only have to understand $e(\Hilb^{\beta,\bullet}(X))^{\CC^*}$. Push-forward along $X \rightarrow S \rightarrow B$ induces a map 
+\begin{equation} \label{intromap}
+\Hilb^{B+dF,\bullet}(X)^{\CC^*} \rightarrow \Sym^d(B).
+\end{equation}
+The Euler characteristics of the fibres of \eqref{intromap} give a constructible function $f_d$ on $\Sym^d(B)$. In Section \ref{sym}, we show that if $f_d$ satisfies a certain product formula, then general power structure arguments imply $\widehat{\DT}(X)$ satisfies a corresponding product formula.
+\item[(B)] The fibres of \eqref{intromap} decompose into connected components according to the shape of the underlying Cohen-Macaulay curve. In Section \ref{fixedlocus}, we show this leads a decomposition over 2D partitions $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$.
+\item[(C)] A connected component $\Sigma$ of a fibre of \eqref{intromap} can be further broken down by taking a certain fpqc cover of the underlying (now fixed) CM curve $Z_{CM}$. This cover consists of formal neighbourhoods $\widehat{X}_p$ around the singular points $p$ of the reduced support of $Z_{CM}$ and ``tubular neighbourhoods'' along the reduced support of $Z_{CM}$ after removing the singularities. Since $Z_{CM}$ is already fixed, restriction to the pieces of this cover gives a set theoretic bijection of $\Sigma$ with Hilbert schemes on the pieces of the cover. In Section \ref{formal}, we show these moves lead to the product formula for $f_d$ mentioned in (A).
+\item[(D)] On the formal neighbourhoods $\widehat{X}_p$, we have an action of $\CC^{*3}$. This allows us to express their contributions in terms of the topological vertex. The contributions of tubular neighbourhoods along the \emph{punctured} section and fibres can also be expressed in terms of the topological vertex (roughly speaking, by utilizing actions of the elliptic curve $F$ or $\CC^*$ along the fibres). This is worked out in Section \ref{vertex}.
+\end{enumerate}
+
+Many of the methods of this paper work well with the Behrend function. In particular, steps (A), (B), and (D) do not provide any problems. In Section \ref{} \todo{TBC: section on Behrend function.} \\
+
+\noindent \textbf{Acknowledgements.} We would like to thank... \todo{Add people and funding.}
 
 
 \section{Definitions}
 
-Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$ of genus $g$. We make two assumptions:
+Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$. We make two assumptions:
 \begin{itemize}
-\item $p$ has a \emph{unique} section $B \hookrightarrow S$,\todo{Drop uniqueness so generating function becomes product with contribution from multiple sections?}
+\item $p$ has a \emph{unique} section $B \hookrightarrow S$,
 \item all singular fibres of $\pi$ are of Kodaira type $I_1$, i.e.~rational nodal fibres. 
 \end{itemize}
-We write $F_x$ for the fibre $p^{-1}(\{x\})$, for all closed points $x \in B$. We denote the classes of the fibre and section by $B, F \in H^2(S,\ZZ)$. Interesting examples are the elliptic surfaces $E(n)$, where $B = \PP^1$ and $S$ has $12n$ nodal fibres. Then $E(1)$ is the rational elliptic surface and $E(2)$ is the elliptic K3 surface.
+We write $F_x$ for the fibre $p^{-1}(\{x\})$, for all closed points $x \in B$. We denote the classes of the fibre and section by $B, F \in H^2(S,\ZZ)$. Interesting examples are the elliptic surfaces $E(n)$, where $B = \PP^1$ and $S$ has $12n$ nodal fibres. For example, $E(2)$ is the elliptic K3 surface.\todo{Discuss multiple sections $E(1)$?}
 
-Let $\beta \in H_2(S)$ be Poincar\'e dual to $B+dF$, where $d \geq 0$. 
-%Then
-%$$
-%\beta^2 = 2h + B^2
-%$$
-Now let $X = \mathrm{Tot}(K_S)$ be the total space of the canonical bundle over $S$. Then $X$ is a non-compact Calabi-Yau 3-fold. Let
+Let $\beta \in H_2(S)$ be Poincar\'e dual to $B+dF$, where $d \geq 0$. Denote by $X = \mathrm{Tot}(K_S)$ the total space of the canonical bundle over $S$. Then $X$ is a non-compact Calabi-Yau 3-fold. Consider the Hilbert scheme
 $$
 \Hilb^{\beta,n}(X) = \{ Z \subset X \ : \ [Z] = \beta, \ \chi(\O_Z) = n\}
 $$
-denote the Hilbert scheme of proper subschemes $Z \subset X$ with fixed homology class and holomorphic Euler characteristics. K.~Behrend associates to any $\CC$-scheme of finite type $Y$ a constructible function $\nu : Y \rightarrow \ZZ$ \cite{Beh}. Applied to $\Hilb^{\beta,n}(X)$, the Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$ is a compact Calabi-Yau 3-fold, R.P.~Thomas's original definition of DT invariants is by the degree of the virtual cycle of $\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed that this is the same as $e(\Hilb^{\beta,n}(X),\nu)$ \cite{Beh}. The advantage of the definition by means of virtual cycles is that the construction works relative to a base. This implies deformation invariance of the invariants.} 
+of proper subschemes $Z \subset X$ with fixed homology class and holomorphic Euler characteristics. K.~Behrend associates to any $\CC$-scheme of finite type $Y$ a constructible function $\nu : Y \rightarrow \ZZ$ \cite{Beh}. Applied to $\Hilb^{\beta,n}(X)$, the Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$ is a compact Calabi-Yau 3-fold, R.P.~Thomas's original definition of the DT invariant is the degree of the virtual cycle of $\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed that this is the same as $e(\Hilb^{\beta,n}(X),\nu)$ \cite{Beh}. The advantage of the definition by means of virtual cycles is that the construction works relative to a base. This implies deformation invariance of the invariants.} 
 $$
 \DT_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} \nu \ de := \sum_{k \in \ZZ} k \ e(\nu^{-1}(\{k\})),
 $$
-where $e(\cdot)$ denotes topological Euler characteristic. Many of the key properties of DT invariants are already captured by the more classical Euler characteristic version\footnote{From the point of view of \cite{Joy, Bri}, there are two natural integration maps on the semi-classical Hall-algebra. One corresponds to weighing by the Behrend function and the other to weighing by the ``trivial'' constructible function which is constant equal to 1.}
+where $e(\cdot)$ denotes topological Euler characteristic. Many of the key properties of DT invariants are already captured by the more classical Euler characteristic version\footnote{From the point of view of \cite{JS, Bri}, there are two natural integration maps on the semi-classical Hall-algebra. One corresponds to weighing by the Behrend function. The other corresponds to weighing by the ``trivial'' constructible function which is constant equal to 1.}
 $$
 \widehat{\DT}_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} 1 \ de = e(\Hilb^{\beta,n}(X)).
 $$
@@ -166,19 +199,23 @@ The generating functions of interest are
 \DT(X) &:= \sum_{d \geq 0} \DT_d(X) q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \DT_{d,n}(X) p^n q^d, \\
 \widehat{\DT}(X) &:= \sum_{d \geq 0} \widehat{\DT}_d(X) q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \widehat{\DT}_{d,n}(X) p^n q^d.
 \end{align*}
+Note that the corresponding connected series $\DT^{\conn}(X)$, $\widehat{\DT}^{\conn}(X)$ are obtained by dividing by
+\begin{align*}
+&\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X),\nu) p^n q^d \\
+&\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) p^n q^d
+\end{align*}
+respectively.
 
-Since we are dealing with generating functions and our calculations involve cut-paste methods on the moduli space, it is useful to introduce the following notation. We define
+Since we are dealing with generating functions and our calculations involve cut-paste methods in on the moduli space, it is useful to introduce the following notation. We define
 \begin{align*}
 [\Hilb^{d,\bullet}(X)] := \sum_{n \in \ZZ} [\Hilb^{d,n}(X)] p^n,
 \end{align*}
-which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with coefficients in the Grothendieck group of varieties. We also write $\Hilb^{d,\bullet}(X)$ to denote the union of all $\Hilb^{d,n}(X)$. Therefore $\Hilb^{d,\bullet}(X)$ is a $\CC$-scheme which is locally of finite type.
-
-
+which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with coefficients in the Grothendieck group of varieties. We also write $\Hilb^{d,\bullet}(X)$ to denote the union of all $\Hilb^{d,n}(X)$. Therefore $\Hilb^{d,\bullet}(X)$ is a $\CC$-scheme, which is locally of finite type.
 
 
 \section{Push-forward to the symmetric product} \label{sym}
 
-The scaling action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. Therefore
+The action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. Therefore
 $$
 \int_{\Hilb^{d,\bullet}(X)} 1 \ de = \int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \ de.
 $$
@@ -186,18 +223,18 @@ Recall that
 $$
 \int_{\Hilb^{d,\bullet}(X)} 1 \ de = \sum_{n \in \ZZ} p^n \int_{\Hilb^{d,n}(X)} 1 \ de \in \ZZ(\!(p)\!).
 $$
-We revisit the $\CC^*$-fixed point locus in detail in the next section. 
-
-Denote by $\Sym^d(B)$ the $d$th symmetric product of $B$. Recall that we have projections 
+We revisit the $\CC^*$-fixed point locus in detail in the Section \ref{fixedlocus}. Denote by $\Sym^d(B)$ the $d$th symmetric product of $B$. Recall that we have projections 
 $$
 X \stackrel{\pi}{\longrightarrow} S \stackrel{p}{\longrightarrow} B.
 $$
 A subscheme $Z$ of $ \Hilb^{d,\bullet}(X)^{\CC^*}$ always contains the zero section $B \subset S \subset X$. We can remove it and consider the scheme $\overline{Z \setminus B}$. There exists a morphism
-\begin{align*}
+\begin{align}
+\begin{split} \label{rho}
 \rho_{d} : &\Hilb^{d,\bullet}(X)^{\CC^*} \longrightarrow \Sym^d(B), \\
 &Z \mapsto \mathrm{supp}( p_* \pi_* \O_{\overline{Z \setminus B}} ),
-\end{align*}
-where $\supp(\cdot)$ denotes the scheme theoretic support, which is a divisor on $B$. 
+\end{split}
+\end{align}
+where $\supp(\cdot)$ denotes the scheme theoretic support, which gives an effective divisor on $B$. 
 %In terms of the stratification of Proposition \ref{C^*}, it is easy to describe this map: it sends $Z$ described as in the proposition  to
 %$$
 %\sum_{\alpha=1}^{n} |\lambda^{(\alpha)}| x_\alpha \in \Sym^h(B).
@@ -206,15 +243,15 @@ We obtain
 $$
 \int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \ de = \int_{\Sym^d(B)} \rho_{d*}(1) \ de,
 $$
-where $f_d := \rho_{d*}(1)$ is a constructible function on $\Sym^d(B)$. Its value at a closed point $\sum_i a_i x_i$ is 
+where $f_d := \rho_{d*}(1)$ is a constructible function on $\Sym^d(B)$. Its value at a closed point $\mathfrak{a} = \sum_i a_i x_i$ is 
 $$
-\int_{\rho_{d}^{-1}\big(\sum_i a_i x_i\big)} 1 \ de.
+f_d(\mathfrak{a}) = \int_{\rho_{d}^{-1}(\mathfrak{a})} 1 \ de.
 $$
 We are interested in the calculation of
 $$
 \widehat{\DT}(X) = \sum_{d \geq 0} \widehat{\DT}_d(X) q^d =\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de.
 $$
-We prove that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ has two multiplicative properties. The first one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres $F_x$ are smooth and by $B^{\sing}$ the $N$ points over which the fibres $F_x$ are singular. We can consider the restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and $\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(q)$ the MacMahon function.
+It turns out that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ has two multiplicative properties. The first one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres $F_x$ are smooth and by $B^{\sing}$ the $N$ points over which the fibres $F_x$ are singular. We can consider the restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and $\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(q)$ the MacMahon function.
 \begin{proposition} \label{mult1}
 Let $d_1, d_2 \geq 0$ be such that $d_1+d_2 = d$. Then 
 %there are constructible functions
@@ -231,35 +268,33 @@ for any $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(
 We prove this proposition in Section \ref{chargh}. The following product formula is an immediate consequence of this result
 \begin{align}
 \begin{split} \label{firstprod}
-&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de \\
-&= \frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
+&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \\
+&\frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Big) \cdot \Big( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Big). 
 \end{split}
 \end{align}
-The restricted constructible functions $f_d  : \Sym^d(B^{\sm}) \rightarrow \ZZ$ and $f_d  : \Sym^d(B^{\sing}) \rightarrow \ZZ$ satisfy further multiplicative properties:
+The restricted constructible functions $f_d  : \Sym^d(B^{\sm}) \rightarrow \ZZ(\!(p)\!)$ and $f_d  : \Sym^d(B^{\sing}) \rightarrow \ZZ(\!(p)\!)$ satisfy further multiplicative properties:
 \begin{proposition} \label{mult2}
 There exist functions $g : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ and $h : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$, such that $g(0)=1$, $h(0)=1$, and
 \begin{align*}
 f_{d}(\mathfrak{a}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{i} g(a_i), \\
 f_{d}(\mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{j} h(b_j), 
 \end{align*}
-for all $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
+for all $d \geq 0$, $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$, and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
 \end{proposition}
-We prove this proposition in \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and \eqref{firstprod} gives
-$$
+We prove this proposition in Section \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and equation \eqref{firstprod} imply
+\begin{equation} \label{initialprod}
 \sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{M(p)^{N}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \Big( \sum_{a=0}^{\infty} g(a) q^a \Big)^{e(B) - N} \cdot \Big( \sum_{b=0}^{\infty} h(b) q^b \Big)^N.
-$$
-We want to prove Lemmas \ref{mult1}, \ref{mult2} and find formulae for $g(a)$, $h(b)$. This requires a better understanding of the strata
+\end{equation}
+We want to prove Propositions \ref{mult1}, \ref{mult2}, and find formulae for $g(a)$, $h(b)$. This requires a better understanding of the strata
 $$
 \rho_{d}^{-1} (\mathfrak{a} + \mathfrak{b}) \subset \Hilb^{d, \bullet}(X)^{\CC^*},
 $$
-for all $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d_2}(B^{\sing})$ with $d_1+d_2=d$. We start with a more careful study of the $\CC^*$-fixed locus.
-
-
+for all $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(B^{\sing})$ with $d_1+d_2=d$. We continue with a more careful study of the $\CC^*$-fixed locus.
 
 
 \section{The $\CC^*$-fixed locus} \label{fixedlocus}
 
-As we already noted, the scaling action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. 
+As we already noted, the action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. 
 %Therefore
 %$$
 %e(\Hilb^{d,\bullet}(X)) = e(\Hilb^{d,\bullet}(X)^{\CC^*}).
@@ -286,7 +321,7 @@ Therefore a $\CC^*$-fixed morphism $\F \rightarrow \O_X$ corresponds to a graded
 & & & \O_S & \oplus & K_{S}^{-1} & \oplus & K_{S}^{-2} & \cdots 
 }
 \end{displaymath}
-It is useful to re-define $\G_k := \F_{-k} \otimes K_{S}^{k}$. Then the data of a $\CC^*$-fixed morphism $\F \rightarrow \O_X$ is equivalent to the following data:
+It is useful to re-define $\G_k := \F_{-k} \otimes K_{S}^{k}$. Then a $\CC^*$-fixed morphism $\F \rightarrow \O_X$ is equivalent to the following data:
 \begin{itemize}
 \item coherent sheaves $\{\G_k\}_{k \in \ZZ}$ on $S$,
 \item morphisms $\{\G_k \rightarrow \G_{k+1}\}_{k \in \ZZ}$,
@@ -311,7 +346,7 @@ $$
 $$
 \end{proposition}
 
-In the above proposition, each $Z_k$ contains a maximal Cohen-Macaulay subcurve $D_k$ such that $Z_k \setminus D_k$ is 0-dimensional. For $k=0$, $D_0$ is the scheme-theoretic union of the section $B$ and thickenings of certain distinct fibres $F_{x_1}$, $\ldots$, $F_{x_n}$. Denoting the orders of thickenings by $\lambda_{1}^{(1)}, \ldots, \lambda_{1}^{(n)} > 0$, we obtain\footnote{For any reduced curve $C$ on a surface $S$ with ideal sheaf $I_C \subset \O_S$ and $d>0$, we denote by $d C$ the scheme defined by the ideal sheaf $I_{C}^{d} \subset \O_S$.}
+In the above proposition, each $Z_k$ contains a maximal Cohen-Macaulay subcurve $D_k$ such that $Z_k \setminus D_k$ is 0-dimensional. For $k=0$, $D_0$ is the scheme-theoretic union of the section $B$ and thickenings of certain distinct fibres $F_{x_1}$, $\ldots$, $F_{x_n}$. Denoting the orders of thickenings by $\lambda_{0}^{(1)}, \ldots, \lambda_{0}^{(n)} > 0$, we obtain\footnote{For any reduced curve $C$ on a surface $S$ with ideal sheaf $I_C \subset \O_S$ and $d>0$, we denote by $d C$ the scheme defined by the ideal sheaf $I_{C}^{d} \subset \O_S$.}
 $$
 D_0 = B \cup \lambda_{0}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{0}^{(n)} F_{x_n}.
 $$
@@ -331,6 +366,12 @@ The maximal Cohen-Macaulay subcurve of $Z$ is given by the scheme-theoretic unio
 \end{equation}
 for all $i = 1, \ldots, n$.
 \end{proposition}
+
+Note that in the notation of this proposition, the map $\rho_d$ defined in \eqref{rho} maps $Z$ to
+$$
+\sum_{i=1}^{n} |\lambda^{(i)}| x_i \in \Sym^d(B),
+$$
+where $|\lambda^{(i)}|$ denotes the size of the 2D partition $\lambda^{(i)}$.
 %This leads to the following proposition:
 %\begin{proposition} \label{C^*}
 %For each $h>0$, there exists a stratification
@@ -346,16 +387,16 @@ In the previous section, we considered the stratum
 $$
 \rho_{d}^{-1} ( \mathfrak{a} + \mathfrak{b} ) \subset \Hilb^{d, \bullet}(X)^{\CC^*},
 $$
-for any $\mathfrak{a} = \sum_{i=1}^{m} a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} = \sum_{j=1}^{n} b_j y_j \in \Sym^{d_2}(B^{\sing})$ satisfying $d_1+d_2=d$. By the previous lemma, it has a further stratification into locally closed subsets
+for any $\mathfrak{a} = \sum_{i=1}^{m} a_i x_i \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} = \sum_{j=1}^{n} b_j y_j \in \Sym^{d_2}(B^{\sing})$ satisfying $d_1+d_2=d$. Proposition \ref{ZCM} gives a decomposition of $\rho_{d}^{-1} ( \mathfrak{a} + \mathfrak{b} )$ into connected components\footnote{We use the term connected component somewhat loose: it means a subset which is both open and closed, so can be a union of actual connected components.}
 \begin{equation} \label{comps}
 \coprod_{{\scriptsize{\begin{array}{c} \lambda^{(1)} \vdash a_1 \\ \cdots \\ \lambda^{(m)} \vdash a_m \end{array}}}} \coprod_{\scriptsize{\begin{array}{c} \mu^{(1)} \vdash b_1 \\ \cdots \\ \mu^{(m)} \vdash b_m \end{array}}} \Sigma(x_1, \ldots, x_m, y_1, \ldots, y_n, \lambda^{(1)}, \ldots, \lambda^{(m)}, \mu^{(1)}, \ldots, \mu^{(n)}).
 \end{equation}
-We abbreviate a stratum on the RHS by $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. It should be viewed as the stratum of $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ has been fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. We are after the Euler characteristics of these strata. We will see this Euler characteristic does \emph{not} depend on the exact location of the points $x_i$ and $y_j$, but only on their number $m$ and $n$ and the partitions $\lambda^{(i)}$ and $\mu^{(j)}$.
+We abbreviate these connected components by $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. We see that $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ can be characterized as the stratum of point $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$, for which the maximal CM subcurve $D \subset Z$ has been fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$ as in Proposition \ref{ZCM}. We are interested in the Euler characteristics of these strata. We will see this Euler characteristic does \emph{not} depend on the exact location of the points $x_i$ and $y_j$, but only on their number $m$ and $n$ and the partitions $\lambda^{(i)}$ and $\mu^{(j)}$.
 
 
 \section{Restriction to formal neighbourhoods} \label{formal}
 
-In the previous two sections, we reduced our consideration to the stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ containing $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ is fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. In this section, we further break down this stratum by cutting it up in pieces covered by formal neighbourhoods. For notational simplicity, we first consider the case where the base point is 
+\todo{Go back to hat notation formal nghs.} In the previous two sections, we reduced our consideration to the stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ containing $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$ for which the maximal CM subcurve $C \subset Z$ is fixed by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$. In this section, we further break down this stratum by cutting it up in pieces covered by formal neighbourhoods. For notational simplicity, we first consider the case where the base point is 
 $$
 a x + b y \in \Sym^2(B),
 $$
@@ -522,12 +563,12 @@ f_d(ax+by) = \ &\frac{M(p)^{e(X)}}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \B
 
 The arguments of the preceding two sections are straightforwardly modified to any stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. Let $U$ be the formal neighbourhood of any point on $B \subset S \subset X$ and define $\Hilb^{(1,a),\bullet}(U)$ as in Section \ref{localmod}. Let $U'$ be the formal neighbourhood of the singular point of any singular fibre $F \subset S \subset X$ and define $\Hilb^{b,\bullet}(U')$ as in Section \ref{localmod}. Let $V$ be the formal neighbourhood of any smooth fibre $F \setminus B$ in $X \setminus B$ and define $\Hilb^{a,\bullet}(V)$ as in Section \ref{localmod}. Let $V'$ be the formal neighbourhood of any singular fibre $F \setminus (B \cup F^{\sing})$ in $X \setminus (B \cup F^{\sing})$ and define $\Hilb^{b,\bullet}(V')$ as in Section \ref{localmod}. 
 
-\begin{proposition}
+\begin{proposition} \label{geomgh}
 For any $a,b>0$ define
 \begin{align}
 \begin{split} \label{gh}
 g(a) &:= (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*}), \\
-h(b) &:= (1-p) M(p)^{-1} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(V')_{\mu}^{\CC^*}),
+h(b) &:= \frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(V')_{\mu}^{\CC^*}),
 \end{split}
 \end{align}
 and let $g(0) := 1$, $h(0) :=1$. Then
@@ -550,19 +591,43 @@ In this section, we prove Theorem \ref{main} of the introduction by expressing $
 \subsection{The topological vertex and point contributions}   
 
 \todo{Finish this subsection.}
+We denote by 
+$$
+\sfV_{\lambda,\mu,\nu}(p) = \sum_{\pi} p^{|\pi|}, 
+$$
+the topological vertex of DT theory\footnote{In general this depends on an equivariant measure $\mathsf{w}(\pi)$ depending on equivariant parameters $s_1, s_2, s_3$. If $s_1+s_2+s_3=0$, then $\mathsf{w}(\pi) = \pm$. Since we are working with an Euler characteristic version of DT invariants, we take this sign to be 1.} \cite{MNOP2}. Here the sum is over all 3D partitions $\pi$ with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes renormalized volume. 
 
+For a partitions $\lambda$, we write $\lambda'$ for the corresponding transposed partition and define \cite{ORV}
 \begin{align*}
-p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) &= \sfV_{\lambda,\varnothing,\varnothing}(p), \\
-p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) &= \sfV_{\mu,\varnothing,\varnothing}(p), \\
-e(\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}) &= p^{\binom{\mu}{2} + |\mu|} \sfV_{\mu,\mu',\varnothing}(p),
+|\lambda| = \sum_{k=0}^{\infty} \lambda_k \\
+|\!|\lambda|\!| = \sum_{k=0}^{\infty} \lambda_{k}^{2}
 \end{align*}
-where $\mu'$ denotes the transposed partition \footnote{ORV}.
+
+\begin{proposition} \label{vertex1}
+For any $\lambda \vdash a$, $\mu \vdash b$
+\begin{align*}
+p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}) &= \sfV_{\lambda,\square,\varnothing}(p), \\
+p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}) &= \sfV_{\mu,\square,\varnothing}(p), \\
+e(\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}) &= p^{|\!|\mu|\!|} \sfV_{\mu,\mu',\varnothing}(p).
+\end{align*}
+\end{proposition}
+\begin{proof}
+Recall that $U,U' \cong \Spec \CC[\![x_1,x_2,x_3]\!]$. Therefore, there is an action of $\CC^{*3}$ on $U, U'$ and the moduli spaces $\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*}$, $\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*}$, $\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}$. The fixed locus are isolated points corresponding to monomial ideals with asymptotics $(\lambda,\varnothing,\varnothing)$, $(\mu,\varnothing,\varnothing)$, $(\mu,\mu',\varnothing)$ respecitively\footnote{The transpose in $\mu'$ occurs, because we follow the convention of \cite{ORV}.} These monomial ideals are exactly what the topological vertex counts. 
+
+Finally, note that the generating functions $e(\Hilb^{(1,a),\bullet}(U)_{\lambda}^{\CC^*})$, $e(\Hilb^{(1,b),\bullet}(U)_{\mu}^{\CC^*})$, $\Hilb^{b,\bullet}(U')_{\mu}^{\CC^*}$ all start with $1$. On the other hand
+\begin{align*}
+\sfV_{\lambda,\square,\varnothing}(p) &= p^{-\lambda_0} + \cdots, \\
+\sfV_{\mu,\square,\varnothing}(p) &= p^{-\mu_0} + \cdots, \\
+\sfV_{\mu,\mu',\varnothing}(p) &= p^{\sum_{k=0}^{\infty} \mu_{k}^{2}} + \cdots,
+\end{align*}
+where $\cdots$ stands for higher order terms.
+\end{proof}
 
    
 \subsection{Fibre contribution}
 
 Recall that we denote by $V$ the formal neighbourhood of any smooth fibre $F \setminus B$ in $X \setminus B$ and by $V'$ be the formal neighbourhood of any singular fibre $F \setminus (B \cup F^{\sing})$ in $X \setminus (B \cup F^{\sing})$. 
-\begin{proposition}
+\begin{proposition} \label{vertex2}
 For any $\lambda \vdash a$ and $\mu \vdash b$, we have
 \begin{align*}
 e(\Hilb^{a,\bullet}(V)_{\lambda}^{\CC^*}) &= \frac{1}{\sfV_{\lambda,\varnothing,\varnothing}(p)}, \\
@@ -629,16 +694,29 @@ Therefore, we again have a free action of $F' \setminus F^{\prime \sing}$ on its
 
 \subsection{Proof of Theorem \ref{main}}
 
-\begin{proposition}
+Combining Proposition \ref{geomgh} with Propositions \ref{vertex1}, \ref{vertex2} immediately gives:
+\begin{proposition} \label{combgh}
 For any $a,b>0$ 
 \begin{align}
 \begin{split} \label{gh}
 g(a) &:= (1-p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)}, \\
-h(b) &:= (1-p)M(p)^{-1} \sum_{\mu \vdash b} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{\binom{\mu}{2} + |\mu|}}{\sfV_{\mu,\varnothing,\varnothing}(p)}.
+h(b) &:= \frac{1-p}{M(p)} \sum_{\mu \vdash b} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|}}{\sfV_{\mu,\varnothing,\varnothing}(p)}.
 \end{split}
 \end{align}
 \end{proposition}
 
+Plugging in the explicit expression for $g$, $h$ in Proposition \ref{combgh} into \eqref{initialprod} immediately gives the formula for $\widehat{DT}(X)$ in Theorem \ref{main}.
+
+Following the exact same line of reasoning of Sections \ref{sym}--\ref{vertex}, it is easy to see that
+\begin{align*}
+\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) p^n q^d = \Bigg( \sum_{\lambda} q^{|\lambda|} \Bigg)^{e(B) - N} \Bigg( \sum_{\mu} \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|} q^{|\lambda|} \Bigg)^{N}.
+\end{align*}
+The formula for $\widehat{DT}^{\conn}(X)$ in Theorem \ref{main} follows from dividing $\widehat{DT}(X)$ by this expression.
+
+
+\section{Introducing the Behrend function}
+
+\todo{Todo...}
 
 \appendix
 \section{Odds and Ends}\label{appendix: odds and ends}
@@ -772,8 +850,32 @@ proved.
 
 
      
-\bibliography{mainbiblio}
-\bibliographystyle{plain}
+\begin{thebibliography}{MNOP}
+%\bibitem[BCC]{BCC} J.~Bouttier, G.~Chapuy, and S.~Corteel, \textit{From Aztec diamonds to pyramids: steep tilings}, arXiv:1407.0665 [math.CO].
+\bibitem[Beh]{Beh} K.~Behrend, \textit{Donaldson-Thomas type invariants via microlocal geometry}, Annals of Math.~\textbf{170} (2009), 1307--1338.
+%\bibitem[BGK]{BGK} J.~Bryan, F.~Greer, and M.~Kool, \emph{in preparation}.
+\bibitem[BKY]{BKY} J.~Bryan, M.~Kool, and B.~Young...
+%\bibitem[BO]{BO} S.~Bloch and A.Okounkov, \textit{The character of the infinite wedge representation}, Adv.~Math.~\textbf{149} (2000), 1--60.
+%\bibitem[BOP]{BOP} J.~Bryan, G.~Oberdieck, and R.~Pandharipande, \emph{in preparation}.
+\bibitem[Bri]{Bri} T.~Bridgeland, \textit{An introduction to motivic Hall algebras}, Adv.~Math.~\textbf{229} (2012), 102--138.
+%\bibitem[HKK]{HKK} M.-x.~Huang, S.~Katz, and A.~Klemm, \textit{Topological string on elliptic CY 3-folds and the ring of Jacobi forms}, arXiv:1501.04891 [hep-th].
+\bibitem[JS]{JS} D.~Joyce and Y.~Song, \textit{A theory of generalized Donaldson-Thomas invariants}, Mem.~of the AMS \textbf{217} (2012), 1--216.
+%\bibitem[Kac]{Kac} V.~Kac, \textit{Infinite dimensional Lie algebras}, Cambridge University Press (1990).
+%\bibitem[KKV]{KKV} S.~Katz, A.~Klemm, and C.~Vafa, \textit{M-theory, topological strings, and spinning black holes}, Adv.~Theor.~Math.~Phys. \textbf{3} (1999), 1445--1537.
+\bibitem[KY]{KY} T.~Kawai and K.~Yoshioka, \emph{String partition functions and infinite products}, Adv.~Theor.~Math.~Phys.~\textbf{4} (2000), 397--485.
+%\bibitem[MNOP1]{MNOP1} D.~Maulik, N.~Nekrasov, A.~Okounkov and R.~Pandharipande, \textit{Gromov-{W}itten theory and {D}onaldson-{T}homas theory, {I}}, Compos.~Math.~\textbf{142} (2006), 1263--1285. %math.AG/0312059.
+%\bibitem[MNOP2]{MNOP2} D.~Maulik, N.~Nekrasov, A.~Okounkov and R.~Pandharipande, \textit{Gromov-{W}itten theory and {D}onaldson-{T}homas theory, {II}}, Compos.~Math.~\textbf{142} (2006), 1286--1304. 
+%\bibitem[MPT]{MPT} D.~Maulik, R.~Pandharipande and R.~P.~Thomas, \textit{Curves on K3 surfaces and modular forms}, J.~Topol.~\textbf{3}, 937--996 (2010). %arXiv:1001.2719.
+%\bibitem[OP]{OP} A.~Okounkov and R.~Pandharipande, \textit{Gromov-Witten theory, Hurwitz theory, and completed cycles}, Annals of Math.~\textbf{163} (2006), 517?560.
+%\bibitem[OPa]{OPa} G.~Oberdieck and R.~Pandharipande, \textit{Curve counting on $K3 \times E$, the Igusa cusp form $\chi_{10}$, and descendent integration}, arXiv:1411.1514 [math.AG].
+%\bibitem[OR]{OR} A.~Okounkov and N.~Reshetikhin, \textit{Random skew plane partitions and the Pearcey process}, Comm.~in Math.~Phys.~\textbf{269} (2007), 571--609.
+%\bibitem[ORV]{ORV} A.~Okounkov, N.~Reshetikhin, and C.~Vafa, \textit{Quantum Calabi-Yau and classical crystals}, in: The unity of mathematics, editors: P.~Etingof, V.~Retakh, I.~M.~Singer, Progress in Math.~\textbf{244}, Birkh\"auser (2006).
+\bibitem[PT]{PT} R.~Pandharipande and R.~P.~Thomas, \textit{Higher genus curves on K3 surfaces and the Katz-Klemm-Vafa formula}, preprint.
+%\bibitem[Sta]{Sta} R.~P.~Stanley, \textit{Enumerative combinatorics}, vol.~2, Cambridge University Press (2001).
+\bibitem[Tho]{Tho} R.~P.~Thomas, \textit{A Holomorphic Casson Invariant for Calabi--Yau 3-Folds, and Bundles on K3 Fibrations}, J.~Diff.~Geom.~\textbf{54} (2000) 367--438.
+%\bibitem[Tod]{Tod} Y.~Toda, \textit{Stable pairs on local K3 surfaces}, J.~Diff.~Geom.~\textbf{92} (2012), 285--370.
+%\bibitem[You]{You} B.~Young, \textit{Counting coloured boxes}, PhD thesis University of British Columbia (2008).
+\end{thebibliography}
 
 \end{document}
 

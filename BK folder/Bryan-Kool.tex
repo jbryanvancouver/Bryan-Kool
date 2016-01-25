@@ -123,7 +123,7 @@ a K3 surface, we get a new proof of the Katz-Klemm-Vafa formula.
 
 \section{Introduction}
 
-Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$. We assume $p$ has a section and all singular fibres are rational nodal curves. Let $N$ be the number of singular fibres. Important examples are the rational elliptic surface or elliptic K3 surface for which $B = \PP^1$ and $N = 12$, $N=24$ respectively.
+Let $p : S \rightarrow B$ be an elliptic surface over a complex smooth projective curve $B$. We assume $p$ has a section and all singular fibres are rational nodal curves. Let $N$ be the number of singular fibres. Important examples are the rational elliptic surface or elliptic K3 surface for which $B = \PP^1$ and $N = 12$, $N=24$ respectively.
 
 We are interested in the Donaldson-Thomas invariants of $X = \mathrm{Tot}(K_S)$, i.e.~the total space of the canonical bundle $K_S$. This is a non-compact Calabi-Yau 3-fold. Let $\beta$ be an effective curve class on $S$. Consider the Hilbert scheme 
 $$
@@ -201,7 +201,7 @@ $$
 For brevity, we define
 \begin{align*}
 \Hilb^{d,n}(X) &:=\Hilb^{B+dF,n}(X), \\
-\DT_{\beta,n}(X) &:= \DT_{B+dF,n}(X), \\
+\DT_{d,n}(X) &:= \DT_{B+dF,n}(X), \\
 \widehat{\DT}_{d,n}(X) &:= \DT_{B+dF,n}(X).
 \end{align*}
 The generating functions of interest are
@@ -241,7 +241,7 @@ such that $\F \otimes K_{S}^{-1} \rightarrow \F$ is graded, i.e.
 $$
 \F_k \otimes K_{S}^{-1} \longrightarrow \F_{k-1}.
 $$
-The structure sheaf $\O_X$ corresponds to 
+Here $\F_k$ has weight $k$ and $K_{S}$ weight $-1$ under the $\CC^*$-action. The structure sheaf $\O_X$ corresponds to 
 $$
 \pi_* \O_X = \bigoplus_{k=0}^{\infty} K_{S}^{-k}.
 $$
@@ -249,10 +249,20 @@ Therefore a $\CC^*$-equivariant morphism $\F \rightarrow \O_X$ corresponds to a 
 \begin{displaymath}
 \xymatrix
 {
-\cdots & \F_1 & \oplus & \F_0 \ar[d] & \oplus & \F_{-1} \ar[d] & \oplus & \F_{-2} \ar[d] & \cdots \\
-& & & \O_S & \oplus & K_{S}^{-1} & \oplus & K_{S}^{-2} & \cdots 
+\cdots & \F_1 \ar[d] & \oplus & \F_0 \ar[d] & \oplus & \F_{-1} \ar[d] & \oplus & \F_{-2} \ar[d] & \cdots \\
+\cdots &  0 & \oplus & \O_S & \oplus & K_{S}^{-1} & \oplus & K_{S}^{-2} & \cdots, 
 }
 \end{displaymath}
+where 
+\begin{displaymath}
+\xymatrix
+{
+\F_k \otimes K_{S}^{-1} \ar[r] \ar[d] & \F_{k-1} \ar[d] \\
+K_{S}^{k} \otimes K_{S}^{-1} \ar@{=}[r] & K_{S}^{k-1}
+}
+\end{displaymath}
+commute for all $k\leq 0$ and the composition $\F_1 \otimes K_{S}^{-1} \rightarrow \F_0 \rightarrow \O_S$ is to zero. 
+
 It is useful to re-define $\G_k := \F_{-k} \otimes K_{S}^{k}$. Then a $\CC^*$-equivariant morphism $\F \rightarrow \O_X$ is equivalent to the following data:
 \begin{itemize}
 \item quasi-coherent sheaves $\{\G_k\}_{k \in \ZZ}$ on $S$,
@@ -262,8 +272,8 @@ It is useful to re-define $\G_k := \F_{-k} \otimes K_{S}^{k}$. Then a $\CC^*$-eq
 \begin{displaymath}
 \xymatrix
 {
-\cdots & \G_{-1} \ar[r] & \G_0 \ar[r] \ar[d] & \G_{1} \ar[r] \ar[d] & \G_{2} \ar[r] \ar[d] & \cdots \\
-& & \O_S \ar@{=}[r]& \O_S \ar@{=}[r] & \O_S \ar@{=}[r] & \cdots 
+\cdots & \G_{-1} \ar[d] \ar[r] & \G_0 \ar[r] \ar[d] & \G_{1} \ar[r] \ar[d] & \G_{2} \ar[r] \ar[d] & \cdots \\
+\cdots & 0 \ar[r] & \O_S \ar@{=}[r]& \O_S \ar@{=}[r] & \O_S \ar@{=}[r] & \cdots 
 }
 \end{displaymath}
 In the case of interest to us $\G \rightarrow \O_X$ is an ideal sheaf $I_Z \hookrightarrow \O_X$ cutting out $Z \subset X$. In the above language, this means $\G_k = 0$ for $k<0$, the morphisms $\G_k \rightarrow \O_S$ are injective (hence $\G_k = I_{Z_k \subset S}$ is an ideal sheaf cutting out $Z_k \subset S$), and the morphisms $\G_k \rightarrow \G_{k+1}$ are injective (hence $I_{Z_k \subset S} \subset I_{Z_{k+1} \subset S}$, i.e.~$Z_{k} \supset Z_{k+1}$). We conclude:
@@ -291,7 +301,7 @@ $$
 $$
 At the level of closed points this morphism has the following description. Let $Z \in \Hilb^{d,n}(X)^{\CC^*}$ and let $Z_{\CM} \subset Z$ be the maximal Cohen-Macaulay subcurve of $Z$. Since $Z_{\CM}$ is $\CC^*$-fixed, its ideal sheaf decomposes
 $$
-I_{Z_{\CM}} = \bigoplus_{i=0}^{\infty} I_{Y_i \subset S} \otimes K_{S}^{-i},
+I_{Z_{\CM}} = \bigoplus_{k=0}^{\infty} I_{Y_k \subset S} \otimes K_{S}^{-k},
 $$
 where 
 $$
@@ -301,7 +311,7 @@ for some distinct closed points $x_i \in B$ and $\lambda_{0}^{(i)} > 0$ and
 $$
 Y_k = \lambda_{k}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{k}^{(n)} F_{x_n}.
 $$
-for some $\lambda_{k}^{(i)} \leq \lambda_{k-1}^{(i)}$. Here $\lambda^{(k)} = (\lambda^{(k)}_{0} \geq \lambda^{(k)}_{1} \geq \cdots)$ define 2D partitions satisfying 
+for some $\lambda_{k-1}^{(i)} \geq \lambda_{k}^{(i)}$. Here $\lambda^{(i)} = (\lambda^{(i)}_{0} \geq \lambda^{(i)}_{1} \geq \cdots)$ define 2D partitions satisfying 
 $$
 \sum_{i=1}^{n} |\lambda^{(i)}| = d.
 $$
@@ -324,13 +334,13 @@ $$
 $$
 be a $\CC^*$-fixed and $T$-flat closed subscheme. Assume for each $t \in T$ the fibre $\Y_t$ has class $B+dF \in H_2(S)$ and $\chi(\O_{\Y_t}) = n$. Since $\Y$ is $\CC^*$-fixed, Proposition \ref{nest} implies that its ideal sheaf decomposes\footnote{The arguments leading to Proposition \ref{nest} hold equally well for $T$-flat families over a base $T$.}
 $$
-I_{\Y} = \bigoplus_{k = 0}^{\infty} I_{\Y_i \subset S \times T} \otimes K_{S}^{-k},
+I_{\Y} = \bigoplus_{k = 0}^{\infty} I_{\Y_k \subset S \times T} \otimes K_{S}^{-k},
 $$
 where $K_{S}$ is pulled-back along $S \times T \rightarrow S$ and 
 $$
 \Y_0 \supset \Y_1 \supset \cdots.
 $$
-Then each $\Y_k \subset S \times T$ is $T$-flat as well. Since we are on a \emph{surface}, the maximal Gorenstein subcurves $\Y_{k, \CM} \subset \Y_k \subset S \times T$ are $T$-flat and induces morphisms
+Then each $\Y_k \subset S \times T$ is $T$-flat as well. The maximal CM subschemes $\Y_{k, \CM} \subset \Y_k \subset S \times T$ are $T$-flat as well \todo{Provide explanation why $\Y_{\CM,k}$ also $T$-flat?} and induces morphisms
 \begin{align*}
 T &\longrightarrow \Hilb^{B + d_0 F}(S), \\ 
 T &\longrightarrow \Hilb^{d_k F}(S),  \textrm{ \ for \ } k>0
@@ -422,7 +432,7 @@ There exist functions $g : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ and $h : \ZZ_{
 f_{d}(\mathfrak{a}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{i=1}^m g(a_i), \\
 f_{d}(\mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{j=1}^n h(b_j), 
 \end{align*}
-for all $d \geq 0$, $\mathfrak{a} = \sum_{i=1}^m a_i x_i \in \Sym^{d}(B^{\sm})$, and $\mathfrak{b} = \sum_{j=1}^n b_j y_j \in \Sym^{d}(B^{\sing})$, where all $x_i$ and $y_j$ are distinct closed points.
+for all $d \geq 0$, $\mathfrak{a} = \sum_{i=1}^m a_i x_i \in \Sym^{d}(B^{\sm})$, and $\mathfrak{b} = \sum_{j=1}^n b_j y_j \in \Sym^{d}(B^{\sing})$, where $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$ are collections of distinct closed points.
 \end{proposition}
 We prove this proposition in Section \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and equation \eqref{firstprod} imply
 \begin{equation} \label{initialprod}
@@ -437,11 +447,11 @@ for all $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(
 \mathfrak{a} &= \sum_{i=1}^{m} a_i x_i \in \Sym^{d_1}(B^{\sm}), \\
 \mathfrak{b} &= \sum_{j=1}^{n} b_j y_j \in \Sym^{d_2}(B^{\sing}),
 \end{align*}
-where all $x_i$, $y_j$ are distinct closed points on $B$ and $d_1+d_2=d$. Proposition \ref{proprho} gives a decomposition of $\rho_{d}^{-1} ( \mathfrak{a} + \mathfrak{b} )$ into components\footnote{We use the term component somewhat loose: it means a subset which is both open and closed. We do not care whether it is connected.}
+where  $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$ are collections of distinct closed points and $d_1+d_2=d$. Proposition \ref{proprho} gives a decomposition of $\rho_{d}^{-1} ( \mathfrak{a} + \mathfrak{b} )$ into components\footnote{We use the term component somewhat loose: it means a subset which is both open and closed. We do not care whether it is connected.}
 \begin{equation} \label{comps}
 \bigsqcup_{{\scriptsize{\begin{array}{c} \lambda^{(1)} \vdash a_1 \\ \cdots \\ \lambda^{(m)} \vdash a_m \end{array}}}} \bigsqcup_{\scriptsize{\begin{array}{c} \mu^{(1)} \vdash b_1 \\ \cdots \\ \mu^{(m)} \vdash b_m \end{array}}} \Sigma(x_1, \ldots, x_m, y_1, \ldots, y_n, \lambda^{(1)}, \ldots, \lambda^{(m)}, \mu^{(1)}, \ldots, \mu^{(n)}).
 \end{equation}
-We abbreviate these components by $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. We see that $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ can be characterized as the stratum of point $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$, for which the maximal Cohen-Macaulay subcurve $Z_{\CM} \subset Z$ is determined by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$ as in Proposition \ref{proprho}. Note that these strata have a natural scheme structure since they are components of the fibres of $\rho_d$ which are closed subschemes of $\Hilb^{d, \bullet}(X)^{\CC^*}$. We are interested in the Euler characteristics of these strata. We will see this Euler characteristic does \emph{not} depend on the exact location of the points $x_i$ and $y_j$, but only on their number $m$ and $n$ and the partitions $\lambda^{(i)}$ and $\mu^{(j)}$.
+We abbreviate these components by $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. We see that $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ can be characterized as the stratum of points $Z \in \Hilb^{d,\bullet}(X)^{\CC^*}$, for which the maximal Cohen-Macaulay subcurve $Z_{\CM} \subset Z$ is determined by the data $\boldsymbol{x}, \boldsymbol{y}, \boldsymbol{\lambda}, \boldsymbol{\mu}$ as in Proposition \ref{proprho}. Note that these strata have a natural scheme structure: the fibres of $\rho_d$ are closed subschemes of $\Hilb^{d,\bullet}(X)^{\CC^*}$ and these strata are components of them. We are interested in the Euler characteristics of these strata. In the next section, we will see the Euler characteristic of $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$ does \emph{not} depend on the exact location of the points $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$, but only on their number $m$ and $n$ and the partitions $\lambda^{(i)}$ and $\mu^{(j)}$.
 
 
 \section{Restriction to formal neighbourhoods} \label{formal}
@@ -460,7 +470,7 @@ The idea is to use an appropriate cover of $X$ and calculate on pieces of the co
 \item The reduced support $B \cup F_x \cup F_y$ has three singular points\footnote{Recall that $x,y \in B$ in the base can be viewed as points on $S$ and $X$ via the sections $B \subset S \subset X$.}: $x,y \in B$ and $z \in F^{\sing}_{y}$. We take small open balls around these points.
 \item Consider the punctured curve $B^\circ := B \setminus \{x,y\}$ and let $X^\circ := X \setminus (F_x  \cup F_y)$. We take a tubular neighbourhood of $B^\circ \subset X^\circ$.
 \item Consider the punctured curve $F_{x}^{\circ} := F_x \setminus \{x\}$ and let $X^\circ := X \setminus B$. We take a tubular neighbourhood of $F_{x}^\circ \subset X^\circ$.
-\item Consider the punctured curve $F_{y}^{\circ} := F_y \setminus \{y,z\}$ and let $X^\circ := X \setminus (B \cup F_x \cup \{z\})$. We take a tubular neighbourhood of $F_{y}^{\circ} \subset X^\circ$.
+\item Consider the punctured curve $F_{y}^{\circ} := F_y \setminus \{y,z\}$ and let $X^\circ := X \setminus (B \cup \{z\})$. We take a tubular neighbourhood of $F_{y}^{\circ} \subset X^\circ$.
 \item Finally, we take $W = X \setminus (B \cup F_x \cup F_y)$. 
 \end{enumerate}
 
@@ -472,18 +482,18 @@ and \emph{not} the formal scheme $$\mathrm{Spf} \varprojlim R / \mathfrak{m}^n.$
 $$
 \widehat{X}_x \cong \widehat{X}_y \cong \widehat{X}_z \cong\Spec \CC[\![x_1,x_2,x_3]\!].
 $$
-Even though $\widehat{X}_x$ is non-noetherian, the morphism $\widehat{X}_x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operations \cite[Prop.~10.12, 10.13]{AM}. 
+Even though $\widehat{X}_x$ is non-noetherian, the morphism $\widehat{X}_x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operation \cite[Prop.~10.12, 10.13]{AM}. 
 
-In (4) we consider $B^\circ := B \setminus \{x,y\}$, $X^\circ := X \setminus (F_x  \cup F_y)$ and let $\widehat{X}^{\circ}_{B^\circ}$ be the formal neighbourhood of $F_{x}^{\circ}$ in $X^\circ$. For (5) and (6) the formal neighbourhoods $\widehat{X}^{\circ}_{F_{x}^{\circ}}$ and $\widehat{X}^{\circ}_{F_{y}^{\circ}}$ are defined analogously. Note that the definition of $X^\circ$ in (2)--(4) varies slightly. Finally, we take $W = X \setminus (B \cup F_x \cup F_y)$. Then
+In (2) we consider $B^\circ := B \setminus \{x,y\}$, $X^\circ := X \setminus (F_x  \cup F_y)$ and let $\widehat{X}^{\circ}_{B^\circ}$ be the formal neighbourhood of $F_{x}^{\circ}$ in $X^\circ$. For (3) and (4) the formal neighbourhoods $\widehat{X}^{\circ}_{F_{x}^{\circ}}$ and $\widehat{X}^{\circ}_{F_{y}^{\circ}}$ are defined analogously. Note that the definition of $X^\circ$ in (2)--(4) varies slightly. Finally, in (5) we take $W = X \setminus (B \cup F_x \cup F_y)$. Then
 $$
 \mathfrak{U} = \{\widehat{X}_x \rightarrow X, \widehat{X}_y \rightarrow X, \widehat{X}_z \rightarrow X, \widehat{X}^{\circ}_{B^\circ} \rightarrow X, \widehat{X}^{\circ}_{F_{x}^{\circ}} \rightarrow X, \widehat{X}^{\circ}_{F_{y}^{\circ}} \rightarrow X, W \subset X\}
 $$
-forms an fpqc cover of $X$. Consequently the data of a quasi-coherent sheaf on $X$ is equivalent to the data of quasi-coherent sheaves on each of the opens of $\mathfrak{U}$ and gluing isomorphisms between the restrictions to the overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
+forms an fpqc cover of $X$. Consequently the data of a quasi-coherent sheaf on $X$ is equivalent to the data of quasi-coherent sheaves on each of the opens of $\mathfrak{U}$ and gluing isomorphisms between the restrictions on the overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
 
 
 \subsection{Local moduli spaces} \label{localmod}
 
-We now introduce moduli spaces of closed subschemes of dimension $\leq 1$ on each of the pieces of the cover $\mathfrak{U}$. Consider $$\widehat{X}_x \cong \Spec \CC[\![ x_1,x_2,x_3]\!]$$ and assume the coordinates are chosen such that $x_2=x_3=0$ corresponds to the intersection of $\widehat{X}_x \times_X B$ and $x_1=x_3=0$ corresponds to $\widehat{X}_x \times_X F_x$. Define
+We now introduce moduli spaces of closed subschemes of dimension $\leq 1$ on each of the pieces of the cover $\mathfrak{U}$. Assume the coordinates on $$\widehat{X}_x \cong \Spec \CC[\![ x_1,x_2,x_3]\!]$$ are chosen such that $x_2=x_3=0$ corresponds to the intersection $\widehat{X}_x \times_X B$ and $x_1=x_3=0$ corresponds to $\widehat{X}_x \times_X F_x$. Define
 \begin{align*}
 &\Hilb^{(1,d),n}(\widehat{X}_x) := \\
 &\big\{ I_Z \subset \O_{\widehat{X}_x} \ : \ [Z] = [\widehat{X}_x \times_X B] + d [\widehat{X}_x \times_X F_x] \ {\rm{and}} \ h^0(I_{Z_{\CM}} / I_Z) = n \big\}.
@@ -546,7 +556,7 @@ Note that the argument of Proposition \ref{bij} is purely set-theoretic in natur
 \end{remark}
 
 \begin{remark}
-It is important to relate holomorphic Euler characteristic of domain and target in \eqref{restr}. For any subscheme $Z$ in the domain $\Sigma(x,y,\lambda,\mu)$, denote the corresponding maximal Cohen-Macaulay curve of its elements by $Z_{\CM}$ (Proposition \ref{ZCM}). Then
+It is important to relate holomorphic Euler characteristic of domain and target in \eqref{restr}. For any subscheme $Z$ in the domain $\Sigma(x,y,\lambda,\mu)$, denote the corresponding maximal Cohen-Macaulay curve of its elements by $Z_{\CM}$ (Proposition \ref{proprho}). Then
 $$
 \chi(\O_Z) = \chi(\O_{Z_{\CM}}) + \chi(I_{Z_{\CM}} / I_{Z}).
 $$ 
@@ -600,11 +610,11 @@ X^\circ \longrightarrow S^\circ \longrightarrow B^\circ.
 $$
 Similar to Proposition \ref{bij}, these map induces a morphism
 $$
-\Hilb^{1,d}(\widehat{X}^{\circ}_{B^{\circ}}) \longrightarrow \Sym^d(B^\circ).
+\Hilb^{1,n}(\widehat{X}^{\circ}_{B^{\circ}}) \longrightarrow \Sym^n(B^\circ).
 $$
 The fibre over a point $\mathfrak{a} = \sum_i a_i x_i$ equals
 $$
-\prod_{i} e(\Hilb^{1,a_i}(\widehat{X}_{x_i})).
+\prod_{i} \Hilb^{1,a_i}(\widehat{X}_{x_i}).
 $$
 This follows by using an appropriate fpqc cover of $B^\circ$ similar to Proposition \ref{bij}. Therefore, Lemma \ref{lem: formula for euler char of sym products} of the appendix implies
 $$
@@ -627,7 +637,7 @@ f_d(ax+by) = \ &\frac{M(p)^{e(X)}}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \t
    
 \subsection{Geometric characterization of $g(a)$ and $h(b)$} \label{chargh}
 
-The arguments of the preceding two sections are straightforwardly modified to any stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. Fix a smooth fibre $F_x$ and a singular fibre $F_y$. Denote the singular point of $F_y$ by $z$. Let $\widehat{X}_x$, $\widehat{X}_z$ be the formal neighbourhoods of $x$, $z$ in $X$. Define $\Hilb^{(1,a),\bullet}(\widehat{X}_x)$, $\Hilb^{b,\bullet}(\widehat{X}_z)$ as in Section \ref{localmod}. As in Section \ref{localmod}, we also consider the ``tubular'' formal neighbourhoods $\widehat{X}^{\circ}_{F_{x}^{\circ}}$, $\widehat{X}^{\circ}_{F_{x}^{\circ}}$ and corresponding Hilbert schemes $\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})$, $\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})$. The arguments of this section yield:
+The arguments of the preceding two sections are straightforwardly modified to any stratum $\Sigma(\boldsymbol{x};\boldsymbol{y};\boldsymbol{\lambda};\boldsymbol{\mu})$. Fix a smooth fibre $F_x$ and a singular fibre $F_y$. Denote the singular point of $F_y$ by $z$. Let $\widehat{X}_x$, $\widehat{X}_z$ be the formal neighbourhoods of $x$, $z$ in $X$. Define $\Hilb^{(1,a),\bullet}(\widehat{X}_x)$, $\Hilb^{b,\bullet}(\widehat{X}_z)$ as in Section \ref{localmod}. As in Section \ref{localmod}, we also consider the ``tubular'' formal neighbourhoods $\widehat{X}^{\circ}_{F_{x}^{\circ}}$, $\widehat{X}^{\circ}_{F_{y}^{\circ}}$ and corresponding Hilbert schemes $\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})$, $\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})$. The arguments of this section yield:
 \begin{proposition} \label{geomgh}
 For any $a,b>0$ define
 \begin{align*}
@@ -638,7 +648,7 @@ and let $g(0) := 1$, $h(0) :=1$. Then
 \begin{align*}
 f_{d}(\mathfrak{a} + \mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{i} g(a_i) \cdot \prod_{j} h(b_j), 
 \end{align*}
-for any $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$.
+for any $\mathfrak{a} = \sum_i a_i x_i \in \Sym^{d}(B^{\sm})$ and $\mathfrak{b} = \sum_j b_j y_j \in \Sym^{d}(B^{\sing})$, where $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$ are collections of distinct closed points.
 \end{proposition}
    
 We immediately deduce:  
@@ -658,7 +668,7 @@ We denote by
 $$
 \sfV_{\lambda,\mu,\nu}(p) = \sum_{\pi} p^{|\pi|}, 
 $$
-the topological vertex of DT theory\footnote{In general this depends on an equivariant measure $\mathsf{w}(\pi)$ depending on equivariant parameters $s_1, s_2, s_3$. If $s_1+s_2+s_3=0$, then $\mathsf{w}(\pi) = \pm$. Since we are working with an Euler characteristic version of DT invariants, we take $\mathsf{w}(\pi) = 1$.} \cite{MNOP1, MNOP2}. Here the sum is over all 3D partitions $\pi$ with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes renormalized volume. For a 2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we write $\lambda'$ for the corresponding transposed partition and 
+the topological vertex of DT theory\footnote{In general this depends on an equivariant measure $\mathsf{w}(\pi)$ depending on equivariant parameters $s_1, s_2, s_3$. If $s_1+s_2+s_3=0$, then $\mathsf{w}(\pi) = \pm 1$. Since we are working with an Euler characteristic version of DT invariants, we take all signs to be $+1$.} \cite{MNOP1, MNOP2}. Here the sum is over all 3D partitions $\pi$ with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes renormalized volume. For a 2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we write $\lambda'$ for the corresponding transposed partition and 
 \begin{align*}
 |\lambda| &:= \sum_{k=0}^{\infty} \lambda_k, \\
 |\!|\lambda|\!| &:= \sum_{k=0}^{\infty} \lambda_{k}^{2}.
@@ -720,7 +730,7 @@ Next, denote by $\widehat{X}^{\circ}_{F^\circ}$ the formal neighbourhood of $F \
 $$
 \widehat{Y}_{F^{\circ}}^{\circ}
 $$
-the formal neighbourhood of $F \setminus (B \times \{x\})$ inside $Y \setminus (B \times \{x\})$. Recall that $x \in F \cap B$ and $B \times \{x\} \subset \tilde{S} \subset Y$. By removing the section $B$, we have achieved an isomorphism \todo{Can provide more argument here?} 
+the formal neighbourhood of $F \setminus (B \times \{x\})$ inside $Y \setminus (B \times \{x\})$. Recall that $x \in F \cap B$ and $B \times \{x\} \subset \tilde{S} \subset Y$. After removing the section $B$, there exists an isomorphism \todo{Provide more argument here?} 
 \begin{equation} \label{isopuncturednghs}
 \widehat{X}^{\circ}_{F^\circ} \cong \widehat{Y}_{F^{\circ}}^{\circ}.
 \end{equation}
@@ -752,21 +762,21 @@ $$
 \bigoplus_{k=0}^{\infty} \O_{\tilde{S}}(-\lambda_k F) \otimes K_{\tilde{S}}^{-k}.
 $$
 The action of the elliptic curve $F$ on itself is fixed-point-free, so it lifts to a free action on $\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}$. Since $e(F) = 0$, we deduce
-$$
+\begin{equation} \label{e=1}
 e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) = 1.
-$$ 
+\end{equation}
 Finally, since $\widehat{Y}_y \cong \Spec \CC[\![x_1,x_2,x_3]\!]$, we have an action of $\CC^{*3}$ and 
-$$
+\begin{equation} \label{001}
 e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) = e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^{*3}}_{\lambda}) = \sfV_{\lambda,\varnothing,\varnothing}(p).
-$$
-We conclude
+\end{equation}
+We conclude from equations \eqref{isopuncturednghs}, \eqref{e=1}, \eqref{001} that
 \begin{align*}
 1=e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) &= e( \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
 &=  \sfV_{\lambda,\varnothing,\varnothing}(p) \cdot e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
 &=  \sfV_{\lambda,\varnothing,\varnothing}(p) \cdot e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}).
 \end{align*}
 
-The equation for $e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*})$ can be deduced similarly. This time, the smooth fibre $F = F_x \subset S \subset X$ is replaced by the emph{smooth locus} of the singular fibre, i.e.~ 
+The equation for $e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*})$ can be deduced similarly. This time, the smooth fibre $F = F_x \subset S \subset X$ is replaced by the \emph{smooth locus} of the singular fibre, i.e.~ 
 $$
 F' := F_{y}^{\sm} = F_{y} \setminus \{z\},
 $$
@@ -836,7 +846,7 @@ Here the horizontal arrows are Abel-Jacobi maps and the vertical arrows are indu
 \begin{lemma} \label{Hilbcvs}
 Let $g$ be the genus of $B$. If $d > 2g - 2$, then the above maps induces an isomorphism
 $$
-\Sym^d(B) \stackrel{\cong}{\longrightarrow} \Hilb_{B+dF}(S).
+\Sym^d(B) \stackrel{\cong}{\longrightarrow} \Hilb^{B+dF}(S).
 $$
 \end{lemma}
 
@@ -877,9 +887,9 @@ $$
 $$
 on $\Pic^{B+dF}(S) \times S \cong \Pic^{dF}(S) \times S$ (again, after possibly redefining $\cR$). Multiplying by the section defining $B$ and pushing down gives a morphism
 \begin{equation} \label{vbmap}
-\pi_{\Pic *} \cQ \hookrightarrow \pi_{\Pic *} \cQ(B) \cong \pi_{\Pic *} \cR.
+\pi_{\Pic *} \cQ \hookrightarrow (\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR.
 \end{equation}
-Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $\pi_{\Pic *} \cQ(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
+Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $(\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
 \begin{align*}
 \PP(\pi_{\Pic *} \mathcal{P}) &\rightarrow \Pic^d(B), \\
 \PP(\pi_{\Pic *} \mathcal{Q}) &\rightarrow \Pic^{dF}(S), \\
@@ -887,10 +897,10 @@ Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon
 \end{align*}
 and 
 $$
-\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP(\pi_{\Pic *} \mathcal{Q}(B)) \cong \PP(\pi_{\Pic *} \mathcal{R}).
+\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP\big((\pi_{\Pic *} \mathcal{Q})(B)\big) \cong \PP(\pi_{\Pic *} \mathcal{R}).
 $$
 
-What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any linear bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
+What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any line bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
 \[
 0\to H^{1} (B,\delta ) \stackrel{\alpha}{\longrightarrow} H^{1} (S,p^{*}\delta ) \longrightarrow H^{0} (B,\delta \otimes R^{1}p _{*}\O_S ) \to 0.
 \]

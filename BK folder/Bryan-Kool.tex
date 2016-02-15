@@ -153,9 +153,9 @@ $$
 p = e^{2 \pi i z}, \ q = e^{2 \pi i \tau}.
 $$
 \begin{theorem}[Bryan-Kool-Young] 
-Let $g$ be the genus of $B$. Then for all $d > 2g-2$ the coefficient of $q^d$ of $\widehat{\DT}^{\conn}(X)$ is given by the coefficient of $q^d$ of \todo{Can we drop assumption on $d$?}
+Let $g$ be the genus of $B$. Then 
 $$
-\big(q^{-\frac{1}{24}}\eta(\tau) \big)^{-e(S)} K(z,\tau)^{-e(B)}.
+\widehat{\DT}^{\conn}(X) = \big(q^{-\frac{1}{24}}\eta(\tau) \big)^{-e(S)} K(z,\tau)^{-e(B)}.
 $$
 \end{theorem}
 In the case $S \rightarrow \PP^1$ is the elliptically fibred K3 surface, this provides a new derivation of the famous Katz-Klemm-Vafa formula. The KKV formula was recently proved in \emph{all} curve classes in \cite{PT}. This is the first derivation of the KKV formula, which does \emph{not} depend on the Kawai-Yoshioka formula \cite{KY}.
@@ -340,7 +340,7 @@ where $K_{S}$ is pulled-back along $S \times T \rightarrow S$ and
 $$
 \Y_0 \supset \Y_1 \supset \cdots.
 $$
-Then each $\Y_k \subset S \times T$ is $T$-flat as well. The maximal CM subschemes $\Y_{k, \CM} \subset \Y_k \subset S \times T$ are $T$-flat as well \todo{Provide explanation why $\Y_{\CM,k}$ also $T$-flat?} and induces morphisms
+Then each $\Y_k \subset S \times T$ is $T$-flat as well. The maximal CM subschemes $\Y_{k, \CM} \subset \Y_k \subset S \times T$ are $T$-flat as well \todo{I can provide explanation why $\Y_{\CM,k}$ also $T$-flat. Needed?} and induces morphisms
 \begin{align*}
 T &\longrightarrow \Hilb^{B + d_0 F}(S), \\ 
 T &\longrightarrow \Hilb^{d_k F}(S),  \textrm{ \ for \ } k>0
@@ -388,7 +388,7 @@ where $\sum_k d_k = d$. Adding divisors gives a morphism $T \longrightarrow \Hil
 
 \section{Push-forward to the symmetric product} \label{sym}
 
-In the previous section we constructed a morphism (Proposition \ref{proprho}) \todo{Add: this map and everything below needs $d> 2g-2$!!! Or maybe we can do better...}
+In the previous section we constructed a morphism (Proposition \ref{proprho}) 
 \begin{equation} \label{rho}
 \rho_{d} : \Hilb^{d,\bullet}(X)^{\CC^*} \longrightarrow \Sym^d(B).
 \end{equation}
@@ -482,7 +482,7 @@ and \emph{not} the formal scheme $$\mathrm{Spf} \varprojlim R / \mathfrak{m}^n.$
 $$
 \widehat{X}_x \cong \widehat{X}_y \cong \widehat{X}_z \cong\Spec \CC[\![x_1,x_2,x_3]\!].
 $$
-Even though $\widehat{X}_x$ is non-noetherian, the morphism $\widehat{X}_x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operation \cite[Prop.~10.12, 10.13]{AM}. 
+Even though $\widehat{X}_x$ is non-noetherian, the morphism $\widehat{X}_x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operation \cite[Prop.~10.14]{AM}.\todo{Completion=faithfully flat: stacks project Lem.~10.96.3.} 
 
 In (2) we consider $B^\circ := B \setminus \{x,y\}$, $X^\circ := X \setminus (F_x  \cup F_y)$ and let $\widehat{X}^{\circ}_{B^\circ}$ be the formal neighbourhood of $F_{x}^{\circ}$ in $X^\circ$. For (3) and (4) the formal neighbourhoods $\widehat{X}^{\circ}_{F_{x}^{\circ}}$ and $\widehat{X}^{\circ}_{F_{y}^{\circ}}$ are defined analogously. Note that the definition of $X^\circ$ in (2)--(4) varies slightly. Finally, in (5) we take $W = X \setminus (B \cup F_x \cup F_y)$. Then
 $$
@@ -827,13 +827,13 @@ The formula for $\widehat{\DT}^{\conn}(X)$ follows after dividing $\widehat{\DT}
 
 \subsection{Curves on elliptic surfaces}\label{appHilb}
 
-Let $p : S \rightarrow B$ be an elliptic surface with section $B \subset S$. In this section we allow any type of singular fibres. We assume $S$ is not a product, which implies
+Let $p : S \rightarrow B$ be an elliptic surface with section $B \subset S$. In this appendix we allow any type of singular fibres. We assume $S$ is not a product, which implies
 $$
 p^* : \Pic^0(B) \stackrel{\cong}{\longrightarrow} \Pic^0(S)
 $$
 is an isomorphism \cite[VII.1.1]{Mir}. For any $\beta \in H_2(S)$, we denote by $\Hilb^\beta(S)$ the Hilbert scheme of effective divisors on $S$ in class $\beta$. 
 
-Denote by $B \in H_2(S)$ the class of the section and by $F \in H_2(S)$ the class of the fibre. Then we have the following commutative diagram 
+Denote by $B \in H_2(S)$ the class of the section $B \subset S$ and by $F \in H_2(S)$ the class of the fibre. Then we have the following commutative diagram 
 \begin{displaymath}
 \xymatrix
 {
@@ -842,93 +842,123 @@ Denote by $B \in H_2(S)$ the class of the section and by $F \in H_2(S)$ the clas
 \Hilb^{B+dF}(S) \ar[r] & \Pic^{B+dF}(S). 
 }
 \end{displaymath}
-Here the horizontal arrows are Abel-Jacobi maps and the vertical arrows are induced by pull-back and multiplication by the section defining $B \subset S$. The following is the main result of this appendix:
+The horizontal arrows are Abel-Jacobi maps. The vertical arrows are induced by pull-back and adding the section $B \subset S$. 
+%The following is the main result of this appendix:
 \begin{lemma} \label{Hilbcvs}
-Let $g$ be the genus of $B$. If $d > 2g - 2$, then the above maps induces an isomorphism
+The above maps induce an isomorphism
 $$
 \Sym^d(B) \stackrel{\cong}{\longrightarrow} \Hilb^{B+dF}(S).
 $$
 \end{lemma}
 
-\begin{remark}
-The upshot of this proposition is that we can now \emph{see} the elements of $\Hilb_{B+dF}(S)$ lying in our surface $S$.
-\end{remark}
+%\begin{remark}
+%The upshot of this proposition is that we can now \emph{see} the elements of $\Hilb^{B+dF}(S)$ lying in our surface $S$.
+%\end{remark}
 
 \begin{proof}
-Since $d > 2g-2$ the Abel-Jacobi map 
+Clearly $p^*$ gives an isomorphism $\Sym^d(B) \cong \Hilb^{dF}(S)$ and $+B$ gives a closed embedding $\Hilb^{dF}(S) \hookrightarrow \Hilb^{B+dF}(S)$. Since $\Sym^d(B)$ is smooth and $\Hilb^{B+dF}(S)$ is reduced (by \cite[Lect.~25]{Mum}), it suffices to show  
 $$
-\Sym^d(B) \rightarrow \Pic^d(B)
-$$
-is a projective bundle with fibres linear systems of dimension $d-g$. We immediately deduce that all horizontal arrows of the commutative diagram are surjective. At the level of fibres, we have inclusions of linear systems
-\begin{equation} \label{epsilon}
-|\epsilon| \hookrightarrow |p^* \epsilon| \hookrightarrow |p^* \epsilon (B)|,
-\end{equation}
-where $\epsilon \in \Pic^d(B)$. We want to prove that all these linear systems have the same dimension (Claim). The first map is clearly an isomorphism since
-$$
-H^0(S,p^* \epsilon) \cong H^0(B, \epsilon \otimes p_* \O_S) = H^0(B,\epsilon)
-$$
-where we used the projection formula and $p_* \O_S \cong \O_B$. Surjectivity of the second map of \eqref{epsilon} requires more work and is proved below. Before we prove Claim, we show it implies the proposition. Choose Poincar\'e line bundles 
-\begin{align*}
-\cP &\textrm{ \ on \ } \Pic^d(B) \times B, \\
-\cQ &\textrm{ \ on \ } \Pic^{dF}(S) \times S, \\
-\cR &\textrm{ \ on \ } \Pic^{B+dF}(S) \times S.
-\end{align*}
-In each case, denote projection to the base Picard by $\pi_{\Pic}$. Since $d > 2g-2$, the sheaf $\pi_* \mathcal{P}$ is locally free because the dimensions of $|\epsilon|$, $\epsilon \in \Pic^d(B)$ do not jump. Using the isomorphism $\Pic^d(B) \cong \Pic^{dF}(S)$, we see that pull-back of $\mathcal{P}$ along 
-$$
-\Pic^{dF}(S) \times S \rightarrow \Pic^d(B) \times B
-$$
-equals $\mathcal{Q}$ (up to tensoring by a line bundle pulled-back from $S$, which we get rid of by redefining $\mathcal{Q}$). We write this as $p^* \mathcal{P} \cong \mathcal{Q}$. Pushing down to $\Pic^{dF}(S)$, using the projection formula and $p_* \O_S \cong \O_B$, we obtain
-$$
-\pi_{\Pic *} \cP \cong \pi_{\Pic *} \cQ
-$$
-on $\Pic^{dF}(S) \cong \Pic^{d}(B)$. On $\Pic^{dF}(S) \times S$ we can form $\cQ(B)$ by pulling back $\O_S(B)$ along projection to the second factor. Then
-$$
-\cR \cong \cQ(B),
-$$
-on $\Pic^{B+dF}(S) \times S \cong \Pic^{dF}(S) \times S$ (again, after possibly redefining $\cR$). Multiplying by the section defining $B$ and pushing down gives a morphism
-\begin{equation} \label{vbmap}
-\pi_{\Pic *} \cQ \hookrightarrow (\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR.
-\end{equation}
-Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $(\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
-\begin{align*}
-\PP(\pi_{\Pic *} \mathcal{P}) &\rightarrow \Pic^d(B), \\
-\PP(\pi_{\Pic *} \mathcal{Q}) &\rightarrow \Pic^{dF}(S), \\
-\PP(\pi_{\Pic *} \mathcal{R}) &\rightarrow \Pic^{B+dF}(S).
-\end{align*}
-and 
-$$
-\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP\big((\pi_{\Pic *} \mathcal{Q})(B)\big) \cong \PP(\pi_{\Pic *} \mathcal{R}).
-$$
+\Sym^d(B) \rightarrow \Hilb^{B+dF}(S)
+$$ 
+is surjective on closed points.
 
-What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any line bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
-\[
-0\to H^{1} (B,\delta ) \stackrel{\alpha}{\longrightarrow} H^{1} (S,p^{*}\delta ) \longrightarrow H^{0} (B,\delta \otimes R^{1}p _{*}\O_S ) \to 0.
-\]
-Therefore, if
-\begin{equation} \label{ineq}
-\deg( \delta) - \deg (R^1 p_* \O_S)^\vee < 0,
-\end{equation}
-then $\alpha$ is an isomorphism. Assume this is the case. The long exact cohomology sequence associated to 
-\[
-0\to p^{*}\delta (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
-\]
-is
-\[
-\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
-\]
-and since $\alpha $ is a surjection, we get an isomorphism of the last
-two terms. We apply Serre duality to that isomorphism and we use the
-fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
-_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
-\begin{equation} \label{SDiso}
-H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
-\end{equation}
-Let $\epsilon \in \Pic^d(B)$ and take
+For surjectivity, suppose $D'$ is an effective divisor with class $B+dF$ which does \emph{not} lie in the image. Firstly, we note that for any fibre $F$ we have $D' \cdot F = 1$. Therefore $D'$ contains a section $B' \subset S$ as an effective summand. Moreover $B \neq B'$ or else $D'$ would lie in the image. Next, we take any $D$ in the image and compare $D$ and $D'$. Since 
 $$
-\delta =K_{B}\otimes L\otimes \epsilon ^{-1}.
+\O_S(D-D') \in \Pic^0(S) \cong \Pic^0(B),
+$$ 
+after re-arranging we find that there are fibres $F_{x_i}$, $F_{y_j}$ and $a_i \geq 0$, $b_j \geq 0$ such that 
 $$
-Then $\delta$ satisfies \eqref{ineq} if and only if $d>2g-2$, which we assumed. The lemma follows from \eqref{SDiso}.
+B + \sum_i a_i F_{x_i} \sim_{\mathrm{lin}} B' + \sum_j b_j F_{y_j},
+$$
+where $\sim_{\mathrm{lin}}$ denotes linear equivalence. Hence there exists a pencil $\{C_t \}_{t \in \PP^1}$ of effective divisors such that
+$$
+C_0 = B + \sum_i a_i F_{x_i}, \ C_{\infty} = B' + \sum_j b_j F_{y_j}.
+$$
+Now fix a smooth fibre $F$. Then $C_t \cdot F = 1$ for any $t \in \PP^1$, so we get a morphism
+$$
+\PP^1 \longrightarrow F, \ t \mapsto C_t \cap F.
+$$
+But $F$ is a smooth elliptic curve so this map is constant. We conclude
+$$
+B \cap F = C_0 \cap F = C_{\infty} \cap F = B' \cap F.
+$$
+Since $F$ was chosen arbitrary, we deduce that $B = B'$ which is a contradiction.
 \end{proof}
+
+%Proof with additional assumption $d > 2g-2$:
+%Since $d > 2g-2$ the Abel-Jacobi map 
+%$$
+%\Sym^d(B) \rightarrow \Pic^d(B)
+%$$
+%is a projective bundle with fibres linear systems of dimension $d-g$. We immediately deduce that all horizontal arrows of the commutative diagram are surjective. At the level of fibres, we have inclusions of linear systems
+%\begin{equation} \label{epsilon}
+%|\epsilon| \hookrightarrow |p^* \epsilon| \hookrightarrow |p^* \epsilon (B)|,
+%\end{equation}
+%where $\epsilon \in \Pic^d(B)$. We want to prove that all these linear systems have the same dimension (Claim). The first map is clearly an isomorphism since
+%$$
+%H^0(S,p^* \epsilon) \cong H^0(B, \epsilon \otimes p_* \O_S) = H^0(B,\epsilon)
+%$$
+%where we used the projection formula and $p_* \O_S \cong \O_B$. Surjectivity of the second map of \eqref{epsilon} requires more work and is proved below. Before we prove Claim, we show it implies the proposition. Choose Poincar\'e line bundles 
+%\begin{align*}
+%\cP &\textrm{ \ on \ } \Pic^d(B) \times B, \\
+%\cQ &\textrm{ \ on \ } \Pic^{dF}(S) \times S, \\
+%\cR &\textrm{ \ on \ } \Pic^{B+dF}(S) \times S.
+%\end{align*}
+%In each case, denote projection to the base Picard by $\pi_{\Pic}$. Since $d > 2g-2$, the sheaf $\pi_* \mathcal{P}$ is locally free because the dimensions of $|\epsilon|$, $\epsilon \in \Pic^d(B)$ do not jump. Using the isomorphism $\Pic^d(B) \cong \Pic^{dF}(S)$, we see that pull-back of $\mathcal{P}$ along 
+%$$
+%\Pic^{dF}(S) \times S \rightarrow \Pic^d(B) \times B
+%$$
+%equals $\mathcal{Q}$ (up to tensoring by a line bundle pulled-back from $S$, which we get rid of by redefining $\mathcal{Q}$). We write this as $p^* \mathcal{P} \cong \mathcal{Q}$. Pushing down to $\Pic^{dF}(S)$, using the projection formula and $p_* \O_S \cong \O_B$, we obtain
+%$$
+%\pi_{\Pic *} \cP \cong \pi_{\Pic *} \cQ
+%$$
+%on $\Pic^{dF}(S) \cong \Pic^{d}(B)$. On $\Pic^{dF}(S) \times S$ we can form $\cQ(B)$ by pulling back $\O_S(B)$ along projection to the second factor. Then
+%$$
+%\cR \cong \cQ(B),
+%$$
+%on $\Pic^{B+dF}(S) \times S \cong \Pic^{dF}(S) \times S$ (again, after possibly redefining $\cR$). Multiplying by the section defining $B$ and pushing down gives a morphism
+%\begin{equation} \label{vbmap}
+%\pi_{\Pic *} \cQ \hookrightarrow (\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR.
+%\end{equation}
+%Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $(\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
+%\begin{align*}
+%\PP(\pi_{\Pic *} \mathcal{P}) &\rightarrow \Pic^d(B), \\
+%\PP(\pi_{\Pic *} \mathcal{Q}) &\rightarrow \Pic^{dF}(S), \\
+%\PP(\pi_{\Pic *} \mathcal{R}) &\rightarrow \Pic^{B+dF}(S).
+%\end{align*}
+%and 
+%$$
+%\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP\big((\pi_{\Pic *} \mathcal{Q})(B)\big) \cong \PP(\pi_{\Pic *} \mathcal{R}).
+%$$
+
+%What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any line bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
+%\[
+%0\to H^{1} (B,\delta ) \stackrel{\alpha}{\longrightarrow} H^{1} (S,p^{*}\delta ) \longrightarrow H^{0} (B,\delta \otimes R^{1}p _{*}\O_S ) \to 0.
+%\]
+%Therefore, if
+%\begin{equation} \label{ineq}
+%\deg( \delta) - \deg (R^1 p_* \O_S)^\vee < 0,
+%\end{equation}
+%then $\alpha$ is an isomorphism. Assume this is the case. The long exact cohomology sequence associated to 
+%\[
+%0\to p^{*}\delta (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
+%\]
+%is
+%\[
+%\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
+%\]
+%and since $\alpha $ is a surjection, we get an isomorphism of the last
+%two terms. We apply Serre duality to that isomorphism and we use the
+%fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
+%_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
+%\begin{equation} \label{SDiso}
+%H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+%\end{equation}
+%Let $\epsilon \in \Pic^d(B)$ and take
+%$$
+%\delta =K_{B}\otimes L\otimes \epsilon ^{-1}.
+%$$
+%Then $\delta$ satisfies \eqref{ineq} if and only if $d>2g-2$, which we assumed. The lemma follows from \eqref{SDiso}.
 
 %Jim's original:
 %In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =B+dF$.
@@ -1078,6 +1108,7 @@ which proves the lemma.
 \bibitem[MNOP1]{MNOP1} D.~Maulik, N.~Nekrasov, A.~Okounkov and R.~Pandharipande, \textit{Gromov-{W}itten theory and {D}onaldson-{T}homas theory, {I}}, Compos.~Math.~\textbf{142} (2006), 1263--1285. %math.AG/0312059.
 \bibitem[MNOP2]{MNOP2} D.~Maulik, N.~Nekrasov, A.~Okounkov and R.~Pandharipande, \textit{Gromov-{W}itten theory and {D}onaldson-{T}homas theory, {II}}, Compos.~Math.~\textbf{142} (2006), 1286--1304. 
 %\bibitem[MPT]{MPT} D.~Maulik, R.~Pandharipande and R.~P.~Thomas, \textit{Curves on K3 surfaces and modular forms}, J.~Topol.~\textbf{3}, 937--996 (2010). %arXiv:1001.2719.
+\bibitem[Mum]{Mum} D.~Mumford, \textit{Lectures on curves on an algebraic surface}, Princeton University Press (1966).
 %\bibitem[OP]{OP} A.~Okounkov and R.~Pandharipande, \textit{Gromov-Witten theory, Hurwitz theory, and completed cycles}, Annals of Math.~\textbf{163} (2006), 517?560.
 %\bibitem[OPa]{OPa} G.~Oberdieck and R.~Pandharipande, \textit{Curve counting on $K3 \times E$, the Igusa cusp form $\chi_{10}$, and descendent integration}, arXiv:1411.1514 [math.AG].
 %\bibitem[OR]{OR} A.~Okounkov and N.~Reshetikhin, \textit{Random skew plane partitions and the Pearcey process}, Comm.~in Math.~Phys.~\textbf{269} (2007), 571--609.

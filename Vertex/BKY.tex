@@ -1,0 +1,493 @@
+\documentclass{amsart}
+
+\title{Trace identities for the Topological Vertex}
+\author{Jim Bryan, Martijn Kool, Ben Young}
+\date{\today}
+\address{
+Department of Mathematics\\
+University of British Columbia \\
+Room 121, 1984 Mathematics Road  \\
+Vancouver, B.C., Canada V6T 1Z2  
+}
+
+
+
+%\usepackage{diagrams}
+%\usepackage{eepic,epic}
+
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{times}
+%\usepackage{amstex}
+
+
+\newcommand{\cnums} {{\mathbb C}}          % complex numbers
+\newcommand{\nnums} {{\mathbb N}}		% natural numbers
+\newcommand{\rnums} {{\mathbb R}}		% real numbers
+\newcommand{\znums} {{\mathbb Z}}		% integers
+\newcommand{\qnums} {{\mathbb Q}}		% rationals
+
+\newcommand{\Vsf}{\mathsf{V}}
+\newcommand{\bx}{\square}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\half}{\frac{1}{2}}
+
+
+
+\newtheorem{thm}{Theorem}%[section]
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{rem}[thm]{Remark}
+
+\newtheorem{def-thm}[thm]{Definition-Theorem}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmpl}[theorem]{Example}
+
+
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\im}{\operatorname{Im}}
+
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\M}{\overline{\mathcal{M}}}
+\newcommand{\smargin}[1]{\marginpar{\tiny{#1}}}
+
+
+\begin{document}
+
+\begin{abstract}
+
+\end{abstract}
+
+\maketitle 
+
+%\markboth{???}  {???}
+%\renewcommand{\sectionmark}[1]{}
+
+
+%\tableofcontents
+%\pagebreak
+
+
+\section{Introduction}\label{sec: intro}
+
+The topological vertex $\Vsf_{\lambda \mu \nu}=\Vsf_{\lambda \mu
+\nu}(p)$ is a universal formal Laurent series in $p$ depending on a
+triple of partitions $(\lambda, \mu, \nu )$. It can be considered as
+an object in combinatorics, representation theory, geometry, or
+physics. In combinatorics, $\Vsf_{\lambda \mu \nu}$ is the generating
+function for the number of 3D partitions with asymptotic legs of type
+$(\lambda, \mu, \nu )$ (see Definition~\ref{defn: box counting
+vertex}). In representation theory, $\Vsf_{\lambda \mu \nu}$ is given
+as the matrix coefficients of a certain vertex operator on Fock space
+(see ???). In geometry, $\Vsf_{\lambda \mu \nu}$ is the basic building
+block for computing the Donaldson-Thomas/Gromov-Witten invariants of
+toric Calabi-Yau threefolds; in this incarnation, it can be realized
+as the generating function for the Euler characteristics of certain
+Hilbert schemes of curves in $\cnums^{3}$ (see ???). The topological
+vertex was first discovered in physics as an open string partition
+function in type IIA string theory on $\cnums^{3}$
+\cite{AKMV}. An explicit expression for $\Vsf_{\lambda \mu \nu}$
+in terms of Schur functions was given by \cite{Ok-Re-Va} (see
+section~\ref{sec: topo
+vertex and schur fncs}).
+
+
+In this paper we prove several ``trace identities'' in which a sum
+over certain combinations of the vertex is expressed as a closed
+formula, often a product of simple terms. The products are closely
+related to the Fourier expansions of Jacobi forms. Applications of
+these identities are used to compute the Donaldson-Thomas partition
+functions of certain Calabi-Yau threefolds in terms of Jacobi forms
+\cite{Bryan-Kool,Bryan-K3xE,BOPY}.
+
+\section{Definitions and the main result.}\label{sec: defns and
+result}
+
+In this section we give the combinatorial definition of the vertex and
+we state our main identities.
+
+\begin{defn}\label{defn: 3D partition asympt to (a,b,c)} Let $(\lambda
+,\mu ,\nu )$ be a triple of ordinary partitions. A \emph{3D
+partition $\pi $ asymptotic to $(\lambda ,\mu ,\nu )$} is a subset
+\[
+\pi \subset \left(\znums _{\geq 0} \right)^{3}
+\]
+satisfying
+\begin{enumerate}
+\item if any of $(i+1,j,k)$, $(i,j+1,k)$, and $(i,j,k+1)$ is in $\pi
+$, then $(i,j,k)$ is also in $\pi $, and
+\item
+\begin{enumerate}
+\item $(j,k)\in \lambda $ if and only if $(i,j,k)\in \pi $ for all $i\gg 0$,
+\item $(k,i)\in \mu  $ if and only if $(i,j,k)\in \pi $ for all $j\gg 0$,
+\item $(i,j)\in \nu  $ if and only if $(i,j,k)\in \pi $ for all $k\gg 0$.
+\end{enumerate}
+\end{enumerate}
+where we regard ordinary partitions as finite subsets of $\left(\znums
+_{\geq 0} \right)^{2}$ via their diagram.
+\end{defn}
+
+Intuitively, $\pi $ is a pile of boxes in the positive octant of
+3-space.  Condition (1) means that the boxes are stacked stably with
+gravity pulling them in the $(-1,-1,-1)$ direction; condition (2)
+means that the pile of boxes is infinite along the coordinate axes
+with cross-sections asymptotically given by $\lambda $, $\mu $, and
+$\nu $.
+
+The subset $\{(i,j,k ): (j,k)\in \lambda \}\subset \pi $ will be
+called the \emph{leg} of $\pi $ in the $i$ direction, and the legs in
+the $j$ and $k$ directions are defined analogously. Let
+\begin{equation*}
+\xi _{\pi } (i,j,k) = 1 - \# \text{ of legs of $\pi $ containing }
+(i,j,k) .
+\end{equation*}
+
+We define the renormalized volume of $\pi $ by
+\[
+|\pi | = \sum _{(i,j,k)\in \pi } \xi _{\pi } (i,j,k).
+\]
+Note that $|\pi |$ can be negative.
+\begin{defn}\label{defn: box counting vertex}
+The topological vertex $\Vsf_{\lambda \mu \nu }$ is defined to be
+\[
+\Vsf _{\lambda \mu \nu }= \sum _{\pi } p^{|\pi |}
+\]
+where the sum is taken over all 3D partitions $\pi $ asymptotic to
+$(\lambda ,\mu ,\nu )$. We regard $\Vsf _{\lambda \mu \nu }$ as a
+formal Laurent series in $p$. Note that $\Vsf _{\lambda \mu \nu }$ is
+clearly cyclically symmetric in the indices, and reflection about the
+$i=j$ plane yields
+\[
+\Vsf _{\lambda \mu \nu } = \Vsf _{\mu '\lambda '\nu '}
+\]
+where $'$ denotes conjugate partition:
+\[
+\lambda ' = \{(i,j): (j,i)\in \lambda  \}.
+\]
+
+\end{defn}
+This definition of topological vertex differs from the vertex $C
+(\lambda ,\mu ,\nu )$ of the physics literature by a normalization
+factor (and we use the variable $p$ instead of $q$). Our $\Vsf
+_{\lambda \mu \nu }$ is equal to $P (\lambda ,\mu ,\nu )$ defined by
+Okounkov, Reshetikhin, and Vafa \cite[eqn~3.16]{Ok-Re-Va}. They derive
+an explicit formula for $\Vsf _{\lambda \mu \nu }=P (\lambda, \mu, \nu
+)$ in terms of Schur functions \cite[eqns~3.20 and 3.21]{Ok-Re-Va}.
+
+
+
+The \emph{rows} or \emph{parts} of $\lambda $
+are the integers $\lambda _j = \min \{i \;|\;(i,j) \not \in \lambda
+\}$, for $j \geq 0$. We use the notation
+\[
+|\lambda | = \sum_{j} \lambda_{j},\quad ||\lambda ||^{2} =\sum_{j}\lambda_{j}^{2}.
+\]
+Let $\bx$ denote the partition with a single part of size 1.
+
+We also use the notation
+\[
+M(p,q) = \prod_{m=1}^{\infty} (1-p^{m}q)^{-m}
+\]
+and the shorthand $M(p)=M(p,1)$.
+
+We can now state our main result.
+
+\begin{theorem}\label{thm: main formulas}
+The following identities hold:
+\begin{align}
+&\sum_{\lambda} q^{|\lambda |} = \prod_{m=1}^{\infty} (1-q^{m})^{-1}\label{eqn 1}\\
+&\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda'
+\lambda \emptyset }=  M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d})\label{eqn 2}\\
+\quad\nonumber \\
+&\sum_{\lambda} q^{|\lambda |}\frac{\Vsf_{\lambda
+\bx\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} =
+(1-p)^{-1}\prod_{d=1}^{\infty} \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 3}\\
+\quad\nonumber \\
+&\sum_{\lambda} q^{|\lambda |} p \frac{\Vsf_{\bx \bx 
+\lambda}}{\Vsf_{\emptyset \emptyset \lambda}} =
+\prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
+1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
+\quad&\quad \nonumber \\
+\quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}}
+\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
+\emptyset}}\Vsf_{\lambda' \lambda \emptyset} =
+(1-p)^{-1}M(p)\prod_{d=1}^{\infty}
+\frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 5}
+\end{align}
+\end{theorem}
+
+
+
+\begin{comment} % Same theorem different formating of the equations:
+\begin{theorem}\label{thm: main formulas}
+The following identities hold:
+\begin{align}
+\sum_{\lambda} q^{|\lambda |} &= \prod_{m=1}^{\infty} (1-q^{m})^{-1}\label{eqn 1}\\
+\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda'
+\lambda \emptyset }&=  M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d})\label{eqn 2}\\
+\quad\nonumber \\
+\sum_{\lambda} q^{|\lambda |}\frac{\Vsf_{\lambda
+\bx\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} &=
+(1-p)^{-1}\prod_{d=1}^{\infty} \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 3}\\
+\quad\nonumber \\
+\sum_{\lambda} q^{|\lambda |} p \frac{\Vsf_{\bx \bx 
+\lambda}}{\Vsf_{\emptyset \emptyset \lambda}} &=
+\prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
+1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
+\quad\nonumber \\
+\quad \quad \sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}}
+\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
+\emptyset}}\Vsf_{\lambda' \lambda \emptyset} &=
+(1-p)^{-1}M(p)\prod_{d=1}^{\infty}
+\frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 5}
+\end{align}
+\end{theorem}
+\end{comment}
+
+
+
+
+We call these formulas ``trace formulas'' since the left hand side can
+be expressed as the traces of certain operators on Fock space. This
+will be made explicit in section~???.
+
+We note that formula~\eqref{eqn 1} is elementary and well known. We
+prove Formula~\eqref{eqn 2} in section~\ref{sec: topo vertex and schur
+fncs} using the orthogonality properties of skew Schur
+functions. Formulas~\eqref{eqn 3} and \eqref{eqn 4} are proved in
+section~\ref{sec: applications of the Bloch-Okounkov thm} using a
+theorem of Bloch-Okounkov \cite{Bloch-Okounkov}. The most difficult
+identity to prove is equation~\eqref{eqn 5} which we do in
+section~???. There we prove that the left hand side of
+equation~\eqref{eqn 5} is given as the trace of a certain product of
+operators on Fock space. To compute the trace, we introduce a new
+trick which involves an ``infinite number'' of permutations of the
+operators.
+
+\section{The topological vertex and Schur functions}\label{sec: topo
+vertex and schur fncs}
+
+Okounkov-Reshetikhin-Vafa derived a formula for the topological vertex
+in terms of skew Schur functions. Translating their formulas
+\cite[3.20\& 3.21]{Ok-Re-Va} into our notation, we get:
+\begin{equation}\label{eqn: ORV formula for vertex}
+\Vsf_{\lambda \mu \nu}(p) = M(p) p^{-\half (||\lambda ||^{2}+||\mu
+||^{2}+||\nu ||^{2})} s_{\nu '}(p^{-\rho}) \sum_{\eta} s_{\lambda
+'/\eta}(p^{-\nu -\rho})s_{\mu /\eta}(p^{\nu '-\rho} ).
+\end{equation}
+
+Here, $s_{\alpha /\beta}(x_{1},x_{2},\dots )$ is the skew Schur
+function (see for example \cite[\S~5]{MacDonald}) and 
+\[
+\rho =\left(-\half ,-\frac{3}{2},-\frac{5}{2},\dots  \right)
+\]
+so that $p^{-\nu -\rho}$ is notation for the variable list
+\[
+p^{-\nu -\rho} = \left(p^{-\nu_{1} +\half },p^{-\nu_{2} +\frac{3}{2}},\dots   \right).
+\]
+
+Using equation~\eqref{eqn: ORV formula for vertex} and orthogonality
+of skew Schur functions \cite[28(a),page 94]{MacDonald} we prove
+equation~\eqref{eqn 2} as follows:
+\[
+\Vsf_{\lambda '\lambda \emptyset} = M(p)p^{-||\lambda ||^{2}}
+\sum_{\eta} s_{\lambda /\eta}(p^{-\rho})^{2}
+\]
+so
+\begin{align*}
+\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda
+'\lambda \emptyset} &= M(p)\sum_{\lambda ,\eta} q^{|\lambda |} (s_{\lambda /\eta}(p^{\half },p^{\frac{3}{2}},\dots ))^{2}\\
+&=M(p)\prod_{d=1}^{\infty} \left((1-q^{d})^{-1}\prod_{j,k=1}^{\infty}(1-q^{d}p^{i-\half +j-\half })^{-1} \right)\\
+&= M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}\prod_{m=1}^{\infty}(1-q^{d}p^{m})^{-m}\\
+&=M(p)\prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d}).
+\end{align*}
+
+We also use equation~\ref{eqn: ORV formula for vertex} to derive the
+following key formulas:
+\begin{lemma}\label{lem: eqns for Vlambdaboxempty/Vlambdaemptyempty
+and Vlambdaboxbox/Vlambdaemptyempty} 
+The following hold:
+\begin{align*}
+p^{\half }\,\,  \frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda
+\emptyset \emptyset}} &= \sum_{i=1}^{\infty} p^{-\lambda_{i}+i-\half }\\
+p\,\,  \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda
+\emptyset \emptyset}} &= 1-\left(\sum_{i=1}^{\infty}
+p^{-\lambda_{i}+i-\half } \right) \left(\sum_{j=1}^{\infty} p^{\lambda_{j}-j+\half } \right)
+\end{align*}
+\end{lemma}
+\proof Applying equation~\eqref{eqn: ORV formula for vertex} to
+$\Vsf_{\lambda \bx \emptyset}/\Vsf_{\lambda \emptyset
+\emptyset}=\Vsf_{\bx \emptyset \lambda}/\Vsf_{\emptyset \emptyset
+\lambda}$ we see that the left hand side of the first equation is
+given by
+\[
+s_{\bx}(p^{-\lambda -\rho})=s_{\bx}
+(p^{-\lambda_{1}+\half },p^{-\lambda_{2}+\frac{3}{2}},\dots ) =
+\sum_{i=1}^{\infty} p^{-\lambda_{i}+i-\half }.
+\]
+Similarly, 
+\begin{align*}
+p\frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset \emptyset}} =
+p\frac{\Vsf_{\bx \bx \lambda}}{\Vsf_{\emptyset \emptyset \lambda }} &=
+\sum_{\eta} s_{\bx /\eta}(p^{-\lambda -\rho} )  s_{\bx /\eta}(p^{-\lambda' -\rho} )  \\
+&= 1 + s_{\bx}(p^{-\lambda -\rho })s_{\bx}(p^{-\lambda' -\rho }).
+\end{align*}
+
+In general we have the following relation (see
+\cite[Eqn~(3.10)]{Ok-Re-Va})\footnote{There is a typo in equation~3.10 in
+\cite{Ok-Re-Va} --- the exponent on the right hand side should be $\nu '-\rho$. }
+\[
+s_{\lambda /\mu}(p^{\nu +\rho}) = (-1)^{|\lambda |-|\mu |}s_{\lambda
+'/\mu '}(p^{-\nu '-\rho})
+\]
+so in particular $s_{\bx}(p^{\nu +\rho})=-s_{\bx}(p^{-\nu '-\rho})$
+and thus
+\begin{align*}
+p\frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset \emptyset}} &=
+1 - s_{\bx}(p^{-\lambda -\rho })s_{\bx}(p^{\lambda +\rho })\\
+&= 1-\left(\sum_{i=1}^{\infty} p^{-\lambda_{i}+i-\half }
+\right)\left(\sum_{j=1}^{\infty} p^{\lambda_{j}-j+\half } \right)
+\end{align*}
+which proves the lemma.
+
+\section{Applications of a theorem of Bloch-Okounkov}
+\label{sec: applications of the Bloch-Okounkov thm}
+
+We summarize a result of Bloch-Okounkov \cite{Bloch-Okounkov} and use it apply
+it to proving more of our trace formulas. 
+
+We define the following theta function
+\[
+\Theta (p,q) = \eta (q)^{-3}\sum_{n\in \znums}
+(-1)^{n}q^{\half (n+\half )^{2}} p^{n+\half } 
+\]
+which, by the Jacobi triple product formula is given by
+\[
+\Theta (p,q) = (p^{\half -p^{-\half }})\prod_{m=1}^{\infty}
+\frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}. 
+\]
+
+We often supress the $q$ from the notation: $\Theta (p) = \Theta (p,q)$,
+and we note that 
+\[
+\Theta (p) = -\Theta (p^{-1}).
+\]
+
+\begin{theorem}[Bloch-Okounkov \cite{Bloch-Okounkov}]\label{thm: Bloch-Okounkov thm}
+Define the $n$ point correlation function by the formula
+\[
+F(p_{1},\dots ,p_{n}) = \prod_{m=1}^{\infty}(1-q^{m})\, \sum_{\lambda}
+q^{\lambda} \prod_{k=1}^{n} \left(\sum_{i=1}^{\infty} p_{k}^{\lambda_{i}-i+\half } \right).
+\]
+Then
+\[
+F(p) = \frac{1}{\Theta (p)}
+\]
+and
+\[
+F(p_{1},p_{2}) = \frac{1}{\Theta
+(p_{1}p_{2})}\left(p_{1}\frac{d}{dp_{1}}\log(\Theta (p_{1}))+ p_{2}\frac{d}{dp_{2}}\log(\Theta (p_{2})) \right).
+\]
+\end{theorem}
+
+In \cite{Bloch-Okounkov}, formulas for the general $n$ variable
+function is given, but we will only need the cases of $n=1$ and
+$n=2$.
+
+Using this theorem, we will prove equations~\eqref{eqn 3} and
+\eqref{eqn 4} of the main theorem.
+
+\subsection{Proofs of equations~\eqref{eqn 3} and \eqref{eqn 4}} $\, $
+    
+
+
+We apply Lemma~\ref{lem: eqns for Vlambdaboxempty/Vlambdaemptyempty
+and Vlambdaboxbox/Vlambdaemptyempty} and Theorem~\ref{thm: Bloch-Okounkov thm}:
+\begin{align*}
+\sum_{\lambda}(1-p) q^{|\lambda |} \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} &=
+(p^{-\half}-p^{\half}) \sum_{\lambda} q^{|\lambda |}\sum_{i=1}^{\infty}p^{-\lambda_{i}+i-\half}\\
+&=(p^{-\half}-p^{\half}) \prod_{m=1}^{\infty}(1-q^{m})^{-1} F(p^{-1})\\
+&=(p^{-\half}-p^{\half}) \prod_{m=1}^{\infty}(1-q^{m})^{-1} \frac{1}{-\Theta (p)}\\
+&=\prod_{m=1}^{\infty} \frac{(1-q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}
+\end{align*}
+which proves equation~\eqref{eqn 3}.
+
+Again we apply Lemma~\ref{lem: eqns for
+Vlambdaboxempty/Vlambdaemptyempty and Vlambdaboxbox/Vlambdaemptyempty}
+and Theorem~\ref{thm: Bloch-Okounkov thm}:
+\begin{align*}
+\sum_{\lambda} q^{|\lambda |}p \frac{\Vsf_{\lambda \bx
+\bx}}{\Vsf_{\lambda \emptyset \emptyset}} &= \sum_{\lambda}
+q^{|\lambda
+|}\left\{1-\left(\sum_{i=1}^{\infty}p^{-\lambda_{i}+i-\half}
+\right)\left(\sum_{j=1}^{\infty}p^{-\lambda_{j}-j+\half} \right)  \right\}\\
+&= \prod_{m=1}^{\infty}(1-q^{m})^{-1} \left(1-F(p,p^{-1}) \right).
+\end{align*}
+
+From Theorem~\ref{thm: Bloch-Okounkov thm}, we see that 
+\[
+F(p,p^{-1}) = \lim_{ (p_{1},p_{2})\to (p,p^{-1}) } \frac{1}{\Theta
+(p_{1}p_{2})} \left(p_{1}\frac{d}{dp_{1}}\log(\Theta (p_{1}))+ p_{2}\frac{d}{dp_{2}}\log(\Theta (p_{2})) \right).
+\]
+To evaluate this limit, we simplify the above expression. A short
+computation shows that 
+\[
+p\frac{d}{dp}\log(\Theta (p)) = \half \frac{p+1}{p-1}
++\sum_{m=1}^{\infty}\sum_{k=1}^{\infty} \left(-p^{k}+p^{-k} \right)
+q^{mk}.
+\]
+Thus
+\begin{align*}
+F(p,p^{-1}) =& \lim_{\begin{smallmatrix} (p_{1},p_{2})\to \\
+(p,p^{-1}) \end{smallmatrix}}
+\left((p_{1}p_{2})^{\half} - (p_{1}p_{2})^{-\half} \right)^{-1}
+\prod_{m=1}^{\infty}
+\frac{(1-q^{m})^{2}}{(1-(p_{1}p_{2})q^{m})(1-(p_{1}p_{2})^{-1}q^{m})} \\
+&\quad \quad \quad \quad \cdot \left\{\half \cdot \frac{p_{1}+1}{p_{1}-1}+\half \cdot \frac{p_{2}+1}{p_{2}-1}
++\sum_{m=1}^{\infty}\sum_{k=1}^{\infty}
+\left(-p_{1}^{k}-p_{2}^{k}+p_{1}^{-k}+p_{2}^{-k} \right)q^{mk}
+\right\} \\
+=&  \lim_{\begin{smallmatrix} (p_{1},p_{2})\to \\
+(p,p^{-1}) \end{smallmatrix}}
+\frac{-(p_{1}p_{2})^{\half}}{1-p_{1}p_{2}} \cdot
+\left\{\frac{p_{1}p_{2}-1}{(p_{1}-1)(p_{2}-1)} +
+\sum_{m=1}^{\infty}\sum_{k=1}^{\infty} (1-p_{1}^{k}p_{2}^{k})(p_{1}^{-k}+p_{2}^{-k})q^{mk} \right\}\\
+= &  \lim_{\begin{smallmatrix} (p_{1},p_{2})\to \\
+(p,p^{-1}) \end{smallmatrix}}
+\,(p_{1}p_{2})^{\half} \left\{\frac{1}{(1-p_{1})(1-p_{2})} -
+\sum_{m=1}^{\infty }\sum_{k=1}^{\infty } \frac{1-(p_{1}p_{2})^{k}}{1-p_{1}p_{2}}(p_{1}^{-k}+p_{2}^{-k})q^{mk} \right\}\\
+=& \frac{1}{(1-p)(1-p^{-1})} - \sum_{m=1}^{\infty}\sum_{k=1}^{\infty}
+k(p^{k}+p^{-k})q^{mk}. 
+\end{align*}
+Therefore 
+\[
+1-F(p,p^{-1}) = 1 +\frac{p}{(1-p)^{2}} + \sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{d}
+\]
+which finishes the proof of equation~\eqref{eqn 4}.
+
+\section{Vertex operators and the proof of equation~\eqref{eqn
+5}}\label{sec: vertex ops and the pf of eqn 5}
+
+
+
+
+\bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
+\bibliographystyle{plain}
+
+\end{document}
+

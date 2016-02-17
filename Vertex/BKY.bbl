@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{AKMV}
+Mina Aganagic, Albrecht Klemm, Marcos Mari{\~n}o, and Cumrun Vafa.
+\newblock The topological vertex.
+\newblock {\em Comm. Math. Phys.}, 254(2):425--478, 2005.
+\newblock arXiv:hep-th/0305132.
+
+\bibitem{Bloch-Okounkov}
+Spencer Bloch and Andrei Okounkov.
+\newblock The character of the infinite wedge representation.
+\newblock {\em Adv. Math.}, 149(1):1--60, 2000.
+\newblock arXiv:alg-geom/9712009.
+
+\bibitem{Bryan-K3xE}
+Jim Bryan.
+\newblock {The Donaldson-Thomas theory of $K3\times E$ via the topological
+  vertex}.
+\newblock arXiv:math/1504.02920.
+
+\bibitem{Bryan-Kool}
+Jim Bryan and Martijn Kool.
+\newblock {Donaldson-Thomas invariants of local elliptic surfaces via the
+  topological vertex}.
+\newblock In preparation.
+
+\bibitem{BOPY}
+Jim Bryan, George Oberdieck, Rahul Pandharipande, and Qizheng Yin.
+\newblock {Curve counting on abelian surfaces and threefolds}.
+\newblock arXiv:math/1506.00841.
+
+\bibitem{MacDonald}
+I.~G. Macdonald.
+\newblock {\em Symmetric functions and {H}all polynomials}.
+\newblock Oxford Mathematical Monographs. The Clarendon Press Oxford University
+  Press, New York, second edition, 1995.
+\newblock With contributions by A. Zelevinsky, Oxford Science Publications.
+
+\bibitem{Ok-Re-Va}
+Andrei Okounkov, Nikolai Reshetikhin, and Cumrun Vafa.
+\newblock Quantum {C}alabi-{Y}au and classical crystals.
+\newblock In {\em The unity of mathematics}, volume 244 of {\em Progr. Math.},
+  pages 597--618. Birkh\"auser Boston, Boston, MA, 2006.
+\newblock arXiv:hep-th/0309208.
+
+\end{thebibliography}

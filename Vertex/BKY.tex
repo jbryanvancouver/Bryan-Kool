@@ -74,7 +74,20 @@ Vancouver, B.C., Canada V6T 1Z2
 \begin{document}
 
 \begin{abstract}
+The topological vertex is a universal series which can be regarded as
+an object in combinatorics, representation theory, geometry, or
+physics. It encodes the combinatorics of 3D partitions, the action of
+vertex operators on Fock space, the Donaldson-Thomas theory of toric
+Calabi-Yau threefolds, or the open string partition function of
+$\cnums^{3}$.
 
+We prove several identities in which a sum over terms involving the
+topological vertex is expressed as a closed formula, often a product
+of simple terms, closely related to Fourier expansions of Jacobi
+forms. We use purely combinatorial and representation theoretic
+methods to prove our formulas, but we discuss applications to the
+Donaldson-Thomas invariants of elliptically fibered Calabi-Yau
+threefolds at the end of the paper. 
 \end{abstract}
 
 \maketitle 
@@ -98,17 +111,17 @@ function for the number of 3D partitions with asymptotic legs of type
 $(\lambda, \mu, \nu )$ (see Definition~\ref{defn: box counting
 vertex}). In representation theory, $\Vsf_{\lambda \mu \nu}$ is given
 as the matrix coefficients of a certain vertex operator on Fock space
-(see ???). In geometry, $\Vsf_{\lambda \mu \nu}$ is the basic building
-block for computing the Donaldson-Thomas/Gromov-Witten invariants of
-toric Calabi-Yau threefolds; in this incarnation, it can be realized
-as the generating function for the Euler characteristics of certain
-Hilbert schemes of curves in $\cnums^{3}$ (see ???). The topological
-vertex was first discovered in physics as an open string partition
-function in type IIA string theory on $\cnums^{3}$
-\cite{AKMV}. An explicit expression for $\Vsf_{\lambda \mu \nu}$
-in terms of Schur functions was given by \cite{Ok-Re-Va} (see
-section~\ref{sec: topo
-vertex and schur fncs}).
+\cite{Ok-Re-Va}. In geometry, $\Vsf_{\lambda \mu \nu}$ is the basic
+building block for computing the Donaldson-Thomas/Gromov-Witten
+invariants of toric Calabi-Yau threefolds \cite{MNOP1}; in this
+incarnation, it can be realized as the generating function for the
+Euler characteristics of certain Hilbert schemes of curves in
+$\cnums^{3}$ (see \S~\ref{sec: geometry and applications}). The
+topological vertex was first discovered in physics as an open string
+partition function in type IIA string theory on $\cnums^{3}$
+\cite{AKMV}. An explicit expression for $\Vsf_{\lambda \mu \nu}$ in
+terms of Schur functions was given by \cite{Ok-Re-Va} (see
+section~\ref{sec: topo vertex and schur fncs}).
 
 
 In this paper we prove several ``trace identities'' in which a sum
@@ -268,7 +281,8 @@ The following identities hold:
 
 We call these formulas ``trace formulas'' since the left hand side can
 be expressed as the traces of certain operators on Fock space. This
-will be made explicit in section~???.
+will be made explicit in section~\ref{sec: vertex ops and the pf of
+eqn 5}.
 
 We note that formula~\eqref{eqn 1} is elementary and well known. We
 prove Formula~\eqref{eqn 2} in section~\ref{sec: topo vertex and schur
@@ -277,11 +291,11 @@ functions. Formulas~\eqref{eqn 3} and \eqref{eqn 4} are proved in
 section~\ref{sec: applications of the Bloch-Okounkov thm} using a
 theorem of Bloch-Okounkov \cite{Bloch-Okounkov}. The most difficult
 identity to prove is equation~\eqref{eqn 5} which we do in
-section~???. There we prove that the left hand side of
-equation~\eqref{eqn 5} is given as the trace of a certain product of
-operators on Fock space. To compute the trace, we introduce a new
-trick which involves an ``infinite number'' of permutations of the
-operators.
+section~\ref{sec: vertex ops and the pf of eqn 5}. There we prove that
+the left hand side of equation~\eqref{eqn 5} is given as the trace of
+a certain product of operators on Fock space. To compute the trace, we
+introduce a new trick which involves an ``infinite number'' of
+permutations of the operators.
 
 \section{The topological vertex and Schur functions}\label{sec: topo
 vertex and schur fncs}
@@ -306,7 +320,7 @@ p^{-\nu -\rho} = \left(p^{-\nu_{1} +\half },p^{-\nu_{2} +\frac{3}{2}},\dots   \r
 \]
 
 Using equation~\eqref{eqn: ORV formula for vertex} and orthogonality
-of skew Schur functions \cite[28(a),page 94]{MacDonald} we prove
+of skew Schur functions \cite[28(a) pg 94]{MacDonald} we prove
 equation~\eqref{eqn 2} as follows:
 \[
 \Vsf_{\lambda '\lambda \emptyset} = M(p)p^{-||\lambda ||^{2}}
@@ -386,8 +400,8 @@ which, by the Jacobi triple product formula is given by
 \frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}. 
 \]
 
-We often supress the $q$ from the notation: $\Theta (p) = \Theta (p,q)$,
-and we note that 
+We supress the $q$ from the notation: $\Theta (p) = \Theta (p,q)$, and
+we note that
 \[
 \Theta (p) = -\Theta (p^{-1}).
 \]
@@ -705,17 +719,21 @@ M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}.
 \end{lemma}
 \proof Our strategy is the following. We use the cyclic invariance of
 trace along with the commutation relations for $\Gamma_{+}$ to move
-the operator $\Gamma_{+}$ past the other operators to the right until
-the operators are back to their original positions, but with new
-arguments. We perform this operation a countable number of times,
-eventually making the $\Gamma_{+}$ operator disappear\footnote{We
-learned this trick from \cite{Bouttier-Chapuy-Corteel}}. We then employ
-the same strategy moving $\Gamma_{-}$ cyclically to the left a
-countable number of times until it disappears and we are left with a
-term which we can evaluate with the Okounkov-Block theorem
-(theorem~\ref{thm: Bloch-Okounkov thm}).
+the operator $\Gamma_{+}$ past the other operators cyclically to the
+right until the operators are back to their original positions, but
+with new arguments. We perform this operation a countable number of
+times, eventually making the $\Gamma_{+}$ operator
+disappear\footnote{We learned this trick from
+\cite{Bouttier-Chapuy-Corteel}}. We then employ the same strategy
+moving $\Gamma_{-}$ cyclically to the left a countable number of times
+until it disappears and we are left with a term which we can evaluate
+with the Okounkov-Bloch theorem (theorem~\ref{thm: Bloch-Okounkov
+thm}).
 
-We first cyclically commute the operator $\Gamma_{+}$ to the right:
+We first cyclically commute the operator $\Gamma_{+}$ to the right
+using equations~\eqref{eqn: Gamma+Gamma- commutation relation},
+\eqref{eqn: commutation of Gamma+- with E(a,p)}, and \eqref{eqn:
+commutation of Gamma and q^{H}}:
 
 \begin{align*}
 \quad &\quad \quad \quad \,\,\, \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
@@ -747,7 +765,7 @@ After performing $N$ iterations of this strategy, we arrive at
 It follows from Equation~\eqref{eqn: matrix coefs of vertex ops are
 skew schur} that 
 \[
-\Gamma_{\pm}(q^{N}\ptotheminusrho )\cong \operatorname{Id} \mod q^{N}.
+\Gamma_{\pm}(q^{N}\ptotheminusrho )\equiv \operatorname{Id} \mod q^{N}.
 \]
 So the above two equations imply that the equation
 \begin{multline*}

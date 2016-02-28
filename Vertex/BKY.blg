@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: BKY.aux
 The style file: plain.bst
 Database file #1: /Users/jbryan/jbryan/resources/mainbiblio.bib
-You've used 7 entries,
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            574 strings with 5458 characters,
-and the built_in function-call counts, 2259 in all, are:
-= -- 225
-> -- 104
+            596 strings with 5983 characters,
+and the built_in function-call counts, 3160 in all, are:
+= -- 317
+> -- 142
 < -- 2
-+ -- 43
-- -- 34
-* -- 142
-:= -- 375
-add.period$ -- 27
-call.type$ -- 7
-change.case$ -- 38
++ -- 58
+- -- 46
+* -- 202
+:= -- 528
+add.period$ -- 38
+call.type$ -- 10
+change.case$ -- 53
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 80
-empty$ -- 182
-format.name$ -- 34
-if$ -- 478
+cite$ -- 10
+duplicate$ -- 109
+empty$ -- 256
+format.name$ -- 46
+if$ -- 663
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 5
-newline$ -- 42
-num.names$ -- 14
-pop$ -- 52
+int.to.str$ -- 10
+missing$ -- 7
+newline$ -- 59
+num.names$ -- 20
+pop$ -- 68
 preamble$ -- 1
-purify$ -- 31
+purify$ -- 43
 quote$ -- 0
-skip$ -- 58
+skip$ -- 78
 stack$ -- 0
-substring$ -- 110
-swap$ -- 18
+substring$ -- 169
+swap$ -- 21
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 26
+type$ -- 38
 warning$ -- 0
-while$ -- 21
-width$ -- 8
-write$ -- 86
+while$ -- 31
+width$ -- 12
+write$ -- 121

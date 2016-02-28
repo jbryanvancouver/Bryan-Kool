@@ -1,4 +1,4 @@
-\documentclass{amsart}
+\documentclass[12pt]{amsart}
 
 \title{Trace identities for the Topological Vertex}
 \author{Jim Bryan, Martijn Kool, Ben Young}
@@ -64,6 +64,11 @@ Vancouver, B.C., Canada V6T 1Z2
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\M}{\overline{\mathcal{M}}}
 \newcommand{\smargin}[1]{\marginpar{\tiny{#1}}}
+\newcommand{\FockSpace}{\Lambda^{\frac{\infty}{2}}V}
+\newcommand{\FockSpaceZero}{\Lambda^{\frac{\infty}{2}}_{0}V}
+\newcommand{\ZplusHalf}{\znums+{ \half}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\ptotheminusrho}{p^{-\rho}}
 
 
 \begin{document}
@@ -286,7 +291,7 @@ in terms of skew Schur functions. Translating their formulas
 \cite[3.20\& 3.21]{Ok-Re-Va} into our notation, we get:
 \begin{equation}\label{eqn: ORV formula for vertex}
 \Vsf_{\lambda \mu \nu}(p) = M(p) p^{-\half (||\lambda ||^{2}+||\mu
-||^{2}+||\nu ||^{2})} s_{\nu '}(p^{-\rho}) \sum_{\eta} s_{\lambda
+||^{2}+||\nu ||^{2})} s_{\nu '}(\ptotheminusrho ) \sum_{\eta} s_{\lambda
 '/\eta}(p^{-\nu -\rho})s_{\mu /\eta}(p^{\nu '-\rho} ).
 \end{equation}
 
@@ -305,7 +310,7 @@ of skew Schur functions \cite[28(a),page 94]{MacDonald} we prove
 equation~\eqref{eqn 2} as follows:
 \[
 \Vsf_{\lambda '\lambda \emptyset} = M(p)p^{-||\lambda ||^{2}}
-\sum_{\eta} s_{\lambda /\eta}(p^{-\rho})^{2}
+\sum_{\eta} s_{\lambda /\eta}(\ptotheminusrho )^{2}
 \]
 so
 \begin{align*}
@@ -377,7 +382,7 @@ We define the following theta function
 \]
 which, by the Jacobi triple product formula is given by
 \[
-\Theta (p,q) = (p^{\half -p^{-\half }})\prod_{m=1}^{\infty}
+\Theta (p,q) = (p^{\half} -p^{-\half})\prod_{m=1}^{\infty}
 \frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}. 
 \]
 
@@ -411,7 +416,8 @@ $n=2$.
 Using this theorem, we will prove equations~\eqref{eqn 3} and
 \eqref{eqn 4} of the main theorem.
 
-\subsection{Proofs of equations~\eqref{eqn 3} and \eqref{eqn 4}} $\, $
+\subsection{Proofs of equations~\eqref{eqn 3} and \eqref{eqn
+4}}\label{subsec: pfs of eqn 3 and 4} $\, $
     
 
 
@@ -483,6 +489,343 @@ which finishes the proof of equation~\eqref{eqn 4}.
 \section{Vertex operators and the proof of equation~\eqref{eqn
 5}}\label{sec: vertex ops and the pf of eqn 5}
 
+
+There are several sources for vertex operators and the infinite wedge
+formalism. For consistency, we will follow the notation and conventions
+of \cite[Appendix~A]{Okounkov-InfWedge}.
+
+Let $V$ be the vector space with basis $\left\{\underline{k}
+\right\},$ $k\in \ZplusHalf$. We define \emph{Fock space} $\FockSpace
+$ to be the vector space spanned by vectors
+\[
+v_{S} = \underline{s_{1}}\wedge \underline{s_{2}}\wedge \dots 
+\]
+where $S=\left\{s_{1}>s_{2}>\dots \right\}\subset \ZplusHalf$ is
+any subset such that the sets
+\[
+S_{+} = S\cap \left(\ZplusHalf \right)_{>0}\quad \text{and} \quad S_{-} =
+S^{c}\cap \left(\ZplusHalf \right)_{<0}
+\]
+are both finite. Let $(\cdot ,\cdot )$ be the inner product on
+$\FockSpace$ such that the basis $\left\{v_{S} \right\}$ is
+orthonormal. 
+
+For any $k\in \ZplusHalf $ let $\psi_{k}$ be the operator
+\[
+\psi_{k}(f) = \underline{k}\wedge f
+\]
+and let $\psi^{*}_{k}$ be its adjoint.
+
+For any partition $\lambda =\{\lambda_{1}\geq \lambda_{2}\geq \dots
+\}$, we define the vector
+\[
+v_{\lambda}  = \underline{(\lambda_{1}-\half )}\wedge
+\underline{(\lambda_{2}-\frac{3}{2})}\wedge \dots  
+\]
+
+Let $\FockSpaceZero \subset \FockSpace$ be the subspace spanned by the
+vectors $\{v_{\lambda} \}$ where $\lambda$ runs over all
+partitions. We call this \emph{charge zero Fock space.}
+
+The \emph{energy operator}
+\[
+H=\sum_{k>0} k\left(\psi_{k}\psi_{k}^{*}+\psi_{-k}^{*}\psi_{-k} \right)
+\]
+acts on the basis $v_{\lambda}$ by
+\[
+Hv_{\lambda}  = |\lambda |v_{\lambda }
+\]
+and so the operator $q^{H}$ acts by
+\[
+q^{H}v_{\lambda} = q^{|\lambda |}v_{\lambda }
+\]
+where $q$ is a formal parameter.
+
+For $n\in \znums$, $n\neq 0$ define
+\[
+\alpha_{n}=\sum_{k} \psi_{k-n}\psi^{*}_{k}
+\]
+and observe that $\alpha^{*}_{n}=\alpha_{-n}$.
+
+Following \cite{Okounkov-InfWedge}, we define the \emph{vertex
+operators} $\Gamma_{\pm}(\mathbf{x})$ which are operators on
+$\FockSpaceZero$ over the coefficient ring given by symmetric
+functions in an infinite set of variables $\mathbf{x} =
+(x_{1},x_{2},x_{3},\dots )$. Let $\mathbf{s}=(s_{1},s_{2},\dots )$
+\[
+s_{k} =\frac{1}{k}\sum_{i=1}^{\infty} x_{i}^{k}
+\]
+be the power sum basis for the ring of symmetric functions and
+let
+\footnote{In \cite{Okounkov-InfWedge}, the argument of
+$\Gamma_{\pm}$ is $\mathbf{s}$, and the dependence on the underlying set of
+variables $\mathbf{x}$ is left implicit. We prefer to make
+$\mathbf{x}$ the explicit argument.}
+\[
+\Gamma_{\pm}(\mathbf{x}) = \exp\left(\sum_{n=1}^{\infty}s_{n}\alpha_{\pm } \right).
+\]
+Observe that $\Gamma^{*}_{\pm}=\Gamma_{\mp}$.
+
+The matrix coefficients of the vertex operators in the $\{v_{\lambda}
+\}$ basis are given by skew Schur functions:
+\begin{equation}\label{eqn: matrix coefs of vertex ops are skew schur}
+(\Gamma_{-}(\mathbf{x})v_{\mu},v_{\lambda}) =
+(v_{\mu},\Gamma_{+}(\mathbf{x})v_{\lambda}) = s_{\lambda
+/\mu}(\mathbf{x}).
+\end{equation}
+
+Orthogonality of the skew Schur functions then gives rise to the
+following commutation equation:
+\[
+\Gamma_{+}(\mathbf{x})\Gamma_{-}(\mathbf{y}) = \prod_{i,j}
+(1-x_{j}y_{j})^{-1} \Gamma_{-}(\mathbf{y})\Gamma_{+}(\mathbf{x}),
+\]
+in particular
+\begin{equation}\label{eqn: Gamma+Gamma- commutation relation}
+\Gamma_{+}(u\ptotheminusrho )\Gamma_{-}(v\ptotheminusrho ) =M(p,uv)
+\Gamma_{-}(v\ptotheminusrho )\Gamma_{+}(u\ptotheminusrho )
+\end{equation}
+where recall that $u\ptotheminusrho  = (up^{\frac{1}{2}},up^{\frac{3}{2}},up^{\frac{5}{2}},\dots )$.
+
+We let
+\[
+\psi (z) = \sum_{i} z^{i}\psi_{i}\quad \text{and}\quad \psi^{*}(w) =
+\sum_{j} w^{-j} \psi_{j}^{*}. 
+\]
+
+The commutation relations of these operators with the vertex operators
+is given by
+\begin{align}\label{eqn: commutation of Gamma(x) with psi(z) and psi*(w)}
+\Gamma_{\pm}(\mathbf{x})\psi (z) &= \prod_{i=1}^{\infty}
+(1-x_{i}z^{\pm 1})^{-1} \,\, \psi (z)\Gamma_{\pm}(\mathbf{x})\\
+\Gamma_{\pm}(\mathbf{x})\psi^{*} (w) &= \prod_{i=1}^{\infty}
+(1-x_{i}w^{\pm 1}) \,\,\psi^{*}(w)\Gamma_{\pm}(\mathbf{x}).\nonumber
+\end{align}
+
+
+We use operators $\E_{r}$ introduced by Okounkov-Pandharipande in
+\cite[\S~2.2.4]{Okounkov-Pandharipande-completed-cycles}.  For $r\in
+\znums$, let\footnote{We avoid the use of normal ordering by allowing
+coefficients which are Laurent series in $p^{\half}$.}
+\[
+\E_{r}(p) = \sum_{k\in \ZplusHalf} p^{-k+\frac{r}{2}}\,\, \psi_{k-r}\psi^{*}_{k}.
+\]
+Our variable $p$ is related to the variable $z$ in
+\cite{Okounkov-Pandharipande-completed-cycles} by $p=e^{-z}.$
+
+
+From \cite[Eqns~2.9 and 0.18]{Okounkov-Pandharipande-completed-cycles}, we
+see that $\E_{0}$ is the diagonal operator given by
+\begin{equation}\label{eqn: formula for the operator E0}
+\E _0 (p) v_{\lambda} = \left(\sum_{i=1}^{\infty}
+p^{-\lambda_{i}+i-\half} \right)v_{\lambda}. 
+\end{equation}
+
+We define
+\[
+\E (a,p) = \sum_{r\in \znums} a^{-r} \E_{r}(p)
+\]
+where $a$ is a formal parameter. A short computation shows that 
+\[
+\E (a,p) = \psi (ap^{\half})\psi^{*} (ap^{-\half}).
+\]
+From equation~\eqref{eqn: commutation of Gamma(x) with psi(z) and
+psi*(w)} we get
+\[
+\Gamma_{\pm}(\mathbf{x})\E (a,p) =\prod_{i=1}^{\infty}\frac{(1-a^{\mp
+1}p^{\mp \half}x_{i})}{(1-a^{\mp
+1}p^{\pm \half}x_{i})}\,\, \E (a,p)\Gamma_{\pm}(\mathbf{x}). 
+\]
+
+For
+$\mathbf{x}=u\ptotheminusrho =(up^{\frac{1}{2}},up^{\frac{3}{2}},up^{\frac{5}{2}},\dots )
+$ the above simplifies to 
+\begin{align}\label{eqn: commutation of Gamma+- with E(a,p)}
+\Gamma_{+}(u\ptotheminusrho ) \E (a,p) &= (1-au) \E (a,p) \Gamma_{+}(u\ptotheminusrho )\\
+\E (a,p) \Gamma_{-}(u\ptotheminusrho ) &= (1-a^{-1}u) \Gamma_{-}(u\ptotheminusrho )
+\E (a,p). \nonumber
+\end{align}
+Finally, it follows from equation~\eqref{eqn: matrix coefs of vertex
+ops are skew schur} that
+\begin{equation}\label{eqn: commutation of Gamma and q^{H}}
+\Gamma_{\pm}(\mathbf{x})q^{H} = q^{H} \Gamma_{\pm}(q^{\pm 1}\mathbf{x}). 
+\end{equation}
+
+
+We now write the left hand side of equation~\eqref{eqn 5} in the main
+theorem as a trace of operators on charge zero Fock space.
+\begin{lemma}\label{lem: eqn 5 written as a trace}
+\begin{align*}
+\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \frac{\Vsf_{\lambda
+\bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
+'\lambda \emptyset}& = p^{-\half} \operatorname{Tr} \left(\E
+_0(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
+& = p^{-\half} \operatorname{Coeff}_{a^{0}}\left\{\operatorname{Tr} \left(\E(a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right) \right\}.
+\end{align*}
+\end{lemma}
+\proof The following computation uses, in order, the commutation
+relation for $\Gamma_{+}$ and $\Gamma_{-}$ (equation~\eqref{eqn:
+Gamma+Gamma- commutation relation}), the definition of trace, the
+formula for $\E_{0} (p)$ (equation~\eqref{eqn: formula for the
+operator E0}), Lemma~\ref{lem: eqns for
+Vlambdaboxempty/Vlambdaemptyempty and
+Vlambdaboxbox/Vlambdaemptyempty}, equation~\eqref{eqn: matrix coefs of
+vertex ops are skew schur}, and finally Lemma~\ref{lem: eqns for
+Vlambdaboxempty/Vlambdaemptyempty and Vlambdaboxbox/Vlambdaemptyempty}
+again:
+\begin{align*}
+\quad &\,\, \quad p^{-\half} \tr \left(\E_{0}(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
+& = p^{-\half} M(p) \tr \left(\E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} \right)\\
+&=p^{-\half}M(p)\sum_{\lambda} \left(v_{\lambda}, \E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} v_{\lambda}\right)\\
+&=p^{-\half } \sum_{\lambda} q^{|\lambda |} \left(\sum_{i=1}^{\infty}
+p^{-\lambda_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )v_{\lambda} \right)\\
+&=M(p)\sum_{\lambda}q^{|\lambda |} \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )V_{\lambda },\Gamma_{+}(\ptotheminusrho )V_{\lambda } \right)\\
+&= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
+&= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} p^{||\lambda ||^{2}}
+V_{\lambda '\lambda \emptyset} .
+\end{align*}
+\qed 
+
+While the operator $\E_{0}(p)$ does not have good commutation
+relations with the vertex operators, the operator $\E (a,p)$
+does. Hence we first replace $\E_{0}(p)$ with the more general $\E
+(a,p)$, compute the trace, and then specialize to the $a^{0}$
+coefficient.
+\begin{lemma}\label{lem: trace of E Gamma+Gamma-q^{H}}
+\begin{multline*}
+\tr \left(\E (a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H}
+\right) = \\
+\frac{1}{p^{-\half}-p^{\half}}M(p)\prod_{m=1}^{\infty}
+\frac{(1-q^{m}a)(1-q^{m-1}a^{-1})(1-q^{m})
+M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}.
+\end{multline*}
+\end{lemma}
+\proof Our strategy is the following. We use the cyclic invariance of
+trace along with the commutation relations for $\Gamma_{+}$ to move
+the operator $\Gamma_{+}$ past the other operators to the right until
+the operators are back to their original positions, but with new
+arguments. We perform this operation a countable number of times,
+eventually making the $\Gamma_{+}$ operator disappear\footnote{We
+learned this trick from \cite{Bouttier-Chapuy-Corteel}}. We then employ
+the same strategy moving $\Gamma_{-}$ cyclically to the left a
+countable number of times until it disappears and we are left with a
+term which we can evaluate with the Okounkov-Block theorem
+(theorem~\ref{thm: Bloch-Okounkov thm}).
+
+We first cyclically commute the operator $\Gamma_{+}$ to the right:
+
+\begin{align*}
+\quad &\quad \quad \quad \,\,\, \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H})\\
+& = M(p)\tr (\E (a,p)\Gamma_{-}(\ptotheminusrho)\Gamma_{+}(\ptotheminusrho
+)q^{H})\\
+& = M(p)\tr (\E (a,p)\Gamma_{-}(\ptotheminusrho)q^{H}\Gamma_{+}(q\ptotheminusrho
+))\\
+& = M(p)\tr (\Gamma_{+}(q\ptotheminusrho
+)\E (a,p)\Gamma_{-}(\ptotheminusrho)q^{H})\\
+& = M(p)(1-qa)\tr (\E (a,p)\Gamma_{+}(q\ptotheminusrho) \Gamma_{-}(\ptotheminusrho)q^{H}).
+\end{align*}
+
+Cyclically commuting $\Gamma_{+}$ to the right a second time we get:
+\begin{multline*}
+ \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H}) = \\
+M(p)(1-qa)M(p,q)(1-q^{2}a) \tr (\E (a,p)\Gamma_{+}(q^{2}\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H}).
+\end{multline*}
+
+After performing $N$ iterations of this strategy, we arrive at
+\begin{multline*}
+ \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H}) = \\
+\prod_{d=1}^{N}M(p,q^{d-1})(1-q^{d}a) \tr (\E (a,p)\Gamma_{+}(q^{N}\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H}).
+\end{multline*}
+It follows from Equation~\eqref{eqn: matrix coefs of vertex ops are
+skew schur} that 
+\[
+\Gamma_{\pm}(q^{N}\ptotheminusrho )\cong \operatorname{Id} \mod q^{N}.
+\]
+So the above two equations imply that the equation
+\begin{multline*}
+ \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H}) = \\
+\prod_{d=1}^{\infty }M(p,q^{d-1})(1-q^{d}a) \tr (\E (a,p)\Gamma_{-}(\ptotheminusrho
+)q^{H})
+\end{multline*}
+holds to all orders in $q$ and is hence true as a formal power series
+in $q$.
+
+We now apply the same strategy commuting $\Gamma_{-}$ to the left:
+\begin{align*}
+\tr (\E (a,p)\Gamma_{-}(\ptotheminusrho )q^{H}) &=(1-a^{-1})\tr (\E (a,p)\Gamma_{-}(q\ptotheminusrho )q^{H}) \\
+&=(1-a^{-1})(1-a^{-1}q)\tr (\E (a,p)\Gamma_{-}(q^{2}\ptotheminusrho )q^{H}) \\
+&=\dots \\
+&=\prod_{d=1}^{\infty}(1-a^{-1}q^{d-1})\tr (\E (a,p)q^{H})
+\end{align*}
+and so we have proved
+\begin{multline*}
+ \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+)q^{H}) = \\
+\prod_{d=1}^{\infty }M(p,q^{d-1})(1-q^{d}a)(1-a^{-1}q^{d-1})\tr (\E (a,p)q^{H}).
+\end{multline*}
+
+
+From the definition of $\E_{r}(p)$ we see that its matrix entries are
+all off-diagonal if $r\neq 0$. Therefore
+\begin{align*}
+\tr (\E (a,p) q^{H})&=\tr (\E_{0}(p)q^{H})\\
+&= \sum_{\lambda} q^{|\lambda |}\sum_{i=1}^{\infty}p^{-\lambda +i-\half}\\
+&=(p^{-\half}-p^{\half})^{-1}\prod_{m=1}^{\infty} \frac{(1-q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}
+\end{align*}
+where the last equality follows from the computation in the proof of
+equation~\eqref{eqn 3} in \S~\ref{subsec: pfs of eqn 3 and
+4}. Combining this with the previous computations finishes the proof
+of the lemma. \qed
+
+
+Combining Lemmas~\ref{lem: eqn 5 written as a trace} and \ref{lem:
+trace of E Gamma+Gamma-q^{H}}, we get
+\begin{multline*}
+\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \frac{\Vsf_{\lambda
+\bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
+'\lambda \emptyset} =\frac{1}{1-p} M(p)\prod_{m=1}^{\infty}
+\frac{M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}\\
+ \cdot \operatorname{Coeff}_{a^{0}}\left\{\prod_{m=1}^{\infty}
+(1-q^{m}a)(1-q^{m}a^{-1})(1-q^{m}) \right\}.
+\end{multline*}
+
+By the Jacobi triple product identity, we have
+\[
+\prod_{m=1}^{\infty} (1-q^{m}a)(1-q^{m}a^{-1})(1-q^{m}) =
+\sum_{n=-\infty}^{\infty} q^{\binom{n}{2}} (-a)^{n}
+\]
+whose $a^{0}$ coefficient is 1. Plugging into the previous equation we
+finish the proof of equation~\eqref{eqn 5}.
+
+\section{Geometry and Applications}\label{sec: geometry and applications}
+
+\smallskip
+
+$\Vsf_{\lambda \mu \nu}(p)$ as generating function for Euler
+characteristics of Hilbert schemes on $\cnums^{3}$.
+
+\smallskip
+
+short description of local contributions to DT invariants in
+threefolds with elliptic fibrations. \begin{enumerate}
+\item multiple of smooth fiber
+\item multiple of nodal fiber
+\item multiple of smooth fiber attached to section
+\item multiple of nodal fiber attached to section
+\item multiple of smooth fiber attached to node
+\end{enumerate}
+
+\smallskip
+connection of formulas with Jacobi forms. 
 
 
 

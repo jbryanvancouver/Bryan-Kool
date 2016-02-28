@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{AKMV}
 Mina Aganagic, Albrecht Klemm, Marcos Mari{\~n}o, and Cumrun Vafa.
@@ -11,6 +11,11 @@ Spencer Bloch and Andrei Okounkov.
 \newblock The character of the infinite wedge representation.
 \newblock {\em Adv. Math.}, 149(1):1--60, 2000.
 \newblock arXiv:alg-geom/9712009.
+
+\bibitem{Bouttier-Chapuy-Corteel}
+Jérémie Bouttier, Guillaume Chapuy, and Sylvie Corteel.
+\newblock {From Aztec diamonds to pyramids: steep tilings}.
+\newblock arXiv:math/1407.0665.
 
 \bibitem{Bryan-K3xE}
 Jim Bryan.
@@ -35,6 +40,18 @@ I.~G. Macdonald.
 \newblock Oxford Mathematical Monographs. The Clarendon Press Oxford University
   Press, New York, second edition, 1995.
 \newblock With contributions by A. Zelevinsky, Oxford Science Publications.
+
+\bibitem{Okounkov-Pandharipande-completed-cycles}
+A.~Okounkov and R.~Pandharipande.
+\newblock Gromov-{W}itten theory, {H}urwitz theory, and completed cycles.
+\newblock {\em Ann. of Math. (2)}, 163(2):517--560, 2006.
+\newblock arXiv:math.AG/0204305.
+
+\bibitem{Okounkov-InfWedge}
+Andrei Okounkov.
+\newblock Infinite wedge and random partitions.
+\newblock {\em Selecta Math. (N.S.)}, 7(1):57--81, 2001.
+\newblock arXiv:9907127.
 
 \bibitem{Ok-Re-Va}
 Andrei Okounkov, Nikolai Reshetikhin, and Cumrun Vafa.

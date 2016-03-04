@@ -212,7 +212,7 @@ The \emph{rows} or \emph{parts} of $\lambda $
 are the integers $\lambda _j = \min \{i \;|\;(i,j) \not \in \lambda
 \}$, for $j \geq 0$. We use the notation
 \[
-|\lambda | = \sum_{j} \lambda_{j},\quad ||\lambda ||^{2} =\sum_{j}\lambda_{j}^{2}.
+|\lambda | = \sum_{j} \lambda_{j},\quad \| \lambda \| ^{2} =\sum_{j}\lambda_{j}^{2}.
 \]
 Let $\bx$ denote the partition with a single part of size 1.
 
@@ -225,10 +225,11 @@ and the shorthand $M(p)=M(p,1)$.
 We can now state our main result.
 
 \begin{theorem}\label{thm: main formulas}
-The following identities hold:
+The following identities hold as formal power series in $q$ whose
+coefficients are formal Laurent series in $p$:
 \begin{align}
-&\sum_{\lambda} q^{|\lambda |} = \prod_{m=1}^{\infty} (1-q^{m})^{-1}\label{eqn 1}\\
-&\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda'
+% &\sum_{\lambda} q^{|\lambda |} = \prod_{m=1}^{\infty} (1-q^{m})^{-1}\label{eqn 1}\\
+&\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \Vsf_{\lambda'
 \lambda \emptyset }=  M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d})\label{eqn 2}\\
 \quad\nonumber \\
 &\sum_{\lambda} q^{|\lambda |}\frac{\Vsf_{\lambda
@@ -240,41 +241,15 @@ The following identities hold:
 \prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
 1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
 \quad&\quad \nonumber \\
-\quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}}
+\quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}}
 \frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
 \emptyset}}\Vsf_{\lambda' \lambda \emptyset} =
 (1-p)^{-1}M(p)\prod_{d=1}^{\infty}
 \frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 5}
 \end{align}
+The sums in the left hand sides of the above formulas run over all
+partitions. 
 \end{theorem}
-
-
-
-\begin{comment} % Same theorem different formating of the equations:
-\begin{theorem}\label{thm: main formulas}
-The following identities hold:
-\begin{align}
-\sum_{\lambda} q^{|\lambda |} &= \prod_{m=1}^{\infty} (1-q^{m})^{-1}\label{eqn 1}\\
-\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda'
-\lambda \emptyset }&=  M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d})\label{eqn 2}\\
-\quad\nonumber \\
-\sum_{\lambda} q^{|\lambda |}\frac{\Vsf_{\lambda
-\bx\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} &=
-(1-p)^{-1}\prod_{d=1}^{\infty} \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 3}\\
-\quad\nonumber \\
-\sum_{\lambda} q^{|\lambda |} p \frac{\Vsf_{\bx \bx 
-\lambda}}{\Vsf_{\emptyset \emptyset \lambda}} &=
-\prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
-1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
-\quad\nonumber \\
-\quad \quad \sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}}
-\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
-\emptyset}}\Vsf_{\lambda' \lambda \emptyset} &=
-(1-p)^{-1}M(p)\prod_{d=1}^{\infty}
-\frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 5}
-\end{align}
-\end{theorem}
-\end{comment}
 
 
 
@@ -284,9 +259,9 @@ be expressed as the traces of certain operators on Fock space. This
 will be made explicit in section~\ref{sec: vertex ops and the pf of
 eqn 5}.
 
-We note that formula~\eqref{eqn 1} is elementary and well known. We
-prove Formula~\eqref{eqn 2} in section~\ref{sec: topo vertex and schur
-fncs} using the orthogonality properties of skew Schur
+% We note that formula~\eqref{eqn 1} is elementary and well known.
+We prove Formula~\eqref{eqn 2} in section~\ref{sec: topo vertex and
+schur fncs} using the orthogonality properties of skew Schur
 functions. Formulas~\eqref{eqn 3} and \eqref{eqn 4} are proved in
 section~\ref{sec: applications of the Bloch-Okounkov thm} using a
 theorem of Bloch-Okounkov \cite{Bloch-Okounkov}. The most difficult
@@ -294,8 +269,8 @@ identity to prove is equation~\eqref{eqn 5} which we do in
 section~\ref{sec: vertex ops and the pf of eqn 5}. There we prove that
 the left hand side of equation~\eqref{eqn 5} is given as the trace of
 a certain product of operators on Fock space. To compute the trace, we
-introduce a new trick which involves an ``infinite number'' of
-permutations of the operators.
+use a trick which involves an ``infinite number'' of permutations of
+the operators.
 
 \section{The topological vertex and Schur functions}\label{sec: topo
 vertex and schur fncs}
@@ -304,9 +279,9 @@ Okounkov-Reshetikhin-Vafa derived a formula for the topological vertex
 in terms of skew Schur functions. Translating their formulas
 \cite[3.20\& 3.21]{Ok-Re-Va} into our notation, we get:
 \begin{equation}\label{eqn: ORV formula for vertex}
-\Vsf_{\lambda \mu \nu}(p) = M(p) p^{-\half (||\lambda ||^{2}+||\mu
-||^{2}+||\nu ||^{2})} s_{\nu '}(\ptotheminusrho ) \sum_{\eta} s_{\lambda
-'/\eta}(p^{-\nu -\rho})s_{\mu /\eta}(p^{\nu '-\rho} ).
+\Vsf_{\lambda \mu \nu}(p) = M(p) p^{-\half (\| \lambda \| ^{2}+\| \mu'
+\| ^{2}+\| \nu \| ^{2})} s_{\nu '}(\ptotheminusrho ) \sum_{\eta} s_{\lambda
+'/\eta}(p^{-\nu -\rho})s_{\mu /\eta}(p^{-\nu '-\rho} ).
 \end{equation}
 
 Here, $s_{\alpha /\beta}(x_{1},x_{2},\dots )$ is the skew Schur
@@ -319,23 +294,23 @@ so that $p^{-\nu -\rho}$ is notation for the variable list
 p^{-\nu -\rho} = \left(p^{-\nu_{1} +\half },p^{-\nu_{2} +\frac{3}{2}},\dots   \right).
 \]
 
-Using equation~\eqref{eqn: ORV formula for vertex} and orthogonality
-of skew Schur functions \cite[28(a) pg 94]{MacDonald} we prove
-equation~\eqref{eqn 2} as follows:
+We prove equation~\eqref{eqn 2} as follows. 
+Using equation~\eqref{eqn: ORV formula for vertex} we see 
 \[
-\Vsf_{\lambda '\lambda \emptyset} = M(p)p^{-||\lambda ||^{2}}
+\Vsf_{\lambda '\lambda \emptyset} = M(p)p^{-\| \lambda' \| ^{2}}
 \sum_{\eta} s_{\lambda /\eta}(\ptotheminusrho )^{2}
 \]
-so
+and so (using orthogonality of skew Schur functions \cite[28(a) pg
+94]{MacDonald} in the second line below) we see
 \begin{align*}
-\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda
+\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \Vsf_{\lambda
 '\lambda \emptyset} &= M(p)\sum_{\lambda ,\eta} q^{|\lambda |} (s_{\lambda /\eta}(p^{\half },p^{\frac{3}{2}},\dots ))^{2}\\
 &=M(p)\prod_{d=1}^{\infty} \left((1-q^{d})^{-1}\prod_{j,k=1}^{\infty}(1-q^{d}p^{i-\half +j-\half })^{-1} \right)\\
 &= M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}\prod_{m=1}^{\infty}(1-q^{d}p^{m})^{-m}\\
 &=M(p)\prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d}).
 \end{align*}
 
-We also use equation~\ref{eqn: ORV formula for vertex} to derive the
+We also use equation~\eqref{eqn: ORV formula for vertex} to derive the
 following key formulas:
 \begin{lemma}\label{lem: eqns for Vlambdaboxempty/Vlambdaemptyempty
 and Vlambdaboxbox/Vlambdaemptyempty} 
@@ -351,10 +326,10 @@ p^{-\lambda_{i}+i-\half } \right) \left(\sum_{j=1}^{\infty} p^{\lambda_{j}-j+\ha
 \proof Applying equation~\eqref{eqn: ORV formula for vertex} to
 $\Vsf_{\lambda \bx \emptyset}/\Vsf_{\lambda \emptyset
 \emptyset}=\Vsf_{\bx \emptyset \lambda}/\Vsf_{\emptyset \emptyset
-\lambda}$ we see that the left hand side of the first equation is
-given by
+\lambda}$ we see that
 \[
-s_{\bx}(p^{-\lambda -\rho})=s_{\bx}
+p^{\half} \frac{\Vsf_{\lambda \bx \emptyset}}{V_{\lambda \emptyset
+\emptyset  }} = s_{\bx}(p^{-\lambda -\rho})=s_{\bx}
 (p^{-\lambda_{1}+\half },p^{-\lambda_{2}+\frac{3}{2}},\dots ) =
 \sum_{i=1}^{\infty} p^{-\lambda_{i}+i-\half }.
 \]
@@ -368,7 +343,7 @@ p\frac{\Vsf_{\bx \bx \lambda}}{\Vsf_{\emptyset \emptyset \lambda }} &=
 
 In general we have the following relation (see
 \cite[Eqn~(3.10)]{Ok-Re-Va})\footnote{There is a typo in equation~3.10 in
-\cite{Ok-Re-Va} --- the exponent on the right hand side should be $\nu '-\rho$. }
+\cite{Ok-Re-Va} --- the exponent on the right hand side should be $-\nu'-\rho$. }
 \[
 s_{\lambda /\mu}(p^{\nu +\rho}) = (-1)^{|\lambda |-|\mu |}s_{\lambda
 '/\mu '}(p^{-\nu '-\rho})
@@ -386,8 +361,8 @@ which proves the lemma.
 \section{Applications of a theorem of Bloch-Okounkov}
 \label{sec: applications of the Bloch-Okounkov thm}
 
-We summarize a result of Bloch-Okounkov \cite{Bloch-Okounkov} and use it apply
-it to proving more of our trace formulas. 
+We summarize a result of Bloch-Okounkov \cite{Bloch-Okounkov} and use
+it to prove equations~\eqref{eqn 3} and \eqref{eqn 4}.
 
 We define the following theta function
 \[
@@ -400,7 +375,7 @@ which, by the Jacobi triple product formula is given by
 \frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}. 
 \]
 
-We supress the $q$ from the notation: $\Theta (p) = \Theta (p,q)$, and
+We suppress the $q$ from the notation: $\Theta (p) = \Theta (p,q)$, and
 we note that
 \[
 \Theta (p) = -\Theta (p^{-1}).
@@ -424,7 +399,7 @@ F(p_{1},p_{2}) = \frac{1}{\Theta
 \end{theorem}
 
 In \cite{Bloch-Okounkov}, formulas for the general $n$ variable
-function is given, but we will only need the cases of $n=1$ and
+function are given, but we will only need the cases of $n=1$ and
 $n=2$.
 
 Using this theorem, we will prove equations~\eqref{eqn 3} and
@@ -455,7 +430,7 @@ and Theorem~\ref{thm: Bloch-Okounkov thm}:
 \bx}}{\Vsf_{\lambda \emptyset \emptyset}} &= \sum_{\lambda}
 q^{|\lambda
 |}\left\{1-\left(\sum_{i=1}^{\infty}p^{-\lambda_{i}+i-\half}
-\right)\left(\sum_{j=1}^{\infty}p^{-\lambda_{j}-j+\half} \right)  \right\}\\
+\right)\left(\sum_{j=1}^{\infty}p^{\lambda_{j}-j+\half} \right)  \right\}\\
 &= \prod_{m=1}^{\infty}(1-q^{m})^{-1} \left(1-F(p,p^{-1}) \right).
 \end{align*}
 
@@ -576,7 +551,8 @@ $\Gamma_{\pm}$ is $\mathbf{s}$, and the dependence on the underlying set of
 variables $\mathbf{x}$ is left implicit. We prefer to make
 $\mathbf{x}$ the explicit argument.}
 \[
-\Gamma_{\pm}(\mathbf{x}) = \exp\left(\sum_{n=1}^{\infty}s_{n}\alpha_{\pm } \right).
+\Gamma_{\pm}(\mathbf{x}) =
+\exp\left(\sum_{n=1}^{\infty}s_{n}\alpha_{\pm n } \right).
 \]
 Observe that $\Gamma^{*}_{\pm}=\Gamma_{\mp}$.
 
@@ -670,7 +646,7 @@ We now write the left hand side of equation~\eqref{eqn 5} in the main
 theorem as a trace of operators on charge zero Fock space.
 \begin{lemma}\label{lem: eqn 5 written as a trace}
 \begin{align*}
-\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \frac{\Vsf_{\lambda
+\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \frac{\Vsf_{\lambda
 \bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
 '\lambda \emptyset}& = p^{-\half} \operatorname{Tr} \left(\E
 _0(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
@@ -698,7 +674,7 @@ p^{-\lambda_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho )
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
 \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} p^{||\lambda ||^{2}}
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} p^{\| \lambda' \| ^{2}}
 V_{\lambda '\lambda \emptyset} .
 \end{align*}
 \qed 
@@ -723,12 +699,14 @@ the operator $\Gamma_{+}$ past the other operators cyclically to the
 right until the operators are back to their original positions, but
 with new arguments. We perform this operation a countable number of
 times, eventually making the $\Gamma_{+}$ operator
-disappear\footnote{We learned this trick from
-\cite{Bouttier-Chapuy-Corteel}}. We then employ the same strategy
-moving $\Gamma_{-}$ cyclically to the left a countable number of times
-until it disappears and we are left with a term which we can evaluate
-with the Okounkov-Bloch theorem (theorem~\ref{thm: Bloch-Okounkov
-thm}).
+disappear\footnote{The third author thanks Guillaume Chapuy and Sylvie
+Corteel for teaching him this trick at a conference lunch in
+2014. Bouttier, Chapuy, and Corteel used the trick in the paper
+\cite{Bouttier-Chapuy-Corteel} in the proof of theorem 12
+therein.}. We then employ the same strategy moving $\Gamma_{-}$
+cyclically to the left a countable number of times until it disappears
+and we are left with a term which we can evaluate with the
+Okounkov-Bloch theorem (theorem~\ref{thm: Bloch-Okounkov thm}).
 
 We first cyclically commute the operator $\Gamma_{+}$ to the right
 using equations~\eqref{eqn: Gamma+Gamma- commutation relation},
@@ -808,7 +786,7 @@ of the lemma. \qed
 Combining Lemmas~\ref{lem: eqn 5 written as a trace} and \ref{lem:
 trace of E Gamma+Gamma-q^{H}}, we get
 \begin{multline*}
-\sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \frac{\Vsf_{\lambda
+\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \|  ^{2}} \frac{\Vsf_{\lambda
 \bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
 '\lambda \emptyset} =\frac{1}{1-p} M(p)\prod_{m=1}^{\infty}
 \frac{M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}\\

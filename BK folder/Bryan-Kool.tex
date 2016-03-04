@@ -141,7 +141,7 @@ We choose a section $B \subset S$ and focus on the primitive classes $\beta = B 
 \begin{align*}
 \widehat{\DT}(X) := \sum_{d \geq 0} \widehat{\DT}_d(X) q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \widehat{\DT}_{B+dF,n}(X) p^n q^d.
 \end{align*}
-The main result of this paper is a formula for this generating function, and its connected analog $\widehat{\DT}^{\conn}(X)$, in terms of the topological vertex $\sfV_{\lambda,\mu,\nu}(p)$, $e(B)$, and $N$. This formula can be found in Theorem \ref{main} of Section \ref{vertex}.
+The main result of this paper is a formula for this generating function, and its connected analog $\widehat{\DT}^{\conn}(X)$, in terms of the topological vertex $\sfV_{\lambda\mu\nu}(p)$, $e(B)$, and $N$. This formula can be found in Theorem \ref{main} of Section \ref{vertex}.
 
 It turns out the formula of Theorem \ref{main} can be expressed in terms of traces of certain natural operators on Fock space. Some of these traces are known and others are new. The way to compute these traces is of independent interest and forms the subject of a companion paper with B.~Young \cite{BKY}. The outcome is the following. Consider the Dedekind eta function and the following Jacobi eta function \cite{Cha}
 \begin{align*}
@@ -152,7 +152,7 @@ expanded in the region $|p|, |q| <1$ where
 $$
 p = e^{2 \pi i z}, \ q = e^{2 \pi i \tau}.
 $$
-\begin{theorem}[Bryan-Kool-Young] 
+\begin{theorem}[Bryan-Kool-Young] \label{final}
 Let $g$ be the genus of $B$. Then 
 $$
 \widehat{\DT}^{\conn}(X) = \big(q^{-\frac{1}{24}}\eta(\tau) \big)^{-e(S)} K(z,\tau)^{-e(B)}.
@@ -160,7 +160,7 @@ $$
 \end{theorem}
 In the case $S \rightarrow \PP^1$ is the elliptically fibred K3 surface, this provides a new derivation of the famous Katz-Klemm-Vafa formula. The KKV formula was recently proved in \emph{all} curve classes in \cite{PT}. This is the first derivation of the KKV formula, which does \emph{not} depend on the Kawai-Yoshioka formula \cite{KY}.
 
-The most important result of this paper is perhaps not the formula, but rather the method of calculation. This method has found further applications to the calculation of DT generating functions on $K3 \times E$, where $E$ is an elliptic curve \cite{Bry}, and abelian 3-folds \cite{BOPY}. Even though the geometry under consideration is not toric, we combine $\CC^*$-localization, motivic methods, formal methods, and $\CC^{*3}$-localization to end up with expressions that only depend on $\sfV_{\lambda,\mu,\nu}(p)$, $e(B)$, and $N$. Here is a rough sketch of our method:
+The most important result of this paper is perhaps not the formula, but rather the method of calculation. This method has found further applications to the calculation of DT generating functions on $K3 \times E$, where $E$ is an elliptic curve \cite{Bry}, and abelian 3-folds \cite{BOPY}. Even though the geometry under consideration is not toric, we combine $\CC^*$-localization, motivic methods, formal methods, and $\CC^{*3}$-localization to end up with expressions that only depend on $\sfV_{\lambda\mu\nu}(p)$, $e(B)$, and $N$. Here is a rough sketch of our method:
 \begin{enumerate}
 \item[(A)] The action of $\CC^*$ on the fibres of $X$ lifts to the moduli space\footnote{The bullet indicates that we take the union of $\Hilb^{B+dF,n}(X)$ over all $n$.} $\Hilb^{B+dF,\bullet}(X)$. Therefore, we only have to understand $e(\Hilb^{B+dF,\bullet}(X))^{\CC^*}$. Push-forward along $X \rightarrow S \rightarrow B$ induces a morphism
 \begin{equation} \label{intromap}
@@ -192,11 +192,11 @@ $$
 $$
 of proper subschemes $Z \subset X$ with fixed homology class and holomorphic Euler characteristic. K.~Behrend associates to any $\CC$-scheme of finite type $Y$ a constructible function $\nu : Y \rightarrow \ZZ$ \cite{Beh}. Applied to $\Hilb^{\beta,n}(X)$, the Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$ is a \emph{compact} Calabi-Yau 3-fold, R.P.~Thomas's original definition of the DT invariant is the degree of the virtual cycle of $\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed this is the same as $e(\Hilb^{\beta,n}(X),\nu)$ \cite{Beh}. The advantage of the definition by means of virtual cycles is that the construction works relative to a base. This implies deformation invariance of the invariants.} 
 $$
-\DT_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} \nu \ de := \sum_{k \in \ZZ} k \ e(\nu^{-1}(\{k\})),
+\DT_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} \nu \, de := \sum_{k \in \ZZ} k \, e(\nu^{-1}(\{k\})),
 $$
 where $e(\cdot)$ denotes topological Euler characteristic. Many of the key properties of DT invariants are already captured by the more classical Euler characteristic version\footnote{From the point of view of \cite{JS, Bri}, there are two natural integration maps on the semi-classical Hall-algebra. One corresponds to weighing by the Behrend function. The other corresponds to weighing by the ``trivial'' constant constructible function 1. The former gives rise to $\DT(X)$ and the latter to $\widehat{\DT}(X)$.}
 $$
-\widehat{\DT}_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} 1 \ de = e(\Hilb^{\beta,n}(X)).
+\widehat{\DT}_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} 1 \, de = e(\Hilb^{\beta,n}(X)).
 $$
 For brevity, we define
 \begin{align*}
@@ -206,19 +206,19 @@ For brevity, we define
 \end{align*}
 The generating functions of interest are
 \begin{align*}
-\DT(X) &:= \sum_{d \geq 0} \DT_d(X) q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \DT_{d,n}(X) p^n q^d, \\
-\widehat{\DT}(X) &:= \sum_{d \geq 0} \widehat{\DT}_d(X) q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \widehat{\DT}_{d,n}(X) p^n q^d.
+\DT(X) &:= \sum_{d \geq 0} \DT_d(X) \, q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \DT_{d,n}(X) \, p^n q^d, \\
+\widehat{\DT}(X) &:= \sum_{d \geq 0} \widehat{\DT}_d(X) \, q^d := \sum_{d \geq 0} \sum_{n \in \ZZ} \widehat{\DT}_{d,n}(X) \, p^n q^d.
 \end{align*}
 Note that the corresponding connected series $\DT^{\conn}(X)$, $\widehat{\DT}^{\conn}(X)$ are obtained after dividing by
 \begin{align*}
-&\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X),\nu) p^n q^d \\
-&\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) p^n q^d
+&\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X),\nu) \, p^n q^d \\
+&\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) \, p^n q^d
 \end{align*}
 respectively.
 
 Since we are dealing with generating functions and our calculations involve cut-paste methods on the moduli space, it is useful to introduce the following notation. We define
 \begin{align*}
-[\Hilb^{d,\bullet}(X)] := \sum_{n \in \ZZ} [\Hilb^{d,n}(X)] p^n,
+[\Hilb^{d,\bullet}(X)] := \sum_{n \in \ZZ} [\Hilb^{d,n}(X)] \, p^n,
 \end{align*}
 which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with coefficients in the Grothendieck group of varieties. We also write $\Hilb^{d,\bullet}(X)$ to denote the union of all $\Hilb^{d,n}(X)$. Therefore $\Hilb^{d,\bullet}(X)$ is a $\CC$-scheme locally of finite type.
 
@@ -227,11 +227,11 @@ which is an element of $K_0(\Var_{\CC})(\!(p)\!)$, i.e.~a Laurent series with co
 
 The action of $\CC^*$ on the fibres of $X$ lifts to the moduli space $\Hilb^{d,\bullet}(X)$. Therefore
 $$
-\int_{\Hilb^{d,\bullet}(X)} 1 \ de = \int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \ de.
+\int_{\Hilb^{d,\bullet}(X)} 1 \, de = \int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \, de.
 $$
 Recall that 
 $$
-\int_{\Hilb^{d,\bullet}(X)} 1 \ de = \sum_{n \in \ZZ} p^n \int_{\Hilb^{d,n}(X)} 1 \ de \in \ZZ(\!(p)\!).
+\int_{\Hilb^{d,\bullet}(X)} 1 \, de = \sum_{n \in \ZZ} p^n \int_{\Hilb^{d,n}(X)} 1 \, de \in \ZZ(\!(p)\!).
 $$
 Using the map $\pi : X \rightarrow S$, a quasi-coherent sheaf on $X$ can be viewed as a quasi-coherent sheaf $\F$ on $S$ together with a morphism $\F \otimes K_{S}^{-1} \rightarrow \F$. A $\CC^*$-equivariant structure on $\F$ translates into a $\ZZ$-grading
 $$
@@ -394,15 +394,15 @@ In the previous section we constructed a morphism (Proposition \ref{proprho})
 \end{equation}
 We obtain
 $$
-\int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \ de = \int_{\Sym^d(B)} \rho_{d*}(1) \ de,
+\int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \, de = \int_{\Sym^d(B)} \rho_{d*}(1) \, de,
 $$
 where $f_d := \rho_{d*}(1)$ is a constructible function on $\Sym^d(B)$. Its value at a closed point $\mathfrak{a} \in \Sym^d(B)$ is 
 $$
-f_d(\mathfrak{a}) = \int_{\rho_{d}^{-1}(\mathfrak{a})} 1 \ de.
+f_d(\mathfrak{a}) = \int_{\rho_{d}^{-1}(\mathfrak{a})} 1 \, de.
 $$
 We are interested in the calculation of
 $$
-\widehat{\DT}(X) = \sum_{d \geq 0} \widehat{\DT}_d(X) q^d =\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de.
+\widehat{\DT}(X) = \sum_{d \geq 0} \widehat{\DT}_d(X) \, q^d =\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de.
 $$
 It turns out that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ has two multiplicative properties. The first one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres are smooth and by $B^{\sing}$ the $N$ points over which the fibres are singular. We can consider the restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and $\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(p)$ the MacMahon function.
 \begin{proposition} \label{mult1}
@@ -421,8 +421,8 @@ for any $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(
 We prove this proposition in Section \ref{chargh}. The following product formula is an immediate consequence of this result
 \begin{align}
 \begin{split} \label{firstprod}
-&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \\
-&\frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \ de \Bigg) \cdot \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \ de \Bigg). 
+&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de = \\
+&\frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \, de \Bigg) \cdot \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \, de \Bigg). 
 \end{split}
 \end{align}
 The restricted constructible functions $f_d  : \Sym^d(B^{\sm}) \rightarrow \ZZ(\!(p)\!)$ and $f_d  : \Sym^d(B^{\sing}) \rightarrow \ZZ(\!(p)\!)$ satisfy further multiplicative properties:
@@ -436,7 +436,7 @@ for all $d \geq 0$, $\mathfrak{a} = \sum_{i=1}^m a_i x_i \in \Sym^{d}(B^{\sm})$,
 \end{proposition}
 We prove this proposition in Section \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} from the appendix, Proposition \ref{mult2} and equation \eqref{firstprod} imply
 \begin{equation} \label{initialprod}
-\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \ de = \frac{M(p)^{N}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \Bigg( \sum_{a=0}^{\infty} g(a) q^a \Bigg)^{e(B) - N} \cdot \Bigg( \sum_{b=0}^{\infty} h(b) q^b \Bigg)^N.
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de = \frac{M(p)^{N}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \Bigg( \sum_{a=0}^{\infty} g(a) q^a \Bigg)^{e(B) - N} \cdot \Bigg( \sum_{b=0}^{\infty} h(b) q^b \Bigg)^N.
 \end{equation}
 Our goal is to prove Propositions \ref{mult1}, \ref{mult2}, and find formulae for $g(a)$, $h(b)$. This requires a better understanding of the strata
 $$
@@ -482,13 +482,13 @@ and \emph{not} the formal scheme $$\mathrm{Spf} \varprojlim R / \mathfrak{m}^n.$
 $$
 \widehat{X}_x \cong \widehat{X}_y \cong \widehat{X}_z \cong\Spec \CC[\![x_1,x_2,x_3]\!].
 $$
-Even though $\widehat{X}_x$ is non-noetherian, the morphism $\widehat{X}_x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operation \cite[Prop.~10.14]{AM}.\todo{Completion=faithfully flat: stacks project Lem.~10.96.3.} 
+Even though $\widehat{X}_x$ is non-noetherian, the morphism $\widehat{X}_x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operation \cite[Prop.~10.14]{AM}.\todo{Completion is faithfully flat: stacks project Lem.~10.96.3.} 
 
 In (2) we consider $B^\circ := B \setminus \{x,y\}$, $X^\circ := X \setminus (F_x  \cup F_y)$ and let $\widehat{X}^{\circ}_{B^\circ}$ be the formal neighbourhood of $F_{x}^{\circ}$ in $X^\circ$. For (3) and (4) the formal neighbourhoods $\widehat{X}^{\circ}_{F_{x}^{\circ}}$ and $\widehat{X}^{\circ}_{F_{y}^{\circ}}$ are defined analogously. Note that the definition of $X^\circ$ in (2)--(4) varies slightly. Finally, in (5) we take $W = X \setminus (B \cup F_x \cup F_y)$. Then
 $$
 \mathfrak{U} = \{\widehat{X}_x \rightarrow X, \widehat{X}_y \rightarrow X, \widehat{X}_z \rightarrow X, \widehat{X}^{\circ}_{B^\circ} \rightarrow X, \widehat{X}^{\circ}_{F_{x}^{\circ}} \rightarrow X, \widehat{X}^{\circ}_{F_{y}^{\circ}} \rightarrow X, W \subset X\}
 $$
-forms an fpqc cover of $X$. Consequently the data of a quasi-coherent sheaf on $X$ is equivalent to the data of quasi-coherent sheaves on each of the opens of $\mathfrak{U}$ and gluing isomorphisms between the restrictions on the overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
+is an fpqc cover of $X$. Consequently the data of a quasi-coherent sheaf on $X$ is equivalent to the data of quasi-coherent sheaves on each of the opens of $\mathfrak{U}$ and gluing isomorphisms between the restrictions on the overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
 
 
 \subsection{Local moduli spaces} \label{localmod}
@@ -577,9 +577,9 @@ $$
 By Proposition \ref{bij} and \eqref{relchi} this equals
 \begin{align}
 \begin{split} \label{fdintermediate}
-f_d(ax+by) = \ &p^{\frac{e(B)}{2}} e(\Hilb^{1,\bullet}(\widehat{X}^{\circ}_{B^{\circ}})^{\CC^*}) e(\Hilb^{0,\bullet}(W)^{\CC^*}) \times \\
-&\sum_{\lambda \vdash a} \sum_{\mu \vdash b} p^{- \lambda_0 - \mu_0 } e(\Hilb^{(1,a),\bullet}(\widehat{X}_{x})_{\lambda}^{\CC^*}) e(\Hilb^{(1,b),\bullet}(\widehat{X}_{y})_{\mu}^{\CC^*}) \times \\
-&e(\Hilb^{b,\bullet}(\widehat{X}_{z})_{\mu}^{\CC^*}) e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}).
+f_d(ax+by) = \ &p^{\frac{e(B)}{2}} e(\Hilb^{1,\bullet}(\widehat{X}^{\circ}_{B^{\circ}})^{\CC^*}) \, e(\Hilb^{0,\bullet}(W)^{\CC^*}) \times \\
+&\sum_{\lambda \vdash a} \sum_{\mu \vdash b} p^{- \lambda_0 - \mu_0 } e(\Hilb^{(1,a),\bullet}(\widehat{X}_{x})_{\lambda}^{\CC^*}) \, e(\Hilb^{(1,b),\bullet}(\widehat{X}_{y})_{\mu}^{\CC^*}) \times \\
+&e(\Hilb^{b,\bullet}(\widehat{X}_{z})_{\mu}^{\CC^*}) \, e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) \, e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}).
 \end{split}
 \end{align}
 
@@ -598,7 +598,7 @@ Let $\widehat{X}^{\circ}_{B^{\circ}}$ be the formal neighbourhood of $B^\circ$ i
 %, where $Z_{CM}$ denotes the maximal Cohen-Macaulay subscheme contained in $Z$ (Proposition \ref{ZCM}). 
 Then
 $$
-e(\Hilb^{1,\bullet}(\widehat{X}^{\circ}_{B^{\circ}})) = \Bigg( \frac{M(p)}{(1-p)} \Bigg)^{e(B^\circ)}.
+e(\Hilb^{1,\bullet}(\widehat{X}^{\circ}_{B^{\circ}})) = \Bigg( \frac{M(p)}{1-p} \Bigg)^{e(B^\circ)}.
 $$
 \end{proposition}
 \begin{proof}
@@ -622,7 +622,7 @@ e(\Hilb^{1,\bullet}(\widehat{X}^{\circ}_{B^{\circ}})) = \Bigg( \sum_{a=0}^{\inft
 $$
 The formal neighbourhood $\widehat{X}_{x}$ has an action of $\CC^{*3}$ and this action lifts to $\Hilb^{1,a}(\widehat{X}_{x})$. The fixed locus consists of a finite number of points counted by the topological vertex\footnote{Discussed in general in Section \ref{vertex}.}
 $$
-\sfV_{\square,\varnothing,\varnothing}(p) = \frac{M(p)}{1-p}.
+\sfV_{\square\varnothing\varnothing}(p) = \frac{M(p)}{1-p}.
 $$
 The proof follows.
 \end{proof}
@@ -630,8 +630,8 @@ The proof follows.
 Using \eqref{Cheah} and Proposition \ref{section}, equation \eqref{fdintermediate} becomes
 \begin{align*}
 f_d(ax+by) = \ &\frac{M(p)^{e(X)}}{(p^{\frac{1}{2}}-p^{-\frac{1}{2}})^{e(B)}} \times \\
-&(1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) \times \\
-&\frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}).
+&(1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*}) \, e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) \times \\
+&\frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*}) \, e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*}) \, e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}).
 \end{align*}
 
    
@@ -641,8 +641,8 @@ The arguments of the preceding two sections are straightforwardly modified to an
 \begin{proposition} \label{geomgh}
 For any $a,b>0$ define
 \begin{align*}
-g(a) &:= (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*}) e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}), \\
-h(b) &:= \frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*}) e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}),
+g(a) &:= (1-p) \sum_{\lambda \vdash a} p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*}) \, e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}), \\
+h(b) &:= \frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*}) \, e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*}) \, e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}),
 \end{align*}
 and let $g(0) := 1$, $h(0) :=1$. Then
 \begin{align*}
@@ -666,20 +666,20 @@ In this section, we prove the main result of this paper: expressions for $\wideh
 
 We denote by 
 $$
-\sfV_{\lambda,\mu,\nu}(p) = \sum_{\pi} p^{|\pi|}, 
+\sfV_{\lambda\mu\nu}(p) = \sum_{\pi} p^{|\pi|}, 
 $$
 the topological vertex of DT theory\footnote{In general this depends on an equivariant measure $\mathsf{w}(\pi)$ depending on equivariant parameters $s_1, s_2, s_3$. If $s_1+s_2+s_3=0$, then $\mathsf{w}(\pi) = \pm 1$. Since we are working with an Euler characteristic version of DT invariants, we take all signs to be $+1$.} \cite{MNOP1, MNOP2}. Here the sum is over all 3D partitions $\pi$ with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes renormalized volume. For a 2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we write $\lambda'$ for the corresponding transposed partition and 
 \begin{align*}
 |\lambda| &:= \sum_{k=0}^{\infty} \lambda_k, \\
-|\!|\lambda|\!| &:= \sum_{k=0}^{\infty} \lambda_{k}^{2}.
+|\!|\lambda|\!|^2 &:= \sum_{k=0}^{\infty} \lambda_{k}^{2}.
 \end{align*}
 
 \begin{proposition} \label{vertex1}
 Let $F_x$ be a smooth fibre and $F_y$ a singular fibre with singularity $z$. Then for any $\lambda \vdash a$, $\mu \vdash b$
 \begin{align*}
-p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*}) &= \sfV_{\lambda,\square,\varnothing}(p), \\
-p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*}) &= \sfV_{\mu,\square,\varnothing}(p), \\
-p^{-|\!|\mu|\!|} e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*}) &= \sfV_{\mu,\mu',\varnothing}(p).
+p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*}) &= \sfV_{\lambda\square\varnothing}(p), \\
+p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*}) &= \sfV_{\mu\square\varnothing}(p), \\
+p^{-|\!|\mu|\!|^2} e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*}) &= \sfV_{\mu\mu'\varnothing}(p).
 \end{align*}
 \end{proposition}
 \begin{proof}
@@ -691,9 +691,9 @@ The coordinates can be chosen such that the action of the last factor of $\CC^{*
 
 Finally, note that the generating functions $e(\Hilb^{(1,a),\bullet}(\widehat{X}_x)_{\lambda}^{\CC^*})$, $e(\Hilb^{(1,b),\bullet}(\widehat{X}_y)_{\mu}^{\CC^*})$, $e(\Hilb^{b,\bullet}(\widehat{X}_z)_{\mu}^{\CC^*})$ all start with $1$. On the other hand, from the definition
 \begin{align*}
-\sfV_{\lambda,\square,\varnothing}(p) &= p^{-\lambda_0} + \cdots, \\
-\sfV_{\mu,\square,\varnothing}(p) &= p^{-\mu_0} + \cdots, \\
-\sfV_{\mu,\mu',\varnothing}(p) &= p^{-\sum_{k=0}^{\infty} \mu_{k}^{2}} + \cdots,
+\sfV_{\lambda\square\varnothing}(p) &= p^{-\lambda_0} + \cdots, \\
+\sfV_{\mu\square\varnothing}(p) &= p^{-\mu_0} + \cdots, \\
+\sfV_{\mu\mu'\varnothing}(p) &= p^{-\sum_{k=0}^{\infty} \mu_{k}^{2}} + \cdots,
 \end{align*}
 where $\cdots$ stands for higher order terms in $p$. The proposition follows.
 \end{proof}
@@ -705,8 +705,8 @@ Let $F_x$ be a smooth fibre and $F_y$ a singular fibre. Recall the formal neighb
 \begin{proposition} \label{vertex2}
 For any $\lambda \vdash a$ and $\mu \vdash b$, we have
 \begin{align*}
-e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) &= \frac{1}{\sfV_{\lambda,\varnothing,\varnothing}(p)}, \\
-e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}) &= \frac{1}{\sfV_{\mu,\varnothing,\varnothing}(p)}.
+e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) &= \frac{1}{\sfV_{\lambda\varnothing\varnothing}(p)}, \\
+e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}) &= \frac{1}{\sfV_{\mu\varnothing\varnothing}(p)}.
 \end{align*}
 \end{proposition}
 \begin{proof}
@@ -771,9 +771,9 @@ e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) = e(\Hilb^{a,\bullet}(\wid
 \end{equation}
 We conclude from equations \eqref{isopuncturednghs}, \eqref{e=1}, \eqref{001} that
 \begin{align*}
-1=e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) &= e( \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
-&=  \sfV_{\lambda,\varnothing,\varnothing}(p) \cdot e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
-&=  \sfV_{\lambda,\varnothing,\varnothing}(p) \cdot e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}).
+1=e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) &= e( \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) \, e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
+&=  \sfV_{\lambda\varnothing\varnothing}(p) \cdot e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
+&=  \sfV_{\lambda\varnothing\varnothing}(p) \cdot e(\Hilb^{a,\bullet}(\widehat{X}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}).
 \end{align*}
 
 The equation for $e(\Hilb^{b,\bullet}(\widehat{X}^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*})$ can be deduced similarly. This time, the smooth fibre $F = F_x \subset S \subset X$ is replaced by the \emph{smooth locus} of the singular fibre, i.e.~ 
@@ -795,8 +795,8 @@ Combining Proposition \ref{geomgh} with Propositions \ref{vertex1}, \ref{vertex2
 For any $a,b>0$ 
 \begin{align}
 \begin{split} \label{gh}
-g(a) &= (1-p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)}, \\
-h(b) &= \frac{1-p}{M(p)} \sum_{\mu \vdash b} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|}}{\sfV_{\mu,\varnothing,\varnothing}(p)}.
+g(a) &= (1-p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda\square\varnothing}(p)}{\sfV_{\lambda\varnothing\varnothing}(p)}, \\
+h(b) &= \frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}(p)}{\sfV_{\mu\varnothing\varnothing}(p)} \sfV_{\mu\mu'\varnothing}(p).
 \end{split}
 \end{align}
 \end{proposition}
@@ -805,19 +805,22 @@ Putting all our results together, we obtain our main theorem:
 \begin{theorem} \label{main}
 %For any elliptic surface $p : S \rightarrow B$ over a smooth projective curve $B$ with unique section, $N$ rational nodal fibres and no further singular fibres, we have
 \begin{align*}
-&\widehat{\DT}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|} \Bigg)^{e(B) - N}  \Bigg( \sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|} \Bigg)^{N} \\
-&\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{\sum_{\lambda} \frac{\sfV_{\lambda,\square,\varnothing}(p)}{\sfV_{\lambda,\varnothing,\varnothing}(p)} q^{|\lambda|}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \Bigg( \frac{\sum_{\mu} \frac{\sfV_{\mu,\square,\varnothing}(p) \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|}}{\sfV_{\mu,\varnothing,\varnothing}(p)} q^{|\mu|}}{\sum_{\mu} \sfV_{\mu, \mu', \varnothing}(p) p^{|\!|\mu|\!|} q^{|\mu|}} \Bigg)^{N}.
+&\widehat{\DT}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( (1-p) \sum_{\lambda} q^{|\lambda|} \frac{\sfV_{\lambda\square\varnothing}(p)}{\sfV_{\lambda\varnothing\varnothing}(p)} \Bigg)^{e(B) - N}  \Bigg( (1-p) \sum_{\mu}  q^{|\mu|} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}(p)}{\sfV_{\mu\varnothing\varnothing}(p)} \sfV_{\mu\mu'\varnothing}(p) \Bigg)^{N} \\
+&\widehat{\DT}^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{(1-p) \sum_{\lambda} q^{|\lambda|} \frac{\sfV_{\lambda\square\varnothing}(p)}{\sfV_{\lambda\varnothing\varnothing}(p)}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \Bigg( \frac{(1-p) \sum_{\mu}  q^{|\mu|} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}(p)}{\sfV_{\mu\varnothing\varnothing}(p)} \sfV_{\mu\mu'\varnothing}(p)}{\sum_{\mu} q^{|\mu|} p^{|\!|\mu|\!|^2} \sfV_{\mu\mu'\varnothing}(p)} \Bigg)^{N}.
 \end{align*}
 %where the sums are over all 2D partitions and where $\sfV_{\lambda,\mu,\nu}(p)$ denotes the topological vertex.
 \end{theorem}
 \begin{proof}
 Inserting the equations for $g(a)$, $h(b)$ of Proposition \ref{combgh} into \eqref{initialprod} gives the formula for $\widehat{\DT}(X)$. Following the exact same line of reasoning of Sections \ref{sym}--\ref{vertex}, it is easy to see that
 \begin{align*}
-\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) p^n q^d = \Bigg( \sum_{\lambda} q^{|\lambda|} \Bigg)^{e(B) - N} \Bigg( \sum_{\mu} \sfV_{\mu,\mu',\varnothing}(p) p^{|\!|\mu|\!|} q^{|\lambda|} \Bigg)^{N}.
+\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) p^n q^d = \Bigg( \sum_{\lambda} q^{|\lambda|} \Bigg)^{e(B) - N} \Bigg( \sum_{\mu} q^{|\mu|} p^{|\!|\mu|\!|^2} \sfV_{\mu\mu'\varnothing}(p) \Bigg)^{N}.
 \end{align*}
 The formula for $\widehat{\DT}^{\conn}(X)$ follows after dividing $\widehat{\DT}(X)$ by this expression.
 \end{proof}
 
+\begin{remark}
+The sums over partitions appearing in Theorem \ref{main} can be calculated explicitly. This is done by expressing them as traces of certain natural operators on Fock space. The calculation is of interest outside geometry and forms the topic of a companion paper with B.~Young \cite{BKY}. Theorem \ref{main} and the main theorem of \cite{BKY} immediately imply Theorem \ref{final} of the introduction. 
+\end{remark}
 
 \section{Introducing the Behrend function} \label{Behrend}
 
@@ -1091,7 +1094,7 @@ which proves the lemma.
 %\bibitem[BCC]{BCC} J.~Bouttier, G.~Chapuy, and S.~Corteel, \textit{From Aztec diamonds to pyramids: steep tilings}, arXiv:1407.0665 [math.CO].
 \bibitem[Beh]{Beh} K.~Behrend, \textit{Donaldson-Thomas type invariants via microlocal geometry}, Annals of Math.~\textbf{170} (2009), 1307--1338.
 %\bibitem[BGK]{BGK} J.~Bryan, F.~Greer, and M.~Kool, \emph{in preparation}.
-\bibitem[BKY]{BKY} J.~Bryan, M.~Kool, and B.~Young, \emph{in preparation}.
+\bibitem[BKY]{BKY} J.~Bryan, M.~Kool, and B.~Young, \textit{Trace identities for the topological vertex}, in preparation.
 %\bibitem[BO]{BO} S.~Bloch and A.Okounkov, \textit{The character of the infinite wedge representation}, Adv.~Math.~\textbf{149} (2000), 1--60.
 \bibitem[BOPY]{BOPY} J.~Bryan, G.~Oberdieck, R.~Pandharipande, and Q.~Yin, \emph{Curve counting on abelian surfaces and threefolds}, arXiv:1506.00841.
 \bibitem[BPV]{BPV} W.~Barth, C.~Peters, and A.~van de Ven, \textit{Compact complex surfaces}, Springer-Verlag (1984).

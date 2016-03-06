@@ -4,11 +4,28 @@
 \author{Jim Bryan, Martijn Kool, Ben Young}
 \date{\today}
 \address{
+\texttt{jbryan\@math.ubc.ca}\\
 Department of Mathematics\\
 University of British Columbia \\
 Room 121, 1984 Mathematics Road  \\
 Vancouver, B.C., Canada V6T 1Z2  
 }
+\address{
+\texttt{m.kool1\@uu.nl}\\
+Mathematical Institute\\
+Utrecht University\\
+Budapestlaan 6\\
+3584 CD, Utrecht,
+The Netherlands
+}
+\address{
+\texttt{bjy\@uoregon.edu}\\
+Department of Mathematics\\
+Fenton Hall\\
+University of Oregon\\
+Eugene, OR 97403-1222 USA
+}
+
 
 
 
@@ -130,7 +147,23 @@ formula, often a product of simple terms. The products are closely
 related to the Fourier expansions of Jacobi forms. Applications of
 these identities are used to compute the Donaldson-Thomas partition
 functions of certain Calabi-Yau threefolds in terms of Jacobi forms
-\cite{Bryan-Kool,Bryan-K3xE,BOPY}.
+\cite{Bryan-K3xE,Bryan-Kool,BOPY}.
+
+\subsection{Acknowledgments}\label{acknowledgments} We thank Paul
+Johnson for showing us (on MathOverFlow) how to use the Bloch-Okounkov
+result \cite{Bloch-Okounkov} to prove Equation~\eqref{eqn 3} in our
+Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
+Sylvie Corteel for showing us their trick of doing an infinited number
+of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
+ops and the pf of eqn 5}.
+%MK was supported by a PIMS postdoctoral
+%fellowship (CRG Geometry and Physics) while at UBC, and NWO-GQT and
+%Marie-Sk{\l}odowska Curie Project 656898 while at Utrecht. JB was
+%support by NSERC discovery and accelerator grants. 
+
+
+
+
 
 \section{Definitions and the main result.}\label{sec: defns and
 result}
@@ -236,14 +269,14 @@ coefficients are formal Laurent series in $p$:
 \bx\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} =
 (1-p)^{-1}\prod_{d=1}^{\infty} \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 3}\\
 \quad\nonumber \\
-&\sum_{\lambda} q^{|\lambda |} p \frac{\Vsf_{\bx \bx 
+&\sum_{\lambda} q^{|\lambda |} p \, \frac{\Vsf_{\bx \bx 
 \lambda}}{\Vsf_{\emptyset \emptyset \lambda}} =
 \prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
 1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
 \quad&\quad \nonumber \\
 \quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}}
-\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
-\emptyset}}\Vsf_{\lambda' \lambda \emptyset} =
+\Vsf_{\lambda' \lambda \emptyset} \,\,\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
+\emptyset}} =
 (1-p)^{-1}M(p)\prod_{d=1}^{\infty}
 \frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 5}
 \end{align}
@@ -385,7 +418,7 @@ we note that
 Define the $n$ point correlation function by the formula
 \[
 F(p_{1},\dots ,p_{n}) = \prod_{m=1}^{\infty}(1-q^{m})\, \sum_{\lambda}
-q^{\lambda} \prod_{k=1}^{n} \left(\sum_{i=1}^{\infty} p_{k}^{\lambda_{i}-i+\half } \right).
+q^{|\lambda|} \prod_{k=1}^{n} \left(\sum_{i=1}^{\infty} p_{k}^{\lambda_{i}-i+\half } \right).
 \]
 Then
 \[
@@ -598,26 +631,26 @@ We use operators $\E_{r}$ introduced by Okounkov-Pandharipande in
 \znums$, let\footnote{We avoid the use of normal ordering by allowing
 coefficients which are Laurent series in $p^{\half}$.}
 \[
-\E_{r}(p) = \sum_{k\in \ZplusHalf} p^{-k+\frac{r}{2}}\,\, \psi_{k-r}\psi^{*}_{k}.
+\E_{r}(p) = \sum_{k\in \ZplusHalf} p^{k-\frac{r}{2}}\,\, \psi_{k-r}\psi^{*}_{k}.
 \]
 Our variable $p$ is related to the variable $z$ in
-\cite{Okounkov-Pandharipande-completed-cycles} by $p=e^{-z}.$
+\cite{Okounkov-Pandharipande-completed-cycles} by $p=e^{z}.$
 
 
 From \cite[Eqns~2.9 and 0.18]{Okounkov-Pandharipande-completed-cycles}, we
 see that $\E_{0}$ is the diagonal operator given by
 \begin{equation}\label{eqn: formula for the operator E0}
 \E _0 (p) v_{\lambda} = \left(\sum_{i=1}^{\infty}
-p^{-\lambda_{i}+i-\half} \right)v_{\lambda}. 
+p^{\lambda_{i}-i+\half} \right)v_{\lambda}. 
 \end{equation}
 
 We define
 \[
-\E (a,p) = \sum_{r\in \znums} a^{-r} \E_{r}(p)
+\E (a,p) = \sum_{r\in \znums} a^{r} \E_{r}(p)
 \]
 where $a$ is a formal parameter. A short computation shows that 
 \[
-\E (a,p) = \psi (ap^{\half})\psi^{*} (ap^{-\half}).
+\E (a,p) = \psi (a^{-1}p^{\half})\psi^{*} (a^{-1}p^{-\half}).
 \]
 From equation~\eqref{eqn: commutation of Gamma(x) with psi(z) and
 psi*(w)} we get
@@ -631,8 +664,8 @@ For
 $\mathbf{x}=u\ptotheminusrho =(up^{\frac{1}{2}},up^{\frac{3}{2}},up^{\frac{5}{2}},\dots )
 $ the above simplifies to 
 \begin{align}\label{eqn: commutation of Gamma+- with E(a,p)}
-\Gamma_{+}(u\ptotheminusrho ) \E (a,p) &= (1-au) \E (a,p) \Gamma_{+}(u\ptotheminusrho )\\
-\E (a,p) \Gamma_{-}(u\ptotheminusrho ) &= (1-a^{-1}u) \Gamma_{-}(u\ptotheminusrho )
+\Gamma_{+}(u\ptotheminusrho ) \E (a,p) &= (1-a^{-1}u) \E (a,p) \Gamma_{+}(u\ptotheminusrho )\\
+\E (a,p) \Gamma_{-}(u\ptotheminusrho ) &= (1-au) \Gamma_{-}(u\ptotheminusrho )
 \E (a,p). \nonumber
 \end{align}
 Finally, it follows from equation~\eqref{eqn: matrix coefs of vertex
@@ -646,9 +679,10 @@ We now write the left hand side of equation~\eqref{eqn 5} in the main
 theorem as a trace of operators on charge zero Fock space.
 \begin{lemma}\label{lem: eqn 5 written as a trace}
 \begin{align*}
-\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \frac{\Vsf_{\lambda
-\bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
-'\lambda \emptyset}& = p^{-\half} \operatorname{Tr} \left(\E
+\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \Vsf_{\lambda
+'\lambda \emptyset}\,\, \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}}& = p^{-\half}
+\operatorname{Tr} \left(\E
 _0(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
 & = p^{-\half} \operatorname{Coeff}_{a^{0}}\left\{\operatorname{Tr} \left(\E(a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right) \right\}.
 \end{align*}
@@ -660,17 +694,15 @@ formula for $\E_{0} (p)$ (equation~\eqref{eqn: formula for the
 operator E0}), Lemma~\ref{lem: eqns for
 Vlambdaboxempty/Vlambdaemptyempty and
 Vlambdaboxbox/Vlambdaemptyempty}, equation~\eqref{eqn: matrix coefs of
-vertex ops are skew schur}, and finally Lemma~\ref{lem: eqns for
-Vlambdaboxempty/Vlambdaemptyempty and Vlambdaboxbox/Vlambdaemptyempty}
-again:
+vertex ops are skew schur}, and finally equation~\eqref{eqn: ORV formula for vertex}:
 \begin{align*}
 \quad &\,\, \quad p^{-\half} \tr \left(\E_{0}(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
 & = p^{-\half} M(p) \tr \left(\E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} \right)\\
 &=p^{-\half}M(p)\sum_{\lambda} \left(v_{\lambda}, \E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} v_{\lambda}\right)\\
-&=p^{-\half } \sum_{\lambda} q^{|\lambda |} \left(\sum_{i=1}^{\infty}
+&=p^{-\half }M(p) \sum_{\lambda} q^{|\lambda |} \left(\sum_{i=1}^{\infty}
 p^{-\lambda_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )v_{\lambda} \right)\\
 &=M(p)\sum_{\lambda}q^{|\lambda |} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )V_{\lambda },\Gamma_{+}(\ptotheminusrho )V_{\lambda } \right)\\
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )v_{\lambda },\Gamma_{+}(\ptotheminusrho )V_{\lambda } \right)\\
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
 \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
@@ -688,8 +720,8 @@ coefficient.
 \begin{multline*}
 \tr \left(\E (a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H}
 \right) = \\
-\frac{1}{p^{-\half}-p^{\half}}M(p)\prod_{m=1}^{\infty}
-\frac{(1-q^{m}a)(1-q^{m-1}a^{-1})(1-q^{m})
+\frac{-1}{p^{-\half}-p^{\half}}M(p)\prod_{m=1}^{\infty}
+\frac{(1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m})
 M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}.
 \end{multline*}
 \end{lemma}
@@ -706,7 +738,7 @@ Corteel for teaching him this trick at a conference lunch in
 therein.}. We then employ the same strategy moving $\Gamma_{-}$
 cyclically to the left a countable number of times until it disappears
 and we are left with a term which we can evaluate with the
-Okounkov-Bloch theorem (theorem~\ref{thm: Bloch-Okounkov thm}).
+Bloch-Okounkov theorem (Theorem~\ref{thm: Bloch-Okounkov thm}).
 
 We first cyclically commute the operator $\Gamma_{+}$ to the right
 using equations~\eqref{eqn: Gamma+Gamma- commutation relation},
@@ -722,14 +754,14 @@ commutation of Gamma and q^{H}}:
 ))\\
 & = M(p)\tr (\Gamma_{+}(q\ptotheminusrho
 )\E (a,p)\Gamma_{-}(\ptotheminusrho)q^{H})\\
-& = M(p)(1-qa)\tr (\E (a,p)\Gamma_{+}(q\ptotheminusrho) \Gamma_{-}(\ptotheminusrho)q^{H}).
+& = M(p)(1-qa^{-1})\tr (\E (a,p)\Gamma_{+}(q\ptotheminusrho) \Gamma_{-}(\ptotheminusrho)q^{H}).
 \end{align*}
 
 Cyclically commuting $\Gamma_{+}$ to the right a second time we get:
 \begin{multline*}
  \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
 )q^{H}) = \\
-M(p)(1-qa)M(p,q)(1-q^{2}a) \tr (\E (a,p)\Gamma_{+}(q^{2}\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+M(p)(1-qa^{-1})M(p,q)(1-q^{2}a^{-1}) \tr (\E (a,p)\Gamma_{+}(q^{2}\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
 )q^{H}).
 \end{multline*}
 
@@ -737,7 +769,7 @@ After performing $N$ iterations of this strategy, we arrive at
 \begin{multline*}
  \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
 )q^{H}) = \\
-\prod_{d=1}^{N}M(p,q^{d-1})(1-q^{d}a) \tr (\E (a,p)\Gamma_{+}(q^{N}\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
+\prod_{d=1}^{N}M(p,q^{d-1})(1-q^{d}a^{-1}) \tr (\E (a,p)\Gamma_{+}(q^{N}\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
 )q^{H}).
 \end{multline*}
 It follows from Equation~\eqref{eqn: matrix coefs of vertex ops are
@@ -749,7 +781,7 @@ So the above two equations imply that the equation
 \begin{multline*}
  \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
 )q^{H}) = \\
-\prod_{d=1}^{\infty }M(p,q^{d-1})(1-q^{d}a) \tr (\E (a,p)\Gamma_{-}(\ptotheminusrho
+\prod_{d=1}^{\infty }M(p,q^{d-1})(1-q^{d}a^{-1}) \tr (\E (a,p)\Gamma_{-}(\ptotheminusrho
 )q^{H})
 \end{multline*}
 holds to all orders in $q$ and is hence true as a formal power series
@@ -757,16 +789,16 @@ in $q$.
 
 We now apply the same strategy commuting $\Gamma_{-}$ to the left:
 \begin{align*}
-\tr (\E (a,p)\Gamma_{-}(\ptotheminusrho )q^{H}) &=(1-a^{-1})\tr (\E (a,p)\Gamma_{-}(q\ptotheminusrho )q^{H}) \\
-&=(1-a^{-1})(1-a^{-1}q)\tr (\E (a,p)\Gamma_{-}(q^{2}\ptotheminusrho )q^{H}) \\
+\tr (\E (a,p)\Gamma_{-}(\ptotheminusrho )q^{H}) &=(1-a)\tr (\E (a,p)\Gamma_{-}(q\ptotheminusrho )q^{H}) \\
+&=(1-a)(1-aq)\tr (\E (a,p)\Gamma_{-}(q^{2}\ptotheminusrho )q^{H}) \\
 &=\dots \\
-&=\prod_{d=1}^{\infty}(1-a^{-1}q^{d-1})\tr (\E (a,p)q^{H})
+&=\prod_{d=1}^{\infty}(1-aq^{d-1})\tr (\E (a,p)q^{H})
 \end{align*}
 and so we have proved
 \begin{multline*}
  \tr (\E (a,p)\Gamma_{+}(\ptotheminusrho)\Gamma_{-}(\ptotheminusrho
 )q^{H}) = \\
-\prod_{d=1}^{\infty }M(p,q^{d-1})(1-q^{d}a)(1-a^{-1}q^{d-1})\tr (\E (a,p)q^{H}).
+\prod_{d=1}^{\infty }M(p,q^{d-1})(1-q^{d}a^{-1})(1-aq^{d-1})\tr (\E (a,p)q^{H}).
 \end{multline*}
 
 
@@ -774,8 +806,8 @@ From the definition of $\E_{r}(p)$ we see that its matrix entries are
 all off-diagonal if $r\neq 0$. Therefore
 \begin{align*}
 \tr (\E (a,p) q^{H})&=\tr (\E_{0}(p)q^{H})\\
-&= \sum_{\lambda} q^{|\lambda |}\sum_{i=1}^{\infty}p^{-\lambda +i-\half}\\
-&=(p^{-\half}-p^{\half})^{-1}\prod_{m=1}^{\infty} \frac{(1-q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}
+&= \sum_{\lambda} q^{|\lambda |}\sum_{i=1}^{\infty}p^{\lambda -i+\half}\\
+&=(p^{\half}-p^{-\half})^{-1}\prod_{m=1}^{\infty} \frac{(1-q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}
 \end{align*}
 where the last equality follows from the computation in the proof of
 equation~\eqref{eqn 3} in \S~\ref{subsec: pfs of eqn 3 and
@@ -788,15 +820,15 @@ trace of E Gamma+Gamma-q^{H}}, we get
 \begin{multline*}
 \sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \|  ^{2}} \frac{\Vsf_{\lambda
 \bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
-'\lambda \emptyset} =\frac{1}{1-p} M(p)\prod_{m=1}^{\infty}
+'\lambda \emptyset} =\frac{-1}{1-p} M(p)\prod_{m=1}^{\infty}
 \frac{M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}\\
  \cdot \operatorname{Coeff}_{a^{0}}\left\{\prod_{m=1}^{\infty}
-(1-q^{m}a)(1-q^{m}a^{-1})(1-q^{m}) \right\}.
+(1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m}) \right\}.
 \end{multline*}
 
 By the Jacobi triple product identity, we have
 \[
-\prod_{m=1}^{\infty} (1-q^{m}a)(1-q^{m}a^{-1})(1-q^{m}) =
+\prod_{m=1}^{\infty} (1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m}) =
 \sum_{n=-\infty}^{\infty} q^{\binom{n}{2}} (-a)^{n}
 \]
 whose $a^{0}$ coefficient is 1. Plugging into the previous equation we

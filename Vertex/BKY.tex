@@ -155,7 +155,8 @@ result \cite{Bloch-Okounkov} to prove Equation~\eqref{eqn 3} in our
 Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
 Sylvie Corteel for showing us their trick of doing an infinited number
 of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
-ops and the pf of eqn 5}.
+ops and the pf of eqn 5}. We thank Georg Oberdieck for helpful
+conversations.
 %MK was supported by a PIMS postdoctoral
 %fellowship (CRG Geometry and Physics) while at UBC, and NWO-GQT and
 %Marie-Sk{\l}odowska Curie Project 656898 while at Utrecht. JB was
@@ -274,8 +275,8 @@ coefficients are formal Laurent series in $p$:
 \prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
 1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
 \quad&\quad \nonumber \\
-\quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}}
-\Vsf_{\lambda' \lambda \emptyset} \,\,\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
+\quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{\| \lambda \| ^{2}}
+\Vsf_{\lambda \lambda' \emptyset} \,\,\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
 \emptyset}} =
 (1-p)^{-1}M(p)\prod_{d=1}^{\infty}
 \frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 5}
@@ -381,7 +382,10 @@ In general we have the following relation (see
 s_{\lambda /\mu}(p^{\nu +\rho}) = (-1)^{|\lambda |-|\mu |}s_{\lambda
 '/\mu '}(p^{-\nu '-\rho})
 \]
-so in particular $s_{\bx}(p^{\nu +\rho})=-s_{\bx}(p^{-\nu '-\rho})$
+so in particular 
+\begin{equation}\label{eqn: s(p^{nu+rho})=-s(p^{-nu'-rho})}
+s_{\bx}(p^{\nu +\rho})=-s_{\bx}(p^{-\nu '-\rho})
+\end{equation}
 and thus
 \begin{align*}
 p\frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset \emptyset}} &=
@@ -639,9 +643,14 @@ Our variable $p$ is related to the variable $z$ in
 
 From \cite[Eqns~2.9 and 0.18]{Okounkov-Pandharipande-completed-cycles}, we
 see that $\E_{0}$ is the diagonal operator given by
-\begin{equation}\label{eqn: formula for the operator E0}
+\[
 \E _0 (p) v_{\lambda} = \left(\sum_{i=1}^{\infty}
 p^{\lambda_{i}-i+\half} \right)v_{\lambda}. 
+\]
+By equation~\eqref{eqn: s(p^{nu+rho})=-s(p^{-nu'-rho})} we have
+\begin{equation}\label{eqn: formula for the operator E0}
+\E _0 (p) v_{\lambda} = -\left(\sum_{i=1}^{\infty}
+p^{-\lambda'_{i}+i-\half} \right)v_{\lambda}. 
 \end{equation}
 
 We define
@@ -679,12 +688,14 @@ We now write the left hand side of equation~\eqref{eqn 5} in the main
 theorem as a trace of operators on charge zero Fock space.
 \begin{lemma}\label{lem: eqn 5 written as a trace}
 \begin{align*}
-\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \Vsf_{\lambda
-'\lambda \emptyset}\,\, \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}}& = p^{-\half}
-\operatorname{Tr} \left(\E
+\sum_{\lambda} q^{|\lambda |} p^{\| \lambda \| ^{2}} \Vsf_{\lambda
+\lambda' \emptyset}\,\, \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}}& = -p^{-\half} \tr
+\left(\E
 _0(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
-& = p^{-\half} \operatorname{Coeff}_{a^{0}}\left\{\operatorname{Tr} \left(\E(a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right) \right\}.
+& =- p^{-\half} \operatorname{Coeff}_{a^{0}}\left\{\tr
+\left(\E(a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho
+)q^{H} \right) \right\}.
 \end{align*}
 \end{lemma}
 \proof The following computation uses, in order, the commutation
@@ -694,20 +705,25 @@ formula for $\E_{0} (p)$ (equation~\eqref{eqn: formula for the
 operator E0}), Lemma~\ref{lem: eqns for
 Vlambdaboxempty/Vlambdaemptyempty and
 Vlambdaboxbox/Vlambdaemptyempty}, equation~\eqref{eqn: matrix coefs of
-vertex ops are skew schur}, and finally equation~\eqref{eqn: ORV formula for vertex}:
+vertex ops are skew schur}, equation~\eqref{eqn: ORV formula for
+vertex}, and finally switching $\lambda$ to $\lambda '$ in the sum:
 \begin{align*}
-\quad &\,\, \quad p^{-\half} \tr \left(\E_{0}(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
-& = p^{-\half} M(p) \tr \left(\E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} \right)\\
-&=p^{-\half}M(p)\sum_{\lambda} \left(v_{\lambda}, \E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} v_{\lambda}\right)\\
-&=p^{-\half }M(p) \sum_{\lambda} q^{|\lambda |} \left(\sum_{i=1}^{\infty}
-p^{-\lambda_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )v_{\lambda} \right)\\
-&=M(p)\sum_{\lambda}q^{|\lambda |} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )v_{\lambda },\Gamma_{+}(\ptotheminusrho )V_{\lambda } \right)\\
-&= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
-&= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} p^{\| \lambda' \| ^{2}}
-V_{\lambda '\lambda \emptyset} .
+\quad &\,\, \quad - p^{-\half} \tr \left(\E_{0}(p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H} \right)\\
+& =- p^{-\half} M(p) \tr \left(\E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} \right)\\
+&=-p^{-\half}M(p)\sum_{\lambda} \left(v_{\lambda}, \E_{0}(p)\Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )q^{H} v_{\lambda}\right)\\
+&=p^{-\half }M(p) \sum_{\lambda} q^{|\lambda |}
+\left(\sum_{i=1}^{\infty}
+p^{-\lambda'_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )v_{\lambda} \right)\\
+&=M(p)\sum_{\lambda}q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
+\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )v_{\lambda },\Gamma_{+}(\ptotheminusrho )V_{\lambda } \right)\\
+&= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
+\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
+&= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
+\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} p^{\| \lambda' \| ^{2}}
+V_{\lambda '\lambda \emptyset}\\
+&= \sum_{\lambda} q^{|\lambda |}  p^{\| \lambda \| ^{2}}
+V_{\lambda \lambda' \emptyset} \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}}.
 \end{align*}
 \qed 
 
@@ -720,7 +736,7 @@ coefficient.
 \begin{multline*}
 \tr \left(\E (a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H}
 \right) = \\
-\frac{-1}{p^{-\half}-p^{\half}}M(p)\prod_{m=1}^{\infty}
+\frac{1}{p^{-\half}-p^{\half}}M(p)\prod_{m=1}^{\infty}
 \frac{(1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m})
 M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}.
 \end{multline*}
@@ -820,7 +836,7 @@ trace of E Gamma+Gamma-q^{H}}, we get
 \begin{multline*}
 \sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \|  ^{2}} \frac{\Vsf_{\lambda
 \bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
-'\lambda \emptyset} =\frac{-1}{1-p} M(p)\prod_{m=1}^{\infty}
+'\lambda \emptyset} =\frac{1}{1-p} M(p)\prod_{m=1}^{\infty}
 \frac{M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}\\
  \cdot \operatorname{Coeff}_{a^{0}}\left\{\prod_{m=1}^{\infty}
 (1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m}) \right\}.

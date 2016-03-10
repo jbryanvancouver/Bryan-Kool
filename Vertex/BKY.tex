@@ -77,6 +77,8 @@ Eugene, OR 97403-1222 USA
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\Coker}{\operatorname{Coker}}
 \newcommand{\im}{\operatorname{Im}}
+\newcommand{\HilbBetan}{\operatorname{Hilb}^{\beta ,n}}
+
 
 \renewcommand{\P}{\mathbb{P}}
 \newcommand{\M}{\overline{\mathcal{M}}}
@@ -86,7 +88,9 @@ Eugene, OR 97403-1222 USA
 \newcommand{\ZplusHalf}{\znums+{ \half}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\ptotheminusrho}{p^{-\rho}}
-
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\DT}{\operatorname{\mathsf{DT}}}
+\newcommand{\DThat}{\operatorname{\widehat{\mathsf{DT}}}}
 
 \begin{document}
 
@@ -853,24 +857,146 @@ finish the proof of equation~\eqref{eqn 5}.
 
 \section{Geometry and Applications}\label{sec: geometry and applications}
 
-\smallskip
 
-$\Vsf_{\lambda \mu \nu}(p)$ as generating function for Euler
-characteristics of Hilbert schemes on $\cnums^{3}$.
+\subsection{Overview:} In this section we briefly outline the
+applications of our trace formulas to the Donaldson-Thomas theory of
+elliptically fibered Calabi-Yau threefolds
+\cite{Bryan-Kool,Bryan-K3xE,BOPY}. As we will explain below, each
+formula in our main theorem gives a certain contribution to the
+Donaldson-Thomas partition function of such threefolds. Namely, we
+have the following.
+\begin{itemize}
+\item The contribution of multiples of a nodal elliptic fiber is given
+by Equation~\eqref{eqn 2}.
+\item The contribution of multiples of a smooth elliptic fiber
+attached to a smooth section curve is given by Equation~\eqref{eqn 3}.
+\item The contribution of multiples of a smooth elliptic fiber
+attached to a nodal section curve is given by Equation~\eqref{eqn 4}.
+\item The contribution of multiples of a nodal elliptic fiber
+attached to a smooth section curve is given by Equation~\eqref{eqn 5}.
+\end{itemize}
 
-\smallskip
+\subsection{An absurdly short recap of Donaldson-Thomas theory}
 
-short description of local contributions to DT invariants in
-threefolds with elliptic fibrations. \begin{enumerate}
-\item multiple of smooth fiber
-\item multiple of nodal fiber
-\item multiple of smooth fiber attached to section
-\item multiple of nodal fiber attached to section
-\item multiple of smooth fiber attached to node
-\end{enumerate}
+Donaldson-Thomas theory is a curve counting theory for Calabi-Yau
+threefolds which is conjecturally equivalent to Gromov-Witten theory
+\cite{MNOP1}. Let $X$ be a Calabi-Yau threefold, let $\beta \in
+H_{2}(X,\znums )$ be a curve class, and let $n\in \znums$.
 
-\smallskip
-connection of formulas with Jacobi forms. 
+Let
+\[
+\HilbBetan (X) = \left\{Z\subset X,\quad [Z]=\beta ,\quad \chi (\O_{Z})=n \right\}
+\]
+be the Hilbert scheme parameterizing subschemes of class $\beta$ and
+whose structure sheaf has holomorphic Euler characteristic $n$. The
+Donaldson-Thomas invariant $\DT_{\beta ,n}(X)$ is defined to be the
+Behrend function weighted Euler characteristic of the Hilbert scheme:
+\[
+\DT_{\beta ,n} (X)= \sum_{k\in \znums} k\, e\left( \nu^{-1}(k) \right)
+\] 
+where $e(-)$ is topological Euler charateristic and 
+\[
+\nu : \HilbBetan (X)\to \znums 
+\]
+is Behrend's constructible function \cite{Behrend-micro}. The
+unweighted Euler characteristics are also often considered:
+\[
+\DThat_{\beta ,n} (X) = e\left(\HilbBetan (X) \right).
+\]
+
+In this discussion of our applications we will only consider the
+unweighted invariants $\DThat_{\beta ,n}(X)$. For further discourse on
+including the Behrend function see \cite{Bryan-K3xE,Bryan-Kool,BOPY}. 
+
+
+The invariants are usually assembled into a generating function called
+the partition function:
+\[
+\DThat (X) = \sum_{n,\beta} \DThat_{\beta ,n}(X) q^{\beta} p^{n}.
+\]
+The above series can be considered as an element in the Novikov
+ring of $X$ with coefficients which are formal Laurent series in
+$p$.\footnote{With an appropriate choice of a basis of
+$H_{2}(X,\znums$), the partition function can be considered as a formal
+power series in a set a variables $q_{i}$ whose coefficients are
+Laurent series in $p$.}
+
+
+\subsection{Donaldson-Thomas invariants of a threefold with a torus action}
+
+The topological Euler characteristic of a $\cnums$-scheme $S$ with the
+action of a complex torus $T \cong (\cnums^{*})^{k}$ is given by the
+Euler characteristic of the fixed locus:
+\[
+e(S) = e\left(S^{T} \right).
+\]
+Thus if $X$ is a Calabi-Yau threefold equipped with the action of a
+torus $T$, then
+\[
+\DThat_{\beta ,n}(X) = e\left(\HilbBetan (X)^{T} \right).
+\]
+In the case where $X$ is toric with action $T$, then $\HilbBetan
+(X)^{T}$ parameterizes $T$-invariant subschemes and is a finite
+set. Thus $\DThat_{\beta ,n}(X)$ simply counts the number of $T$
+invariant subschemes $Z\subset X$ with $[Z]=\beta$ and $\chi
+(\O_{Z})=n$.
+
+On a $T$-invariant coordinate chart $\cnums^{3}\subset X$, a
+$T$-invariant subscheme is given by a monomial ideal $I\subset \cnums
+[x,y,z]$. There is a bijection between 3D partitions and monomial
+ideals given by:
+\[
+(i,j,k)\in \pi \quad \Longleftrightarrow \quad x^{i}y^{j}z^{k} \not \in  I.
+\]
+If the partition $\pi$ is asymptotic to $(\lambda, \mu, \nu )$ as in
+Definition~\ref{defn: 3D partition asympt to (a,b,c)}, then the
+subscheme defined by the corresponding monomial ideal is supported on
+the coordinate axes of $\cnums^{3}$ and has nilpotent thickenings
+along the axes determined $(\lambda, \mu, \nu )$.
+
+So we see that to compute $\DThat_{\beta ,n}(X)$ for a toric
+Calabi-Yau threefold $X$, we need to count 3D partitions (one for each
+coordniate chart) such that the corresponding subschemes agree on the
+coordinate overlaps and the curve class and holomorphic Euler
+characteristic are given by $\beta $ and $n$ respectively. This leads
+to a general formalism developed in \cite{MNOP1} for computing $\DThat
+(X)$ in terms of the topological vertex.
+
+\subsection{Using the topological vertex in non-toric geometries}
+
+The topological vertex can also be used to compute $\DThat (X)$ for
+some Calabi-Yau threefolds $X$ which do not have a global torus
+action, if it is known for example that the reduced support of all
+1-dimensional subschemes is \emph{formally locally} monomial. A
+typical setting where this can be applied is when $X$ is elliptically
+fibered. Namely, there is a map $\pi :X\to  S$ to a surface such that
+the fibers are possibly nodal genus 1 curves. We typically require a
+section $\sigma :S\to X$ and we consider curve classes of the form
+\[
+\beta_{d} = \sigma_{*}(\beta ) + d [F]
+\]
+or simply
+\[
+\tilde{\beta}_{d} = d[F].
+\]
+Here $\beta$ is an irreducible curve class in $S$ and $[F]$ is the
+class of the fiber.
+
+The basic idea is to exploit the \emph{motivic} nature of Euler
+characteristic. The Euler characteristic defines a ring homomorphism
+from the Grothendieck group of varieties to the integers. More
+prosaically, this means that one can compute the Euler characteristic
+of a scheme by stratifying the scheme and then summing the Euler
+characteristics of each individual stratum. If we stratify $\HilbBetan
+(X)$ by the support of the corresponding subscheme, it then makes
+sense to talk about the contribution of schemes supported on some
+particular curve to the Donaldson-Thomas invariant of $X$. For
+example, given a particular fiber $F$ and some particular curve
+$C\subset S$ in the class, it makes sense to talk about the
+contribution of schemes supported on $\sigma (C)\cup F$ to the
+invariant $\DThat_{\beta_{d},n}(X)$. Namely, it is the Euler
+characteristic of the substratum of the Hilbert scheme $\HilbBetan
+(X)$ which parameterizes subschemes supported on  $\sigma (C)\cup F$.
 
 
 

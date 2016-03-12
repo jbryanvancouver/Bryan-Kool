@@ -77,7 +77,7 @@ Eugene, OR 97403-1222 USA
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\Coker}{\operatorname{Coker}}
 \newcommand{\im}{\operatorname{Im}}
-\newcommand{\HilbBetan}{\operatorname{Hilb}^{\beta ,n}}
+
 
 
 \renewcommand{\P}{\mathbb{P}}
@@ -91,6 +91,11 @@ Eugene, OR 97403-1222 USA
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\DT}{\operatorname{\mathsf{DT}}}
 \newcommand{\DThat}{\operatorname{\widehat{\mathsf{DT}}}}
+\newcommand{\HilbBetan}{\operatorname{Hilb}^{\beta ,n}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\folomo}{{FoLoMo }}
+
 
 \begin{document}
 
@@ -858,7 +863,7 @@ finish the proof of equation~\eqref{eqn 5}.
 \section{Geometry and Applications}\label{sec: geometry and applications}
 
 
-\subsection{Overview:} In this section we briefly outline the
+\subsection{Overview.} In this section we briefly outline the
 applications of our trace formulas to the Donaldson-Thomas theory of
 elliptically fibered Calabi-Yau threefolds
 \cite{Bryan-Kool,Bryan-K3xE,BOPY}. As we will explain below, each
@@ -876,7 +881,7 @@ attached to a nodal section curve is given by Equation~\eqref{eqn 4}.
 attached to a smooth section curve is given by Equation~\eqref{eqn 5}.
 \end{itemize}
 
-\subsection{An absurdly short recap of Donaldson-Thomas theory}
+\subsection{An very short description of Donaldson-Thomas theory.}
 
 Donaldson-Thomas theory is a curve counting theory for Calabi-Yau
 threefolds which is conjecturally equivalent to Gromov-Witten theory
@@ -944,62 +949,158 @@ invariant subschemes $Z\subset X$ with $[Z]=\beta$ and $\chi
 On a $T$-invariant coordinate chart $\cnums^{3}\subset X$, a
 $T$-invariant subscheme is given by a monomial ideal $I\subset \cnums
 [x,y,z]$. There is a bijection between 3D partitions and monomial
-ideals given by:
+ideals $\pi \leftrightarrow I$ given by:
 \[
 (i,j,k)\in \pi \quad \Longleftrightarrow \quad x^{i}y^{j}z^{k} \not \in  I.
 \]
 If the partition $\pi$ is asymptotic to $(\lambda, \mu, \nu )$ as in
 Definition~\ref{defn: 3D partition asympt to (a,b,c)}, then the
-subscheme defined by the corresponding monomial ideal is supported on
-the coordinate axes of $\cnums^{3}$ and has nilpotent thickenings
+subscheme defined by the corresponding monomial ideal $I$ is supported
+on the coordinate axes of $\cnums^{3}$ and has nilpotent thickenings
 along the axes determined $(\lambda, \mu, \nu )$.
 
-So we see that to compute $\DThat_{\beta ,n}(X)$ for a toric
-Calabi-Yau threefold $X$, we need to count 3D partitions (one for each
-coordniate chart) such that the corresponding subschemes agree on the
-coordinate overlaps and the curve class and holomorphic Euler
+So we see that in order to compute $\DThat_{\beta ,n}(X)$ for a toric
+Calabi-Yau threefold $X$, one needs to count 3D partitions (one for
+each coordniate chart) such that the corresponding subschemes agree on
+the coordinate overlaps and the curve class and holomorphic Euler
 characteristic are given by $\beta $ and $n$ respectively. This leads
 to a general formalism developed in \cite{MNOP1} for computing $\DThat
 (X)$ in terms of the topological vertex.
 
 \subsection{Using the topological vertex in non-toric geometries}
 
-The topological vertex can also be used to compute $\DThat (X)$ for
-some Calabi-Yau threefolds $X$ which do not have a global torus
-action, if it is known for example that the reduced support of all
-1-dimensional subschemes is \emph{formally locally} monomial. A
-typical setting where this can be applied is when $X$ is elliptically
-fibered. Namely, there is a map $\pi :X\to  S$ to a surface such that
-the fibers are possibly nodal genus 1 curves. We typically require a
-section $\sigma :S\to X$ and we consider curve classes of the form
+Even if $X$ has no torus action, under some favorable circumstances,
+we can still use the topological vertex technology to compute
+Donaldson-Thomas invariants. The idea is to exploit the \emph{motivic}
+nature of Euler characteristic. The Euler characteristic is a ring
+homomorphism from the Grothendieck group of varieties over $\cnums$ to
+the integers. More prosaically, this means that one can compute the
+Euler characteristic of a scheme by stratifying it and then summing
+the Euler characteristics of each individual stratum.
+
+For example, one can stratify the Hilbert scheme by specifying the support of the
+corresponding subschemes. Let $C\subset X$ be a (not necessarily
+irreducible) curve, and let
 \[
-\beta_{d} = \sigma_{*}(\beta ) + d [F]
+\HilbBetan (X,C) \subset \HilbBetan (X)
 \]
-or simply
+be the locus parameterizing subschemes $Z$ such that the reduced
+support of $Z$ is contained in $C$. We can then define the
+\emph{contribution of $C$ to the Donaldson-Thomas invariants} as
 \[
-\tilde{\beta}_{d} = d[F].
+\DThat (X,C) = \sum_{n,\beta} e(\HilbBetan (X,C))p^{n}q^{\beta}.
 \]
-Here $\beta$ is an irreducible curve class in $S$ and $[F]$ is the
-class of the fiber.
+A key observation is that $\HilbBetan (X,C)$ only depends on
+$\Xhat_{C}$, the formal neighborhood of $C$ in $X$. So while $X$
+itself may not admit a non-trivial $\cnums^{*}$-action, it is
+sometimes the case that $\Xhat_{C}$ does admit an action which then
+induces an action on the stratum $\HilbBetan (X,C)$. This strategy can
+potentially be iterated: the fixed locus $\HilbBetan
+(X,C)^{\cnums^{*}}$ may be further stratified (for example by the
+support of the embedded points) and these substrata may admit further
+$\cnums^{*}$ actions. The upshot is that in circumstances where this
+strategy is successful, it reduces the computation of the Euler
+characteristic of the Hilbert scheme to the substratum of the Hilbert
+scheme parameterizing subschemes which are \emph{formally locally
+monomial ({\folomo }  for short)}, i.e. given by a monomial ideal in the
+formal neighborhood of each point. Denoting this substratum by the
+subscript \folomo, we get
+\begin{align*}
+\DThat (X,C)&= \sum_{\beta ,n} e\left(\HilbBetan (X,C) \right) p^{n}q^{\beta }\\
+&= \sum_{\beta ,n} e\left(\HilbBetan_{\folomo } (X,C) \right) p^{n}q^{\beta }.
+\end{align*}
+Due to the bijection between monomial ideals and 3D partitions,
+\folomo ideals in the formal neighborhood of a point can be counted
+with the topological vertex.
 
-The basic idea is to exploit the \emph{motivic} nature of Euler
-characteristic. The Euler characteristic defines a ring homomorphism
-from the Grothendieck group of varieties to the integers. More
-prosaically, this means that one can compute the Euler characteristic
-of a scheme by stratifying the scheme and then summing the Euler
-characteristics of each individual stratum. If we stratify $\HilbBetan
-(X)$ by the support of the corresponding subscheme, it then makes
-sense to talk about the contribution of schemes supported on some
-particular curve to the Donaldson-Thomas invariant of $X$. For
-example, given a particular fiber $F$ and some particular curve
-$C\subset S$ in the class, it makes sense to talk about the
-contribution of schemes supported on $\sigma (C)\cup F$ to the
-invariant $\DThat_{\beta_{d},n}(X)$. Namely, it is the Euler
-characteristic of the substratum of the Hilbert scheme $\HilbBetan
-(X)$ which parameterizes subschemes supported on  $\sigma (C)\cup F$.
+
+\subsection{The case of elliptically fibered Calabi-Yau threefolds.}
+
+Let $X$ be a Calabi-Yau threefold admitting an elliptic fibration $\pi
+:X\to S$. We consider the following curves in $X$. Let $F\subset X$ be
+some non-singular fiber and let $N\subset X$ be a fiber having a nodal
+singularity. Let $B$ be a smooth section curve, that is a non-singular
+curve meeting $F$ and $N$ once each in a node. The strategy outlined
+in the previous subsection works particularly well in this setting
+where we consider curve classes which are multiples of the fiber class
+plus possibly a section class. In these cases, the local contributions
+can be expressed in terms of the topological vertex. The results are
+the following
+
+\begin{align*}
+\DThat (X,F)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{d[F],n}(X,F) \right)p^{n}q^{d}\\
+&= \sum_{\lambda} q^{|\lambda |},\\
+\DThat (X,B+F)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{[B]+d[F],n}(X,B+F) \right)p^{n}q^{d}\\
+&= \left(p^{\half}-p^{-\half} \right)^{2g-1} p^{\half} \,
+\sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}},\\
+\DThat (X,N)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{d[N],n}(X,N) \right)p^{n}q^{d}\\
+&= \sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset },\\
+\DThat (X,B+N)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{[B]+d[N],n}(X,B+N) \right)p^{n}q^{d}\\
+&= \left(p^{\half}-p^{-\half} \right)^{2g-1} p^{\half} \, \sum_{\lambda}
+q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset
+}\frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}},\\
+\end{align*}
+
+There is one additional case to consider.  Let $B'$ be nodal section
+curve, that is a curve that has a single nodal singularity at $n\in
+B'$ and we assume that $B'$ meets $F$ at the point $n$ so that the
+singularitiy of $B'\cup F$ at $n$ is formally locally that of the
+coordinate axes. Let $g'$ be the geometric genus of $B'$. Then
+\begin{align*}
+\DThat (X,B'+F)&= \sum_{n}\sum_{d=0}^{\infty}
+e\left(\Hilb_{\folomo  }^{[B']+d[F],n}(X,B'+F) \right)p^{n}q^{d}\\
+&= \left(p^{\half}-p^{-\half} \right)^{2g'} \, \sum_{\lambda}
+q^{|\lambda |} \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset
+\emptyset}},
+\end{align*}
+
+The appearance of the topological vertex in the \emph{denominators} of
+these formulas deserves explaining. In the case of a toric Calabi-Yau
+threefold, only a finite number of monomoial ideals need to be counted
+--- one for each toric coordinate chart. In the case of an
+elliptically fibered threefold as above, we have a monomial ideal in
+the formal neighborhood of each point on our curve. The possible
+locations of these monomial ideas are parameterized by various
+symmetric products of our curves. Symmetric products are very amenable
+to our motivic methods. Indeed, symmetric products endow the
+Grothendieck group of varieties with a lambda ring structure which is
+compatible with the Euler characteristic homomorphism. The vertex term
+$\Vsf_{\lambda \emptyset \emptyset}$ appearing in the above formulas
+counts monomial ideals at the points of $F-p$ where $p$ is the point
+where the section meets $F$. Because of the symmetric product
+formalism in the Grothendieck group, this term appears with an
+exponent given by the topological Euler characteristic of $F-p$:
+\[
+(\Vsf_{\lambda \emptyset \emptyset})^{e(F-p)} =\frac{1}{\Vsf_{\lambda
+\emptyset \emptyset}} .
+\]
+
+\subsection{Applying our trace formulas and the appearence of Jacobi forms.}
+Applying the formulas in our main theorem as well as the well known
+formula
+\[
+\sum_{\lambda} q^{|\lambda |}= \prod_{d=1}(1-q^{d})^{-1},
+\]
+to the formulas in the previous subsection, we get the following
+results:
+\begin{align*}
+\DThat (X,F)&= \prod_{d=1}^{\infty} (1-q^{d})^{-1}\\
+\DThat (X,B+F)&= \left(p^{\half}-p^{-\half} \right)^{2g-2} \prod_{d=1}^{\infty}
+\frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\\
+\DThat (X,N) &= M(p)\prod_{d=1}^{\infty} (1-q^{d})^{-1} M(p,q^{d})\\
+\DThat (X,B+N) &=  \left(p^{\half}-p^{-\half} \right)^{2g-2} M(p)
+\prod_{d=1}^{\infty} \frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\\
+\DThat (X,B'+F) &=  \left(p^{\half}-p^{-\half}
+\right)^{2g'}\prod_{d=1}^{\infty}(1-q^{d})^{-1}\\
+&\quad \cdot 
+\left\{1+\frac{p}{(1-p)^{2}}+\sum_{m=1}^{\infty} \sum_{k|m}
+k(p^{k}+p^{-k})q^{m} \right\}. 
+\end{align*}
 
 
-
+       
 \bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
 \bibliographystyle{plain}
 

@@ -162,7 +162,7 @@ functions of certain Calabi-Yau threefolds in terms of Jacobi forms
 Johnson for showing us (on MathOverFlow) how to use the Bloch-Okounkov
 result \cite{Bloch-Okounkov} to prove Equation~\eqref{eqn 3} in our
 Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
-Sylvie Corteel for showing us their trick of doing an infinited number
+Sylvie Corteel for showing us their trick of doing an infinite number
 of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
 ops and the pf of eqn 5}. We thank Georg Oberdieck for helpful
 conversations.
@@ -866,7 +866,7 @@ finish the proof of equation~\eqref{eqn 5}.
 \subsection{Overview.} In this section we briefly outline the
 applications of our trace formulas to the Donaldson-Thomas theory of
 elliptically fibered Calabi-Yau threefolds
-\cite{Bryan-Kool,Bryan-K3xE,BOPY}. As we will explain below, each
+\cite{Bryan-K3xE,Bryan-Kool,BOPY}. As we will explain below, each
 formula in our main theorem gives a certain contribution to the
 Donaldson-Thomas partition function of such threefolds. Namely, we
 have the following.
@@ -899,7 +899,7 @@ Behrend function weighted Euler characteristic of the Hilbert scheme:
 \[
 \DT_{\beta ,n} (X)= \sum_{k\in \znums} k\, e\left( \nu^{-1}(k) \right)
 \] 
-where $e(-)$ is topological Euler charateristic and 
+where $e(-)$ is topological Euler characteristic and 
 \[
 \nu : \HilbBetan (X)\to \znums 
 \]
@@ -940,10 +940,10 @@ torus $T$, then
 \[
 \DThat_{\beta ,n}(X) = e\left(\HilbBetan (X)^{T} \right).
 \]
-In the case where $X$ is toric with action $T$, then $\HilbBetan
-(X)^{T}$ parameterizes $T$-invariant subschemes and is a finite
-set. Thus $\DThat_{\beta ,n}(X)$ simply counts the number of $T$
-invariant subschemes $Z\subset X$ with $[Z]=\beta$ and $\chi
+In the case where $X$ is toric with the action of a torus $T$, then
+$\HilbBetan (X)^{T}$ parameterizes $T$-invariant subschemes and is a
+finite set. Thus $\DThat_{\beta ,n}(X)$ simply counts the number of
+$T$ invariant subschemes $Z\subset X$ with $[Z]=\beta$ and $\chi
 (\O_{Z})=n$.
 
 On a $T$-invariant coordinate chart $\cnums^{3}\subset X$, a
@@ -961,7 +961,7 @@ along the axes determined by $(\lambda, \mu, \nu )$.
 
 So we see that in order to compute $\DThat_{\beta ,n}(X)$ for a toric
 Calabi-Yau threefold $X$, one needs to count 3D partitions (one for
-each coordniate chart) such that the corresponding subschemes agree on
+each coordinate chart) such that the corresponding subschemes agree on
 the coordinate overlaps and the curve class and holomorphic Euler
 characteristic are given by $\beta $ and $n$ respectively. This leads
 to a general formalism developed in \cite{MNOP1} for computing $\DThat
@@ -994,17 +994,18 @@ A key observation is that $\HilbBetan (X,C)$ only depends on
 $\Xhat_{C}$, the formal neighborhood of $C$ in $X$. So while $X$
 itself may not admit a non-trivial $\cnums^{*}$-action, it is
 sometimes the case that $\Xhat_{C}$ does admit an action which then
-induces an action on the stratum $\HilbBetan (X,C)$. This strategy can
-potentially be iterated: the fixed locus $\HilbBetan
-(X,C)^{\cnums^{*}}$ may be further stratified (for example by the
-support of the embedded points) and these substrata may admit further
-$\cnums^{*}$ actions. The upshot is that in circumstances where this
-strategy is successful, it reduces the computation of the Euler
-characteristic of the Hilbert scheme to the substratum of the Hilbert
-scheme parameterizing subschemes which are \emph{formally locally
-monomial ({\folomo }  for short)}, i.e. given by a monomial ideal in the
-formal neighborhood of each point. Denoting this substratum by the
-subscript \folomo, we get
+induces an action on the stratum $\HilbBetan (X,C)$.
+
+The above strategy can potentially be iterated: the fixed locus
+$\HilbBetan (X,C)^{\cnums^{*}}$ may be further stratified (for example
+by the support of the embedded points) and these substrata may admit
+further $\cnums^{*}$ actions. The upshot is that in circumstances
+where this strategy is successful, it reduces the computation of the
+Euler characteristic of the Hilbert scheme to the substratum of the
+Hilbert scheme parameterizing subschemes which are \emph{formally
+locally monomial ({\folomo } for short)}, i.e. given by monomial
+ideals in the formal neighborhoods of each point. Denoting this
+substratum by the subscript \folomo, we get
 \begin{align*}
 \DThat (X,C)&= \sum_{\beta ,n} e\left(\HilbBetan (X,C) \right) p^{n}q^{\beta }\\
 &= \sum_{\beta ,n} e\left(\HilbBetan_{\folomo } (X,C) \right) p^{n}q^{\beta }.
@@ -1019,25 +1020,26 @@ with the topological vertex.
 Let $X$ be a Calabi-Yau threefold admitting an elliptic fibration $\pi
 :X\to S$. We consider the following curves in $X$. Let $F\subset X$ be
 some non-singular fiber and let $N\subset X$ be a fiber having a nodal
-singularity. Let $B$ be a smooth section curve, that is a non-singular
-curve meeting $F$ and $N$ once each in a node. The strategy outlined
-in the previous subsection works particularly well in this setting
-where we consider curve classes which are multiples of the fiber class
-plus possibly a section class. In these cases, the local contributions
-can be expressed in terms of the topological vertex. The results are
-the following
+singularity. Let $B$ be a smooth section curve of genus $g$, that is a
+non-singular curve of genus $g$ meeting $F$ and $N$ once each in a
+node. The strategy outlined in the previous subsection works
+particularly well in this setting where we consider curve classes
+which are arbitrary multiples of the fiber class plus possibly a
+single multiple of the section class. In these cases, the local
+contributions can be expressed in terms of the topological vertex. The
+results are the following:
 
 \begin{align*}
 \DThat (X,F)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{d[F],n}(X,F) \right)p^{n}q^{d}\\
 &= \sum_{\lambda} q^{|\lambda |},\\
 \DThat (X,B+F)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{[B]+d[F],n}(X,B+F) \right)p^{n}q^{d}\\
-&= \left(p^{\half}-p^{-\half} \right)^{2g-1} p^{\half} \,
-\sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda \bx
+&= \left(p^{\half}-p^{-\half} \right)^{2g-2} (1-p) \, \sum_{\lambda}
+q^{|\lambda |} \frac{\Vsf_{\lambda \bx
 \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}},\\
 \DThat (X,N)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{d[N],n}(X,N) \right)p^{n}q^{d}\\
 &= \sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset },\\
 \DThat (X,B+N)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{[B]+d[N],n}(X,B+N) \right)p^{n}q^{d}\\
-&= \left(p^{\half}-p^{-\half} \right)^{2g-1} p^{\half} \, \sum_{\lambda}
+&= \left(p^{\half}-p^{-\half} \right)^{2g-2} (1-p) \, \sum_{\lambda}
 q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset
 }\frac{\Vsf_{\lambda \bx
 \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}},\\
@@ -1046,38 +1048,64 @@ q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset
 There is one additional case to consider.  Let $B'$ be nodal section
 curve, that is a curve that has a single nodal singularity at $n\in
 B'$ and we assume that $B'$ meets $F$ at the point $n$ so that the
-singularitiy of $B'\cup F$ at $n$ is formally locally that of the
+singularity of $B'\cup F$ at $n$ is formally locally that of the
 coordinate axes. Let $g'$ be the geometric genus of $B'$. Then
 \begin{align*}
 \DThat (X,B'+F)&= \sum_{n}\sum_{d=0}^{\infty}
 e\left(\Hilb_{\folomo  }^{[B']+d[F],n}(X,B'+F) \right)p^{n}q^{d}\\
 &= \left(p^{\half}-p^{-\half} \right)^{2g'} \, \sum_{\lambda}
-q^{|\lambda |} \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset
+q^{|\lambda |}\,p\, \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset
 \emptyset}},
 \end{align*}
 
-The appearance of the topological vertex in the \emph{denominators} of
-these formulas deserves explaining. In the case of a toric Calabi-Yau
-threefold, only a finite number of monomoial ideals need to be counted
---- one for each toric coordinate chart. In the case of an
-elliptically fibered threefold as above, we have a monomial ideal in
-the formal neighborhood of each point on our curve. The possible
-locations of these monomial ideas are parameterized by various
-symmetric products of our curves. Symmetric products are very amenable
-to our motivic methods. Indeed, symmetric products endow the
-Grothendieck group of varieties with a lambda ring structure which is
-compatible with the Euler characteristic homomorphism. The vertex term
-$\Vsf_{\lambda \emptyset \emptyset}$ appearing in the above formulas
-counts monomial ideals at the points of $F-p$ where $p$ is the point
-where the section meets $F$. Because of the symmetric product
-formalism in the Grothendieck group, this term appears with an
-exponent given by the topological Euler characteristic of $F-p$:
-\[
-(\Vsf_{\lambda \emptyset \emptyset})^{e(F-p)} =\frac{1}{\Vsf_{\lambda
-\emptyset \emptyset}} .
-\]
+All of the above formulas have a sum over (2D)
+partitions. Geometrically, this is because a \folomo subscheme which
+is a nilpotent thickening of a curve is determined, away from singular
+points and embedded points, by a monomial ideal in the formal
+coordinates transverse to the curve, which is in turn determined by a
+2D partition. Thus in the above formulas, the term in the sum
+corresponding to a partition $\lambda$ counts subschemes which have
+thickenings determined by $\lambda$ along the fiber curve ($F$ or
+$N$).
 
-\subsection{Applying our trace formulas and the appearence of Jacobi forms.}
+Each term in the sum is a combination of topological vertexes which
+counts the ways in which embedded points can appear in the
+subscheme. For example, in the formula for $\DThat (X,B+N)$ the
+$\Vsf_{\lambda \lambda '\emptyset}$ counts the ways of adding embedded
+points at the node $n\in N$, the $\Vsf_{\lambda \bx \emptyset}$ counts
+ways of adding embedded points at $p=B\cap N$, and $\Vsf_{\lambda
+\emptyset \emptyset}$ counts the nuymber of ways of adding embedded
+points at some arbitrary point of $N-\{n,p \}$. 
+
+The reason that $\Vsf_{\lambda \emptyset \emptyset}$ appears in the
+\emph{denominators} of these formulas deserves explaining.  In the
+case of a toric Calabi-Yau threefold, the number of possible locations
+for embedded points is finite --- they only occur at the origins of
+the torus invariant coordinate charts. In the case of $\folomo$
+subschemes, embedded points can occur at an infinite number of
+locations. In the example at hand, the embedded points parameterized
+by $\Vsf_{\lambda \emptyset \emptyset}$ can occur at any non-singular
+point of the curve $N$. The possible locations are paramterized by
+symmetric products of $N-\{n,p \}$.  Symmetric products are very
+amenable to our motivic methods. Indeed, symmetric products endow the
+Grothendieck group of varieties with a lambda ring structure which is
+compatible with the Euler characteristic homomorphism. Because of the symmetric product
+formalism in the Grothendieck group, the $\Vsf_{\lambda \emptyset \emptyset}$ appears with an
+exponent given by the topological Euler characteristic of $N-\{n,p \}$:
+\[
+(\Vsf_{\lambda \emptyset \emptyset})^{e(N-\{n,p \})}
+=\frac{1}{\Vsf_{\lambda \emptyset \emptyset}} .
+\]
+Finally, the powers of $\left(p^{\half}-p^{-\half} \right)$ appearing
+in front of the formulas with a section are due to embedded points at
+the non-singular points of $B$ or $B'$. Indeed, this term is
+essentially given by $\left(\Vsf_{\bx \emptyset \emptyset}
+\right)^{e(B-p)}$ or $\left(\Vsf_{\bx \emptyset \emptyset}
+\right)^{e(B'-n)}$ respectively.
+
+
+
+\subsection{Applying our trace formulas and the appearance of Jacobi forms.}
 Applying the formulas in our main theorem as well as the well known
 formula
 \[
@@ -1099,6 +1127,34 @@ results:
 k(p^{k}+p^{-k})q^{m} \right\}. 
 \end{align*}
 
+The above formulas have a close connection with some well known Jacobi
+forms and modular forms. Let $p=\exp\left(2\pi iz \right)$ and
+$q=\exp\left(2\pi i\tau \right)$. The Jacobi theta function $\Theta$,
+the Dedikind eta function $\eta$, the Weierstrass $\wp$ function, and
+the Eisenstein series $G_{2}$ are given as follows:
+
+\begin{align*}
+\Theta &= \left(p^{\half}-p^{-\half} \right) \prod_{m=1}^{\infty}
+\frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}\\
+\eta &= p^{\frac{1}{24}}\prod_{m=1}^{\infty}(1-q^{m})\\
+\wp &= \frac{1}{12} +\frac{p}{(1-p)^{2}} +\sum_{d=1}^{\infty}
+\sum_{k|d} k(p^{k}-2+p^{-k}) q^{d}\\
+G_{2} &= -\frac{1}{24} + \sum_{d=1}^{\infty} \sum_{k|d} k q^{d}.
+\end{align*}
+
+We may then observe that 
+\begin{align*}
+\frac{\DThat (X,B+F)}{\DThat (X,F)} &= \left(p^{\half}-p^{-\half}
+\right)^{2g-1} \frac{1}{\Theta} \\
+\frac{\DThat (X,B+N)}{\DThat (X,N)} &= \left(p^{\half}-p^{-\half}
+\right)^{2g-1} \frac{p^{\frac{1}{24}}}{\Theta \eta } \\
+\frac{\DThat (X,B'+F)}{\DThat (X,F)} &= \left(p^{\half}-p^{-\half}
+\right)^{2g'} \left\{\wp +2G_{2} +1 \right\}.
+\end{align*}
+
+*** why the quotients on the right *** sentence about general
+expectations of partitions functions of elliptic CY3s in terms of
+Jacobi forms ****  cite Huang-Katz-Klemm
 
        
 \bibliography{/Users/jbryan/jbryan/resources/mainbiblio}

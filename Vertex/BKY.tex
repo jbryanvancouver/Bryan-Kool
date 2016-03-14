@@ -4,14 +4,14 @@
 \author{Jim Bryan, Martijn Kool, Benjamin Young}
 \date{\today}
 \address{
-\texttt{jbryan\@math.ubc.ca}\\
+\texttt{jbryan@math.ubc.ca}\\
 Department of Mathematics\\
 University of British Columbia \\
 Room 121, 1984 Mathematics Road  \\
 Vancouver, B.C., Canada V6T 1Z2  
 }
 \address{
-\texttt{m.kool1\@uu.nl}\\
+\texttt{m.kool1@uu.nl}\\
 Mathematical Institute\\
 Utrecht University\\
 Budapestlaan 6\\
@@ -19,7 +19,7 @@ Budapestlaan 6\\
 The Netherlands
 }
 \address{
-\texttt{bjy\@uoregon.edu}\\
+\texttt{bjy@uoregon.edu}\\
 Department of Mathematics\\
 Fenton Hall\\
 University of Oregon\\
@@ -282,7 +282,7 @@ coefficients are formal Laurent series in $p$:
 &\sum_{\lambda} q^{|\lambda |} p \, \frac{\Vsf_{\bx \bx 
 \lambda}}{\Vsf_{\emptyset \emptyset \lambda}} =
 \prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
-1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{q}\right\}\label{eqn 4}\\
+1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{d}\right\}\label{eqn 4}\\
 \quad&\quad \nonumber \\
 \quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{\| \lambda \| ^{2}}
 \Vsf_{\lambda \lambda' \emptyset} \,\,\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
@@ -615,7 +615,7 @@ Orthogonality of the skew Schur functions then gives rise to the
 following commutation equation:
 \[
 \Gamma_{+}(\mathbf{x})\Gamma_{-}(\mathbf{y}) = \prod_{i,j}
-(1-x_{j}y_{j})^{-1} \Gamma_{-}(\mathbf{y})\Gamma_{+}(\mathbf{x}),
+(1-x_{i}y_{j})^{-1} \Gamma_{-}(\mathbf{y})\Gamma_{+}(\mathbf{x}),
 \]
 in particular
 \begin{equation}\label{eqn: Gamma+Gamma- commutation relation}
@@ -725,7 +725,7 @@ vertex}, and finally switching $\lambda$ to $\lambda '$ in the sum:
 \left(\sum_{i=1}^{\infty}
 p^{-\lambda'_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho )\Gamma_{+}(\ptotheminusrho )v_{\lambda} \right)\\
 &=M(p)\sum_{\lambda}q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
-\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )v_{\lambda },\Gamma_{+}(\ptotheminusrho )V_{\lambda } \right)\\
+\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} \left(\Gamma_{+}(\ptotheminusrho )v_{\lambda },\Gamma_{+}(\ptotheminusrho )v_{\lambda } \right)\\
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
 \emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
@@ -746,7 +746,7 @@ coefficient.
 \begin{multline*}
 \tr \left(\E (a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H}
 \right) = \\
-\frac{1}{p^{-\half}-p^{\half}}M(p)\prod_{m=1}^{\infty}
+\frac{1}{p^{\half}-p^{-\half}}M(p)\prod_{m=1}^{\infty}
 \frac{(1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m})
 M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}.
 \end{multline*}
@@ -832,7 +832,7 @@ From the definition of $\E_{r}(p)$ we see that its matrix entries are
 all off-diagonal if $r\neq 0$. Therefore
 \begin{align*}
 \tr (\E (a,p) q^{H})&=\tr (\E_{0}(p)q^{H})\\
-&= \sum_{\lambda} q^{|\lambda |}\sum_{i=1}^{\infty}p^{\lambda -i+\half}\\
+&= \sum_{\lambda} q^{|\lambda |}\sum_{i=1}^{\infty}p^{\lambda_i -i+\half}\\
 &=(p^{\half}-p^{-\half})^{-1}\prod_{m=1}^{\infty} \frac{(1-q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}
 \end{align*}
 where the last equality follows from the computation in the proof of
@@ -844,9 +844,8 @@ of the lemma. \qed
 Combining Lemmas~\ref{lem: eqn 5 written as a trace} and \ref{lem:
 trace of E Gamma+Gamma-q^{H}}, we get
 \begin{multline*}
-\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \|  ^{2}} \frac{\Vsf_{\lambda
-\bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \Vsf_{\lambda
-'\lambda \emptyset} =\frac{1}{1-p} M(p)\prod_{m=1}^{\infty}
+\sum_{\lambda} q^{|\lambda |} p^{\| \lambda \|  ^{2}} \Vsf_{\lambda \lambda' \emptyset} \frac{\Vsf_{\lambda
+\bx \emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} =\frac{1}{1-p} M(p)\prod_{m=1}^{\infty}
 \frac{M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}\\
  \cdot \operatorname{Coeff}_{a^{0}}\left\{\prod_{m=1}^{\infty}
 (1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m}) \right\}.
@@ -1002,7 +1001,7 @@ induces an action on the stratum $\HilbBetan (X,C)$.
 The above strategy can potentially be iterated: the fixed locus
 $\HilbBetan (X,C)^{\cnums^{*}}$ may be further stratified (for example
 by the support of the embedded points) and these substrata may admit
-further $\cnums^{*}$ actions. The upshot is that in circumstances
+further $\cnums^{*}$-actions. The upshot is that in circumstances
 where this strategy is successful, it reduces the computation of the
 Euler characteristic of the Hilbert scheme to the substratum of the
 Hilbert scheme parameterizing subschemes which are \emph{formally
@@ -1077,7 +1076,7 @@ subscheme. For example, in the formula for $\DThat (X,B+N)$ the
 $\Vsf_{\lambda \lambda '\emptyset}$ counts the ways of adding embedded
 points at the node $n\in N$, the $\Vsf_{\lambda \bx \emptyset}$ counts
 ways of adding embedded points at $p=B\cap N$, and $\Vsf_{\lambda
-\emptyset \emptyset}$ counts the nuymber of ways of adding embedded
+\emptyset \emptyset}$ counts the number of ways of adding embedded
 points at some arbitrary point of $N-\{n,p \}$. 
 
 The reason that $\Vsf_{\lambda \emptyset \emptyset}$ appears in the
@@ -1112,7 +1111,7 @@ essentially given by $\left(\Vsf_{\bx \emptyset \emptyset}
 Applying the formulas in our main theorem as well as the well known
 formula
 \[
-\sum_{\lambda} q^{|\lambda |}= \prod_{d=1}(1-q^{d})^{-1},
+\sum_{\lambda} q^{|\lambda |}= \prod_{d=1}^{\infty}(1-q^{d})^{-1},
 \]
 to the formulas in the previous subsection, we get the following
 results:
@@ -1133,13 +1132,13 @@ k(p^{k}+p^{-k})q^{m} \right\}.
 The above formulas have a close connection with some well known Jacobi
 forms and modular forms. Let $p=\exp\left(2\pi iz \right)$ and
 $q=\exp\left(2\pi i\tau \right)$. The Jacobi theta function $\Theta$,
-the Dedikind eta function $\eta$, the Weierstrass $\wp$ function, and
+the Dedekind eta function $\eta$, the Weierstrass $\wp$ function, and
 the Eisenstein series $G_{2}$ are given as follows:
 
 \begin{align*}
 \Theta &= \left(p^{\half}-p^{-\half} \right) \prod_{m=1}^{\infty}
 \frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}\\
-\eta &= p^{\frac{1}{24}}\prod_{m=1}^{\infty}(1-q^{m})\\
+\eta &= q^{\frac{1}{24}}\prod_{m=1}^{\infty}(1-q^{m})\\
 \wp &= \frac{1}{12} +\frac{p}{(1-p)^{2}} +\sum_{d=1}^{\infty}
 \sum_{k|d} k(p^{k}-2+p^{-k}) q^{d}\\
 G_{2} &= -\frac{1}{24} + \sum_{d=1}^{\infty} \sum_{k|d} k q^{d}.
@@ -1150,7 +1149,7 @@ We may then observe that
 \frac{\DThat (X,B+F)}{\DThat (X,F)} &= \left(p^{\half}-p^{-\half}
 \right)^{2g-1} \frac{1}{\Theta} \\
 \frac{\DThat (X,B+N)}{\DThat (X,N)} &= \left(p^{\half}-p^{-\half}
-\right)^{2g-1} \frac{p^{\frac{1}{24}}}{\Theta \eta } \\
+\right)^{2g-1} \frac{q^{\frac{1}{24}}}{\Theta \eta } \\
 \frac{\DThat (X,B'+F)}{\DThat (X,F)} &= \left(p^{\half}-p^{-\half}
 \right)^{2g'} \left\{\wp +2G_{2} +1 \right\}.
 \end{align*}

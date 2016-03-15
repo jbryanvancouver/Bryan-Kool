@@ -1035,16 +1035,15 @@ results are the following:
 \DThat (X,F)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{d[F],n}(X,F) \right)p^{n}q^{d}\\
 &= \sum_{\lambda} q^{|\lambda |},\\
 \DThat (X,B+F)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{[B]+d[F],n}(X,B+F) \right)p^{n}q^{d}\\
-&= \left(p^{\half}-p^{-\half} \right)^{2g-2} (1-p) \, \sum_{\lambda}
-q^{|\lambda |} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}},\\
+&=  \sum_{\lambda} 
+q^{|\lambda |} p^{1-g}\, \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}}\cdot (\Vsf_{\bx \emptyset \emptyset})^{1-2g},\\
 \DThat (X,N)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{d[N],n}(X,N) \right)p^{n}q^{d}\\
 &= \sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset },\\
 \DThat (X,B+N)&= \sum_{n}\sum_{d=0}^{\infty} e\left(\Hilb_{\folomo}^{[B]+d[N],n}(X,B+N) \right)p^{n}q^{d}\\
-&= \left(p^{\half}-p^{-\half} \right)^{2g-2} (1-p) \, \sum_{\lambda}
-q^{|\lambda |} p^{||\lambda ||^{2}} \Vsf_{\lambda \lambda' \emptyset
-}\frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}},\\
+&= \sum_{\lambda} q^{|\lambda |} p^{||\lambda ||^{2}+1-g}\, \Vsf_{\lambda
+\lambda' \emptyset }\cdot \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \cdot (\Vsf_{\bx \emptyset \emptyset })^{1-2g},\\
 \end{align*}
 
 There is one additional case to consider.  Let $B'$ be nodal section
@@ -1055,9 +1054,8 @@ coordinate axes. Let $g'$ be the geometric genus of $B'$. Then
 \begin{align*}
 \DThat (X,B'+F)&= \sum_{n}\sum_{d=0}^{\infty}
 e\left(\Hilb_{\folomo  }^{[B']+d[F],n}(X,B'+F) \right)p^{n}q^{d}\\
-&= \left(p^{\half}-p^{-\half} \right)^{2g'} \, \sum_{\lambda}
-q^{|\lambda |}\,p\, \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda \emptyset
-\emptyset}},
+&= \sum_{\lambda} q^{|\lambda |}\,p^{1-g'}\, \frac{\Vsf_{\lambda \bx
+\bx}}{\Vsf_{\lambda \emptyset \emptyset}}\cdot (\Vsf_{\bx \emptyset \emptyset })^{-2g'},
 \end{align*}
 
 All of the above formulas have a sum over (2D)
@@ -1075,55 +1073,62 @@ counts the ways in which embedded points can appear in the
 subscheme. For example, in the formula for $\DThat (X,B+N)$ the
 $\Vsf_{\lambda \lambda '\emptyset}$ counts the ways of adding embedded
 points at the node $n\in N$, the $\Vsf_{\lambda \bx \emptyset}$ counts
-ways of adding embedded points at $p=B\cap N$, and $\Vsf_{\lambda
+ways of adding embedded points at $p=B\cap N$, the $\Vsf_{\lambda
 \emptyset \emptyset}$ counts the number of ways of adding embedded
-points at some arbitrary point of $N-\{n,p \}$. 
+points at some arbitrary point of $N-\{n,p \}$, and the $\Vsf_{\bx
+\emptyset \emptyset}$ counts the number of ways of adding embedded
+points at some arbitrary point of $B-p$.
 
-The reason that $\Vsf_{\lambda \emptyset \emptyset}$ appears in the
-\emph{denominators} of these formulas deserves explaining.  In the
-case of a toric Calabi-Yau threefold, the number of possible locations
-for embedded points is finite --- they only occur at the origins of
-the torus invariant coordinate charts. In the case of $\folomo$
+The reason that the vertex terms in the above formulas appear with a
+(possibly negative) exponent deserves explaining.  In the case of a
+toric Calabi-Yau threefold, the number of possible locations for
+embedded points is finite --- they only occur at the origins of the
+torus invariant coordinate charts. In the case of $\folomo$
 subschemes, embedded points can occur at an infinite number of
 locations. In the example at hand, the embedded points parameterized
-by $\Vsf_{\lambda \emptyset \emptyset}$ can occur at any non-singular
-point of the curve $N$. The possible locations are paramterized by
-symmetric products of $N-\{n,p \}$.  Symmetric products are very
+by $\Vsf_{\lambda \emptyset \emptyset}$ can occur at any point of the
+curve $N$ except $n$ and $p$ and the embedded points parameterized by
+$\Vsf_{\bx \emptyset \emptyset}$ can occur at any point of $B$ except
+$p$. The possible locations are parameterized by symmetric products of
+$N-\{n,p \}$ and $B-p$ respectively.  Symmetric products are very
 amenable to our motivic methods. Indeed, symmetric products endow the
 Grothendieck group of varieties with a lambda ring structure which is
-compatible with the Euler characteristic homomorphism. Because of the symmetric product
-formalism in the Grothendieck group, the $\Vsf_{\lambda \emptyset \emptyset}$ appears with an
-exponent given by the topological Euler characteristic of $N-\{n,p \}$:
+compatible with the Euler characteristic homomorphism. Because of the
+symmetric product formalism in the Grothendieck group, the
+$\Vsf_{\lambda \emptyset \emptyset}$ and the $\Vsf_{\bx \emptyset
+\emptyset}$ terms appear with exponents given by the topological Euler
+characteristic of $N-\{n,p \}$ and $B-p$ respectively:
 \[
-(\Vsf_{\lambda \emptyset \emptyset})^{e(N-\{n,p \})}
-=\frac{1}{\Vsf_{\lambda \emptyset \emptyset}} .
+(\Vsf_{\lambda \emptyset \emptyset})^{e(N-\{n,p \})}(\Vsf_{\bx \emptyset \emptyset})^{e(B-\{p \})}
+=\frac{1}{\Vsf_{\lambda \emptyset \emptyset}}\cdot (\Vsf_{\bx \emptyset \emptyset})^{1-2g} .
 \]
-Finally, the powers of $\left(p^{\half}-p^{-\half} \right)$ appearing
-in front of the formulas with a section are due to embedded points at
-the non-singular points of $B$ or $B'$. Indeed, this term is
-essentially given by $\left(\Vsf_{\bx \emptyset \emptyset}
-\right)^{e(B-p)}$ or $\left(\Vsf_{\bx \emptyset \emptyset}
-\right)^{e(B'-n)}$ respectively.
+
 
 
 
 \subsection{Applying our trace formulas and the appearance of Jacobi forms.}
-Applying the formulas in our main theorem as well as the well known
-formula
+By equation~\eqref{eqn: ORV formula for vertex}, we see that 
+\[
+\Vsf_{\bx \emptyset \emptyset} =M(p) (1-p)^{-1}.
+\]
+
+After substituting the above into the equations of the previous
+section, we may apply the formulas in our main theorem as well as the
+well known formula
 \[
 \sum_{\lambda} q^{|\lambda |}= \prod_{d=1}^{\infty}(1-q^{d})^{-1},
 \]
-to the formulas in the previous subsection, we get the following
+to the formulas in the previous subsection. We get the following
 results:
 \begin{align*}
 \DThat (X,F)&= \prod_{d=1}^{\infty} (1-q^{d})^{-1}\\
-\DThat (X,B+F)&= \left(p^{\half}-p^{-\half} \right)^{2g-2} \prod_{d=1}^{\infty}
+\DThat (X,B+F)&= M(p)^{1-2g} \left(p^{\half}-p^{-\half} \right)^{2g-2} \prod_{d=1}^{\infty}
 \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\\
 \DThat (X,N) &= M(p)\prod_{d=1}^{\infty} (1-q^{d})^{-1} M(p,q^{d})\\
-\DThat (X,B+N) &=  \left(p^{\half}-p^{-\half} \right)^{2g-2} M(p)
+\DThat (X,B+N) &=  \left(p^{\half}-p^{-\half} \right)^{2g-2} M(p)^{2-2g}
 \prod_{d=1}^{\infty} \frac{M(p,q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\\
 \DThat (X,B'+F) &=  \left(p^{\half}-p^{-\half}
-\right)^{2g'}\prod_{d=1}^{\infty}(1-q^{d})^{-1}\\
+\right)^{2g'}M(p)^{-2g'}\prod_{d=1}^{\infty}(1-q^{d})^{-1}\\
 &\quad \cdot 
 \left\{1+\frac{p}{(1-p)^{2}}+\sum_{m=1}^{\infty} \sum_{k|m}
 k(p^{k}+p^{-k})q^{m} \right\}. 
@@ -1146,12 +1151,12 @@ G_{2} &= -\frac{1}{24} + \sum_{d=1}^{\infty} \sum_{k|d} k q^{d}.
 
 We may then observe that 
 \begin{align*}
-\frac{\DThat (X,B+F)}{\DThat (X,F)} &= \left(p^{\half}-p^{-\half}
-\right)^{2g-1} \frac{1}{\Theta} \\
-\frac{\DThat (X,B+N)}{\DThat (X,N)} &= \left(p^{\half}-p^{-\half}
-\right)^{2g-1} \frac{q^{\frac{1}{24}}}{\Theta \eta } \\
-\frac{\DThat (X,B'+F)}{\DThat (X,F)} &= \left(p^{\half}-p^{-\half}
-\right)^{2g'} \left\{\wp +2G_{2} +1 \right\}.
+\frac{\DThat (X,B+F)}{\DThat (X,F)} &= \left(\frac{M(p)}{p^{\half}-p^{-\half}}
+\right)^{1-2g} \frac{1}{\Theta} \\
+\frac{\DThat (X,B+N)}{\DThat (X,N)} &= \left(\frac{M(p)}{p^{\half}-p^{-\half}}
+\right)^{1-2g} \frac{q^{\frac{1}{24}}}{\Theta \eta } \\
+\frac{\DThat (X,B'+F)}{\DThat (X,F)} &= \left(\frac{M(p)}{p^{\half}-p^{-\half}}
+\right)^{-2g'} \left\{\wp +2G_{2} +1 \right\}.
 \end{align*}
 
 *** why the quotients on the right *** sentence about general

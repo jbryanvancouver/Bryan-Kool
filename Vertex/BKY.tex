@@ -139,15 +139,12 @@ vertex}). In representation theory, $\Vsf_{\lambda \mu \nu}$ is given
 as the matrix coefficients of a certain vertex operator on Fock space
 \cite{Ok-Re-Va}. In geometry, $\Vsf_{\lambda \mu \nu}$ is the basic
 building block for computing the Donaldson-Thomas/Gromov-Witten
-invariants of toric Calabi-Yau threefolds \cite{MNOP1}; in this
-incarnation, it can be realized as the generating function for the
-Euler characteristics of certain Hilbert schemes of curves in
-$\cnums^{3}$ (see \S~\ref{sec: geometry and applications}). The
+invariants of toric Calabi-Yau threefolds \cite{MNOP1}. The
 topological vertex was first discovered in physics as an open string
 partition function in type IIA string theory on $\cnums^{3}$
 \cite{AKMV}. An explicit expression for $\Vsf_{\lambda \mu \nu}$ in
 terms of Schur functions was given by \cite{Ok-Re-Va} (see
-section~\ref{sec: topo vertex and schur fncs}).
+\S~\ref{sec: topo vertex and schur fncs}).
 
 
 In this paper we prove several ``trace identities'' in which a sum
@@ -164,8 +161,9 @@ result \cite{Bloch-Okounkov} to prove equation~\eqref{eqn 3} in our
 Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
 Sylvie Corteel for showing us their trick of doing an infinite number
 of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
-ops and the pf of eqn 5}. We thank Georg Oberdieck for helpful
-conversations.
+ops and the pf of eqn 5}. We thank Georg Oberdieck for providing
+feedback on an early draft of this paper.
+
 %MK was supported by a PIMS postdoctoral
 %fellowship (CRG Geometry and Physics) while at UBC, and NWO-GQT and
 %Marie-Sk{\l}odowska Curie Project 656898 while at Utrecht. JB was
@@ -263,7 +261,11 @@ We also use the notation
 \[
 M(p,q) = \prod_{m=1}^{\infty} (1-p^{m}q)^{-m}
 \]
-and the shorthand $M(p)=M(p,1)$.  Here $M$ stands for MacMahon, who proved~\cite{macmahon} that $M(p)$ is the generating function for 3D partitions asymptotic to $(\emptyset, \emptyset, \emptyset)$.
+and the shorthand $M(p)=M(p,1)$.  Here $M$ stands for MacMahon, who
+proved~\cite{macmahon} that 
+\[
+\Vsf_{\emptyset \emptyset \emptyset} =M(p).
+\]
 
 We can now state our main result.
 
@@ -416,7 +418,12 @@ We define the following theta function
 \Theta (p,q) = \eta (q)^{-3}\sum_{n\in \znums}
 (-1)^{n}q^{\half (n+\half )^{2}} p^{n+\half } 
 \]
-which, by the Jacobi triple product formula is given by
+where
+\[
+\eta (q) = q^{\frac{1}{24}}\prod_{m=1}^{\infty}(1-q^{m}).
+\]
+
+By the Jacobi triple product formula, $\Theta $ is given by
 \[
 \Theta (p,q) = (p^{\half} -p^{-\half})\prod_{m=1}^{\infty}
 \frac{(1-pq^{m})(1-p^{-1}q^{m})}{(1-q^{m})^{2}}. 
@@ -729,11 +736,11 @@ p^{-\lambda'_{i}+i-\half} \right) \left(v_{\lambda}, \Gamma_{-}(\ptotheminusrho 
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
 \emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} M(p)\sum_{\eta} \left(s_{\lambda /\eta}(\ptotheminusrho ) \right)^{2}\\
 &= \sum_{\lambda} q^{|\lambda |} \frac{\Vsf_{\lambda' \bx
-\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}} p^{\| \lambda' \| ^{2}}
+\emptyset}}{\Vsf_{\lambda' \emptyset \emptyset}}\,  p^{\| \lambda' \| ^{2}}
 V_{\lambda '\lambda \emptyset}\\
 &= \sum_{\lambda} q^{|\lambda |}  p^{\| \lambda \| ^{2}}
-V_{\lambda \lambda' \emptyset} \frac{\Vsf_{\lambda \bx
-\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}}. \qedhere
+V_{\lambda \lambda' \emptyset}\,  \frac{\Vsf_{\lambda \bx
+\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} \qedhere
 \end{align*}
 
 While the operator $\E_{0}(p)$ does not have good commutation
@@ -745,7 +752,7 @@ coefficient.
 \begin{multline*}
 \tr \left(\E (a,p)\Gamma_{+}(\ptotheminusrho )\Gamma_{-}(\ptotheminusrho )q^{H}
 \right) = \\
-\frac{1}{p^{\half}-p^{-\half}}M(p)\prod_{m=1}^{\infty}
+\frac{M(p)}{p^{\half}-p^{-\half}}\prod_{m=1}^{\infty}
 \frac{(1-q^{m}a^{-1})(1-q^{m-1}a)(1-q^{m})
 M(p,q^{m})}{(1-pq^{m})(1-p^{-1}q^{m})}.
 \end{multline*}
@@ -858,6 +865,9 @@ By the Jacobi triple product identity, we have
 whose $a^{0}$ coefficient is 1. Plugging into the previous equation we
 finish the proof of equation~\eqref{eqn 5}.
 
+The proofs of all the formulas in Theorem~\ref{thm: main formulas} are
+now complete. 
+
 \section{Geometry and Applications}\label{sec: geometry and applications}
 
 
@@ -865,12 +875,13 @@ finish the proof of equation~\eqref{eqn 5}.
 applications of our trace formulas to the Donaldson-Thomas theory of
 elliptically fibered Calabi-Yau threefolds
 \cite{Bryan-K3xE,Bryan-Kool,BOPY} and the connection with Jacobi
-forms. This section is logically independent from the previous paper
-and can be safely ignored by readers not interested in the geometry.
+forms. This section is logically independent from the previous
+sections and can be safely ignored by readers not interested in the
+geometric applications of our theorem.
 
 As we will explain below, each formula in our main theorem gives a
 certain contribution to the Donaldson-Thomas partition function of
-such threefolds. Namely, we have the following.
+elliptically fibered threefolds. Namely, we have the following.
 \begin{itemize}
 \item The contribution of multiples of a nodal elliptic fiber is given
 by equation~\eqref{eqn 2}.
@@ -1067,7 +1078,7 @@ corresponding to a partition $\lambda$ counts subschemes which have
 thickenings determined by $\lambda$ along the fiber curve ($F$ or
 $N$).
 
-Each term in the sum is a combination of topological vertices which
+Each term in the sum is a combination of topological vertexes which
 counts the ways in which embedded points can appear in the
 subscheme. For example, in the formula for $\DThat (X,B+N)$ the
 $\Vsf_{\lambda \lambda '\emptyset}$ counts the ways of adding embedded

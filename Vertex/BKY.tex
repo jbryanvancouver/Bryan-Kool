@@ -1,4 +1,5 @@
 \documentclass[12pt]{amsart}
+%\documentclass[times]{oupau}
 
 \title{Trace identities for the Topological Vertex}
 \author{Jim Bryan, Martijn Kool, Benjamin Young}
@@ -155,21 +156,6 @@ these identities are used to compute the Donaldson-Thomas partition
 functions of certain Calabi-Yau threefolds in terms of Jacobi forms
 \cite{Bryan-K3xE,Bryan-Kool,BOPY}.
 
-\subsection{Acknowledgments}\label{acknowledgments} We thank Paul
-Johnson for showing us (on MathOverFlow) how to use the Bloch-Okounkov
-result \cite{Bloch-Okounkov} to prove equation~\eqref{eqn 3} in our
-Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
-Sylvie Corteel for showing us their trick of doing an infinite number
-of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
-ops and the pf of eqn 5}. We thank Georg Oberdieck for providing
-feedback on an early draft of this paper.
-
-%MK was supported by a PIMS postdoctoral
-%fellowship (CRG Geometry and Physics) while at UBC, and NWO-GQT and
-%Marie-Sk{\l}odowska Curie Project 656898 while at Utrecht. JB was
-%support by NSERC discovery and accelerator grants. 
-
-
 
 
 
@@ -273,20 +259,19 @@ We can now state our main result.
 The following identities hold as formal power series in $q$ whose
 coefficients are formal Laurent series in $p$:
 \begin{align}
-% &\sum_{\lambda} q^{|\lambda |} = \prod_{m=1}^{\infty} (1-q^{m})^{-1}\label{eqn 1}\\
-&\sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \Vsf_{\lambda'
+\sum_{\lambda} q^{|\lambda |}& p^{\| \lambda' \| ^{2}} \Vsf_{\lambda'
 \lambda \emptyset }=  M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d})\label{eqn 2}\\
 \quad\nonumber \\
-&\sum_{\lambda} q^{|\lambda |}\frac{\Vsf_{\lambda
+\sum_{\lambda} q^{|\lambda |}&\frac{\Vsf_{\lambda
 \bx\emptyset}}{\Vsf_{\lambda \emptyset \emptyset}} =
 (1-p)^{-1}\prod_{d=1}^{\infty} \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})}\label{eqn 3}\\
 \quad\nonumber \\
-&\sum_{\lambda} q^{|\lambda |} p \, \frac{\Vsf_{\bx \bx 
+\sum_{\lambda} q^{|\lambda |}& p \, \frac{\Vsf_{\bx \bx 
 \lambda}}{\Vsf_{\emptyset \emptyset \lambda}} =
 \prod_{m=1}^{\infty}(1-q^{m})^{-1}\cdot \left\{
 1+\frac{p}{(1-p)^{2}}+\sum_{d=1}^{\infty}\sum_{k|d}k(p^{k}+p^{-k})q^{d}\right\}\label{eqn 4}\\
 \quad&\quad \nonumber \\
-\quad \quad \quad \quad &\sum_{\lambda} q^{|\lambda |} p^{\| \lambda \| ^{2}}
+\sum_{\lambda} q^{|\lambda |}& p^{\| \lambda \| ^{2}}
 \Vsf_{\lambda \lambda' \emptyset} \,\,\frac{\Vsf_{\lambda \bx \emptyset}}{\Vsf_{\lambda \emptyset
 \emptyset}} =
 (1-p)^{-1}M(p)\prod_{d=1}^{\infty}
@@ -1182,8 +1167,24 @@ elliptic curve \cite{Bryan-K3xE}, and (3) a product of an Abelian
 surface and an elliptic curve \cite{BOPY}.
 
 
+\subsection{Acknowledgments}\label{acknowledgments} We thank Paul
+Johnson for showing us (on MathOverFlow) how to use the Bloch-Okounkov
+result \cite{Bloch-Okounkov} to prove equation~\eqref{eqn 3} in our
+Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
+Sylvie Corteel for showing us their trick of doing an infinite number
+of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
+ops and the pf of eqn 5}. We thank Georg Oberdieck for providing
+feedback on an early draft of this paper.
+
+%MK was supported by a PIMS postdoctoral
+%fellowship (CRG Geometry and Physics) while at UBC, and NWO-GQT and
+%Marie-Sk{\l}odowska Curie Project 656898 while at Utrecht. JB was
+%support by NSERC discovery and accelerator grants. 
+
+
        
-\bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
+%\bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
+\bibliography{BKY.bbl}
 \bibliographystyle{plain}
 
 \end{document}

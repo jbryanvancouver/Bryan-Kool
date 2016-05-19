@@ -553,13 +553,19 @@ We obtain
 $$
 \int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \, de = \int_{\Sym^d(B)} \rho_{d*}(1) \, de,
 $$
-where $f_d := \rho_{d*}(1)$ is a constructible function on $\Sym^d(B)$. Its value at a closed point $\mathfrak{a} \in \Sym^d(B)$ is 
+where $f_d:= \rho_{d*}(1)$ is the $\ZZ ((p))$-valued constructible function on
+$\Sym^d(B)$ given by pushing forward the Euler characteristic
+measure. \todo{Do we know a reference for this fact about integrals
+with respect to euler char measure and pushforwards? I think it is
+simply the fact that pushforward (in the sense of taking euler char of
+fibers of a function) is constructible. } Its value at a closed point
+$\mathfrak{a} \in \Sym^d(B)$ is
 $$
 f_d(\mathfrak{a}) = \int_{\rho_{d}^{-1}(\mathfrak{a})} 1 \, de.
 $$
 We are interested in the calculation of
 $$
-\DThat (X) = \sum_{d \geq 0} \DThat _d(X) \, q^d =\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de.
+\DThat (X) = \sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de.
 $$
 It turns out that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ satisfies two multiplicative properties. The first one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres are smooth and by $B^{\sing}$ the $N$ points over which the fibres are singular. We can consider the restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and $\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(p)$ the MacMahon function.
 \begin{proposition} \label{mult1}

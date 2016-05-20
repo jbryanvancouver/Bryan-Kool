@@ -1301,6 +1301,125 @@ we find
 which proves the lemma.   
 \end{proof}
 
+\newpage
+
+\section{Stuff we gathered}
+
+\subsection{Normal bundle} First order deformations of $B \subset X$ are given by $H^0(N_{B/X})$. We now calculate this. Let $\pi : X \rightarrow S$ and $p : S \rightarrow B$. Facts: (adjunction, canonical bundle of an elliptic surface)
+\begin{align*}
+N_{B/X} &\cong N_{B/S} \oplus K_{S}|_{B} \\
+K_{B} &\cong K_{S}|_{B} \otimes N_{B/S} \cong K_{S}|_{B}(S) \\
+K_S &\cong p^*(K_B \otimes L),
+\end{align*}
+where $L = (R^1 p_* \O_X)^{\vee}$ and 
+\[
+\deg L = \chi(\O_S) = \frac{e(S)}{12} = \frac{N}{12} > 0,
+\]
+where $N$ is the number of nodal fibres. Combining gives
+\[
+N_{B/S} \cong K_{B} \otimes K_{S}^{-1}|_{B} \cong L^\vee,
+\] 
+which has negative degree so\todo{Question: Do we not need Appendix A.1 anymore? I don't think so.} 
+\[
+H^0(N_{B/S}) = 0.
+\]     
+Next
+\[
+H^0(K_S|_B) \cong H^1(K_S|_{B}^{-1} \otimes K_B)^* \cong H^1(N_{B/S})^*.
+\]     
+By Riemann-Roch and $H^0(N_{B/S}) = 0$ we get
+\[
+h^1(N_{B/S}) = -\chi(N_{B/S}) = - \chi(L^\vee)= -(1-g - \chi(\O_S)) = \chi(\O_S) - 1+g.
+\]     
+In conclusion
+\[
+h^0(N_{X/B}) = \chi(\O_S) - 1+g = \frac{e(S)}{12} - \frac{e(B)}{2}.
+\]     
+
+
+\subsection{Impact on Behrend function} How does this affect the overall sign of the Behrend function? The section $B$ cannot move in the surface direction and in the fibre direction we can move it by sections of 
+\[
+H^0(K_S|_B) \cong \CC^{\chi(\O_S) - 1+g}.
+\]     
+Aside: $K_{S}|_{F} = \O_F$ for each fibre $F$. Let $\Hilb^{B+\bullet F}(X)_{\CM}$ be the Hilbert scheme of \emph{naked} CM curved in class $B+\bullet F$. In the last section we hopefully see that locally formally a neighborhood of $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is of the form\todo{I'm now being really sketchy!}
+\[
+H^0(K_S|_B) \times M,
+\]
+where $M$ is some space (which below we hopefully identify with some locus in $Y^{[n]}$ for $Y = K_{S}|_{B}$). Hence for any $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ we have
+$$
+\nu(C) = (-1)^{\chi(\O_S) - 1+g} \cdot \nu_{M}(C) = (-1)^{\frac{e(S)}{12} - \frac{e(B)}{2}} \cdot \nu_{M}(C).
+$$
+Suppose $C$ is described by partitions $\lambda^{(i)}$ with
+\[
+\sum_i |\lambda^{(i)}| = d.
+\]
+We also want to prove $M$ is \emph{smooth} of dimension
+$$
+2d - \sum_i \lambda_{0}^{(i)},
+$$
+where $\lambda^{(i)} = (\lambda^{(i)}_{0} \geq \lambda^{(i)}_{1} \geq \cdots)$.\todo{Don't we also get Behrend signs $(-1)^{\lambda_{0}^{(i)}}$? Those seem bad!}
+
+
+\subsection{Hilbert schemes on $\CC^2$}
+
+Let $X = \CC^2$ and
+\[
+L_k := \{ Z \in X^{n} \ : \ \ell(Z \cap \{y=0\}) = k \} \subset X^{[n]}.
+\]
+ Claim: $L_k$ is locally closed and smooth of dimension $2n-k$. Proof: since $L_k$ is normal \todo{Why normal?} and $T = \CC^{*2}$ acts on it, it suffices to prove smoothness at $T$-fixed points\todo{Ref? I learned this from Dori Bejleri.}. At the $T$-fixed points we can write a basis for the tangent space by pairs of arrows with tail just outside and head just inside as described by Haiman. I'm not going to write this out now formally. Just remember how each arrow defines a first order deformation of the monomial ideal (``plus $\epsilon$ times the monomial the head points at''). The corresponding global deformation can easily be seen to move outside of $L_k$ for precisely $k$ arrows with head in the bottom row. This gives the result.   
+
+\subsection{Key iso}
+
+Let $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ be described by partitions $\lambda^{(i)}$ with
+\[
+\sum_i |\lambda^{(i)}| = d.
+\]
+Claim: a formal neighborhood of $C$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is isomorphic to 
+$$
+H^0(N_{B/X}) \times L_{k},
+$$
+where $k := \sum \lambda_{0}^{(i)}$ and $L_k$ is smooth by the previous section. 
+
+
+Let's look at the case where $C = B \cup F_{\lambda}$, where $E:=F_\lambda$ is a single thickened fibre according to 2D partition $\lambda$. We have a couple of useful short exact sequences
+\begin{align*}
+&0 \rightarrow I_E / I_C \rightarrow \O_C \rightarrow \O_E \rightarrow 0 \\
+&0 \rightarrow I_B / I_C \rightarrow \O_C \rightarrow \O_B \rightarrow 0 \\
+&0 \rightarrow I_C \rightarrow I_E \rightarrow I_E / I_C \rightarrow 0 \\
+&0 \rightarrow I_B \rightarrow I_E \rightarrow I_E / I_B \rightarrow 0,
+\end{align*}
+where 
+\begin{align*}
+I_E / I_C &\cong \O_B(-\lambda_0) \\
+G&:=I_B / I_C,
+\end{align*}
+where $G$ is an ideal sheaf of a fat point of length $\lambda_0$ inside $\O_{E}$:
+\[
+0 \rightarrow G \rightarrow \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0.
+\]
+Another significant sequence is
+\[
+0 \rightarrow \O_Z \rightarrow \O_B \oplus \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0.
+\]w
+We can build many double complexes from these by applying $\Hom(I_C,\cdot)$, $\Hom(\cdot, \O_C)$ etc. \todo{Dive into those diagrams. Write up what we got so far.} \\
+
+Significant fact: $\Hom(I_C,\O_C) \cong \mathrm{Ext}^1(I_C,I_C)_0$ by PT1, Section 2.2 for naked CM curves. \\
+
+Some remarks. By cutting out $I_B$ from a rank 2 vector bundle we get maps
+\[
+0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(B,\O_B(S)) \oplus H^0(B,\O_B(Y)) \rightarrow H^0(B,\O_B(S+Y)) \rightarrow \cdots
+\]
+remember: $Y := K_S|_B$. Here 
+\begin{align*}
+\O_B(S) &\cong \O_S(S) |_{B} \cong K_X (S) |_B \cong K_S |_B \\
+\O_B(Y) &\cong \O_B(B) \cong N_{B/S},
+\end{align*}
+and $N_{B/S} \otimes K_S|_B \cong K_B$. We get
+ \[
+0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(N_{B/X}) \rightarrow H^0(K_B) \rightarrow \cdots.
+\]
+The first map is an isomorphism because both terms are first order deformations of $B$ as a subscheme of $X$. Not sure we need this.
+ 
      
 \begin{thebibliography}{BOPY}
 \bibitem[AM]{AM} M.~F.~Atiyah and I.~G.~MacDonald, \textit{Introduction to commutative algebra}, Westview Press (1969).

@@ -17,11 +17,13 @@ Room 502, Budapestlaan 6  \\
 3584 CD Utrecht, The Netherlands  
 }
 
-
 %\usepackage{diagrams}
 %\usepackage{eepic,epic}
 
-
+%tikz
+\usepackage{tikz}
+\usepackage{pgfplots}
+%
 
 \usepackage{amsmath}
 \usepackage{verbatim}
@@ -1419,6 +1421,57 @@ and $N_{B/S} \otimes K_S|_B \cong K_B$. We get
 0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(N_{B/X}) \rightarrow H^0(K_B) \rightarrow \cdots.
 \]
 The first map is an isomorphism because both terms are first order deformations of $B$ as a subscheme of $X$. Not sure we need this.
+
+\newpage
+
+\pgfplotsset{ticks=none}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}
+\addplot3+ [hide axis, domain=-5:5, samples=100, samples y=0,no marks, smooth,color=red,thick] ({-exp(-x^2)},{x},{0});
+\addplot3+ [hide axis, domain=-5:5, samples=100, samples y=0,no marks, smooth,color=red,thick] ({-exp(-x^2)+5},{x},{0});
+\addplot3+[hide axis, domain=-1.9:1.9, samples=100, samples y=0,no marks, smooth,color=red,thick] ({x^2-1+10},{x*(x^2-1)},{0});
+\addplot3+[hide axis, domain=-1.9:1.9, samples=100, samples y=0,no marks, smooth,color=red,thick] ({x^2-1+15},{x*(x^2-1)},{0});
+\addplot3+[hide axis, domain=-2:22, samples=100, samples y=0,no marks, smooth,color=red,thick] ({x},{-4},{0});
+\addplot3 [mark=none,color=blue,thick] coordinates {(0,5,0) (2,5,0)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(0,5,1) (2,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(0,5,2) (1,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(0,5,0) (0,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(1,5,0) (1,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(2,5,0) (2,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(5,5,0) (7,5,0)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(5,5,1) (7,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(5,5,0) (5,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(6,5,0) (6,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(7,5,0) (7,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(12.5,5,0) (14.5,5,0)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(12.5,5,1) (14.5,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(12.5,5,2) (14.5,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(12.5,5,3) (13.5,5,3)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(12.5,5,0) (12.5,5,3)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(13.5,5,0) (13.5,5,3)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(14.5,5,0) (14.5,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(17.5,5,0) (18.5,5,0)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(17.5,5,1) (18.5,5,1)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(17.5,5,2) (18.5,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(17.5,5,0) (17.5,5,2)};
+\addplot3 [mark=none,color=blue,thick] coordinates {(18.5,5,0) (18.5,5,2)};
+\addplot3+ [hide axis, domain=0:10, samples=100, samples y=0,no marks, smooth,color=white,thick]    ( {-1},{1},{x});
+\addplot3+ [hide axis, domain=0:0.1, samples=100, samples y=0,no marks, smooth,color=white,thick]    ( {22},{0},{x});
+\node (A) at (axis cs:1.5,5,3.5) {{\scriptsize{$\lambda^{(1)}$}}};
+\node (A) at (axis cs:7,5,2.5) {{\scriptsize{$\lambda^{(m)}$}}};
+\node (A) at (axis cs:14,5,4.5) {{\scriptsize{$\mu^{(1)}$}}};
+\node (A) at (axis cs:19,5,3.5) {{\scriptsize{$\mu^{(n)}$}}};
+\node (A) at (axis cs:2,0,0) {{\scriptsize{$\cdots$}}};
+\node (A) at (axis cs:12.5,0,0) {{\scriptsize{$\cdots$}}};
+\node (A) at (axis cs:2,5,8) {{\scriptsize{$\uparrow \ \mathrm{fiber}$}}};
+\node (A) at (axis cs:20,0,0) {{\scriptsize{$\mathrm{surface}$}}};    
+\end{axis}
+\end{tikzpicture}
+\caption{Cohen-Macaulay curve $Z_{\CM}$ with underlying reduced support in red and thickenings $\lambda^{(i)}$ along smooth fibers and $\mu^{(j)}$ along singular fibers.}
+\end{figure}
  
      
 \begin{thebibliography}{BOPY}
@@ -1455,6 +1508,5 @@ The first map is an isomorphism because both terms are first order deformations 
 %\bibitem[Tod]{Tod} Y.~Toda, \textit{Stable pairs on local K3 surfaces}, J.~Diff.~Geom.~\textbf{92} (2012), 285--370.
 %\bibitem[You]{You} B.~Young, \textit{Counting coloured boxes}, PhD thesis University of British Columbia (2008).
 \end{thebibliography}
-
 \end{document}
 

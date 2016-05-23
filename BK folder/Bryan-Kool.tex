@@ -1541,12 +1541,12 @@ The first map is an isomorphism because both terms are first order deformations 
 %1st partition
 \draw [thick,blue](1,5) rectangle (1.2,4.5);
 \draw [thick,blue](1.2,5) rectangle (1.4,4.5);
-%\draw [thick,blue](1,4.5) rectangle (1.2,4.0);
+\draw [thick,blue](1,4.5) rectangle (1.2,4.0);
 %\draw [thick,blue](1.2,4.5) rectangle (1.4,4.0);
 %2nd partition
-\draw [thick,blue](2,5) rectangle (2.2,4.5);
-\draw [thick,blue](2.2,5) rectangle (2.4,4.5);
-\draw [thick,blue](2,4.5) rectangle (2.2,4.0);
+%\draw [thick,blue](2,5) rectangle (2.2,4.5);
+%\draw [thick,blue](2.2,5) rectangle (2.4,4.5);
+%\draw [thick,blue](2,4.5) rectangle (2.2,4.0);
 %\draw [thick,blue](2.2,4.5) rectangle (2.4,4.0);
 %3rd partition
 \draw [thick,blue](3,5) rectangle (3.2,4.5);
@@ -1588,11 +1588,19 @@ to [out=270,in=180] (2.3 ,1.2 ,5)
 to [out=0,in=270]   (3   ,3   ,5);
 
 
-%\node [above] at (3,3,5) {$N$};
 
+\node [above] at (3,3,3.5) {$\mu^{(i)} $};
+\node [below] at (3,0,5) {$F_{y_{i}}$};
+\node [right] at (3,0.6,5) {$y_{i}$};
+\node [right] at (2.8,1.5,5) {$z_{i}$};
+\node [above] at (1,3,4) {$\lambda^{(j)}$};
+\node [below] at (1,0,5) {$F_{x_{j}}$};
+\node [right] at (1,0.6,5) {$x_{j}$};
 \node [left] at (0,2.0,5) {$S$};
 \node [right] at (4.2,0,3) {$\operatorname{Tot}(K_{S})$};
 \node [right] at (4.1,0.7,5) {$B$};
+
+
 
 %right side
 \begin{scope} [canvas is yz plane at x=4]

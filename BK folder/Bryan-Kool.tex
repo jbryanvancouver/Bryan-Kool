@@ -102,6 +102,8 @@ Room 502, Budapestlaan 6  \\
 
 
 \newcommand{\Hom}{\operatorname{Hom}}
+\renewcommand{\hom}{\operatorname{hom}}
+\newcommand{\Ext}{\operatorname{Ext}}
 \newcommand{\Ker}{\operatorname{Ker}}
 \newcommand{\End}{\operatorname{End}}
 \newcommand{\GL}{\operatorname{GL}}
@@ -1517,36 +1519,77 @@ Let $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ be described by partitions $\la
 \[
 \sum_i |\lambda^{(i)}| = d.
 \]
-Claim: a formal neighborhood of $C$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is isomorphic to 
+Claim: there is a formal neighborhood of $C$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ which maps to $H^0(N_{B/X})$ with fibre
 $$
-H^0(N_{B/X}) \times L_{k},
+L_{k},
 $$
-where $k := \sum \lambda_{0}^{(i)}$ and $L_k$ is smooth by the previous section. 
+where $k := \sum \lambda_{0}^{(i)}$ and $L_k$ is smooth by the previous subsection. 
 
 
-Let's look at the case where $C = B \cup F_{\lambda}$, where $E:=F_\lambda$ is a single thickened fibre according to 2D partition $\lambda$. We have a couple of useful short exact sequences
-\begin{align*}
-&0 \rightarrow I_E / I_C \rightarrow \O_C \rightarrow \O_E \rightarrow 0 \\
-&0 \rightarrow I_B / I_C \rightarrow \O_C \rightarrow \O_B \rightarrow 0 \\
-&0 \rightarrow I_C \rightarrow I_E \rightarrow I_E / I_C \rightarrow 0 \\
-&0 \rightarrow I_B \rightarrow I_E \rightarrow I_E / I_B \rightarrow 0,
-\end{align*}
+Let's look at the case where $C = B \cup F_{\lambda}$, where $E:=F_\lambda$ is a single thickened fibre with cross-section $\lambda$. We have a couple of useful short exact sequences
+\begin{align}
+&0 \rightarrow I_E / I_C \rightarrow \O_C \rightarrow \O_E \rightarrow 0 \label{ses1} \\
+&0 \rightarrow I_B / I_C \rightarrow \O_C \rightarrow \O_B \rightarrow 0 \label{ses2} \\
+&0 \rightarrow I_C \rightarrow I_E \rightarrow I_E / I_C \rightarrow 0 \label{ses3} \\
+&0 \rightarrow I_C \rightarrow I_B \rightarrow I_B / I_C \rightarrow 0, \label{ses4}
+\end{align}
 where 
 \begin{align*}
 I_E / I_C &\cong \O_B(-\lambda_0) \\
 G&:=I_B / I_C,
 \end{align*}
 where $G$ is an ideal sheaf of a fat point of length $\lambda_0$ inside $\O_{E}$:
-\[
+\begin{equation} \label{ses5}
 0 \rightarrow G \rightarrow \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0.
-\]
-Another significant sequence is
-\[
-0 \rightarrow \O_Z \rightarrow \O_B \oplus \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0.
-\]w
-We can build many double complexes from these by applying $\Hom(I_C,\cdot)$, $\Hom(\cdot, \O_C)$ etc. \todo{Dive into those diagrams. Write up what we got so far.} \\
+\end{equation}
+Two more significant short exact sequences
+\begin{align} 
+0 \rightarrow \O_C \rightarrow \O_B \oplus \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0 \label{ses6} \\
+0 \rightarrow \O_B(-\lambda_0) \rightarrow \O_B \rightarrow \O_{\lambda_0 p} \rightarrow 0. \label{ses7}
+\end{align}
+We can build \emph{many} double complexes from these seven short exact sequences by applying $\Hom(I_C,\cdot)$, $\Hom(\cdot, \O_C)$ etc. 
 
-Significant fact: $\Hom(I_C,\O_C) \cong \mathrm{Ext}^1(I_C,I_C)_0$ by PT1, Section 2.2 for naked CM curves. \\
+It seems significant to apply $\Hom(I_E, \cdot)$ to \eqref{ses6}. This gives
+\begin{equation} \label{split}
+0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_E,\O_E) \rightarrow \Hom(I_E,\O_{\lambda_0 p} \stackrel{\alpha}{\rightarrow} \cdots
+\end{equation}
+The last hom space seems isomorphic to $\CC^{\lambda_0}$ and we believe there is a splitting of the map $\alpha$ from the local description. It seems $\Hom(I_E,G)$ can be interpreted as the space of deformations of $E$ which keep the length of $E \cap B$ fixed! We want to prove there exists a short exact sequence
+$$
+0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_C,\O_C) \rightarrow H^0(N_{B/X}) \rightarrow 0.
+$$
+
+The good news: we can construct an injection $\Hom(I_E,G) \hookrightarrow \Hom(I_C,\O_C)$ as follows. From \eqref{ses2} and \eqref{ses3} we get the following double complex
+\begin{displaymath}
+\xymatrix
+{
+&0\ar[d]&0\ar[d]&0\ar[d]& \\
+0 \ar[r] & \Hom(\O_B(-\lambda_0),G) \ar[d] \ar[r]& \Hom(\O_B(-\lambda_0),\O_C) \ar[d]\ar[r] & \Hom(\O_B(-\lambda_0),\O_B) \ar[d]\ar[r] & \cdots \\
+0 \ar[r] & \Hom(I_E,G) \ar[d] \ar[r] & \Hom(I_E,\O_C) \ar[d]\ar[r] & \Hom(I_E,\O_B) \ar[d] \ar[r]& \cdots \\
+0 \ar[r] & \Hom(I_C,G) \ar[d] \ar[r] & \Hom(I_C,\O_C) \ar[d] \ar[r] & \Hom(I_C,\O_B) \ar[d] \ar[r] & \cdots \\
+&\cdots&\cdots&\cdots&
+}
+\end{displaymath}
+Note: $\Hom(\O_B(-\lambda_0),G) = 0$ from the local description, so indeed we get the required injection! \\
+
+Significant special case. When $S$ is the rational elliptic surface we have $H^0(N_{B/X}) = H^1(N_{B/X}) = 0$ in which case we get $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$ (see next subsection for relating $\Ext^i(I_B,\O_B)$ to $H^i(N_{B/X})$)! In this case we really expect our injection
+$$
+\Hom(I_E,G) \hookrightarrow \Hom(I_C,\O_C)
+$$
+to be an isomorphism. If so, our earlier split exact sequence \eqref{split} proves $\Hom(I_C,\O_C)$ has dimension 
+$$
+\hom(I_E,\O_E) - \lambda_0 = \hom(I_\lambda, \O_\lambda) - \lambda_0 = 2|\lambda| - \lambda_0,
+$$
+where $\O_\lambda \subset \CC^{2}$ is the zero-dimensional structure sheaf from which $\O_E$ pulls-back. \\
+
+In this special case of the rational elliptic surface we have a lot more vanishing and we hope that the big double complex yields the surjection. The easiest way to get the surjection is when
+\begin{align*}
+\Ext^1(G,\O_B) &\stackrel{?}{\cong} 0 \\
+\Ext^1(O_B(-\lambda_0),G) &\stackrel{?}{\cong} 0,
+\end{align*}
+ and then use $\Hom(I_C,\O_B) \cong \Ext^1(G,\O_B)$ (which I get from $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$). Sadly I cannot prove the two previous Ext groups are indeed zero.
+
+
+\subsection{Miscalleneous} Significant fact: $\Hom(I_C,\O_C) \cong \mathrm{Ext}^1(I_C,I_C)_0$ by PT1, Section 2.2 for naked CM curves. \\
 
 Some remarks. By cutting out $I_B$ from a rank 2 vector bundle we get maps
 \[

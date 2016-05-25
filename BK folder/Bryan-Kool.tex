@@ -170,7 +170,7 @@ the number of singular fibres. Important examples include rational
 elliptic surfaces or elliptically fibered $K3$ surfaces. In these
 cases, $B \cong \PP^1$ and $N = 12$, $N=24$ respectively.
 
-We are interested in the Donaldson-Thomas invariants of $X =
+We are interested in the Donaldson-Thomas (DT) invariants of $X =
 \mathrm{Tot}(K_S)$, i.e.~the total space of the canonical bundle
 $K_S$. This is a non-compact Calabi-Yau threefold. Let $\beta$ be an
 effective curve class on $S$. Consider the Hilbert scheme
@@ -179,7 +179,7 @@ $$
 $$
 of proper subschemes $Z \subset X$ with homology class $\beta$ and holomorphic Euler characteristics $n$. The DT invariants of $X$ can be defined as
 $$
-\DT_{\beta,n}(X) := e(\Hilb^{\beta,n}(X), \nu) := \sum_{k \in \ZZ} k \ e(\nu^{-1}(\{k\})),
+\DT_{\beta,n}(X) := e(\Hilb^{\beta,n}(X), \nu) := \sum_{k \in \ZZ} k \ e(\nu^{-1}(k)),
 $$
 where $e(\cdot)$ denotes topological Euler characteristic and $\nu :
 \Hilb^{\beta,n}(X) \rightarrow \ZZ$ is Behrend's constructible
@@ -190,21 +190,25 @@ $$
 $$
 We choose a section $B \subset S$ and focus on the primitive classes
 $\beta = B + dF$, where $B$ is the class of the chosen section and $F$
-the class of the fibre. We define the partition function by
-\[
-\DThat (X) = \sum_{d \geq 0} \sum_{n \in \ZZ} \DThat _{B+dF,n}(X) p^n q^d.
-\]
+the class of the fibre. We define the partition functions by
+\begin{align*}
+\DThat (X)& = \sum_{d \geq 0} \sum_{n \in \ZZ} \DThat _{B+dF,n}(X) p^n q^d,\\
+\DT (X)& = \sum_{d \geq 0} \sum_{n \in \ZZ} \DT_{B+dF,n}(X) y^n q^d.
+\end{align*}
 
-We also consider the partition function for the invariants for
+We also consider the partition functions for the invariants for
 multiples of the fiber class:
-\[
-\DThat_{\fiber}(X) = \sum_{d\geq 0} \sum_{n \in \ZZ} \DThat_{dF,n}(X)
-p^{n} q^{d} .
-\]
+\begin{align*}
+\DThat_{\fiber}(X)& = \sum_{d\geq 0} \sum_{n \in \ZZ} \DThat_{dF,n}(X) p^{n} q^{d} ,\\
+\DT_{\fiber}(X)& = \sum_{d\geq 0} \sum_{n \in \ZZ} \DT_{dF,n}(X) y^{n} q^{d} .
+\end{align*}
 
 
-The main result of this paper are closed product formulas for these generating
-functions. We use the notation
+The main result of this paper are closed product formulas for the
+partition functions $\DThat (X)$ and $\DThat_{\fiber}(X)$. Assuming a
+general conjecture, we also determine $\DT (X)$ and $\DT_{\fiber}(X)$.
+
+We use the notation
 \[
 M(p,q) = \prod_{m=1}^{\infty} (1-p^{m}q)^{-m}
 \]
@@ -255,7 +259,15 @@ in \emph{all} curve classes in \cite{PT}. This is the first derivation
 of the KKV formula, which does \emph{not} depend on the Kawai-Yoshioka
 formula \cite{KY}.
 
-The most important result of this paper is perhaps not the formula, but rather the method of calculation. This approach has found further applications to the calculation of DT generating functions on $K3 \times E$, where $E$ is an elliptic curve \cite{Bry}, and abelian 3-folds \cite{BOPY}. Even though the geometry under consideration is not toric, we combine $\CC^*$-localization, motivic methods, formal methods, and $\CC^{*3}$-localization to end up with expressions that only depend on $\sfV_{\lambda\mu\nu}$, $e(B)$, and $N$. Here is a rough sketch:
+The most important result of this paper is perhaps not the formula,
+but rather the method of calculation. This approach has found further
+applications to the calculation of DT generating functions on $K3
+\times E$, where $E$ is an elliptic curve \cite{Bry}, and abelian
+3-folds \cite{BOPY}. Even though the geometry under consideration is
+not toric, we combine $\CC^*$-localization, motivic methods, formal
+methods, and $(\CC^{*})^{3}$-localization to end up with expressions
+that only depend on $\sfV_{\lambda\mu\nu}$, $e(B)$, and $N$. Here is a
+rough sketch:
 \begin{enumerate}
 \item[(A)] The action of $\CC^*$ on the fibres of $X$ lifts to the
 moduli space\footnote{The bullet indicates that we take the union of
@@ -299,19 +311,29 @@ $F$ or $\CC^*$ on itself). This is worked out in Section \ref{vertex}.
 Our results can be extended to apply to the usual (Behrend function
 weighted) Donaldson-Thomas invariants if we assume a general
 conjecture which we formulate in Section~\ref{sec: Behrend}. The basic
-result (assuming Conjecture~\ref{conj: Behrend fnc conj}) is that 
+results (assuming Conjecture~\ref{conj: Behrend fnc conj}) are
 \[
-\DT_{\beta ,n}(X) = (-1)^{n}\DThat_{\beta ,n}(X)
+\DT (X) = (-1)^{\chi (\O_{S})} \DThat (X)
 \]
-for classes of the form $\beta =B+dF$ or $\beta =dF$. The above
-phenomenon is known to hold when $X$ is a toric Calabi-Yau threefold.
+and
+\[
+\DT_{\fiber } (X) =  \DThat_{\fiber } (X)
+\]
+under the change of variables
+\[
+y=-p.
+\]
+A similar phenomenon to the above is known to hold when $X$ is a toric
+Calabi-Yau threefold.
 
-\subsection{Acknowledgments}
-The authors are pleased to thank ?,?,?,?, and ? for helpful conversations.
+%\subsection{Acknowledgments}
+%The authors are pleased to thank ?,?,?,?, and ? for helpful conversations.
 
 \section{Definitions}
 
-Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve $B$. Besides assuming $S$ is not a product, we require:
+Let $p : S \rightarrow B$ be an elliptic surface over a smooth
+projective curve $B$. Besides assuming $S$ is not a product, we
+require:
 \begin{enumerate}
 \item $p$ has a section $B \subset S$,
 \item all singular fibres of $p$ are irreducible rational nodal curves. 
@@ -319,11 +341,13 @@ Let $p : S \rightarrow B$ be an elliptic surface over a smooth projective curve 
 We write $F_x$ for the fibre $p^{-1}(\{x\})$ for all closed points $x
 \in B$. We choose a section $B \subset S$ and denote its class in
 $H_2(S)$ by $B$ as well. We denote the class of the fibre by $F \in
-H_2(S)$. Interesting examples include elliptic surfaces of type
-$E(n)$. $E(n)$ is an elliptic surface with $B = \PP^1$ and the number
-of nodal fibres is $12n$. For example, a surface of type $E(1)$ is a
-rational elliptic surface and a surface of type $E(2)$ is an elliptic
-$K3$ surface.
+H_2(S)$.
+
+%Interesting examples include elliptic surfaces of type
+%$E(n)$. $E(n)$ is an elliptic surface with $B = \PP^1$ and the number
+%of nodal fibres is $12n$. For example, a surface of type $E(1)$ is a
+%rational elliptic surface and a surface of type $E(2)$ is an elliptic
+%$K3$ surface.
 
 
 \begin{comment}
@@ -371,8 +395,8 @@ introduce the following notation. We define
 \Hilb^{d,\bullet}(X) := \sum_{n \in \ZZ} \Hilb^{d,n}(X) \, p^n,
 \end{align*}
 where we view the right hand side as a formal Laurent series whose
-coefficients are schemes, or as elements in the Grothendieck ring of
-varieties, i.e. $K_0(\Var_{\CC})(\!(p)\!)$.
+coefficients elements in the Grothendieck ring of varieties,
+i.e. $K_0(\Var_{\CC})(\!(p)\!)$.
 
 
 
@@ -400,12 +424,135 @@ $$
 \int_{\Hilb^{d,\bullet}(X)} 1 \, de = \int_{\Hilb^{d,\bullet}(X)^{\CC^*}} 1 \, de.
 $$
 
-In order to understand $\Hilb^{d,n}(X)$, we first study $Z_{\CM}\subset
-Z$, the maximal Cohen-Macaulay subscheme of any $\CC^{*}$-invariant
-subschemes $Z\subset X$. We find that such subschemes are determined
-by a point in $\Sym^{d}(B)$ along with some discrete data (a
-collection of integer partitions). This is given by the following
-two propositions.
+In order to understand $\Hilb^{d,n}(X)$, we first study
+$Z_{\CM}\subset Z$, the maximal Cohen-Macaulay subscheme of any
+$\CC^{*}$-invariant subschemes $Z\subset X$. We find that such
+subschemes are determined by a point in $\Sym^{d}(B)$ along with some
+discrete data (a collection of integer partitions). This is given by
+the following two propositions and is illustrated in Figure~\ref{fig:
+drawing of Cohen-Macaulay C^* fixed subscheme}.
+
+
+
+\begin{figure}
+\begin{tikzpicture}[
+                    %x  = {(-0.5cm,-0.5cm)},
+                    %x  = {(-0.4,-1.0)},
+                     %x  = {(1,-.25)},
+                    %y  = {(2cm,0cm)},
+                    %y  = {(0.5,1)},
+                    %y  = {(0,1)},
+                    %z  = {(0cm,1cm)},
+                    %z  = {(1,1)},
+                    %z  = {(-1,-1)},
+                    z  = {-15},
+		    scale = 1]
+%                    scale = 0.75]
+
+\begin{scope}[yslant=-0.35,xslant=0]
+  
+
+
+%\draw [ultra thick ,green , ->] (0,0,0)--node[right]{$x$ axis} (1,0,0);
+%\draw [ultra thick ,blue , ->] (0,0,0)--node[right]{$y$ axis} (0,1,0);
+%\draw [ultra thick ,red , ->] (0,0,0)--node[left]{$z$ axis} (0,0,1);
+
+%left side
+\begin{scope} [canvas is yz plane at x=0]
+\draw [black](0,0) rectangle (3,5);
+\end{scope}
+%bottom side
+\begin{scope} [canvas is xz plane at y=0]
+\draw [black](0,0) rectangle (4,5);
+\end{scope}
+%back
+\draw [black](0,0) rectangle (4,3);
+
+
+% partitions
+\begin{scope} [canvas is xz plane at y=3]
+%1st partition
+\draw [thick,blue](1,5) rectangle (1.2,4.5);
+\draw [thick,blue](1.2,5) rectangle (1.4,4.5);
+\draw [thick,blue](1,4.5) rectangle (1.2,4.0);
+%\draw [thick,blue](1.2,4.5) rectangle (1.4,4.0);
+%2nd partition
+%\draw [thick,blue](2,5) rectangle (2.2,4.5);
+%\draw [thick,blue](2.2,5) rectangle (2.4,4.5);
+%\draw [thick,blue](2,4.5) rectangle (2.2,4.0);
+%\draw [thick,blue](2.2,4.5) rectangle (2.4,4.0);
+%3rd partition
+\draw [thick,blue](3,5) rectangle (3.2,4.5);
+\draw [thick,blue](3.2,5) rectangle (3.4,4.5);
+\draw [thick,blue](3,4.5) rectangle (3.2,4.0);
+\draw [thick,blue](3.2,4.5) rectangle (3.4,4.0);
+\draw [thick,blue](3,4.0) rectangle (3.2,3.5);
+\end{scope}
+
+
+
+
+
+%smooth fiber
+\draw [ultra thick,orange] 
+                   (1  ,0   ,5)
+to [out=90,in=-90] (1  ,0.6 ,5)
+to [out=90,in=-90] (0.5,1.5 ,5)
+to [out=90,in=-90] (1  ,2.4 ,5)
+to [out=90,in=-90] (1  ,3   ,5);
+
+%section
+
+\draw [ultra thick,orange] (0,0.5,5)--(4,0.5,5);
+
+%nodal fiber
+\draw [ultra thick,orange] 
+                    (3   ,0   ,5) 
+to [out=90,in=0]    (2.3 ,1.8 ,5) 
+to [out=180,in=90]  (2   ,1.5 ,5) 
+to [out=270,in=180] (2.3 ,1.2 ,5) 
+to [out=0,in=270]   (3   ,3   ,5);
+
+
+
+\node [above] at (3,3,3.5) {$\mu^{(j)} $};
+\node [below] at (3,0,5) {$F_{y_{j}}$};
+\node [right] at (3,0.6,5) {$y_{j}$};
+\node [right] at (2.8,1.5,5) {$z_{j}$};
+\node [above] at (1,3,4) {$\lambda^{(i)}$};
+\node [below] at (1,0,5) {$F_{x_{i}}$};
+\node [right] at (1,0.6,5) {$x_{i}$};
+\node [left] at (0,2.0,5) {$S$};
+\node [right] at (4.2,0,3) {$\operatorname{Tot}(K_{S})$};
+\node [right] at (4.1,0.7,5) {$B$};
+
+
+
+%right side
+\begin{scope} [canvas is yz plane at x=4]
+\draw [black](0,0) rectangle (3,5);
+%diagonal curve
+%\draw [pink, ultra thick, domain=0:3, samples=100] 
+%plot (\x ,{5*pow(sin(28.8*pi*\x),2)});
+\end{scope}
+%top side
+\begin{scope} [canvas is xz plane at y=3]
+\draw [black](0,0) rectangle (4,5);
+\end{scope}
+%front
+\draw [black](0,0,5) rectangle (4,3,5);
+\draw [black,fill, opacity=0.1](0,0,5) rectangle (4,3,5);
+
+
+\end{scope}
+\end{tikzpicture}
+\caption{Cohen-Macaulay curve $Z_{\CM}$ with underlying reduced
+support in orange and thickenings $\lambda^{(i)}$ along smooth fibers
+$F_{x_{i}}$, $\mu^{(j)}$ along singular fibers $F_{y_{j}}$, and
+multiplicity one along the section $B$.}\label{fig: drawing of Cohen-Macaulay C^* fixed subscheme}
+\end{figure}
+
+
 
 \begin{proposition} \label{nest}
 A closed points $Z$ of $\Hilb^{d,\bullet}(X)^{\CC^*}$ correspond to a finite nesting of closed subschemes of $S$
@@ -500,7 +647,8 @@ for some $\lambda_{k}^{(i)} \leq \lambda_{k-1}^{(i)}$. Here $\lambda^{(i)} = (\l
 $$
 \sum_{i=1}^{l} |\lambda^{(i)}| = d.
 $$
-The map $\rho_d$ sends $Z$ to 
+See Figure~\ref{fig: drawing of Cohen-Macaulay C^* fixed subscheme}
+for an illustration. The map $\rho_d$ sends $Z$ to 
 $$
 \sum_{i=1}^{l} |\lambda^{(i)}| x_i \in \Sym^d(B).
 $$
@@ -740,11 +888,19 @@ Since pull-back works in families, restriction indeed defines a morphism. For th
 
 Since $\mathfrak{U}$ is an fpqc cover, fpqc descent implies that any ideal sheaf $I_Z \subset \O_X$ is entirely determined by its restriction along the morphisms of the elements of $\mathfrak{U}$. This proves injectivity.
 
-Conversely, given local ideal sheaves in the image of \eqref{restr}, their restrictions to overlaps only depend on the underlying Cohen-Macaulay curve and not on the embedded points. Since we chose the strata such that the underlying Cohen-Macaulay curve is already fixed, there are no further gluing conditions and fpqc descent implies surjectivity.
+Conversely, given local ideal sheaves in the image of \eqref{restr},
+their restrictions to overlaps only depend on the underlying
+Cohen-Macaulay curve and not on the embedded points. Since we chose
+the strata such that the underlying Cohen-Macaulay curve is already
+fixed, there are no further gluing conditions and fpqc descent implies
+surjectivity.
 \end{proof}
    
 \begin{remark}
-Note that the argument of Proposition \ref{bij} is purely set-theoretic in nature. We do \emph{not} claim \eqref{restr} is an isomorphism of schemes. 
+Note that the argument of Proposition \ref{bij} produces a bijective
+morphism --- we do \emph{not} claim \eqref{restr} is an
+isomorphism of schemes. However, a bijective morphism induces an
+equality of (topological) Euler characteristic, which is what we use.
 \end{remark}
 
 \begin{remark}
@@ -852,18 +1008,25 @@ Propositions \ref{mult1} and \ref{mult2} are true for $g(a)$ and $h(b)$ defined 
    
 \section{Reduction to the topological vertex}  \label{vertex} 
 
-In this section, we prove the main result of this paper: expressions for $\DThat (X)$ and $\DThat ^{\conn}(X)$ in terms of the topological vertex $\sfV_{\lambda\mu\nu}(p)$, $e(B)$, and $N$ (the number of nodal fibres). This is Theorem \ref{main} below. The theorem follows by expressing $g(a)$ and $h(b)$ of Proposition \ref{geomgh} in terms of the topological vertex. 
+In this section, we obtain (Theorem~\ref{thm: Zhat in terms of
+vertex}) expressions for $\DThat (X)$ and $\DThat_{\fiber }(X)$ in
+terms of the topological vertex $\sfV_{\lambda\mu\nu}(p)$, $e(B)$, and
+$N$ (the number of nodal fibres). The theorem follows by expressing
+$g(a)$ and $h(b)$ of Proposition \ref{geomgh} in terms of the
+topological vertex.
 
 
 \subsection{Point contributions}   
 
-We denote by 
+Following the conventions of \cite{BKY}, we denote by 
 $$
 \sfV_{\lambda\mu\nu} = \sum_{\pi} p^{|\pi|}, 
 $$
-the topological vertex\footnote{Our definition of the topological vertex differs from the vertex $C(\lambda,\mu,\nu)$ of the physics literature by a normalization factor (and we use variable $p$ instead of $q$). Our $\sfV_{\lambda\mu\nu}$ is $P(\lambda,\mu,\nu)$ in \cite[eqn.~3.16]{ORV}.} of \cite{ORV}.
-%\footnote{In general this depends on an equivariant measure $\mathsf{w}(\pi)$ depending on equivariant parameters $s_1, s_2, s_3$. If $s_1+s_2+s_3=0$, then $\mathsf{w}(\pi) = \pm 1$. Since we are working with an Euler characteristic version of DT invariants, we take all signs to be $+1$.} \cite{MNOP1, MNOP2}. 
-Here the sum is over all 3D partitions $\pi$ with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes renormalized volume. For a 2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we write $\lambda'$ for the corresponding transposed partition and 
+the topological vertex. Here the sum is over all 3D partitions $\pi$
+with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes
+renormalized volume (see Definitions (1) and (2) in \cite{BKY}). For a
+2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we
+write $\lambda'$ for the corresponding transposed partition and
 \begin{align*}
 |\lambda| &:= \sum_{k=0}^{\infty} \lambda_k, \\
 |\!|\lambda|\!|^2 &:= \sum_{k=0}^{\infty} \lambda_{k}^{2}.
@@ -882,9 +1045,22 @@ Recall that $$\Xhat _x \cong \Xhat _y \cong \Xhat _z \cong \Spec \CC[\![x_1,x_2,
 $$
 \Hilb^{(1,a),\bullet}(\Xhat _x)_{\lambda}^{\CC^*}, \ \Hilb^{(1,b),\bullet}(\Xhat _y)_{\mu}^{\CC^*}, \ \Hilb^{b,\bullet}(\Xhat _z)_{\mu}^{\CC^*}.
 $$
-The coordinates can be chosen such that the action of the last factor of $\CC^{*3}$ corresponds to $x_3 \mapsto t_3 x_3$. This component acts trivially since we are already on the $\CC^*$-fixed locus. The $\CC^{*3}$-fixed locus consists of isolated reduced points corresponding to monomial ideals with asymptotics $(\lambda,\varnothing,\varnothing)$, $(\mu,\varnothing,\varnothing)$, $(\mu,\mu',\varnothing)$ respectively\footnote{The transpose in $\mu'$ occurs, because we follow the orientation convention of \cite{ORV}.}. These monomial ideals are exactly what the topological vertex counts. 
+The coordinates can be chosen such that the action of the last factor
+of $\CC^{*3}$ corresponds to $x_3 \mapsto t_3 x_3$. This component
+acts trivially since we are already on the $\CC^*$-fixed locus. The
+$\CC^{*3}$-fixed locus consists of isolated reduced points
+corresponding to monomial ideals with asymptotics
+$(\lambda,\varnothing,\varnothing)$, $(\mu,\varnothing,\varnothing)$,
+$(\mu,\mu',\varnothing)$ respectively\footnote{The transpose in $\mu'$
+occurs, because we follow the orientation convention of
+\cite{BKY}.}. These monomial ideals are exactly what the topological
+vertex counts.
 
-Finally, note that the generating functions $e(\Hilb^{(1,a),\bullet}(\Xhat _x)_{\lambda}^{\CC^*})$, $e(\Hilb^{(1,b),\bullet}(\Xhat _y)_{\mu}^{\CC^*})$, $e(\Hilb^{b,\bullet}(\Xhat _z)_{\mu}^{\CC^*})$ all start with $1$. On the other hand, from the definition
+Finally, note that the generating functions
+$e(\Hilb^{(1,a),\bullet}(\Xhat _x)_{\lambda}^{\CC^*})$,
+$e(\Hilb^{(1,b),\bullet}(\Xhat _y)_{\mu}^{\CC^*})$,
+$e(\Hilb^{b,\bullet}(\Xhat _z)_{\mu}^{\CC^*})$ all start with $1$. On
+the other hand, from the definition
 \begin{align*}
 \sfV_{\lambda\square\varnothing} &= p^{-\lambda_0} + \cdots, \\
 \sfV_{\mu\square\varnothing} &= p^{-\mu_0} + \cdots, \\
@@ -896,7 +1072,9 @@ where $\cdots$ stands for higher order terms in $p$. The proposition follows.
 
 \subsection{Fibre contribution}
 
-Let $F_x$ be a smooth fibre and $F_y$ a singular fibre. Recall the formal neighbourhoods $\Xhat ^{\circ}_{F_{x}^{\circ}}$,  $\Xhat ^{\circ}_{F_{y}^{\circ}}$ of Section \ref{formal}.
+Let $F_x$ be a smooth fibre and $F_y$ a singular fibre. Recall the
+formal neighbourhoods $\Xhat ^{\circ}_{F_{x}^{\circ}}$, $\Xhat
+^{\circ}_{F_{y}^{\circ}}$ of Section \ref{formal}.
 \begin{proposition} \label{vertex2}
 For any $\lambda \vdash a$ and $\mu \vdash b$, we have
 \begin{align*}
@@ -905,81 +1083,11 @@ e(\Hilb^{b,\bullet}(\Xhat ^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}) &= \frac{1}{\
 \end{align*}
 \end{proposition}
 \begin{proof}
-We start with the first equation. Let $F := F_x \subset S$ be a smooth fibre. Consider the auxiliary surface 
-$$
-\tilde{S} = B \times F
-$$ 
-and let $Y = \mathrm{Tot}(K_{\tilde{S}})$. 
-%let $e \in F$ be any closed point and consider the embeddings 
-%\begin{align*}
-%B &\hookrightarrow \tilde{S}, \ b \mapsto (b,e) \\
-%\tilde{S} &\hookrightarrow \tilde{X}, \ p \mapsto (p,0).
-%\end{align*}
-Denote by $\Xhat _F$ the formal neighbourhood of $F$ in $X$ and by $\widehat{Y}_{F}$ the formal neighbourhood of
-$$
-F \cong \{x\} \times F \subset \tilde{S} \subset Y,
-$$
-where $\tilde{S} \subset Y$ denotes the zero section. In general $\Xhat _F$ and $\widehat{Y}_{F}$ are \emph{not} isomorphic. 
-
-Denote by $\Xhat ^{\circ}_{F^\circ}$ the formal neighbourhood of $F \setminus B$ in $X \setminus B$. Recall that through the section $B \subset S$, we can view $x$ as an element of both $B$ and $F$.  We denote by $\widehat{Y}_{F^{\circ}}^{\circ}$ the formal neighbourhood of $(\{x\} \times F) \setminus (B \times \{x\})$ inside $Y \setminus (B \times \{x\})$. Since we have removed the section $B$, there exists an isomorphism \todo{Provide more argument here?} 
-\begin{equation} \label{isopuncturednghs}
-\Xhat ^{\circ}_{F^\circ} \cong \widehat{Y}_{F^{\circ}}^{\circ}.
-\end{equation}
-We are interested in the moduli space $\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F^\circ})$ and the correspondingly defined moduli space $\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})$. Since $\Xhat ^{\circ}_{F^\circ}$ and $\widehat{Y}^{\circ}_{F^\circ}$ have (compatible) $\CC^*$-actions coming from scaling the fibres of $X$ and $Y$, we can consider their $\CC^*$-fixed loci and stratify them according to 2D partitions as in \eqref{comps}. By \eqref{isopuncturednghs}, we have an isomorphism   
-$$
-\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F^\circ})_{\lambda}^{\CC^*} \cong \Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})_{\lambda}^{\CC^*}.
-$$
-This observation allows us to work in the much simpler geometry of $Y$. This is only possible because we removed the section $B$ from $X$ and $Y$.
-
-Let $F \cong \{x\} \times F \subset \tilde{S} \subset Y$ be as above. Denote by $\widehat{Y}_{y}$ the formal neighbourhood $y \in Y$, where $y$ is the intersection of $F \cong \{x\} \times F$ and $B \times \{x\}$ inside the zero section $\tilde{S} \subset Y$. Let $\widehat{Y}_F$, $\widehat{Y}^{\circ}_{F^\circ}$ be the formal neighbourhoods introduced above. Then we have a cover\todo{Strictly speaking: not clear these maps are flat since $\widehat{Y}_F$ non-noetherian! However: not an issue if you'd work with high enough truncation of $\widehat{Y}_F$.}
-$$
-\{\widehat{Y}_y \rightarrow \widehat{Y}_F, \widehat{Y}^{\circ}_{F^\circ} \rightarrow \widehat{Y}_F\}. 
-$$
-On these pieces, we introduce moduli spaces as in Section \ref{formal}
-\begin{align*}
-\Hilb^{a,\bullet}(\widehat{Y}_y), \ \Hilb^{a,\bullet}(\widehat{Y}_F), \ \Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ}).
-\end{align*}
-Similar to Proposition \ref{bij}, restriction gives a bijective morphism on closed points
-\begin{equation} \label{bij2}
-\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda} \rightarrow \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda} \times \Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}.
-\end{equation}
-
-Recall that $\tilde{S} = B \times F$. Then $F$ does not only act on $F \subset \tilde{S}$, but on any thickening $d F \subset \tilde{S}$. This is because
-$$
-\O_{dF} = \O_{d x} \otimes \O_F,
-$$
-where $dx \subset B$ denotes the $d$ times thickening of the point $x \in B$. Moreover, $F$ acts on the thickened curve defined by the ideal sheaf
-$$
-\bigoplus_{k=0}^{\infty} \O_{\tilde{S}}(-\lambda_k F) \otimes K_{\tilde{S}}^{-k}.
-$$
-The action of the elliptic curve $F$ on itself is fixed-point-free, so it lifts to a free action on $\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}$. Since $e(F) = 0$, we deduce
-\begin{equation} \label{e=1}
-e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) = 1.
-\end{equation}
-On $\widehat{Y}_y \cong \Spec \CC[\![x_1,x_2,x_3]\!]$ we have an action of $\CC^{*3}$, so
-\begin{equation} \label{001}
-e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) = e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^{*3}}_{\lambda}) = \sfV_{\lambda\varnothing\varnothing}.
-\end{equation}
-From equations \eqref{e=1}, \eqref{bij2}, \eqref{001}, and \eqref{isopuncturednghs} we conclude that
-\begin{align*}
-1=e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) &= e( \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) \, e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
-&=  \sfV_{\lambda\varnothing\varnothing} \cdot e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
-&=  \sfV_{\lambda\varnothing\varnothing} \cdot e(\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F^\circ})^{\CC^*}_{\lambda}).
-\end{align*}
-
-The equation for $e(\Hilb^{b,\bullet}(\Xhat ^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*})$ can be deduced similarly. This time, the smooth fibre $F = F_x \subset S \subset X$ is replaced by the \emph{smooth locus} of the singular fibre, i.e.~ 
-$$
-F' := F_{y}^{\sm} = F_{y} \setminus \{z\},
-$$
-where $z$ denotes the singularity of $F_y$. Note that
-$$
-F' \cong \PP^1 \setminus \{2 \ \rm{points}\} \cong \CC^*.
-$$
-Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The rest of the proof follows the same steps.
+********
 \end{proof}   
 
 
-\subsection{Main theorem}
+\subsection{Putting it together.}
 
 Combining Proposition \ref{geomgh} with Propositions \ref{vertex1}, \ref{vertex2} gives:
 \begin{proposition} \label{combgh}
@@ -992,26 +1100,33 @@ h(b) &= \frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\s
 \end{align}
 \end{proposition}
 
-Putting all our results together, we obtain our main theorem:
-\begin{theorem} \label{main}
-%For any elliptic surface $p : S \rightarrow B$ over a smooth projective curve $B$ with unique section, $N$ rational nodal fibres and no further singular fibres, we have
+Putting all our results together, we obtain formulas for the partition
+functions in terms of the vertex: 
+\begin{theorem} \label{thm: Zhat in terms of vertex}
 \begin{align*}
-&\DThat (X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( (1-p) \sum_{\lambda} q^{|\lambda|} \frac{\sfV_{\lambda\square\varnothing}}{\sfV_{\lambda\varnothing\varnothing}} \Bigg)^{e(B) - N}  \Bigg( (1-p) \sum_{\mu}  q^{|\mu|} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}}{\sfV_{\mu\varnothing\varnothing}} \sfV_{\mu\mu'\varnothing} \Bigg)^{N} \\
-&\DThat ^{\conn}(X) = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( \frac{(1-p) \sum_{\lambda} q^{|\lambda|} \frac{\sfV_{\lambda\square\varnothing}}{\sfV_{\lambda\varnothing\varnothing}}}{\sum_{\lambda} q^{|\lambda|}} \Bigg)^{e(B) - N}  \Bigg( \frac{(1-p) \sum_{\mu}  q^{|\mu|} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}}{\sfV_{\mu\varnothing\varnothing}} \sfV_{\mu\mu'\varnothing}}{\sum_{\mu} q^{|\mu|} p^{|\!|\mu|\!|^2} \sfV_{\mu\mu'\varnothing}} \Bigg)^{N}.
+\DThat (X)& = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( (1-p) \sum_{\lambda} q^{|\lambda|} \frac{\sfV_{\lambda\square\varnothing}}{\sfV_{\lambda\varnothing\varnothing}} \Bigg)^{e(B) - N}  \Bigg( (1-p) \sum_{\mu}  q^{|\mu|} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}}{\sfV_{\mu\varnothing\varnothing}} \sfV_{\mu\mu'\varnothing} \Bigg)^{N} \\
+\DThat_{\fiber}(X)&= \Bigg( \sum_{\lambda} q^{|\lambda|} \Bigg)^{e(B) - N} \Bigg( \sum_{\mu} q^{|\mu|} p^{|\!|\mu|\!|^2} \sfV_{\mu\mu'\varnothing} \Bigg)^{N}.
 \end{align*}
-%where the sums are over all 2D partitions and where $\sfV_{\lambda,\mu,\nu}(p)$ denotes the topological vertex.
 \end{theorem}
 \begin{proof}
-Inserting the equations for $g(a)$, $h(b)$ of Proposition \ref{combgh} into \eqref{initialprod} gives the formula for $\DThat (X)$. Following the exact same line of reasoning of Sections \ref{sym}--\ref{vertex}, it is easy to see that
-\begin{align*}
-\sum_{d \geq 0} \sum_{n \in \ZZ} e(\Hilb^{dF,n}(X)) p^n q^d = \Bigg( \sum_{\lambda} q^{|\lambda|} \Bigg)^{e(B) - N} \Bigg( \sum_{\mu} q^{|\mu|} p^{|\!|\mu|\!|^2} \sfV_{\mu\mu'\varnothing} \Bigg)^{N}.
-\end{align*}
-The formula for $\DThat ^{\conn}(X)$ follows from dividing $\DThat (X)$ by this expression.
+Inserting the equations for $g(a)$, $h(b)$ of Proposition \ref{combgh}
+into \eqref{initialprod} gives the formula for $\DThat (X)$. Similar
+reasoning\dots \todo{Go back and put in the necessary stuff so that
+the $\DThat_{\fiber}$ computation isn't just hand waving.}
 \end{proof}
 
-\begin{remark}
-The sums over partitions appearing in Theorem \ref{main} can be calculated explicitly. This is done by expressing them as traces of certain natural operators on Fock space. The calculation is of interest outside geometry and forms the topic of a companion paper with B.~Young \cite{BKY}. Theorem \ref{main} and the main theorem of \cite{BKY} immediately imply Theorem \ref{final} of the introduction. 
-\end{remark}
+\begin{corollary}
+Theorem~\ref{thm: main thm -- formulas for DT and DTfiber} is true.
+\end{corollary}
+\begin{proof}
+We apply the main theorem of \cite{BKY}. In particular, we substitute
+\cite[Eqns~(2)\&(4)]{BKY} into the formula for $\DThat (X)$ and we substitute
+\cite[Eqn~(1)]{BKY}, as well as the well-known formula
+\[
+\sum_{\lambda}q^{|\lambda |} =\prod_{d=1}^{\infty}\frac{1}{(1-q^{d})}
+\]
+into the formula for $\DThat_{\fiber } (X)$.
+\end{proof}
 
 \section{Putting in the Behrend function} \label{sec: Behrend}
 
@@ -1448,7 +1563,8 @@ and $N_{B/S} \otimes K_S|_B \cong K_B$. We get
 \]
 The first map is an isomorphism because both terms are first order deformations of $B$ as a subscheme of $X$. Not sure we need this.
 
-\newpage
+\begin{comment}
+% Martijn's old picture:
 
 \pgfplotsset{ticks=none}
 
@@ -1496,133 +1612,89 @@ The first map is an isomorphism because both terms are first order deformations 
 \node (A) at (axis cs:20,0,0) {{\scriptsize{$\mathrm{surface}$}}};    
 \end{axis}
 \end{tikzpicture}
-\caption{Cohen-Macaulay curve $Z_{\CM}$ with underlying reduced support in red and thickenings $\lambda^{(i)}$ along smooth fibers and $\mu^{(j)}$ along singular fibers.}
 \end{figure}
 
-
-
-\begin{figure}
-\begin{tikzpicture}[
-                    %x  = {(-0.5cm,-0.5cm)},
-                    %x  = {(-0.4,-1.0)},
-                     %x  = {(1,-.25)},
-                    %y  = {(2cm,0cm)},
-                    %y  = {(0.5,1)},
-                    %y  = {(0,1)},
-                    %z  = {(0cm,1cm)},
-                    %z  = {(1,1)},
-                    %z  = {(-1,-1)},
-                    z  = {-15},
-		    scale = 1]
-%                    scale = 0.75]
-
-\begin{scope}[yslant=-0.35,xslant=0]
-  
-
-
-%\draw [ultra thick ,green , ->] (0,0,0)--node[right]{$x$ axis} (1,0,0);
-%\draw [ultra thick ,blue , ->] (0,0,0)--node[right]{$y$ axis} (0,1,0);
-%\draw [ultra thick ,red , ->] (0,0,0)--node[left]{$z$ axis} (0,0,1);
-
-%left side
-\begin{scope} [canvas is yz plane at x=0]
-\draw [black](0,0) rectangle (3,5);
-\end{scope}
-%bottom side
-\begin{scope} [canvas is xz plane at y=0]
-\draw [black](0,0) rectangle (4,5);
-\end{scope}
-%back
-\draw [black](0,0) rectangle (4,3);
-
-
-% partitions
-\begin{scope} [canvas is xz plane at y=3]
-%1st partition
-\draw [thick,blue](1,5) rectangle (1.2,4.5);
-\draw [thick,blue](1.2,5) rectangle (1.4,4.5);
-\draw [thick,blue](1,4.5) rectangle (1.2,4.0);
-%\draw [thick,blue](1.2,4.5) rectangle (1.4,4.0);
-%2nd partition
-%\draw [thick,blue](2,5) rectangle (2.2,4.5);
-%\draw [thick,blue](2.2,5) rectangle (2.4,4.5);
-%\draw [thick,blue](2,4.5) rectangle (2.2,4.0);
-%\draw [thick,blue](2.2,4.5) rectangle (2.4,4.0);
-%3rd partition
-\draw [thick,blue](3,5) rectangle (3.2,4.5);
-\draw [thick,blue](3.2,5) rectangle (3.4,4.5);
-\draw [thick,blue](3,4.5) rectangle (3.2,4.0);
-\draw [thick,blue](3.2,4.5) rectangle (3.4,4.0);
-\draw [thick,blue](3,4.0) rectangle (3.2,3.5);
-\end{scope}
+\end{comment}
 
 
 
-%smooth fiber
-\draw [ultra thick,orange] 
-                   (2  ,0   ,5)
-to [out=90,in=-90] (2  ,0.6 ,5)
-to [out=90,in=-90] (1.5,1.5 ,5)
-to [out=90,in=-90] (2  ,2.4 ,5)
-to [out=90,in=-90] (2  ,3   ,5);
+\begin{comment}
+% martijn's old argument for the proposition in the ``fiber
+% contributions'' subsection:
 
+We start with the first equation. Let $F := F_x \subset S$ be a smooth fibre. Consider the auxiliary surface 
+$$
+\tilde{S} = B \times F
+$$ 
+and let $Y = \mathrm{Tot}(K_{\tilde{S}})$. 
+%let $e \in F$ be any closed point and consider the embeddings 
+%\begin{align*}
+%B &\hookrightarrow \tilde{S}, \ b \mapsto (b,e) \\
+%\tilde{S} &\hookrightarrow \tilde{X}, \ p \mapsto (p,0).
+%\end{align*}
+Denote by $\Xhat _F$ the formal neighbourhood of $F$ in $X$ and by $\widehat{Y}_{F}$ the formal neighbourhood of
+$$
+F \cong \{x\} \times F \subset \tilde{S} \subset Y,
+$$
+where $\tilde{S} \subset Y$ denotes the zero section. In general $\Xhat _F$ and $\widehat{Y}_{F}$ are \emph{not} isomorphic. 
 
-%smooth fiber
-\draw [ultra thick,orange] 
-                   (1  ,0   ,5)
-to [out=90,in=-90] (1  ,0.6 ,5)
-to [out=90,in=-90] (0.5,1.5 ,5)
-to [out=90,in=-90] (1  ,2.4 ,5)
-to [out=90,in=-90] (1  ,3   ,5);
+Denote by $\Xhat ^{\circ}_{F^\circ}$ the formal neighbourhood of $F \setminus B$ in $X \setminus B$. Recall that through the section $B \subset S$, we can view $x$ as an element of both $B$ and $F$.  We denote by $\widehat{Y}_{F^{\circ}}^{\circ}$ the formal neighbourhood of $(\{x\} \times F) \setminus (B \times \{x\})$ inside $Y \setminus (B \times \{x\})$. Since we have removed the section $B$, there exists an isomorphism \todo{Provide more argument here?} 
+\begin{equation} \label{isopuncturednghs}
+\Xhat ^{\circ}_{F^\circ} \cong \widehat{Y}_{F^{\circ}}^{\circ}.
+\end{equation}
+We are interested in the moduli space $\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F^\circ})$ and the correspondingly defined moduli space $\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})$. Since $\Xhat ^{\circ}_{F^\circ}$ and $\widehat{Y}^{\circ}_{F^\circ}$ have (compatible) $\CC^*$-actions coming from scaling the fibres of $X$ and $Y$, we can consider their $\CC^*$-fixed loci and stratify them according to 2D partitions as in \eqref{comps}. By \eqref{isopuncturednghs}, we have an isomorphism   
+$$
+\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F^\circ})_{\lambda}^{\CC^*} \cong \Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})_{\lambda}^{\CC^*}.
+$$
+This observation allows us to work in the much simpler geometry of $Y$. This is only possible because we removed the section $B$ from $X$ and $Y$.
 
-%section
+Let $F \cong \{x\} \times F \subset \tilde{S} \subset Y$ be as above. Denote by $\widehat{Y}_{y}$ the formal neighbourhood $y \in Y$, where $y$ is the intersection of $F \cong \{x\} \times F$ and $B \times \{x\}$ inside the zero section $\tilde{S} \subset Y$. Let $\widehat{Y}_F$, $\widehat{Y}^{\circ}_{F^\circ}$ be the formal neighbourhoods introduced above. Then we have a cover\todo{Strictly speaking: not clear these maps are flat since $\widehat{Y}_F$ non-noetherian! However: not an issue if you'd work with high enough truncation of $\widehat{Y}_F$.}
+$$
+\{\widehat{Y}_y \rightarrow \widehat{Y}_F, \widehat{Y}^{\circ}_{F^\circ} \rightarrow \widehat{Y}_F\}. 
+$$
+On these pieces, we introduce moduli spaces as in Section \ref{formal}
+\begin{align*}
+\Hilb^{a,\bullet}(\widehat{Y}_y), \ \Hilb^{a,\bullet}(\widehat{Y}_F), \ \Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ}).
+\end{align*}
+Similar to Proposition \ref{bij}, restriction gives a bijective morphism on closed points
+\begin{equation} \label{bij2}
+\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda} \rightarrow \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda} \times \Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}.
+\end{equation}
 
-\draw [ultra thick,orange] (0,0.5,5)--(4,0.5,5);
+Recall that $\tilde{S} = B \times F$. Then $F$ does not only act on $F \subset \tilde{S}$, but on any thickening $d F \subset \tilde{S}$. This is because
+$$
+\O_{dF} = \O_{d x} \otimes \O_F,
+$$
+where $dx \subset B$ denotes the $d$ times thickening of the point $x \in B$. Moreover, $F$ acts on the thickened curve defined by the ideal sheaf
+$$
+\bigoplus_{k=0}^{\infty} \O_{\tilde{S}}(-\lambda_k F) \otimes K_{\tilde{S}}^{-k}.
+$$
+The action of the elliptic curve $F$ on itself is fixed-point-free, so it lifts to a free action on $\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}$. Since $e(F) = 0$, we deduce
+\begin{equation} \label{e=1}
+e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) = 1.
+\end{equation}
+On $\widehat{Y}_y \cong \Spec \CC[\![x_1,x_2,x_3]\!]$ we have an action of $\CC^{*3}$, so
+\begin{equation} \label{001}
+e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) = e(\Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^{*3}}_{\lambda}) = \sfV_{\lambda\varnothing\varnothing}.
+\end{equation}
+From equations \eqref{e=1}, \eqref{bij2}, \eqref{001}, and \eqref{isopuncturednghs} we conclude that
+\begin{align*}
+1=e(\Hilb^{a,\bullet}(\widehat{Y}_F)^{\CC^*}_{\lambda}) &= e( \Hilb^{a,\bullet}(\widehat{Y}_y)^{\CC^*}_{\lambda}) \, e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
+&=  \sfV_{\lambda\varnothing\varnothing} \cdot e(\Hilb^{a,\bullet}(\widehat{Y}^{\circ}_{F^\circ})^{\CC^*}_{\lambda}) \\
+&=  \sfV_{\lambda\varnothing\varnothing} \cdot e(\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F^\circ})^{\CC^*}_{\lambda}).
+\end{align*}
 
-%nodal fiber
-\draw [ultra thick,orange] 
-                    (3   ,0   ,5) 
-to [out=90,in=0]    (2.3 ,1.8 ,5) 
-to [out=180,in=90]  (2   ,1.5 ,5) 
-to [out=270,in=180] (2.3 ,1.2 ,5) 
-to [out=0,in=270]   (3   ,3   ,5);
+The equation for $e(\Hilb^{b,\bullet}(\Xhat ^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*})$ can be deduced similarly. This time, the smooth fibre $F = F_x \subset S \subset X$ is replaced by the \emph{smooth locus} of the singular fibre, i.e.~ 
+$$
+F' := F_{y}^{\sm} = F_{y} \setminus \{z\},
+$$
+where $z$ denotes the singularity of $F_y$. Note that
+$$
+F' \cong \PP^1 \setminus \{2 \ \rm{points}\} \cong \CC^*.
+$$
+Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The rest of the proof follows the same steps.
 
-
-
-\node [above] at (3,3,3.5) {$\mu^{(i)} $};
-\node [below] at (3,0,5) {$F_{y_{i}}$};
-\node [right] at (3,0.6,5) {$y_{i}$};
-\node [right] at (2.8,1.5,5) {$z_{i}$};
-\node [above] at (1,3,4) {$\lambda^{(j)}$};
-\node [below] at (1,0,5) {$F_{x_{j}}$};
-\node [right] at (1,0.6,5) {$x_{j}$};
-\node [left] at (0,2.0,5) {$S$};
-\node [right] at (4.2,0,3) {$\operatorname{Tot}(K_{S})$};
-\node [right] at (4.1,0.7,5) {$B$};
-
-
-
-%right side
-\begin{scope} [canvas is yz plane at x=4]
-\draw [black](0,0) rectangle (3,5);
-%diagonal curve
-%\draw [pink, ultra thick, domain=0:3, samples=100] 
-%plot (\x ,{5*pow(sin(28.8*pi*\x),2)});
-\end{scope}
-%top side
-\begin{scope} [canvas is xz plane at y=3]
-\draw [black](0,0) rectangle (4,5);
-\end{scope}
-%front
-\draw [black](0,0,5) rectangle (4,3,5);
-\draw [black,fill, opacity=0.1](0,0,5) rectangle (4,3,5);
-
-
-\end{scope}
-\end{tikzpicture}
-
-\end{figure}
-
+\end{comment}
 
      
 \begin{thebibliography}{BOPY}

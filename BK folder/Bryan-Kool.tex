@@ -1551,7 +1551,7 @@ We can build \emph{many} double complexes from these seven short exact sequences
 
 It seems significant to apply $\Hom(I_E, \cdot)$ to \eqref{ses6}. This gives
 \begin{equation} \label{split}
-0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_E,\O_E) \rightarrow \Hom(I_E,\O_{\lambda_0 p} \stackrel{\alpha}{\rightarrow} \cdots
+0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_E,\O_E) \stackrel{\alpha}{\rightarrow} \Hom(I_E,\O_{\lambda_0 p}) \rightarrow \cdots
 \end{equation}
 The last hom space seems isomorphic to $\CC^{\lambda_0}$ and we believe there is a splitting of the map $\alpha$ from the local description. It seems $\Hom(I_E,G)$ can be interpreted as the space of deformations of $E$ which keep the length of $E \cap B$ fixed! We want to prove there exists a short exact sequence
 $$
@@ -1586,7 +1586,9 @@ In this special case of the rational elliptic surface we have a lot more vanishi
 \Ext^1(G,\O_B) &\stackrel{?}{\cong} 0 \\
 \Ext^1(O_B(-\lambda_0),G) &\stackrel{?}{\cong} 0,
 \end{align*}
- and then use $\Hom(I_C,\O_B) \cong \Ext^1(G,\O_B)$ (which I get from $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$). Sadly I cannot prove the two previous Ext groups are indeed zero.
+ and then use $\Hom(I_C,\O_B) \cong \Ext^1(G,\O_B)$ (which I get from $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$). Sadly I cannot prove the two previous Ext groups are indeed zero. \\
+
+Comment: there does not seem to be a simple map from $\Hom(I_C,\O_C) \rightarrow \Hom(I_B,\O_B)$ simply by playing with $\O_C \rightarrow \O_B$ or $I_C \subset I_B$. 
 
 
 \subsection{Miscalleneous} Significant fact: $\Hom(I_C,\O_C) \cong \mathrm{Ext}^1(I_C,I_C)_0$ by PT1, Section 2.2 for naked CM curves. \\
@@ -1605,6 +1607,63 @@ and $N_{B/S} \otimes K_S|_B \cong K_B$. We get
 0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(N_{B/X}) \rightarrow H^0(K_B) \rightarrow \cdots.
 \]
 The first map is an isomorphism because both terms are first order deformations of $B$ as a subscheme of $X$. Not sure we need this.
+
+\subsection{Direct approach}
+
+We have the following commutative diagram
+\begin{displaymath}
+\xymatrix
+{
+X:=K_S \ar^{\varpi}[r] \ar_{\pi}[d] & Y:=K_S|_B \ar^{q}[d] \\
+S \ar_{p}[r] & B.
+}
+\end{displaymath}
+Note: $\pi_*$ and $q_*$ are exact (because $\pi, q$ are affine morphisms), but I don't think I need this now. I do need $\varpi^*$, $p^*$ are exact (because $\varpi, p$ are flat morphisms). Let $\Hilb^n(Y)$ be the Hilbert scheme of 0-dim subschemes of length $n$ on $Y$. By exactness of $\varpi^*$ we can pull-back
+$$
+0 \rightarrow I_Z \rightarrow \O_Y \rightarrow \O_Z \rightarrow 0
+$$
+on $Y$ to a short exact sequence
+$$
+0 \rightarrow \varpi^* I_Z \rightarrow \O_X \rightarrow \varpi^* \O_Z \rightarrow 0
+$$
+on $X$. Hence $\varpi^* \O_Z$ is a structure sheaf and $\varpi^* I_Z$ is its ideal sheaf. Let $\Hilb^0(X, nF)$ be the Hilbert scheme of Cohen-Macaulay curves in class $nF$. Then at the set level we have a map
+$$
+\Hilb^n(Y) \rightarrow \Hilb^0(X,dF), \ (I_Z \subset \O_Y) \mapsto (\varpi^* I_Z \subset \O_X).
+$$
+This works in families ($(\varpi \times 1_B)^*$ is exact because $\varpi$ is flat) so this indeed gives a morphism. At the level of closed points this is clearly injective.
+
+The tangent space at $\varpi^* I_Z \in \Hilb^0(X,nF)$ is
+\begin{align*}
+\Hom_X(\varpi^* I_Z , \varpi^* \O_Z) &\cong \Hom_Y(I_Z , \varpi_* \varpi^* \O_Z) \\
+&\cong \Hom_Y(I_Z , \O_Z \otimes  \varpi^* \O_X) \\
+&\cong \Hom(I_Z,\O_Z),
+\end{align*}
+which is the tangent space at $I_Z \in \Hilb^n(Y)$. I used: (1) ordinary adjunction for $\Hom$, (2) projection formula, (3) $\varpi_* \O_X \cong \O_Y$ (how do we prove this last one? I know $\varpi_* \O_X$ is a line bundle so should go similar to $p_* \O_S \cong \O_B$). So indeed deformations match! We see there cannot be any twistings but only deformations induced from moving $Z$ in the surface. 
+
+The next part may not be needed but I find it instructive. There is a spectral sequence
+$$
+\Ext^{i}_{Y}(I_Z, R^j \varpi_* \O_Z) \cong \Ext^{i}_{Y}(I_Z, \O_Z \otimes R^j \varpi_* \O_X) \Rightarrow \Ext^{i+j}_{X}(\varpi^* I_Z, \varpi^* \O_Z).
+$$
+Note: $R^0 \varpi_* \O_X \cong \O_Y$, $R^1 \varpi_* \O_X$ is a line bundle (the fibres of $\varpi$ have genus 1), and $R^{>1} \varpi_* \O_X = 0$ (the fibres are 1-dimensional). Therefore the terms of the spectral sequence are zero unless $j=0,1$ which leads to an injection
+$$
+\Ext^{1}_{Y}(I_Z,\O_Z) \hookrightarrow \Ext^{1}_{X}(\varpi^* I_Z ,\varpi^* \O_Z).
+$$
+This injections maps the obstruction class for deforming $Z$ to the obstruction class for deforming $\varpi^* Z$. In other words, we can deform $Z$ if and only if we can deform $\varpi^* Z$. So indeed we have an isomorphism of schemes
+$$
+\Hilb^n(Y) \cong \Hilb^0(X,nF).
+$$
+
+Next, we consider $\Hilb^0(X,B+nF)$; the Hilbert scheme of CM curves with class $B+nF$. Since the ideal sheaf of a CM curve is reflexive, it is determined on the complement of the section so... TBC
+%there is indeed 
+%$$
+%f : \Hilb^0(X,B+nF) \rightarrow \Hilb^0(nF).
+%$$
+%Also, for a choice of section $B \subset X$, taking scheme theoretic union gives a closed embedding
+%$$
+%g : \Hilb^0(X,nF) \rightarrow \Hilb^0(B+nF).
+%$$
+%and clearly $f \circ g = 1$, showing the first map is surjective. Maybe the first map is a fibre bundle with fibre $H^0()$
+
 
 \begin{comment}
 % Martijn's old picture:
@@ -1736,6 +1795,8 @@ $$
 F' \cong \PP^1 \setminus \{2 \ \rm{points}\} \cong \CC^*.
 $$
 Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The rest of the proof follows the same steps.
+
+\subsection{}
 
 \end{comment}
 

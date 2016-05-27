@@ -1626,13 +1626,13 @@ on $Y$ to a short exact sequence
 $$
 0 \rightarrow \varpi^* I_Z \rightarrow \O_X \rightarrow \varpi^* \O_Z \rightarrow 0
 $$
-on $X$. Hence $\varpi^* \O_Z$ is a structure sheaf and $\varpi^* I_Z$ is its ideal sheaf. Let $\Hilb^0(X, nF)$ be the Hilbert scheme of Cohen-Macaulay curves in class $nF$. Then at the set level we have a map
+on $X$. Hence $\varpi^* \O_Z$ is a structure sheaf and $\varpi^* I_Z$ is its ideal sheaf. Let $\Hilb^0(X, [nF])$ be the Hilbert scheme of Cohen-Macaulay curves in homology class $[nF]$. Then at the set level we have a map
 $$
-\Hilb^n(Y) \rightarrow \Hilb^0(X,dF), \ (I_Z \subset \O_Y) \mapsto (\varpi^* I_Z \subset \O_X).
+\Hilb^n(Y) \rightarrow \Hilb^0(X,[nF]), \ (I_Z \subset \O_Y) \mapsto (\varpi^* I_Z \subset \O_X).
 $$
 This works in families ($(\varpi \times 1_B)^*$ is exact because $\varpi$ is flat) so this indeed gives a morphism. At the level of closed points this is clearly injective.
 
-The tangent space at $\varpi^* I_Z \in \Hilb^0(X,nF)$ is
+The tangent space at $\varpi^* I_Z \in \Hilb^0(X,[nF])$ is
 \begin{align*}
 \Hom_X(\varpi^* I_Z , \varpi^* \O_Z) &\cong \Hom_Y(I_Z , \varpi_* \varpi^* \O_Z) \\
 &\cong \Hom_Y(I_Z , \O_Z \otimes  \varpi^* \O_X) \\
@@ -1650,20 +1650,24 @@ $$
 $$
 This injections maps the obstruction class for deforming $Z$ to the obstruction class for deforming $\varpi^* Z$. In other words, we can deform $Z$ if and only if we can deform $\varpi^* Z$. So indeed we have an isomorphism of schemes
 $$
-\Hilb^n(Y) \cong \Hilb^0(X,nF).
+\Hilb^n(Y) \cong \Hilb^0(X,[nF]).
 $$
 
-Next, we consider $\Hilb^0(X,B+nF)$; the Hilbert scheme of CM curves with class $B+nF$. Since the ideal sheaf of a CM curve is reflexive, it is determined on the complement of the section so... TBC
-%there is indeed 
-%$$
-%f : \Hilb^0(X,B+nF) \rightarrow \Hilb^0(nF).
-%$$
-%Also, for a choice of section $B \subset X$, taking scheme theoretic union gives a closed embedding
-%$$
-%g : \Hilb^0(X,nF) \rightarrow \Hilb^0(B+nF).
-%$$
-%and clearly $f \circ g = 1$, showing the first map is surjective. Maybe the first map is a fibre bundle with fibre $H^0()$
+\textbf{From now on it gets sketchy}... perhaps we'd like to deal with the section along the following lines... Let $\Hilb^\chi(X,[B+nF])$ be the Hilbert scheme of 1-dim subschemes with homology class $[B+nF]$ and $\chi(\O_Z) = \chi$ ($[B]$ the class of some section). We want to construct a morphism
+\begin{equation} \label{keymap}
+\Hilb^\chi(X,[B+nF]) \rightarrow H^0(N_{B/X}),
+\end{equation}
+which only remembers the section. I'm not quite sure how to do this rigorously but this sounds doable. Anyway, we want to know what $\Hilb^\chi(X,[B+nF])$ looks like near an element of the form  $B \cup C_0$, where $C_0$ is a CM curve in class $[nF]$ and $B$ a section in class $[B]$. Claim: We want to say that the scheme theoretic \emph{fibre} of \eqref{keymap} over $B \in H^0(N_{B/X})$ near $B \cup C_0$ is isomorphic to the following locally closed subset (with its induced scheme structure)
+\begin{equation} \label{locus}
+\{ C \in \Hilb^0(X,[nF]) \ : \  \chi(\O_{B \cup C}) = \chi \} \subset \Hilb^0(X,[nF]).
+\end{equation}
+The rough idea should be that by looking in the fibre of the map \eqref{keymap} we do not allow $B$ to move. Moreover an ideal sheaf of a CM curve is reflexive, hence determined entirely by its restriction to the complement of $B$. That's why the \emph{fibre} near $C_0 \cup B$ should be isomorphic to \eqref{locus}.
 
+Let $L_k \subset \Hilb^n(Y)$ be the locally closed subscheme of elements $Z$ such that $Z \cap B$ has length $k$. Via our isomorphism $\Hilb^n(Y) \cong \Hilb^0(X,[nF])$ the locus \eqref{locus} is clearly isomorphic to 
+$$
+L_{\chi(\O_B) - \chi},
+$$
+which is \emph{smooth}. Hence, near $B \cup C_0 \in \Hilb^\chi(X,[B+nF])$, the morphism \eqref{keymap} is a smooth morphism over a smooth base. Conclusion: near $C_0 \cup B$ we have that $\Hilb^\chi(X,[B+dF])$ is smooth (and we can calculate the dimension). I'm using the fact that a smooth morphism over a smooth base has a smooth total space.
 
 \begin{comment}
 % Martijn's old picture:

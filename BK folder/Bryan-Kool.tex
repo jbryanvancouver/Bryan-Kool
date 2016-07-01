@@ -1482,27 +1482,27 @@ h^0(N_{X/B}) = \chi(\O_S) - 1+g = \frac{e(S)}{12} - \frac{e(B)}{2}.
 \]     
 
 
-\subsection{Impact on Behrend function} How does this affect the overall sign of the Behrend function? The section $B$ cannot move in the surface direction and in the fibre direction we can move it by sections of 
-\[
-H^0(K_S|_B) \cong \CC^{\chi(\O_S) - 1+g}.
-\]     
-Aside: $K_{S}|_{F} = \O_F$ for each fibre $F$. Let $\Hilb^{B+\bullet F}(X)_{\CM}$ be the Hilbert scheme of \emph{naked} CM curved in class $B+\bullet F$. In the last section we hopefully see that locally formally a neighborhood of $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is of the form\todo{I'm now being really sketchy!}
-\[
-H^0(K_S|_B) \times M,
-\]
-where $M$ is some space (which below we hopefully identify with some locus in $Y^{[n]}$ for $Y = K_{S}|_{B}$). Hence for any $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ we have
-$$
-\nu(C) = (-1)^{\chi(\O_S) - 1+g} \cdot \nu_{M}(C) = (-1)^{\frac{e(S)}{12} - \frac{e(B)}{2}} \cdot \nu_{M}(C).
-$$
-Suppose $C$ is described by partitions $\lambda^{(i)}$ with
-\[
-\sum_i |\lambda^{(i)}| = d.
-\]
-We also want to prove $M$ is \emph{smooth} of dimension
-$$
-2d - \sum_i \lambda_{0}^{(i)},
-$$
-where $\lambda^{(i)} = (\lambda^{(i)}_{0} \geq \lambda^{(i)}_{1} \geq \cdots)$.\todo{Don't we also get Behrend signs $(-1)^{\lambda_{0}^{(i)}}$? Those seem bad!}
+%\subsection{Impact on Behrend function} How does this affect the overall sign of the Behrend function? The section $B$ cannot move in the surface direction and in the fibre direction we can move it by sections of 
+%\[
+%H^0(K_S|_B) \cong \CC^{\chi(\O_S) - 1+g}.
+%\]     
+%Aside: $K_{S}|_{F} = \O_F$ for each fibre $F$. Let $\Hilb^{B+\bullet F}(X)_{\CM}$ be the Hilbert scheme of \emph{naked} CM curved in class $B+\bullet F$. In the last section we hopefully see that locally formally a neighborhood of $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is of the form\todo{I'm now being really sketchy!}
+%\[
+%H^0(K_S|_B) \times M,
+%\]
+%where $M$ is some space (which below we hopefully identify with some locus in $Y^{[n]}$ for $Y = K_{S}|_{B}$). Hence for any $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ we have
+%$$
+%\nu(C) = (-1)^{\chi(\O_S) - 1+g} \cdot \nu_{M}(C) = (-1)^{\frac{e(S)}{12} - \frac{e(B)}{2}} \cdot \nu_{M}(C).
+%$$
+%Suppose $C$ is described by partitions $\lambda^{(i)}$ with
+%\[
+%\sum_i |\lambda^{(i)}| = d.
+%\]
+%We also want to prove $M$ is \emph{smooth} of dimension
+%$$
+%2d - \sum_i \lambda_{0}^{(i)},
+%$$
+%where $\lambda^{(i)} = (\lambda^{(i)}_{0} \geq \lambda^{(i)}_{1} \geq \cdots)$.\todo{Don't we also get Behrend signs $(-1)^{\lambda_{0}^{(i)}}$? Those seem bad!}
 
 
 \subsection{Hilbert schemes on $\CC^2$}
@@ -1653,21 +1653,82 @@ $$
 \Hilb^n(Y) \cong \Hilb^0(X,[nF]).
 $$
 
-\textbf{From now on it gets sketchy}... perhaps we'd like to deal with the section along the following lines... Let $\Hilb^\chi(X,[B+nF])$ be the Hilbert scheme of 1-dim subschemes with homology class $[B+nF]$ and $\chi(\O_Z) = \chi$ ($[B]$ the class of some section). We want to construct a morphism
-\begin{equation} \label{keymap}
-\Hilb^\chi(X,[B+nF]) \rightarrow H^0(N_{B/X}),
-\end{equation}
-which only remembers the section. I'm not quite sure how to do this rigorously but this sounds doable. Anyway, we want to know what $\Hilb^\chi(X,[B+nF])$ looks like near an element of the form  $B \cup C_0$, where $C_0$ is a CM curve in class $[nF]$ and $B$ a section in class $[B]$. Claim: We want to say that the scheme theoretic \emph{fibre} of \eqref{keymap} over $B \in H^0(N_{B/X})$ near $B \cup C_0$ is isomorphic to the following locally closed subset (with its induced scheme structure)
-\begin{equation} \label{locus}
-\{ C \in \Hilb^0(X,[nF]) \ : \  \chi(\O_{B \cup C}) = \chi \} \subset \Hilb^0(X,[nF]).
-\end{equation}
-The rough idea should be that by looking in the fibre of the map \eqref{keymap} we do not allow $B$ to move. Moreover an ideal sheaf of a CM curve is reflexive, hence determined entirely by its restriction to the complement of $B$. That's why the \emph{fibre} near $C_0 \cup B$ should be isomorphic to \eqref{locus}.
+%\textbf{From now on it gets sketchy}... perhaps we'd like to deal with the section along the following lines... Let $\Hilb^\chi(X,[B+nF])$ be the Hilbert scheme of 1-dim subschemes with homology class $[B+nF]$ and $\chi(\O_Z) = \chi$ ($[B]$ the class of some section). We want to construct a morphism
+%\begin{equation} \label{keymap}
+%\Hilb^\chi(X,[B+nF]) \rightarrow H^0(N_{B/X}),
+%\end{equation}
+%which only remembers the section. I'm not quite sure how to do this rigorously but this sounds doable. Anyway, we want to know what $\Hilb^\chi(X,[B+nF])$ looks like near an element of the form  $B \cup C_0$, where $C_0$ is a CM curve in class $[nF]$ and $B$ a section in class $[B]$. Claim: We want to say that the scheme theoretic \emph{fibre} of \eqref{keymap} over $B \in H^0(N_{B/X})$ near $B \cup C_0$ is isomorphic to the following locally closed subset (with its induced scheme structure)
+%\begin{equation} \label{locus}
+%\{ C \in \Hilb^0(X,[nF]) \ : \  \chi(\O_{B \cup C}) = \chi \} \subset \Hilb^0(X,[nF]).
+%\end{equation}
+%The rough idea should be that by looking in the fibre of the map \eqref{keymap} we do not allow $B$ to move. Moreover an ideal sheaf of a CM curve is reflexive, hence determined entirely by its restriction to the complement of $B$. That's why the \emph{fibre} near $C_0 \cup B$ should be isomorphic to \eqref{locus}.
 
-Let $L_k \subset \Hilb^n(Y)$ be the locally closed subscheme of elements $Z$ such that $Z \cap B$ has length $k$. Via our isomorphism $\Hilb^n(Y) \cong \Hilb^0(X,[nF])$ the locus \eqref{locus} is clearly isomorphic to 
-$$
-L_{\chi(\O_B) - \chi},
-$$
-which is \emph{smooth}. Hence, near $B \cup C_0 \in \Hilb^\chi(X,[B+nF])$, the morphism \eqref{keymap} is a smooth morphism over a smooth base. Conclusion: near $C_0 \cup B$ we have that $\Hilb^\chi(X,[B+dF])$ is smooth (and we can calculate the dimension). I'm using the fact that a smooth morphism over a smooth base has a smooth total space.
+%Let $L_k \subset \Hilb^n(Y)$ be the locally closed subscheme of elements $Z$ such that $Z \cap B$ has length $k$. Via our isomorphism $\Hilb^n(Y) \cong \Hilb^0(X,[nF])$ the locus \eqref{locus} is clearly isomorphic to 
+%$$
+%L_{\chi(\O_B) - \chi},
+%$$
+%which is \emph{smooth}. Hence, near $B \cup C_0 \in \Hilb^\chi(X,[B+nF])$, the morphism \eqref{keymap} is a smooth morphism over a smooth base. Conclusion: near $C_0 \cup B$ we have that $\Hilb^\chi(X,[B+dF])$ is smooth (and we can calculate the dimension). I'm using the fact that a smooth morphism over a smooth base has a smooth total space.
+
+\subsection{Koszul calculations}
+
+Let $X = K_S$, $B \subset S \subset X$, and $Y:=K_S|_B$. For any point on $B$, I use local coordinates $x,y,z$ in a formal neighbourhood of that point such that $x=z=0$ defines the section $B$. Denote by $p : X \rightarrow Y$ the projection to $Y$. Besides the divisors $S,Y \subset X$, we have $\tilde{F} \subset X$, where $\tilde{F} = K_S|_F$ for any fibre $F \subset S$.
+
+Let $C = B \cup p^*Z$, where $Z \subset Y$ is a 0-dimensional scheme. Assume $I_{Z \subset Y} = (z^k, y^l)$ (so the partition is a rectangle). We have the following Koszul resolution of $I_C$
+\[
+0 \rightarrow \O_X(-k S - l \tilde{F}) \oplus \O_X(-S - Y - l \tilde{F}) \rightarrow \O_X(-k S) \oplus \O_X(-S - l \tilde{F}) \oplus \O_X(-Y - l \tilde{F}) \rightarrow I_C \rightarrow 0,
+\]
+where the second map is $(z^k, y^l z, x y^l)$ and the first map is
+\[
+M:= \left( \begin{array}{cc} y^l & 0 \\ -z^{k-1} & x \\ 0 & -z  \end{array} \right).
+\]
+A local computation shows this is indeed a resolution. The second short exact sequence we use is
+\[
+0 \rightarrow \O_C \rightarrow \O_B \oplus \O_{p^*Z} \rightarrow \O_{P} \rightarrow 0,
+\]
+where $P:= B \cap p^* Z$. Using the obvious double complex, we conclude that $\Hom_X(I_C,\O_C)$ is given as the intersection of the kernels of the following two maps
+\begin{align*}
+\begin{array}{c} \Gamma(\O_B(kS)) \oplus \Gamma(\O_B (S+ l \tilde{F})) \oplus \Gamma(\O_B(Y \oplus l \tilde{F})) \\ \Gamma(\O_{p^*Z}(kS)) \oplus \Gamma(\O_{p^*Z} (S+ l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(Y \oplus l \tilde{F})) \end{array} \stackrel{f}{\rightarrow} \begin{array}{c} \Gamma(\O_B(kS + l \tilde{F})) \oplus \Gamma(\O_B(S + l \tilde F + Y)) \\ \Gamma(\O_{p^*Z}(kS + l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(S + l \tilde F + Y)) \end{array}, 
+\end{align*}
+and
+\begin{align*}
+\begin{array}{c} \Gamma(\O_B(kS)) \oplus \Gamma(\O_B (S+ l \tilde{F})) \oplus \Gamma(\O_B(Y \oplus l \tilde{F})) \\ \Gamma(\O_{p^*Z}(kS)) \oplus \Gamma(\O_{p^*Z} (S+ l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(Y \oplus l \tilde{F})) \end{array} \stackrel{g}{\rightarrow} \Gamma(\O_P(kS) \oplus \Gamma(\O_P(S + l \tilde F)) \oplus \Gamma(\O_P(l \tilde F + Y)),
+\end{align*}
+where $f$ is given by
+\[
+M^T = \left( \begin{array}{ccc} y^l & -z^{k-1} & 0 \\ 0 & x & -z  \end{array} \right).
+\]
+and $g$ is given by taking the difference and restricting to $P$. Restricting $M^T$ to $B$ we get many zeroes and the kernel of $f$ to the part involving $B$ equals
+\[
+0 \oplus \Gamma(\O_B(S+l \tilde{F})) \oplus \Gamma(\O_B(Y + l \tilde{F})).
+\]
+The kernel of $F$ restricted to the part involving $p^*Z$ has a more complicated kernel. Certainly $\Gamma(\O_{p^*Z}(kS))$ lies in this kernel because $y^l = 0$ on $p^*Z$. Furthermore, this kernel contains all elements 
+$(\beta,\gamma) \in \Gamma(p^*\O_Z(S+l\tilde{F})) \oplus \Gamma(p^*\O_Z(Y+l\tilde{F}))$ satisfying the equations
+\[
+-z^{k-1} \beta = 0, \ x\beta = z\gamma.
+\]
+This means $\beta = z \beta'$ and $\gamma = x\beta'+z^{k-1}\gamma'$. We observe that elements in the kernel of $f$ restricted to the part involving $p^*Z$ automatically restrict to zero on $P$. Therefore we should compute the kernels of 
+\begin{align*}
+\Gamma(\O_B(S+l \tilde{F})) &\rightarrow \Gamma(\O_P(S+l\tilde{F})) \\
+\Gamma(\O_B(Y + l \tilde{F})) &\rightarrow \Gamma(\O_P(Y + l \tilde{F})),
+\end{align*}
+which give $\Gamma(N_{B/Y})$ and $\Gamma(N_{B/S})$! Next we should calculate the kernel of 
+\[
+\Gamma(\O_{p^*Z}(mS)) \rightarrow \Gamma(\O_P(mS)),
+\]
+which equals $\Gamma(I_{P \subset p^* Z}(mS))$. In turn this can be computed using the short exact sequence
+\[
+0 \rightarrow K \rightarrow I_{P \subset p^* Z} \rightarrow \O_{p^*Z}(-Y) \rightarrow 0, 
+\]
+where $K$ is a zero-dimensional sheaf of length $n-l$. It is not hard to see that $\Gamma(\O_{p^*Z}(mS-Y)) = 0$ so we obtain 
+\[
+\Gamma(I_{P \subset p^* Z}(mS)) \cong \CC^{n-l},
+\]
+where $n = kl$. The part which is left is $(\beta,\gamma) \in \Gamma(p^*\O_Z(S+l\tilde{F})) \oplus \Gamma(p^*\O_Z(Y+l\tilde{F}))$ satisfying
+\[
+\beta = z \beta', \ \gamma = x\beta'+z^{k-1}\gamma'.
+\]
+This is almost $\Gamma(\O_{p^*Z}(l \tilde{F}))$, which is isomorphic to $\CC^{n}$ (in which case we get $\CC^{2n-l} \oplus H^0(N_{B/Y})$ as expected!). I do not know how to account for $\gamma'$.
+
 
 \begin{comment}
 % Martijn's old picture:
@@ -1719,7 +1780,6 @@ which is \emph{smooth}. Hence, near $B \cup C_0 \in \Hilb^\chi(X,[B+nF])$, the m
 \end{axis}
 \end{tikzpicture}
 \end{figure}
-
 \end{comment}
 
 
@@ -1799,9 +1859,6 @@ $$
 F' \cong \PP^1 \setminus \{2 \ \rm{points}\} \cong \CC^*.
 $$
 Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The rest of the proof follows the same steps.
-
-\subsection{}
-
 \end{comment}
 
      

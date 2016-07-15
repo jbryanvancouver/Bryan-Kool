@@ -1,0 +1,83 @@
+\begin{thebibliography}{10}
+
+\bibitem{Atiyah-Macdonald}
+M.~F. Atiyah and I.~G. Macdonald.
+\newblock {\em Introduction to commutative algebra}.
+\newblock Addison-Wesley Publishing Co., Reading, Mass.-London-Don Mills, Ont.,
+  1969.
+
+\bibitem{Behrend-micro}
+Kai Behrend.
+\newblock Donaldson-{T}homas type invariants via microlocal geometry.
+\newblock {\em Ann. of Math. (2)}, 170(3):1307--1338, 2009.
+\newblock arXiv:math/0507523.
+
+\bibitem{Bryan-K3xE}
+Jim Bryan.
+\newblock {The Donaldson-Thomas theory of $K3\times E$ via the topological
+  vertex}.
+\newblock arXiv:math/1504.02920.
+
+\bibitem{Bryan-Kool-Young}
+Jim Bryan, Martijn Kool, and Ben Young.
+\newblock {Trace identities for the topological vertex}.
+\newblock arXiv:math/1603.05271.
+
+\bibitem{BOPY}
+Jim Bryan, Georg Oberdieck, Rahul Pandharipande, and Qizheng Yin.
+\newblock {Curve counting on abelian surfaces and threefolds}.
+\newblock arXiv:math/1506.00841.
+
+\bibitem{Cheah}
+Jan Cheah.
+\newblock On the cohomology of {H}ilbert schemes of points.
+\newblock {\em J. Algebraic Geom.}, 5(3):479--511, 1996.
+
+\bibitem{Fundamental-algebraic-geometry}
+Barbara Fantechi, Lothar G{\"o}ttsche, Luc Illusie, Steven~L. Kleiman, Nitin
+  Nitsure, and Angelo Vistoli.
+\newblock {\em Fundamental algebraic geometry}, volume 123 of {\em Mathematical
+  Surveys and Monographs}.
+\newblock American Mathematical Society, Providence, RI, 2005.
+\newblock Grothendieck's FGA explained.
+
+\bibitem{Kawai-Yoshioka}
+Toshiya Kawai and K{\=o}ta Yoshioka.
+\newblock String partition functions and infinite products.
+\newblock {\em Adv. Theor. Math. Phys.}, 4(2):397--485, 2000.
+
+\bibitem{MacPherson-Annals74}
+R.~D. MacPherson.
+\newblock Chern classes for singular algebraic varieties.
+\newblock {\em Ann. of Math. (2)}, 100:423--432, 1974.
+
+\bibitem{MNOP1}
+D.~Maulik, N.~Nekrasov, A.~Okounkov, and R.~Pandharipande.
+\newblock Gromov-{W}itten theory and {D}onaldson-{T}homas theory. {I}.
+\newblock {\em Compos. Math.}, 142(5):1263--1285, 2006.
+\newblock arXiv:math.AG/0312059.
+
+\bibitem{Miranda}
+Rick Miranda.
+\newblock {\em The basic theory of elliptic surfaces}.
+\newblock Dottorato di Ricerca in Matematica. [Doctorate in Mathematical
+  Research]. ETS Editrice, Pisa, 1989.
+
+\bibitem{Mumford-curves-on-surfaces}
+David Mumford.
+\newblock {\em Lectures on curves on an algebraic surface}.
+\newblock With a section by G. M. Bergman. Annals of Mathematics Studies, No.
+  59. Princeton University Press, Princeton, N.J., 1966.
+
+\bibitem{Pandharipande-Thomas-KKV}
+R.~Pandharipande and R.~P. Thomas.
+\newblock The {K}atz--{K}lemm--{V}afa conjecture for {$K3$} surfaces.
+\newblock {\em Forum Math. Pi}, 4:e4, 111, 2016.
+\newblock arXiv:math/1404.6698.
+
+\bibitem{stacks-project}
+The {Stacks Project Authors}.
+\newblock \itshape stacks project.
+\newblock {\tt http://stacks.math.columbia.edu}, 2016.
+
+\end{thebibliography}

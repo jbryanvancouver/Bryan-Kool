@@ -1,9 +1,8 @@
 \documentclass{amsart}
 
-\title[DT invariants of local elliptic surfaces]{Donaldson-Thomas invariants of local elliptic surfaces via the topological vertex}
-\author{Jim Bryan and Martijn Kool}
-\date{\today}
-\address{
+\title[DT invariants of local elliptic surfaces]{Donaldson-Thomas
+invariants of local elliptic surfaces via the topological vertex}
+\author{Jim Bryan and Martijn Kool} \date{\today} \address{
 Department of Mathematics\\
 University of British Columbia \\
 Room 121, 1984 Mathematics Road  \\
@@ -68,13 +67,14 @@ Room 502, Budapestlaan 6  \\
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{convention}{Convention}[theorem]
+
 \theoremstyle{definition}
 
 \newtheorem{def-theorem}[theorem]{Definition-Theorem}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
-\newtheorem{convention}[theorem]{Convention}
 
 \newcommand{\CC} {\mathbb{C}}          % complex numbers
 \newcommand{\NN} {\mathbb{N}}		% natural numbers
@@ -146,7 +146,7 @@ with section. We introduce a new computational technique which is a
 mixture of motivic and toric methods. This allows us to write the
 partition function for the invariants in terms of the topological
 vertex. Utilizing identities for the topological vertex proved in
-\cite{BKY}, we derive product formulas for the partition
+\cite{Bryan-Kool-Young}, we derive product formulas for the partition
 functions. The connected version of the partition function is written
 in terms of Jacobi forms.  In the special case where the elliptic
 surface is a K3 surface, we get a new derivation of the
@@ -167,10 +167,7 @@ Katz-Klemm-Vafa formula.
 
 Let $p : S \rightarrow B$ be a non-trivial elliptic surface over a
 complex smooth projective curve $B$. We assume $p$ has a section and
-all singular fibres are irreducible rational nodal curves. Let $N$ be
-the number of singular fibres. Important examples include rational
-elliptic surfaces or elliptically fibered $K3$ surfaces. In these
-cases, $B \cong \PP^1$ and $N = 12$, $N=24$ respectively.
+all singular fibres are irreducible rational nodal curves. 
 
 We are interested in the Donaldson-Thomas (DT) invariants of $X =
 \mathrm{Tot}(K_S)$, i.e.~the total space of the canonical bundle
@@ -185,7 +182,7 @@ $$
 $$
 where $e(\cdot)$ denotes topological Euler characteristic and $\nu :
 \Hilb^{\beta,n}(X) \rightarrow \ZZ$ is Behrend's constructible
-function \cite{Beh}. We consider an Euler characteristic version of
+function \cite{Behrend-micro}. We consider an Euler characteristic version of
 these invariants
 $$
 \DThat _{\beta,n}(X) := e(\Hilb^{\beta,n}(X)).
@@ -257,40 +254,41 @@ surface, the above series specializes to the well-known
 Katz-Klemm-Vafa formula. Because $X$ is non-compact, the connected
 series is required to obtain the KKV formula. Our result provides a
 new derivation of the KKV formula. The KKV formula was recently proved
-in \emph{all} curve classes in \cite{PT}. This is the first derivation
-of the KKV formula, which does \emph{not} depend on the Kawai-Yoshioka
-formula \cite{KY}.
+in \emph{all} curve classes in \cite{Pandharipande-Thomas-KKV}. This
+is the first derivation of the KKV formula, which does not depend on
+the Kawai-Yoshioka formula \cite{Kawai-Yoshioka}.
 
 The most important result of this paper is perhaps not the formula,
 but rather the method of calculation. This approach has found further
 applications to the calculation of DT generating functions on $K3
-\times E$, where $E$ is an elliptic curve \cite{Bry}, and abelian
+\times E$, where $E$ is an elliptic curve \cite{Bryan-K3xE}, and abelian
 3-folds \cite{BOPY}. Even though the geometry under consideration is
 not toric, we combine $\CC^*$-localization, motivic methods, formal
 methods, and $(\CC^{*})^{3}$-localization to end up with expressions
-that only depend on $\sfV_{\lambda\mu\nu}$, $e(B)$, and $N$. Here is a
+that only depend on $\sfV_{\lambda\mu\nu}$, $e(B)$, and $e(S)$. Here is a
 rough sketch:
 \begin{enumerate}
 \item[(A)] The action of $\CC^*$ on the fibres of $X$ lifts to the
 moduli space\footnote{The bullet indicates that we take the union of
-$\Hilb^{B+dF,n}(X)$ over all $n$.}
-$\Hilb^{B+dF,\bullet}(X)$. Therefore, we only have to understand the
-fixed locus $\Hilb^{B+dF,\bullet}(X)^{\CC^*}$. Push-forward along $X
-\rightarrow S \rightarrow B$ induces a morphism
-\begin{equation} \label{intromap}
-\Hilb^{B+dF,\bullet}(X)^{\CC^*} \rightarrow \Sym^d(B).
-\end{equation}
+$\Hilb^{B+dF,n}(X)$ over all $n$, see Convention~\ref{conv: bullet
+convention}g.}  $\Hilb^{B+dF,\bullet}(X)$. Therefore, we only have to
+understand the fixed locus
+$\Hilb^{B+dF,\bullet}(X)^{\CC^*}$. Push-forward along $X \rightarrow S
+\rightarrow B$ induces a morphism
+\begin{equation*} 
+\rho_{d}: \Hilb^{B+dF,\bullet}(X)^{\CC^*} \rightarrow \Sym^d(B).
+\end{equation*}
 This map is constructed in Section \ref{fixedlocus}. The fibres of
-\eqref{intromap} decompose into components according to the shape of
+$\rho_{d}$ decompose into components according to the shape of
 the underlying Cohen-Macaulay curve. This leads to a decomposition
 over 2D partitions $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$.
-\item[(B)] The Euler characteristics of the fibres of \eqref{intromap}
+\item[(B)] The Euler characteristics of the fibres of $\rho_{d}$
 define a constructible function $f_d$ on $\Sym^d(B)$. In Section
 \ref{sym}, we show that if $f_d$ satisfies a certain product formula,
 then $\DThat (X)$ satisfies a corresponding product formula. This
 follows from general power structure arguments reviewed in Appendix
 \ref{power}.
-\item[(C)] A component $\Sigma$ of a fibre of \eqref{intromap} indexed
+\item[(C)] A component $\Sigma$ of a fibre of $\rho_{d}$ indexed
 by $\lambda$ can be further broken down by taking a certain fpqc cover
 of the underlying (now fixed) Cohen-Macaulay curve $Z_{\CM}$
 determined by $\lambda$. This cover consists of formal neighbourhoods
@@ -298,7 +296,7 @@ $\Xhat _x$ around the singular points $x$ of the reduced support of
 $Z_{\CM}$ and ``tubular neighbourhoods'' along the reduced support of
 $Z_{\CM}$ after removing the singularities. Since $Z_{\CM}$ is already
 fixed, gluing is automatic. Hence restriction to the elements of the
-cover gives a set theoretic bijection of $\Sigma$ with local Hilbert
+cover gives a bijection morphism of $\Sigma$ to local Hilbert
 schemes on the elements of the cover. In Section \ref{formal}, we show
 this leads to the product formula for $f_d$ in (B).
 \item[(D)] On the formal neighbourhoods $\Xhat _x$, we have an action
@@ -306,8 +304,9 @@ of $\CC^{*3}$. This allows us to express their contributions to the
 generating function in terms of the topological vertex. The
 contributions of the tubular neighbourhoods along the \emph{punctured}
 section and fibres can also be expressed in terms of the topological
-vertex (roughly speaking, by utilizing actions of the elliptic curve
-$F$ or $\CC^*$ on itself). This is worked out in Section \ref{vertex}.
+vertex (utilizing a map to $\Sym^{n}(F)$ which records the location
+and multiplicity of the embedded points). This is worked out in
+Section \ref{vertex}.
 \end{enumerate}
 
 Our results can be extended to apply to the usual (Behrend function
@@ -331,7 +330,7 @@ Calabi-Yau threefold.
 %\subsection{Acknowledgments}
 %The authors are pleased to thank ?,?,?,?, and ? for helpful conversations.
 
-\section{Definitions}
+\section{Definitions, notation, and conventions}
 
 Let $p : S \rightarrow B$ be an elliptic surface over a smooth
 projective curve $B$. Besides assuming $S$ is not a product, we
@@ -357,7 +356,18 @@ Let $\beta = B+dF \in H_2(S)$. Denote by $X = \mathrm{Tot}(K_S)$ the total space
 $$
 \Hilb^{\beta,n}(X) = \{ Z \subset X \ : \ [Z] = \beta, \ \chi(\O_Z) = n\}
 $$
-of proper subschemes $Z \subset X$ with fixed homology class and holomorphic Euler characteristic. K.~Behrend associates to any $\CC$-scheme of finite type $Y$ a constructible function $\nu : Y \rightarrow \ZZ$ \cite{Beh}. Applied to $\Hilb^{\beta,n}(X)$, the Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$ is a \emph{compact} Calabi-Yau 3-fold, R.P.~Thomas's original definition of the DT invariant is the degree of the virtual cycle of $\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed this is the same as $e(\Hilb^{\beta,n}(X),\nu)$ \cite{Beh}. The advantage of the definition by means of virtual cycles is that the construction works relative to a base. This implies deformation invariance of the invariants.} 
+of proper subschemes $Z \subset X$ with fixed homology class and
+holomorphic Euler characteristic. K.~Behrend associates to any
+$\CC$-scheme of finite type $Y$ a constructible function $\nu : Y
+\rightarrow \ZZ$ \cite{Behrend-micro}. Applied to $\Hilb^{\beta,n}(X)$, the
+Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$
+is a \emph{compact} Calabi-Yau 3-fold, R.P.~Thomas's original
+definition of the DT invariant is the degree of the virtual cycle of
+$\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed this is the same as
+$e(\Hilb^{\beta,n}(X),\nu)$ \cite{Behrend-micro}. The advantage of the
+definition by means of virtual cycles is that the construction works
+relative to a base. This implies deformation invariance of the
+invariants.}
 $$
 \DT_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} \nu \, de := \sum_{k \in \ZZ} k \, e(\nu^{-1}(\{k\})),
 $$
@@ -404,7 +414,11 @@ i.e. $K_0(\Var_{\CC})(\!(p)\!)$.
 
 \begin{convention}\label{conv: bullet convention}
 When an index is replaced by a bullet, we will sum over the index,
-multiplying by the appropriate variable. 
+multiplying by the appropriate variable. We regard the result as a
+formal power (or Laurent) series whose coefficients lie
+$K_{0}(\Var_{\CC})$ and we extend operations of the Grothendieck group
+(addition, multiplication, Euler characteristic) to the series in the
+obvious way.
 \end{convention}
 
 For example
@@ -414,8 +428,42 @@ For example
 \]
 so that we can write
 \[
-\DThat (X) = \int_{\Hilb^{\bullet ,\bullet}(X)} 1\, de .
+\DThat (X) = e(\Hilb^{\bullet ,\bullet}(X)).
 \]
+
+It is notationally convenient to treat an Euler characteristic
+weighted by a constructible function as a Lebesgue integral, where the
+measurable sets are constructible sets, the measurable functions are
+constructible functions, and the measure of a set is given by its
+Euler characteristic. In this language we have
+\[
+\DThat_{\beta ,n}(X) =  \int_{\Hilb^{\beta ,n}(X)} 1\, de, \quad \quad
+\DT_{\beta ,n}(X) = \int_{\Hilb^{\beta ,n}(X)} \nu \, de,
+\]
+and following the bullet convention we have
+\[
+\DThat(X) =  \int_{\Hilb^{\bullet ,\bullet }(X)} 1\, de, \quad \quad
+\DT(X) = \int_{\Hilb^{\bullet ,\bullet }(X)} \nu \, de.
+\]
+
+We will also need notation for subsets of the Hilbert scheme which
+parameterize those subschemes obtained by adding embedded points to
+some fixed Cohen-Macaulay curve.
+
+\begin{definition}\label{defn: Hilb(Y,C)}
+Let $Y\subset X$ be an open set (possibly in the fpcq topology) and let $C\subset Y$ be a
+Cohen-Macaulay subscheme of dimension 1 which we assume is the
+restriction of some $\overline{C}\subset X$ to $Y$. We define 
+\[
+\Hilb^{n}(Y,C) = \{Z\subset Y\text{ such that }C\subset Z\text{ and
+$I_{C}/I_{Z}$ has finite length $n$} \}.
+\]
+\end{definition}
+Via the inclusion $Y\subset X$, $\Hilb^{n}(Y,C)$ can be viewed as a
+constructible subscheme of $\Hilb (X)$. It parameterizes subschemes
+which roughly speaking are obtained from $C$ by adding $n$ embedded
+points.
+
 
 
 \section{The $\CC^*$-fixed locus} \label{fixedlocus}
@@ -467,12 +515,37 @@ drawing of Cohen-Macaulay C^* fixed subscheme}.
 \begin{scope} [canvas is xz plane at y=0]
 \draw [black](0,0) rectangle (4,5);
 \end{scope}
+%the surface Y
+\begin{scope} [canvas is xz plane at y=0.5]
+\draw [black](0,0) rectangle (4,5);
+\end{scope}
 %back
 \draw [black](0,0) rectangle (4,3);
 
 
 % partitions
 \begin{scope} [canvas is xz plane at y=3]
+%1st partition
+\draw [thick,blue](1,5) rectangle (1.2,4.5);
+\draw [thick,blue](1.2,5) rectangle (1.4,4.5);
+\draw [thick,blue](1,4.5) rectangle (1.2,4.0);
+%\draw [thick,blue](1.2,4.5) rectangle (1.4,4.0);
+%2nd partition
+%\draw [thick,blue](2,5) rectangle (2.2,4.5);
+%\draw [thick,blue](2.2,5) rectangle (2.4,4.5);
+%\draw [thick,blue](2,4.5) rectangle (2.2,4.0);
+%\draw [thick,blue](2.2,4.5) rectangle (2.4,4.0);
+%3rd partition
+\draw [thick,blue](3,5) rectangle (3.2,4.5);
+\draw [thick,blue](3.2,5) rectangle (3.4,4.5);
+\draw [thick,blue](3,4.5) rectangle (3.2,4.0);
+\draw [thick,blue](3.2,4.5) rectangle (3.4,4.0);
+\draw [thick,blue](3,4.0) rectangle (3.2,3.5);
+\end{scope}
+
+
+% partitions
+\begin{scope} [canvas is xz plane at y=0.5]
 %1st partition
 \draw [thick,blue](1,5) rectangle (1.2,4.5);
 \draw [thick,blue](1.2,5) rectangle (1.4,4.5);
@@ -519,14 +592,17 @@ to [out=0,in=270]   (3   ,3   ,5);
 
 \node [above] at (3,3,3.5) {$\mu^{(j)} $};
 \node [below] at (3,0,5) {$F_{y_{j}}$};
-\node [right] at (3,0.6,5) {$y_{j}$};
+\node [right] at (3,0.2,5) {$y_{j}$};
 \node [right] at (2.8,1.5,5) {$z_{j}$};
 \node [above] at (1,3,4) {$\lambda^{(i)}$};
 \node [below] at (1,0,5) {$F_{x_{i}}$};
-\node [right] at (1,0.6,5) {$x_{i}$};
+\node [right] at (1,0.2,5) {$x_{i}$};
 \node [left] at (0,2.0,5) {$S$};
-\node [right] at (4.2,0,3) {$\operatorname{Tot}(K_{S})$};
-\node [right] at (4.1,0.7,5) {$B$};
+\node [right] at (5,3,1.5) {$X=\operatorname{Tot}(K_{S})$};
+\node [right] at (5,1.4,1.5) {$Y=\operatorname{Tot}(K_{S}|_{B})$};
+\node [left] at (0,0.5,5) {$B$};
+
+\draw [->] (5.2,2.75,1.5)--(5.2,1.75,1.5);
 
 
 
@@ -583,15 +659,9 @@ Here $\F_k$ has weight $k$ and $K_{S}$ weight $1$ under the $\CC^*$-action. The 
 $$
 \pi_* \O_X = \bigoplus_{k=0}^{\infty} K_{S}^{-k}.
 $$
-Therefore a $\CC^*$-equivariant morphism $\F \rightarrow \O_X$ corresponds to a graded sheaf $\F$ as above together with maps
-\begin{displaymath}
-\xymatrix
-{
-\cdots & \F_1 \ar[d] & \oplus & \F_0 \ar[d] & \oplus & \F_{-1} \ar[d] & \oplus & \F_{-2} \ar[d] & \cdots \\
-\cdots &  0 & \oplus & \O_S & \oplus & K_{S}^{-1} & \oplus & K_{S}^{-2} & \cdots, 
-}
-\end{displaymath}
-where 
+Therefore a $\CC^*$-equivariant morphism $\F \rightarrow \O_X$
+corresponds to a graded sheaf $\F$ as above together with maps
+$F_{i}\to K_{S}^{i}$ for all $i$ such that
 \begin{displaymath}
 \xymatrix
 {
@@ -675,7 +745,9 @@ where $K_{S}$ is pulled-back along $S \times T \rightarrow S$ and
 $$
 \Z_0 \supset \Z_1 \supset \cdots.
 $$
-Then each $\Z_k \subset S \times T$ is $T$-flat as well. The maximal CM subschemes $\Z_{k, \CM} \subset \Z_k \subset S \times T$ are also $T$-flat \todo{I can provide explanation why $\Z_{\CM,k}$ also $T$-flat. Needed?} and induces morphisms
+Then each $\Z_k \subset S \times T$ is $T$-flat as well. The maximal
+CM subschemes $\Z_{k, \CM} \subset \Z_k \subset S \times T$ are also
+$T$-flat and induces morphisms
 \begin{align*}
 T &\longrightarrow \Hilb^{B + d_0 F}(S), \\ 
 T &\longrightarrow \Hilb^{d_k F}(S),  \textrm{ \ for \ } k>0
@@ -733,19 +805,19 @@ $$
 $$
 where $f_d:= \rho_{d*}(1)$ is the $\ZZ ((p))$-valued constructible function on
 $\Sym^d(B)$ given by pushing forward the Euler characteristic
-measure. \todo{JB: Do we know a reference for this fact about integrals
-with respect to euler char measure and pushforwards? I think it is
-simply the fact that pushforward (in the sense of taking euler char of
-fibers of a function) is constructible. MK: The reference is Prop.~1 of MacPherson's ``Chern classes for singular algebraic varieties''. Do we add this?} Its value at a closed point
+measure\cite{MacPherson-Annals74}. Its value at a closed point
 $\mathfrak{a} \in \Sym^d(B)$ is
 $$
 f_d(\mathfrak{a}) = \int_{\rho_{d}^{-1}(\mathfrak{a})} 1 \, de.
 $$
-We are interested in the calculation of
-$$
-\DThat (X) = \sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de.
-$$
-It turns out that the constructible function $f_d : \Sym^d(B) \rightarrow \ZZ(\!(p)\!)$ satisfies two multiplicative properties. The first one is described as follows. Denote by $B^{\sm} \subset B$ the open subset over which the fibres are smooth and by $B^{\sing}$ the $N$ points over which the fibres are singular. We can consider the restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and $\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(p)$ the MacMahon function.
+It turns out that the constructible function $f_d : \Sym^d(B)
+\rightarrow \ZZ(\!(p)\!)$ satisfies two multiplicative properties. The
+first one is described as follows. Denote by $B^{\sm} \subset B$ the
+open subset over which the fibres are smooth and by $B^{\sing}$ the
+$N$ points over which the fibres are singular. We can consider the
+restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and
+$\Sym^d(B^{\sing}) \subset \Sym^d(B)$. Denote by $M(p)$ the MacMahon
+function.
 \begin{proposition} \label{mult1}
 Let $d_1, d_2 \geq 0$ be such that $d_1+d_2 = d$. Then 
 %there are constructible functions
@@ -820,17 +892,35 @@ In order to work in algebraic geometry, in (1) we take the formal neighbourhood 
 $$
 \Spec \varprojlim R / \mathfrak{m}^n 
 $$
-and \emph{not} the formal scheme $$\mathrm{Spf} \varprojlim R / \mathfrak{m}^n.$$ Similarly in (2) and (3), let $\Xhat _y$ be the formal neighbourhood of $\{y\}$ in $X$ and $\Xhat _z$ the formal neighbourhood of $\{z\}$ in $X$. Note that 
+and \emph{not} the formal scheme $$\mathrm{Spf} \varprojlim R /
+\mathfrak{m}^n.$$ Similarly in (2) and (3), let $\Xhat _y$ be the
+formal neighbourhood of $\{y\}$ in $X$ and $\Xhat _z$ the formal
+neighbourhood of $\{z\}$ in $X$. Note that
 $$
 \Xhat _x \cong \Xhat _y \cong \Xhat _z \cong\Spec \CC[\![x_1,x_2,x_3]\!].
 $$
-Even though $\Xhat _x$ is non-noetherian, the morphism $\Xhat _x \rightarrow X$ has a good property: it is fpqc so can be used as part of a cover \cite[Sect.~2.3.2]{Vis}. Flatness of this map follows from the fact that formal completion is an exact operation \cite[Prop.~10.14]{AM}.\todo{Completion is faithfully flat: stacks project Lem.~10.96.3.} 
+Even though $\Xhat _x$ is non-noetherian, the morphism $\Xhat _x
+\rightarrow X$ has a good property: it is fpqc so can be used as part
+of a cover \cite[Vistoli,
+Sect.~2.3.2]{Fundamental-algebraic-geometry}. Flatness of this map
+follows from the fact that formal completion is an exact operation
+\cite[Tag 0BNH]{stacks-project} \cite[Prop.~10.14]{Atiyah-Macdonald}.
 
-In (2) we consider $B^\circ := B \setminus \{x,y\}$, $X^\circ := X \setminus (F_x  \cup F_y)$ and let $\Xhat ^{\circ}_{B^\circ}$ be the formal neighbourhood of $F_{x}^{\circ}$ in $X^\circ$. For (3) and (4) the formal neighbourhoods $\Xhat ^{\circ}_{F_{x}^{\circ}}$ and $\Xhat ^{\circ}_{F_{y}^{\circ}}$ are defined analogously. Note that the definition of $X^\circ$ in (2)--(4) varies. Finally in (5) we take $W = X \setminus (B \cup F_x \cup F_y)$. Then
+In (2) we consider $B^\circ := B \setminus \{x,y\}$, $X^\circ := X
+\setminus (F_x \cup F_y)$ and let $\Xhat ^{\circ}_{B^\circ}$ be the
+formal neighbourhood of $F_{x}^{\circ}$ in $X^\circ$. For (3) and (4)
+the formal neighbourhoods $\Xhat ^{\circ}_{F_{x}^{\circ}}$ and $\Xhat
+^{\circ}_{F_{y}^{\circ}}$ are defined analogously. Note that the
+definition of $X^\circ$ in (2)--(4) varies. Finally in (5) we take $W
+= X \setminus (B \cup F_x \cup F_y)$. Then
 $$
 \mathfrak{U} = \{\Xhat _x \rightarrow X, \Xhat _y \rightarrow X, \Xhat _z \rightarrow X, \Xhat ^{\circ}_{B^\circ} \rightarrow X, \Xhat ^{\circ}_{F_{x}^{\circ}} \rightarrow X, \Xhat ^{\circ}_{F_{y}^{\circ}} \rightarrow X, W \subset X\}
 $$
-is an fpqc cover of $X$. Consequently the data of a quasi-coherent sheaf on $X$ is equivalent to the data of quasi-coherent sheaves on each of the opens of $\mathfrak{U}$ and gluing isomorphisms between the restrictions on the overlaps. Technically: quasi-coherent sheaves on $X$ form a stack with respect to the fpqc topology \cite[Thm.~4.23]{Vis}.
+is an fpqc cover of $X$. Consequently the data of a quasi-coherent
+sheaf on $X$ is equivalent to the data of quasi-coherent sheaves on
+each of the opens of $\mathfrak{U}$ and gluing isomorphisms between
+the restrictions on the overlaps. Technically: quasi-coherent sheaves
+on $X$ form a stack with respect to the fpqc topology \cite[Vistoli, Thm.~4.23]{Fundamental-algebraic-geometry}.
 
 
 \subsection{Local moduli spaces} \label{localmod}
@@ -933,7 +1023,7 @@ f_d(ax+by) = \ &p^{\frac{e(B)}{2}} e(\Hilb^{1,\bullet}(\Xhat ^{\circ}_{B^{\circ}
 \end{split}
 \end{align}
 
-Before we proceed, we calculate $e(\Hilb^{0,\bullet}(W)^{\CC^*})$ and $e(\Hilb^{1,\bullet}(\Xhat ^{\circ}_{B^{\circ}})^{\CC^*})$. The first follows from a formula of J.~Cheah \cite{Che} 
+Before we proceed, we calculate $e(\Hilb^{0,\bullet}(W)^{\CC^*})$ and $e(\Hilb^{1,\bullet}(\Xhat ^{\circ}_{B^{\circ}})^{\CC^*})$. The first follows from a formula of J.~Cheah \cite{Cheah} 
 \begin{equation} \label{Cheah}
 e(\Hilb^{0,\bullet}(W)^{\CC^*}) = M(p)^{e(W)}.
 \end{equation}
@@ -1020,13 +1110,13 @@ topological vertex.
 
 \subsection{Point contributions}   
 
-Following the conventions of \cite{BKY}, we denote by 
+Following the conventions of \cite{Bryan-Kool-Young}, we denote by 
 $$
 \sfV_{\lambda\mu\nu} = \sum_{\pi} p^{|\pi|}, 
 $$
 the topological vertex. Here the sum is over all 3D partitions $\pi$
 with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes
-renormalized volume (see Definitions (1) and (2) in \cite{BKY}). For a
+renormalized volume (see Definitions (1) and (2) in \cite{Bryan-Kool-Young}). For a
 2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we
 write $\lambda'$ for the corresponding transposed partition and
 \begin{align*}
@@ -1055,7 +1145,7 @@ corresponding to monomial ideals with asymptotics
 $(\lambda,\varnothing,\varnothing)$, $(\mu,\varnothing,\varnothing)$,
 $(\mu,\mu',\varnothing)$ respectively\footnote{The transpose in $\mu'$
 occurs, because we follow the orientation convention of
-\cite{BKY}.}. These monomial ideals are exactly what the topological
+\cite{Bryan-Kool-Young}.}. These monomial ideals are exactly what the topological
 vertex counts.
 
 Finally, note that the generating functions
@@ -1121,9 +1211,9 @@ the $\DThat_{\fiber}$ computation isn't just hand waving.}
 Theorem~\ref{thm: main thm -- formulas for DT and DTfiber} is true.
 \end{corollary}
 \begin{proof}
-We apply the main theorem of \cite{BKY}. In particular, we substitute
-\cite[Eqns~(2)\&(4)]{BKY} into the formula for $\DThat (X)$ and we substitute
-\cite[Eqn~(1)]{BKY}, as well as the well-known formula
+We apply the main theorem of \cite{Bryan-Kool-Young}. In particular, we substitute
+\cite[Eqns~(2)\&(4)]{Bryan-Kool-Young} into the formula for $\DThat (X)$ and we substitute
+\cite[Eqn~(1)]{Bryan-Kool-Young}, as well as the well-known formula
 \[
 \sum_{\lambda}q^{|\lambda |} =\prod_{d=1}^{\infty}\frac{1}{(1-q^{d})}
 \]
@@ -1192,7 +1282,9 @@ Let $p : S \rightarrow B$ be an elliptic surface with section $B \subset S$. In 
 $$
 p^* : \Pic^0(B) \stackrel{\cong}{\longrightarrow} \Pic^0(S)
 $$
-is an isomorphism \cite[VII.1.1]{Mir}. For any $\beta \in H_2(S)$, we denote by $\Hilb^\beta(S)$ the Hilbert scheme of effective divisors on $S$ in class $\beta$. 
+is an isomorphism \cite[VII.1.1]{Miranda}. For any $\beta \in H_2(S)$,
+we denote by $\Hilb^\beta(S)$ the Hilbert scheme of effective divisors
+on $S$ in class $\beta$.
 
 Denote by $B \in H_2(S)$ the class of the section $B \subset S$ and by $F \in H_2(S)$ the class of the fibre. Then we have the following commutative diagram 
 \begin{displaymath}
@@ -1217,7 +1309,11 @@ $$
 %\end{remark}
 
 \begin{proof}
-Clearly $p^*$ gives an isomorphism $\Sym^d(B) \cong \Hilb^{dF}(S)$ and $+B$ defines a closed embedding $\Hilb^{dF}(S) \hookrightarrow \Hilb^{B+dF}(S)$. Since $\Sym^d(B)$ is smooth and $\Hilb^{B+dF}(S)$ is reduced (by \cite[Lect.~25]{Mum}), it suffices to show  
+Clearly $p^*$ gives an isomorphism $\Sym^d(B) \cong \Hilb^{dF}(S)$ and
+$+B$ defines a closed embedding $\Hilb^{dF}(S) \hookrightarrow
+\Hilb^{B+dF}(S)$. Since $\Sym^d(B)$ is smooth and $\Hilb^{B+dF}(S)$ is
+reduced (by \cite[Lect.~25]{Mumford-curves-on-surfaces}), it suffices
+to show
 $$
 \Sym^d(B) \rightarrow \Hilb^{B+dF}(S)
 $$ 
@@ -1876,7 +1972,17 @@ $$
 Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The rest of the proof follows the same steps.
 \end{comment}
 
-     
+
+
+
+
+\bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
+\bibliographystyle{plain}
+   
+
+
+\begin{comment}
+
 \begin{thebibliography}{BOPY}
 \bibitem[AM]{AM} M.~F.~Atiyah and I.~G.~MacDonald, \textit{Introduction to commutative algebra}, Westview Press (1969).
 %\bibitem[BCC]{BCC} J.~Bouttier, G.~Chapuy, and S.~Corteel, \textit{From Aztec diamonds to pyramids: steep tilings}, arXiv:1407.0665 [math.CO].
@@ -1911,5 +2017,10 @@ Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The re
 %\bibitem[Tod]{Tod} Y.~Toda, \textit{Stable pairs on local K3 surfaces}, J.~Diff.~Geom.~\textbf{92} (2012), 285--370.
 %\bibitem[You]{You} B.~Young, \textit{Counting coloured boxes}, PhD thesis University of British Columbia (2008).
 \end{thebibliography}
+
+\end{comment}
+
+
+
 \end{document}
 

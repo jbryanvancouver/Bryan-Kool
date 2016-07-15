@@ -1686,15 +1686,15 @@ I_Z = (x^{\alpha_1} y^{\beta_1}, \ldots, x^{\alpha_r} y^{\beta_r},x^{\ell}),
 for some minimal set of monomial generators ordered by $\alpha_1 > \cdots > \alpha_r \geq \ell$. The standard minimal Koszul resolution of $I_Z$ can be slightly modified to give a Koszul resolution of $I_C$ as follows
 \begin{align}
 \begin{split} \label{Koszul}
-&0 \longrightarrow R^* \stackrel{M}{\longrightarrow} G^* \stackrel{N}{\longrightarrow} I_C \longrightarrow 0, \\
+&0 \longrightarrow R^* \stackrel{\mathsf{M}}{\longrightarrow} G^* \stackrel{\mathsf{N}}{\longrightarrow} I_C \longrightarrow 0, \\
 &G:= \bigoplus_{i=1}^{r} \O_X(\alpha_i M + \beta_i S) \oplus \O_X(\ell M + U), \\
 &R := \bigoplus_{i=1}^{r-1} \O_X(\alpha_{i+1} M +\beta_i S) \oplus \O_X(\ell M + S + U),
 \end{split}
 \end{align}
 where, in matrix notation, we have
 \begin{align*}
-N&:=(x^{\alpha_1} y^{\beta_1} \  \ldots \  x^{\alpha_r} y^{\beta_r} \ x^\ell z), \\
-M&:= \left( \begin{array}{ccccc} x^{\alpha_2 - \alpha_1} & 0 & & 0 & 0 \\ -y^{\beta_1 - \beta_2} & x^{\alpha_3 - \alpha_2} & & 0 & 0 \\ 0 & -y^{\beta_2 - \beta_1} & & 0 & 0 \\  &  & \ddots &  &  \\ 0 & 0 & & x^{\alpha_{r} - \alpha_{r-1}} & 0 \\ 0 & 0 & & -y^{\beta_{r-1} - \beta_r} & x^{\ell - x_r} z \\ 0 & 0 & & 0 & -y \end{array} \right).
+\mathsf{N}&:=(x^{\alpha_1} y^{\beta_1} \  \ldots \  x^{\alpha_r} y^{\beta_r} \ x^\ell z), \\
+\mathsf{M}&:= \left( \begin{array}{ccccc} x^{\alpha_2 - \alpha_1} & 0 & & 0 & 0 \\ -y^{\beta_1 - \beta_2} & x^{\alpha_3 - \alpha_2} & & 0 & 0 \\ 0 & -y^{\beta_2 - \beta_1} & & 0 & 0 \\  &  & \ddots &  &  \\ 0 & 0 & & x^{\alpha_{r} - \alpha_{r-1}} & 0 \\ 0 & 0 & & -y^{\beta_{r-1} - \beta_r} & x^{\ell - x_r} z \\ 0 & 0 & & 0 & -y \end{array} \right).
 \end{align*}
 Here $z$ is the local coordinate at $P \in U \subset X$ defining the section $U \subset X$. 
 
@@ -1706,13 +1706,13 @@ We conclude that $\Hom_X(I_C,\O_C)$ equals the kernel of
 \begin{align*}
 \Phi \oplus \Psi : \Gamma(G|_B) \oplus \Gamma(G|_{p^*Z}) \longrightarrow \Gamma(R|_B) \oplus \Gamma(R|_{p^*Z})\oplus \Gamma(G|_{B \cap p^*Z}),
 \end{align*}
-where the $\Phi = M|_B^t \oplus M|_{p^*Z}^t$ and $\Psi$ is ``difference restricted to $B \cap p^*Z$''. \\
+where the $\Phi = \mathsf{M}|_B^t \oplus \mathsf{M}|_{p^*Z}^t$ and $\Psi$ is ``difference restricted to $B \cap p^*Z$''. \\
 
 \noindent \textbf{Step 3:} We first calculate the kernel of 
 \begin{align*}
 \Gamma(G|_B) \oplus \Gamma(G|_{p^*Z}) \stackrel{\Phi}{\longrightarrow} \Gamma(R|_B) \oplus \Gamma(R|_{p^*Z}).
 \end{align*}
-The matrix $M|_B^t$ is obtained by putting $y=z=0$, which are local equations defining $B \subset U \subset X$ at $P$. From the explicit form of the matrix we deduce at once that the kernel of $\Phi|_{\Gamma(G|_B)}$ equals
+The matrix $\mathsf{M}|_B^t$ is obtained by putting $y=z=0$, which are local equations defining $B \subset U \subset X$ at $P$. From the explicit form of the matrix we deduce at once that the kernel of $\Phi|_{\Gamma(G|_B)}$ equals
 \[
 \Gamma(\O_B(\alpha_r M + S)) \oplus \Gamma(\O_B(\ell M + U)).
 \]
@@ -1728,11 +1728,11 @@ p_* \O_X(U) \cong p_* \O_X = \O_U,
 \]
 because $X$ is elliptically fibred. 
 
-Before computing the kernel of \eqref{Phi}, we consider a slightly easier problem. If we remove the divisor $U$ from $G$ and $R$ and $z$ from the matrices $M$ and $N$ in \eqref{Koszul}, then we get the Koszul resolution of $I_{p^*Z}$. In this case the analog of \eqref{Phi} is 
+Before computing the kernel of \eqref{Phi}, we consider a slightly easier problem. If we remove the divisor $U$ from $G$ and $R$ and $z$ from the matrices $\mathsf{M}$ and $\mathsf{N}$ in \eqref{Koszul}, then we get the Koszul resolution of $I_{p^*Z}$. In this case the analog of \eqref{Phi} is 
 \begin{align} \label{easier}
 \substack{\bigoplus_{i=1}^{r} \Gamma(U,\O_Z(\alpha_i \Delta + \beta_i B)) \\ \oplus \Gamma(U,\O_Z(\ell \Delta))} \longrightarrow \substack{\bigoplus_{i=1}^{r-1} \Gamma(U, \O_Z(\alpha_{i+1} \Delta + \beta_i B)) \\ \oplus \Gamma(U, \O_Z(\ell \Delta + B))},
 \end{align}
-which has kernel $\Hom_U(I_Z,\O_Z)$. Therefore a basis for the kernel of \eqref{easier} is formed by the $2d$ Haiman arrows described in the proof of Proposition \ref{smstratum}. The Haimain arrows correspond to morphisms 
+which has kernel $\Hom_U(I_Z,\O_Z)$. Therefore a basis for the kernel of \eqref{easier} is formed by the $2d$ Haiman arrows described in the proof of Proposition \ref{smstratum}. The Haiman arrows correspond to morphisms 
 \begin{align}
 &\O_U(-\alpha_i \Delta - \beta_i B) \rightarrow \O_Z \label{slice1} \\
 &\O_U(-\ell \Delta) \rightarrow \O_Z, \label{slice2}
@@ -1767,7 +1767,7 @@ The space $\CC^{\ell}$ discussed above splits up further as
 \]
 where the first component is spanned by arrows with tail in $(\alpha,\lambda_\alpha)$ for $0 \leq \alpha \leq \alpha_r-1$ and the second by arrows with tail in $(\alpha,\lambda_\alpha)$ for $\alpha_r \leq \alpha \leq \ell-1$ . In Step 3 we proved 
 \[
-\Gamma(\O_B(\alpha_i M + \beta_i S)) \cap \ker \Phi = \varnothing, 
+\Gamma(\O_B(\alpha_i M + \beta_i S)) \cap \ker \Phi = 0, 
 \]
 for all $i=1, \ldots, r-1$. We deduce at once that $\CC^{\alpha_r} \cap \ker \Psi = 0$. 
 

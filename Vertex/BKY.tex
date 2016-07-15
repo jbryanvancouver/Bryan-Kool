@@ -325,6 +325,22 @@ so that $p^{-\nu -\rho}$ is notation for the variable list
 p^{-\nu -\rho} = \left(p^{-\nu_{1} +\half },p^{-\nu_{2} +\frac{3}{2}},\dots   \right).
 \]
 
+\begin{remark}\label{rem: vertex/M(p) is a rational function in p}
+Note that equation~\eqref{eqn: ORV formula for vertex} implies that
+$\Vsf_{\lambda \mu \nu}(p)/M(p)$ is a \emph{rational} function in
+$p$.\footnote{By \cite[I.3ex2]{MacDonald}, $s_{\lambda}(p^{\rho})$ is
+a rational function in $p^{\half}$. Then since the variable list $p^{-\nu
+-\rho}$ differs from the variable list $p^{-\rho}$ in a finite number
+of spots, we conclude that $s_{\lambda}(p^{-\nu -\rho})$ is also a
+rational function. It follows that $s_{\lambda /\mu}(p^{-\nu -\rho})$
+is also a rational function.} If we divide both sides of
+equations~\eqref{eqn 2} and \eqref{eqn 5} by $M(p)$, we can regard the
+main theorem as identities of power series in $q$ whose coefficients
+are rational functions in $p$.
+\end{remark}
+
+
+
 We prove equation~\eqref{eqn 2} as follows. 
 Using equation~\eqref{eqn: ORV formula for vertex} we see 
 \[
@@ -353,6 +369,11 @@ p\,\,  \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda
 \emptyset \emptyset}} &= 1-\left(\sum_{i=1}^{\infty}
 p^{-\lambda_{i}+i-\half } \right) \left(\sum_{j=1}^{\infty} p^{\lambda_{j}-j+\half } \right).
 \end{align*}
+The terms in the parenthesis on the right hand side of the second
+equation should be regarded as Laurent expansions of rational
+functions in $p^{\half}$ and multiplication is done as rational
+functions (see Remark~\ref{rem: vertex/M(p) is a rational function in
+p}). 
 \end{lemma}
 \proof Applying equation~\eqref{eqn: ORV formula for vertex} to
 $\Vsf_{\lambda \bx \emptyset}/\Vsf_{\lambda \emptyset
@@ -377,9 +398,12 @@ In general we have the following relation (see
 \cite{Ok-Re-Va} --- the exponent on the right hand side should be $-\nu'-\rho$. }
 \[
 s_{\lambda /\mu}(p^{\nu +\rho}) = (-1)^{|\lambda |-|\mu |}s_{\lambda
-'/\mu '}(p^{-\nu '-\rho})
+'/\mu '}(p^{-\nu '-\rho}).
 \]
-so in particular 
+This equality makes sense as an equality of rational functions in
+$p^{\half}$ (see Remark~\ref{rem: vertex/M(p) is a rational function in p}).
+
+In particular 
 \begin{equation}\label{eqn: s(p^{nu+rho})=-s(p^{-nu'-rho})}
 s_{\bx}(p^{\nu +\rho})=-s_{\bx}(p^{-\nu '-\rho})
 \end{equation}

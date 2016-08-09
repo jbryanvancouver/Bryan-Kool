@@ -1,4 +1,251 @@
 
+In this section, we obtain (Theorem~\ref{thm: Zhat in terms of
+vertex}) expressions for $\DThat (X)$ and $\DThat_{\fiber }(X)$ in
+terms of the topological vertex $\sfV_{\lambda\mu\nu}(p)$, $e(B)$, and
+$N$ (the number of nodal fibres). The theorem follows by expressing
+$g(a)$ and $h(b)$ of Proposition \ref{geomgh} in terms of the
+topological vertex.
+
+
+\subsection{Point contributions}   
+
+Following the conventions of \cite{Bryan-Kool-Young}, we denote by 
+$$
+\sfV_{\lambda\mu\nu} = \sum_{\pi} p^{|\pi|}, 
+$$
+the topological vertex. Here the sum is over all 3D partitions $\pi$
+with outgoing legs $\lambda, \mu, \nu$ and $|\pi|$ denotes
+renormalized volume (see Definitions (1) and (2) in \cite{Bryan-Kool-Young}). For a
+2D partition $\lambda = (\lambda_0 \geq \lambda_1 \geq \cdots)$, we
+write $\lambda'$ for the corresponding transposed partition and
+\begin{align*}
+|\lambda| &:= \sum_{k=0}^{\infty} \lambda_k, \\
+|\!|\lambda|\!|^2 &:= \sum_{k=0}^{\infty} \lambda_{k}^{2}.
+\end{align*}
+
+\begin{proposition} \label{vertex1}
+Let $F_x$ be a smooth fibre and $F_y$ a singular fibre with singularity $z$. Then for any $\lambda \vdash a$, $\mu \vdash b$
+\begin{align*}
+p^{-\lambda_0} e(\Hilb^{(1,a),\bullet}(\Xhat _x)_{\lambda}^{\CC^*}) &= \sfV_{\lambda\square\varnothing}, \\
+p^{-\mu_0} e(\Hilb^{(1,b),\bullet}(\Xhat _y)_{\mu}^{\CC^*}) &= \sfV_{\mu\square\varnothing}, \\
+p^{-|\!|\mu|\!|^2} e(\Hilb^{b,\bullet}(\Xhat _z)_{\mu}^{\CC^*}) &= \sfV_{\mu\mu'\varnothing}.
+\end{align*}
+\end{proposition}
+\begin{proof}
+Recall that $$\Xhat _x \cong \Xhat _y \cong \Xhat _z \cong \Spec \CC[\![x_1,x_2,x_3]\!].$$ Therefore, $\CC^{*3}$ acts on each of these schemes and their moduli spaces 
+$$
+\Hilb^{(1,a),\bullet}(\Xhat _x)_{\lambda}^{\CC^*}, \ \Hilb^{(1,b),\bullet}(\Xhat _y)_{\mu}^{\CC^*}, \ \Hilb^{b,\bullet}(\Xhat _z)_{\mu}^{\CC^*}.
+$$
+The coordinates can be chosen such that the action of the last factor
+of $\CC^{*3}$ corresponds to $x_3 \mapsto t_3 x_3$. This component
+acts trivially since we are already on the $\CC^*$-fixed locus. The
+$\CC^{*3}$-fixed locus consists of isolated reduced points
+corresponding to monomial ideals with asymptotics
+$(\lambda,\varnothing,\varnothing)$, $(\mu,\varnothing,\varnothing)$,
+$(\mu,\mu',\varnothing)$ respectively\footnote{The transpose in $\mu'$
+occurs, because we follow the orientation convention of
+\cite{Bryan-Kool-Young}.}. These monomial ideals are exactly what the topological
+vertex counts.
+
+Finally, note that the generating functions
+$e(\Hilb^{(1,a),\bullet}(\Xhat _x)_{\lambda}^{\CC^*})$,
+$e(\Hilb^{(1,b),\bullet}(\Xhat _y)_{\mu}^{\CC^*})$,
+$e(\Hilb^{b,\bullet}(\Xhat _z)_{\mu}^{\CC^*})$ all start with $1$. On
+the other hand, from the definition
+\begin{align*}
+\sfV_{\lambda\square\varnothing} &= p^{-\lambda_0} + \cdots, \\
+\sfV_{\mu\square\varnothing} &= p^{-\mu_0} + \cdots, \\
+\sfV_{\mu\mu'\varnothing} &= p^{-\sum_{k=0}^{\infty} \mu_{k}^{2}} + \cdots,
+\end{align*}
+where $\cdots$ stands for higher order terms in $p$. The proposition follows.
+\end{proof}
+
+
+\subsection{Fibre contribution}
+
+Let $F_x$ be a smooth fibre and $F_y$ a singular fibre. Recall the
+formal neighbourhoods $\Xhat ^{\circ}_{F_{x}^{\circ}}$, $\Xhat
+^{\circ}_{F_{y}^{\circ}}$ of Section \ref{formal}.
+\begin{proposition} \label{vertex2}
+For any $\lambda \vdash a$ and $\mu \vdash b$, we have
+\begin{align*}
+e(\Hilb^{a,\bullet}(\Xhat ^{\circ}_{F_{x}^{\circ}})_{\lambda}^{\CC^*}) &= \frac{1}{\sfV_{\lambda\varnothing\varnothing}}, \\
+e(\Hilb^{b,\bullet}(\Xhat ^{\circ}_{F_{y}^{\circ}})_{\mu}^{\CC^*}) &= \frac{1}{\sfV_{\mu\varnothing\varnothing}}.
+\end{align*}
+\end{proposition}
+\begin{proof}
+********
+\end{proof}   
+
+\subsection{Putting it together.}
+
+Combining Proposition \ref{geomgh} with Propositions \ref{vertex1}, \ref{vertex2} gives:
+\begin{proposition} \label{combgh}
+For any $a,b>0$ 
+\begin{align}
+\begin{split} \label{gh}
+g(a) &= (1-p) \sum_{\lambda \vdash a} \frac{\sfV_{\lambda\square\varnothing}}{\sfV_{\lambda\varnothing\varnothing}}, \\
+h(b) &= \frac{1-p}{M(p)} \sum_{\mu \vdash b} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}}{\sfV_{\mu\varnothing\varnothing}} \sfV_{\mu\mu'\varnothing}.
+\end{split}
+\end{align}
+\end{proposition}
+
+Putting all our results together, we obtain formulas for the partition
+functions in terms of the vertex: 
+\begin{theorem} \label{thm: Zhat in terms of vertex}
+\begin{align*}
+\DThat (X)& = \frac{1}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \Bigg( (1-p) \sum_{\lambda} q^{|\lambda|} \frac{\sfV_{\lambda\square\varnothing}}{\sfV_{\lambda\varnothing\varnothing}} \Bigg)^{e(B) - e(S)}  \Bigg( (1-p) \sum_{\mu}  q^{|\mu|} p^{|\!|\mu|\!|^2} \frac{\sfV_{\mu\square\varnothing}}{\sfV_{\mu\varnothing\varnothing}} \sfV_{\mu\mu'\varnothing} \Bigg)^{e(S)} \\
+\DThat_{\fiber}(X)&= \Bigg( \sum_{\lambda} q^{|\lambda|} \Bigg)^{e(B) - e(S)} \Bigg( \sum_{\mu} q^{|\mu|} p^{|\!|\mu|\!|^2} \sfV_{\mu\mu'\varnothing} \Bigg)^{e(S)}.
+\end{align*}
+\end{theorem}
+\begin{proof}
+Inserting the equations for $g(a)$, $h(b)$ of Proposition \ref{combgh}
+into \eqref{initialprod} gives the formula for $\DThat (X)$. Similar
+reasoning\dots \todo{Go back and put in the necessary stuff so that
+the $\DThat_{\fiber}$ computation isn't just hand waving.}
+\end{proof}
+
+\begin{corollary}
+Theorem~\ref{thm: main thm -- formulas for DT and DTfiber} is true.
+\end{corollary}
+\begin{proof}
+We apply the main theorem of \cite{Bryan-Kool-Young}. In particular, we substitute
+\cite[Eqns~(2)\&(4)]{Bryan-Kool-Young} into the formula for $\DThat (X)$ and we substitute
+\cite[Eqn~(1)]{Bryan-Kool-Young}, as well as the well-known formula
+\[
+\sum_{\lambda}q^{|\lambda |} =\prod_{d=1}^{\infty}\frac{1}{(1-q^{d})}
+\]
+into the formula for $\DThat_{\fiber } (X)$.
+\end{proof}
+
+
+
+%Proof with additional assumption $d > 2g-2$:
+%Since $d > 2g-2$ the Abel-Jacobi map 
+%$$
+%\Sym^d(B) \rightarrow \Pic^d(B)
+%$$
+%is a projective bundle with fibres linear systems of dimension $d-g$. We immediately deduce that all horizontal arrows of the commutative diagram are surjective. At the level of fibres, we have inclusions of linear systems
+%\begin{equation} \label{epsilon}
+%|\epsilon| \hookrightarrow |p^* \epsilon| \hookrightarrow |p^* \epsilon (B)|,
+%\end{equation}
+%where $\epsilon \in \Pic^d(B)$. We want to prove that all these linear systems have the same dimension (Claim). The first map is clearly an isomorphism since
+%$$
+%H^0(S,p^* \epsilon) \cong H^0(B, \epsilon \otimes p_* \O_S) = H^0(B,\epsilon)
+%$$
+%where we used the projection formula and $p_* \O_S \cong \O_B$. Surjectivity of the second map of \eqref{epsilon} requires more work and is proved below. Before we prove Claim, we show it implies the proposition. Choose Poincar\'e line bundles 
+%\begin{align*}
+%\cP &\textrm{ \ on \ } \Pic^d(B) \times B, \\
+%\cQ &\textrm{ \ on \ } \Pic^{dF}(S) \times S, \\
+%\cR &\textrm{ \ on \ } \Pic^{B+dF}(S) \times S.
+%\end{align*}
+%In each case, denote projection to the base Picard by $\pi_{\Pic}$. Since $d > 2g-2$, the sheaf $\pi_* \mathcal{P}$ is locally free because the dimensions of $|\epsilon|$, $\epsilon \in \Pic^d(B)$ do not jump. Using the isomorphism $\Pic^d(B) \cong \Pic^{dF}(S)$, we see that pull-back of $\mathcal{P}$ along 
+%$$
+%\Pic^{dF}(S) \times S \rightarrow \Pic^d(B) \times B
+%$$
+%equals $\mathcal{Q}$ (up to tensoring by a line bundle pulled-back from $S$, which we get rid of by redefining $\mathcal{Q}$). We write this as $p^* \mathcal{P} \cong \mathcal{Q}$. Pushing down to $\Pic^{dF}(S)$, using the projection formula and $p_* \O_S \cong \O_B$, we obtain
+%$$
+%\pi_{\Pic *} \cP \cong \pi_{\Pic *} \cQ
+%$$
+%on $\Pic^{dF}(S) \cong \Pic^{d}(B)$. On $\Pic^{dF}(S) \times S$ we can form $\cQ(B)$ by pulling back $\O_S(B)$ along projection to the second factor. Then
+%$$
+%\cR \cong \cQ(B),
+%$$
+%on $\Pic^{B+dF}(S) \times S \cong \Pic^{dF}(S) \times S$ (again, after possibly redefining $\cR$). Multiplying by the section defining $B$ and pushing down gives a morphism
+%\begin{equation} \label{vbmap}
+%\pi_{\Pic *} \cQ \hookrightarrow (\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR.
+%\end{equation}
+%Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $(\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
+%\begin{align*}
+%\PP(\pi_{\Pic *} \mathcal{P}) &\rightarrow \Pic^d(B), \\
+%\PP(\pi_{\Pic *} \mathcal{Q}) &\rightarrow \Pic^{dF}(S), \\
+%\PP(\pi_{\Pic *} \mathcal{R}) &\rightarrow \Pic^{B+dF}(S).
+%\end{align*}
+%and 
+%$$
+%\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP\big((\pi_{\Pic *} \mathcal{Q})(B)\big) \cong \PP(\pi_{\Pic *} \mathcal{R}).
+%$$
+
+%What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any line bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
+%\[
+%0\to H^{1} (B,\delta ) \stackrel{\alpha}{\longrightarrow} H^{1} (S,p^{*}\delta ) \longrightarrow H^{0} (B,\delta \otimes R^{1}p _{*}\O_S ) \to 0.
+%\]
+%Therefore, if
+%\begin{equation} \label{ineq}
+%\deg( \delta) - \deg (R^1 p_* \O_S)^\vee < 0,
+%\end{equation}
+%then $\alpha$ is an isomorphism. Assume this is the case. The long exact cohomology sequence associated to 
+%\[
+%0\to p^{*}\delta (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
+%\]
+%is
+%\[
+%\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
+%\]
+%and since $\alpha $ is a surjection, we get an isomorphism of the last
+%two terms. We apply Serre duality to that isomorphism and we use the
+%fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
+%_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
+%\begin{equation} \label{SDiso}
+%H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+%\end{equation}
+%Let $\epsilon \in \Pic^d(B)$ and take
+%$$
+%\delta =K_{B}\otimes L\otimes \epsilon ^{-1}.
+%$$
+%Then $\delta$ satisfies \eqref{ineq} if and only if $d>2g-2$, which we assumed. The lemma follows from \eqref{SDiso}.
+
+%Jim's original:
+%In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =B+dF$.
+
+%\begin{lemma}\label{lem: H0 (pi* (D) (B))=H0 (pi* (D))}
+%For any line bundle $\epsilon $ on $B$, multiplication by the
+%canonical section of $\O_S (B)$ induces an isomorphism
+%\[
+%H^{0} (S,p^{*} (\epsilon ) (B)) \cong H^{0} (S,p^{*} (\epsilon )).
+%\]
+%\end{lemma}
+
+%\begin{corollary} \label{cor: chow(beta) = sym (B)}
+%Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
+%the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
+%$\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
+%$B+\sum _{i}d_{i} F_{x_{i}}$.
+%\end{corollary}
+
+%\begin{proof}
+%The corollary follows immediately from the lemma since the Chow
+%variety is the space of effective divisors and the lemma implies that
+%any effective divisor in the class $\beta $ is a union of the section
+%$B$ with an effective divisor pulled back from the base.
+
+%To prove Lemma~\ref{lem: H0 (pi* (D) (B))=H0 (pi* (D))} we proceed as
+%follows. For any line bundle $\delta $ on $B$, the Leray spectral
+%sequence yields the short exact sequence:\todo{I think arrows Leray go other way around. Anyway... last two terms iso when $2g-2<d$.}
+%\[
+%0\to H^{0} (B,\delta \otimes R^{1}p _{*}\O_S )\to H^{1} (S,p^{*}\delta )\Rt{\alpha } H^{1} (B,\delta )\to 0,
+%\]
+%in particular, $\alpha $ is a surjection.
+
+%Then the long exact cohomology sequence associated to 
+%\[
+%0\to p^{*}\delta \otimes \O_S (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
+%\]
+%is
+%\[
+%\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta \otimes \O_S (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
+%\]
+%and since $\alpha $ is a surjection, we get an isomorphism of the last
+%two terms. We apply Serre duality to that isomorphism and we use the
+%fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
+%_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
+%\[
+%H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+%\]
+%Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
+%proved. 
+%\end{proof}
+
 
 \subsection{Fpqc cover}
 
@@ -1086,6 +1333,67 @@ Recall that we work on opens $X_a \rightarrow U_a$. Since the elements of the fi
 %\end{align*}
 %where $f$ is given by
 %\[
+We will show that the constructible function $f_d : \Sym^d(B)
+\rightarrow \ZZ(\!(p)\!)$ satisfies two multiplicative properties. The
+first one is described as follows. Denote by $B^{\sm} \subset B$ the
+open subset over which the fibres are smooth and by $B^{\sing}$ the
+$e(S)$ points over which the fibres are singular. We can consider the
+restrictions of $f_d$ to $\Sym^d(B^{\sm}) \subset \Sym^d(B)$ and
+$\Sym^d(B^{\sing}) \subset \Sym^d(B)$.
+\begin{proposition} \label{mult1}
+Let $d_1, d_2 \geq 0$ be such that $d_1+d_2 = d$. Then 
+$$ 
+f_d(\mathfrak{a} + \mathfrak{b}) =\frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}} \cdot f_{d_1}(\mathfrak{a}) \cdot f_{d_2}(\mathfrak{b}), 
+$$
+for any $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(B^{\sing})$. 
+\end{proposition}
+We prove this proposition in Section~\ref{}. The following
+product formula is an immediate consequence of this result
+\begin{align}
+\begin{split} \label{firstprod}
+%&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de = \\
+\DThat (X)  = \frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \, de \Bigg) \cdot \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \, de \Bigg). 
+\end{split}
+\end{align}
+The restricted constructible functions $f_d : \Sym^d(B^{\sm})
+\rightarrow \ZZ(\!(p)\!)$ and $f_d : \Sym^d(B^{\sing}) \rightarrow
+\ZZ(\!(p)\!)$ satisfy further multiplicative properties:
+\begin{proposition} \label{mult2}
+There exist functions $g : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ and
+$h : \ZZ_{\geq 0} \rightarrow \ZZ(\!(p)\!)$ taking values in formal
+Laurent series $\ZZ(\!(p)\!)$, such that $g(0)=1$, $h(0)=1$, and
+\begin{align*}
+f_{d}(\mathfrak{a}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{i=1}^l g(a_i), \\
+f_{d}(\mathfrak{b}) &= \frac{M(p)^{e(X)}}{(p^{\frac{1}{2}} -
+p^{-\frac{1}{2}})^{e(B)}} \cdot \prod_{j=1}^m h(b_j),
+\end{align*}
+for all $\mathfrak{a} = \sum_{i=1}^{n} a_i x_i \in \Sym^{d}(B^{\sm})$,
+and $\mathfrak{b} = \sum_{j=1}^m b_j y_j \in \Sym^{d}(B^{\sing})$,
+where $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$ are collections of
+distinct closed points.
+\end{proposition}
+We prove this proposition in Section \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} of Appendix \ref{power}, Proposition \ref{mult2} and equation \eqref{firstprod} imply
+\begin{equation} \label{initialprod}
+%\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de 
+\DThat (X) = \frac{M(p)^{e(S)}}{(p^{\frac{1}{2}} -
+p^{-\frac{1}{2}})^{e(B)}} \cdot \Bigg( \sum_{a=0}^{\infty} g(a) q^a
+\Bigg)^{e(B) - e(S)} \cdot \Bigg( \sum_{b=0}^{\infty} h(b) q^b \Bigg)^{e(S)}.
+\end{equation}
+Our goal is to prove Propositions \ref{mult1} and \ref{mult2}, and
+find formulae for $g(a)$, $h(b)$. This requires a better understanding
+of the strata
+$$
+\rho_{d}^{-1} (\mathfrak{a} + \mathfrak{b}) \subset \Hilb^{d, \bullet}_{\PCP }(X),
+$$
+for all $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(B^{\sing})$ with $d_1+d_2=d$. Suppose 
+\begin{align*}
+\mathfrak{a} &= \sum_{i=1}^{n} a_i x_i \in \Sym^{d_1}(B^{\sm}), \\
+\mathfrak{b} &= \sum_{j=1}^{m} b_j y_j \in \Sym^{d_2}(B^{\sing}),
+\end{align*}
+where $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$ are collections of
+distinct closed points. 
+
+
 %M^T = \left( \begin{array}{ccc} y^l & -z^{k-1} & 0 \\ 0 & x & -z  \end{array} \right).
 %\]
 %and $g$ is given by taking the difference and restricting to $P$. Restricting $M^T$ to $B$ we get many zeroes and the kernel of $f$ to the part involving $B$ equals

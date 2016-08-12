@@ -28,6 +28,12 @@ Jim Bryan, Georg Oberdieck, Rahul Pandharipande, and Qizheng Yin.
 \newblock {Curve counting on abelian surfaces and threefolds}.
 \newblock arXiv:math/1506.00841.
 
+\bibitem{Fr-Mo}
+R.~Friedman and J.~Morgan.
+\newblock {\em Smooth Four-manifolds and Complex Surfaces}, volume~27 of {\em
+  Ergebnisse der Mathematik und ihrer Grenzgebiete}.
+\newblock Springer-Verlag, 1994.
+
 \bibitem{Haiman1998}
 Mark Haiman.
 \newblock {$t,q$}-{C}atalan numbers and the {H}ilbert scheme.
@@ -55,6 +61,7 @@ Rick Miranda.
 \newblock {\em The basic theory of elliptic surfaces}.
 \newblock Dottorato di Ricerca in Matematica. [Doctorate in Mathematical
   Research]. ETS Editrice, Pisa, 1989.
+\newblock http://www.math.colostate.edu/$\sim$miranda/BTES-Miranda.pdf.
 
 \bibitem{Mumford-curves-on-surfaces}
 David Mumford.

@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Bryan-Kool.aux
 The style file: plain.bst
 Database file #1: /Users/jbryan/jbryan/resources/mainbiblio.bib
-You've used 13 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            618 strings with 6353 characters,
-and the built_in function-call counts, 3837 in all, are:
-= -- 390
-> -- 146
-< -- 0
-+ -- 61
-- -- 46
-* -- 248
-:= -- 656
-add.period$ -- 47
-call.type$ -- 13
-change.case$ -- 60
+            626 strings with 6544 characters,
+and the built_in function-call counts, 4115 in all, are:
+= -- 415
+> -- 159
+< -- 1
++ -- 66
+- -- 50
+* -- 267
+:= -- 703
+add.period$ -- 51
+call.type$ -- 14
+change.case$ -- 64
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 133
-empty$ -- 326
-format.name$ -- 46
-if$ -- 791
+cite$ -- 14
+duplicate$ -- 146
+empty$ -- 349
+format.name$ -- 50
+if$ -- 849
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 12
-newline$ -- 74
-num.names$ -- 26
-pop$ -- 65
+int.to.str$ -- 14
+missing$ -- 14
+newline$ -- 80
+num.names$ -- 28
+pop$ -- 72
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 53
 quote$ -- 0
-skip$ -- 87
+skip$ -- 94
 stack$ -- 0
-substring$ -- 266
-swap$ -- 13
-text.length$ -- 0
+substring$ -- 271
+swap$ -- 16
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
+type$ -- 50
 warning$ -- 0
-while$ -- 41
-width$ -- 15
-write$ -- 151
+while$ -- 43
+width$ -- 16
+write$ -- 164

@@ -1,3 +1,235 @@
+\documentclass{amsart}
+
+\title[DT invariants of local elliptic surfaces]{Donaldson-Thomas
+invariants of local elliptic surfaces via the topological vertex}
+\author{Jim Bryan and Martijn Kool} \date{\today} \address{
+Department of Mathematics\\
+University of British Columbia \\
+Room 121, 1984 Mathematics Road  \\
+Vancouver, B.C., Canada V6T 1Z2  
+}
+
+\address{
+Mathematical Institute \\
+Utrecht University \\
+Room 502, Budapestlaan 6  \\
+3584 CD Utrecht, The Netherlands  
+}
+
+%\usepackage{diagrams}
+%\usepackage{eepic,epic}
+\usepackage{mathtools}
+
+%tikz
+\usepackage{tikz}
+\usepackage{pgfplots}
+%
+
+% tikz stuff:
+%\usepackage[utf8]{inputenc} 
+%\usepackage{fullpage}
+%\usepackage{fourier}
+\usepackage{tikz}
+\usepackage{verbatim}
+%\usepackage{pdfpages}
+
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{tikzpicture}
+%\setlength\PreviewBorder{5pt}%
+\usetikzlibrary{calc,3d}
+% http://en.wikibooks.org/wiki/LaTeX/Colors
+% I think you need to define the colors before the usepackage command
+% I think the table option will make these new colors available the same
+% way 'red', 'blue', etc. normally are
+
+\definecolor{tealgreen}{HTML}{1B9E77}
+\definecolor{orange}{HTML}{D95F02}
+\definecolor{purple}{HTML}{7570B3}
+\definecolor{pink}{HTML}{E7298A}
+\definecolor{grassgreen}{HTML}{66A61E}
+\definecolor{goldyellow}{HTML}{E6AB02}
+\definecolor{brown}{HTML}{A6761D}
+\definecolor{devilgray}{HTML}{666666}
+
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage[all]{xy}
+%\usepackage{amstex}
+\usepackage[colorinlistoftodos]{todonotes}
+
+%\newtheorem{thm}{Theorem}%[section]
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{convention}{Convention}[theorem]
+
+\theoremstyle{definition}
+
+\newtheorem{def-theorem}[theorem]{Definition-Theorem}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\CC} {\mathbb{C}}          % complex numbers
+\newcommand{\NN} {\mathbb{N}}		% natural numbers
+\newcommand{\RR} {\mathbb{R}}		% real numbers
+\newcommand{\ZZ} {\mathbb{Z}}		% integers
+\newcommand{\QQ} {\mathbb{Q}}		% rationals
+\newcommand{\PP} {\mathbb{P}}
+\renewcommand{\AA} {\mathbb{A}}
+\newcommand{\LL} {\mathbb{L}}
+\newcommand{\FF} {\mathbb{F}}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\Y}{\mathcal{Y}}
+\newcommand{\Z}{\mathcal{Z}}
+\newcommand{\sfV}{\mathsf{V}}
+\newcommand{\sfVtilde}{\widetilde{\mathsf{V}}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\Supp}{\mathrm{Supp}}
+
+\newcommand{\rt}[1]{\stackrel{#1\,}{\rightarrow}}
+\newcommand{\Rt}[1]{\stackrel{#1\,}{\longrightarrow}}
+\newcommand\To{\longrightarrow}
+\newcommand\into{\hookrightarrow}
+\newcommand\Into{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+\newcommand\INTO{\ar@{^{(}->}[r]}
+\newcommand\acts{\curvearrowright}
+
+\newcommand{\Hom}{\operatorname{Hom}}
+\renewcommand{\hom}{\operatorname{hom}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\M}{\overline{\mathcal{M}}}
+\newcommand{\smargin}[1]{\marginpar{\tiny{#1}}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Coh}{\operatorname{Coh}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\Tot}{\operatorname{Tot}}
+\newcommand{\DT}{\mathsf{DT}}
+\newcommand{\CM}{\operatorname{CM}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\sm}{\operatorname{sm}}
+\newcommand{\sing}{\operatorname{sing}}
+\newcommand{\conn}{\operatorname{conn}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\cP}{\mathcal{P}}
+\newcommand{\cQ}{\mathcal{Q}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\boldx}{\boldsymbol{x}}
+\newcommand{\boldy}{\boldsymbol{y}}
+\newcommand{\bolda}{\boldsymbol{a}}
+\newcommand{\boldb}{\boldsymbol{b}}
+\newcommand{\boldlambda}{\boldsymbol{\lambda }}
+\newcommand{\boldmu}{\boldsymbol{\mu }}
+\newcommand{\Sigmaxylambdamu}{\Sigma^{\bullet }(\boldx ,\boldy ,\boldlambda ,\boldmu )}
+
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\hat}{\widehat}
+\newcommand{\DThat}{\widehat{\DT}}
+\newcommand{\Xhat}{\widehat{X}}
+\newcommand{\fiber}{\mathsf{fib}}
+\newcommand{\PCP}{\mathsf{PCP}}
+\newcommand{\PFP}{\mathsf{PFP}}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\red}{\mathrm{red}}
+\newcommand{\bx}{\square}
+
+\begin{document}
+
+
+\begin{enumerate}
+\item[(A)] The action of $\CC^*$ on the fibres of $X$ lifts to the
+moduli space\footnote{The bullet indicates that we take the union of
+$\Hilb^{B+dF,n}(X)$ over all $n$, see Convention~\ref{conv: bullet
+convention}.}  $\Hilb^{B+dF,\bullet}(X)$. Therefore, we only have to
+understand the fixed locus
+$\Hilb^{B+dF,\bullet}(X)^{\CC^*}$. Push-forward along $X \rightarrow S
+\rightarrow B$ induces a morphism
+\begin{equation*} 
+\rho_{d}: \Hilb^{B+dF,\bullet}(X)^{\CC^*} \rightarrow \Sym^d(B).
+\end{equation*}
+This map is constructed in Section~\ref{sect: comb curves and the
+invariant subschemes} . The fibres of $\rho_{d}$ decompose into
+components according to the shape of the underlying Cohen-Macaulay
+curve. This leads to a decomposition over 2D partitions $\lambda =
+(\lambda_1 \geq \lambda_2 \geq \cdots)$.
+\item[(B)] The Euler characteristics of the fibres of $\rho_{d}$
+define a constructible function $f_d$ on $\Sym^d(B)$. In Section
+\ref{sym}, we show that if $f_d$ satisfies a certain product formula,
+then $\DThat (X)$ satisfies a corresponding product formula. This
+follows from general power structure arguments reviewed in Appendix
+\ref{power}.
+\item[(C)] A component $\Sigma$ of a fibre of $\rho_{d}$ indexed
+by $\lambda$ can be further broken down by taking a certain fpqc cover
+of the underlying (now fixed) Cohen-Macaulay curve $Z_{\CM}$
+determined by $\lambda$. This cover consists of formal neighbourhoods
+$\Xhat _x$ around the singular points $x$ of the reduced support of
+$Z_{\CM}$ and ``tubular neighbourhoods'' along the reduced support of
+$Z_{\CM}$ after removing the singularities. Since $Z_{\CM}$ is already
+fixed, gluing is automatic. Hence restriction to the elements of the
+cover gives a bijection morphism of $\Sigma$ to local Hilbert
+schemes on the elements of the cover. In Section \ref{formal}, we show
+this leads to the product formula for $f_d$ in (B).
+\item[(D)] On the formal neighbourhoods $\Xhat _x$, we have an action
+of $\CC^{*3}$. This allows us to express their contributions to the
+generating function in terms of the topological vertex. The
+contributions of the tubular neighbourhoods along the \emph{punctured}
+section and fibres can also be expressed in terms of the topological
+vertex (utilizing a map to $\Sym^{n}(F)$ which records the location
+and multiplicity of the embedded points). This is worked out in
+Section \ref{vertex}.
+\end{enumerate}
+
+
+
+%Interesting examples include elliptic surfaces of type
+%$E(n)$. $E(n)$ is an elliptic surface with $B = \PP^1$ and the number
+%of nodal fibres is $12n$. For example, a surface of type $E(1)$ is a
+%rational elliptic surface and a surface of type $E(2)$ is an elliptic
+%$K3$ surface.
+
+
+\begin{comment}
+Let $\beta = B+dF \in H_2(S)$. Denote by $X = \Tot(K_S)$ the total space of the canonical bundle over $S$. Then $X$ is a non-compact Calabi-Yau 3-fold. Consider the Hilbert scheme
+$$
+\Hilb^{\beta,n}(X) = \{ Z \subset X \ : \ [Z] = \beta, \ \chi(\O_Z) = n\}
+$$
+of proper subschemes $Z \subset X$ with fixed homology class and
+holomorphic Euler characteristic. K.~Behrend associates to any
+$\CC$-scheme of finite type $Y$ a constructible function $\nu : Y
+\rightarrow \ZZ$ \cite{Behrend-micro}. Applied to $\Hilb^{\beta,n}(X)$, the
+Donaldson-Thomas invariants of $X$ can be defined as\footnote{If $X$
+is a \emph{compact} Calabi-Yau 3-fold, R.P.~Thomas's original
+definition of the DT invariant is the degree of the virtual cycle of
+$\Hilb^{\beta,n}(X)$ \cite{Tho}. Behrend showed this is the same as
+$e(\Hilb^{\beta,n}(X),\nu)$ \cite{Behrend-micro}. The advantage of the
+definition by means of virtual cycles is that the construction works
+relative to a base. This implies deformation invariance of the
+invariants.}
+$$
+\DT_{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} \nu \, de := \sum_{k \in \ZZ} k \, e(\nu^{-1}(\{k\})),
+$$
+where $e(\cdot)$ denotes topological Euler characteristic. Many of the key properties of DT invariants are already captured by the more classical Euler characteristic version\footnote{From the point of view of \cite{JS, Bri}, there are two natural integration maps on the semi-classical Hall-algebra. One corresponds to weighing by the Behrend function. The other corresponds to weighing by the ``trivial'' constant constructible function 1. The former gives rise to $\DT(X)$ and the latter to $\DThat (X)$.}
+$$
+\DThat _{\beta,n}(X) := \int_{\Hilb^{\beta,n}(X)} 1 \, de = e(\Hilb^{\beta,n}(X)).
+$$
+\end{comment}
+
+
 
 In this section, we obtain (Theorem~\ref{thm: Zhat in terms of
 vertex}) expressions for $\DThat (X)$ and $\DThat_{\fiber }(X)$ in
@@ -120,131 +352,131 @@ into the formula for $\DThat_{\fiber } (X)$.
 
 
 
-%Proof with additional assumption $d > 2g-2$:
-%Since $d > 2g-2$ the Abel-Jacobi map 
-%$$
-%\Sym^d(B) \rightarrow \Pic^d(B)
-%$$
-%is a projective bundle with fibres linear systems of dimension $d-g$. We immediately deduce that all horizontal arrows of the commutative diagram are surjective. At the level of fibres, we have inclusions of linear systems
-%\begin{equation} \label{epsilon}
-%|\epsilon| \hookrightarrow |p^* \epsilon| \hookrightarrow |p^* \epsilon (B)|,
-%\end{equation}
-%where $\epsilon \in \Pic^d(B)$. We want to prove that all these linear systems have the same dimension (Claim). The first map is clearly an isomorphism since
-%$$
-%H^0(S,p^* \epsilon) \cong H^0(B, \epsilon \otimes p_* \O_S) = H^0(B,\epsilon)
-%$$
-%where we used the projection formula and $p_* \O_S \cong \O_B$. Surjectivity of the second map of \eqref{epsilon} requires more work and is proved below. Before we prove Claim, we show it implies the proposition. Choose Poincar\'e line bundles 
-%\begin{align*}
-%\cP &\textrm{ \ on \ } \Pic^d(B) \times B, \\
-%\cQ &\textrm{ \ on \ } \Pic^{dF}(S) \times S, \\
-%\cR &\textrm{ \ on \ } \Pic^{B+dF}(S) \times S.
-%\end{align*}
-%In each case, denote projection to the base Picard by $\pi_{\Pic}$. Since $d > 2g-2$, the sheaf $\pi_* \mathcal{P}$ is locally free because the dimensions of $|\epsilon|$, $\epsilon \in \Pic^d(B)$ do not jump. Using the isomorphism $\Pic^d(B) \cong \Pic^{dF}(S)$, we see that pull-back of $\mathcal{P}$ along 
-%$$
-%\Pic^{dF}(S) \times S \rightarrow \Pic^d(B) \times B
-%$$
-%equals $\mathcal{Q}$ (up to tensoring by a line bundle pulled-back from $S$, which we get rid of by redefining $\mathcal{Q}$). We write this as $p^* \mathcal{P} \cong \mathcal{Q}$. Pushing down to $\Pic^{dF}(S)$, using the projection formula and $p_* \O_S \cong \O_B$, we obtain
-%$$
-%\pi_{\Pic *} \cP \cong \pi_{\Pic *} \cQ
-%$$
-%on $\Pic^{dF}(S) \cong \Pic^{d}(B)$. On $\Pic^{dF}(S) \times S$ we can form $\cQ(B)$ by pulling back $\O_S(B)$ along projection to the second factor. Then
-%$$
-%\cR \cong \cQ(B),
-%$$
-%on $\Pic^{B+dF}(S) \times S \cong \Pic^{dF}(S) \times S$ (again, after possibly redefining $\cR$). Multiplying by the section defining $B$ and pushing down gives a morphism
-%\begin{equation} \label{vbmap}
-%\pi_{\Pic *} \cQ \hookrightarrow (\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR.
-%\end{equation}
-%Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $(\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
-%\begin{align*}
-%\PP(\pi_{\Pic *} \mathcal{P}) &\rightarrow \Pic^d(B), \\
-%\PP(\pi_{\Pic *} \mathcal{Q}) &\rightarrow \Pic^{dF}(S), \\
-%\PP(\pi_{\Pic *} \mathcal{R}) &\rightarrow \Pic^{B+dF}(S).
-%\end{align*}
-%and 
-%$$
-%\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP\big((\pi_{\Pic *} \mathcal{Q})(B)\big) \cong \PP(\pi_{\Pic *} \mathcal{R}).
-%$$
+Proof with additional assumption $d > 2g-2$:
+Since $d > 2g-2$ the Abel-Jacobi map 
+$$
+\Sym^d(B) \rightarrow \Pic^d(B)
+$$
+is a projective bundle with fibres linear systems of dimension $d-g$. We immediately deduce that all horizontal arrows of the commutative diagram are surjective. At the level of fibres, we have inclusions of linear systems
+\begin{equation} \label{epsilon}
+|\epsilon| \hookrightarrow |p^* \epsilon| \hookrightarrow |p^* \epsilon (B)|,
+\end{equation}
+where $\epsilon \in \Pic^d(B)$. We want to prove that all these linear systems have the same dimension (Claim). The first map is clearly an isomorphism since
+$$
+H^0(S,p^* \epsilon) \cong H^0(B, \epsilon \otimes p_* \O_S) = H^0(B,\epsilon)
+$$
+where we used the projection formula and $p_* \O_S \cong \O_B$. Surjectivity of the second map of \eqref{epsilon} requires more work and is proved below. Before we prove Claim, we show it implies the proposition. Choose Poincar\'e line bundles 
+\begin{align*}
+\cP &\textrm{ \ on \ } \Pic^d(B) \times B, \\
+\cQ &\textrm{ \ on \ } \Pic^{dF}(S) \times S, \\
+\cR &\textrm{ \ on \ } \Pic^{B+dF}(S) \times S.
+\end{align*}
+In each case, denote projection to the base Picard by $\pi_{\Pic}$. Since $d > 2g-2$, the sheaf $\pi_* \mathcal{P}$ is locally free because the dimensions of $|\epsilon|$, $\epsilon \in \Pic^d(B)$ do not jump. Using the isomorphism $\Pic^d(B) \cong \Pic^{dF}(S)$, we see that pull-back of $\mathcal{P}$ along 
+$$
+\Pic^{dF}(S) \times S \rightarrow \Pic^d(B) \times B
+$$
+equals $\mathcal{Q}$ (up to tensoring by a line bundle pulled-back from $S$, which we get rid of by redefining $\mathcal{Q}$). We write this as $p^* \mathcal{P} \cong \mathcal{Q}$. Pushing down to $\Pic^{dF}(S)$, using the projection formula and $p_* \O_S \cong \O_B$, we obtain
+$$
+\pi_{\Pic *} \cP \cong \pi_{\Pic *} \cQ
+$$
+on $\Pic^{dF}(S) \cong \Pic^{d}(B)$. On $\Pic^{dF}(S) \times S$ we can form $\cQ(B)$ by pulling back $\O_S(B)$ along projection to the second factor. Then
+$$
+\cR \cong \cQ(B),
+$$
+on $\Pic^{B+dF}(S) \times S \cong \Pic^{dF}(S) \times S$ (again, after possibly redefining $\cR$). Multiplying by the section defining $B$ and pushing down gives a morphism
+\begin{equation} \label{vbmap}
+\pi_{\Pic *} \cQ \hookrightarrow (\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR.
+\end{equation}
+Claim implies that the dimension of the fibres of $|p^* \epsilon(B)|$, $\epsilon \in \Pic^d(B)$ do not jump. Therefore $(\pi_{\Pic *} \cQ)(B) \cong \pi_{\Pic *} \cR$ is locally free. Since \eqref{vbmap} is a morphism of locally free sheaves, it suffices to check we have induced isomorphisms on the fibres. This is exactly the content of Claim. We conclude all Abel-Jacobi maps are projective bundles 
+\begin{align*}
+\PP(\pi_{\Pic *} \mathcal{P}) &\rightarrow \Pic^d(B), \\
+\PP(\pi_{\Pic *} \mathcal{Q}) &\rightarrow \Pic^{dF}(S), \\
+\PP(\pi_{\Pic *} \mathcal{R}) &\rightarrow \Pic^{B+dF}(S).
+\end{align*}
+and 
+$$
+\PP(\pi_{\Pic *} \mathcal{P}) \cong \PP(\pi_{\Pic *} \mathcal{Q}) \cong \PP\big((\pi_{\Pic *} \mathcal{Q})(B)\big) \cong \PP(\pi_{\Pic *} \mathcal{R}).
+$$
 
-%What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any line bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
-%\[
-%0\to H^{1} (B,\delta ) \stackrel{\alpha}{\longrightarrow} H^{1} (S,p^{*}\delta ) \longrightarrow H^{0} (B,\delta \otimes R^{1}p _{*}\O_S ) \to 0.
-%\]
-%Therefore, if
-%\begin{equation} \label{ineq}
-%\deg( \delta) - \deg (R^1 p_* \O_S)^\vee < 0,
-%\end{equation}
-%then $\alpha$ is an isomorphism. Assume this is the case. The long exact cohomology sequence associated to 
-%\[
-%0\to p^{*}\delta (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
-%\]
-%is
-%\[
-%\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
-%\]
-%and since $\alpha $ is a surjection, we get an isomorphism of the last
-%two terms. We apply Serre duality to that isomorphism and we use the
-%fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
-%_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
-%\begin{equation} \label{SDiso}
-%H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
-%\end{equation}
-%Let $\epsilon \in \Pic^d(B)$ and take
-%$$
-%\delta =K_{B}\otimes L\otimes \epsilon ^{-1}.
-%$$
-%Then $\delta$ satisfies \eqref{ineq} if and only if $d>2g-2$, which we assumed. The lemma follows from \eqref{SDiso}.
+What is left is the Claim: the second map of \eqref{epsilon} is an isomorphism for all $\epsilon \in \Pic^d(C)$. For any line bundle $\delta$ on $B$, the Leray spectral sequence yields the following short exact sequence
+\[
+0\to H^{1} (B,\delta ) \stackrel{\alpha}{\longrightarrow} H^{1} (S,p^{*}\delta ) \longrightarrow H^{0} (B,\delta \otimes R^{1}p _{*}\O_S ) \to 0.
+\]
+Therefore, if
+\begin{equation} \label{ineq}
+\deg( \delta) - \deg (R^1 p_* \O_S)^\vee < 0,
+\end{equation}
+then $\alpha$ is an isomorphism. Assume this is the case. The long exact cohomology sequence associated to 
+\[
+0\to p^{*}\delta (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
+\]
+is
+\[
+\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
+\]
+and since $\alpha $ is a surjection, we get an isomorphism of the last
+two terms. We apply Serre duality to that isomorphism and we use the
+fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
+_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
+\begin{equation} \label{SDiso}
+H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+\end{equation}
+Let $\epsilon \in \Pic^d(B)$ and take
+$$
+\delta =K_{B}\otimes L\otimes \epsilon ^{-1}.
+$$
+Then $\delta$ satisfies \eqref{ineq} if and only if $d>2g-2$, which we assumed. The lemma follows from \eqref{SDiso}.
 
-%Jim's original:
-%In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =B+dF$.
+Jim's original:
+In this subsection we prove the following lemma and corollary, which will tell us what is the reduced support of all curves in the class $\beta =B+dF$.
 
-%\begin{lemma}\label{lem: H0 (pi* (D) (B))=H0 (pi* (D))}
-%For any line bundle $\epsilon $ on $B$, multiplication by the
-%canonical section of $\O_S (B)$ induces an isomorphism
-%\[
-%H^{0} (S,p^{*} (\epsilon ) (B)) \cong H^{0} (S,p^{*} (\epsilon )).
-%\]
-%\end{lemma}
+\begin{lemma}\label{lem: H0 (pi* (D) (B))=H0 (pi* (D))}
+For any line bundle $\epsilon $ on $B$, multiplication by the
+canonical section of $\O_S (B)$ induces an isomorphism
+\[
+H^{0} (S,p^{*} (\epsilon ) (B)) \cong H^{0} (S,p^{*} (\epsilon )).
+\]
+\end{lemma}
 
-%\begin{corollary} \label{cor: chow(beta) = sym (B)}
-%Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
-%the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
-%$\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
-%$B+\sum _{i}d_{i} F_{x_{i}}$.
-%\end{corollary}
+\begin{corollary} \label{cor: chow(beta) = sym (B)}
+Let $\beta = B+dF \in H_{2} (S)$. Then the Chow variety of curves in
+the class $\beta $ is isomorphic to $\Sym ^{d} (B)$ where a point
+$\sum _{i}d_{i} x_{i}\in \Sym ^{d} (B)$ corresponds to the curve
+$B+\sum _{i}d_{i} F_{x_{i}}$.
+\end{corollary}
 
-%\begin{proof}
-%The corollary follows immediately from the lemma since the Chow
-%variety is the space of effective divisors and the lemma implies that
-%any effective divisor in the class $\beta $ is a union of the section
-%$B$ with an effective divisor pulled back from the base.
+\begin{proof}
+The corollary follows immediately from the lemma since the Chow
+variety is the space of effective divisors and the lemma implies that
+any effective divisor in the class $\beta $ is a union of the section
+$B$ with an effective divisor pulled back from the base.
 
-%To prove Lemma~\ref{lem: H0 (pi* (D) (B))=H0 (pi* (D))} we proceed as
-%follows. For any line bundle $\delta $ on $B$, the Leray spectral
-%sequence yields the short exact sequence:\todo{I think arrows Leray go other way around. Anyway... last two terms iso when $2g-2<d$.}
-%\[
-%0\to H^{0} (B,\delta \otimes R^{1}p _{*}\O_S )\to H^{1} (S,p^{*}\delta )\Rt{\alpha } H^{1} (B,\delta )\to 0,
-%\]
-%in particular, $\alpha $ is a surjection.
+To prove Lemma~\ref{lem: H0 (pi* (D) (B))=H0 (pi* (D))} we proceed as
+follows. For any line bundle $\delta $ on $B$, the Leray spectral
+sequence yields the short exact sequence:\todo{I think arrows Leray go other way around. Anyway... last two terms iso when $2g-2<d$.}
+\[
+0\to H^{0} (B,\delta \otimes R^{1}p _{*}\O_S )\to H^{1} (S,p^{*}\delta )\Rt{\alpha } H^{1} (B,\delta )\to 0,
+\]
+in particular, $\alpha $ is a surjection.
 
-%Then the long exact cohomology sequence associated to 
-%\[
-%0\to p^{*}\delta \otimes \O_S (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
-%\]
-%is
-%\[
-%\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta \otimes \O_S (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
-%\]
-%and since $\alpha $ is a surjection, we get an isomorphism of the last
-%two terms. We apply Serre duality to that isomorphism and we use the
-%fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
-%_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
-%\[
-%H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
-%\]
-%Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
-%proved. 
-%\end{proof}
+Then the long exact cohomology sequence associated to 
+\[
+0\to p^{*}\delta \otimes \O_S (-B)\to p^{*}\delta \to \O _{B}\otimes p^{*}\delta \to 0
+\]
+is
+\[
+\dotsb \to H^{1} (S,p ^{*} \delta )\rt{\alpha }H^{1} (B,\delta )\to H^{2} (S,p ^{*}\delta \otimes \O_S (-B))\to H^{2} (S,p ^{*}\delta )\to 0,
+\]
+and since $\alpha $ is a surjection, we get an isomorphism of the last
+two terms. We apply Serre duality to that isomorphism and we use the
+fact that $K_{S} = p ^{*} (K_{B}\otimes L)$ where $L = \left(R^1 p
+_{*}\O _{S} \right)^{\vee }$ \cite[Thm.~12.1]{BPV} to obtain
+\[
+H^{0} (S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L) (B)) \cong H^{0}(S,p ^{*} (\delta ^{-1}\otimes K_{B}\otimes L)).
+\]
+Letting $\delta =K_{B}\otimes L\otimes \epsilon ^{-1}$, the lemma is
+proved. 
+\end{proof}
 
 
 \subsection{Fpqc cover}
@@ -415,7 +647,7 @@ B^\circ &:= B \setminus \{x_1, \ldots, x_l\}, \\
 X^\circ &:= X \setminus \bigsqcup_{i=1}^{l} F_{x_i}.
 \end{align*} 
 Let $\Xhat ^{\circ}_{B^{\circ}}$ be the formal neighbourhood of $B^\circ$ in $X^\circ$. Define $\Hilb^{1,n}(\Xhat ^{\circ}_{B^{\circ}})$ to be the Hilbert scheme of subschemes $Z \subset \Xhat ^{\circ}_{B^{\circ}}$, such that $Z_{\CM} = B^\circ$ and $\chi(I_{Z_{\CM}} / I_Z) = n$.
-%, where $Z_{CM}$ denotes the maximal Cohen-Macaulay subscheme contained in $Z$ (Proposition \ref{ZCM}). 
+, where $Z_{CM}$ denotes the maximal Cohen-Macaulay subscheme contained in $Z$ (Proposition \ref{ZCM}). 
 Then
 $$
 e(\Hilb^{1,\bullet}(\Xhat ^{\circ}_{B^{\circ}})) = \Bigg( \frac{M(p)}{1-p} \Bigg)^{e(B^\circ)}.
@@ -436,7 +668,7 @@ The fibre over a point $\mathfrak{a} = \sum_i a_i y_i$, with all $y_i \in B^\cir
 $$
 \prod_{i} \Hilb^{1,a_i}(\Xhat _{y_i}^{\circ}).
 $$
-%This follows by using an appropriate fpqc cover of $B^\circ$ similar to Proposition \ref{bij}. 
+This follows by using an appropriate fpqc cover of $B^\circ$ similar to Proposition \ref{bij}. 
 Since $B$ is reduced and smooth, $\Hilb^{1,a_i}(\Xhat _{y_i}^{\circ})$ only depends on $a_i$ and not on the point $y_i \in B^\circ$. Therefore Lemma \ref{lem: formula for euler char of sym products} of Appendix \ref{power} implies
 $$
 e(\Hilb^{1,\bullet}(\Xhat ^{\circ}_{B^{\circ}})) = \Bigg( \sum_{a=0}^{\infty} e(\Hilb^{1,a}(\Xhat _{y}^{\circ})) p^a \Bigg)^{e(B^\circ)}.
@@ -445,7 +677,7 @@ The formal neighbourhood $\Xhat _{y}$ has an action of $\CC^{*3}$ and this actio
 \begin{equation*}
 \sfV_{\square\varnothing\varnothing} = \frac{M(p)}{1-p}. \qedhere
 \end{equation*}
-%The proof follows.
+The proof follows.
 \end{proof}
 
 Using \eqref{fdintermediate}, \eqref{Cheah}, and Proposition \ref{section} gives
@@ -477,8 +709,7 @@ We immediately deduce:
 Propositions \ref{mult1} and \ref{mult2} are true for $g(a)$ and $h(b)$ defined in Proposition \ref{geomgh}.
 \end{corollary}   
    
-   
-\begin{comment}
+
 
 \section{The $\CC^*$-fixed locus} \label{fixedlocus}
 
@@ -709,7 +940,7 @@ Let $\Hilb^{B+dF}(S)$ be the Hilbert scheme of effective divisors on $S$ with cl
 $$
 \Sym^d(B) \cong \Hilb^{B+dF}(S).
 $$
-%This allows us to see the curves on $S$. 
+This allows us to see the curves on $S$. 
 
 For any reduced curve $C \subset S$ defined by ideal sheaf $I_{C \subset S}$ and $d >0$, we denote by $dC$ the Gorenstein curve defined by the ideal sheaf $I_{C \subset S}^d$, the $d$th power of $I_{C \subset S}$. We combine Lemma \ref{Hilbcvs} with a (family version of) Proposition \ref{nest} to conclude the following:
 \begin{proposition} \label{proprho}
@@ -769,48 +1000,44 @@ T &\longrightarrow \Hilb^{d_k F}(S),  \textrm{ \ for \ } k>0
 where $\sum_k d_k = d$. Adding divisors gives a morphism $T \longrightarrow \Hilb^{B+dF}(S)$. By Lemma \ref{Hilbcvs}, we obtain a morphism $T \rightarrow \Sym^d(B)$. This morphism corresponds to a $T$-flat family for $\Sym^d(B)$. We have defined $\rho_d$ as a morphism. 
 \end{proof}
 
-%In the above proposition, each $Z_k \subset S$ contains a maximal Cohen-Macaulay (in fact, Gorenstein) subcurve $D_k$ such that $Z_k \setminus D_k$ is 0-dimensional. For $k=0$, $D_0$ is the scheme-theoretic union of the section $B$ and thickenings of certain distinct fibres $F_{x_1}$, $\ldots$, $F_{x_n}$. Denoting the orders of thickenings by $\lambda_{0}^{(1)}, \ldots, \lambda_{0}^{(n)} > 0$, we obtain\footnote{For any reduced curve $C$ on a surface $S$ with ideal sheaf $I_C \subset \O_S$ and $d>0$, we denote by $d C$ the scheme defined by the ideal sheaf $I_{C}^{d} \subset \O_S$.}
-%$$
-%D_0 = B \cup \lambda_{0}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{0}^{(n)} F_{x_n}.
-%$$
-%This statement follows from Corollary \ref{cor: chow(beta) = sym (B)} of the appendix. Next, for all $i = 1, \ldots, n$ and $k \geq 1$, there are $\lambda_{k}^{(i)} \leq \lambda_{k-1}^{(i)}$ such that
-%$$
-%D_k = \lambda_{k}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{k}^{(n)} F_{x_n}.
-%$$
-%We conclude:
-%\begin{proposition} \label{ZCM}
-%To each closed point $Z$ of $\Hilb^{d,\bullet}(X)^{\CC^*}$ correspond distinct closed points $x_1, \ldots, x_n \in B$ for some $n$ and (finite) 2D partitions $\lambda^{(1)}, \ldots, \lambda^{(n)}$ such that
-%$$
-%\sum_{i=1}^{n} |\lambda^{(i)}| = d.
-%$$
-%The maximal Cohen-Macaulay subcurve of $Z$ is given by the scheme-theoretic union of the zero section $B$ and the schemes with ideal sheaves
-%$$
-%\bigoplus_{k=0}^{\infty} \O_{S}(-\lambda_{k}^{(i)} F_{x_i}) \otimes K_{S}^{-k},
-%$$
-%for all $i = 1, \ldots, n$.
-%\end{proposition}
+In the above proposition, each $Z_k \subset S$ contains a maximal Cohen-Macaulay (in fact, Gorenstein) subcurve $D_k$ such that $Z_k \setminus D_k$ is 0-dimensional. For $k=0$, $D_0$ is the scheme-theoretic union of the section $B$ and thickenings of certain distinct fibres $F_{x_1}$, $\ldots$, $F_{x_n}$. Denoting the orders of thickenings by $\lambda_{0}^{(1)}, \ldots, \lambda_{0}^{(n)} > 0$, we obtain\footnote{For any reduced curve $C$ on a surface $S$ with ideal sheaf $I_C \subset \O_S$ and $d>0$, we denote by $d C$ the scheme defined by the ideal sheaf $I_{C}^{d} \subset \O_S$.}
+$$
+D_0 = B \cup \lambda_{0}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{0}^{(n)} F_{x_n}.
+$$
+This statement follows from Corollary \ref{cor: chow(beta) = sym (B)} of the appendix. Next, for all $i = 1, \ldots, n$ and $k \geq 1$, there are $\lambda_{k}^{(i)} \leq \lambda_{k-1}^{(i)}$ such that
+$$
+D_k = \lambda_{k}^{(1)} F_{x_1} \cup \cdots \cup \lambda_{k}^{(n)} F_{x_n}.
+$$
+We conclude:
+\begin{proposition} \label{ZCM}
+To each closed point $Z$ of $\Hilb^{d,\bullet}(X)^{\CC^*}$ correspond distinct closed points $x_1, \ldots, x_n \in B$ for some $n$ and (finite) 2D partitions $\lambda^{(1)}, \ldots, \lambda^{(n)}$ such that
+$$
+\sum_{i=1}^{n} |\lambda^{(i)}| = d.
+$$
+The maximal Cohen-Macaulay subcurve of $Z$ is given by the scheme-theoretic union of the zero section $B$ and the schemes with ideal sheaves
+$$
+\bigoplus_{k=0}^{\infty} \O_{S}(-\lambda_{k}^{(i)} F_{x_i}) \otimes K_{S}^{-k},
+$$
+for all $i = 1, \ldots, n$.
+\end{proposition}
 
-%Note that in the notation of this proposition, the morphism $\rho_d$ in \eqref{rho} maps $Z$ to
-%$$
-%\sum_{i=1}^{n} |\lambda^{(i)}| x_i \in \Sym^d(B),
-%$$
-%where $|\lambda^{(i)}|$ denotes the size of the 2D partition $\lambda^{(i)}$.
-%This leads to the following proposition:
-%\begin{proposition} \label{C^*}
-%For each $h>0$, there exists a stratification
-%$$
-%\Hilb^{h,\bullet}(X)^{\CC^*} = \coprod_{n=1}^{\infty} \coprod_{{\scriptsize{\begin{array}{c} \lambda^{(1)}, \ldots, \lambda^{(n)} \mathrm{s.t.} \\ \sum_{\alpha=1}^{n} |\lambda^{(\alpha)}| = h \end{array}}}} \Hilb^{h,\bullet}_{\lambda^{(1)}, \ldots, \lambda^{(n)}}(X)^{\CC^*},
-%$$
-%where $\Hilb^{h,\bullet}_{\lambda^{(1)}, \ldots, \lambda^{(n)}}(X)^{\CC^*}$ is the locally closed subset of subschemes $Z \subset X$ with maximal Cohen-Macaulay curve defined by the scheme-theoretic union of $B$ and schemes with ideal sheaves of the form \eqref{CMcurve} for some distinct fibre $F_{x_1}, \ldots, F_{x_n} \subset S$.
-%\end{proposition}
+Note that in the notation of this proposition, the morphism $\rho_d$ in \eqref{rho} maps $Z$ to
+$$
+\sum_{i=1}^{n} |\lambda^{(i)}| x_i \in \Sym^d(B),
+$$
+where $|\lambda^{(i)}|$ denotes the size of the 2D partition $\lambda^{(i)}$.
+This leads to the following proposition:
+\begin{proposition} \label{C^*}
+For each $h>0$, there exists a stratification
+$$
+\Hilb^{h,\bullet}(X)^{\CC^*} = \coprod_{n=1}^{\infty} \coprod_{{\scriptsize{\begin{array}{c} \lambda^{(1)}, \ldots, \lambda^{(n)} \mathrm{s.t.} \\ \sum_{\alpha=1}^{n} |\lambda^{(\alpha)}| = h \end{array}}}} \Hilb^{h,\bullet}_{\lambda^{(1)}, \ldots, \lambda^{(n)}}(X)^{\CC^*},
+$$
+where $\Hilb^{h,\bullet}_{\lambda^{(1)}, \ldots, \lambda^{(n)}}(X)^{\CC^*}$ is the locally closed subset of subschemes $Z \subset X$ with maximal Cohen-Macaulay curve defined by the scheme-theoretic union of $B$ and schemes with ideal sheaves of the form \eqref{CMcurve} for some distinct fibre $F_{x_1}, \ldots, F_{x_n} \subset S$.
+\end{proposition}
 
-%In this proposition, the number of points $n$ and the position of the points $x_1, \ldots, x_n \in B$ can still vary freely. We now want to refine the stratification by fixing the position of these points.
-
-\end{comment}
+In this proposition, the number of points $n$ and the position of the points $x_1, \ldots, x_n \in B$ can still vary freely. We now want to refine the stratification by fixing the position of these points.
 
 
-
-\begin{comment}
 \section{Smoothness at FoLoMo Cohen-Macaulay curves}
 
 In this section we denote by $p : X \rightarrow Y$ an elliptically fibred threefold with section $\sigma : Y \hookrightarrow X$, where $X$ and $Y$ are smooth (not necessarily projective). Let $B \subset Y$ be a smooth projective curve, which we can view as a curve in $X$ via the section. We denote its homology class on $X$ by $B$ as well. Let
@@ -937,9 +1164,9 @@ h^0(N_{B/Y}) = \chi(\O_S) + g_B - 1.
 \]
 \end{remark}
  
-%\begin{remark}
-%It is not unreasonable to expect that Theorem \ref{FoLoMoCM} holds at all untwisted CM curves $B' \cup p^*Z$ with $Z \in \Sigma_\ell$ and $Y \in \Hilb^B(Y)$. Suppose this is the case. Also suppose $\Hilb^d(Y)$ is irreducible and smooth. Then we get an irreducible smooth Zariski open subset of $\Hilb^{\beta,n}(X)$ isomorphic to $\Sigma_\ell \times \Hilb^B(Y)$. Geometrically: the untwisted CM curves form an irreducible smooth Zariski open in $\Hilb^{\beta,n}(X)$ and the closure gives a component of dimension $2d - \ell + h^0(N_{B/X})$. Elements of the boundary are obtained by families $Z_t \in \Hilb^d(Y)$ for which $Z_t \in \Sigma_\ell$ when $t \neq 0$ and $Z_0 \notin \Sigma_\ell$. This gives rise to families $C_t = B \cap p^* Z_t \in \Hilb^{\beta,n}(X)$, which pick up embedded points at $t = 0$. At such a boundary curve $C_0$ we may move into other components of $\Hilb^{\beta,n}(X)$ by realizing $C_0$ as the limit of a family of \emph{twisted CM curves} $D_t$, where the limit $D_0 = C_0$ picks up an embedded point. 
-%\end{remark}
+\begin{remark}
+It is not unreasonable to expect that Theorem \ref{FoLoMoCM} holds at all untwisted CM curves $B' \cup p^*Z$ with $Z \in \Sigma_\ell$ and $Y \in \Hilb^B(Y)$. Suppose this is the case. Also suppose $\Hilb^d(Y)$ is irreducible and smooth. Then we get an irreducible smooth Zariski open subset of $\Hilb^{\beta,n}(X)$ isomorphic to $\Sigma_\ell \times \Hilb^B(Y)$. Geometrically: the untwisted CM curves form an irreducible smooth Zariski open in $\Hilb^{\beta,n}(X)$ and the closure gives a component of dimension $2d - \ell + h^0(N_{B/X})$. Elements of the boundary are obtained by families $Z_t \in \Hilb^d(Y)$ for which $Z_t \in \Sigma_\ell$ when $t \neq 0$ and $Z_0 \notin \Sigma_\ell$. This gives rise to families $C_t = B \cap p^* Z_t \in \Hilb^{\beta,n}(X)$, which pick up embedded points at $t = 0$. At such a boundary curve $C_0$ we may move into other components of $\Hilb^{\beta,n}(X)$ by realizing $C_0$ as the limit of a family of \emph{twisted CM curves} $D_t$, where the limit $D_0 = C_0$ picks up an embedded point. 
+\end{remark}
 
 \begin{proof}[Proof of Theorem \ref{FoLoMoCM}]
 Let $Z \in Y^{[n]}$ be a FoLoMo subscheme and consider $C = B \cup p^*Z$. \\
@@ -1085,254 +1312,255 @@ In conclusion we find the following kernel
 Recall that we work on opens $X_a \rightarrow U_a$. Since the elements of the first factor of \eqref{done} restrict to zero on overlaps $X_a \cap X_b$, we proved what we claimed in Step 1. 
 \end{proof}
 
-%\newpage
+\newpage
 
-%\section{Stuff we gathered}
+\section{Stuff we gathered}
 
-%\subsection{Normal bundle} First order deformations of $B \subset X$ are given by $H^0(N_{B/X})$. We now calculate this. Let $\pi : X \rightarrow S$ and $p : S \rightarrow B$. Facts: (adjunction, canonical bundle of an elliptic surface)
-%\begin{align*}
-%N_{B/X} &\cong N_{B/S} \oplus K_{S}|_{B} \\
-%K_{B} &\cong K_{S}|_{B} \otimes N_{B/S} \cong K_{S}|_{B}(S) \\
-%K_S &\cong p^*(K_B \otimes L),
-%\end{align*}
-%where $L = (R^1 p_* \O_X)^{\vee}$ and 
-%\[
-%\deg L = \chi(\O_S) = \frac{e(S)}{12} = \frac{N}{12} > 0,
-%\]
-%where $N$ is the number of nodal fibres. Combining gives
-%\[
-%N_{B/S} \cong K_{B} \otimes K_{S}^{-1}|_{B} \cong L^\vee,
-%\] 
-%which has negative degree so\todo{Question: Do we not need Appendix A.1 anymore? I don't think so.} 
-%\[
-%H^0(N_{B/S}) = 0.
-%\]     
-%Next
-%\[
-%H^0(K_S|_B) \cong H^1(K_S|_{B}^{-1} \otimes K_B)^* \cong H^1(N_{B/S})^*.
-%\]     
-%By Riemann-Roch and $H^0(N_{B/S}) = 0$ we get
-%\[
-%h^1(N_{B/S}) = -\chi(N_{B/S}) = - \chi(L^\vee)= -(1-g - \chi(\O_S)) = \chi(\O_S) - 1+g.
-%\]     
-%In conclusion
-%\[
-%h^0(N_{X/B}) = \chi(\O_S) - 1+g = \frac{e(S)}{12} - \frac{e(B)}{2}.
-%\]     
-
-
-%%\subsection{Impact on Behrend function} How does this affect the overall sign of the Behrend function? The section $B$ cannot move in the surface direction and in the fibre direction we can move it by sections of 
-%%\[
-%%H^0(K_S|_B) \cong \CC^{\chi(\O_S) - 1+g}.
-%%\]     
-%%Aside: $K_{S}|_{F} = \O_F$ for each fibre $F$. Let $\Hilb^{B+\bullet F}(X)_{\CM}$ be the Hilbert scheme of \emph{naked} CM curved in class $B+\bullet F$. In the last section we hopefully see that locally formally a neighborhood of $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is of the form\todo{I'm now being really sketchy!}
-%%\[
-%%H^0(K_S|_B) \times M,
-%%\]
-%%where $M$ is some space (which below we hopefully identify with some locus in $Y^{[n]}$ for $Y = K_{S}|_{B}$). Hence for any $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ we have
-%%$$
-%%\nu(C) = (-1)^{\chi(\O_S) - 1+g} \cdot \nu_{M}(C) = (-1)^{\frac{e(S)}{12} - \frac{e(B)}{2}} \cdot \nu_{M}(C).
-%%$$
-%%Suppose $C$ is described by partitions $\lambda^{(i)}$ with
-%%\[
-%%\sum_i |\lambda^{(i)}| = d.
-%%\]
-%%We also want to prove $M$ is \emph{smooth} of dimension
-%%$$
-%%2d - \sum_i \lambda_{0}^{(i)},
-%%$$
-%%where $\lambda^{(i)} = (\lambda^{(i)}_{0} \geq \lambda^{(i)}_{1} \geq \cdots)$.\todo{Don't we also get Behrend signs $(-1)^{\lambda_{0}^{(i)}}$? Those seem bad!}
+\subsection{Normal bundle} First order deformations of $B \subset X$ are given by $H^0(N_{B/X})$. We now calculate this. Let $\pi : X \rightarrow S$ and $p : S \rightarrow B$. Facts: (adjunction, canonical bundle of an elliptic surface)
+\begin{align*}
+N_{B/X} &\cong N_{B/S} \oplus K_{S}|_{B} \\
+K_{B} &\cong K_{S}|_{B} \otimes N_{B/S} \cong K_{S}|_{B}(S) \\
+K_S &\cong p^*(K_B \otimes L),
+\end{align*}
+where $L = (R^1 p_* \O_X)^{\vee}$ and 
+\[
+\deg L = \chi(\O_S) = \frac{e(S)}{12} = \frac{N}{12} > 0,
+\]
+where $N$ is the number of nodal fibres. Combining gives
+\[
+N_{B/S} \cong K_{B} \otimes K_{S}^{-1}|_{B} \cong L^\vee,
+\] 
+which has negative degree so\todo{Question: Do we not need Appendix A.1 anymore? I don't think so.} 
+\[
+H^0(N_{B/S}) = 0.
+\]     
+Next
+\[
+H^0(K_S|_B) \cong H^1(K_S|_{B}^{-1} \otimes K_B)^* \cong H^1(N_{B/S})^*.
+\]     
+By Riemann-Roch and $H^0(N_{B/S}) = 0$ we get
+\[
+h^1(N_{B/S}) = -\chi(N_{B/S}) = - \chi(L^\vee)= -(1-g - \chi(\O_S)) = \chi(\O_S) - 1+g.
+\]     
+In conclusion
+\[
+h^0(N_{X/B}) = \chi(\O_S) - 1+g = \frac{e(S)}{12} - \frac{e(B)}{2}.
+\]     
 
 
-%\subsection{Hilbert schemes on $\CC^2$}
-
-%Let $X = \CC^2$ and
-%\[
-%L_k := \{ Z \in X^{n} \ : \ \ell(Z \cap \{y=0\}) = k \} \subset X^{[n]}.
-%\]
-%Claim: $L_k$ is locally closed and smooth of dimension $2n-k$. Proof: since $L_k$ is normal \todo{Why normal?} and $T = \CC^{*2}$ acts on it, it suffices to prove smoothness at $T$-fixed points\todo{Ref? I learned this from Dori Bejleri.}. At the $T$-fixed points we can write a basis for the tangent space by pairs of arrows with tail just outside and head just inside as described by Haiman. I'm not going to write this out now formally. Just remember how each arrow defines a first order deformation of the monomial ideal (``plus $\epsilon$ times the monomial the head points at''). The corresponding global deformation can easily be seen to move outside of $L_k$ for precisely $k$ arrows with head in the bottom row. This gives the result.   
-
-%\subsection{Key iso}
-
-%Let $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ be described by partitions $\lambda^{(i)}$ with
-%\[
-%\sum_i |\lambda^{(i)}| = d.
-%\]
-%Claim: there is a formal neighborhood of $C$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ which maps to $H^0(N_{B/X})$ with fibre
-%$$
-%L_{k},
-%$$
-%where $k := \sum \lambda_{0}^{(i)}$ and $L_k$ is smooth by the previous subsection. 
-
-%Let's look at the case where $C = B \cup F_{\lambda}$, where $E:=F_\lambda$ is a single thickened fibre with cross-section $\lambda$. We have a couple of useful short exact sequences
-%\begin{align}
-%&0 \rightarrow I_E / I_C \rightarrow \O_C \rightarrow \O_E \rightarrow 0 \label{ses1} \\
-%&0 \rightarrow I_B / I_C \rightarrow \O_C \rightarrow \O_B \rightarrow 0 \label{ses2} \\
-%&0 \rightarrow I_C \rightarrow I_E \rightarrow I_E / I_C \rightarrow 0 \label{ses3} \\
-%&0 \rightarrow I_C \rightarrow I_B \rightarrow I_B / I_C \rightarrow 0, \label{ses4}
-%\end{align}
-%where 
-%\begin{align*}
-%I_E / I_C &\cong \O_B(-\lambda_0) \\
-%G&:=I_B / I_C,
-%\end{align*}
-%where $G$ is an ideal sheaf of a fat point of length $\lambda_0$ inside $\O_{E}$:
-%\begin{equation} \label{ses5}
-%0 \rightarrow G \rightarrow \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0.
-%\end{equation}
-%Two more significant short exact sequences
-%\begin{align} 
-%0 \rightarrow \O_C \rightarrow \O_B \oplus \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0 \label{ses6} \\
-%0 \rightarrow \O_B(-\lambda_0) \rightarrow \O_B \rightarrow \O_{\lambda_0 p} \rightarrow 0. \label{ses7}
-%\end{align}
-%We can build \emph{many} double complexes from these seven short exact sequences by applying $\Hom(I_C,\cdot)$, $\Hom(\cdot, \O_C)$ etc. 
-
-%It seems significant to apply $\Hom(I_E, \cdot)$ to \eqref{ses6}. This gives
-%\begin{equation} \label{split}
-%0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_E,\O_E) \stackrel{\alpha}{\rightarrow} \Hom(I_E,\O_{\lambda_0 p}) \rightarrow \cdots
-%\end{equation}
-%The last hom space seems isomorphic to $\CC^{\lambda_0}$ and we believe there is a splitting of the map $\alpha$ from the local description. It seems $\Hom(I_E,G)$ can be interpreted as the space of deformations of $E$ which keep the length of $E \cap B$ fixed! We want to prove there exists a short exact sequence
-%$$
-%0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_C,\O_C) \rightarrow H^0(N_{B/X}) \rightarrow 0.
-%$$
-
-%The good news: we can construct an injection $\Hom(I_E,G) \hookrightarrow \Hom(I_C,\O_C)$ as follows. From \eqref{ses2} and \eqref{ses3} we get the following double complex
-%\begin{displaymath}
-%\xymatrix
-%{
-%&0\ar[d]&0\ar[d]&0\ar[d]& \\
-%0 \ar[r] & \Hom(\O_B(-\lambda_0),G) \ar[d] \ar[r]& \Hom(\O_B(-\lambda_0),\O_C) \ar[d]\ar[r] & \Hom(\O_B(-\lambda_0),\O_B) \ar[d]\ar[r] & \cdots \\
-%0 \ar[r] & \Hom(I_E,G) \ar[d] \ar[r] & \Hom(I_E,\O_C) \ar[d]\ar[r] & \Hom(I_E,\O_B) \ar[d] \ar[r]& \cdots \\
-%0 \ar[r] & \Hom(I_C,G) \ar[d] \ar[r] & \Hom(I_C,\O_C) \ar[d] \ar[r] & \Hom(I_C,\O_B) \ar[d] \ar[r] & \cdots \\
-%&\cdots&\cdots&\cdots&
-%}
-%\end{displaymath}
-%Note: $\Hom(\O_B(-\lambda_0),G) = 0$ from the local description, so indeed we get the required injection! \\
-
-%Significant special case. When $S$ is the rational elliptic surface we have $H^0(N_{B/X}) = H^1(N_{B/X}) = 0$ in which case we get $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$ (see next subsection for relating $\Ext^i(I_B,\O_B)$ to $H^i(N_{B/X})$)! In this case we really expect our injection
-%$$
-%\Hom(I_E,G) \hookrightarrow \Hom(I_C,\O_C)
-%$$
-%to be an isomorphism. If so, our earlier split exact sequence \eqref{split} proves $\Hom(I_C,\O_C)$ has dimension 
-%$$
-%\hom(I_E,\O_E) - \lambda_0 = \hom(I_\lambda, \O_\lambda) - \lambda_0 = 2|\lambda| - \lambda_0,
-%$$
-%where $\O_\lambda \subset \CC^{2}$ is the zero-dimensional structure sheaf from which $\O_E$ pulls-back. \\
-
-%In this special case of the rational elliptic surface we have a lot more vanishing and we hope that the big double complex yields the surjection. The easiest way to get the surjection is when
-%\begin{align*}
-%\Ext^1(G,\O_B) &\stackrel{?}{\cong} 0 \\
-%\Ext^1(O_B(-\lambda_0),G) &\stackrel{?}{\cong} 0,
-%\end{align*}
-% and then use $\Hom(I_C,\O_B) \cong \Ext^1(G,\O_B)$ (which I get from $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$). Sadly I cannot prove the two previous Ext groups are indeed zero. \\
-
-%Comment: there does not seem to be a simple map from $\Hom(I_C,\O_C) \rightarrow \Hom(I_B,\O_B)$ simply by playing with $\O_C \rightarrow \O_B$ or $I_C \subset I_B$. 
+\subsection{Impact on Behrend function} How does this affect the overall sign of the Behrend function? The section $B$ cannot move in the surface direction and in the fibre direction we can move it by sections of 
+\[
+H^0(K_S|_B) \cong \CC^{\chi(\O_S) - 1+g}.
+\]     
+Aside: $K_{S}|_{F} = \O_F$ for each fibre $F$. Let $\Hilb^{B+\bullet F}(X)_{\CM}$ be the Hilbert scheme of \emph{naked} CM curved in class $B+\bullet F$. In the last section we hopefully see that locally formally a neighborhood of $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ is of the form\todo{I'm now being really sketchy!}
+\[
+H^0(K_S|_B) \times M,
+\]
+where $M$ is some space (which below we hopefully identify with some locus in $Y^{[n]}$ for $Y = K_{S}|_{B}$). Hence for any $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ we have
+$$
+\nu(C) = (-1)^{\chi(\O_S) - 1+g} \cdot \nu_{M}(C) = (-1)^{\frac{e(S)}{12} - \frac{e(B)}{2}} \cdot \nu_{M}(C).
+$$
+Suppose $C$ is described by partitions $\lambda^{(i)}$ with
+\[
+\sum_i |\lambda^{(i)}| = d.
+\]
+We also want to prove $M$ is \emph{smooth} of dimension
+$$
+2d - \sum_i \lambda_{0}^{(i)},
+$$
+where $\lambda^{(i)} = (\lambda^{(i)}_{0} \geq \lambda^{(i)}_{1} \geq \cdots)$.\todo{Don't we also get Behrend signs $(-1)^{\lambda_{0}^{(i)}}$? Those seem bad!}
 
 
-%\subsection{Miscalleneous} Significant fact: $\Hom(I_C,\O_C) \cong \mathrm{Ext}^1(I_C,I_C)_0$ by PT1, Section 2.2 for naked CM curves. \\
+\subsection{Hilbert schemes on $\CC^2$}
 
-%Some remarks. By cutting out $I_B$ from a rank 2 vector bundle we get maps
-%\[
-%0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(B,\O_B(S)) \oplus H^0(B,\O_B(Y)) \rightarrow H^0(B,\O_B(S+Y)) \rightarrow \cdots
-%\]
-%remember: $Y := K_S|_B$. Here 
-%\begin{align*}
-%\O_B(S) &\cong \O_S(S) |_{B} \cong K_X (S) |_B \cong K_S |_B \\
-%\O_B(Y) &\cong \O_B(B) \cong N_{B/S},
-%\end{align*}
-%and $N_{B/S} \otimes K_S|_B \cong K_B$. We get
- %\[
-%0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(N_{B/X}) \rightarrow H^0(K_B) \rightarrow \cdots.
-%\]
-%The first map is an isomorphism because both terms are first order deformations of $B$ as a subscheme of $X$. Not sure we need this.
+Let $X = \CC^2$ and
+\[
+L_k := \{ Z \in X^{n} \ : \ \ell(Z \cap \{y=0\}) = k \} \subset X^{[n]}.
+\]
+Claim: $L_k$ is locally closed and smooth of dimension $2n-k$. Proof: since $L_k$ is normal \todo{Why normal?} and $T = \CC^{*2}$ acts on it, it suffices to prove smoothness at $T$-fixed points\todo{Ref? I learned this from Dori Bejleri.}. At the $T$-fixed points we can write a basis for the tangent space by pairs of arrows with tail just outside and head just inside as described by Haiman. I'm not going to write this out now formally. Just remember how each arrow defines a first order deformation of the monomial ideal (``plus $\epsilon$ times the monomial the head points at''). The corresponding global deformation can easily be seen to move outside of $L_k$ for precisely $k$ arrows with head in the bottom row. This gives the result.   
 
-%\subsection{Direct approach}
+\subsection{Key iso}
 
-%We have the following commutative diagram
-%\begin{displaymath}
-%\xymatrix
-%{
-%X:=K_S \ar^{\varpi}[r] \ar_{\pi}[d] & Y:=K_S|_B \ar^{q}[d] \\
-%S \ar_{p}[r] & B.
-%}
-%\end{displaymath}
-%Note: $\pi_*$ and $q_*$ are exact (because $\pi, q$ are affine morphisms), but I don't think I need this now. I do need $\varpi^*$, $p^*$ are exact (because $\varpi, p$ are flat morphisms). Let $\Hilb^n(Y)$ be the Hilbert scheme of 0-dim subschemes of length $n$ on $Y$. By exactness of $\varpi^*$ we can pull-back
-%$$
-%0 \rightarrow I_Z \rightarrow \O_Y \rightarrow \O_Z \rightarrow 0
-%$$
-%on $Y$ to a short exact sequence
-%$$
-%0 \rightarrow \varpi^* I_Z \rightarrow \O_X \rightarrow \varpi^* \O_Z \rightarrow 0
-%$$
-%on $X$. Hence $\varpi^* \O_Z$ is a structure sheaf and $\varpi^* I_Z$ is its ideal sheaf. Let $\Hilb^0(X, [nF])$ be the Hilbert scheme of Cohen-Macaulay curves in homology class $[nF]$. Then at the set level we have a map
-%$$
-%\Hilb^n(Y) \rightarrow \Hilb^0(X,[nF]), \ (I_Z \subset \O_Y) \mapsto (\varpi^* I_Z \subset \O_X).
-%$$
-%This works in families ($(\varpi \times 1_B)^*$ is exact because $\varpi$ is flat) so this indeed gives a morphism. At the level of closed points this is clearly injective.
+Let $C \in \Hilb^{B+\bullet F}(X)^{\CC^*}_{\CM}$ be described by partitions $\lambda^{(i)}$ with
+\[
+\sum_i |\lambda^{(i)}| = d.
+\]
+Claim: there is a formal neighborhood of $C$ inside $\Hilb^{B+\bullet F}(X)_{\CM}$ which maps to $H^0(N_{B/X})$ with fibre
+$$
+L_{k},
+$$
+where $k := \sum \lambda_{0}^{(i)}$ and $L_k$ is smooth by the previous subsection. 
 
-%The tangent space at $\varpi^* I_Z \in \Hilb^0(X,[nF])$ is
-%\begin{align*}
-%\Hom_X(\varpi^* I_Z , \varpi^* \O_Z) &\cong \Hom_Y(I_Z , \varpi_* \varpi^* \O_Z) \\
-%&\cong \Hom_Y(I_Z , \O_Z \otimes  \varpi^* \O_X) \\
-%&\cong \Hom(I_Z,\O_Z),
-%\end{align*}
-%which is the tangent space at $I_Z \in \Hilb^n(Y)$. I used: (1) ordinary adjunction for $\Hom$, (2) projection formula, (3) $\varpi_* \O_X \cong \O_Y$ (how do we prove this last one? I know $\varpi_* \O_X$ is a line bundle so should go similar to $p_* \O_S \cong \O_B$). So indeed deformations match! We see there cannot be any twistings but only deformations induced from moving $Z$ in the surface. 
+Let's look at the case where $C = B \cup F_{\lambda}$, where $E:=F_\lambda$ is a single thickened fibre with cross-section $\lambda$. We have a couple of useful short exact sequences
+\begin{align}
+&0 \rightarrow I_E / I_C \rightarrow \O_C \rightarrow \O_E \rightarrow 0 \label{ses1} \\
+&0 \rightarrow I_B / I_C \rightarrow \O_C \rightarrow \O_B \rightarrow 0 \label{ses2} \\
+&0 \rightarrow I_C \rightarrow I_E \rightarrow I_E / I_C \rightarrow 0 \label{ses3} \\
+&0 \rightarrow I_C \rightarrow I_B \rightarrow I_B / I_C \rightarrow 0, \label{ses4}
+\end{align}
+where 
+\begin{align*}
+I_E / I_C &\cong \O_B(-\lambda_0) \\
+G&:=I_B / I_C,
+\end{align*}
+where $G$ is an ideal sheaf of a fat point of length $\lambda_0$ inside $\O_{E}$:
+\begin{equation} \label{ses5}
+0 \rightarrow G \rightarrow \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0.
+\end{equation}
+Two more significant short exact sequences
+\begin{align} 
+0 \rightarrow \O_C \rightarrow \O_B \oplus \O_E \rightarrow \O_{\lambda_0 p} \rightarrow 0 \label{ses6} \\
+0 \rightarrow \O_B(-\lambda_0) \rightarrow \O_B \rightarrow \O_{\lambda_0 p} \rightarrow 0. \label{ses7}
+\end{align}
+We can build \emph{many} double complexes from these seven short exact sequences by applying $\Hom(I_C,\cdot)$, $\Hom(\cdot, \O_C)$ etc. 
 
-%The next part may not be needed but I find it instructive. There is a spectral sequence
-%$$
-%\Ext^{i}_{Y}(I_Z, R^j \varpi_* \O_Z) \cong \Ext^{i}_{Y}(I_Z, \O_Z \otimes R^j \varpi_* \O_X) \Rightarrow \Ext^{i+j}_{X}(\varpi^* I_Z, \varpi^* \O_Z).
-%$$
-%Note: $R^0 \varpi_* \O_X \cong \O_Y$, $R^1 \varpi_* \O_X$ is a line bundle (the fibres of $\varpi$ have genus 1), and $R^{>1} \varpi_* \O_X = 0$ (the fibres are 1-dimensional). Therefore the terms of the spectral sequence are zero unless $j=0,1$ which leads to an injection
-%$$
-%\Ext^{1}_{Y}(I_Z,\O_Z) \hookrightarrow \Ext^{1}_{X}(\varpi^* I_Z ,\varpi^* \O_Z).
-%$$
-%This injections maps the obstruction class for deforming $Z$ to the obstruction class for deforming $\varpi^* Z$. In other words, we can deform $Z$ if and only if we can deform $\varpi^* Z$. So indeed we have an isomorphism of schemes
-%$$
-%\Hilb^n(Y) \cong \Hilb^0(X,[nF]).
-%$$
+It seems significant to apply $\Hom(I_E, \cdot)$ to \eqref{ses6}. This gives
+\begin{equation} \label{split}
+0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_E,\O_E) \stackrel{\alpha}{\rightarrow} \Hom(I_E,\O_{\lambda_0 p}) \rightarrow \cdots
+\end{equation}
+The last hom space seems isomorphic to $\CC^{\lambda_0}$ and we believe there is a splitting of the map $\alpha$ from the local description. It seems $\Hom(I_E,G)$ can be interpreted as the space of deformations of $E$ which keep the length of $E \cap B$ fixed! We want to prove there exists a short exact sequence
+$$
+0 \rightarrow \Hom(I_E,G) \rightarrow \Hom(I_C,\O_C) \rightarrow H^0(N_{B/X}) \rightarrow 0.
+$$
 
-%\textbf{From now on it gets sketchy}... perhaps we'd like to deal with the section along the following lines... Let $\Hilb^\chi(X,[B+nF])$ be the Hilbert scheme of 1-dim subschemes with homology class $[B+nF]$ and $\chi(\O_Z) = \chi$ ($[B]$ the class of some section). We want to construct a morphism
-%\begin{equation} \label{keymap}
-%\Hilb^\chi(X,[B+nF]) \rightarrow H^0(N_{B/X}),
-%\end{equation}
-%which only remembers the section. I'm not quite sure how to do this rigorously but this sounds doable. Anyway, we want to know what $\Hilb^\chi(X,[B+nF])$ looks like near an element of the form  $B \cup C_0$, where $C_0$ is a CM curve in class $[nF]$ and $B$ a section in class $[B]$. Claim: We want to say that the scheme theoretic \emph{fibre} of \eqref{keymap} over $B \in H^0(N_{B/X})$ near $B \cup C_0$ is isomorphic to the following locally closed subset (with its induced scheme structure)
-%\begin{equation} \label{locus}
-%\{ C \in \Hilb^0(X,[nF]) \ : \  \chi(\O_{B \cup C}) = \chi \} \subset \Hilb^0(X,[nF]).
-%\end{equation}
-%The rough idea should be that by looking in the fibre of the map \eqref{keymap} we do not allow $B$ to move. Moreover an ideal sheaf of a CM curve is reflexive, hence determined entirely by its restriction to the complement of $B$. That's why the \emph{fibre} near $C_0 \cup B$ should be isomorphic to \eqref{locus}.
+The good news: we can construct an injection $\Hom(I_E,G) \hookrightarrow \Hom(I_C,\O_C)$ as follows. From \eqref{ses2} and \eqref{ses3} we get the following double complex
+\begin{displaymath}
+\xymatrix
+{
+&0\ar[d]&0\ar[d]&0\ar[d]& \\
+0 \ar[r] & \Hom(\O_B(-\lambda_0),G) \ar[d] \ar[r]& \Hom(\O_B(-\lambda_0),\O_C) \ar[d]\ar[r] & \Hom(\O_B(-\lambda_0),\O_B) \ar[d]\ar[r] & \cdots \\
+0 \ar[r] & \Hom(I_E,G) \ar[d] \ar[r] & \Hom(I_E,\O_C) \ar[d]\ar[r] & \Hom(I_E,\O_B) \ar[d] \ar[r]& \cdots \\
+0 \ar[r] & \Hom(I_C,G) \ar[d] \ar[r] & \Hom(I_C,\O_C) \ar[d] \ar[r] & \Hom(I_C,\O_B) \ar[d] \ar[r] & \cdots \\
+&\cdots&\cdots&\cdots&
+}
+\end{displaymath}
+Note: $\Hom(\O_B(-\lambda_0),G) = 0$ from the local description, so indeed we get the required injection! \\
 
-%Let $L_k \subset \Hilb^n(Y)$ be the locally closed subscheme of elements $Z$ such that $Z \cap B$ has length $k$. Via our isomorphism $\Hilb^n(Y) \cong \Hilb^0(X,[nF])$ the locus \eqref{locus} is clearly isomorphic to 
-%$$
-%L_{\chi(\O_B) - \chi},
-%$$
-%which is \emph{smooth}. Hence, near $B \cup C_0 \in \Hilb^\chi(X,[B+nF])$, the morphism \eqref{keymap} is a smooth morphism over a smooth base. Conclusion: near $C_0 \cup B$ we have that $\Hilb^\chi(X,[B+dF])$ is smooth (and we can calculate the dimension). I'm using the fact that a smooth morphism over a smooth base has a smooth total space.
+Significant special case. When $S$ is the rational elliptic surface we have $H^0(N_{B/X}) = H^1(N_{B/X}) = 0$ in which case we get $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$ (see next subsection for relating $\Ext^i(I_B,\O_B)$ to $H^i(N_{B/X})$)! In this case we really expect our injection
+$$
+\Hom(I_E,G) \hookrightarrow \Hom(I_C,\O_C)
+$$
+to be an isomorphism. If so, our earlier split exact sequence \eqref{split} proves $\Hom(I_C,\O_C)$ has dimension 
+$$
+\hom(I_E,\O_E) - \lambda_0 = \hom(I_\lambda, \O_\lambda) - \lambda_0 = 2|\lambda| - \lambda_0,
+$$
+where $\O_\lambda \subset \CC^{2}$ is the zero-dimensional structure sheaf from which $\O_E$ pulls-back. \\
 
-%\subsection{Koszul calculations}
+In this special case of the rational elliptic surface we have a lot more vanishing and we hope that the big double complex yields the surjection. The easiest way to get the surjection is when
+\begin{align*}
+\Ext^1(G,\O_B) &\stackrel{?}{\cong} 0 \\
+\Ext^1(O_B(-\lambda_0),G) &\stackrel{?}{\cong} 0,
+\end{align*}
+ and then use $\Hom(I_C,\O_B) \cong \Ext^1(G,\O_B)$ (which I get from $\Hom(I_B,\O_B) = \Ext^1(I_B,\O_B) = 0$). Sadly I cannot prove the two previous Ext groups are indeed zero. \\
 
-%Let $X = K_S$, $B \subset S \subset X$, and $Y:=K_S|_B$. For any point on $B$, I use local coordinates $x,y,z$ in a formal neighbourhood of that point such that $x=z=0$ defines the section $B$. Denote by $p : X \rightarrow Y$ the projection to $Y$. Besides the divisors $S,Y \subset X$, we have $\tilde{F} \subset X$, where $\tilde{F} = K_S|_F$ for any fibre $F \subset S$.
+Comment: there does not seem to be a simple map from $\Hom(I_C,\O_C) \rightarrow \Hom(I_B,\O_B)$ simply by playing with $\O_C \rightarrow \O_B$ or $I_C \subset I_B$. 
 
-%Let $C = B \cup p^*Z$, where $Z \subset Y$ is a 0-dimensional scheme. Assume $I_{Z \subset Y} = (z^k, y^l)$ (so the partition is a rectangle). We have the following Koszul resolution of $I_C$
-%\[
-%0 \rightarrow \O_X(-k S - l \tilde{F}) \oplus \O_X(-S - Y - l \tilde{F}) \rightarrow \O_X(-k S) \oplus \O_X(-S - l \tilde{F}) \oplus \O_X(-Y - l \tilde{F}) \rightarrow I_C \rightarrow 0,
-%\]
-%where the second map is $(z^k, y^l z, x y^l)$ and the first map is
-%\[
-%M:= \left( \begin{array}{cc} y^l & 0 \\ -z^{k-1} & x \\ 0 & -z  \end{array} \right).
-%\]
-%A local computation shows this is indeed a resolution. The second short exact sequence we use is
-%\[
-%0 \rightarrow \O_C \rightarrow \O_B \oplus \O_{p^*Z} \rightarrow \O_{P} \rightarrow 0,
-%\]
-%where $P:= B \cap p^* Z$. Using the obvious double complex, we conclude that $\Hom_X(I_C,\O_C)$ is given as the intersection of the kernels of the following two maps
-%\begin{align*}
-%\begin{array}{c} \Gamma(\O_B(kS)) \oplus \Gamma(\O_B (S+ l \tilde{F})) \oplus \Gamma(\O_B(Y \oplus l \tilde{F})) \\ \Gamma(\O_{p^*Z}(kS)) \oplus \Gamma(\O_{p^*Z} (S+ l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(Y \oplus l \tilde{F})) \end{array} \stackrel{f}{\rightarrow} \begin{array}{c} \Gamma(\O_B(kS + l \tilde{F})) \oplus \Gamma(\O_B(S + l \tilde F + Y)) \\ \Gamma(\O_{p^*Z}(kS + l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(S + l \tilde F + Y)) \end{array}, 
-%\end{align*}
-%and
-%\begin{align*}
-%\begin{array}{c} \Gamma(\O_B(kS)) \oplus \Gamma(\O_B (S+ l \tilde{F})) \oplus \Gamma(\O_B(Y \oplus l \tilde{F})) \\ \Gamma(\O_{p^*Z}(kS)) \oplus \Gamma(\O_{p^*Z} (S+ l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(Y \oplus l \tilde{F})) \end{array} \stackrel{g}{\rightarrow} \Gamma(\O_P(kS) \oplus \Gamma(\O_P(S + l \tilde F)) \oplus \Gamma(\O_P(l \tilde F + Y)),
-%\end{align*}
-%where $f$ is given by
-%\[
+
+\subsection{Miscalleneous} Significant fact: $\Hom(I_C,\O_C) \cong \mathrm{Ext}^1(I_C,I_C)_0$ by PT1, Section 2.2 for naked CM curves. \\
+
+Some remarks. By cutting out $I_B$ from a rank 2 vector bundle we get maps
+\[
+0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(B,\O_B(S)) \oplus H^0(B,\O_B(Y)) \rightarrow H^0(B,\O_B(S+Y)) \rightarrow \cdots
+\]
+remember: $Y := K_S|_B$. Here 
+\begin{align*}
+\O_B(S) &\cong \O_S(S) |_{B} \cong K_X (S) |_B \cong K_S |_B \\
+\O_B(Y) &\cong \O_B(B) \cong N_{B/S},
+\end{align*}
+and $N_{B/S} \otimes K_S|_B \cong K_B$. We get
+ \[
+0 \rightarrow \Hom(I_B, \O_B) \rightarrow H^0(N_{B/X}) \rightarrow H^0(K_B) \rightarrow \cdots.
+\]
+The first map is an isomorphism because both terms are first order deformations of $B$ as a subscheme of $X$. Not sure we need this.
+
+\subsection{Direct approach}
+
+We have the following commutative diagram
+\begin{displaymath}
+\xymatrix
+{
+X:=K_S \ar^{\varpi}[r] \ar_{\pi}[d] & Y:=K_S|_B \ar^{q}[d] \\
+S \ar_{p}[r] & B.
+}
+\end{displaymath}
+Note: $\pi_*$ and $q_*$ are exact (because $\pi, q$ are affine morphisms), but I don't think I need this now. I do need $\varpi^*$, $p^*$ are exact (because $\varpi, p$ are flat morphisms). Let $\Hilb^n(Y)$ be the Hilbert scheme of 0-dim subschemes of length $n$ on $Y$. By exactness of $\varpi^*$ we can pull-back
+$$
+0 \rightarrow I_Z \rightarrow \O_Y \rightarrow \O_Z \rightarrow 0
+$$
+on $Y$ to a short exact sequence
+$$
+0 \rightarrow \varpi^* I_Z \rightarrow \O_X \rightarrow \varpi^* \O_Z \rightarrow 0
+$$
+on $X$. Hence $\varpi^* \O_Z$ is a structure sheaf and $\varpi^* I_Z$ is its ideal sheaf. Let $\Hilb^0(X, [nF])$ be the Hilbert scheme of Cohen-Macaulay curves in homology class $[nF]$. Then at the set level we have a map
+$$
+\Hilb^n(Y) \rightarrow \Hilb^0(X,[nF]), \ (I_Z \subset \O_Y) \mapsto (\varpi^* I_Z \subset \O_X).
+$$
+This works in families ($(\varpi \times 1_B)^*$ is exact because $\varpi$ is flat) so this indeed gives a morphism. At the level of closed points this is clearly injective.
+
+The tangent space at $\varpi^* I_Z \in \Hilb^0(X,[nF])$ is
+\begin{align*}
+\Hom_X(\varpi^* I_Z , \varpi^* \O_Z) &\cong \Hom_Y(I_Z , \varpi_* \varpi^* \O_Z) \\
+&\cong \Hom_Y(I_Z , \O_Z \otimes  \varpi^* \O_X) \\
+&\cong \Hom(I_Z,\O_Z),
+\end{align*}
+which is the tangent space at $I_Z \in \Hilb^n(Y)$. I used: (1) ordinary adjunction for $\Hom$, (2) projection formula, (3) $\varpi_* \O_X \cong \O_Y$ (how do we prove this last one? I know $\varpi_* \O_X$ is a line bundle so should go similar to $p_* \O_S \cong \O_B$). So indeed deformations match! We see there cannot be any twistings but only deformations induced from moving $Z$ in the surface. 
+
+The next part may not be needed but I find it instructive. There is a spectral sequence
+$$
+\Ext^{i}_{Y}(I_Z, R^j \varpi_* \O_Z) \cong \Ext^{i}_{Y}(I_Z, \O_Z \otimes R^j \varpi_* \O_X) \Rightarrow \Ext^{i+j}_{X}(\varpi^* I_Z, \varpi^* \O_Z).
+$$
+Note: $R^0 \varpi_* \O_X \cong \O_Y$, $R^1 \varpi_* \O_X$ is a line bundle (the fibres of $\varpi$ have genus 1), and $R^{>1} \varpi_* \O_X = 0$ (the fibres are 1-dimensional). Therefore the terms of the spectral sequence are zero unless $j=0,1$ which leads to an injection
+$$
+\Ext^{1}_{Y}(I_Z,\O_Z) \hookrightarrow \Ext^{1}_{X}(\varpi^* I_Z ,\varpi^* \O_Z).
+$$
+This injections maps the obstruction class for deforming $Z$ to the obstruction class for deforming $\varpi^* Z$. In other words, we can deform $Z$ if and only if we can deform $\varpi^* Z$. So indeed we have an isomorphism of schemes
+$$
+\Hilb^n(Y) \cong \Hilb^0(X,[nF]).
+$$
+
+\textbf{From now on it gets sketchy}... perhaps we'd like to deal with the section along the following lines... Let $\Hilb^\chi(X,[B+nF])$ be the Hilbert scheme of 1-dim subschemes with homology class $[B+nF]$ and $\chi(\O_Z) = \chi$ ($[B]$ the class of some section). We want to construct a morphism
+\begin{equation} \label{keymap}
+\Hilb^\chi(X,[B+nF]) \rightarrow H^0(N_{B/X}),
+\end{equation}
+which only remembers the section. I'm not quite sure how to do this rigorously but this sounds doable. Anyway, we want to know what $\Hilb^\chi(X,[B+nF])$ looks like near an element of the form  $B \cup C_0$, where $C_0$ is a CM curve in class $[nF]$ and $B$ a section in class $[B]$. Claim: We want to say that the scheme theoretic \emph{fibre} of \eqref{keymap} over $B \in H^0(N_{B/X})$ near $B \cup C_0$ is isomorphic to the following locally closed subset (with its induced scheme structure)
+\begin{equation} \label{locus}
+\{ C \in \Hilb^0(X,[nF]) \ : \  \chi(\O_{B \cup C}) = \chi \} \subset \Hilb^0(X,[nF]).
+\end{equation}
+The rough idea should be that by looking in the fibre of the map \eqref{keymap} we do not allow $B$ to move. Moreover an ideal sheaf of a CM curve is reflexive, hence determined entirely by its restriction to the complement of $B$. That's why the \emph{fibre} near $C_0 \cup B$ should be isomorphic to \eqref{locus}.
+
+Let $L_k \subset \Hilb^n(Y)$ be the locally closed subscheme of elements $Z$ such that $Z \cap B$ has length $k$. Via our isomorphism $\Hilb^n(Y) \cong \Hilb^0(X,[nF])$ the locus \eqref{locus} is clearly isomorphic to 
+$$
+L_{\chi(\O_B) - \chi},
+$$
+which is \emph{smooth}. Hence, near $B \cup C_0 \in \Hilb^\chi(X,[B+nF])$, the morphism \eqref{keymap} is a smooth morphism over a smooth base. Conclusion: near $C_0 \cup B$ we have that $\Hilb^\chi(X,[B+dF])$ is smooth (and we can calculate the dimension). I'm using the fact that a smooth morphism over a smooth base has a smooth total space.
+
+\subsection{Koszul calculations}
+
+Let $X = K_S$, $B \subset S \subset X$, and $Y:=K_S|_B$. For any point on $B$, I use local coordinates $x,y,z$ in a formal neighbourhood of that point such that $x=z=0$ defines the section $B$. Denote by $p : X \rightarrow Y$ the projection to $Y$. Besides the divisors $S,Y \subset X$, we have $\tilde{F} \subset X$, where $\tilde{F} = K_S|_F$ for any fibre $F \subset S$.
+
+Let $C = B \cup p^*Z$, where $Z \subset Y$ is a 0-dimensional scheme. Assume $I_{Z \subset Y} = (z^k, y^l)$ (so the partition is a rectangle). We have the following Koszul resolution of $I_C$
+\[
+0 \rightarrow \O_X(-k S - l \tilde{F}) \oplus \O_X(-S - Y - l \tilde{F}) \rightarrow \O_X(-k S) \oplus \O_X(-S - l \tilde{F}) \oplus \O_X(-Y - l \tilde{F}) \rightarrow I_C \rightarrow 0,
+\]
+where the second map is $(z^k, y^l z, x y^l)$ and the first map is
+\[
+M:= \left( \begin{array}{cc} y^l & 0 \\ -z^{k-1} & x \\ 0 & -z  \end{array} \right).
+\]
+A local computation shows this is indeed a resolution. The second short exact sequence we use is
+\[
+0 \rightarrow \O_C \rightarrow \O_B \oplus \O_{p^*Z} \rightarrow \O_{P} \rightarrow 0,
+\]
+where $P:= B \cap p^* Z$. Using the obvious double complex, we conclude that $\Hom_X(I_C,\O_C)$ is given as the intersection of the kernels of the following two maps
+\begin{align*}
+\begin{array}{c} \Gamma(\O_B(kS)) \oplus \Gamma(\O_B (S+ l \tilde{F})) \oplus \Gamma(\O_B(Y \oplus l \tilde{F})) \\ \Gamma(\O_{p^*Z}(kS)) \oplus \Gamma(\O_{p^*Z} (S+ l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(Y \oplus l \tilde{F})) \end{array} \stackrel{f}{\rightarrow} \begin{array}{c} \Gamma(\O_B(kS + l \tilde{F})) \oplus \Gamma(\O_B(S + l \tilde F + Y)) \\ \Gamma(\O_{p^*Z}(kS + l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(S + l \tilde F + Y)) \end{array}, 
+\end{align*}
+and
+\begin{align*}
+\begin{array}{c} \Gamma(\O_B(kS)) \oplus \Gamma(\O_B (S+ l \tilde{F})) \oplus \Gamma(\O_B(Y \oplus l \tilde{F})) \\ \Gamma(\O_{p^*Z}(kS)) \oplus \Gamma(\O_{p^*Z} (S+ l \tilde{F})) \oplus \Gamma(\O_{p^*Z}(Y \oplus l \tilde{F})) \end{array} \stackrel{g}{\rightarrow} \Gamma(\O_P(kS) \oplus \Gamma(\O_P(S + l \tilde F)) \oplus \Gamma(\O_P(l \tilde F + Y)),
+\end{align*}
+where $f$ is given by
+
+
 We will show that the constructible function $f_d : \Sym^d(B)
 \rightarrow \ZZ(\!(p)\!)$ satisfies two multiplicative properties. The
 first one is described as follows. Denote by $B^{\sm} \subset B$ the
@@ -1351,7 +1579,7 @@ We prove this proposition in Section~\ref{}. The following
 product formula is an immediate consequence of this result
 \begin{align}
 \begin{split} \label{firstprod}
-%&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de = \\
+&\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de = \\
 \DThat (X)  = \frac{(p^{\frac{1}{2}} - p^{-\frac{1}{2}})^{e(B)}}{M(p)^{e(X)}}  \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sm})} f_d \, de \Bigg) \cdot \Bigg( \sum_{d \geq 0} q^d \int_{\Sym^d(B^{\sing})} f_d \, de \Bigg). 
 \end{split}
 \end{align}
@@ -1374,7 +1602,7 @@ distinct closed points.
 \end{proposition}
 We prove this proposition in Section \ref{chargh}. Together with Lemma \ref{lem: formula for euler char of sym products} of Appendix \ref{power}, Proposition \ref{mult2} and equation \eqref{firstprod} imply
 \begin{equation} \label{initialprod}
-%\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de 
+\sum_{d \geq 0} q^d \int_{\Sym^d(B)} f_d \, de 
 \DThat (X) = \frac{M(p)^{e(S)}}{(p^{\frac{1}{2}} -
 p^{-\frac{1}{2}})^{e(B)}} \cdot \Bigg( \sum_{a=0}^{\infty} g(a) q^a
 \Bigg)^{e(B) - e(S)} \cdot \Bigg( \sum_{b=0}^{\infty} h(b) q^b \Bigg)^{e(S)}.
@@ -1393,72 +1621,70 @@ for all $\mathfrak{a} \in \Sym^{d_1}(B^{\sm})$ and $\mathfrak{b} \in \Sym^{d_2}(
 where $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$ are collections of
 distinct closed points. 
 
+\[
+M^T = \left( \begin{array}{ccc} y^l & -z^{k-1} & 0 \\ 0 & x & -z  \end{array} \right).
+\]
+and $g$ is given by taking the difference and restricting to $P$. Restricting $M^T$ to $B$ we get many zeroes and the kernel of $f$ to the part involving $B$ equals
+\[
+0 \oplus \Gamma(\O_B(S+l \tilde{F})) \oplus \Gamma(\O_B(Y + l \tilde{F})).
+\]
+The kernel of $F$ restricted to the part involving $p^*Z$ has a more complicated kernel. Certainly $\Gamma(\O_{p^*Z}(kS))$ lies in this kernel because $y^l = 0$ on $p^*Z$. Furthermore, this kernel contains all elements 
+$(\beta,\gamma) \in \Gamma(p^*\O_Z(S+l\tilde{F})) \oplus \Gamma(p^*\O_Z(Y+l\tilde{F}))$ satisfying the equations
+\[
+-z^{k-1} \beta = 0, \ x\beta = z\gamma.
+\]
+This means $\beta = z \beta'$ and $\gamma = x\beta'+z^{k-1}\gamma'$. We observe that elements in the kernel of $f$ restricted to the part involving $p^*Z$ automatically restrict to zero on $P$. Therefore we should compute the kernels of 
+\begin{align*}
+\Gamma(\O_B(S+l \tilde{F})) &\rightarrow \Gamma(\O_P(S+l\tilde{F})) \\
+\Gamma(\O_B(Y + l \tilde{F})) &\rightarrow \Gamma(\O_P(Y + l \tilde{F})),
+\end{align*}
+which give $\Gamma(N_{B/Y})$ and $\Gamma(N_{B/S})$! Next we should calculate the kernel of 
+\[
+\Gamma(\O_{p^*Z}(mS)) \rightarrow \Gamma(\O_P(mS)),
+\]
+which equals $\Gamma(I_{P \subset p^* Z}(mS))$. In turn this can be computed using the short exact sequence
+\[
+0 \rightarrow K \rightarrow I_{P \subset p^* Z} \rightarrow \O_{p^*Z}(-Y) \rightarrow 0, 
+\]
+where $K$ is a zero-dimensional sheaf of length $n-l$. It is not hard to see that $\Gamma(\O_{p^*Z}(mS-Y)) = 0$ so we obtain 
+\[
+\Gamma(I_{P \subset p^* Z}(mS)) \cong \CC^{n-l},
+\]
+where $n = kl$. The part which is left is $(\beta,\gamma) \in \Gamma(p^*\O_Z(S+l\tilde{F})) \oplus \Gamma(p^*\O_Z(Y+l\tilde{F}))$ satisfying
+\[
+\beta = z \beta', \ \gamma = x\beta'+z^{k-1}\gamma'.
+\]
+The solutions $\beta = z \beta'$, $\gamma = x\beta'$ are given by the space
+\[
+\Gamma(\O_{p^*Z}(l \tilde{F})) \cong \Gamma(\O_{p^*Z}) \cong \CC^{n}.
+\]
+At this stage we have got $H^0(N_{B/Y}) \oplus \CC^{2n-l}$ worth of deformations. So what about the solutions $\gamma = z^{k-1} \gamma'$? Solutions of this form which are \emph{not} of the form $\beta = z \beta'$, $\gamma = x\beta'$ are given by
+\[
+\Gamma(\O_{lF}(Y + l \tilde{F} - (m-1)S)) - \Gamma(\O_{lF}(Y + l \tilde{F} - (m-1)S - Y)).
+\]
+This amounts to
+\[
+\Gamma(\O_{lF}(B)) - \Gamma(\O_{lF}) = \CC^l - \CC^l,
+\]
+so there is nothing we do not already have. In conclusion
+\[
+\Hom(I_C,\O_C) \cong H^0(N_{B/Y}) \oplus \CC^{2n-l}.
+\]
 
-%M^T = \left( \begin{array}{ccc} y^l & -z^{k-1} & 0 \\ 0 & x & -z  \end{array} \right).
-%\]
-%and $g$ is given by taking the difference and restricting to $P$. Restricting $M^T$ to $B$ we get many zeroes and the kernel of $f$ to the part involving $B$ equals
-%\[
-%0 \oplus \Gamma(\O_B(S+l \tilde{F})) \oplus \Gamma(\O_B(Y + l \tilde{F})).
-%\]
-%The kernel of $F$ restricted to the part involving $p^*Z$ has a more complicated kernel. Certainly $\Gamma(\O_{p^*Z}(kS))$ lies in this kernel because $y^l = 0$ on $p^*Z$. Furthermore, this kernel contains all elements 
-%$(\beta,\gamma) \in \Gamma(p^*\O_Z(S+l\tilde{F})) \oplus \Gamma(p^*\O_Z(Y+l\tilde{F}))$ satisfying the equations
-%\[
-%-z^{k-1} \beta = 0, \ x\beta = z\gamma.
-%\]
-%This means $\beta = z \beta'$ and $\gamma = x\beta'+z^{k-1}\gamma'$. We observe that elements in the kernel of $f$ restricted to the part involving $p^*Z$ automatically restrict to zero on $P$. Therefore we should compute the kernels of 
-%\begin{align*}
-%\Gamma(\O_B(S+l \tilde{F})) &\rightarrow \Gamma(\O_P(S+l\tilde{F})) \\
-%\Gamma(\O_B(Y + l \tilde{F})) &\rightarrow \Gamma(\O_P(Y + l \tilde{F})),
-%\end{align*}
-%which give $\Gamma(N_{B/Y})$ and $\Gamma(N_{B/S})$! Next we should calculate the kernel of 
-%\[
-%\Gamma(\O_{p^*Z}(mS)) \rightarrow \Gamma(\O_P(mS)),
-%\]
-%which equals $\Gamma(I_{P \subset p^* Z}(mS))$. In turn this can be computed using the short exact sequence
-%\[
-%0 \rightarrow K \rightarrow I_{P \subset p^* Z} \rightarrow \O_{p^*Z}(-Y) \rightarrow 0, 
-%\]
-%where $K$ is a zero-dimensional sheaf of length $n-l$. It is not hard to see that $\Gamma(\O_{p^*Z}(mS-Y)) = 0$ so we obtain 
-%\[
-%\Gamma(I_{P \subset p^* Z}(mS)) \cong \CC^{n-l},
-%\]
-%where $n = kl$. The part which is left is $(\beta,\gamma) \in \Gamma(p^*\O_Z(S+l\tilde{F})) \oplus \Gamma(p^*\O_Z(Y+l\tilde{F}))$ satisfying
-%\[
-%\beta = z \beta', \ \gamma = x\beta'+z^{k-1}\gamma'.
-%\]
-%The solutions $\beta = z \beta'$, $\gamma = x\beta'$ are given by the space
-%\[
-%\Gamma(\O_{p^*Z}(l \tilde{F})) \cong \Gamma(\O_{p^*Z}) \cong \CC^{n}.
-%\]
-%At this stage we have got $H^0(N_{B/Y}) \oplus \CC^{2n-l}$ worth of deformations. So what about the solutions $\gamma = z^{k-1} \gamma'$? Solutions of this form which are \emph{not} of the form $\beta = z \beta'$, $\gamma = x\beta'$ are given by
-%\[
-%\Gamma(\O_{lF}(Y + l \tilde{F} - (m-1)S)) - \Gamma(\O_{lF}(Y + l \tilde{F} - (m-1)S - Y)).
-%\]
-%This amounts to
-%\[
-%\Gamma(\O_{lF}(B)) - \Gamma(\O_{lF}) = \CC^l - \CC^l,
-%\]
-%so there is nothing we do not already have. In conclusion
-%\[
-%\Hom(I_C,\O_C) \cong H^0(N_{B/Y}) \oplus \CC^{2n-l}.
-%\]
 
-\end{comment}
-
-\begin{comment}
-% martijn's old argument for the proposition in the ``fiber
-% contributions'' subsection:
+ martijn's old argument for the proposition in the ``fiber
+ contributions'' subsection:
 
 We start with the first equation. Let $F := F_x \subset S$ be a smooth fibre. Consider the auxiliary surface 
 $$
 \tilde{S} = B \times F
 $$ 
 and let $Y = \Tot(K_{\tilde{S}})$. 
-%let $e \in F$ be any closed point and consider the embeddings 
-%\begin{align*}
-%B &\hookrightarrow \tilde{S}, \ b \mapsto (b,e) \\
-%\tilde{S} &\hookrightarrow \tilde{X}, \ p \mapsto (p,0).
-%\end{align*}
+let $e \in F$ be any closed point and consider the embeddings 
+\begin{align*}
+B &\hookrightarrow \tilde{S}, \ b \mapsto (b,e) \\
+\tilde{S} &\hookrightarrow \tilde{X}, \ p \mapsto (p,0).
+\end{align*}
 Denote by $\Xhat _F$ the formal neighbourhood of $F$ in $X$ and by $\widehat{Y}_{F}$ the formal neighbourhood of
 $$
 F \cong \{x\} \times F \subset \tilde{S} \subset Y,
@@ -1520,5 +1746,6 @@ $$
 F' \cong \PP^1 \setminus \{2 \ \rm{points}\} \cong \CC^*.
 $$
 Therefore, we again have a free action of $F'$ on itself and $e(F') = 0$. The rest of the proof follows the same steps.
-\end{comment}
 
+
+\end{document}  

@@ -4,45 +4,45 @@ The top-level auxiliary file: Bryan-Kool.aux
 The style file: plain.bst
 Database file #1: /Users/jbryan/jbryan/resources/mainbiblio.bib
 Warning--I didn't find a database entry for "???"
-You've used 15 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            638 strings with 6762 characters,
-and the built_in function-call counts, 4643 in all, are:
-= -- 473
-> -- 177
+            630 strings with 6531 characters,
+and the built_in function-call counts, 4416 in all, are:
+= -- 450
+> -- 170
 < -- 3
-+ -- 73
-- -- 56
-* -- 305
-:= -- 778
-add.period$ -- 56
-call.type$ -- 15
-change.case$ -- 70
++ -- 70
+- -- 54
+* -- 296
+:= -- 737
+add.period$ -- 52
+call.type$ -- 14
+change.case$ -- 67
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 171
-empty$ -- 391
-format.name$ -- 56
-if$ -- 971
+cite$ -- 14
+duplicate$ -- 159
+empty$ -- 369
+format.name$ -- 54
+if$ -- 921
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 15
-newline$ -- 86
-num.names$ -- 30
-pop$ -- 78
+int.to.str$ -- 14
+missing$ -- 13
+newline$ -- 81
+num.names$ -- 28
+pop$ -- 72
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 55
 quote$ -- 0
-skip$ -- 112
+skip$ -- 106
 stack$ -- 0
-substring$ -- 308
-swap$ -- 28
+substring$ -- 303
+swap$ -- 27
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
+type$ -- 52
 warning$ -- 0
-while$ -- 48
-width$ -- 17
-write$ -- 180
+while$ -- 46
+width$ -- 16
+write$ -- 169
 (There was 1 warning)

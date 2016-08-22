@@ -108,6 +108,8 @@ Room 502, Budapestlaan 6  \\
 \newcommand{\GL}{\operatorname{GL}}
 \newcommand{\Tr}{\operatorname{tr}}
 \newcommand{\tr}{\operatorname{tr}}
+\newcommand{\id}{\operatorname{id}}
+%\newcommand{\min}{\operatorname{min}}
 \newcommand{\Coker}{\operatorname{Coker}}
 \newcommand{\im}{\operatorname{Im}}
 \newcommand{\M}{\overline{\mathcal{M}}}
@@ -182,7 +184,7 @@ Katz-Klemm-Vafa formula.
 
 Let $p : S \rightarrow B$ be a non-trivial elliptic surface over a
 complex smooth projective curve $B$. We assume $p$ has a section and
-all singular fibres are irreducible rational nodal curves. 
+all singular fibers are irreducible rational nodal curves. 
 
 In this paper, we study the Donaldson-Thomas (DT) invariants of $X =
 \Tot(K_S)$, i.e.~the total space of the canonical bundle $K_S$. This
@@ -211,7 +213,7 @@ the class of the fiber. We define the partition functions by
 \end{align*}
 
 We also consider the partition functions for the invariants for
-multiples of the fiber class:
+multiples of the fiber class
 \begin{align*}
 \DThat_{\fiber}(X)& = \sum_{d\geq 0} \sum_{n \in \ZZ} \DThat_{dF,n}(X) p^{n} q^{d} ,\\
 \DT_{\fiber}(X)& = \sum_{d\geq 0} \sum_{n \in \ZZ} \DT_{dF,n}(X) y^{n} q^{d} .
@@ -239,14 +241,14 @@ the elliptic surface and the base. Then
 \right\}^{e(B)} \\
 \DThat_{\fiber}(X) &= \left\{M(p)\prod_{d=1}^{\infty}M(p,q^{d})
 \right\}^{e(S)} \left\{\prod_{d=1}^{\infty}\frac{1}{(1-q^{d})}
-\right\}^{e(B)}
+\right\}^{e(B)}.
 \end{align*}
 \end{theorem}
 
 The formula for $\DThat_{\fiber}(X)$ was previously proved using
 wall-crossing methods by Toda\footnote{After applying the PT/DT
 correspondence \cite{Bridgeland-PTDT}, this is essentially 
-\cite[Thm~6.9]{Toda-2012-Kyoto} }.
+\cite[Thm~6.9]{Toda-2012-Kyoto}.}.
 
 The ratio $\DThat (X)/\DThat_{\fiber}(X)$ can be considered as the
 generating function for the connected invariants in the classes
@@ -319,7 +321,7 @@ depend on the topological vertex $\sfV_{\lambda\mu\nu}$, and the
 topological Euler characteristics $e(B)$, and $e(S)$. The outline of
 our method is as follows:
 \begin{itemize}
-\item The $\CC^{*}$ action on $X$ induces an action on $\Hilb (X)$
+\item The $\CC^{*}$-action on $X$ induces an action on $\Hilb (X)$
 whose Euler characteristic localizes to the $\CC^{*}$-fixed locus.  In
 Section~\ref{sec: reduction to thickened comb curves} we show that any
 $\CC^{*}$-invariant subscheme has a maximal Cohen-Macaulay subscheme
@@ -342,12 +344,12 @@ products}).
 must compute the Euler characteristics of the fibers of $\rho$. These
 fibers are strata in the Hilbert scheme parameterizing subschemes
 whose maximal Cohen-Macaulay subscheme is a fixed partition thickened
-comb curve $C$. The moduli of this stratum comes solely from the ways
+comb curve $C$. The moduli of this stratum come solely from the ways
 that embedded points and zero dimensional components can be added to
 $C$. We write this stratum as a product of ``local'' Hilbert schemes
-using a fpqc cover of $X$ which includes the formal neighborhoods of
-the nodal points of $C_{red}$, the formal neighborhoods of the
-components of $C_{red}$ (minus the nodes), and the complement of
+using an fpqc cover of $X$ which includes the formal neighborhoods of
+the nodal points of $C_{\red}$, the formal neighborhoods of the
+components of $C_{\red}$ (minus the nodes), and the complement of
 $C$. This is done in Section~\ref{sec: restriction
 to formal nghds}. 
 \item After further push-forwards to further symmetric products, we
@@ -356,7 +358,7 @@ $\DThat (X)$) to an expression only involving the Euler
 characteristics of the local Hilbert schemes of formal neighborhoods
 of points. Since these formal neighborhoods are isomorphic to
 $\hat{\CC}^{3}_{0}=\Spec \CC [[r,s,t]]$, they admit a $T=\left(\CC^{*}
-\right)^{3}$ action. $T$-localization then allows us to write these
+\right)^{3}$-action. $T$-localization then allows us to write these
 Euler characteristics in terms of the topological vertex (see
 Section~\ref{sec: reduction to the vertex}). 
 \item Finally, using the trace formulas for the topological vertex
@@ -388,7 +390,7 @@ projective curve $B$. We assume:
 \end{enumerate}
 We note that the number of singular fibers is equal to $e(S)$.
 
-We write $F_x$ for the fibre $p^{-1}(x)$ over a  point $x \in
+We write $F_x$ for the fiber $p^{-1}(x)$ over a  point $x \in
 B$. We choose a section $B \subset S$ and denote its class in $H_2(S)$
 by $B$ as well. We denote the class of the fiber by $F \in H_2(S)$.
 
@@ -422,7 +424,7 @@ introduce the following notation. We define
 \Hilb^{d,\bullet}(X) := \sum_{n \in \ZZ} \Hilb^{d,n}(X) \, p^n,
 \end{align*}
 where we view the right hand side as a formal Laurent series whose
-coefficients elements in the Grothendieck ring of varieties,
+coefficients are elements in the Grothendieck ring of varieties,
 i.e. $K_0(\Var_{\CC})(\!(p)\!)$.
 
 
@@ -439,7 +441,7 @@ obvious way.
 For example
 \[
 \Hilb^{\bullet ,\bullet}(X) = \sum_{d=0}^{\infty}\sum_{n\in \ZZ}
-\Hilb^{d,n}(X) q^{d}p^{n}\in K_{0}(Var)((p))[[q]],
+\Hilb^{d,n}(X) q^{d}p^{n}\in K_{0}(\Var_{\CC})(\!(p)\!)[[q]],
 \]
 so that we can write
 \[
@@ -453,7 +455,7 @@ constructible functions, and the measure of a set is given by its
 Euler characteristic. In this language we have
 \[
 \DThat_{d ,n}(X) =  \int_{\Hilb^{d ,n}(X)} 1\, de, \quad \quad
-\DT_{d ,n}(X) = \int_{\Hilb^{d ,n}(X)} \nu \, de,
+\DT_{d ,n}(X) = \int_{\Hilb^{d ,n}(X)} \nu \, de
 \]
 and following the bullet convention we have
 \[
@@ -476,12 +478,12 @@ restriction of some $\overline{C}\subset X$ to $U$. We define
 $I_{C}/I_{Z}$ has finite length $n$} \}.
 \]
 \end{definition}
-Via the inclusion $U\subset X$, $\Hilb^{n}(Y,C)$ can be viewed as a
+Via the inclusion $U\subset X$, $\Hilb^{n}(U,C)$ can be viewed as a
 constructible subscheme of $\Hilb (X)$. It parameterizes subschemes
 which roughly speaking are obtained from $C$ by adding $n$ embedded
 points and/or zero dimensional components.
 
-\section{The reduction to partition thickened comb curves}\label{sec: reduction to thickened comb curves}
+\section{Reduction to partition thickened comb curves}\label{sec: reduction to thickened comb curves}
 
 The action of $\CC^*$ on the fibers of $X$ lifts to the moduli space
 $\Hilb^{d,\bullet}(X)$. Therefore
@@ -503,13 +505,13 @@ determined by a point in $\Sym^{d}(B)$ along with some discrete data
 Let $T=\Tot(K_{S}|_{B})$ and let $p:X\to T$ be the elliptic fibration
 induced by the elliptic fibration $p:S\to B$. We say that a subscheme $C\subset
 X$ is a \textbf{comb curve} if $C=B\cup p^{-1}(Z) $ where $Z\subset T$
-is a 0-dimensional subscheme which is set-theoretically supported on
+is a zero dimensional subscheme which is set-theoretically supported on
 $B$.
 \end{definition}
 
 Let $\lambda =(\lambda_{1}\geq \dotsb \geq \lambda_{l}) $ be an
-integer partition. Then $\lambda$ determines a 0-dimensional subscheme
-$Z_{\lambda}\subset \Spec \CC [r,s]$ given by the monomial ideal
+integer partition. Then $\lambda$ determines a zero dimensional subscheme
+$Z_{\lambda}\subset \Spec \CC [[r,s]]$ given by the monomial ideal
 \begin{equation}\label{eqn: monomial ideal I given by a partition lambda}
 I_{\lambda}=(r^{\lambda_{1}},r^{\lambda_{2}}s,\dotsc
 ,r^{\lambda_{l}}s^{l-1},r^{l}).
@@ -530,7 +532,7 @@ $(r_{i},s_{i})$ about $x_{i}$. We denote such a curve by
 $B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$. We say that a
 subscheme $Z\subset X$ is a \textbf{partition thickened comb curve
 with points (PCP)} if the maximal Cohen-Macaulay subscheme
-$Z_{CM}\subset Z$ is a partition thickened comb curve, in other words,
+$Z_{\CM}\subset Z$ is a partition thickened comb curve, in other words,
 $Z$ is obtained from a partition thickened comb curve by adding
 embedded points and/or zero dimensional components. We denote by
 \[
@@ -700,7 +702,7 @@ C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}}  \right)
 
 
 
-The main result of this section is the following
+The main result of this section is the following:
 \begin{theorem}\label{thm: C* invariant curves are partition thickened
 comb curves with embedded points} If a subscheme $Z\subset X$ in the
 class $[Z]=B+dF$ is $\CC^{*}$-invariant, then it is a partition
@@ -734,7 +736,7 @@ Adapt and streamline Martijn's proof for the theorem as stated.
 
 From the $\CC^{*}$-equivariant inclusions in Theorem~\ref{thm: C*
 invariant curves are partition thickened comb curves with embedded
-points} and $\CC^{*}$ localization of Euler characteristic, we have
+points} and $\CC^{*}$-localization of Euler characteristic, we have
 \[
 \DThat (X) = \int_{\Hilb^{\bullet ,\bullet}(X)} 1 \, de  =
 \int_{\Hilb^{\bullet ,\bullet}(X)^{\CC^{*}}} 1 \, de  = \int_{\Hilb^{\bullet
@@ -747,7 +749,7 @@ comb curves with embedded points}. That is we use
 $$
 \int_{\Hilb^{d,\bullet}_{\PCP }(X)} 1 \, de = \int_{\Sym^d(B)} (\rho_{d})_{*}(1) \, de,
 $$
-where $(\rho_{d})_{*}(1)$ is the $\ZZ ((p))$-valued constructible
+where $(\rho_{d})_{*}(1)$ is the $\ZZ (\!(p)\!)$-valued constructible
 function on $\Sym^d(B)$ given by pushing forward the Euler
 characteristic measure \cite{MacPherson-Annals74}. We denote
 $(\rho_{d})_{*}(1)$ by $f_{d}$ so by definition, the value of $f_{d} $
@@ -766,16 +768,16 @@ Let $x_{1},\dotsc ,x_{n}\in B^{\sm}$ and $y_{1},\dotsc ,y_{m}\in
 B^{\sing}$ and let $a_{1},\dotsc ,a_{n},b_{1},\dotsc ,b_{m}$ be
 positive integers summing to $d$. Let $\bolda \boldx$ and $\boldb
 \boldy$ denote $\sum_{i}a_{i}x_{i}$ and $\sum_{j}b_{j}y_{j}$
-respectively. Then there exists $F_{1},F_{2}\in \ZZ ((p))$ and
-$g,h:\NN \to \ZZ ((p))$ such that
+respectively. Then there exist $F_{1} \in p^{\frac{1}{2}} \ZZ [[p]]$, $F_{2}\in \ZZ [[p]]$, and
+$g,h:\NN \to \ZZ (\!(p)\!)$ such that
 \[
 f_{d}(\bolda \boldx +\boldb \boldy ) = F_{1}^{e(B)}\cdot
-F_{2}^{e(S)}\cdot G(\bolda \boldx )\cdot H(\boldb \boldy )
+F_{2}^{e(S)}\cdot G(\bolda \boldx )\cdot H(\boldb \boldy ),
 \]
 where
 \[
-G(\bolda \boldx ) = \prod_{i=1}^{n}g(a_{i}), \quad H(\bolda \boldx ) =
-\prod_{j=1}^{n}h(b_{j}).
+G(\bolda \boldx ) = \prod_{i=1}^{n}g(a_{i}), \quad H(\boldb \boldy ) =
+\prod_{j=1}^{m}h(b_{j}).
 \]
 \end{proposition}
 This proposition follows from Proposition~\ref{prop: formula for fd in
@@ -787,7 +789,7 @@ next section.
 \[
 \DThat (X) = F_{1}^{e(B)}\cdot F_{2}^{e(S)}\cdot
 \left(\sum_{a=0}^{\infty}g(a) q^{a} \right)^{e(B)-e(S)}\cdot
-\left(\sum_{b=0}^{\infty}h(b) q^{b} \right)^{e(S)}
+\left(\sum_{b=0}^{\infty}h(b) q^{b} \right)^{e(S)},
 \]
 where we have set $g(0)=h(0)=1$.
 \end{corollary}
@@ -817,19 +819,19 @@ locus of points $Z \in \Hilb^{d,\bullet}_{\PCP }(X)$, for which the
 maximal Cohen-Macaulay subcurve $Z_{\CM} \subset Z$ is given by
 \[
 C = B \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
-\bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right)
+\bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right).
 \]
 The bullet reminds us that we are multiplying by $p^{\chi (\O_{Z})}$
 and summing over all possible holomorphic Euler characteristics
 (recall Convention~\ref{conv: bullet convention}). We regard
-$\Sigmaxylambdamu$ as an element in $ K_{0}(Var_{\CC}((p))$.
+$\Sigmaxylambdamu$ as an element in $ K_{0}(\Var_{\CC})(\!(p)\!)$.
 
 Theorem~\ref{thm: C* invariant curves are
 partition thickened comb curves with embedded points} gives the
 following decomposition of the fibers of $\rho_{d}$:
 \begin{equation} \label{eqn: components of fibers of rho}
 \rho_{d}^{-1}(\bolda \boldx +\boldb \boldy ) = \bigsqcup_{\boldlambda
-\vdash \bolda}\, \bigsqcup_{\boldmu \vdash \boldb}\,  \Sigmaxylambdamu
+\vdash \bolda}\, \bigsqcup_{\boldmu \vdash \boldb}\,  \Sigmaxylambdamu,
 \end{equation}
 where 
 \begin{align*}
@@ -837,7 +839,7 @@ where
 ,b_{m}),\\
 \boldx =(x_{1},\dotsc ,x_{n}),&\quad \boldy =(y_{1},\dotsc
 ,y_{m}),\\
-\boldlambda =(\lambda^{(1)},\dotsc ,\lambda^{(n)}),&\quad \boldmu =(\mu^{(1)},\dotsc ,\mu^{(n)}),
+\boldlambda =(\lambda^{(1)},\dotsc ,\lambda^{(n)}),&\quad \boldmu =(\mu^{(1)},\dotsc ,\mu^{(m)}),
 \end{align*}
 and the meaning of $\boldlambda \vdash \bolda$ and $\boldmu \vdash
 \boldb$ is that $\lambda^{(i)}\vdash a_{i}$ and $\mu^{(j)}\vdash
@@ -853,7 +855,7 @@ $\mu^{(j)}$.
 
 
 
-\section{Restriction to formal neighbourhoods} \label{sec: restriction
+\section{Restriction to formal neighborhoods} \label{sec: restriction
 to formal nghds}
 
 In the previous two sections we reduced our consideration to the
@@ -862,7 +864,7 @@ of $ \Hilb^{d,\bullet}_{\PCP }(X)$ which parameterize subschemes $Z$ whose maxim
 Cohen-Macaulay subscheme $Z_{\CM} \subset Z$ is the partition
 thickened comb curve 
 \[
-C=B\cup_{i}(\lambda^{(i)}F_{x_{i}})\cup_{j}(\mu^{(j)}F_{x_{j}}).
+C=B\cup_{i}(\lambda^{(i)}F_{x_{i}})\cup_{j}(\mu^{(j)}F_{y_{j}}).
 \]
 
 In this section we use an fpqc open cover to express
@@ -876,7 +878,7 @@ vertex}.
 \subsection{The fpqc cover}\label{subsec: the fpqc cover}
 The reduced support of $C$ is $B\cup_{i}F_{x_{i}}\cup_{j}F_{y_{j}}$
 which is a nodal curve with nodes at $(x_{1},\dotsc ,x_{n})$,
-$(y_{1},\dotsc ,y_{n})$ and $(z_{1},\dotsc ,z_{m})$ where $z_{j}$ is
+$(y_{1},\dotsc ,y_{m})$ and $(z_{1},\dotsc ,z_{m})$ where $z_{j}$ is
 the node of the nodal fiber $F_{y_{j}}$ (see Figure~\ref{fig: drawing
 of Cohen-Macaulay C^* fixed subscheme}).
 
@@ -891,7 +893,7 @@ the complement of $C$.
 To work algebraically, we use formal neighborhoods instead of tubular
 neighborhoods and balls. This also has an addition advantage over an
 analytic cover: the intersection of these open sets is very small in
-the sense that no embedded points or zero-dimensional components can
+the sense that no embedded points or zero dimensional components can
 occur inside the intersections of distinct open sets in the cover.
 
 \begin{definition}\label{defn: the fpqc cover mathfrak U}
@@ -900,9 +902,9 @@ following sets, open in the fpqc topology:\begin{enumerate}
 \item $W$, the complement of the support of $C$.
 \item $\Xhat_{x_{i}}$, for $i=1,\dotsc ,n$, the formal neighborhoods
 of the points $x_{i}$.
-\item $\Xhat_{y_{j}}$, for $i=1,\dotsc ,m$, the formal neighborhoods
+\item $\Xhat_{y_{j}}$, for $j=1,\dotsc ,m$, the formal neighborhoods
 of the points $y_{j}$.
-\item $\Xhat_{z_{j}}$, for $i=1,\dotsc ,m$, the formal neighborhoods
+\item $\Xhat_{z_{j}}$, for $j=1,\dotsc ,m$, the formal neighborhoods
 of the points $z_{j}$.
 \item $\Xhat_{B^{\circ}}$, the formal neighborhood of
 $B^{\circ}\subset X$ where $B^{\circ}=B-\{x_{1},\dotsc
@@ -937,7 +939,7 @@ are open in the fpqc topology \cite[Tag 0BNH,
 c.f.~Ex.50.15.3(5)]{stacks-project} so $\mathfrak{U}$ forms an fpqc
 cover. For $U\in \mathfrak{U}$, we suppress the associated map $U\to
 X$ from the notation and use the usual restriction notation to denote
-the pullback, for example:
+the pullback, for example
 \[
 U|_{C}:=U\times_{X}C. 
 \]
@@ -955,15 +957,15 @@ Recall that the component
 \[
 \Sigmaxylambdamu \subset \Hilb^{d,\bullet}_{\PCP}(X)
 \]
-parameterizes subschemes $Z\subset X$ whose minimal Cohen-Macaulay
+parameterizes subschemes $Z\subset X$ whose maximal Cohen-Macaulay
 subscheme is $C$, i.e. $Z$ is obtained from $C$ by adding embedded
-points and/or 0-dimensional components. We apply the definition of
+points and/or zero dimensional components. We apply the definition of
 $\Hilb^{n}(U,C)$ (Definition~\ref{defn: Hilb(U,C)}) to the open sets
 in our cover $\mathfrak{U}$. The following lemma writes the stratum
 $\Sigma^{\bullet}(\boldx ,\boldy ,\boldlambda ,\boldmu ) $ as a
 product of those schemes.
 \begin{lemma}\label{lem: Sigma = product of local Hilbert schemes}
-The following equation holds in $K_{0}(Var_{\CC})((p))$:
+The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$:
 \begin{align*}
 \Sigmaxylambdamu = p^{\chi
 (\O_{C})}&\cdot  \prod_{U\in \mathfrak{U}} \Hilb^{\bullet}(U,C|_{U})\\
@@ -985,22 +987,22 @@ $ \mu^{(j)}F^{\circ}_{y_{j}}:=C|_{\Xhat_{F^{\circ }_{y_{j}}}}$, etc.
 \begin{proof}
 Let $Z$ be a subscheme corresponding to a point in
 $\Sigmaxylambdamu$. Our fpqc cover $\mathfrak{U}$ has the property
-that every 0-dimensional component or embedded point of $Z$ is
+that every zero dimensional component or embedded point of $Z$ is
 contained in a unique open set in the cover. In other words, the
 restriction of $Z$ to any intersection of sets in the cover
-$\mathfrak{U}$ has no embedded points or 0-dimensional
+$\mathfrak{U}$ has no embedded points or zero dimensional
 components. fpqc decent then tells us that $Z$ is uniquely determined
 by its restriction to the open sets of the cover. This yields a
 constructible bijective morphism from the product of Hilbert schemes
 on the open sets to the Hilbert scheme on $X$ which induces the
 equality in the Grothendieck group. Finally, we verify that the
-powers of $p$ correctly match up each side. For a subscheme with $Z$
+powers of $p$ correctly match up each side. For a subscheme $Z$ with
 maximal Cohen-Macaulay subscheme $C$, we have
 \begin{align*}
 \chi (\O_{Z})&=\chi (\O_{C}) +\length (I_{C}/I_{Z})\\
-&=\chi (\O_{C}) +\sum_{U\in \mathfrak{U}}\length (I_{C}/I_{Z}|_{U})\\
+&=\chi (\O_{C}) +\sum_{U\in \mathfrak{U}}\length (I_{C}/I_{Z}|_{U}).
 \end{align*}
-therefore the $p^{\chi (\O_{Z})}$ term on the left hand side of the
+Therefore the $p^{\chi (\O_{Z})}$ term on the left hand side of the
 equation correctly matches the 
 \[
 p^{\chi (\O_{C})}\cdot \prod_{U\in
@@ -1013,7 +1015,7 @@ the right hand side.
 \begin{lemma}\label{lem: chi(C)=chi(B) -sum lamba1 - sum mu1}
 Let 
 \[
-C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right)
+C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right),
 \]
 then
 \[
@@ -1055,7 +1057,7 @@ Z_{\emptyset \mu \emptyset}\cup Z_{\emptyset \emptyset \nu } \subset
 \]
 defined by the monomial ideal
 \[
-I_{\lambda \mu \nu} = I_{\lambda \emptyset \emptyset}\cap I_{\emptyset \mu \emptyset}\cap I_{\emptyset \emptyset \nu}
+I_{\lambda \mu \nu} = I_{\lambda \emptyset \emptyset}\cap I_{\emptyset \mu \emptyset}\cap I_{\emptyset \emptyset \nu},
 \]
 where 
 \begin{align*}
@@ -1106,7 +1108,7 @@ $\Hilb^{n}(\lambda ,\mu ,\nu )$ for appropriate choices of $\lambda
 
 Recall that $S\subset X$ is the elliptic surface and $T=\Tot
 (K_{S}|_{B}).$ For any point $p\in B$, let $R_{p} =\Tot
-(K_{S}|F_{p})$. We choose isomorphisms 
+(K_{S}|_{F_{p}})$. We choose isomorphisms 
 \[
 \Xhat_{x_{i}} \cong \Xhat_{y_{j}} \cong \Xhat_{z_{j}} \cong \Spec \CC [[r,s,t]]
 \]
@@ -1124,14 +1126,14 @@ Note that at $x_{i}$ or $y_{j}$, the curve $B$ is given by $\{s=t=0
 \}$. At the point $z_{j}$, the fiber is a nodal curve and is given by
 $\{s=rt=0 \}$.
 
-With these choices, we have the identifications:
+With these choices, we have the identifications
 \begin{align*}
 \Hilb^{n}\left(\Xhat_{x_{i}},\hat{C}_{x_{i}} \right)&\cong
-\Hilb^{n}\left(\bx ,\emptyset ,\lambda^{(i)} \right)\\
+\Hilb^{n}\left(\bx ,\emptyset ,\lambda^{(i)} \right),\\
 \Hilb^{n}\left(\Xhat_{y_{j}},\hat{C}_{y_{j}} \right)&\cong
-\Hilb^{n}\left(\bx ,\emptyset ,\mu^{(j)} \right)\\
+\Hilb^{n}\left(\bx ,\emptyset ,\mu^{(j)} \right),\\
 \Hilb^{n}\left(\Xhat_{z_{j}},\hat{C}_{z_{j}} \right)&\cong
-\Hilb^{n}\left(\mujprime ,\emptyset ,\mu^{(j)} \right)
+\Hilb^{n}\left(\mujprime ,\emptyset ,\mu^{(j)} \right).
 \end{align*}
 Here $\bx$ is the unique partition of size 1 (whose diagram is a
 single box), $\emptyset$ is the empty partition, and prime denotes
@@ -1141,11 +1143,11 @@ An immediate consequence of the above and the symmetries of
 $\sfVtilde$ is 
 \begin{align}\label{eqn: e(Hilb(Xhat,Chat)=vertex}
 e\left(\Hilb^{\bullet}\left(\Xhat_{x_{i}},\hat{C}_{x_{i}} \right) \right)&=
-\sfVtilde_{\lambda^{(i)} \bx  \emptyset } \\
+\sfVtilde_{\lambda^{(i)} \bx  \emptyset }, \\
 e\left(\Hilb^{\bullet}\left(\Xhat_{y_{j}},\hat{C}_{y_{j}} \right) \right)&=
-\sfVtilde_{ \mu^{(j)} \bx \emptyset } \nonumber \\
+\sfVtilde_{ \mu^{(j)} \bx \emptyset }, \nonumber \\
 e\left(\Hilb^{\bullet}\left(\Xhat_{z_{j}},\hat{C}_{z_{j}} \right) \right)&=
-\sfVtilde_{\mu^{(j)} \mujprime \emptyset  } \nonumber
+\sfVtilde_{\mu^{(j)} \mujprime \emptyset  }. \nonumber
 \end{align}
 
 
@@ -1165,10 +1167,10 @@ decomposition of its domain into locally closed subsets. Because we
 work with Euler characteristics and the Grothendieck group, we need
 only work with constructible morphisms.}
 \begin{align*}
-\sigma_{W}:& \Hilb^{\bullet}(W) \to \Sym^{\bullet}(W)\\
+\sigma_{W}:& \Hilb^{\bullet}(W) \to \Sym^{\bullet}(W),\\
 \sigma_{B^{\circ }}:& \Hilb^{\bullet}(\Xhat_{B^{\circ}},B^{\circ}) \to \Sym^{\bullet}(B^{\circ })\\
-\sigma_{F_{x_{i}}^{\circ }}:& \Hilb^{\bullet}(\Xhat_{F_{x_{i}}^{\circ}},\lambda^{(i)}F_{x_{i}}^{\circ}) \to \Sym^{\bullet}(F_{x_{i}}^{\circ })\\
-\sigma_{F_{y_{j}}^{\circ }}:& \Hilb^{\bullet}(\Xhat_{F_{y_{j}}^{\circ}},\mu^{(j)}F_{y_{j}}^{\circ}) \to \Sym^{\bullet}(F_{y_{j}}^{\circ })
+\sigma_{F_{x_{i}}^{\circ }}:& \Hilb^{\bullet}(\Xhat_{F_{x_{i}}^{\circ}},\lambda^{(i)}F_{x_{i}}^{\circ}) \to \Sym^{\bullet}(F_{x_{i}}^{\circ }),\\
+\sigma_{F_{y_{j}}^{\circ }}:& \Hilb^{\bullet}(\Xhat_{F_{y_{j}}^{\circ}},\mu^{(j)}F_{y_{j}}^{\circ}) \to \Sym^{\bullet}(F_{y_{j}}^{\circ }),
 \end{align*}
 which to each subscheme $Z$ representing a point in a Hilbert scheme
 associates the location and length of the embedded points or zero
@@ -1178,14 +1180,14 @@ Consider a point $p$ in $W$, $B^{\circ}$, $F_{x_{i}}^{\circ }$, or
 $F_{y_{j}}^{\circ}$. Then using the formal local coordinates chosen
 above, we see that 
 \begin{align*}
-\sigma_{W}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset ,\emptyset,\emptyset \right) \\
-\sigma_{B^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\bx ,\emptyset ,\emptyset \right) \\
-\sigma_{F_{x_{i}}^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset  ,\emptyset,\lambda^{(i)}  \right) \\
+\sigma_{W}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset ,\emptyset,\emptyset \right), \\
+\sigma_{B^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\bx ,\emptyset ,\emptyset \right), \\
+\sigma_{F_{x_{i}}^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset  ,\emptyset,\lambda^{(i)}  \right), \\
 \sigma_{F_{y_{j}}^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset
-,\emptyset,\mu^{(j)} \right)
+,\emptyset,\mu^{(j)} \right).
 \end{align*}
 Moreover, the pre-images of the support morphisms clearly satisfy the
-following multiplicative property:
+following multiplicative property
 \[
 \sigma^{-1}_{U}\left(\sum_{i}n_{i}p_{i} \right) = \prod_{i}
 \sigma^{-1}_{U}\left(n_{i}p_{i} \right).
@@ -1194,7 +1196,7 @@ following multiplicative property:
 Pushing forward the Euler characteristic measure along the support
 maps, applying Lemma~\ref{lem: formula for euler char of sym
 products}, and using the symmetries of $\sfVtilde$ we find the
-following formulas:
+following formulas
 \begin{align}\label{eqn: e(Hilb(Xhat,Bcirc))=V^{e(Bcirc)}}
 e\left(\Hilb^{\bullet}(W) \right) & = \int_{\Sym^{\bullet}(W)}
 \left(\sigma_{W} \right)_{*}(1)\, de = \left(\sfVtilde_{\emptyset \emptyset \emptyset }\right)^{e(W)}\\
@@ -1212,7 +1214,7 @@ We are now ready to prove the main result of this section:
 
 \begin{proposition}\label{prop: formula for fd in terms of the
 normalized vertex} Recall that $f_{d}=\left(\rho_{d} \right)_{*}(1)\in
-\ZZ ((p))$ is the push forward of the Euler characteristic measure by
+\ZZ (\!(p)\!)$ is the push forward of the Euler characteristic measure by
 the map $\rho_{d}$. As before, let $x_{1},\dotsc ,x_{n}\in
 B^{\sm},y_{1},\dotsc ,y_{m}\in B^{\sing }$ and let $a_{1},\dotsc
 ,a_{n},b_{1},\dotsc ,b_{m}$ be positive integers summing to $d$. Then
@@ -1221,7 +1223,7 @@ f_{d}\left(\bolda \boldx +\boldb \boldy  \right)  =
 \left(p^{\half}\frac{\sfVtilde_{\bx \emptyset
 \emptyset}}{\sfVtilde_{\emptyset \emptyset \emptyset}} \right)^{e(B)}
 \cdot \sfVtilde^{e(S)}_{\emptyset \emptyset \emptyset} \cdot
-\prod_{i=1}^{n}g(a_{i}) \prod_{j=1}^{m} h(b_{j})
+\prod_{i=1}^{n}g(a_{i}) \prod_{j=1}^{m} h(b_{j}),
 \]
 where
 \begin{align*}
@@ -1235,7 +1237,7 @@ h(b) &= \sum_{\mu \vdash b} p^{-\mu_{1}} \frac{\sfVtilde_{\mu \mu'
 \end{align*}
 Note that this proves Proposition~\ref{prop: fd = F1*F2*G*H} and
 provides the values of the unknowns $g,h$ (as above) and
-$F_{1},F_{2}$:  
+$F_{1},F_{2}$
 \[
 F_{1} = p^{\half}\,\frac{\sfVtilde_{\bx \emptyset
 \emptyset}}{\sfVtilde_{\emptyset \emptyset \emptyset}} , \quad
@@ -1284,7 +1286,7 @@ p^{-\lambda_{1}^{(i)}} \sfVtilde_{\lambda^{(i)}\bx \emptyset} \cdot
 &\quad \cdot \prod_{j=1}^{m} \sum_{\mu^{(j)}\vdash b_{j}}
 p^{-\mu_{1}^{(j)}} \sfVtilde_{\mu^{(j)} \bx \emptyset} \cdot
 \sfVtilde_{\mu^{(j)} \mujprime \emptyset }\cdot
-\sfVtilde^{e(F^{\circ}_{y_{j}})}_{\mu^{(j)}\emptyset \emptyset}
+\sfVtilde^{e(F^{\circ}_{y_{j}})}_{\mu^{(j)}\emptyset \emptyset}.
 \end{align*}
 We note that $e(F_{x_{i}})=0$ and $e(F_{y_{j}})=1$ so that
 $e(F^{\circ }_{x_{i}})=-1$ and $e(F^{\circ }_{y_{j}})=-1$. Also,
@@ -1294,20 +1296,20 @@ e(W)&= e(S) - e(B^{\circ}) - \sum_{i} e(F_{x_{i}}) - \sum_{j} e(F_{y_{j}})\\
 &= e(S) - e(B) +n.
 \end{align*}
 The above equations allow us to redistribute the terms of
-$f_{d}(\bolda \boldx +\boldb \boldy )$ as follows:
+$f_{d}(\bolda \boldx +\boldb \boldy )$ as follows
 \begin{align*}
 f_{d}(\bolda \boldx +\boldb \boldy ) &= p^{\chi (\O_{B})} \cdot
 \sfVtilde^{e(S)}_{\emptyset \emptyset \emptyset} \cdot
 \left(\frac{\sfVtilde_{\bx \emptyset \emptyset}}{\sfVtilde_{\emptyset
 \emptyset \emptyset}} \right)^{e(B)} \\
-&\quad \cdot \prod_{i=1}^{n} \sum_{\lambda^{(i) \vdash a_{i}}}
-p^{\lambda_{1}^{(i)}} \cdot \frac{\sfVtilde_{\emptyset \emptyset
+&\quad \cdot \prod_{i=1}^{n} \sum_{\lambda^{(i)} \vdash a_{i}}
+p^{-\lambda_{1}^{(i)}} \cdot \frac{\sfVtilde_{\emptyset \emptyset
 \emptyset} \sfVtilde_{\lambda^{(i)} \bx  \emptyset}}{\sfVtilde_{\bx
 \emptyset \emptyset} \sfVtilde_{\lambda^{(i)}\emptyset \emptyset}} \\
-&\quad \cdot \prod_{j=1}^{m} \sum_{\mu^{(j) \vdash b_{j}}}
-p^{\mu_{1}^{(j)}} \cdot \frac{\sfVtilde_{\mu^{(j)} \mujprime
+&\quad \cdot \prod_{j=1}^{m} \sum_{\mu^{(j)} \vdash b_{j}}
+p^{-\mu_{1}^{(j)}} \cdot \frac{\sfVtilde_{\mu^{(j)} \mujprime
 \emptyset} \sfVtilde_{\mu^{(j)} \bx \emptyset}}{\sfVtilde_{\bx
-\emptyset \emptyset} \sfVtilde_{\mu^{(j)}\emptyset \emptyset}}
+\emptyset \emptyset} \sfVtilde_{\mu^{(j)}\emptyset \emptyset}}.
 \end{align*}
 Noting that $\chi (\O_{B}) = e(B)/2$, we see the above proves the proposition.
 \end{proof}
@@ -1323,15 +1325,14 @@ obtain a closed formula for $\DThat (X)$.
 \subsection{$\sfVtilde_{\lambda \mu \nu}$ in terms of $\sfV_{\lambda
 \mu \nu}$.}
 
-Recall that the coefficients of the series $\sfVtilde_{\lambda \mu \nu}\in \ZZ [[p]]$ is
-given by the Euler characteristics of the local Hilbert schemes:
+Recall that the coefficients of the series $\sfVtilde_{\lambda \mu \nu}\in \ZZ [[p]]$ are
+given by the Euler characteristics of the local Hilbert schemes
 \[
 \sfVtilde_{\lambda \mu \nu} =
 e\left(\Hilb^{\bullet}(\hat{\CC}^{3}_{0},\hat{Z}_{\lambda \mu \nu})
 \right). 
 \]
-We can compute the Euler characteristics using the $T=(\CC^{*})^{3}$
-action on the Hilbert schemes induced by the $T$ action on
+We can compute the Euler characteristics using the $T=(\CC^{*})^{3}$-action on the Hilbert schemes induced by the $T$-action on
 $\CC^{3}$. An ideal $I\subset \CC [r,s,t]$ is $T$-invariant if and
 only if it is generated by monomials. Moreover, there is a bijection
 between monomial ideals and 3D partitions (see \S~6.3 of
@@ -1349,29 +1350,29 @@ asymptotic to $(\lambda \mu \nu )$, see
 \cite[Defn~1]{Bryan-Kool-Young}. Consequently, 
 \begin{align*}
 \sfVtilde_{\lambda \mu \nu}& = e\left(\Hilb^{\bullet}(\hat{\CC}^{3}_{0},\hat{Z}_{\lambda \mu \nu} )^{T}\right)\\
-&=\sum_{\pi} p^{n(\pi )}
+&=\sum_{\pi} p^{n(\pi )},
 \end{align*}
 where the sum runs over all 3D partitions asymptotic to $(\lambda \mu
 \nu )$ and $n(\pi )$ is the number of boxes in $\pi$ which are not
 contained in any of the legs. We see that $\sfVtilde_{\lambda \mu
 \nu}$ differs from the usual topological vertex by an overall
-normalization: 
+normalization
 \[
-\sfV_{\lambda \mu \nu} = p^{|\pi_{min}|} \sfVtilde_{\lambda \mu \nu}
+\sfV_{\lambda \mu \nu} = p^{|\pi_{\min}|} \sfVtilde_{\lambda \mu \nu},
 \]
 where $\sfV_{\lambda \mu \nu }$ is the usual topological vertex
-\cite[Defn~2]{Bryan-Kool-Young} and $|\pi_{min}|$ is the normalized
+\cite[Defn~2]{Bryan-Kool-Young} and $|\pi_{\min}|$ is the normalized
 volume of the minimal 3D partition asymptotic to $(\lambda \mu \nu )$.  
 
 \begin{lemma}\label{lem: normalized vertex in terms of usual vertex}
-The following hold: 
+The following hold 
 \[
 \sfV_{\lambda \emptyset \emptyset} =\sfVtilde_{\lambda \emptyset
 \emptyset}, \quad \sfV_{\lambda \bx \emptyset} = p^{-\lambda_{1}}
 \sfVtilde_{\lambda \bx \emptyset}, \quad \sfV_{\mu \mu' \emptyset}
-=p^{-||\mu ||^{2}} \sfVtilde_{\mu \mu' \emptyset}
+=p^{-\Vert \mu \Vert^{2}} \sfVtilde_{\mu \mu' \emptyset},
 \]
-where $||\mu ||^{2}:= \sum_{j=1}^{\infty} \mu_{j}^{2}$ .
+where $\Vert \mu \Vert^{2}:= \sum_{j=1}^{\infty} \mu_{j}^{2}$.
 \end{lemma}
 \begin{proof}
 The normalized volume of a 3D-partition asymptotic to $(\lambda \mu
@@ -1380,20 +1381,20 @@ The normalized volume of a 3D-partition asymptotic to $(\lambda \mu
 |\pi | = \sum_{(\rho ,\sigma ,\tau )\in \pi} (1-\text{\# of legs of
 $\pi$ containing $(\rho ,\sigma ,\tau )$}) .
 \]
-For $\pi_{min}$, the minimal 3D-partition asymptotic to $(\lambda \bx
-\emptyset)$, the only cubes contributing to $|\pi_{min}|$ are those
+For $\pi_{\min}$, the minimal 3D-partition asymptotic to $(\lambda \bx
+\emptyset)$, the only cubes contributing to $|\pi_{\min}|$ are those
 contained in both the $\bx$-leg and the $\lambda$-leg. They intersect
 exactly in the cubes corresponding to the first part of $\lambda$,
-namely $\lambda_{1}$. Thus $|\pi_{min}|=-\lambda_{1}$ in this case.
+namely $\lambda_{1}$. Thus $|\pi_{\min}|=-\lambda_{1}$ in this case.
 
 For the case of $(\lambda \emptyset \emptyset )$ every cube is in the
-$\lambda$-leg and so $|\pi_{min}|=0$. For the case of $(\mu \mu'
+$\lambda$-leg and so $|\pi_{\min}|=0$. For the case of $(\mu \mu'
 \emptyset )$, each cube in the intersection of the $\mu$-leg and the
 $\mu '$-leg contribute $-1$ and all other cubes contribute 0. This
 intersection is a stack of squares of side lengths
 $\mu_{1},\mu_{2},\dotsc$ and hence
 \[
-|\pi_{min}| = -\sum_{j=1}^{\infty} \mu_{j}^{2}.
+|\pi_{\min}| = -\sum_{j=1}^{\infty} \mu_{j}^{2}. \qedhere
 \]
 \end{proof}
 
@@ -1404,7 +1405,7 @@ Proposition~\ref{prop: formula for fd in terms of the normalized
 vertex} into Corollary~\ref{cor: DThat = F1^{e(B)}F2^{e(S)}(sum g
 q^{a})^{e(B)-e(S)}...}, and then substituting in the formulas from
 Lemma~\ref{lem: normalized vertex in terms of usual vertex} we obtain
-the following:
+the following
 \begin{align*}
 \DThat (X) & = \left(p^{\half}\frac{\sfV_{\bx \emptyset
 \emptyset}}{\sfV_{\emptyset \emptyset \emptyset}} \right)^{e(B)}\cdot
@@ -1413,15 +1414,15 @@ the following:
 \sfV_{\lambda \bx \emptyset}}{\sfV_{\bx \emptyset
 \emptyset}\sfV_{\lambda \emptyset \emptyset}}q^{|\lambda |}
 \right)^{e(B)-e(S)}\\
-&\quad \cdot \left(\sum_{\mu} p^{||\mu ||^{2}} \frac{\sfV_{\mu \mu'
+&\quad \cdot \left(\sum_{\mu} p^{\Vert \mu \Vert^{2}} \frac{\sfV_{\mu \mu'
 \emptyset} \sfV_{\mu \bx \emptyset}}{\sfV_{\bx \emptyset
 \emptyset}\sfV_{\mu \emptyset \emptyset}}q^{|\mu |} \right)^{e(S)}.
 \end{align*}
 From the Okounkov-Reshitikhin-Vafa formula for the topological vertex
-\cite{Ok-Re-Va}\cite[eqn~5]{Bryan-Kool-Young}, we get
+\cite{Ok-Re-Va}, \cite[eqn~5]{Bryan-Kool-Young} we get
 \[
 \sfV_{\emptyset \emptyset \emptyset} =M(p),\quad \sfV_{\bx \emptyset
-\emptyset} = \frac{M(p)}{1-p}
+\emptyset} = \frac{M(p)}{1-p},
 \]
 which we substitute into the above to find
 \begin{align*}
@@ -1429,11 +1430,11 @@ which we substitute into the above to find
 \left(\sum_{\lambda} (1-p)\frac{\sfV_{\lambda \bx
 \emptyset}}{\sfV_{\lambda \emptyset \emptyset}} q^{|\lambda
 |}\right)^{e(B)-e(S)} \\
-&\quad \cdot \left(\sum_{\mu} (1-p)p^{||\mu ||^{2}} \sfV_{\mu \mu'
+&\quad \cdot \left(\sum_{\mu} (1-p)p^{\Vert \mu \Vert^{2}} \sfV_{\mu \mu'
 \emptyset}\frac{\sfV_{\mu \bx \emptyset}}{\sfV_{\mu \emptyset
-\emptyset}}q^{|\mu |} \right).
+\emptyset}}q^{|\mu |} \right)^{e(S)}.
 \end{align*}
-Applying slight rearrangements of \cite[eqns~(2)\&(4)]{Bryan-Kool-Young} we see that 
+Applying \cite[eqns~(2)\&(4)]{Bryan-Kool-Young}, we see that 
 \begin{align*}
 \DThat (X) &=\left(p^{-\half}-p^{\half} \right)^{-e(B)} \cdot
 \left(\prod_{d=1}^{\infty} \frac{(1-q^{d})}{(1-pq^{d})(1-p^{-1}q^{d})} \right)^{e(B)-e(S)}\\
@@ -1464,12 +1465,12 @@ independent of Toda's.
 We say that a subscheme $C\subset X$ is a \textbf{partition thickened
 fiber curve} if it is of the form
 \[
-C= \cup_{i}\left( \lambda^{(i)}F_{x_{i}} \right)
+C= \cup_{i}\left( \lambda^{(i)}F_{x_{i}} \right),
 \]
 where we are using the notation of Definition~\ref{defn: partition
 thickened comb curve}. We say that a subscheme $Z\subset X$ is a
 \textbf{partition thickened fiber curve with points (PFP)} if the
-maximal Cohen-Macaulay subscheme $Z_{CM}\subset Z$ is a partition
+maximal Cohen-Macaulay subscheme $Z_{\CM}\subset Z$ is a partition
 thickened fiber curve. We denote by
 \[
 \Hilb^{dF,n}_{\PFP}(X)\subset \Hilb^{dF,n}(X)
@@ -1493,7 +1494,7 @@ a morphism
 \[
 \rho^{\fiber}_{d}:\Hilb^{dF,\bullet}_{\PFP}(X) \to \Sym^{d}(B) 
 \]
-such that if $[Z]\in \Hilb^{dF,n}_{\PFP}(X)$ where the maximal
+such that if $[Z]\in \Hilb^{dF,n}_{\PFP}(X)$, where the maximal
 Cohen-Macaulay subscheme of $Z$ is
 $\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$, then
 \[
@@ -1506,7 +1507,7 @@ $\rho^{\fiber}_{d}$ breaks into components:
 \[
 \left(\rho_{d}^{\fiber} \right)^{-1}(\bolda \boldx +\boldb \boldy ) =
 \bigsqcup_{\boldlambda \vdash \bolda} \bigsqcup_{\boldmu \vdash
-\boldb} \Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu )
+\boldb} \Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu ),
 \]
 where we have adopted the same notation as in Section~\ref{sec:
 pushforward to sym prod}. Note that the strata
@@ -1516,28 +1517,28 @@ pushforward to sym prod}. Note that the strata
 \]
 parameterize subschemes whose maximal Cohen-Macaulay subscheme is 
 \[
-C = \cup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
-\cup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right) . 
+C = \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
+\bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right) . 
 \]
-Since the only nodes of $C_{red}$ are $z_{1},\dotsc ,z_{m}$ (adopting
+Since the only nodes of $C_{\red}$ are $z_{1},\dotsc ,z_{m}$ (adopting
 the notation of Section~\ref{sec: restriction to formal nghds}) our
-fpqc cover is simpler in this case:
+fpqc cover is simpler in this case
 \[
 \mathfrak{U}_{\fiber} =\left\{ \Xhat_{z_{1}},\dotsc ,
 \Xhat_{z_{m}},\Xhat_{F^{\circ}_{y_{1}}},\dotsc ,
 \Xhat_{F^{\circ}_{y_{m}}}, \Xhat_{F_{x_{1}}},\dotsc ,
-\Xhat_{F_{x_{n}}}, W   \right\}
+\Xhat_{F_{x_{n}}}, W   \right\},
 \]
 where our notation is the same as in Definition~\ref{defn: the fpqc
 cover mathfrak U} except that
 \[
-F^{\circ}_{y_{j}} = F_{y_{j}} - \{z_{j} \}, \quad W = X - C_{red}. 
+F^{\circ}_{y_{j}} = F_{y_{j}} - \{z_{j} \}, \quad W = X - C_{\red}. 
 \]
 
 With virtually the same proof, we obtain the following analog of
 Lemma~\ref{lem: Sigma = product of local Hilbert schemes}:
 \begin{lemma}\label{lem: Sigmafiber = product of local Hilbert schemes}
-The following equation holds in $K_{0}(Var_{\CC})((p))$:
+The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \begin{align*}
 \Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu ) &=
 p^{\chi (\O_{C})}\cdot \Hilb^{\bullet}(W) \cdot \prod_{i=1}^{n}
@@ -1581,7 +1582,7 @@ We may rewrite the above as
 \[
 f^{\fiber}_{d}(\bolda \boldx +\boldb \boldy ) = \sfVtilde_{\emptyset
 \emptyset \emptyset}^{e(S)} \prod_{i=1}^{n} g_{\fiber}(a_{i})
-\prod_{j=1}^{m} h_{\fiber}(b_{j})
+\prod_{j=1}^{m} h_{\fiber}(b_{j}),
 \]
 where
 \[
@@ -1591,7 +1592,7 @@ g_{\fiber}(a)  = \sum_{\lambda \vdash a} 1 \quad \quad h_{\fiber}(b)
 \]
 We then get the following result, analogous to Corollary~\ref{cor:
 DThat = F1^{e(B)}F2^{e(S)}(sum g q^{a})^{e(B)-e(S)}...}, with a
-similar proof:
+similar proof
 \[
 \DThat_{\fiber}(X) = \sfVtilde^{e(S)}_{\emptyset \emptyset \emptyset}
 \cdot \left(\sum_{\lambda}q^{|\lambda |} \right)^{e(B)-e(S)} \cdot
@@ -1647,7 +1648,7 @@ Behrend function on $\Hilb (Y)$. Our conjecture is the following:
 
 \begin{conjecture}\label{conj: Behrend fnc conj}
 \[
-\int_{\Hilb^{n}(Y,C)} \nu \, de = (-1)^{n} \nu ([C]) \int_{\Hilb^{n}(Y,C)} \, de
+\int_{\Hilb^{n}(Y,C)} \nu \, de = (-1)^{n} \nu ([C]) \int_{\Hilb^{n}(Y,C)} \, de,
 \]
 where $\nu ([C])$ is the value of the Behrend function at the point $[C]\in \Hilb (Y)$.
 \end{conjecture}
@@ -1660,10 +1661,10 @@ Calabi-Yau. This follows from the computations in \cite{MNOP1}.
 
 One could also make the much stronger conjecture that 
 \[
-\nu ([Z]) = (-1)^{n} \nu ([C])
+\nu ([Z]) = (-1)^{n} \nu ([C]),
 \]
-for all $[Z]\in \Hilb^{n}(Y,c)$. This would of course imply our
-conjecture as stated. However, we do not know if this stronger version
+for all $[Z]\in \Hilb^{n}(Y,C)$. This would of course imply our
+conjecture as stated. However, we do not know whether this stronger version
 holds, even in the case where $Y$ is $\CC^{3}$ and $C$ is empty. In
 this case, this stronger conjecture says that the Behrend function
 on $\Hilb^{n}(\CC^{3})$ is the constant function $(-1)^{n}$.
@@ -1693,7 +1694,7 @@ f^{\nu}_{d}(\bolda \boldx +\boldb \boldy ) =
 \]
 Recall that for the partition function $\DT (X)$, the variable
 tracking the holomorphic Euler characteristic is $y$ rather than $p$
-so $f_{d}^{\nu}(\bolda \boldx +\boldb \boldy )\in \ZZ ((y))$.
+so $f_{d}^{\nu}(\bolda \boldx +\boldb \boldy )\in \ZZ (\!(y)\!)$.
 
 By equation~\eqref{eqn: components of fibers of rho} we have
 \[
@@ -1704,11 +1705,11 @@ Recall that $\Sigmaxylambdamu$ parameterizes subschemes $Z\subset X$
 such that the maximal Cohen-Macaulay subscheme of $Z$ is the partition
 thickened comb curve
 \[
-C=B \cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right) \cup_{j}\left(\mu^{(j)}F_{y_{j}} \right)
+C=B \cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right) \cup_{j}\left(\mu^{(j)}F_{y_{j}} \right).
 \]
 In other words, $\Sigmaxylambdamu$ is essentially equal to the local
 Hilbert scheme $\Hilb^{\bullet}(X,C)$ (Definition~\ref{defn:
-Hilb(U,C)}) except that the later is indexed by the length of
+Hilb(U,C)}) except that the latter is indexed by the length of
 $I_{C}/I_{Z}$ whereas $\Sigmaxylambdamu$ is indexed by $\chi
 (\O_{Z})$. Consequently
 \[
@@ -1745,8 +1746,8 @@ after the substitution $p=-y$ as asserted by Theorem~\ref{thm: DT(X)
 assuming the Behrend function conjecture}.
 
 The case of $\DT_{\fiber}(X)$ (previously shown by Toda) proceeds
-similarly except that it doesn't require the difficult deformation
-result of next section. Indeed, in this case, we only need to know
+similarly except that it does not require the difficult deformation
+result of the next section. Indeed, in this case, we only need to know
 that the value of the Behrend function at a partition thickened fiber
 curve is 1:
 \[
@@ -1754,7 +1755,7 @@ curve is 1:
 \right) =1.
 \]
 This follows from the fact that subschemes in $X$ of the form
-$p^{-1}(Z)$ where $Z$ is a zero-dimensional subscheme of $T$ form a
+$p^{-1}(Z)$, where $Z$ is a zero dimensional subscheme of $T$, form a
 component of $\Hilb (X)$ which is isomorphic to the Hilbert scheme of
 points on $T$ and hence smooth and even dimensional. While this can be
 proven directly, one can also do a similar (but easier) computation as
@@ -1771,7 +1772,7 @@ curves lies in the non-singular locus of $\Hilb (X)$ and we compute
 the dimension of $\Hilb (X)$ at those points. As a corollary, we
 determine the value of the Behrend function at the points of the
 Hilbert scheme corresponding to partition thickened comb curves. This
-is the key technical result require in Section~\ref{sec: Behrend} to
+is the key technical result required in Section~\ref{sec: Behrend} to
 promote our computation of $\DThat (X)$ to a computation of the
 Behrend function version $\DT (X)$.
 
@@ -1781,7 +1782,7 @@ We begin by stating the three main results of this section.
 \begin{theorem}\label{thm: strata of Hilb(C^2) with fixed intersection
 is smooth} Let $B\subset T$ be a smooth curve contained in a smooth
 surface $T$. Define $V_{l}\subset \Hilb^{d}(T)$ to be the locus of
-points parameterizing dimension 0 subschemes $Z\subset T$ of length
+points parameterizing zero dimensional subschemes $Z\subset T$ of length
 $n$ such that the length of the scheme theoretic intersection $Z\cap
 B$ is $l$. Then $V_{l}$ is locally closed and smooth of dimension
 $2d-l$.
@@ -1790,7 +1791,7 @@ $2d-l$.
 \begin{theorem}\label{thm: Ext computation}
 Let $\lambda^{(1)},\dotsc ,\lambda^{(n)}$ be partitions and let
 $C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$ be a partition
-thickened comb curve. The the Zariski tangent space of $\Hilb (X)$ at
+thickened comb curve. The Zariski tangent space of $\Hilb (X)$ at
 the point $[C]$, which is given by $\Hom (I_{C},\O_{C})\cong
 \Ext^{1}_{0}(I_{C},I_{C})$, has dimension
 \[
@@ -1808,7 +1809,7 @@ The value of the Behrend function at $[C]\in \Hilb (X)$ for a
 partition thickened comb curve $C =
 B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$ is given by
 \[
-\nu ([C]) = (-1)^{\chi (\O_{S})-\chi (\O_{C})}
+\nu ([C]) = (-1)^{\chi (\O_{S})-\chi (\O_{C})}.
 \]
 \end{corollary}
 \begin{proof}
@@ -1824,14 +1825,14 @@ Lemma~\ref{lem: chi(C)=chi(B) -sum lamba1 - sum mu1} say that
 h^{0}(N_{B/X}) = \chi (\O_{S}) - \chi (\O_{B}), \quad \chi (\O_{C}) =
 \chi(\O_{B}) - \sum_{i} \lambda^{(i)}_{1}
 \]
-which, when substituted into the above prove the corollary. 
+which, when substituted into the above, prove the corollary. 
 \end{proof}
 The most difficult of the above results is Theorem~\ref{thm: Ext
 computation} and its proof occupies the majority of this section.
 
 Our method for computing the dimension of deformation spaces is an
 adaption of Haiman's method for computing infinitesimal deformations
-of 0-dimensional subschemes on a surface \cite{Haiman1998}. Indeed,
+of zero dimensional subschemes on a surface \cite{Haiman1998}. Indeed,
 the proof of Theorem~\ref{thm: strata of Hilb(C^2) with fixed
 intersection is smooth} follows directly using Haiman's argument. For
 Theorem~\ref{thm: Ext computation}, we use Haiman's method to study
@@ -1845,7 +1846,7 @@ computation}.}
 For notational simplicity we first treat the case where there is a
 single partition thickened fiber $F=F_{x}$ at $x\in B$, that is
 \[
-C=B\cup \lambda F
+C=B\cup \lambda F,
 \]
 where $(\lambda_{1}\geq \lambda_{2}\geq \dotsb \geq \lambda_{l})$ is
 an integer partition of length $l$.
@@ -1872,10 +1873,13 @@ corner closest to the origin is at $(\rho ,\sigma ,\tau)$.
 The ideal sheaf $I_{C}$ has a locally free resolution of the form
 \begin{equation}\label{eqn: R-->G-->I_C exact sequence}
 0\to \oplus_{\beta}R_{\beta} \to \oplus_{\alpha }G_{\alpha } \to I_{C}
-\to 0
+\to 0,
 \end{equation}
 where $G_{\alpha}$ (the ``generators'') and $R_{\beta}$ (the
-``relations'') are of the form $\O (-\rho R-\sigma S-\tau T).$
+``relations'') are of the form 
+\[
+\O (-\rho R-\sigma S-\tau T).
+\]
 
 Indeed, we can explicitly take the collection of $(\rho ,\sigma
 ,\tau)$ for $G_{\alpha}$ to be 
@@ -1888,7 +1892,7 @@ for all others.
 
 We also have the sequence
 \[
-0\to \O_{C} \to \O_{B}\oplus\O_{\lambda F}\to \O_{\lambda_{1}x}\to 0
+0\to \O_{C} \to \O_{B}\oplus\O_{\lambda F}\to \O_{\lambda_{1}x}\to 0,
 \]
 where $\lambda_{1}x=B\cap \lambda F$ is the length $\lambda_{1}$
 subscheme of $B$ supported at $x$.
@@ -1921,9 +1925,9 @@ the restriction of the homomorphisms $\oplus_{\alpha}G_{\alpha}\to
 
 \subsection{Combinatorics of Haiman arrows}\label{subsec: combinatorics of Haiman arrows}
 
-Restricted to the local ring $\widehat{\O}_{X,x} \cong \CC [[r,s,t]]$,
+When restricted to the local ring $\widehat{\O}_{X,x} \cong \CC [[r,s,t]]$,
 $\O_{C}$ is spanned over $\CC$ by the monomials
-$r^{\rho}s^{\sigma}t^{\tau}$ where $(\rho ,\sigma ,\tau )$ are of the
+$r^{\rho}s^{\sigma}t^{\tau}$, where $(\rho ,\sigma ,\tau )$ are of the
 form $(\rho ,0,0)$ or $(\rho ,\sigma ,\tau )_{(\rho ,\sigma )\in
 \lambda}$ and $I_{C}$ is spanned by the complementary monomials. As
 previously discussed, we view these monomials as cubes in the positive
@@ -1956,7 +1960,7 @@ $\widehat{I}_{C,x}$ to $\hat{\O}_{C,x}$. We wish to determine a basis
 for $\Hom (I_{C},\O_{C})$ in terms of Haiman arrows.
 
 The generators of $I_{C}$ correspond to the cubes in the corners of
-the set of $I_{C}$ cubes. They are located at $(\rho ,\sigma ,\tau )$
+the set of $I_{C}$-cubes. They are located at $(\rho ,\sigma ,\tau )$
 where $(\rho ,\sigma )$ are the corners just outside of $\lambda$ and
 $\tau =0$ unless $\sigma =0$ in which case $\tau =1$ (they are
 indicated by the grey balls in Figure~\ref{fig: B union lambda F
@@ -2018,7 +2022,7 @@ F}(x))\text{  if  }\tau =1.
 \]
 In both cases, this space has a basis of sections which in the local
 coordinates are given by $\{r^{\rho '}s^{\sigma '}t^{\tau } \}_{(\rho
-',\sigma ')\in \lambda}$. Note that the section we consider above are
+',\sigma ')\in \lambda}$. Note that the sections we consider above are
 uniquely determined by their value on the formal neighborhood
 $\hat{X}_{x}\cong \Spec \CC [[r,s,t]]$, a property which uses
 crucially the fact that the genus of $F$ is 1.
@@ -2026,7 +2030,7 @@ crucially the fact that the genus of $F$ is 1.
 We have seen that the possible Haiman arrows to $\lambda F$-cubes are
 given by 
 \[
-(\rho ,\sigma ,\tau )\to (\rho ',\sigma ',\tau ')
+(\rho ,\sigma ,\tau )\to (\rho ',\sigma ',\tau '),
 \]
 where $(\rho ,\sigma ,\tau )$ is a generating cube, $\tau '=\tau$ and
 $(\rho ',\sigma ')\in \lambda$. In particular, the direction of the
@@ -2070,7 +2074,7 @@ arrows are non-zero and the red arrows are necessarily zero.}\label{fig: Haiman 
 to F-cubes}
 \end{figure}
 
-If the direction of the Haiman arrow is strictly southwest (i.e. it
+If the direction of the Haiman arrow is strictly southwest (i.e.~it
 has strictly negative $\rho$ and $\sigma$ components), then by
 translating (see Remark~\ref{rem: ker of phi2 gives equations equating
 translatedarrows}) along the contour of $\lambda$ to the edge of the
@@ -2089,9 +2093,9 @@ weakly southeast pointing Haiman arrows for each box in $\lambda$
 represented by the arrow going from just outside the top of the
 box's column to the end of the box's row.
 
-The above accounts for exactly $2|\lambda |$ different equivalence
+The above accounts for precisely $2|\lambda |$ different equivalence
 classes of Haiman arrows to $\lambda F$-cubes. However, $\lambda_{1}$
-of these arrows have their head a $B$-cube, namely the southeast
+of these arrows have their head in a $B$-cube, namely the southeast
 pointing arrows whose tails are just above the top of $\lambda$ and
 whose head is the last square in the first row of $\lambda$. Note that
 the northwest pointing Haiman arrows whose heads are in the first row
@@ -2109,7 +2113,7 @@ a $B$-cube must have a tail with coordinates $(\rho ,0,1)$ or $(\rho
 ,1,0)$ since if not, it could be translated (see Remark~\ref{rem: ker
 of phi2 gives equations equating translatedarrows}) to an arrow whose
 head has negative $\tau$ or $\sigma$ coordinates by first translating
-sufficiently far in the positive $\rho$ direction and then translating
+sufficiently far in the positive $\rho$-direction and then translating
 the tail so that it is just outside of the $B$-cubes. A Haiman arrow
 to a $B$-cube whose tail is $(\rho ,0,1)$ or $(\rho ,1,0)$ corresponds
 respectively to a section in $H^{0}(B,\O_{B}(\rho R+T))$ or
@@ -2140,9 +2144,9 @@ Haiman arrows to $\lambda F$-cubes must be horizontal and so this must
 be zero. Consider next a Haiman arrow $(\rho ,1,0)\to (\rho ',0,0)$
 with $\rho '<\rho$. Then this arrow maybe translated so that it is a
 strictly southwest pointing Haiman arrow to an $\lambda F$-cube which
-we showed in the previous subsection must be zero.\footnote{Are you
+we showed in the previous subsection must be zero\footnote{Are you
 still with us dear reader? We are deep in the weeds now, but are
-almost done.}
+almost done.}.
 \end{proof}
 
 By the lemma, we conclude that the only sections of
@@ -2150,13 +2154,13 @@ $H^{0}(B,N_{B/S}(\rho x))$ or $H^{0}(B,N_{B/T}(\rho x))$ which
 correspond to non-zero Haiman arrows vanish to order at least $\rho$
 at $x$, and thus they are necessarily in the image of the maps
 \begin{align*}
-H^{0}(B,N_{B/S})&\to H^{0}(B,N_{B/S}(\rho x))\\
-H^{0}(B,N_{B/T})&\to H^{0}(B,N_{B/T}(\rho x))
+H^{0}(B,N_{B/S})&\to H^{0}(B,N_{B/S}(\rho x)),\\
+H^{0}(B,N_{B/T})&\to H^{0}(B,N_{B/T}(\rho x)).
 \end{align*}
 By Lemma~\ref{lem: h0 of normal bundles of B in S and T},
 $H^{0}(B,N_{B/S})=0$. On the other hand, $H^{0}(B,N_{B/T})$ can be
 non-zero and these deformations do occur, they correspond to global
-deformations of $B$ in the $K_{S}$ direction.
+deformations of $B$ in the $K_{S}$-direction.
 
 In conclusion, we have completely classified all possible Haiman
 arrows up to equivalence and have thus constructed an explicit basis
@@ -2167,7 +2171,7 @@ for
 They consist of the $2|\lambda |-\lambda_{1}$ Haiman arrows to
 $\lambda F$-cubes which do not go to $B$-cubes and the
 $h^{0}(B,N_{B/T})=h^{0}(B,N_{B/X})$ dimensional space of Haiman arrows
-going to $B$-cubes. We've thus proved that
+going to $B$-cubes. We have thus proved that
 \[
 \dim \Hom (I_{C},\O_{C}) = h^{0}(B,N_{B/T}) + 2|\lambda |-\lambda_{1}
 \]
@@ -2204,7 +2208,7 @@ and let
 \[
 V_{l}\subset \Hilb^{d}(T)
 \]
-be the strata defined in Theorem~\ref{thm: strata of Hilb(C^2) with
+be the stratum defined in Theorem~\ref{thm: strata of Hilb(C^2) with
 fixed intersection is smooth}. Let $W=H^{0}\times V_{l}$ so by
 Theorem~\ref{thm: strata of Hilb(C^2) with fixed intersection is
 smooth}, $W$ is smooth and of dimension $h^{0}(N_{B/T})+2d-l$. We wish
@@ -2213,7 +2217,7 @@ to construct a family over $W$ of distinct subschemes.
 Since $T=\Tot (N_{B/T})$, given $\theta \in H^{0}$, we get an
 automorphism of $T$, which we call $\Theta$, given by
 \[
-\Theta :(p,v)\mapsto (p,v+\theta (p))
+\Theta :(p,v)\mapsto (p,v+\theta (p)),
 \]
 where $p\in B$ and $v\in
 T|_{p}$. 
@@ -2226,13 +2230,13 @@ C_{\theta} = \Theta (B)\cup p^{-1}(\Theta (Z)).
 \]
 Clearly, all such subschemes are distinct, and moreover, every
 partition thickened comb curve is of the above form (with $\theta =0$
-so that $\Theta =Id$).
+so that $\Theta = \id$).
 
 Formally, we construct the universal subscheme 
 \[
 \mathcal{C}\subset H^{0}\times V_{l}\times X
 \]
-flat over $H^{0}\times V_{l}$ as follows. Consider the diagram:
+flat over $H^{0}\times V_{l}$ as follows. Consider the diagram
 \[
 \begin{diagram}[h=0.75cm]
 &&&&&&\\
@@ -2240,7 +2244,7 @@ flat over $H^{0}\times V_{l}$ as follows. Consider the diagram:
 && \uTo^{i} \dTo_{p} &&&&\\
 &&H^{0}\times V_{l}\times T & \rTo^{\Theta} & H^{0}\times V_{l}\times  T &&\\
 &&\dTo_{\pi_{1}} && \dTo_{\pi_{2}} &&\\
-\mathcal{B} &\Into & H^{0}\times T && V_{l}\times T& \lInto & \mathcal{Z}
+\mathcal{B} &\Into & H^{0}\times T && V_{l}\times T& \lInto & \mathcal{Z}.
 \end{diagram}
 \]
 In the above diagram, $\mathcal{Z}\subset V_{l}\times T$ is the family
@@ -2252,7 +2256,7 @@ $\pi_{2}$ are the obvious projections and the maps $p$ and $i$ are the
 projection and the zero section of the elliptic fibration $X\to T$. We
 are also adopting the general abuse of notation that we drop factors
 of the identity map from the notation, that is if $f:A\to B$ we denote
-also by $f$ the map $f\times Id_{C}:A\times C\to B\times C$.
+also by $f$ the map $f\times \id_{C}:A\times C\to B\times C$.
 
 Then the subscheme
 \[
@@ -2272,12 +2276,12 @@ is upper semi-continuous and thus $V_{l}$ is locally closed.
 
 There is a dense open set on $V_{l}$ isomorphic to
 \[
-\Sym^{l}(B)\times \Hilb^{d-l}(T-B)
+\Sym^{l}(B)\times \Hilb^{d-l}(T-B),
 \]
 which is clearly smooth and of dimension $2d-l$. Therefore, to prove
 the theorem if suffices to show that 
 \[
-\dim T_{[Z]} V_{l} = 2d-l
+\dim T_{[Z]} V_{l} = 2d-l,
 \]
 where $Z\subset T$ is a subscheme which is set theoretically (but not
 necessarily scheme theoretically) supported on $B$. Moreover, we can
@@ -2294,8 +2298,7 @@ case, it suffices to compute $\dim T_{[Z]} V_{l}$ at $\left(\CC^{*}
 subschemes are given by $Z_{\lambda}$ (see Section~\ref{sec: reduction
 to thickened comb curves}) defined by monomial ideals
 $I_{\lambda}\subset \CC [r,s]$ corresponding to partitions $\lambda$
-of $d$ which in this case (because $\length (Z_{\lambda}\cap B)=l$)
-have $\lambda_{1}=l$.
+of $d$ which in this case have $\lambda_{1}=l$, because $\length (Z_{\lambda}\cap B)=l$.
 
 Therefore, we need only prove the following lemma:
 \begin{lemma}\label{lem: dim of Vl at Zlambda is 2d-l}
@@ -2321,11 +2324,11 @@ is cut out by the equations obtained by linearizing the condition
 \length (Z\cap \{s=0 \})=l
 \]
 at $Z_{\lambda}$. In
-\cite{Haiman1998}, Mark Haiman has given a very explicit basis for
+\cite{Haiman1998}, M.~Haiman has given a very explicit basis for
 $T_{Z_{\lambda}}\Hilb^{d}(\CC^{2})$ in terms of what we called Haiman
 arrows in Section~\ref{subsec: combinatorics of Haiman
 arrows}. Namely, consider all Haiman arrows $(\rho ,\sigma )\to (\rho
-',\sigma ')$ of one of the following two forms
+',\sigma ')$ of one of the following two forms:
 \begin{enumerate}
 \item  $(\rho ,\sigma )\to (\rho ',\sigma ')$ is a southeast
 pointing arrow with $(\rho ,\sigma )$ located at a box just above the
@@ -2341,7 +2344,7 @@ deformation corresponding to an arrow $(\rho ,\sigma )\to (\rho
 ',\sigma ')$ is given by deforming the element $r^{\rho}s^{\sigma}\in
 I_{\lambda}$ to
 \[
-r^{\rho}s^{\sigma}+\epsilon \, r^{\rho '}s^{\sigma '} 
+r^{\rho}s^{\sigma}+\epsilon \, r^{\rho '}s^{\sigma '},
 \]
 where $\epsilon^{2}=0$.
 
@@ -2349,10 +2352,10 @@ For each $\phi :(\rho ,\sigma )\to (\rho ',\sigma ')$ let
 $I_{Z_{\lambda}}(\phi )$ be the corresponding deformed ideal and
 consider
 \[
-\dim \left(\frac{\CC [r,s] }{I_{Z_{\lambda}}\cup (s)} \right).
+\dim \left(\frac{\CC [r,s] }{I_{Z_{\lambda}} + (s)} \right).
 \]
-If $\sigma '>0$ then $I_{Z_{\lambda}}(\phi )\cup (s) =
-I_{Z_{\lambda}}\cup (s)$: Haiman arrows $(\rho ,\sigma )\to (\rho
+If $\sigma '>0$ then $I_{Z_{\lambda}}(\phi ) + (s) =
+I_{Z_{\lambda}} + (s)$: Haiman arrows $(\rho ,\sigma )\to (\rho
 ',\sigma ')$ with $\sigma '>0$ preserve the condition $\length (Z\cap
 \{s=0 \})=l$ and hence lie in $T_{[Z_{\lambda}]}V_{l}$.
 
@@ -2363,18 +2366,18 @@ If $\sigma '=0$ there are two possibilities:
 \item $\phi$ is of the form $(\lambda_{1},0)\to (\rho ',0)$ for $0\leq
 \rho '<\lambda_{1}$. 
 \end{enumerate}
-In case 2, we have 
+In Case 2, we have 
 \[
-\frac{\CC [r,s]}{I_{Z_{\lambda}}(\phi )\cup (s)} \cong \frac{\CC
-[r]}{(r^{\lambda_{1}}+\epsilon r^{\rho '})}
+\frac{\CC [r,s]}{I_{Z_{\lambda}}(\phi ) + (s)} \cong \frac{\CC
+[r]}{(r^{\lambda_{1}}+\epsilon r^{\rho '})},
 \]
 which has dimension $\lambda_{1}=l$ for all values of $\epsilon$ since
 $r^{\lambda_{1}}+\epsilon r^{\rho '}$ has degree $\lambda_{1}$ for all
 values of $\epsilon$.
 
-In case 1, we have
+In Case 1, we have
 \[
-\frac{\CC [r,s]}{I_{Z_{\lambda}}(\phi )\cup (s)} \cong \frac{\CC
+\frac{\CC [r,s]}{I_{Z_{\lambda}}(\phi ) + (s)} \cong \frac{\CC
 [r]}{(r^{\lambda_{1}},\epsilon  r^{\lambda_{1}-1})}
 \]
 which, for non-zero values of $\epsilon$, has dimension
@@ -2382,7 +2385,7 @@ $\lambda_{1}-1$.
 
 Thus we have found that $T_{[Z_{\lambda}]}V_{l}$ is spanned by all the
 arrows in the Haiman basis except for the $\lambda_{1}=l$ arrows given
-by case 1 above and therefore $\dim T_{[Z_{\lambda}]}V_{l} = 2d-l$.
+by Case 1 above and therefore $\dim T_{[Z_{\lambda}]}V_{l} = 2d-l$.
 \end{proof}
 
 
@@ -2395,7 +2398,7 @@ Let $p : S \rightarrow B$ be a non-trivial elliptic surface with
 section $B \subset S$. For simplicity, we assume that all singular
 fibers are irreducible nodal rational curves.
 
-Let $X=\Tot (K_{S})$ and let $T=\Tot (K_{S}|B)$, then clearly we have
+Let $X=\Tot (K_{S})$ and let $T=\Tot (K_{S}|_B)$, then clearly we have
 \[
 N_{B/X}\cong N_{B/S}\oplus N_{B/T}. 
 \]
@@ -2407,7 +2410,7 @@ $h^{0}(N_{B/S})=0$ and $h^{0}(N_{B/T})=\chi (\O_{S})-\chi (\O_{B})$.
 By a well known fact about elliptic surfaces (see \cite{Fr-Mo} or
 \cite[III.1.1]{Miranda}),
 \[
-K_{S}\cong p^{*}(K_{B}\otimes L)
+K_{S}\cong p^{*}(K_{B}\otimes L),
 \]
 where
 \[
@@ -2415,7 +2418,7 @@ L^{\vee} = R^{1}p_{*}\O_{S}.
 \]
 Consequently, $c_{1}(K_{S})^{2}=0$ and so Hirzebruch-Riemann-Roch says
 \[
-\chi (\O_{S}) = \frac{e(S)}{12}>0
+\chi (\O_{S}) = \frac{e(S)}{12}>0,
 \]
 where positivity of $e(S)$ follows by pushing forward the Euler
 characteristic measure on $S$ to $B$:
@@ -2437,7 +2440,7 @@ $h^{0}(N_{B/S})=0$.
 
 Since 
 \[
-N_{B/T} = K_{S}|_{B} = K_{B}\otimes L
+N_{B/T} = K_{S}|_{B} = K_{B}\otimes L,
 \]
 we see that
 \[
@@ -2449,7 +2452,7 @@ and therefore
 h^{0}(N_{B/T})& = \chi (N_{B/T})\\
 &=\deg (K_{B}) +\deg (L)+1-g(B)\\
 &=\chi (\O_{S})+g(B)-1\\
-&=\chi (\O_{S}) - \chi (\O_{B}). 
+&=\chi (\O_{S}) - \chi (\O_{B}). \qedhere
 \end{align*}
 \end{proof}
 
@@ -2466,7 +2469,7 @@ is an isomorphism \cite[VII.1.1]{Miranda}. For any $\beta \in H_2(S)$,
 we denote by $\Hilb^\beta(S)$ the Hilbert scheme of effective divisors
 on $S$ in class $\beta$.
 
-Denote by $B \in H_2(S)$ the class of the section $B \subset S$ and by $F \in H_2(S)$ the class of the fibre. Then we have the following commutative diagram 
+Denote by $B \in H_2(S)$ the class of the section $B \subset S$ and by $F \in H_2(S)$ the class of the fiber. Then we have the following commutative diagram 
 \begin{displaymath}
 \xymatrix
 {
@@ -2497,14 +2500,14 @@ is surjective on closed points.
 
 For surjectivity, suppose $D'$ is an effective divisor with class
 $B+dF$ which does \emph{not} lie in the image. Firstly, we note that
-for any fibre $F$ we have $D' \cdot F = 1$. Therefore $D'$ contains a
+for any fiber $F$ we have $D' \cdot F = 1$. Therefore $D'$ contains a
 section $B' \subset S$ as an effective summand. Moreover $B \neq B'$
 or else $D'$ would lie in the image. Next, we take any $D$ in the
 image and compare $D$ and $D'$. Then
 $$
 \O_S(D-D') \in \Pic^0(S) \cong \Pic^0(B).
 $$ 
-Therefore after re-arranging we find that there are distinct fibres $F_{x_i}$, $F_{y_j}$ and $a_i \geq 0$, $b_j \geq 0$ such that 
+Therefore after re-arranging we find that there are distinct fibers $F_{x_i}$, $F_{y_j}$ and $a_i \geq 0$, $b_j \geq 0$ such that 
 $$
 B + \sum_i a_i F_{x_i} \sim_{\mathrm{lin}} B' + \sum_j b_j F_{y_j},
 $$
@@ -2512,7 +2515,7 @@ where $\sim_{\mathrm{lin}}$ denotes linear equivalence. Hence there exists a pen
 $$
 C_0 = B + \sum_i a_i F_{x_i}, \ C_{\infty} = B' + \sum_j b_j F_{y_j}.
 $$
-Now fix a smooth fibre $F$. Then $C_t \cdot F = 1$ for any $t \in \PP^1$, so we get a morphism
+Now fix a smooth fiber $F$. Then $C_t \cdot F = 1$ for any $t \in \PP^1$, so we get a morphism
 $$
 \PP^1 \longrightarrow F, \ t \mapsto C_t \cap F.
 $$
@@ -2540,14 +2543,14 @@ G (\bolda \boldx )=\prod _{i}g (a_{i}),
 for all $\bolda \boldx  = \sum_{i}
 a_{i}x_{i} \in \Sym^d(B)$ where $x_i \in B$ are distinct closed points. Then
 \[
-\sum _{d=0}^{\infty } q^{d} \int _{\Sym ^{d} (B)} f_{d} \, de =
+\sum _{d=0}^{\infty } q^{d} \int _{\Sym ^{d} (B)} G \, de =
 \left(\sum _{a=0}^{\infty }g (a) q^{a} \right)^{e (B)}.
 \]
 \end{lemma}
 
 \begin{remark} \label{MacD}
-In the special case where $g=f_{d}\equiv  1$, the lemma recovers
-MacDonald's formula: $$\sum _{d=0}^{\infty }e (\Sym ^{d} (B)) \, q^{d} =
+In the special case where $g=G\equiv  1$, the lemma recovers
+MacDonald's formula $$\sum _{d=0}^{\infty }e (\Sym ^{d} (B)) \, q^{d} =
 \frac{1}{(1-q)^{e (B)}}.$$ 
 
 The lemma is essentially a consequence of the existence of a power
@@ -2566,7 +2569,7 @@ are $m_{j}$ points of multiplicity $j$. The full stratification is
 given by:
 \[
 \Sym ^{d} (B) = \bigsqcup_{\begin{smallmatrix} (m_{1},m_{2},\dots )\\
-\sum _{j=1}^{\infty }j m_{j}=d  \end{smallmatrix}} \left\{\left(\prod _{j=1}^{\infty }B^{m_{j}} \right) -\Delta  \right\}/ \prod _{j=1}^{\infty }\sigma _{m_{j}} 
+\sum _{j=1}^{\infty }j m_{j}=d  \end{smallmatrix}} \left\{\left(\prod _{j=1}^{\infty }B^{m_{j}} \right) -\Delta  \right\}/ \prod _{j=1}^{\infty }\sigma _{m_{j}}, 
 \]
 where by convention, $B^{0}$ is a point, $\Delta $ is the large
 diagonal, and $\sigma _{m}$ is the $m$th symmetric group. Note that
@@ -2578,7 +2581,7 @@ For schemes over $\CC $, topological Euler characteristic is additive
 under stratification and multiplicative under maps which are
 (topological) fibrations. Thus
 \[
-\int _{\Sym ^{d} (B)} f_{d}\,\, de = \sum _{\begin{smallmatrix}(m_{1},m_{2},\dots )\\
+\int _{\Sym ^{d} (B)} G\,\, de = \sum _{\begin{smallmatrix}(m_{1},m_{2},\dots )\\
 \sum _{j=1}^{\infty }j m_{j}=d   \end{smallmatrix}} \left(\prod _{j=1}^{\infty } g (j)^{m_{j}} \right) \frac{e (B^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\, m_{2}!\, m_{3}!\dots }.
 \]
 
@@ -2589,15 +2592,15 @@ B^{N-1}-\Delta $ has fibers of the form $B-\{N-1\text{ points}
 (B^{N-1}-\Delta )$. Thus by induction, we find $e (B^{N}-\Delta ) = e
 (B)\cdot (e (B)-1)\cdots (e (B)- (N-1))$ and so 
 \[
-\frac{e (B^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\,m_{2}!\,m_{3}!\cdots } = \binom{e (B)}{m_{1},m_{2},m_{3},\cdots }
+\frac{e (B^{\sum _{j}m_{j}}-\Delta )}{m_{1}!\,m_{2}!\,m_{3}!\cdots } = \binom{e (B)}{m_{1},m_{2},m_{3},\cdots },
 \]
 where the right hand side is the generalized multinomial coefficient.
 
 Putting it together and applying the generalized multinomial theorem,
 we find
 \begin{align*}
-\sum _{d=0}^{\infty } q^d \int _{\Sym ^{d} (B)}f_{d}\,\,de & = \sum _{(m_{1},m_{2},\dots )} \prod _{j=1}^{\infty } \left(g (j) q^{j} \right)^{m_{j}} \binom{e (B)}{m_{1},m_{2},m_{3},\dots }\\
-&=\left(1+\sum _{j=1}^{\infty }g (j) q^{j} \right)^{e (B)}
+\sum _{d=0}^{\infty } q^d \int _{\Sym ^{d} (B)} G\,\,de & = \sum _{(m_{1},m_{2},\dots )} \prod _{j=1}^{\infty } \left(g (j) q^{j} \right)^{m_{j}} \binom{e (B)}{m_{1},m_{2},m_{3},\dots }\\
+&=\left(1+\sum _{j=1}^{\infty }g (j) q^{j} \right)^{e (B)},
 \end{align*}
 which proves the lemma.   
 \end{proof}

@@ -712,24 +712,59 @@ thickened comb curve with points. That is
 \]
 Moreover, $\CC^{*}$ acts
 on $\Hilb^{d,n}_{\PCP}(X)$ and there
-exists a morphism
+exists a constructible morphism\footnote{A
+constructible morphism is a map which is regular on each piece of a
+decomposition of its domain into locally closed subsets. Because we
+work with Euler characteristics and the Grothendieck group, we need
+only work with constructible morphisms.}
 \begin{equation}\label{eqn: rho : HilbPCP-->Sym(B)}
 \rho_{d}: \Hilb^{d,\bullet}_{\PCP }(X) \to  \Sym^{d}(B)
 \end{equation}
-such that if $[Z]\in \Hilb_{\PCP}^{d,n}(X)$ where the maximal
+such that if $[Z]\in \Hilb_{\PCP}^{d,n}(X)$, where the maximal
 Cohen-Macaulay subscheme of $Z$ is $B\cup_{i}\left(\lambda^{(i)}F_{x_{i}}
 \right)$, then
 \[
 \rho_{d}([Z]) = \sum_{i} |\lambda^{(i)}|\,x_{i}. 
 \]
 \end{theorem}
-
- \marginpar{Insert Martijn's proof but adapted to the theorem as
-stated and maybe streamlined a bit.}
 \begin{proof}
-Adapt and streamline Martijn's proof for the theorem as stated.
-\end{proof}
+We have to prove the following: Let $Z \subset X$ be a $\CC^*$-fixed 
+subscheme in the class $[Z]=B+dF$, then the underlying Cohen-Macaulay 
+support curve $C$ is a partition thickened comb curve. Let 
+$I_C \subset \O_X$ be the ideal sheaf defining $C$. Pushing forward 
+along the projection $\pi : X=K_S \rightarrow S$ and using the 
+decomposition into $\CC^*$-weight spaces shows that there exist 
+ideal sheaves 
+\[
+I_0 \subset \cdots \subset I_{l-1} \subsetneq \O_S
+\]
+such that
+\[
+\pi_* I_C = \bigoplus_{i=0}^{l-1} I_i \otimes K_{S}^{-i}.
+\]
+This is essentially proved in \cite[Sect.~4]{KT} (albeit in the PT rather than 
+the DT setting). Each $I_i$ defines a closed subscheme $C_i \subset S$ 
+satisfying
+\begin{align*}
+&S \supsetneq C_0 \supset \cdots C_{l-1}, \\
+&\sum_{i=0}^{l-1} [C_i] = B + dF \in H_2(S).
+\end{align*}
+Therefore each $C_i$ has dimension $\leq 1$. In fact each $C_i \subset S$ 
+is a Cohen-Macaulay curve, or else $C$ has embedded points. Since a 
+Cohen-Macaulay curve on a surface is Gorenstein, each $C_i$ is an 
+effective divisor.
 
+By the nesting condition and Lemma \ref{lem: Sym(B) = Hilb(S)}, we 
+deduce
+\begin{align*}
+C_0 &= B + \sum_{i=1}^{n} \lambda_{1}^{(i)} F_{x_i}, \\
+&\cdots \\
+C_{l-1} &= \sum_{i=1}^{n} \lambda_{l}^{(i)} F_{x_i},
+\end{align*}
+for some distinct points $x_1, \ldots, x_n \in B$ and 
+$\lambda_{1}^{(i)} \geq \cdots \geq \lambda_{l}^{(i)}$. 
+This proves the theorem.
+\end{proof}
 
 
 \section{Push-forward to the symmetric product} \label{sec: pushforward to sym prod}
@@ -1161,11 +1196,7 @@ $S=\{s=0 \}$ and $R_{x_{i}}=\{r=0 \}$ or $R_{y_{j}}=\{r=0 \}$
 respectively. For each point in $W$, choose any formal local
 coordinates $(r,s,t)$.
 
-Consider the following constructible ``support'' morphisms\footnote{A
-constructible morphism is a map which is regular on each piece of a
-decomposition of its domain into locally closed subsets. Because we
-work with Euler characteristics and the Grothendieck group, we need
-only work with constructible morphisms.}
+Consider the following constructible ``support'' morphisms
 \begin{align*}
 \sigma_{W}:& \Hilb^{\bullet}(W) \to \Sym^{\bullet}(W),\\
 \sigma_{B^{\circ }}:& \Hilb^{\bullet}(\Xhat_{B^{\circ}},B^{\circ}) \to \Sym^{\bullet}(B^{\circ })\\

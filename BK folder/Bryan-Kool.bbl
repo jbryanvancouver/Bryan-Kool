@@ -45,6 +45,12 @@ Toshiya Kawai and K{\=o}ta Yoshioka.
 \newblock String partition functions and infinite products.
 \newblock {\em Adv. Theor. Math. Phys.}, 4(2):397--485, 2000.
 
+\bibitem{Kool-Thomas2016}
+Martijn Kool and Richard Thomas.
+\newblock {Stable pairs with descendents on local surfaces I: the vertical
+  component}.
+\newblock arXiv:math/605.02576.
+
 \bibitem{MacPherson-Annals74}
 R.~D. MacPherson.
 \newblock Chern classes for singular algebraic varieties.
@@ -78,7 +84,7 @@ R.~Pandharipande and R.~P. Thomas.
 
 \bibitem{stacks-project}
 The {Stacks Project Authors}.
-\newblock \itshape stacks project.
+\newblock {\itshape Stacks Project}.
 \newblock {\tt http://stacks.math.columbia.edu}, 2016.
 
 \bibitem{Toda-2012-Kyoto}

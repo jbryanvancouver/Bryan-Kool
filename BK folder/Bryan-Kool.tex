@@ -742,9 +742,9 @@ such that
 \[
 \pi_* I_C = \bigoplus_{i=0}^{l-1} I_i \otimes K_{S}^{-i}.
 \]
-This is essentially proved in \cite[Sect.~4]{KT} (albeit in the PT rather than 
-the DT setting). Each $I_i$ defines a closed subscheme $C_i \subset S$ 
-satisfying
+This is essentially proved in \cite[Sect.~4]{Kool-Thomas2016} (albeit
+in the PT rather than the DT setting). Each $I_i$ defines a closed
+subscheme $C_i \subset S$ satisfying
 \begin{align*}
 &S \supsetneq C_0 \supset \cdots C_{l-1}, \\
 &\sum_{i=0}^{l-1} [C_i] = B + dF \in H_2(S).
@@ -758,7 +758,8 @@ By the nesting condition and Lemma \ref{lem: Sym(B) = Hilb(S)}, we
 deduce
 \begin{align*}
 C_0 &= B + \sum_{i=1}^{n} \lambda_{1}^{(i)} F_{x_i}, \\
-&\cdots \\
+C_1 &=  \sum_{i=1}^{n} \lambda_{2}^{(i)} F_{x_i}, \\
+&\,\, \, \,\vdots \\
 C_{l-1} &= \sum_{i=1}^{n} \lambda_{l}^{(i)} F_{x_i},
 \end{align*}
 for some distinct points $x_1, \ldots, x_n \in B$ and 
@@ -803,8 +804,8 @@ Let $x_{1},\dotsc ,x_{n}\in B^{\sm}$ and $y_{1},\dotsc ,y_{m}\in
 B^{\sing}$ and let $a_{1},\dotsc ,a_{n},b_{1},\dotsc ,b_{m}$ be
 positive integers summing to $d$. Let $\bolda \boldx$ and $\boldb
 \boldy$ denote $\sum_{i}a_{i}x_{i}$ and $\sum_{j}b_{j}y_{j}$
-respectively. Then there exist $F_{1} \in p^{\frac{1}{2}} \ZZ [[p]]$, $F_{2}\in \ZZ [[p]]$, and
-$g,h:\NN \to \ZZ (\!(p)\!)$ such that
+respectively. Then there exist $F_{1} \in p^{\frac{1}{2}} \ZZ [[p]]$,
+$F_{2}\in \ZZ [[p]]$, and $g,h:\NN \to \ZZ (\!(p)\!)$ such that
 \[
 f_{d}(\bolda \boldx +\boldb \boldy ) = F_{1}^{e(B)}\cdot
 F_{2}^{e(S)}\cdot G(\bolda \boldx )\cdot H(\boldb \boldy ),
@@ -979,11 +980,8 @@ the pullback, for example
 U|_{C}:=U\times_{X}C. 
 \]
 
-\subsection{Writing
-$\Sigmaxylambdamu $
-as a product of local Hilbert schemes}\label{subsec: products of local
-Hilbert schemes} 
-Let 
+\subsection{ $\Sigmaxylambdamu $ as a product of local Hilbert
+schemes}\label{subsec: products of local Hilbert schemes} Let
 \[
 C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}}
 \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right).
@@ -1346,8 +1344,7 @@ Noting that $\chi (\O_{B}) = e(B)/2$, we see the above proves the proposition.
 \end{proof}
 
 
-\section{Reduction to the topological vertex and exact valuation of
-the series} \label{sec: reduction to the vertex}
+\section{Reduction to the topological vertex} \label{sec: reduction to the vertex}
 
 In this section, we express $\DThat (X)$ in terms of the topological
 vertex, and then use the trace formulas of \cite{Bryan-Kool-Young} to
@@ -1429,7 +1426,7 @@ $\mu_{1},\mu_{2},\dotsc$ and hence
 \]
 \end{proof}
 
-\subsection{Putting it together and applying the trace formulas}
+\subsection{Applying the trace formulas}
 
 Substituting the values of $F_{1}$, $F_{2}$, $g$, and $h$ from
 Proposition~\ref{prop: formula for fd in terms of the normalized
@@ -1647,7 +1644,7 @@ for DT and DTfiber}. \qed
 
 
 
-\section{Putting in the Behrend function} \label{sec: Behrend}
+\section{Including the Behrend function} \label{sec: Behrend}
 
 The aim of this section is to prove Theorem~\ref{thm: DT(X) assuming
 the Behrend function conjecture}, which says that up to an overall
@@ -1871,7 +1868,7 @@ local deformations of $C$ in the formal neighborhoods of the points
 $x_{i}$, but we use the global geometry to keep track of which local
 deformations extend.
 
-\subsection{Notation and setup for proof of Theorem~\ref{thm: Ext
+\subsection{Setup for the proof of Theorem~\ref{thm: Ext
 computation}.}
 
 For notational simplicity we first treat the case where there is a
@@ -2005,11 +2002,12 @@ H^{0}(F,G_{\alpha}^{\vee}\otimes \O_{\lambda F})
 \]
 are interpreted as follows. For $G_{\alpha}\cong \O (-\rho R-\sigma
 S-\tau T)$, a homomorphism in $\Hom (G_{\alpha},\O_{B})$ or $\Hom
-(G_{\alpha},\O_{\lambda F})$ is determined by a Haiman arrow from
-$(\rho ,\sigma ,\tau )$ to (respectively) some $B$-cube or $\lambda
-F$-cube $(\rho ',\sigma ',\tau ').$ The location of the head of such a
-Haiman arrow is determined by the order of vanishing of the
-corresponding section of $H^{0}(B,G_{\alpha}^{\vee}\otimes \O_{B})$ or
+(G_{\alpha},\O_{\lambda F})$ is determined by a linear combination of
+Haiman arrows from $(\rho ,\sigma ,\tau )$ to (respectively) some
+$B$-cube or $\lambda F$-cube $(\rho ',\sigma ',\tau ').$ The location
+of the head of such a Haiman arrow is determined by the order of
+vanishing of the corresponding section of
+$H^{0}(B,G_{\alpha}^{\vee}\otimes \O_{B})$ or
 $H^{0}(F,G_{\alpha}^{\vee}\otimes \O_{\lambda F})$ --- the head will
 occur at $(\rho ',\sigma ',\tau ')$ if the corresponding section is
 order $r^{\rho '}s^{\sigma '}t^{\tau '}$.
@@ -2037,10 +2035,11 @@ We now analyze the possible equivalence classes of Haiman arrows.
 
 Let $G_{\alpha}\cong \O (-\rho R-\sigma S-\tau T)$ be a generating
 line bundle and consider the sections
-$H^{0}(F,G_{\alpha}^{\vee}\otimes \O_{\lambda F})$. These correspond
-to the possible Haiman arrows $(\rho ,\sigma ,\tau )\to (\rho ',\sigma
-',\tau ')$ to $\lambda F$-cubes. Since the normal bundle of $F$ in $X$
-is trivial, $\O (R)$ and $\O (S)$ are trivial restricted to $F$. Thus
+$H^{0}(F,G_{\alpha}^{\vee}\otimes \O_{\lambda F})$. A basis for this
+vector space corresponds to the possible Haiman arrows $(\rho ,\sigma
+,\tau )\to (\rho ',\sigma ',\tau ')$ to $\lambda F$-cubes. Since the
+normal bundle of $F$ in $X$ is trivial, $\O (R)$ and $\O (S)$ are
+trivial restricted to $F$. Thus
 \[
 G_{\alpha}^{\vee}\otimes \O_{\lambda F} \cong \O_{\lambda F}(\rho
 R+\sigma S+\tau T)\cong \O_{\lambda F}(\tau x).

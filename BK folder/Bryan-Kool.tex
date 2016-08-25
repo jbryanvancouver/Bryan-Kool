@@ -152,6 +152,13 @@ Room 502, Budapestlaan 6  \\
 \newcommand{\lambdaiprime}{\lambda^{(i)\prime}}
 \newcommand{\mujprime}{\mu^{(j)\prime}}
 \newcommand{\length}{\operatorname{leng}}
+\newcommand{\presectionspace}{\vspace{0.2cm}} % ***** set this to zero
+				              % if possible. It is
+					      % there just to fix a
+					      % stupid spacing issue.**** 
+
+\newcommand{\SubSecSpace}{$\,$\vspace{0.2cm}\par } % ****** this is also here
+				                   % purely for spacing issues 
 
 
 \begin{document}
@@ -180,6 +187,7 @@ Katz-Klemm-Vafa formula.
 %\pagebreak
 
 
+\presectionspace
 \section{Introduction}
 
 Let $p : S \rightarrow B$ be a non-trivial elliptic surface over a
@@ -376,19 +384,29 @@ deformations} and while technical in nature, the method we introduce
 (again a mixture of formally local toric methods and global geometry)
 may be of independent interest to the experts.
 
-\subsection{Acknowledgments} The authors are like to thank Tom Graber,
-Paul Johnson, Manfred Lehn, Oliver Leigh, Davesh Maulik, Georg
+\subsection{Acknowledgments}
+\SubSecSpace
+
+The authors would like to thank Tom
+Graber, Paul Johnson, Manfred Lehn, Oliver Leigh, Davesh Maulik, Georg
 Oberdieck, Rahul Pandharipande, J{\o}rgen Rennemo, Bal\'azs
 Szendr\H{o}i, Richard Thomas, Qizheng Yin, and Benjamin Young for
 helpful conversations.
 
-%J.B.~was supported by ... M.K.~was supported by a PIMS postdoctoral fellowship 
-%(CRG Geometry and Physics) while at the University of British Columbia 
-%and Marie Sk{\l}odowska-Curie IF 656898 while at Utrecht University. 
 Part of this work was done during the semester \emph{Enumerative geometry 
 of moduli spaces of sheaves in low dimension} at CIB/EPFL, who 
-provided excellent working conditions.
+provided support and excellent working conditions.
 
+
+%We also acknowledge funding support from NSERC discovery and
+%accelerator grants, PIMS collarborative research group grant, and a
+%Marie Sk{\l}odowska-Curie Individual Fellowship.
+
+%\vspace{1.3in}
+
+
+
+\presectionspace
 \section{Definitions, notation, and conventions}
 
 Let $p : S \rightarrow B$ be an elliptic surface over a smooth
@@ -493,6 +511,7 @@ constructible subscheme of $\Hilb (X)$. It parameterizes subschemes
 which roughly speaking are obtained from $C$ by adding $n$ embedded
 points and/or zero dimensional components.
 
+\presectionspace
 \section{Reduction to partition thickened comb curves}\label{sec: reduction to thickened comb curves}
 
 The action of $\CC^*$ on the fibers of $X$ lifts to the moduli space
@@ -787,6 +806,7 @@ $\rho_{d}$.
 \end{proof}
 
 
+\presectionspace
 \section{Push-forward to the symmetric product} \label{sec: pushforward to sym prod}
 
 From the $\CC^{*}$-equivariant inclusions in Theorem~\ref{thm: C*
@@ -910,6 +930,7 @@ $\mu^{(j)}$.
 
 
 
+\presectionspace
 \section{Restriction to formal neighborhoods} \label{sec: restriction
 to formal nghds}
 
@@ -930,7 +951,7 @@ Proposition~\ref{prop: formula for fd in terms of the normalized
 vertex}.
 
 
-\subsection{The fpqc cover}\label{subsec: the fpqc cover}
+\subsection{The fpqc cover}\label{subsec: the fpqc cover}\SubSecSpace
 The reduced support of $C$ is $B\cup_{i}F_{x_{i}}\cup_{j}F_{y_{j}}$
 which is a nodal curve with nodes at $(x_{1},\dotsc ,x_{n})$,
 $(y_{1},\dotsc ,y_{m})$ and $(z_{1},\dotsc ,z_{m})$ where $z_{j}$ is
@@ -1000,7 +1021,8 @@ U|_{C}:=U\times_{X}C.
 \]
 
 \subsection{ $\Sigmaxylambdamu $ as a product of local Hilbert
-schemes}\label{subsec: products of local Hilbert schemes} Let
+schemes}\label{subsec: products of local Hilbert schemes}\SubSecSpace
+Let
 \[
 C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}}
 \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right).
@@ -1093,11 +1115,9 @@ lambda}). The lemma then follows from the exact sequence
 
 
 
-\subsection{Formal coordinates and reduction to Hilbert schemes
+\subsection{Formal coordinates and Hilbert schemes
 of $\Spec \CC [[r,s,t]]$}\label{subsec: Formal coordinates and
-reduction to Hilbert scheme on C3}$\quad $
-
-\smallskip
+reduction to Hilbert scheme on C3}\SubSecSpace
 
 Let $\lambda ,\mu ,\nu$ be integer partitions which we also regard as
 subsets in $(\ZZ_{\geq 0})^{2}$ by their diagram as in
@@ -1241,10 +1261,15 @@ following multiplicative property
 \sigma^{-1}_{U}\left(n_{i}p_{i} \right).
 \]
 
+%\pagebreak  % ******* get rid of this page break if possible after any edits
+
 Pushing forward the Euler characteristic measure along the support
 maps, applying Lemma~\ref{lem: formula for euler char of sym
 products}, and using the symmetries of $\sfVtilde$ we find the
 following formulas
+
+
+
 \begin{align}\label{eqn: e(Hilb(Xhat,Bcirc))=V^{e(Bcirc)}}
 e\left(\Hilb^{\bullet}(W) \right) & = \int_{\Sym^{\bullet}(W)}
 \left(\sigma_{W} \right)_{*}(1)\, de = \left(\sfVtilde_{\emptyset \emptyset \emptyset }\right)^{e(W)}\\
@@ -1257,6 +1282,12 @@ e\left(\Hilb^{\bullet}\left(\Xhat_{F_{y_{j}}^{\circ}},\mu^{(j)}F_{y_{j}}^{\circ}
 \left(\sfVtilde_{\mu^{(j)} \emptyset  \emptyset
 }\right)^{e(F_{_{y_{j}}}^{\circ })} \nonumber
 \end{align}
+
+
+
+
+
+
 
 We are now ready to prove the main result of this section:
 
@@ -1363,6 +1394,7 @@ Noting that $\chi (\O_{B}) = e(B)/2$, we see the above proves the proposition.
 \end{proof}
 
 
+\presectionspace
 \section{Reduction to the topological vertex} \label{sec: reduction to the vertex}
 
 In this section, we express $\DThat (X)$ in terms of the topological
@@ -1370,7 +1402,7 @@ vertex, and then use the trace formulas of \cite{Bryan-Kool-Young} to
 obtain a closed formula for $\DThat (X)$.
 
 \subsection{$\sfVtilde_{\lambda \mu \nu}$ in terms of $\sfV_{\lambda
-\mu \nu}$.}
+\mu \nu}$.}\SubSecSpace 
 
 Recall that the coefficients of the series $\sfVtilde_{\lambda \mu \nu}\in \ZZ [[p]]$ are
 given by the Euler characteristics of the local Hilbert schemes
@@ -1445,7 +1477,7 @@ $\mu_{1},\mu_{2},\dotsc$ and hence
 \]
 \end{proof}
 
-\subsection{Applying the trace formulas}
+\subsection{Applying the trace formulas}\SubSecSpace 
 
 Substituting the values of $F_{1}$, $F_{2}$, $g$, and $h$ from
 Proposition~\ref{prop: formula for fd in terms of the normalized
@@ -1497,6 +1529,7 @@ DTfiber} complete. In the next section, we will outline the proof of
 the formula for $\DThat_{\fiber}(X)$ using our methods.
 
 
+\presectionspace
 \section{The case of $\DThat_{\fiber}(X)$}\label{sec: DThatfiber computation}
 
 The formula for $\DThat_{\fiber}(X)$ given in Theorem~\ref{thm: main
@@ -1663,6 +1696,7 @@ for DT and DTfiber}. \qed
 
 
 
+\presectionspace
 \section{Including the Behrend function} \label{sec: Behrend}
 
 The aim of this section is to prove Theorem~\ref{thm: DT(X) assuming
@@ -1719,7 +1753,7 @@ on $\Hilb^{n}(\CC^{3})$ is the constant function $(-1)^{n}$.
 
 
 \subsection{Proof of Theorem~\ref{thm: DT(X) assuming the Behrend
-function conjecture}}
+function conjecture}}\SubSecSpace 
 
 The Behrend function of any scheme is invariant under
 automorphisms. In particular, it is constant on the orbits of the
@@ -1811,6 +1845,7 @@ Section~\ref{sec: smoothness and deformations}.
 
 
 
+\presectionspace
 \section{Smoothness and infinitesimal deformations}\label{sec: smoothness and deformations}
 
 
@@ -1888,7 +1923,7 @@ $x_{i}$, but we use the global geometry to keep track of which local
 deformations extend.
 
 \subsection{Setup for the proof of Theorem~\ref{thm: Ext
-computation}.}
+computation}.}\SubSecSpace 
 
 For notational simplicity we first treat the case where there is a
 single partition thickened fiber $F=F_{x}$ at $x\in B$, that is
@@ -1915,7 +1950,7 @@ monomial $r^{\rho}s^{\sigma}t^{\tau}$ corresponding to the cube whose
 corner closest to the origin is at $(\rho ,\sigma ,\tau)$.
 
 
-\subsection{Exact sequences}
+\subsection{Exact sequences}\SubSecSpace 
 
 The ideal sheaf $I_{C}$ has a locally free resolution of the form
 \begin{equation}\label{eqn: R-->G-->I_C exact sequence}
@@ -1971,7 +2006,7 @@ the restriction of the homomorphisms $\oplus_{\alpha}G_{\alpha}\to
 [[r,s,t]]$.
 
 \subsection{Combinatorics of Haiman arrows}\label{subsec: combinatorics of Haiman arrows}
-
+\SubSecSpace 
 When restricted to the local ring $\widehat{\O}_{X,x} \cong \CC [[r,s,t]]$,
 $\O_{C}$ is spanned over $\CC$ by the monomials
 $r^{\rho}s^{\sigma}t^{\tau}$, where $(\rho ,\sigma ,\tau )$ are of the
@@ -2051,7 +2086,7 @@ then in must be zero.
 We now analyze the possible equivalence classes of Haiman arrows.
 
 \subsection{Haiman arrows to $\lambda F$-cubes}
-
+\SubSecSpace 
 Let $G_{\alpha}\cong \O (-\rho R-\sigma S-\tau T)$ be a generating
 line bundle and consider the sections
 $H^{0}(F,G_{\alpha}^{\vee}\otimes \O_{\lambda F})$. A basis for this
@@ -2157,16 +2192,17 @@ We thus have exactly $2|\lambda |-\lambda_{1}$ distinct equivalence
 classes of Haiman arrows to $\lambda F$-cubes which are not also
 arrows to $B$-cubes.
 
-\subsection{Haiman arrows to $B$-cubes.}  Any non-zero Haiman arrow to
-a $B$-cube must have a tail with coordinates $(\rho ,0,1)$ or $(\rho
-,1,0)$ since if not, it could be translated (see Remark~\ref{rem: ker
-of phi2 gives equations equating translatedarrows}) to an arrow whose
-head has negative $\tau$ or $\sigma$ coordinates by first translating
-sufficiently far in the positive $\rho$-direction and then translating
-the tail so that it is just outside of the $B$-cubes. A Haiman arrow
-to a $B$-cube whose tail is $(\rho ,0,1)$ or $(\rho ,1,0)$ corresponds
-respectively to a section in $H^{0}(B,\O_{B}(\rho R+T))$ or
-$H^{0}(B,\O_{B}(\rho R+S))$. Since
+\subsection{Haiman arrows to $B$-cubes.}\SubSecSpace Any non-zero
+Haiman arrow to a $B$-cube must have a tail with coordinates $(\rho
+,0,1)$ or $(\rho ,1,0)$ since if not, it could be translated (see
+Remark~\ref{rem: ker of phi2 gives equations equating
+translatedarrows}) to an arrow whose head has negative $\tau$ or
+$\sigma$ coordinates by first translating sufficiently far in the
+positive $\rho$-direction and then translating the tail so that it is
+just outside of the $B$-cubes. A Haiman arrow to a $B$-cube whose tail
+is $(\rho ,0,1)$ or $(\rho ,1,0)$ corresponds respectively to a
+section in $H^{0}(B,\O_{B}(\rho R+T))$ or $H^{0}(B,\O_{B}(\rho
+R+S))$. Since
 \[
 \O_B (R)\cong \O_{B}(x),\quad \O_{B}(T)\cong N_{B/S},\quad \O_{B}(S)\cong N_{B/T},
 \]
@@ -2230,7 +2266,7 @@ several partition thickened fibers. Whether the fiber is smooth or
 nodal plays no role. We have thus proved Theorem~\ref{thm: Ext
 computation}. \qed 
 
-\subsection{Proof of Theorem~\ref{thm: locus of comb curves is smooth}}
+\subsection{Proof of Theorem~\ref{thm: locus of comb curves is smooth}}\SubSecSpace 
 
 Let $C=B\cup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)$ be a
 partition thickened comb curve and let 
@@ -2315,7 +2351,7 @@ Then the subscheme
 is the desired universal subscheme over $H^{0}\times V_{l}$. \qed
 
 \subsection{Proof of Theorem~\ref{thm: strata of Hilb(C^2) with fixed intersection
-is smooth}}
+is smooth}}\SubSecSpace 
 
 The constructible function $\Hilb^{d}(T)\to \ZZ $ given by
 \[
@@ -2438,10 +2474,12 @@ by Case 1 above and therefore $\dim T_{[Z_{\lambda}]}V_{l} = 2d-l$.
 \end{proof}
 
 
+
+\presectionspace
 \appendix
 \section{Odds and Ends}\label{appendix: odds and ends}
 
-\subsection{Elliptic surfaces}\label{subsec: elliptic surfs}
+\subsection{Elliptic surfaces}\label{subsec: elliptic surfs}\SubSecSpace
 
 Let $p : S \rightarrow B$ be a non-trivial elliptic surface with
 section $B \subset S$. For simplicity, we assume that all singular
@@ -2576,7 +2614,7 @@ Since $F$ was chosen arbitrary, we deduce that $B = B'$ which is a contradiction
 \end{proof}
 
 
-\subsection{Weighted Euler characteristics of symmetric products} \label{power}
+\subsection{Weighted Euler characteristics of symmetric products} \label{power}\SubSecSpace 
 
 In this section we prove the following formula for the weighted Euler
 characteristic of symmetric products.

@@ -337,7 +337,7 @@ which is a curve of a special form which we call a partition thickened
 comb curve (Definition~\ref{defn: partition thickened comb
 curve}). This curve is determined by data consisting of points
 $x_{i}\in B$ labelled by integer partitions $\lambda^{(i)}$. This
-gives rise to a morphism $\rho$ to $\Sym B$ taking the value $\sum_{i}
+gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the value $\sum_{i}
 |\lambda^{(i)}|x_{i}$ on such a curve (see Theorem~\ref{thm: C*
 invariant curves are partition thickened comb curves with embedded
 points}).
@@ -775,7 +775,7 @@ This is essentially proved in \cite[Sect.~4]{Kool-Thomas2016} (albeit
 in the PT rather than the DT setting). Each $I_i$ defines a closed
 subscheme $C_i \subset S$ satisfying
 \begin{align*}
-&S \supsetneq C_0 \supset \cdots C_{l-1}, \\
+&S \supsetneq C_0 \supset \cdots \supset C_{l-1}, \\
 &\sum_{i=0}^{l-1} [C_i] = B + dF \in H_2(S).
 \end{align*}
 Therefore each $C_i$ has dimension $\leq 1$. In fact each $C_i \subset S$ 
@@ -799,9 +799,9 @@ Since the $\CC^*$-invariant Cohen-Macaulay curves just described are
 exactly the support curves of PCP curves, it follows that the PCP
 locus is $\CC^*$-invariant. Finally, since the assignment $Z\mapsto
 Z_{\CM}$ which takes a 1-dimensional subscheme to its maximal
-Cohen-Macaulay subscheme defines a contructible morphism $\Hilb (X)
+Cohen-Macaulay subscheme defines a constructible morphism $\Hilb (X)
 \to \Hilb (X)$, its restriction to $\Hilb^{d,\bullet }_{\PCP}(X)$ is
-also contructible and thus gives the constructible morphism
+also constructible and thus gives the constructible morphism
 $\rho_{d}$.
 \end{proof}
 
@@ -870,7 +870,7 @@ where we have set $g(0)=h(0)=1$.
 \end{corollary}
 \begin{proof}
 We apply Proposition~\ref{prop: fd = F1*F2*G*H} to the computation of
-$\DThat (X)$ as follows:
+$\DThat (X)$ as follows
 \begin{align*}
 \DThat (X)&= \int_{\Hilb^{\bullet ,\bullet}_{\PCP}(X)} 1\, de\\
 &=\int_{\Sym^{\bullet}(B)}f_{\bullet } \, de \\
@@ -967,7 +967,7 @@ $F_{x_{i}}-\{x_{i} \}$ and $F_{y_{j}}-\{y_{j},z_{j} \}$, and finally
 the complement of $C$.
 
 To work algebraically, we use formal neighborhoods instead of tubular
-neighborhoods and balls. This also has an addition advantage over an
+neighborhoods and balls. This has an additional advantage over an
 analytic cover: the intersection of these open sets is very small in
 the sense that no embedded points or zero dimensional components can
 occur inside the intersections of distinct open sets in the cover.
@@ -1039,7 +1039,7 @@ in our cover $\mathfrak{U}$. The following lemma writes the stratum
 $\Sigma^{\bullet}(\boldx ,\boldy ,\boldlambda ,\boldmu ) $ as a
 product of those schemes.
 \begin{lemma}\label{lem: Sigma = product of local Hilbert schemes}
-The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$:
+The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \begin{align*}
 \Sigmaxylambdamu = p^{\chi
 (\O_{C})}&\cdot  \prod_{U\in \mathfrak{U}} \Hilb^{\bullet}(U,C|_{U})\\
@@ -1329,7 +1329,7 @@ We apply, in order, equation~\eqref{eqn: components of fibers of rho},
 Lemma~\ref{lem: Sigma = product of local Hilbert schemes},
 equations~\eqref{eqn: e(Hilb(Xhat,Chat)=vertex} and \eqref{eqn:
 e(Hilb(Xhat,Bcirc))=V^{e(Bcirc)}}, and Lemma~\ref{lem: chi(C)=chi(B)
--sum lamba1 - sum mu1} to compute:
+-sum lamba1 - sum mu1} to compute
 \begin{align*}
 f_{d}(\bolda \boldx +\boldb \boldy )&= e\left(\rho_{d}^{-1}(\bolda
 \boldx +\boldb \boldy) \right) \\
@@ -1583,7 +1583,7 @@ $\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$, then
 \end{theorem}
 
 It follows that the pre-images of points under the map
-$\rho^{\fiber}_{d}$ breaks into components:
+$\rho^{\fiber}_{d}$ break into components
 \[
 \left(\rho_{d}^{\fiber} \right)^{-1}(\bolda \boldx +\boldb \boldy ) =
 \bigsqcup_{\boldlambda \vdash \bolda} \bigsqcup_{\boldmu \vdash
@@ -1830,7 +1830,7 @@ The case of $\DT_{\fiber}(X)$ (previously shown by Toda) proceeds
 similarly except that it does not require the difficult deformation
 result of the next section. Indeed, in this case, we only need to know
 that the value of the Behrend function at a partition thickened fiber
-curve is 1:
+curve is 1
 \[
 \nu \left(\left[ \cup_{i} \left(\lambda^{(i)}F_{x_{i}} \right) \right]
 \right) =1.
@@ -2332,7 +2332,7 @@ flat over $H^{0}\times V_{l}$ as follows. Consider the diagram
 \mathcal{B} &\Into & H^{0}\times T && V_{l}\times T& \lInto & \mathcal{Z}.
 \end{diagram}
 \]
-In the above diagram, $\mathcal{Z}\subset V_{l}\times T$ is the family
+In the above diagram, $\mathcal{Z}\subset V_{l}\times T$ is the family of 
 subschemes of $T$ induced by the universal subscheme over
 $\Hilb^{d}(T)$, $\mathcal{B}\subset H^{0}\times T$ is the family of
 curves in $T$ given by $H^{0}$, explicitly $\mathcal{B}$ is given by
@@ -2508,7 +2508,7 @@ Consequently, $c_{1}(K_{S})^{2}=0$ and so Hirzebruch-Riemann-Roch says
 \chi (\O_{S}) = \frac{e(S)}{12}>0,
 \]
 where positivity of $e(S)$ follows by pushing forward the Euler
-characteristic measure on $S$ to $B$:
+characteristic measure on $S$ to $B$
 \[
 e(S) = \int_{S}\, de =  \int_{B} p_{*}(1)\,de = \text{\# of singular fibers.}
 \]
@@ -2653,7 +2653,7 @@ unique tuple $(m_{1},m_{2},\dots )$ of non-negative integers with
 $\sum _{j=1}^{\infty }j m_{j}=d$. The stratum labelled by
 $(m_{1},m_{2},\dots )$ parameterizes collections of points where there
 are $m_{j}$ points of multiplicity $j$. The full stratification is
-given by:
+given by
 \[
 \Sym ^{d} (B) = \bigsqcup_{\begin{smallmatrix} (m_{1},m_{2},\dots )\\
 \sum _{j=1}^{\infty }j m_{j}=d  \end{smallmatrix}} \left\{\left(\prod _{j=1}^{\infty }B^{m_{j}} \right) -\Delta  \right\}/ \prod _{j=1}^{\infty }\sigma _{m_{j}}, 

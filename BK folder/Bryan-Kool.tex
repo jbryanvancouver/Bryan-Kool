@@ -56,7 +56,7 @@ Room 502, Budapestlaan 6  \\
 \usepackage{amsmath,amsthm,amsfonts}
 \usepackage{amssymb}
 \usepackage{times}
-\usepackage[all]{xy}
+%\usepackage[all]{xy}
 %\usepackage{amstex}
 \usepackage[colorinlistoftodos]{todonotes}
 
@@ -337,10 +337,17 @@ which is a curve of a special form which we call a partition thickened
 comb curve (Definition~\ref{defn: partition thickened comb
 curve}). This curve is determined by data consisting of points
 $x_{i}\in B$ labelled by integer partitions $\lambda^{(i)}$. This
+<<<<<<< HEAD
 gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the value $\sum_{i}
 |\lambda^{(i)}|x_{i}$ on such a curve (see Theorem~\ref{thm: C*
 invariant curves are partition thickened comb curves with embedded
 points}).
+=======
+gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the
+value $\sum_{i} |\lambda^{(i)}|x_{i}$ on such a curve (see
+Theorem~\ref{thm: C* invariant curves are partition thickened comb
+curves with embedded points}).
+>>>>>>> origin/master
 \item In Section~\ref{sec: pushforward to sym prod}, we push forward
 the Euler characteristic measure to $\Sym B$ via the map $\rho$. We
 show that $\rho_{*}(1)$, the push-forward measure, has nice
@@ -2556,15 +2563,28 @@ is an isomorphism \cite[VII.1.1]{Miranda}. For any $\beta \in H_2(S)$,
 we denote by $\Hilb^\beta(S)$ the Hilbert scheme of effective divisors
 on $S$ in class $\beta$.
 
-Denote by $B \in H_2(S)$ the class of the section $B \subset S$ and by $F \in H_2(S)$ the class of the fiber. Then we have the following commutative diagram 
-\begin{displaymath}
-\xymatrix
-{
-\Sym^d(B) \ar[d]^{p^*} \ar[r] & \Pic^d(B) \ar[d]^{p^*}_{\cong} \\
-\Hilb^{dF}(S) \ar[d]^{+B} \ar[r] & \Pic^{dF}(S) \ar[d]^{\otimes \O_S(B)}_{\cong} \\
-\Hilb^{B+dF}(S) \ar[r] & \Pic^{B+dF}(S). 
-}
-\end{displaymath}
+Denote by $B \in H_2(S)$ the class of the section $B \subset S$ and by
+$F \in H_2(S)$ the class of the fiber. Then we have the following
+commutative diagram
+
+\[
+\begin{diagram}[h=0.9cm]
+\Sym^d(B)       &\rTo     & \Pic^{d}(B)\\
+\dTo_{p^{*}}    &         &\dTo_{p^{*}}^{\cong }\\
+\Hilb^{dF}(S)   &\rTo     &\Pic^{dF}(S) \\
+\dTo_{+B}       &         &\dTo_{\otimes \O_S(B)}^{\cong}\\
+\Hilb^{B+dF}(S) &\rTo     &\Pic^{B+dF}(S). 
+\end{diagram}
+\]
+
+%\begin{displaymath}
+%\xymatrix
+%{
+%\Sym^d(B) \ar[d]^{p^*} \ar[r] & \Pic^d(B) \ar[d]^{p^*}_{\cong} \\
+%\Hilb^{dF}(S) \ar[d]^{+B} \ar[r] & \Pic^{dF}(S) \ar[d]^{\otimes \O_S(B)}_{\cong} \\
+%\Hilb^{B+dF}(S) \ar[r] & \Pic^{B+dF}(S). 
+%}
+%\end{displaymath}
 The horizontal arrows are Abel-Jacobi maps. The vertical arrows are
 induced by pull-back and adding the section $B \subset S$.
 

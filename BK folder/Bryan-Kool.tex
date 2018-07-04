@@ -174,7 +174,7 @@ vertex. Utilizing identities for the topological vertex proved in
 functions. The connected version of the partition function is written
 in terms of Jacobi forms.  In the special case where the elliptic
 surface is a K3 surface, we get a new derivation of the
-Katz-Klemm-Vafa formula.
+Katz-Klemm-Vafa formula for primitive curve classes.
 \end{abstract}
 
 \maketitle 
@@ -190,7 +190,7 @@ Katz-Klemm-Vafa formula.
 \presectionspace
 \section{Introduction}
 
-TEST Let $p : S \rightarrow B$ be a non-trivial elliptic surface over a
+Let $p : S \rightarrow B$ be a non-trivial elliptic surface over a
 complex smooth projective curve $B$. We assume $p$ has a section and
 all singular fibers are irreducible rational nodal curves. 
 
@@ -288,12 +288,12 @@ series is required to obtain the KKV formula. Our result provides a
 new derivation of the KKV formula for primitive classes. The KKV
 formula was proved in all curve classes in
 \cite{Pandharipande-Thomas-KKV}. Ours is the first derivation of the
-KKV formula, which does not depend on the Kawai-Yoshioka formula
+KKV formula, that does not depend on the Kawai-Yoshioka formula
 \cite{Kawai-Yoshioka}.
 
 Our results can be extended to apply to the usual (Behrend function
 weighted) Donaldson-Thomas invariants if we assume a general
-conjecture which we formulate in Section~\ref{sec: Behrend}. Our
+conjecture that we formulate in Section~\ref{sec: Behrend}. Our
 conjecture relates the Behrend function at subschemes with embedded
 points to the value of the Behrend function at the underlying
 Cohen-Macaulay subscheme and may be of independent interest.
@@ -326,7 +326,7 @@ the geometry under consideration is not toric, we combine
 $\CC^*$-localization, motivic methods, formal methods, and
 $(\CC^{*})^{3}$-localization to end up with expressions that only
 depend on the topological vertex $\sfV_{\lambda\mu\nu}$, and the
-topological Euler characteristics $e(B)$, and $e(S)$. The outline of
+topological Euler characteristics $e(B)$ and $e(S)$. The outline of
 our method is as follows:
 \begin{itemize}
 \item The $\CC^{*}$-action on $X$ induces an action on $\Hilb (X)$
@@ -337,21 +337,14 @@ which is a curve of a special form which we call a partition thickened
 comb curve (Definition~\ref{defn: partition thickened comb
 curve}). This curve is determined by data consisting of points
 $x_{i}\in B$ labelled by integer partitions $\lambda^{(i)}$. This
-<<<<<<< HEAD
 gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the value $\sum_{i}
 |\lambda^{(i)}|x_{i}$ on such a curve (see Theorem~\ref{thm: C*
 invariant curves are partition thickened comb curves with embedded
 points}).
-=======
-gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the
-value $\sum_{i} |\lambda^{(i)}|x_{i}$ on such a curve (see
-Theorem~\ref{thm: C* invariant curves are partition thickened comb
-curves with embedded points}).
->>>>>>> origin/master
 \item In Section~\ref{sec: pushforward to sym prod}, we push forward
 the Euler characteristic measure to $\Sym B$ via the map $\rho$. We
 show that $\rho_{*}(1)$, the push-forward measure, has nice
-multiplicative properties which allows us to compute the weighted
+multiplicative properties that allow us to compute the weighted
 Euler characteristic over $\Sym B$ using a general result about
 symmetric products (Lemma~\ref{lem: formula for euler char of sym
 products}). 
@@ -360,7 +353,7 @@ must compute the Euler characteristics of the fibers of $\rho$. These
 fibers are strata in the Hilbert scheme parameterizing subschemes
 whose maximal Cohen-Macaulay subscheme is a fixed partition thickened
 comb curve $C$. The moduli of this stratum come solely from the ways
-that embedded points and zero dimensional components can be added to
+in which embedded points and zero dimensional components can be added to
 $C$. We write this stratum as a product of ``local'' Hilbert schemes
 using an fpqc cover of $X$ which includes the formal neighborhoods of
 the nodal points of $C_{\red}$, the formal neighborhoods of the
@@ -550,7 +543,7 @@ integer partition. Then $\lambda$ determines a zero dimensional subscheme
 $Z_{\lambda}\subset \Spec \CC [[r,s]]$ given by the monomial ideal
 \begin{equation}\label{eqn: monomial ideal I given by a partition lambda}
 I_{\lambda}=(r^{\lambda_{1}},r^{\lambda_{2}}s,\dotsc
-,r^{\lambda_{l}}s^{l-1},r^{l}).
+,r^{\lambda_{l}}s^{l-1},s^{l}).
 \end{equation}
 In terms of $\lambda$ as a Young diagram, we note $(\rho ,\sigma)\in
 \lambda$ if and only if $r^{\rho}s^{\sigma}\notin I_{\lambda}.$
@@ -564,8 +557,9 @@ vanishes on $R_{i}\cap T$ where $R_{i}=\Tot (K_{S}|_{F_{x_{i}}})$. We
 say that $C$ is a \textbf{partition thickened comb curve} if there
 exists partitions $\lambda^{(1)},\dotsc ,\lambda^{(n)}$ such that $Z$
 is given by $Z_{\lambda^{(i)}}$ in the local coordinates
-$(r_{i},s_{i})$ about $x_{i}$. We denote such a curve by
-$B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$. We say that a
+$(r_{i},s_{i})$ about $x_{i}$.
+We denote such a curve by
+$B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$.\footnote{Specifically, writing $r:=r_i$, $s:=s_i$, $\lambda = (\lambda_1 \geq \cdots \geq \lambda_l):=\lambda^{(i)}$, $x:=x_i$, $F:=F_{x_i}$, and $t$ for a coordinate at $x$ vanishing on $T$, the ideal of $B \cup \lambda F$ in a formal neighbourhood of $x$ is given by $(s,t) \cdot (r^{\lambda_{1}},r^{\lambda_{2}}s,\dotsc ,r^{\lambda_{l}}s^{l-1},s^{l}) \subset \CC[[r,s,t]]$.} We say that a
 subscheme $Z\subset X$ is a \textbf{partition thickened comb curve
 with points (PCP)} if the maximal Cohen-Macaulay subscheme
 $Z_{\CM}\subset Z$ is a partition thickened comb curve, in other words,
@@ -738,7 +732,7 @@ C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}}  \right)
 
 
 
-The main result of this section is the following:
+Conveniently, any effective divisor on $S$ in class $[B+dF]$ is a comb curve, i.e.~the scheme theoretic union of $B$ (our chosen section) and some (possibly thickened) fibres with total multiplicity $d$. This is proved in Lemma \ref{lem: Sym(B) = Hilb(S)}. The main result of this section is the following:
 \begin{theorem}\label{thm: C* invariant curves are partition thickened
 comb curves with embedded points} If a subscheme $Z\subset X$ in the
 class $[Z]=B+dF$ is $\CC^{*}$-invariant, then it is a partition
@@ -979,6 +973,8 @@ analytic cover: the intersection of these open sets is very small in
 the sense that no embedded points or zero dimensional components can
 occur inside the intersections of distinct open sets in the cover.
 
+An fpqc cover of a scheme $T$ consists of a collection of flat morphisms $\{\phi_i : T_i \rightarrow T\}_{i \in I}$, which are jointly surjective and satisfy a quasi-compactness condition. See \cite[Tag 03NV, Def.~54.15.1]{stacks-project} (or \cite[Def.~2.34]{Vis}). Just like for Zariski covers of $T$, one can glue quasi-coherent sheaves along an fpqc cover. This is known as \emph{fpqc descent} \cite[Tag 023T, Prop.~34.5.2]{stacks-project}  (or \cite[Thm.~4.23]{Vis}). The type of fpqc covers we are interested in arise from taking the formal neighborhood of a closed subscheme $Z \subset T$ and its complement $U = T \setminus Z$ much like \cite[Tag, 03NV, Ex.~54.15.3(5)]{stacks-project}. More specifically:
+
 \begin{definition}\label{defn: the fpqc cover mathfrak U}
 We define $\mathfrak{U}$, a cover of $X$, to be the collection of the
 following sets, open in the fpqc topology:\begin{enumerate}
@@ -1018,8 +1014,7 @@ non-finite-type schemes. The scheme maps
 \[
 \Xhat_{x_{i}}\to X, \quad \Xhat_{B^{\circ}}\to X, \dotsc 
 \]
-are open in the fpqc topology \cite[Tag 0BNH,
-c.f.~Ex.50.15.3(5)]{stacks-project} so $\mathfrak{U}$ forms an fpqc
+are flat. This follows from the fact that the formal completion $\hat{A}$ of a noetherian ring $A$ along an ideal $I \subset A$ is $A$-flat (\cite[Tag 0BNH, Lemma 10.96.2]{stacks-project} or \cite[Prop.~10.14]{AM}). Since our maps are jointly surjective, $\mathfrak{U}$ forms an fpqc
 cover. For $U\in \mathfrak{U}$, we suppress the associated map $U\to
 X$ from the notation and use the usual restriction notation to denote
 the pullback, for example
@@ -1072,8 +1067,9 @@ that every zero dimensional component or embedded point of $Z$ is
 contained in a unique open set in the cover. In other words, the
 restriction of $Z$ to any intersection of sets in the cover
 $\mathfrak{U}$ has no embedded points or zero dimensional
-components. fpqc decent then tells us that $Z$ is uniquely determined
-by its restriction to the open sets of the cover. This yields a
+components. fpqc descent (\cite[Tag 023T, Prop.~34.5.2]{stacks-project} or \cite[Thm.~4.23]{Vis}) then tells us that $Z$ is uniquely determined
+by its restriction to the open sets of the cover. We stress that we only use a very weak version of fpqc descent: since the underlying Cohen-Macaulay curve $C$ is already fixed, restriction of $\O_Z$ to the open subsets of the fpqc cover determines $\O_Z$ \emph{and any} collection of structure sheaves $\{\O_{Z_U}\}_{U \in \mathfrak{U}}$, such that $Z_U$ has maximal Cohen-Macaulay curve $C|_U$, determines such a structure sheaf.
+In other words, we have a
 constructible bijective morphism from the product of Hilbert schemes
 on the open sets to the Hilbert scheme on $X$ which induces the
 equality in the Grothendieck group. Finally, we verify that the
@@ -1150,9 +1146,9 @@ r^{\rho}s^{\sigma}t^{\tau}\in I_{\emptyset \emptyset \nu } & \iff
 
 Let $\hat{Z}_{\lambda \mu \nu}$ be the restriction of $Z_{\lambda \mu
 \nu}$ to $\hat{\CC}^{3}_{0} = \Spec \CC [[r,s,t]]$. Let
-\[
+\begin{equation} \label{defHilblambdamunu}
 \Hilb^{n}(\lambda ,\mu ,\nu) := \Hilb^{n}(\hat{\CC}^{3}_{0}, \hat{Z}_{\lambda \mu \nu} )
-\]
+\end{equation}
 be the Hilbert scheme parameterizing the subschemes obtained by adding
 a length $n$ embedded point to $Z_{\lambda \mu \nu}$ at the origin
 (see Definition~\ref{defn: Hilb(U,C)}). We note that the permutations
@@ -1160,9 +1156,9 @@ $(r,s,t)\mapsto (t,r,s)$ and $(r,s,t)\mapsto (s,r,t)$ induce the
 isomorphisms
 \[
 \Hilb^{n}(\lambda ,\mu ,\nu )\cong \Hilb^{n}(\nu,\lambda,\mu   ),\quad
-\Hilb^{n}(\lambda ,\mu ,\nu )\cong \Hilb^{n}( \mu ',\lambda ',\nu ' ).
+\Hilb^{n}(\lambda ,\mu ,\nu )\cong \Hilb^{n}( \mu ',\lambda ',\nu ' ),
 \]
-
+where $\lambda' = \{(i,j) : (j,i) \in \lambda\}$ denotes conjugate partition.
 
 We define $\sfVtilde_{\lambda
 \mu \nu}\in \ZZ [[p]]$ by
@@ -1215,8 +1211,7 @@ With these choices, we have the identifications
 \Hilb^{n}\left(\mujprime ,\emptyset ,\mu^{(j)} \right).
 \end{align*}
 Here $\bx$ is the unique partition of size 1 (whose diagram is a
-single box), $\emptyset$ is the empty partition, and prime denotes
-conjugate partition. 
+single box), $\emptyset$ is the empty partition. Recall that the elements of the Hilbert schemes on the LHS have no restrictions; they are \emph{arbitrary} zero dimensional subschemes of $\hat{Z}_{\lambda\mu\nu}  \subset \hat{\CC}^3_0$ by \eqref{defHilblambdamunu}.
 
 An immediate consequence of the above and the symmetries of
 $\sfVtilde$ is 
@@ -1447,8 +1442,8 @@ normalization
 \sfV_{\lambda \mu \nu} = p^{|\pi_{\min}|} \sfVtilde_{\lambda \mu \nu},
 \]
 where $\sfV_{\lambda \mu \nu }$ is the usual topological vertex
-\cite[Defn~2]{Bryan-Kool-Young} and $|\pi_{\min}|$ is the normalized
-volume of the minimal 3D partition asymptotic to $(\lambda \mu \nu )$.  
+\cite[Defn~2]{Bryan-Kool-Young} and $|\pi_{\min}|$ is the renormalized
+volume \cite[page~2]{Bryan-Kool-Young} of the minimal 3D partition asymptotic to $(\lambda \mu \nu )$.  
 
 \begin{lemma}\label{lem: normalized vertex in terms of usual vertex}
 The following hold 
@@ -1461,8 +1456,8 @@ The following hold
 where $\Vert \mu \Vert^{2}:= \sum_{j=1}^{\infty} \mu_{j}^{2}$.
 \end{lemma}
 \begin{proof}
-The normalized volume of a 3D-partition asymptotic to $(\lambda \mu
-\nu )$ is defined (see \cite[page~2]{Bryan-Kool-Young}) by
+The renormalized volume of a 3D-partition asymptotic to $(\lambda \mu
+\nu )$ is defined by
 \[
 |\pi | = \sum_{(\rho ,\sigma ,\tau )\in \pi} (1-\text{\# of legs of
 $\pi$ containing $(\rho ,\sigma ,\tau )$}) .
@@ -1745,7 +1740,7 @@ where $\nu ([C])$ is the value of the Behrend function at the point $[C]\in \Hil
 Conceivably, the condition that $C_{\red}$ has locally toric
 singularities could be weakened, although we do not have any evidence
 for this case. Our conjecture is true for $Y$ a (globally) toric
-Calabi-Yau. This follows from the computations in \cite{MNOP1}.
+Calabi-Yau, with torus $T$, and $C \subset Y$ any $T$-fixed Cohen-Macaulay curve. This follows from $\nu([Z]) = (-1)^{T_H|_P}$, where $T_H|_P$ is the tangent space to $H = \Hilb(Y)$ at $P = [Z]$ \cite[Thm.~3.4]{BF}, and the calculation of this parity in \cite[Sect.~4.10]{MNOP1}.
 
 One could also make the much stronger conjecture that 
 \[
@@ -2001,7 +1996,7 @@ F}) \xrightarrow{\Phi_{1}\oplus \Phi_{2}}
 \Hom(\oplus_{\alpha}G_{\alpha},\O_{\lambda_{1}x})\oplus \Hom
 (\oplus_{\beta}R_{\beta},\O_{B}\oplus \O_{\lambda F}).
 \]
-This identification of $\Hom (I_{C},\O_{C})$ has a straight forward
+This identification of $\Hom (I_{C},\O_{C})$ has a straightforward
 interpretation: a homomorphism $I_{C}\to \O_C$ is determined by what
 it is on each of the generators of $I_{C}$, considered as maps to
 $\O_{B}$ and to $\O_{\lambda F}$. To be in the kernel of $\Phi_{1}$

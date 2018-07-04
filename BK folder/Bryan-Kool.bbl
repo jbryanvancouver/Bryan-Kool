@@ -1,10 +1,21 @@
 \begin{thebibliography}{10}
 
+\bibitem{AM}
+M.~F.~Atiyah and I.~G.~MacDonald.
+\newblock Introduction to commutative algebra.
+\newblock Westview Press, 1969.
+
 \bibitem{Behrend-micro}
 Kai Behrend.
 \newblock Donaldson-{T}homas type invariants via microlocal geometry.
 \newblock {\em Ann. of Math. (2)}, 170(3):1307--1338, 2009.
 \newblock arXiv:math/0507523.
+
+\bibitem{BF}
+Kai Behrend and Barbara Fantechi.
+\newblock Symmetric obstruction theories and Hilbert schemes of points on threefolds.
+\newblock {\em Alg.~and Number Th.}, 2(3):313--345 (2008).
+\newblock arXiv:math/0512556.
 
 \bibitem{Bridgeland-PTDT}
 Tom Bridgeland.
@@ -21,11 +32,13 @@ Jim Bryan.
 \bibitem{Bryan-Kool-Young}
 Jim Bryan, Martijn Kool, and Ben Young.
 \newblock {Trace identities for the topological vertex}.
+\newblock {\em Selecta Math.}, 24:1527--1548, 2018.
 \newblock arXiv:math/1603.05271.
 
 \bibitem{BOPY}
 Jim Bryan, Georg Oberdieck, Rahul Pandharipande, and Qizheng Yin.
 \newblock {Curve counting on abelian surfaces and threefolds}.
+\newblock {\em Alg.~Geom.}, 5(4):398--463 (2018).
 \newblock arXiv:math/1506.00841.
 
 \bibitem{Fr-Mo}
@@ -49,6 +62,7 @@ Toshiya Kawai and K{\=o}ta Yoshioka.
 Martijn Kool and Richard Thomas.
 \newblock {Stable pairs with descendents on local surfaces I: the vertical
   component}.
+\newblock to appear in {\em Pure and Applied Math.~Quart.}
 \newblock arXiv:math/1605.02576.
 
 \bibitem{MacPherson-Annals74}
@@ -93,5 +107,11 @@ Yukinobu Toda.
   3-folds.
 \newblock {\em Kyoto J. Math.}, 52(1):1--50, 2012.
 \newblock arXiv:math/1103.4229.
+
+\bibitem{Vis}
+Angelo Vistoli.
+\newblock Notes on Grothendieck topologies, fibered categories and descent theory.
+\newblock In {\em Fundamental algebraic geometry: Grothendieck's FGA explained}, AMS Math.~Surveys and Monographs, Vol.~123, 2005.
+\newblock arXiv:math/0412512.
 
 \end{thebibliography}

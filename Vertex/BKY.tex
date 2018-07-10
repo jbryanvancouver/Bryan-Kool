@@ -151,10 +151,10 @@ terms of Schur functions was given by \cite{Ok-Re-Va} (see
 In this paper we prove several ``trace identities'' in which a sum
 over certain combinations of the vertex is expressed as a closed
 formula, often a product of simple terms. The products are closely
-related to the Fourier expansions of Jacobi forms. Applications of
-these identities are used to compute the Donaldson-Thomas partition
-functions of certain Calabi-Yau threefolds in terms of Jacobi forms
-\cite{Bryan-K3xE,Bryan-Kool,BOPY}.
+related to the Fourier expansions of Jacobi forms. These identities
+are crucial inputs into the computation of the Donaldson-Thomas
+partition functions of certain elliptically fibered Calabi-Yau
+threefolds in terms of Jacobi forms \cite{Bryan-K3xE,Bryan-Kool,BOPY}.
 
 
 
@@ -352,7 +352,7 @@ and so (using orthogonality of skew Schur functions \cite[28(a) pg
 \begin{align*}
 \sum_{\lambda} q^{|\lambda |} p^{\| \lambda' \| ^{2}} \Vsf_{\lambda
 '\lambda \emptyset} &= M(p)\sum_{\lambda ,\eta} q^{|\lambda |} (s_{\lambda /\eta}(p^{\half },p^{\frac{3}{2}},\dots ))^{2}\\
-&=M(p)\prod_{d=1}^{\infty} \left((1-q^{d})^{-1}\prod_{j,k=1}^{\infty}(1-q^{d}p^{i-\half +j-\half })^{-1} \right)\\
+&=M(p)\prod_{d=1}^{\infty} \left((1-q^{d})^{-1}\prod_{i,j=1}^{\infty}(1-q^{d}p^{i-\half +j-\half })^{-1} \right)\\
 &= M(p) \prod_{d=1}^{\infty} (1-q^{d})^{-1}\prod_{m=1}^{\infty}(1-q^{d}p^{m})^{-m}\\
 &=M(p)\prod_{d=1}^{\infty} (1-q^{d})^{-1}M(p,q^{d}).
 \end{align*}
@@ -369,7 +369,7 @@ p\,\,  \frac{\Vsf_{\lambda \bx \bx}}{\Vsf_{\lambda
 \emptyset \emptyset}} &= 1-\left(\sum_{i=1}^{\infty}
 p^{-\lambda_{i}+i-\half } \right) \left(\sum_{j=1}^{\infty} p^{\lambda_{j}-j+\half } \right).
 \end{align*}
-The terms in the parenthesis on the right hand side of the second
+The terms in the parentheses on the right hand side of the second
 equation should be regarded as Laurent expansions of rational
 functions in $p^{\half}$ and multiplication is done as rational
 functions (see Remark~\ref{rem: vertex/M(p) is a rational function in
@@ -603,7 +603,7 @@ Following \cite{Okounkov-InfWedge}, we define the \emph{vertex
 operators} $\Gamma_{\pm}(\mathbf{x})$ which are operators on
 $\FockSpaceZero$ over the coefficient ring given by symmetric
 functions in an infinite set of variables $\mathbf{x} =
-(x_{1},x_{2},x_{3},\dots )$. Let $\mathbf{s}=(s_{1},s_{2},\dots )$
+(x_{1},x_{2},x_{3},\dots )$. Let $\mathbf{s}=(s_{1},s_{2},\dots )$ with
 \[
 s_{k} =\frac{1}{k}\sum_{i=1}^{\infty} x_{i}^{k}
 \]
@@ -778,7 +778,7 @@ Corteel for teaching him this trick at a conference lunch in
 \cite{Bouttier-Chapuy-Corteel} in the proof of Theorem 12
 therein.}. We then employ the same strategy moving $\Gamma_{-}$
 cyclically to the left a countable number of times until it disappears
-and we are left with a term which we can evaluate with the
+and we are left with a term which we can evaluate using the
 Bloch-Okounkov theorem (Theorem~\ref{thm: Bloch-Okounkov thm}).
 
 We first cyclically commute the operator $\Gamma_{+}$ to the right
@@ -944,7 +944,7 @@ The above series can be considered as an element in the Novikov
 ring of $X$ with coefficients which are formal Laurent series in
 $p$.\footnote{With an appropriate choice of a basis of
 $H_{2}(X,\znums$), the partition function can be considered as a formal
-power series in a set a variables $q_{i}$ whose coefficients are
+power series in a set of variables $q_{i}$ whose coefficients are
 Laurent series in $p$.}
 
 
@@ -1197,7 +1197,7 @@ result \cite{Bloch-Okounkov} to prove equation~\eqref{eqn 3} in our
 Theorem~\ref{thm: main formulas}. We also thank Guillaume Chapuy and
 Sylvie Corteel for showing us their trick of doing an infinite number
 of cyclic permutations of vertex operators (see \S~\ref{sec: vertex
-ops and the pf of eqn 5}. We thank Georg Oberdieck for providing
+ops and the pf of eqn 5}). We thank Georg Oberdieck for providing
 feedback on an early draft of this paper.
 
 %MK was supported by a PIMS postdoctoral
@@ -1207,9 +1207,10 @@ feedback on an early draft of this paper.
 
 
        
-%\bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
-\bibliography{BKY.bbl}
+\bibliography{/Users/jbryan/jbryan/resources/mainbiblio}
+%\bibliography{BKY.bbl}
 \bibliographystyle{plain}
 
 \end{document}
 
+ 

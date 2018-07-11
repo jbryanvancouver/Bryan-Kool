@@ -1,21 +1,50 @@
 Changes (referring to new version):
 
 -Abstract: Added “for primitive classes”.
+
 -p. 3: “which does not depend” changed to “that does not depend”.
+
 -p. 3: “which we formulate” changed to “that we formulate”.
+
 -p. 4: Comma removed after $e(B)$.
+
 -p. 4: “which allow us” changed to “that allow us”.
--p. 4: “that embedded points and zero dimensional” changed to “in which embedded points and zero dimensional”.
+
+-p. 4: “that embedded points and zero dimensional” changed to “in
+ which embedded points and zero dimensional”.
+ 
 -p. 7, eqn (1): r^l changed to s^l.
+
 -p. 7: Footnote 2 added in order to address comment 7 of referee C.
--p. 7: Sentences added “Conveniently, … This is proved in Lemma 28.” in order to address comment 6 of referee C
--p. 12, just before Def. 10: We added the paragraph “An fpqc cover,…” in order to address comment 1 of referee C (see also the next two changes). 
--p. 13, paragraph just before 5.2: Changed in order to address comment 1 of referee C.
--p. 14, top of the page: Sentences “fpqc descent… We stress that…” added in order to address comment 1 of referee C.
--p. 15: Definition “prime of a partition” moved to appropriate place. 
--p. 16, just below first three formulae: Sentence “Recall …” added in order to address comment 2 of referee C.
+
+-p. 7: Sentences added “Conveniently, … This is proved in Lemma 28.”
+ in order to address comment 6 of referee C
+ 
+-p. 12, just before Def. 10: We added the paragraph “An fpqc cover,…”
+ in order to address comment 1 of referee C (see also the next two
+ changes).
+ 
+-p. 13, paragraph just before 5.2: Changed in order to address comment
+ 1 of referee C.
+ 
+-p. 14, top of the page: Sentences “fpqc descent… We stress that…”
+ added in order to address comment 1 of referee C.
+ 
+-p. 15: Definition “prime of a partition” moved to appropriate place.
+
+-p. 16, to address comment 2 of referee C we have added a sentece
+ "Recall..."  just below first three formulae. We also added a
+ clarifying sentence after equation 4 (top of page 16).
+ 
 -p. 20: Reference to renormalised volume moved to appropriate place.
--p. 24, Remark 19: “C torus fixed” added and comments on deduction from MNOP added in order to address comment 4 of referee M.
+
+-p. 24, Remark 19: “C torus fixed” added and comments on deduction
+ from MNOP added in order to address comment 4 of referee M.
+
+-p. 3, Regarding the first comment of referee M. We have clarified our
+  contribution to the KKV formula in the paragraph following Corollary
+  2 and the accompanying footnote.
+ 
 
 References added:
 
@@ -29,9 +58,7 @@ Bryan-Kool-Young
 Bryan-Oberdieck-Pandharipande-Yin
 Kool-Thomas
 
+
 TODO (before re-submitting): 
 
--First comment referee M not addressed.
--Tag 023T should everywhere be replaced by Tag 023R.
--I did not phrase the sentence “Recall …” correctly. It should say RHS instead of LHS. Also, it should say: arbitrary closed subschemes of $\widehat{\C}_0^3$ obtained by adding n embedded points to $\widehat{Z}_{\lambda\mu\nu}$ by (4).
--Remark 19: in formula Behrend sign: I forgot to write \dim and it is also better to write T_[Z] H in order to be more consistent with notation elsewhere in the paper (and just leave out P).
+

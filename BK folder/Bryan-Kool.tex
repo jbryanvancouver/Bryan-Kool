@@ -173,8 +173,9 @@ vertex. Utilizing identities for the topological vertex proved in
 \cite{Bryan-Kool-Young}, we derive product formulas for the partition
 functions. The connected version of the partition function is written
 in terms of Jacobi forms.  In the special case where the elliptic
-surface is a K3 surface, we get a new derivation of the
-Katz-Klemm-Vafa formula for primitive curve classes.
+surface is a K3 surface, we get a derivation of the
+Katz-Klemm-Vafa formula for primitive curve classes which is
+independent of the computation of Kawai-Yoshioka.
 \end{abstract}
 
 \maketitle 
@@ -281,15 +282,23 @@ and the Jacobi theta function
 \]
 \end{corollary}
 
-In the case where $S \rightarrow \PP^1$ is an elliptically fibered $K3$
-surface, the above series specializes to the well-known
-Katz-Klemm-Vafa formula. Because $X$ is non-compact, the connected
-series is required to obtain the KKV formula. Our result provides a
-new derivation of the KKV formula for primitive classes. The KKV
-formula was proved in all curve classes in
-\cite{Pandharipande-Thomas-KKV}. Ours is the first derivation of the
-KKV formula, that does not depend on the Kawai-Yoshioka formula
-\cite{Kawai-Yoshioka}.
+In the case where $S \rightarrow \PP^1$ is an elliptically fibered
+$K3$ surface, the above series specializes (up to a factor of $q$) to
+the reciprocol of $\eta^{24}\Theta^{2}$, the unique Jacobi cusp form
+of weight 10 and index 1. This is the Jacobi form appearing in the
+well-known Katz-Klemm-Vafa formula. Because $X$ is non-compact, the
+connected series is required to obtain the KKV formula. Our result
+provides a new proof of the KKV formula for primitive
+classes\footnote{At least for the Euler characteristic version of the
+Donaldson-Thomas invariants. For the Behrend function weighted
+Donaldson-Thomas invariants, we require Conjecture~\ref{conj: Behrend
+fnc conj}, see Theorem~\ref{thm: DT(X) assuming the Behrend function
+conjecture} below.}. The KKV formula was proved in all curve classes
+in \cite{Pandharipande-Thomas-KKV}. The appearence of the Jacobi form
+$\eta^{24} \Theta^{2}$ in all other proofs of the KKV formula arises
+from the Euler characteristic computation of Kawai-Yoshioka
+\cite{Kawai-Yoshioka}. Ours is the first derivation of the KKV
+formula that does not depend on the Kawai-Yoshioka formula.
 
 Our results can be extended to apply to the usual (Behrend function
 weighted) Donaldson-Thomas invariants if we assume a general
@@ -317,13 +326,14 @@ A similar phenomenon to the above is known to hold when $X$ is a toric
 Calabi-Yau threefold.
 
 
-We expect that the method of computation that we introduce in this
-paper should apply to other elliptically fibered geometries. Indeed,
-it has already found applications to the calculation of DT generating
-functions on $K3 \times E$, where $E$ is an elliptic curve
-\cite{Bryan-K3xE}, and to abelian threefolds \cite{BOPY}. Even though
-the geometry under consideration is not toric, we combine
-$\CC^*$-localization, motivic methods, formal methods, and
+The method of computation that we have introduced in this paper has
+been applied to other elliptically fibered geometries. Indeed, it has
+found applications to the calculation of DT generating functions on
+$K3 \times E$, where $E$ is an elliptic curve \cite{Bryan-K3xE}, to
+abelian threefolds \cite{BOPY}, and should also apply to $(K3\times
+E)/G$ where $G$ is a finite group acting symplectically on each
+factor. Even though the geometry under consideration is not toric, we
+combine $\CC^*$-localization, motivic methods, formal methods, and
 $(\CC^{*})^{3}$-localization to end up with expressions that only
 depend on the topological vertex $\sfV_{\lambda\mu\nu}$, and the
 topological Euler characteristics $e(B)$ and $e(S)$. The outline of
@@ -733,7 +743,11 @@ C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}}  \right)
 
 
 
-Conveniently, any effective divisor on $S$ in class $[B+dF]$ is a comb curve, i.e.~the scheme theoretic union of $B$ (our chosen section) and some (possibly thickened) fibres with total multiplicity $d$. This is proved in Lemma \ref{lem: Sym(B) = Hilb(S)}. The main result of this section is the following:
+Crucially, any effective divisor on $S$ in class $[B+dF]$ is a comb
+curve, i.e.~the scheme theoretic union of $B$ (our chosen section) and
+some (possibly thickened) fibres with total multiplicity $d$. This is
+proved in Lemma \ref{lem: Sym(B) = Hilb(S)}. The main result of this
+section is the following:
 \begin{theorem}\label{thm: C* invariant curves are partition thickened
 comb curves with embedded points} If a subscheme $Z\subset X$ in the
 class $[Z]=B+dF$ is $\CC^{*}$-invariant, then it is a partition
@@ -980,7 +994,7 @@ jointly surjective and satisfy a quasi-compactness condition. See
 \cite[Tag 03NV, Def.~54.15.1]{stacks-project} (or
 \cite[Def.~2.34]{Vis}). Just like for Zariski covers of $T$, one can
 glue quasi-coherent sheaves along an fpqc cover. This is known as
-\emph{fpqc descent} \cite[Tag 023T, Prop.~34.5.2]{stacks-project} (or
+\emph{fpqc descent} \cite[Tag 023R, Prop.~34.5.2]{stacks-project} (or
 \cite[Thm.~4.23]{Vis}). The type of fpqc covers we are interested in
 arise from taking the formal neighborhood of a closed subscheme $Z
 \subset T$ and its complement $U = T \setminus Z$ much like \cite[Tag,
@@ -1082,14 +1096,21 @@ that every zero dimensional component or embedded point of $Z$ is
 contained in a unique open set in the cover. In other words, the
 restriction of $Z$ to any intersection of sets in the cover
 $\mathfrak{U}$ has no embedded points or zero dimensional
-components. fpqc descent (\cite[Tag 023T, Prop.~34.5.2]{stacks-project} or \cite[Thm.~4.23]{Vis}) then tells us that $Z$ is uniquely determined
-by its restriction to the open sets of the cover. We stress that we only use a very weak version of fpqc descent: since the underlying Cohen-Macaulay curve $C$ is already fixed, restriction of $\O_Z$ to the open subsets of the fpqc cover determines $\O_Z$ \emph{and any} collection of structure sheaves $\{\O_{Z_U}\}_{U \in \mathfrak{U}}$, such that $Z_U$ has maximal Cohen-Macaulay curve $C|_U$, determines such a structure sheaf.
-In other words, we have a
-constructible bijective morphism from the product of Hilbert schemes
-on the open sets to the Hilbert scheme on $X$ which induces the
-equality in the Grothendieck group. Finally, we verify that the
-powers of $p$ correctly match up each side. For a subscheme $Z$ with
-maximal Cohen-Macaulay subscheme $C$, we have
+components. fpqc descent (\cite[Tag 023R,
+Prop.~34.5.2]{stacks-project} or \cite[Thm.~4.23]{Vis}) then tells us
+that $Z$ is uniquely determined by its restriction to the open sets of
+the cover. We stress that we only use a very weak version of fpqc
+descent: since the underlying Cohen-Macaulay curve $C$ is already
+fixed, restriction of $\O_Z$ to the open subsets of the fpqc cover
+determines $\O_Z$. Moreover, \emph{any} collection of structure
+sheaves $\{\O_{Z_U}\}_{U \in \mathfrak{U}}$, such that $Z_U$ has
+maximal Cohen-Macaulay curve $C|_U$, determines such a structure
+sheaf.  In other words, we have a constructible bijective morphism
+from the product of Hilbert schemes on the open sets to the Hilbert
+scheme on $X$ which induces the equality in the Grothendieck
+group. Finally, we verify that the powers of $p$ correctly match up
+each side. For a subscheme $Z$ with maximal Cohen-Macaulay subscheme
+$C$, we have
 \begin{align*}
 \chi (\O_{Z})&=\chi (\O_{C}) +\length (I_{C}/I_{Z})\\
 &=\chi (\O_{C}) +\sum_{U\in \mathfrak{U}}\length (I_{C}/I_{Z}|_{U}).
@@ -1166,7 +1187,12 @@ Let $\hat{Z}_{\lambda \mu \nu}$ be the restriction of $Z_{\lambda \mu
 \end{equation}
 be the Hilbert scheme parameterizing the subschemes obtained by adding
 a length $n$ embedded point to $Z_{\lambda \mu \nu}$ at the origin
-(see Definition~\ref{defn: Hilb(U,C)}). We note that the permutations
+(see Definition~\ref{defn: Hilb(U,C)}). We emphasize that the
+subschemes parameterized by $\Hilb^{n}(\lambda ,\mu ,\nu )$ need not
+be monomial --- the embedded points at the origin have no
+restrictions. 
+
+We note that the permutations
 $(r,s,t)\mapsto (t,r,s)$ and $(r,s,t)\mapsto (s,r,t)$ induce the
 isomorphisms
 \[
@@ -1226,7 +1252,11 @@ With these choices, we have the identifications
 \Hilb^{n}\left(\mujprime ,\emptyset ,\mu^{(j)} \right).
 \end{align*}
 Here $\bx$ is the unique partition of size 1 (whose diagram is a
-single box), $\emptyset$ is the empty partition. Recall that the elements of the Hilbert schemes on the LHS have no restrictions; they are \emph{arbitrary} zero dimensional subschemes of $\hat{Z}_{\lambda\mu\nu}  \subset \hat{\CC}^3_0$ by \eqref{defHilblambdamunu}.
+single box), $\emptyset$ is the empty partition. Recall that the
+elements of the Hilbert schemes on the RHS of the above do not need to
+be monomial ideals: although their underlying maximal Cohen-Macaulay
+subscheme is monomial, they have arbitrary embedded points at the
+origin.
 
 An immediate consequence of the above and the symmetries of
 $\sfVtilde$ is 
@@ -1756,10 +1786,14 @@ Conceivably, the condition that $C_{\red}$ has locally toric
 singularities could be weakened, although we do not have any evidence
 for this case. Our conjecture is true for $Y$ a (globally) toric
 Calabi-Yau, with torus $T$, and $C \subset Y$ any $T$-fixed
-Cohen-Macaulay curve. This follows from $\nu([Z]) = (-1)^{T_H|_P}$,
-where $T_H|_P$ is the tangent space to $H = \Hilb(Y)$ at $P = [Z]$
-\cite[Thm.~3.4]{Behrend-Fantechi08}, and the calculation of this parity in
-\cite[Sect.~4.10]{MNOP1}.
+Cohen-Macaulay curve. In this case both sides of our conjecture can be
+computed by restricting to the $T$-fixed points, which are
+isolated. The Behrend function at such a fixed point $P$ is given by $\nu(P) =
+(-1)^{\dim T_P\Hilb (Y)}$, \cite[Thm.~3.4]{Behrend-Fantechi08}. The
+calculation of $(-1)^{\dim T_{P}\Hilb (Y)}$ is computed in \cite{MNOP1};
+specifically, the LHS of the equation in \cite[Thm~2]{MNOP1} is easily
+seen to be $(-1)^{\dim T_{P}\Hilb (Y)}$ while the RHS clearly obeys the
+formula in our conjecture.
 
 One could also make the much stronger conjecture that 
 \[

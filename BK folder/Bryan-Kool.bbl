@@ -1,9 +1,10 @@
 \begin{thebibliography}{10}
 
-\bibitem{AM}
-M.~F.~Atiyah and I.~G.~MacDonald.
-\newblock Introduction to commutative algebra.
-\newblock Westview Press, 1969.
+\bibitem{Atiyah-Macdonald}
+M.~F. Atiyah and I.~G. Macdonald.
+\newblock {\em Introduction to commutative algebra}.
+\newblock Addison-Wesley Publishing Co., Reading, Mass.-London-Don Mills, Ont.,
+  1969.
 
 \bibitem{Behrend-micro}
 Kai Behrend.
@@ -11,10 +12,11 @@ Kai Behrend.
 \newblock {\em Ann. of Math. (2)}, 170(3):1307--1338, 2009.
 \newblock arXiv:math/0507523.
 
-\bibitem{BF}
+\bibitem{Behrend-Fantechi08}
 Kai Behrend and Barbara Fantechi.
-\newblock Symmetric obstruction theories and Hilbert schemes of points on threefolds.
-\newblock {\em Alg.~and Number Th.}, 2(3):313--345 (2008).
+\newblock Symmetric obstruction theories and {H}ilbert schemes of points on
+  threefolds.
+\newblock {\em Algebra Number Theory}, 2(3):313--345, 2008.
 \newblock arXiv:math/0512556.
 
 \bibitem{Bridgeland-PTDT}
@@ -27,18 +29,19 @@ Tom Bridgeland.
 Jim Bryan.
 \newblock {The Donaldson-Thomas theory of $K3\times E$ via the topological
   vertex}.
-\newblock arXiv:math/1504.02920.
+\newblock To appear in Geometry of moduli. The Abel Symposium 2017.
+  arXiv:math/1504.02920.
 
 \bibitem{Bryan-Kool-Young}
-Jim Bryan, Martijn Kool, and Ben Young.
-\newblock {Trace identities for the topological vertex}.
-\newblock {\em Selecta Math.}, 24:1527--1548, 2018.
+Jim Bryan, Martijn Kool, and Benjamin Young.
+\newblock Trace identities for the topological vertex.
+\newblock {\em Selecta Math. (N.S.)}, 24(2):1527--1548, 2018.
 \newblock arXiv:math/1603.05271.
 
 \bibitem{BOPY}
 Jim Bryan, Georg Oberdieck, Rahul Pandharipande, and Qizheng Yin.
 \newblock {Curve counting on abelian surfaces and threefolds}.
-\newblock {\em Alg.~Geom.}, 5(4):398--463 (2018).
+\newblock {\em Algebraic Geometry (Compositio)}, 5(4):398--463, 2018.
 \newblock arXiv:math/1506.00841.
 
 \bibitem{Fr-Mo}
@@ -62,8 +65,8 @@ Toshiya Kawai and K{\=o}ta Yoshioka.
 Martijn Kool and Richard Thomas.
 \newblock {Stable pairs with descendents on local surfaces I: the vertical
   component}.
-\newblock to appear in {\em Pure and Applied Math.~Quart.}
-\newblock arXiv:math/1605.02576.
+\newblock to appear in {\em Pure and Applied Math.~Quart.},
+  arXiv:math/1605.02576.
 
 \bibitem{MacPherson-Annals74}
 R.~D. MacPherson.
@@ -110,8 +113,9 @@ Yukinobu Toda.
 
 \bibitem{Vis}
 Angelo Vistoli.
-\newblock Notes on Grothendieck topologies, fibered categories and descent theory.
-\newblock In {\em Fundamental algebraic geometry: Grothendieck's FGA explained}, AMS Math.~Surveys and Monographs, Vol.~123, 2005.
+\newblock Grothendieck topologies, fibered categories and descent theory.
+\newblock In {\em Fundamental algebraic geometry}, volume 123 of {\em Math.
+  Surveys Monogr.}, pages 1--104. Amer. Math. Soc., Providence, RI, 2005.
 \newblock arXiv:math/0412512.
 
 \end{thebibliography}

@@ -337,17 +337,12 @@ which is a curve of a special form which we call a partition thickened
 comb curve (Definition~\ref{defn: partition thickened comb
 curve}). This curve is determined by data consisting of points
 $x_{i}\in B$ labelled by integer partitions $\lambda^{(i)}$. This
-<<<<<<< Updated upstream
-gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the value $\sum_{i}
-|\lambda^{(i)}|x_{i}$ on such a curve (see Theorem~\ref{thm: C*
-invariant curves are partition thickened comb curves with embedded
-points}).
-=======
 gives rise to a constructible morphism $\rho$ to $\Sym B$ taking the
 value $\sum_{i} |\lambda^{(i)}|x_{i}$ on such a curve (see
 Theorem~\ref{thm: C* invariant curves are partition thickened comb
 curves with embedded points}).
->>>>>>> Stashed changes
+
+
 \item In Section~\ref{sec: pushforward to sym prod}, we push forward
 the Euler characteristic measure to $\Sym B$ via the map $\rho$. We
 show that $\rho_{*}(1)$, the push-forward measure, has nice
@@ -979,7 +974,17 @@ analytic cover: the intersection of these open sets is very small in
 the sense that no embedded points or zero dimensional components can
 occur inside the intersections of distinct open sets in the cover.
 
-An fpqc cover of a scheme $T$ consists of a collection of flat morphisms $\{\phi_i : T_i \rightarrow T\}_{i \in I}$, which are jointly surjective and satisfy a quasi-compactness condition. See \cite[Tag 03NV, Def.~54.15.1]{stacks-project} (or \cite[Def.~2.34]{Vis}). Just like for Zariski covers of $T$, one can glue quasi-coherent sheaves along an fpqc cover. This is known as \emph{fpqc descent} \cite[Tag 023T, Prop.~34.5.2]{stacks-project}  (or \cite[Thm.~4.23]{Vis}). The type of fpqc covers we are interested in arise from taking the formal neighborhood of a closed subscheme $Z \subset T$ and its complement $U = T \setminus Z$ much like \cite[Tag, 03NV, Ex.~54.15.3(5)]{stacks-project}. More specifically:
+An fpqc cover of a scheme $T$ consists of a collection of flat
+morphisms $\{\phi_i : T_i \rightarrow T\}_{i \in I}$, which are
+jointly surjective and satisfy a quasi-compactness condition. See
+\cite[Tag 03NV, Def.~54.15.1]{stacks-project} (or
+\cite[Def.~2.34]{Vis}). Just like for Zariski covers of $T$, one can
+glue quasi-coherent sheaves along an fpqc cover. This is known as
+\emph{fpqc descent} \cite[Tag 023T, Prop.~34.5.2]{stacks-project} (or
+\cite[Thm.~4.23]{Vis}). The type of fpqc covers we are interested in
+arise from taking the formal neighborhood of a closed subscheme $Z
+\subset T$ and its complement $U = T \setminus Z$ much like \cite[Tag,
+03NV, Ex.~54.15.3(5)]{stacks-project}. More specifically:
 
 \begin{definition}\label{defn: the fpqc cover mathfrak U}
 We define $\mathfrak{U}$, a cover of $X$, to be the collection of the
@@ -1020,10 +1025,14 @@ non-finite-type schemes. The scheme maps
 \[
 \Xhat_{x_{i}}\to X, \quad \Xhat_{B^{\circ}}\to X, \dotsc 
 \]
-are flat. This follows from the fact that the formal completion $\hat{A}$ of a noetherian ring $A$ along an ideal $I \subset A$ is $A$-flat (\cite[Tag 0BNH, Lemma 10.96.2]{stacks-project} or \cite[Prop.~10.14]{AM}). Since our maps are jointly surjective, $\mathfrak{U}$ forms an fpqc
-cover. For $U\in \mathfrak{U}$, we suppress the associated map $U\to
-X$ from the notation and use the usual restriction notation to denote
-the pullback, for example
+are flat. This follows from the fact that the formal completion
+$\hat{A}$ of a noetherian ring $A$ along an ideal $I \subset A$ is
+$A$-flat (\cite[Tag 0BNH, Lemma 10.96.2]{stacks-project} or
+\cite[Prop.~10.14]{Atiyah-Macdonald}). Since our maps are jointly
+surjective, $\mathfrak{U}$ forms an fpqc cover. For $U\in
+\mathfrak{U}$, we suppress the associated map $U\to X$ from the
+notation and use the usual restriction notation to denote the
+pullback, for example
 \[
 U|_{C}:=U\times_{X}C. 
 \]
@@ -1746,7 +1755,11 @@ where $\nu ([C])$ is the value of the Behrend function at the point $[C]\in \Hil
 Conceivably, the condition that $C_{\red}$ has locally toric
 singularities could be weakened, although we do not have any evidence
 for this case. Our conjecture is true for $Y$ a (globally) toric
-Calabi-Yau, with torus $T$, and $C \subset Y$ any $T$-fixed Cohen-Macaulay curve. This follows from $\nu([Z]) = (-1)^{T_H|_P}$, where $T_H|_P$ is the tangent space to $H = \Hilb(Y)$ at $P = [Z]$ \cite[Thm.~3.4]{BF}, and the calculation of this parity in \cite[Sect.~4.10]{MNOP1}.
+Calabi-Yau, with torus $T$, and $C \subset Y$ any $T$-fixed
+Cohen-Macaulay curve. This follows from $\nu([Z]) = (-1)^{T_H|_P}$,
+where $T_H|_P$ is the tangent space to $H = \Hilb(Y)$ at $P = [Z]$
+\cite[Thm.~3.4]{Behrend-Fantechi08}, and the calculation of this parity in
+\cite[Sect.~4.10]{MNOP1}.
 
 One could also make the much stronger conjecture that 
 \[

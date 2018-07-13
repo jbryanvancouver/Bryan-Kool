@@ -283,22 +283,25 @@ and the Jacobi theta function
 \end{corollary}
 
 In the case where $S \rightarrow \PP^1$ is an elliptically fibered
-$K3$ surface, the above series specializes (up to a factor of $q$) to
-the reciprocol of $\eta^{24}\Theta^{2}$, the unique Jacobi cusp form
+K3 surface, the above series specializes (up to a factor of $q$) to
+the reciprocal of $\eta^{24}\Theta^{2}$, the unique Jacobi cusp form
 of weight 10 and index 1. This is the Jacobi form appearing in the
-well-known Katz-Klemm-Vafa formula. Because $X$ is non-compact, the
-connected series is required to obtain the KKV formula. Our result
-provides a new proof of the KKV formula for primitive
+well-known Katz-Klemm-Vafa formula. In order to obtain the KKV 
+formula, we require the connected series, because $X$ is non-compact. 
+
+Our result provides a new derivation of the KKV formula for primitive
 classes\footnote{At least for the Euler characteristic version of the
 Donaldson-Thomas invariants. For the Behrend function weighted
 Donaldson-Thomas invariants, we require Conjecture~\ref{conj: Behrend
 fnc conj}, see Theorem~\ref{thm: DT(X) assuming the Behrend function
 conjecture} below.}. The KKV formula was proved in all curve classes
-in \cite{Pandharipande-Thomas-KKV}. The appearence of the Jacobi form
-$\eta^{24} \Theta^{2}$ in all other proofs of the KKV formula arises
-from the Euler characteristic computation of Kawai-Yoshioka
-\cite{Kawai-Yoshioka}. Ours is the first derivation of the KKV
-formula that does not depend on the Kawai-Yoshioka formula.
+in \cite{Pandharipande-Thomas-KKV}. The appearance of the Jacobi form
+$\eta^{24} \Theta^{2}$ in previous proofs of the KKV formula 
+\cite{Maulik-Pandharipande-Thomas, Pandharipande-Thomas-KKV}
+ultimately comes from the calculation of Euler characteristics 
+of relative Hilbert schemes of points on curves on K3 by Kawai-Yoshioka 
+\cite{Kawai-Yoshioka}. Our derivation of the KKV formula is the first that 
+does not depend on the Kawai-Yoshioka formula.
 
 Our results can be extended to apply to the usual (Behrend function
 weighted) Donaldson-Thomas invariants if we assume a general
@@ -329,8 +332,8 @@ Calabi-Yau threefold.
 The method of computation that we have introduced in this paper has
 been applied to other elliptically fibered geometries. Indeed, it has
 found applications to the calculation of DT generating functions on
-$K3 \times E$, where $E$ is an elliptic curve \cite{Bryan-K3xE}, to
-abelian threefolds \cite{BOPY}, and should also apply to $(K3\times
+$\textrm{K3} \times E$, where $E$ is an elliptic curve \cite{Bryan-K3xE} and
+abelian threefolds \cite{BOPY}, and is expected to apply to $(\textrm{K3}\times
 E)/G$ where $G$ is a finite group acting symplectically on each
 factor. Even though the geometry under consideration is not toric, we
 combine $\CC^*$-localization, motivic methods, formal methods, and
@@ -1099,13 +1102,14 @@ $\mathfrak{U}$ has no embedded points or zero dimensional
 components. fpqc descent (\cite[Tag 023R,
 Prop.~34.5.2]{stacks-project} or \cite[Thm.~4.23]{Vis}) then tells us
 that $Z$ is uniquely determined by its restriction to the open sets of
-the cover. We stress that we only use a very weak version of fpqc
-descent: since the underlying Cohen-Macaulay curve $C$ is already
-fixed, restriction of $\O_Z$ to the open subsets of the fpqc cover
-determines $\O_Z$. Moreover, \emph{any} collection of structure
+the cover and any collection of structure
 sheaves $\{\O_{Z_U}\}_{U \in \mathfrak{U}}$, such that $Z_U$ has
 maximal Cohen-Macaulay curve $C|_U$, determines such a structure
-sheaf.  In other words, we have a constructible bijective morphism
+sheaf. We stress that we only use a very weak version of fpqc
+descent: since the underlying Cohen-Macaulay curve $C$ is already
+fixed, restriction of $\O_Z$ to the open subsets of the fpqc cover
+determines $\O_Z$ and there are no conditions on the overlaps. 
+In other words, we have a constructible bijective morphism
 from the product of Hilbert schemes on the open sets to the Hilbert
 scheme on $X$ which induces the equality in the Grothendieck
 group. Finally, we verify that the powers of $p$ correctly match up
@@ -1255,7 +1259,7 @@ Here $\bx$ is the unique partition of size 1 (whose diagram is a
 single box), $\emptyset$ is the empty partition. Recall that the
 elements of the Hilbert schemes on the RHS of the above do not need to
 be monomial ideals: although their underlying maximal Cohen-Macaulay
-subscheme is monomial, they have arbitrary embedded points at the
+subscheme is monomial, they may have arbitrary embedded points at the
 origin.
 
 An immediate consequence of the above and the symmetries of
@@ -1790,7 +1794,7 @@ Cohen-Macaulay curve. In this case both sides of our conjecture can be
 computed by restricting to the $T$-fixed points, which are
 isolated. The Behrend function at such a fixed point $P$ is given by $\nu(P) =
 (-1)^{\dim T_P\Hilb (Y)}$, \cite[Thm.~3.4]{Behrend-Fantechi08}. The
-calculation of $(-1)^{\dim T_{P}\Hilb (Y)}$ is computed in \cite{MNOP1};
+calculation of $(-1)^{\dim T_{P}\Hilb (Y)}$ is done in \cite{MNOP1};
 specifically, the LHS of the equation in \cite[Thm~2]{MNOP1} is easily
 seen to be $(-1)^{\dim T_{P}\Hilb (Y)}$ while the RHS clearly obeys the
 formula in our conjecture.

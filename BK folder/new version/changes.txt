@@ -1,0 +1,62 @@
+Changes (referring to new version):
+
+-Abstract: Last sentence rephrased.
+
+-p. 3: Regarding the first comment of referee M. We have clarified our
+  contribution to the KKV formula in the two paragraphs following Corollary
+  2 and the accompanying footnote.
+ 
+-p. 3: “which does not depend” changed to “that does not depend”.
+
+-p. 3: “which we formulate” changed to “that we formulate”.
+
+-p. 4, top: References to applications of the methods of this paper updated. 
+
+-p. 4: Comma removed after $e(B)$.
+
+-p. 4: “which allow us” changed to “that allow us”.
+
+-p. 4: “that embedded points and zero dimensional” changed to “in
+ which embedded points and zero dimensional”.
+ 
+-p. 7, eqn (1): r^l changed to s^l.
+
+-p. 7: Footnote added in order to address comment 7 of referee C.
+
+-p. 8: Sentences added “Crucially, … This is proved in Lemma 28.”
+ in order to address comment 6 of referee C.
+ 
+-p. 13, just before Def. 10: We added the paragraph “An fpqc cover,…”
+ in order to address comment 1 of referee C (see also the next two
+ changes). 
+ 
+-p. 13, bottom: We rephrased the last paragraph on p. 13 in order 
+ to address comment 1 of referee C. 
+ 
+-p. 14, proof: Sentences “fpqc descent… We stress that…”
+ added in order to address comment 1 of referee C.
+ 
+-p. 16: Definition “prime of a partition” moved to appropriate place.
+
+-p. 16, bottom: In order to address comment 2 of referee C we have added a 
+ sentence "Recall...". We also added a clarifying sentence after equation 4 
+ (top of page 16).
+ 
+-p. 21: Reference to renormalised volume moved to appropriate place.
+
+-p. 25, Remark 19: “C torus fixed” added and comments on deduction
+ from MNOP added in order to address comment 4 of referee M.
+
+
+References added:
+
+Atiyah-MacDonald
+Behrend-Fantechi
+Maulik-Pandharipande-Thomas
+Vistoli
+
+References updated:
+
+Bryan-Kool-Young
+Bryan-Oberdieck-Pandharipande-Yin
+Kool-Thomas

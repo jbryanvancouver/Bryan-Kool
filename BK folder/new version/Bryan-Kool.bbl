@@ -1,0 +1,121 @@
+\begin{thebibliography}{10}
+
+\bibitem{Atiyah-Macdonald}
+M.~F. Atiyah and I.~G. Macdonald.
+\newblock {\em Introduction to commutative algebra}.
+\newblock Addison-Wesley Publishing Co., Reading, Mass.-London-Don Mills, Ont.,
+  1969.
+
+\bibitem{Behrend-micro}
+Kai Behrend.
+\newblock Donaldson-{T}homas type invariants via microlocal geometry.
+\newblock {\em Ann. of Math. (2)}, 170(3):1307--1338, 2009.
+\newblock arXiv:math/0507523.
+
+\bibitem{Behrend-Fantechi08}
+Kai Behrend and Barbara Fantechi.
+\newblock Symmetric obstruction theories and {H}ilbert schemes of points on
+  threefolds.
+\newblock {\em Algebra Number Theory}, 2(3):313--345, 2008.
+\newblock arXiv:math/0512556.
+
+\bibitem{Bridgeland-PTDT}
+Tom Bridgeland.
+\newblock Hall algebras and curve-counting invariants.
+\newblock {\em J. Amer. Math. Soc.}, 24(4):969--998, 2011.
+\newblock arXiv:1002.4374.
+
+\bibitem{Bryan-K3xE}
+Jim Bryan.
+\newblock {The Donaldson-Thomas theory of $K3\times E$ via the topological
+  vertex}.
+\newblock To appear in Geometry of moduli. The Abel Symposium 2017.
+  arXiv:math/1504.02920.
+
+\bibitem{Bryan-Kool-Young}
+Jim Bryan, Martijn Kool, and Benjamin Young.
+\newblock Trace identities for the topological vertex.
+\newblock {\em Selecta Math. (N.S.)}, 24(2):1527--1548, 2018.
+\newblock arXiv:math/1603.05271.
+
+\bibitem{BOPY}
+Jim Bryan, Georg Oberdieck, Rahul Pandharipande, and Qizheng Yin.
+\newblock {Curve counting on abelian surfaces and threefolds}.
+\newblock {\em Algebraic Geometry (Compositio)}, 5(4):398--463, 2018.
+\newblock arXiv:math/1506.00841.
+
+\bibitem{Fr-Mo}
+R.~Friedman and J.~Morgan.
+\newblock {\em Smooth Four-manifolds and Complex Surfaces}, volume~27 of {\em
+  Ergebnisse der Mathematik und ihrer Grenzgebiete}.
+\newblock Springer-Verlag, 1994.
+
+\bibitem{Haiman1998}
+Mark Haiman.
+\newblock {$t,q$}-{C}atalan numbers and the {H}ilbert scheme.
+\newblock {\em Discrete Math.}, 193(1-3):201--224, 1998.
+\newblock Selected papers in honor of Adriano Garsia (Taormina, 1994).
+
+\bibitem{Kawai-Yoshioka}
+Toshiya Kawai and K{\=o}ta Yoshioka.
+\newblock String partition functions and infinite products.
+\newblock {\em Adv. Theor. Math. Phys.}, 4(2):397--485, 2000.
+
+\bibitem{Kool-Thomas2016}
+Martijn Kool and Richard Thomas.
+\newblock {Stable pairs with descendents on local surfaces I: the vertical
+  component}.
+\newblock to appear in {\em Pure and Applied Math.~Quart.},
+  arXiv:math/1605.02576.
+
+\bibitem{MacPherson-Annals74}
+R.~D. MacPherson.
+\newblock Chern classes for singular algebraic varieties.
+\newblock {\em Ann. of Math. (2)}, 100:423--432, 1974.
+
+\bibitem{MNOP1}
+D.~Maulik, N.~Nekrasov, A.~Okounkov, and R.~Pandharipande.
+\newblock Gromov-{W}itten theory and {D}onaldson-{T}homas theory. {I}.
+\newblock {\em Compos. Math.}, 142(5):1263--1285, 2006.
+\newblock arXiv:math.AG/0312059.
+
+\bibitem{Miranda}
+Rick Miranda.
+\newblock {\em The basic theory of elliptic surfaces}.
+\newblock Dottorato di Ricerca in Matematica. [Doctorate in Mathematical
+  Research]. ETS Editrice, Pisa, 1989.
+\newblock http://www.math.colostate.edu/$\sim$miranda/BTES-Miranda.pdf.
+
+\bibitem{Ok-Re-Va}
+Andrei Okounkov, Nikolai Reshetikhin, and Cumrun Vafa.
+\newblock Quantum {C}alabi-{Y}au and classical crystals.
+\newblock In {\em The unity of mathematics}, volume 244 of {\em Progr. Math.},
+  pages 597--618. Birkh\"auser Boston, Boston, MA, 2006.
+\newblock arXiv:hep-th/0309208.
+
+\bibitem{Pandharipande-Thomas-KKV}
+R.~Pandharipande and R.~P. Thomas.
+\newblock The {K}atz--{K}lemm--{V}afa conjecture for {$K3$} surfaces.
+\newblock {\em Forum Math. Pi}, 4:e4, 111, 2016.
+\newblock arXiv:math/1404.6698.
+
+\bibitem{stacks-project}
+The {Stacks Project Authors}.
+\newblock {\itshape Stacks Project}.
+\newblock {\tt http://stacks.math.columbia.edu}, 2016.
+
+\bibitem{Toda-2012-Kyoto}
+Yukinobu Toda.
+\newblock Stability conditions and curve counting invariants on {C}alabi-{Y}au
+  3-folds.
+\newblock {\em Kyoto J. Math.}, 52(1):1--50, 2012.
+\newblock arXiv:math/1103.4229.
+
+\bibitem{Vis}
+Angelo Vistoli.
+\newblock Grothendieck topologies, fibered categories and descent theory.
+\newblock In {\em Fundamental algebraic geometry}, volume 123 of {\em Math.
+  Surveys Monogr.}, pages 1--104. Amer. Math. Soc., Providence, RI, 2005.
+\newblock arXiv:math/0412512.
+
+\end{thebibliography}

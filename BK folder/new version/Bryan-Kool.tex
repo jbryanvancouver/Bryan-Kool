@@ -20,6 +20,7 @@ Room 502, Budapestlaan 6  \\
 %\usepackage{eepic,epic}
 \usepackage{mathtools}
 
+
 %tikz
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -118,6 +119,7 @@ Room 502, Budapestlaan 6  \\
 \newcommand{\Coh}{\operatorname{Coh}}
 \newcommand{\Hilb}{\operatorname{Hilb}}
 \newcommand{\Quot}{\operatorname{Quot}}
+\newcommand{\Ann}{\operatorname{Ann}}
 \newcommand{\Tot}{\operatorname{Tot}}
 \newcommand{\DT}{\mathsf{DT}}
 \newcommand{\CM}{\operatorname{CM}}
@@ -948,7 +950,7 @@ Theorem~\ref{thm: C* invariant curves are
 partition thickened comb curves with embedded points} gives the
 following decomposition of the fibers of $\rho_{d}$:
 \begin{equation} \label{eqn: components of fibers of rho}
-\rho_{d}^{-1}(\bolda \boldx +\boldb \boldy ) = \bigsqcup_{\boldlambda
+\rho_{d}^{-1}(\bolda \boldx +\boldb \boldy ) = p^{\chi(\O_{C(\boldx, \boldy, \boldlambda, \boldmu)})} \bigsqcup_{\boldlambda
 \vdash \bolda}\, \bigsqcup_{\boldmu \vdash \boldb}\,  \Quot_X^{\bullet}(I_{C(\boldx, \boldy, \boldlambda, \boldmu)}),
 \end{equation}
 where 
@@ -962,7 +964,39 @@ where
 and the meaning of $\boldlambda \vdash \bolda$ and $\boldmu \vdash
 \boldb$ is that $\lambda^{(i)}\vdash a_{i}$ and $\mu^{(j)}\vdash
 b_{j}$ for all $i$ and $j$. This equality in $K_{0}(\Var_{\CC})(\!(p)\!)$ follows from an obvious geometric 
-constructible morphism, i.e.~a constructible morphism which is bijective on $\CC$-valued points.
+constructible morphism, i.e.~a constructible morphism which is bijective on $\CC$-valued points. Finally we verify that the powers of $p$ match up on each side of \eqref{eqn: components of fibers of rho}. Indeed for any quotient $I_C \twoheadrightarrow Q$, with $C := C(\boldx, \boldy, \boldlambda, \boldmu)$, the kernel is $I_Z \subset I_C$ for some closed subscheme $Z \subset X$ with maximal Cohen-Macaulay curve $C$. Hence
+\begin{align*}
+\chi (\O_{Z})&=\chi (\O_{C}) +\length (\O_Z / \O_C) \\
+&=\chi (\O_{C}) +\length (Q),
+\end{align*}
+because $\O_Z / \O_C \cong Q \cong I_C / I_Z$. For later use, we state the following:
+
+\begin{lemma}\label{lem: chi(C)=chi(B) -sum lamba1 - sum mu1}
+Let 
+\[
+C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right),
+\]
+then
+\[
+\chi (\O_{C}) = \chi (\O_{B}) -\sum_{i=1}^{n}\lambda^{(i)}_{1}
+-\sum_{j=1}^{m}\mu^{(j)}_{1}. 
+\]
+\end{lemma}
+\begin{proof}
+Since $\lambda^{(i)}F_{x_{i}}=p^{-1}(Z_{\lambda^{(i)}})$ and $p$ is an
+elliptic fibration, $\chi (\O_{F_{x_{i}}})=0$ and similarly we have
+$\chi (\O_{F_{y_{j}}})=0$. Note that $B\cap \lambda^{(i)}F_{x_{i}}$
+and $B\cap \mu^{(j)}F_{y_{j}}$ are zero dimensional subschemes of
+length $\lambda^{(i)}_{1}$ and $\mu^{(j)}_{1} $ respectively
+(c.f. equation~\eqref{eqn: monomial ideal I given by a partition
+lambda}). The lemma then follows from the exact sequence
+\[
+0\to \O_{C} \to
+\O_{B}\oplus_{i}\O_{\lambda^{(i)}F_{x_{i}}}\oplus_{j}\O_{\mu^{(j)}F_{y_{j}}}
+\to \oplus_{i}\O_{B\cap \lambda^{(i)}F_{x_{i}}}\oplus_{j}\O_{B\cap \mu^{(j)}F_{y_{j}}}  \to 0.
+\]
+\end{proof}
+
 
 
 
@@ -1022,13 +1056,62 @@ To each $S \in \Sigma$, we associate the following locally closed subset of $\Qu
 \end{align*}
 \end{definition}
 
-This provides a stratification of $\Quot_X^{\bullet}(I_{C},S)$ into locally closed subsets as we now show. 
+This provides a stratification of $\Quot_X^{\bullet}(I_{C},S)$ into locally closed subsets as we now show. We use the following general result:
+\begin{proposition}
+Let $X$ be a quasi-projective variety, $S \subset X$ a locally closed subset, $Z \subset X$ a closed subset, and let $\F$ be a coherent sheaf on $X$. Suppose $Z \subset S$. For any $n$, there exists a geometric constructible morphism
+\[
+\Quot_X^n(\F,S) \longrightarrow \bigsqcup_{n_1+n_2=n} \Quot^{n_1}_X(\F,S \setminus Z) \times \Quot^{n_2}_X(\F,Z)
+\]
+\end{proposition}
+\begin{proof}
+We denote by $X_Z^{(N)}$ the $N$th order neighbourhood of $Z \subset X$. I.e.~let $I_Z \subset \O_X$ be the ideal defining $Z \subset X$, then $X_Z^{(N)} \subset X$ is the closed subscheme defined by $I_Z^N \subset \O_X$. Denote the inclusion $X_Z^{(N)} \subset X$ by $\iota$ and let $U:=X \setminus Z$.
+% and denote the inclusion $U \subset X$ by $j$.
+
+Fix $n$. We choose $N \gg 0$ such that for any quotient $\F \twoheadrightarrow Q$, where $Q$ is supported on $Z$ and has length $\leq n$, we have that the scheme theoretic support of $Q$ is contained in $X_Z^{(N)}$.
+
+We now describe the map of the proposition. Given a quotient $\F \twoheadrightarrow Q$ in $\Quot_X^n(\F,S)$, we obtain
+\begin{align*}
+\F|_U &\twoheadrightarrow Q|_U \\
+\iota^* \F &\twoheadrightarrow \iota^* Q.
+\end{align*}
+The trivial quotient $\F|_{X \setminus \supp Q} \twoheadrightarrow 0$ and $\F|_U \twoheadrightarrow Q|_U$ glue on the overlap, so we obtain an element of $\Quot^{n_1}_X(\F,S \setminus Z)$ for some $n_1$. Moreover, push-forward along a closed embedding is exact, so we obtain an element of $\Quot^{n-n_1}_X(\F,Z)$
+\[
+\F \twoheadrightarrow \iota_* \iota^* \F \twoheadrightarrow \iota_* \iota^* Q.
+\]
+
+
+We have to show the this constructible morphism is a bijection on $\CC$-valued points. We start with injectivity. Suppose $\F \twoheadrightarrow Q_i$, for $i=1,2$, map to the same element. Then they agree on $U = X \setminus Z$. So it suffices to show that they agree on $X \setminus (\supp Q_1 \cap U) = X \setminus (\supp Q_2 \cap U)$. By hypothesis, we know that there exists an isomorphism
+\[
+\begin{diagram}[h=0.9cm]
+\iota^* \F       &\rTo     & \iota^* Q_1 \\
+\dTo_{=}    &         &\dTo_{\cong }\\
+\iota^* \F   &\rTo     & \iota^* Q_2 \\
+\end{diagram}
+\]
+So it suffices to show that pushing forward $\iota^* \F \twoheadrightarrow \iota^* Q_i$ to $X \setminus (\supp Q_1 \cap U)$ and composing with $\F|_{X \setminus (\supp Q_1 \cap U)} \twoheadrightarrow \iota_* \iota_* \F|_{X \setminus (\supp Q_1 \cap U)}$ gives back $\F|_{X \setminus (\supp Q_1 \cap U)} \twoheadrightarrow Q_i|_{X \setminus (\supp Q_1 \cap U)}$. This is a local question.
+
+Suppose $R$ is a commutative ring (corresponding to an open affine subset of $X \setminus (\supp Q_1 \cap U)$) and $I \subset R$ an ideal (corresponding to $Z \cap X \setminus (\supp Q_1 \cap U)$). Let $M \twoheadrightarrow Q$ be a quotient of finitely generated $R$-modules with $Q$ zero dimensional (corresponding to either of $\F|_{X \setminus (\supp Q_1 \cap U)} \twoheadrightarrow Q_i|_{X \setminus (\supp Q_1 \cap U)}$). Suppose
+$$
+I^N \subset \Ann(Q) \subset I,
+$$
+where $\Ann(Q) \subset R$ denotes the annihilator ideal of $Q$. Consider the composition
+\begin{equation} \label{compos}
+M \twoheadrightarrow M \otimes_R R / I^N \twoheadrightarrow Q \otimes_R R / I^N,
+\end{equation}
+as a morphism of $R$-modules, where the middle and third modules are viewed as $R$-modules via the map $R \rightarrow R / I^N$. Note that 
+\[
+Q \otimes_R R / I^N \cong Q / I^N Q \cong Q
+\] 
+since $I^N \subset \Ann(Q)$. Composing \eqref{compos} with this isomorphism gives back the original quotient $M \twoheadrightarrow Q$.
+
+For surjectivity, it suffices to note that two quotients $\F \twoheadrightarrow Q_i$, with $Q_1$ of length $n_1$ supported on $S \setminus Z$ and $Q_2$ of length $n-n_1$ supported on $Z$ agree on the open cover $\{ U, X \setminus \supp Q_1\}$ of $X$. Therefore they glue two a quotient $\F \twoheadrightarrow Q$, with $Q$ of length $n$ supported on $S$.
+\end{proof}
+
 
 \begin{lemma}\label{lem: Sigma = product of local Hilbert schemes}
 The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \begin{align*}
-\Quot_X^{\bullet}(I_C,S) = p^{\chi
-(\O_{C})}&\cdot  \prod_{S \in \Sigma} \Quot_X^{\bullet}(I_C,S) \\
+\Quot_X^{\bullet}(I_C) = &\cdot  \prod_{S \in \Sigma} \Quot_X^{\bullet}(I_C,S) \\
 =p^{\chi (\O_{C})}& \cdot  \Quot_X^{\bullet}(I_C,W) \cdot
 \Quot_X^{\bullet}(I_C,B^\circ) \\
 &\cdot \prod_{i=1}^{n}
@@ -1042,82 +1125,40 @@ The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \end{lemma}
 
 \begin{proof}
-TBC TBC RRRRR For any stratum $S \in \Sigma$, we define by $X_{\overline{S}}^{(n)}$ the $n$-th order neighbourhood of the closed subset $\overline{S}$ inside $X$. I.e.~if $\overline{S}$ is defined by the ideal $I_{\overline{S}} \subset \O_X$, then $X_{\overline{S}}^{(n)}$ is the closed subscheme defined by $I_{\overline{S}}^n \subset \O_X$. In particular $X_{\overline{S}}^{(1)} = \overline{S}$.
-
-It suffices to show the equality of the proposition modulo $p^N$  and let $N \rightarrow \infty$. There exists an integer $M$ with the following property *****this may need more argument?*****: \\
-
-\noindent for any zero dimensional closed subscheme $Z \subset X$ of length $< N$ supported on $S$, the scheme theoretic support of $Z$ is contained inside $X^{(M)}_{\overline{S}}$. \\
-
-RRRRR
-
-
-
-
-
-Let $Z$ be a subscheme corresponding to a point in
-$\Sigmaxylambdamu$. Our fpqc cover $\mathfrak{U}$ has the property
-that every zero dimensional component or embedded point of $Z$ is
-contained in a unique open set in the cover. In other words, the
-restriction of $Z$ to any intersection of sets in the cover
-$\mathfrak{U}$ has no embedded points or zero dimensional
-components. fpqc descent (\cite[Tag 023R,
-Prop.~34.5.2]{stacks-project} or \cite[Thm.~4.23]{Vis}) then tells us
-that $Z$ is uniquely determined by its restriction to the open sets of
-the cover and any collection of structure
-sheaves $\{\O_{Z_U}\}_{U \in \mathfrak{U}}$, such that $Z_U$ has
-maximal Cohen-Macaulay curve $C|_U$, determines such a structure
-sheaf. We stress that we only use a very weak version of fpqc
-descent: since the underlying Cohen-Macaulay curve $C$ is already
-fixed, restriction of $\O_Z$ to the open subsets of the fpqc cover
-determines $\O_Z$ and there are no conditions on the overlaps. 
-In other words, we have a constructible bijective morphism
-from the product of Hilbert schemes on the open sets to the Hilbert
-scheme on $X$ which induces the equality in the Grothendieck
-group. Finally, we verify that the powers of $p$ correctly match up
-each side. For a subscheme $Z$ with maximal Cohen-Macaulay subscheme
-$C$, we have
+First apply the previous proposition to $\Quot_X^{\bullet}(I_C)$ with $S = X$ and $Z = C$ in order to obtain
 \begin{align*}
-\chi (\O_{Z})&=\chi (\O_{C}) +\length (I_{C}/I_{Z})\\
-&=\chi (\O_{C}) +\sum_{U\in \mathfrak{U}}\length (I_{C}/I_{Z}|_{U}).
+\Quot_X^{\bullet}(I_C)  =& \cdot  \Quot_X^{\bullet}(I_C,W) \cdot \Quot_X^{\bullet}(I_C,C).
 \end{align*}
-Therefore the $p^{\chi (\O_{Z})}$ term on the left hand side of the
-equation correctly matches the 
-\[
-p^{\chi (\O_{C})}\cdot \prod_{U\in
-\mathfrak{U}}p^{\length (I_{C}/I_{Z}|_{U})}
-\]
-term on
-the right hand side.
+Next, apply the previous proposition to $\Quot_X^{\bullet}(I_C,C)$ with $S = C$ and $Z = F_{x_1}$ in order to obtain
+\begin{align*}
+\Quot_X^{\bullet}(I_C)  =& \cdot  \Quot_X^{\bullet}(I_C,W) \cdot \Quot_X^{\bullet}(I_C,F_{x_1}) \cdot \Quot_X^{\bullet}(I_C,C\setminus F_{x_1}).
+\end{align*}
+Repeating in this way by taking $S = C \setminus F_{x_1}$ and $Z = F_{x_2}$ et cetera, we obtain
+\begin{align*}
+\Quot_X^{\bullet}(I_C) =&\cdot  \prod_{S \in \Sigma} \Quot_X^{\bullet}(I_C,S) \\
+=p^{\chi (\O_{C})}& \cdot  \Quot_X^{\bullet}(I_C,W) \cdot
+\Quot_X^{\bullet}(I_C,B^\circ) \\
+&\cdot \prod_{i=1}^{n}
+\Quot_X^{\bullet}(I_C,F_{x_i}) \\
+&\cdot \prod_{j=1}^{m}
+\Quot_X^{\bullet}(I_C,F_{y_j}).
+\end{align*}
+Now apply the previous proposition to $\Quot_X^{\bullet}(I_C,F_{x_1})$, $S = F_{x_1}$, and $Z = \{x_1\}$ we deduce
+\begin{align*}
+\Quot_X^{\bullet}(I_C) = p^{\chi
+(\O_{C})}&\cdot  \prod_{S \in \Sigma} \Quot_X^{\bullet}(I_C,S) \\
+=p^{\chi (\O_{C})}& \cdot  \Quot_X^{\bullet}(I_C,W) \cdot
+\Quot_X^{\bullet}(I_C,B^\circ) \\
+& \cdot \Quot_X^\bullet(I_C,\{x_1\}) \cdot \Quot_X^\bullet(I_C,F_{x_1}^\circ) \\
+&\cdot \prod_{i=2}^{n}
+\Quot_X^{\bullet}(I_C,F_{x_i}) \\
+&\cdot \prod_{j=1}^{m}
+\Quot_X^{\bullet}(I_C,F_{y_j}).
+\end{align*}
+Repeating for all points $x_2, \ldots, x_n, y_1, \ldots, y_m, z_1, \ldots, z_m$ the required identity follows.
 \end{proof}
 
-\begin{lemma}\label{lem: chi(C)=chi(B) -sum lamba1 - sum mu1}
-Let 
-\[
-C=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right),
-\]
-then
-\[
-\chi (\O_{C}) = \chi (\O_{B}) -\sum_{i=1}^{n}\lambda^{(i)}_{1}
--\sum_{j=1}^{m}\mu^{(j)}_{1}. 
-\]
-\end{lemma}
-\begin{proof}
-Since $\lambda^{(i)}F_{x_{i}}=p^{-1}(Z_{\lambda^{(i)}})$ and $p$ is an
-elliptic fibration, $\chi (\O_{F_{x_{i}}})=0$ and similarly we have
-$\chi (\O_{F_{y_{j}}})=0$. Note that $B\cap \lambda^{(i)}F_{x_{i}}$
-and $B\cap \mu^{(j)}F_{y_{j}}$ are zero dimensional subschemes of
-length $\lambda^{(i)}_{1}$ and $\mu^{(j)}_{1} $ respectively
-(c.f. equation~\eqref{eqn: monomial ideal I given by a partition
-lambda}). The lemma then follows from the exact sequence
-\[
-0\to \O_{C} \to
-\O_{B}\oplus_{i}\O_{\lambda^{(i)}F_{x_{i}}}\oplus_{j}\O_{\mu^{(j)}F_{y_{j}}}
-\to \oplus_{i}\O_{B\cap \lambda^{(i)}F_{x_{i}}}\oplus_{j}\O_{B\cap \mu^{(j)}F_{y_{j}}}  \to 0.
-\]
-\end{proof}
-
-
-
+TBC TBC TBC TBC TBC 
 
 \subsection{Formal coordinates and Hilbert schemes
 of $\Spec \CC [[r,s,t]]$}\label{subsec: Formal coordinates and

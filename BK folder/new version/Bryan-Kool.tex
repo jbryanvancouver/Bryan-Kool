@@ -1150,11 +1150,13 @@ Q \otimes_R R / I^N \cong Q / I^N Q \cong Q
 since $I^N \subset \Ann(Q)$. Composing \eqref{compos} with this 
 isomorphism gives back the original quotient $M \twoheadrightarrow Q$.
 
-For surjectivity, it suffices to note that two quotients $\F \twoheadrightarrow 
+For surjectivity, take two quotients $\F \twoheadrightarrow 
 Q_i$, with $Q_1$ of length $n_1$ supported on $S \setminus Z$ and $Q_2$ 
-of length $n-n_1$ supported on $Z$ agree on the open cover $\{ U, X 
-\setminus \supp Q_1\}$ of $X$. Therefore they glue to a quotient $\F 
-\twoheadrightarrow Q$, with $Q$ of length $n$ supported on $S$.
+of length $n-n_1$ supported on $Z$. Then $\F|_U \twoheadrightarrow 
+Q_1|_U$ and $\F|_{X \setminus \supp Q_1} \twoheadrightarrow 
+Q_2|_{X \setminus \supp Q_1}$ agree on the overlap. 
+They glue to the required quotient $\F \twoheadrightarrow Q$, 
+with $Q$ of length $n$ supported on $S$.
 \end{proof}
 
 \begin{lemma}\label{lem: Sigma = product of local Hilbert schemes}

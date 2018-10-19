@@ -527,22 +527,25 @@ $\O_{Z}/\O_{C}$ has finite length $n$} \} \\
 $I_{C}/I_{Z}$ has finite length $n$} \}.
 \end{align*}
 \end{definition}
-It parameterizes subschemes
-which roughly speaking are obtained from $C$ by adding $n$ embedded
-points and/or zero dimensional components. 
+%It parameterizes subschemes
+%which roughly speaking are obtained from $C$ by adding $n$ embedded
+%points and/or zero dimensional components. 
 
-Sometimes it is useful to switch perspective to Quot schemes. Denote by 
-$\Quot_X^n(I_C)$ the Quot scheme of zero dimensional quotients 
-$I_C \twoheadrightarrow Q$ satisfying $\chi(Q)=n$. Taking the kernel 
-of such a quotient, we obtain the ideal sheaf of some $Z \in \Hilb^{n}(X,C)$. 
-This provides a geometric morphism
+Once the Cohen-Macaulay curve $C \subset X$ is fixed, it is useful to work with the Quot scheme $\Quot_X^n(I_C)$ of zero dimensional quotients of $I_C$ of length $n$. We have the following lemma.
+\begin{lemma} \label{HilbtoQuot}
+The following equality holds in $K_0(\Var_{\CC})(\!(p)\!)$
+\[
+\Hilb^\bullet(X,C) = \Quot^\bullet_X(I_C).
+\]
+\end{lemma}
+\begin{proof}
+The universal quotient $I_{C \times \Quot^n_X(I_C)} \twoheadrightarrow Q$ has flat kernel $I_{\mathcal{Z}}$. This provides a flat family $\mathcal{Z} \subset X \times  \Quot^n_X(I_C)$ which gives a morphism to the Hilbert scheme. The kernel of a quotient $I_C \twoheadrightarrow Q$, where $Q$ is zero dimensional of length $n$, is an ideal sheaf $I_Z \subset I_C$ satisfying
 $$
-\Quot_X^n(I_C) \rightarrow \Hilb^n(X,C),
+n = \chi(Q) = \chi(I_C / I_Z) = \chi(\O_Z) - \chi(\O_C).
 $$
-i.e.~a morphism which is bijective on $\CC$-valued points. Later on, we are 
-mostly interested in topological Euler characteristics of such spaces. Therefore 
-it suffices to work with geometric morphisms, or even geometric constructible 
-morphisms, ignoring the scheme structure.
+Every $\CC$-valued point of $\Hilb^n(X,C)$ arises from a quotient $I_Z \twoheadrightarrow Q$ in this way. Hence we have a geometric bijection $\Quot^n_X(I_C) \rightarrow \Hilb^n(X,C)$ from which the lemma follows.
+\end{proof}
+
 
 \presectionspace
 \section{Reduction to partition thickened comb curves}\label{sec: reduction to thickened comb curves}
@@ -934,28 +937,21 @@ For any
 \end{align*}
 we define an associated Cohen-Macaulay curve
 \[
-C(\boldx, \boldy, \boldlambda, \boldmu) = B \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
+C_{\boldx, \boldy, \boldlambda, \boldmu} = B \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
 \bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right).
 \]
- and we consider
- \[
-\Quot_X^{\bullet}(I_{C(\boldx, \boldy, \boldlambda, \boldmu)}).
- \]
-The bullet reminds us that we are multiplying by 
-$p^{\chi (\O_{C(\boldx, \boldy, \boldlambda, \boldmu)})}$
-and summing over all possible holomorphic lengths
-(recall Convention~\ref{conv: bullet convention}). We regard
-$\Quot_X^{\bullet}(I_{C(\boldx, \boldy, \boldlambda, \boldmu)})$ 
-as an element in $K_{0}(\Var_{\CC})(\!(p)\!)$. 
-
 Theorem~\ref{thm: C* invariant curves are
 partition thickened comb curves with embedded points} gives the
-following decomposition of the fibers of $\rho_{d}$:
-\begin{equation} \label{eqn: components of fibers of rho}
-\rho_{d}^{-1}(\bolda \boldx +\boldb \boldy ) = p^{\chi(\O_{C(\boldx, \boldy, \boldlambda, \boldmu)})} \bigsqcup_{\boldlambda
-\vdash \bolda}\, \bigsqcup_{\boldmu \vdash \boldb}\,  \Quot_X^{\bullet}(I_{C(\boldx, \boldy, \boldlambda, \boldmu)}),
-\end{equation}
-where 
+following decomposition of the fibers of $\rho_{d}$ in $K_0(\Var_{\CC})(\!(p)\!)$:
+\begin{align} 
+\begin{split} \label{eqn: components of fibers of rho}
+\rho_{d}^{-1}(\bolda \boldx +\boldb \boldy ) &=  \sum_{\boldlambda
+\vdash \bolda}\, \sum_{\boldmu \vdash \boldb}  p^{\chi(\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \Hilb_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}) \\
+&=  \sum_{\boldlambda
+\vdash \bolda}\, \sum_{\boldmu \vdash \boldb}  p^{\chi(\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}),
+\end{split}
+\end{align}
+where the second equality follows from Lemma \ref{HilbtoQuot}. Here 
 \begin{align*}
 \bolda =(a_{1},\dotsc ,a_{n}),&\quad \boldb =(b_{1},\dotsc
 ,b_{m}),\\
@@ -965,21 +961,16 @@ where
 \end{align*}
 and the meaning of $\boldlambda \vdash \bolda$ and $\boldmu \vdash
 \boldb$ is that $\lambda^{(i)}\vdash a_{i}$ and $\mu^{(j)}\vdash
-b_{j}$ for all $i$ and $j$. This equality in $K_{0}(\Var_{\CC})(\!(p)\!)$ follows from a geometric morphism from Quot schemes to Hilbert schemes as discussed at the end of Section \ref{defnotcon}. Finally we verify that the powers of $p$ match up on each side of \eqref{eqn: components of fibers of rho}. Indeed for any quotient $I_C \twoheadrightarrow Q$, with $C := C(\boldx, \boldy, \boldlambda, \boldmu)$, the kernel is $I_Z \subset I_C$ for some closed subscheme $Z \subset X$ with maximal Cohen-Macaulay curve $C$. Hence
-\begin{align*}
-\chi (\O_{Z})&=\chi (\O_{C}) +\length (\O_Z / \O_C) \\
-&=\chi (\O_{C}) +\length (Q),
-\end{align*}
-because $\O_Z / \O_C \cong I_C / I_Z \cong Q$. For later use, we state the following:
+b_{j}$ for all $i$ and $j$. For later use, we state the following:
 
 \begin{lemma}\label{lem: chi(C)=chi(B) -sum lamba1 - sum mu1}
 Let 
 \[
-C:=C(\boldx, \boldy, \boldlambda, \boldmu)=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right),
+C_{\boldx, \boldy, \boldlambda, \boldmu}:=B\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)\cup_{j}\left(\mu^{(j)}F_{y_{j}} \right),
 \]
 then
 \[
-\chi (\O_{C}) = \chi (\O_{B}) -\sum_{i=1}^{n}\lambda^{(i)}_{1}
+\chi (\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}}) = \chi (\O_{B}) -\sum_{i=1}^{n}\lambda^{(i)}_{1}
 -\sum_{j=1}^{m}\mu^{(j)}_{1}. 
 \]
 \end{lemma}
@@ -1002,7 +993,7 @@ lambda}). The lemma then follows from the exact sequence
 
 
 In the next section, we will see that the Euler characteristic of
-$\Quot_X^{\bullet}(I_{C(\boldx, \boldy, \boldlambda, \boldmu)})$ does not depend on the exact location of
+$\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}})$ does not depend on the exact location of
 the points $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$, but only on
 their number $n$ and $m$ and the partitions $\lambda^{(i)}$ and
 $\mu^{(j)}$.
@@ -1010,31 +1001,30 @@ $\mu^{(j)}$.
 
 
 \presectionspace
-\section{Restriction to formal neighborhoods} \label{sec: restriction
+\section{Stratifying according to embedded points} \label{sec: restriction
 to formal nghds}
 
 In the previous two sections we reduced our consideration to the
-strata $\Quot_X^{\bullet}(I_{C(\boldx, \boldy, \boldlambda, \boldmu)})$
+strata $\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}})$
 of $ \Hilb^{d,\bullet}_{\PCP }(X)$ which parameterize subschemes $Z$ whose maximal
 Cohen-Macaulay subscheme $Z_{\CM} \subset Z$ is the partition
 thickened comb curve 
 \[
-C:=C(\boldx, \boldy, \boldlambda, \boldmu)=B\cup_{i}(\lambda^{(i)}F_{x_{i}})\cup_{j}(\mu^{(j)}F_{y_{j}}).
+C_{\boldx, \boldy, \boldlambda, \boldmu}:=B\cup_{i}(\lambda^{(i)}F_{x_{i}})\cup_{j}(\mu^{(j)}F_{y_{j}}).
 \]
 
-In this section, we introduce a further stratification of $\Quot_X^{\bullet}(I_{C})$ 
-by keeping track of the support of the quotients with respect to the geometry of 
-$C_{\red}$. This allows us to write $\Quot_X^{\bullet}(I_C)$ as a product 
+In this section, we introduce a further stratification of $\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}})$ 
+by keeping track of the support of the quotients with respect to the geometry of the underlying reduced curve
+$B\cup_{i} F_{x_{i}} \cup_{j} F_{y_{j}}$. This allows us to write $\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}})$ as a product 
 of ``local'' Hilbert schemes (in $K_{0}(\Var_{\CC})(\!(p)\!)$). We then
-use this product to compute the Euler characteristic of
-$\Quot_X^{\bullet}(I_C)$. The main result of this section is
+use this product to compute its Euler characteristic. The main result of this section is
 Proposition~\ref{prop: formula for fd in terms of the normalized
 vertex}.
 
 
-\subsection{The stratification}
+\subsection{Stratification of $X$}
 
-Given a Cohen-Macaulay  curve $C:=C(\boldx, \boldy, \boldlambda, \boldmu)$, 
+Given a Cohen-Macaulay  curve $C_{\boldx, \boldy, \boldlambda, \boldmu}$, 
 its reduced support is given by $B\cup_{i}F_{x_{i}}\cup_{j}F_{y_{j}}$
 which is a nodal curve with nodes at $(x_{1},\dotsc ,x_{n})$,
 $(y_{1},\dotsc ,y_{m})$ and $(z_{1},\dotsc ,z_{m})$ where $z_{j}$ is
@@ -1052,21 +1042,16 @@ This gives the following stratification of $X$ by locally closed subsets:
 \item $F_{y_j}^{\circ} := F_{y_i} \setminus \{y_j,z_j\}$,
 \item $W:=X \setminus B\cup_{i}F_{x_{i}}\cup_{j}F_{y_{j}}$.
 \end{itemize}
-We denote the collection of these locally closed subsets by $\Sigma$. 
+We denote the collection of these locally closed subsets by $\Sigma_{\boldx, \boldy, \boldlambda, \boldmu}$. 
 
-\begin{definition}
-To each $S \in \Sigma$, we associate the following locally closed 
-subset of $\Quot_X^{\bullet}(I_C)$ 
-\begin{align*}
-\Quot_X^{\bullet}(I_C,S) = \{Z\subset X \, : \, C\subset Z\text{, $I_{C}/I_{Z}$ 
-is zero dimensional and supported on $S$} \}
-\end{align*}
+\begin{definition} \label{QuotSupp}
+Let $X$ be a smooth quasi-projective variety, $\F$ a coherent sheaf on $X$, and $S \subset X$ a locally closed subset. Consider the Quot scheme $\Quot_X^n(\F)$ of quotients $\F \twoheadrightarrow Q$ on $X$, where $Q$ is zero dimensional of length $n$. We define $\Quot_X^n(\F,S)$ as the locally closed subset of quotients $\F \twoheadrightarrow Q$ for which the reduced support of $Q$ lies in $S$.
 \end{definition}
 
 We will use $\Sigma$ to provide a stratification of $\Quot_X^{\bullet}(I_{C})$ 
 by locally closed subsets. For this, we need the following general result:
-\begin{proposition}
-Let $X$ be a quasi-projective variety, $S \subset X$ a locally closed subset, 
+\begin{proposition} \label{keyprop}
+Let $X$ be a smooth quasi-projective variety, $S \subset X$ a locally closed subset, 
 $Z \subset X$ a closed subset, and $\F$ a coherent sheaf on $X$. Suppose 
 $Z \subset S$. For any $n$, there exists a geometric constructible 
 morphism\footnote{I.e.~constructible morphism which is bijective 
@@ -1162,21 +1147,21 @@ with $Q$ of length $n$ supported on $S$.
 \begin{lemma}\label{lem: Sigma = product of local Hilbert schemes}
 The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \begin{align*}
-\Quot_X^{\bullet}(I_C) = &\prod_{S \in \Sigma} \Quot_X^{\bullet}(I_C,S) \\
-=&\Quot_X^{\bullet}(I_C,W) \cdot
-\Quot_X^{\bullet}(I_C,B^\circ) \\
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}) = &\prod_{S \in \Sigma_{\boldx, \boldy, \boldlambda, \boldmu}} \Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},S) \\
+=&\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},W) \cdot
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^\circ) \\
 &\cdot \prod_{i=1}^{n}
-\Quot_X^{\bullet}(I_C,\{x_i\}) \cdot
-\Quot_X^{\bullet}(I_C,F_{x_i}^\circ) \\
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{x_i\}) \cdot
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{x_i}^\circ) \\
 &\cdot \prod_{j=1}^{m}
-\Quot_X^{\bullet}(I_C,\{y_j\}) \cdot
-\Quot_X^{\bullet}(I_C,\{z_j\}) \cdot
-\Quot_X^{\bullet}(I_C,F^\circ_{y_j}).
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{y_j\}) \cdot
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{z_j\}) \cdot
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^\circ_{y_j}).
 \end{align*}
 \end{lemma}
 
 \begin{proof}
-First apply the previous proposition to $\Quot_X^{\bullet}(I_C)$ 
+Let $C:= C_{\boldx, \boldy, \boldlambda, \boldmu}$. First apply the previous proposition to $\Quot_X^{\bullet}(I_C)$ 
 with $S = X$ and $Z = C$ in order to obtain
 \begin{align*}
 \Quot_X^{\bullet}(I_C)  =&\Quot_X^{\bullet}(I_C,W) \cdot 
@@ -1214,16 +1199,15 @@ the required identity follows.
 \end{proof}
 
 
-\subsection{Formal coordinates and Hilbert schemes
-of $\Spec \CC [[r,s,t]]$}\label{subsec: Formal coordinates and
+\subsection{Reduction to Quot schemes of $\CC^3$}\label{subsec: Formal coordinates and
 reduction to Hilbert scheme on C3}\SubSecSpace
 
-TBC TBC TBC TBC TBC  Let $\lambda ,\mu ,\nu$ be integer partitions which we also regard as
+Let $\lambda ,\mu ,\nu$ be integer partitions which we also regard as
 subsets in $(\ZZ_{\geq 0})^{2}$ by their diagram as in
 \cite{Bryan-Kool-Young}. Consider the subscheme
 \[
-Z_{\lambda \mu \nu}=Z_{\lambda \emptyset \emptyset}\cup
-Z_{\emptyset \mu \emptyset}\cup Z_{\emptyset \emptyset \nu } \subset
+C_{\lambda \mu \nu}=C_{\lambda \emptyset \emptyset}\cup
+C_{\emptyset \mu \emptyset}\cup C_{\emptyset \emptyset \nu } \subset
 \CC^{3}=\Spec \CC [r,s,t]
 \]
 defined by the monomial ideal
@@ -1240,55 +1224,36 @@ r^{\rho}s^{\sigma}t^{\tau}\in I_{\emptyset \emptyset \nu } & \iff
 (\rho ,\sigma  )\notin \nu . 
 \end{align*}
 
-Let $\hat{Z}_{\lambda \mu \nu}$ be the restriction of $Z_{\lambda \mu
-\nu}$ to $\hat{\CC}^{3}_{0} = \Spec \CC [[r,s,t]]$. Let
+Consider the Quot scheme $\Quot^{n}_{\CC^3}(I_{C_{\lambda \mu \nu}})$. Inside, we have the closed subset of quotients supported set theoretically at the origin (Definition \ref{QuotSupp}), which we denote by 
 \begin{equation} \label{defHilblambdamunu}
-\Hilb^{n}(\lambda ,\mu ,\nu) := \Hilb^{n}(\hat{\CC}^{3}_{0}, \hat{Z}_{\lambda \mu \nu} )
+\Quot^{n}(\lambda ,\mu ,\nu) := \Quot^{n}_{\CC^3}(I_{C_{\lambda \mu \nu}},\{0\}).
 \end{equation}
-be the Hilbert scheme parameterizing the subschemes obtained by adding
-a length $n$ embedded point to $Z_{\lambda \mu \nu}$ at the origin
-(see Definition~\ref{defn: Hilb(U,C)}). We emphasize that the
-subschemes parameterized by $\Hilb^{n}(\lambda ,\mu ,\nu )$ need not
-be monomial --- the embedded points at the origin have no
-restrictions. 
+The kernel of such a quotient $I_{C_{\lambda \mu \nu}} \twoheadrightarrow Q$ is the ideal sheaf of a one dimensional scheme $Z$ with underlying Cohen-Macaulay curve $C_{\lambda \mu \nu}$ and its embedded points supported set theoretically at the origin. We emphasize that $Z$ need not be monomial.
 
 We note that the permutations
 $(r,s,t)\mapsto (t,r,s)$ and $(r,s,t)\mapsto (s,r,t)$ induce the
 isomorphisms
 \[
-\Hilb^{n}(\lambda ,\mu ,\nu )\cong \Hilb^{n}(\nu,\lambda,\mu   ),\quad
-\Hilb^{n}(\lambda ,\mu ,\nu )\cong \Hilb^{n}( \mu ',\lambda ',\nu ' ),
+\Quot^{n}(\lambda ,\mu ,\nu )\cong \Quot^{n}(\nu,\lambda,\mu   ),\quad
+\Quot^{n}(\lambda ,\mu ,\nu )\cong \Quot^{n}( \mu ',\lambda ',\nu ' ),
 \]
 where $\lambda' = \{(i,j) : (j,i) \in \lambda\}$ denotes conjugate partition.
 
 We define $\sfVtilde_{\lambda
 \mu \nu}\in \ZZ [[p]]$ by
 \[
-\sfVtilde_{\lambda \mu \nu} = e\left(\Hilb^{\bullet}(\lambda ,\mu ,\nu ) \right)
+\sfVtilde_{\lambda \mu \nu} = e\left(\Quot^{\bullet}(\lambda ,\mu ,\nu ) \right)
 \]
+%Beware: need to put back in $p^{\chi(\O_C)}$ later.
 and note the symmetries 
 \[
 \sfVtilde_{\lambda \mu \nu}=\sfVtilde_{ \nu \lambda \mu
 }=\sfVtilde_{\mu '\lambda '\nu '}.
 \]
 
-
-We now choose formal local coordinates at $x_{i}$, $y_{j}$, and
-$z_{j}$ so that we can identify
-$\Hilb^{n}(\Xhat_{x_{i}},\hat{C}_{x_{i}})$,
-$\Hilb^{n}(\Xhat_{y_{j}},\hat{C}_{y_{j}})$, and
-$\Hilb^{n}(\Xhat_{z_{j}},\hat{C}_{z_{j}})$ in terms of
-$\Hilb^{n}(\lambda ,\mu ,\nu )$ for appropriate choices of $\lambda
-,\mu ,\nu$. 
-
-
 Recall that $S\subset X$ is the elliptic surface and $T=\Tot
 (K_{S}|_{B}).$ For any point $p\in B$, let $R_{p} =\Tot
-(K_{S}|_{F_{p}})$. We choose isomorphisms 
-\[
-\Xhat_{x_{i}} \cong \Xhat_{y_{j}} \cong \Xhat_{z_{j}} \cong \Spec \CC [[r,s,t]]
-\]
-such that on $\Xhat_{p}$ when $p$ is $x_{i}$ or $y_{j}$
+(K_{S}|_{F_{p}})$. We choose local formal coordinates at $p = x_i$ or $p=y_j$ such that 
 \[
 R_{p} = \{r=0 \},\quad S=\{s=0 \}, \quad T=\{t=0 \}
 \]
@@ -1302,30 +1267,61 @@ Note that at $x_{i}$ or $y_{j}$, the curve $B$ is given by $\{s=t=0
 \}$. At the point $z_{j}$, the fiber is a nodal curve and is given by
 $\{s=rt=0 \}$.
 
-With these choices, we have the identifications
+Let $C_{\boldx, \boldy, \boldlambda, \boldmu}$ be a Cohen-Macaulay curve as in the beginning of this section and consider the Quot schemes of Lemma \ref{lem: Sigma = product of local Hilbert schemes}. 
+
+\begin{lemma} \label{Quotboxes}
+We have the following equalities in $K_0(\Var_{\CC})$
 \begin{align*}
-\Hilb^{n}\left(\Xhat_{x_{i}},\hat{C}_{x_{i}} \right)&\cong
-\Hilb^{n}\left(\bx ,\emptyset ,\lambda^{(i)} \right),\\
-\Hilb^{n}\left(\Xhat_{y_{j}},\hat{C}_{y_{j}} \right)&\cong
-\Hilb^{n}\left(\bx ,\emptyset ,\mu^{(j)} \right),\\
-\Hilb^{n}\left(\Xhat_{z_{j}},\hat{C}_{z_{j}} \right)&\cong
-\Hilb^{n}\left(\mujprime ,\emptyset ,\mu^{(j)} \right).
+\Quot^{n}_X\left( I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, \{x_i\} \right)&=
+\Quot^{n}\left(\bx ,\emptyset ,\lambda^{(i)} \right),\\
+\Quot^{n}_X\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, \{y_{j}\} \right)&=
+\Quot^{n}\left(\bx ,\emptyset ,\mu^{(j)} \right),\\
+\Quot^{n}_X\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, \{z_{j}\} \right)&=
+\Quot^{n}\left(\mujprime ,\emptyset ,\mu^{(j)} \right).
 \end{align*}
+\end{lemma}
 Here $\bx$ is the unique partition of size 1 (whose diagram is a
-single box), $\emptyset$ is the empty partition. Recall that the
-elements of the Hilbert schemes on the RHS of the above do not need to
-be monomial ideals: although their underlying maximal Cohen-Macaulay
+single box) and $\emptyset$ is the empty partition. Recall that the
+kernels of the quotients on the RHS do not need to correspond to be monomial ideals: although their underlying maximal Cohen-Macaulay
 subscheme is monomial, they may have arbitrary embedded points at the
 origin.
+\begin{proof}
+We prove the first equality; the others follow similarly. Let $C:=C_{\boldx, \boldy, \boldlambda, \boldmu}$. Take $N \gg 0$ such that any for any quotient $I_C \twoheadrightarrow Q$, where $Q$ is set theoretically supported at $\{x_i\}$ and of length $n$, the scheme theoretic support of $Q$ lies inside the $(N-1)$th order infinitesimal neighbourhood $X_{\{x_i\}}^{(N)}$ of $\{x_i\}$. (Recall the definition of the closed subscheme $X_{Z}^{(N)}$ from the proof of Proposition \ref{keyprop}.) Let $\iota : X_{\{x_i\}}^{(N)} \hookrightarrow X$ be the closed embedding. We have already seen in the proof of Proposition \ref{keyprop} that first restricting a quotient $I_C \twoheadrightarrow Q$ to $\iota^* I_C \twoheadrightarrow \iota^*Q$ and then pushing forward to $X$ looses no information. More precisely:
+$$
+I_C \twoheadrightarrow \iota_* \iota^* I_C \twoheadrightarrow \iota_* \iota^*Q
+$$
+is isomorphic to the original quotient $I_C \twoheadrightarrow Q$. Therefore, we have a geometric constructible morphism
+\begin{equation} \label{geombij1}
+\Quot^{n}_X\left( I_{C}, \{x_i\} \right) \rightarrow \Quot^{n}_{X_{\{x_i\}}^{(N)}}\left( \iota^* I_{C}, \{x_i\} \right). 
+\end{equation}
+Similarly, we have a geometric constructible morphism
+\begin{equation} \label{geombij2}
+\Quot^{n}_{\CC^3}\left( I_{C_{\bx \emptyset \lambda^{(i)}}},  \{0\} \right) \rightarrow \Quot^{n}_{(\CC^3)_{\{0\}}^{(M)}}\left( I_{C_{\bx \emptyset \lambda^{(i)}}},  \{0\} \right),
+\end{equation}
+where $(\CC^3)_{\{0\}}^{(M)}$ is a large enough infinitesimal neighbourhood of $0 \in \CC^3$ and we may take $M=N \gg 0$. Since $X$ is smooth and three dimensional, the formal completion of its local ring at $x_i$ is given by
+$$
+\widehat{\O}_{X,x_i} \cong \CC[[r,s,t]].
+$$ 
+Let $\mathfrak{m}_{x_i}$ be the maximal ideal corresponding to $x_i$. Then \cite[Cor.~10.4]{Atiyah-Macdonald}
+$$
+\widehat{\O}_{X,x_i} / \widehat{\mathfrak{m}}_{x_i}^N \cong \CC[[r,s,t]] / (r,s,t)^N \cong \CC[r,s,t] / (r,s,t)^N.
+$$
+Therefore $X_{\{x_i\}}^{(N)} \cong (\CC^3)_{\{0\}}^{(N)}$ and, by our choice of coordinates $r,s,t$, we have $\iota^* I_C \cong I_{C_{\bx \emptyset \lambda^{(i)}}}$. Hence
+$$
+\Quot^{n}_{X_{\{x_i\}}^{(N)}}\left( \iota^* I_{C}, \{x_i\} \right) \cong \Quot^{n}_{(\CC^3)_{\{0\}}^{(N)}}\left( I_{C_{\bx \emptyset \lambda^{(i)}}},  \{0\} \right)
+$$
+and the required equality follows from the geometric bijections \eqref{geombij1}, \eqref{geombij2}.
+\end{proof}
 
-An immediate consequence of the above and the symmetries of
+
+A direct consequence of the above lemma and the symmetries of
 $\sfVtilde$ is 
 \begin{align}\label{eqn: e(Hilb(Xhat,Chat)=vertex}
-e\left(\Hilb^{\bullet}\left(\Xhat_{x_{i}},\hat{C}_{x_{i}} \right) \right)&=
+e\left(\Quot^{\bullet}\left( I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, \{x_i\} \right) \right)&=
 \sfVtilde_{\lambda^{(i)} \bx  \emptyset }, \\
-e\left(\Hilb^{\bullet}\left(\Xhat_{y_{j}},\hat{C}_{y_{j}} \right) \right)&=
+e\left(\Quot^{\bullet}\left( I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, \{y_j\} \right) \right)&=
 \sfVtilde_{ \mu^{(j)} \bx \emptyset }, \nonumber \\
-e\left(\Hilb^{\bullet}\left(\Xhat_{z_{j}},\hat{C}_{z_{j}} \right) \right)&=
+e\left(\Quot^{\bullet}\left( I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, \{z_j\} \right) \right)&=
 \sfVtilde_{\mu^{(j)} \mujprime \emptyset  }. \nonumber
 \end{align}
 
@@ -1342,27 +1338,25 @@ coordinates $(r,s,t)$.
 
 Consider the following constructible ``support'' morphisms
 \begin{align*}
-\sigma_{W}:& \Hilb^{\bullet}(W) \to \Sym^{\bullet}(W),\\
-\sigma_{B^{\circ }}:& \Hilb^{\bullet}(\Xhat_{B^{\circ}},B^{\circ}) \to \Sym^{\bullet}(B^{\circ })\\
-\sigma_{F_{x_{i}}^{\circ }}:& \Hilb^{\bullet}(\Xhat_{F_{x_{i}}^{\circ}},\lambda^{(i)}F_{x_{i}}^{\circ}) \to \Sym^{\bullet}(F_{x_{i}}^{\circ }),\\
-\sigma_{F_{y_{j}}^{\circ }}:& \Hilb^{\bullet}(\Xhat_{F_{y_{j}}^{\circ}},\mu^{(j)}F_{y_{j}}^{\circ}) \to \Sym^{\bullet}(F_{y_{j}}^{\circ }),
+\sigma_{W}:& \Quot^{\bullet}_X(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, W) \to \Sym^{\bullet}(W),\\
+\sigma_{B^{\circ }}:& \Quot^{\bullet}_X(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ}) \to \Sym^{\bullet}(B^{\circ })\\
+\sigma_{F_{x_{i}}^{\circ }}:& \Quot^{\bullet}_X(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{x_{i}}^{\circ}) \to \Sym^{\bullet}(F_{x_{i}}^{\circ }),\\
+\sigma_{F_{y_{j}}^{\circ }}:& \Quot^{\bullet}_X(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{y_{j}}^{\circ}) \to \Sym^{\bullet}(F_{y_{j}}^{\circ }).
 \end{align*}
-which to each subscheme $Z$ representing a point in a Hilbert scheme
-associates the location and length of the embedded points or zero
-dimensional components of $Z$. 
+To each quotient $I_{C_{\boldx, \boldy, \boldlambda, \boldmu}} \twoheadrightarrow Q$ with kernel $I_Z \subset I_{C_{\boldx, \boldy, \boldlambda, \boldmu}} $, these maps assign the set theoretic support ---weighted by length--- of $I_{C_{\boldx, \boldy, \boldlambda, \boldmu}} / I_Z$, i.e.~the location and lengths of the embedded points or zero dimensional components of $Z$. 
 
 Consider a point $p$ in $W$, $B^{\circ}$, $F_{x_{i}}^{\circ }$, or
 $F_{y_{j}}^{\circ}$. Then using the formal local coordinates chosen
-above, we see that 
+above, the same type of argument as in Lemma \ref{Quotboxes} gives the following equalities in $K_0(\Var_{\CC})$ 
 \begin{align*}
-\sigma_{W}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset ,\emptyset,\emptyset \right), \\
-\sigma_{B^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\bx ,\emptyset ,\emptyset \right), \\
-\sigma_{F_{x_{i}}^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset  ,\emptyset,\lambda^{(i)}  \right), \\
-\sigma_{F_{y_{j}}^{\circ }}^{-1}(np) &\cong \Hilb^{n}\left(\emptyset
+\sigma_{W}^{-1}(np) &= \Quot^{n}\left(\emptyset ,\emptyset,\emptyset \right), \\
+\sigma_{B^{\circ }}^{-1}(np) &= \Quot^{n}\left(\bx ,\emptyset ,\emptyset \right), \\
+\sigma_{F_{x_{i}}^{\circ }}^{-1}(np) &= \Quot^{n}\left(\emptyset  ,\emptyset,\lambda^{(i)}  \right), \\
+\sigma_{F_{y_{j}}^{\circ }}^{-1}(np) &= \Quot^{n}\left(\emptyset
 ,\emptyset,\mu^{(j)} \right).
 \end{align*}
-Moreover, the pre-images of the support morphisms clearly satisfy the
-following multiplicative property
+Using Proposition \ref{keyprop}, we see that the pre-images of the support morphisms satisfy the
+following multiplicative property in $K_0(\Var_{\CC})(\!(p)\!)$ 
 \[
 \sigma^{-1}_{U}\left(\sum_{i}n_{i}p_{i} \right) = \prod_{i}
 \sigma^{-1}_{U}\left(n_{i}p_{i} \right).
@@ -1378,13 +1372,13 @@ following formulas
 
 
 \begin{align}\label{eqn: e(Hilb(Xhat,Bcirc))=V^{e(Bcirc)}}
-e\left(\Hilb^{\bullet}(W) \right) & = \int_{\Sym^{\bullet}(W)}
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},W) \right) & = \int_{\Sym^{\bullet}(W)}
 \left(\sigma_{W} \right)_{*}(1)\, de = \left(\sfVtilde_{\emptyset \emptyset \emptyset }\right)^{e(W)}\\
-e\left(\Hilb^{\bullet}\left(\Xhat_{B^{\circ}},B^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(B^{\circ })}
+e\left(\Quot_X^{\bullet}\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(B^{\circ })}
 \left(\sigma_{B^{\circ }} \right)_{*}(1)\, de = \left(\sfVtilde_{\bx \emptyset \emptyset }\right)^{e(B^{\circ })}\nonumber \\
-e\left(\Hilb^{\bullet}\left(\Xhat_{F_{x_{i}}^{\circ}},\lambda^{(i)}F_{x_{i}}^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(F_{x_{i}}^{\circ })}
+e\left(\Quot_X^{\bullet}\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{x_{i}}^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(F_{x_{i}}^{\circ })}
 \left(\sigma_{F_{x_{i}}^{\circ }} \right)_{*}(1)\, de = \left(\sfVtilde_{\lambda^{(i)} \emptyset  \emptyset }\right)^{e(F_{_{x_{i}}}^{\circ })}\nonumber \\
-e\left(\Hilb^{\bullet}\left(\Xhat_{F_{y_{j}}^{\circ}},\mu^{(j)}F_{y_{j}}^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(F_{y_{j}}^{\circ })}
+e\left(\Quot_X^{\bullet}\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{y_{j}}^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(F_{y_{j}}^{\circ })}
 \left(\sigma_{F_{y_{j}}^{\circ }} \right)_{*}(1)\, de =
 \left(\sfVtilde_{\mu^{(j)} \emptyset  \emptyset
 }\right)^{e(F_{_{y_{j}}}^{\circ })} \nonumber
@@ -1440,24 +1434,22 @@ e(Hilb(Xhat,Bcirc))=V^{e(Bcirc)}}, and Lemma~\ref{lem: chi(C)=chi(B)
 \begin{align*}
 f_{d}(\bolda \boldx +\boldb \boldy )&= e\left(\rho_{d}^{-1}(\bolda
 \boldx +\boldb \boldy) \right) \\
-&= \sum_{\boldlambda \vdash \bolda}\sum_{\boldmu \vdash \boldb} e\left(\Sigmaxylambdamu \right)\\
-&=p^{\chi (\O_{C})} \cdot e(\Hilb^{\bullet}(W)) \cdot
-e\left(\Hilb^{\bullet}(\Xhat_{B^{\circ}},B^{\circ} \right) \cdot
-\sum_{\boldlambda \vdash \bolda}\sum_{\boldmu
-\vdash \boldb}\\
+&= \sum_{\boldlambda \vdash \bolda}\sum_{\boldmu \vdash \boldb} p^{\chi (\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}) \right)\\
+&=\sum_{\boldlambda \vdash \bolda}\sum_{\boldmu
+\vdash \boldb} p^{\chi (\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \cdot e(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, W)) \cdot
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ} \right) \cdot \\
 & \quad  \cdot \prod_{i=1}^{n}
-e\left(\Hilb^{\bullet}(\Xhat_{x_{i}},\hat{C}_{x_{i}}) \right) \cdot
-e\left(\Hilb^{\bullet}(\Xhat_{F^{\circ}_{x_{i}}},\lambda^{(i)}F^{\circ}_{x_{i}}
-\right) \\
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{x_{i}\}) \right) \cdot
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^{\circ}_{x_{i}}\right) \\
 & \quad  \cdot   \prod_{j=1}^{m}
-e\left(\Hilb^{\bullet}(\Xhat_{y_{j}},\hat{C}_{y_{j}}) \right) \cdot
-e\left(\Hilb^{\bullet}(\Xhat_{z_{j}},\hat{C}_{z_{j}}) \right) \cdot
-e\left(\Hilb^{\bullet}(\Xhat_{F^{\circ}_{y_{j}}},\mu^{(j)}F^{\circ}_{y_{j}}
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{y_{j}\}) \right) \cdot
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{z_{j}\}) \right) \cdot
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^{\circ}_{y_{j}}
 \right)\\
-&=p^{\chi (\O_{C})}\cdot \sfVtilde_{\emptyset \emptyset
+&=\sfVtilde_{\emptyset \emptyset
 \emptyset}^{e(W)} \cdot \sfVtilde^{e(B^{\circ})}_{\bx \emptyset
 \emptyset} \cdot  \sum_{\boldlambda \vdash \bolda}\sum_{\boldmu
-\vdash \boldb}\\
+\vdash \boldb} p^{\chi (\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \\
 & \quad \cdot \prod_{i=1}^{n} \sfVtilde_{\lambda^{(i)}\bx \emptyset}
 \cdot \sfVtilde^{e(F^{\circ}_{x_{i}})}_{\lambda^{(i)}\emptyset
 \emptyset} \cdot \prod_{j=1}^{m} \sfVtilde_{\mu^{(j)}\bx \emptyset}
@@ -1512,15 +1504,14 @@ obtain a closed formula for $\DThat (X)$.
 \mu \nu}$.}\SubSecSpace 
 
 Recall that the coefficients of the series $\sfVtilde_{\lambda \mu \nu}\in \ZZ [[p]]$ are
-given by the Euler characteristics of the local Hilbert schemes
+given by the Euler characteristics of Quot schemes on $\CC^3$
 \[
 \sfVtilde_{\lambda \mu \nu} =
-e\left(\Hilb^{\bullet}(\hat{\CC}^{3}_{0},\hat{Z}_{\lambda \mu \nu})
-\right). 
+e\left(\Quot^{\bullet}_{\CC^3}(I_{C_{\lambda \mu \nu}})\right). 
 \]
-We can compute the Euler characteristics using the $T=(\CC^{*})^{3}$-action on the Hilbert schemes induced by the $T$-action on
+We can compute the Euler characteristics using the $T=(\CC^{*})^{3}$-action on the Quot schemes induced by the $T$-action on
 $\CC^{3}$. An ideal $I\subset \CC [r,s,t]$ is $T$-invariant if and
-only if it is generated by monomials. Moreover, there is a bijection
+only if it is generated by monomials (such as $I_{C_{\lambda \mu \nu}}$). Moreover, there is a bijection
 between monomial ideals and 3D partitions (see \S~6.3 of
 \cite{Bryan-Kool-Young}) where a monomial ideal $I\subset \CC[r,s,t]$
 corresponds to a 3D partition $\pi \in \left(\ZZ_{\geq 0} \right)^{3}$
@@ -1530,12 +1521,11 @@ by
 r^{\rho}s^{\sigma}t^{\tau} \notin I.
 \]
 The subschemes represented by points in
-$\Hilb^{\bullet}(\hat{\CC}^{3}_{0},\hat{Z}_{\lambda \mu \nu}
-)^{T}$ are given by monomial ideals corresponding to 3D-partitions
+$\Quot^{\bullet}_{\CC^3}(I_{C_{\lambda \mu \nu}})^T$ are given by quotients $I_{C_{\lambda \mu \nu}} \twoheadrightarrow Q$ with kernel equal to a monomial ideal corresponding to a 3D-partition
 asymptotic to $(\lambda \mu \nu )$, see
 \cite[Defn~1]{Bryan-Kool-Young}. Consequently, 
 \begin{align*}
-\sfVtilde_{\lambda \mu \nu}& = e\left(\Hilb^{\bullet}(\hat{\CC}^{3}_{0},\hat{Z}_{\lambda \mu \nu} )^{T}\right)\\
+\sfVtilde_{\lambda \mu \nu}& = e\left(\Quot^{\bullet}_{\CC^3}(I_{C_{\lambda \mu \nu}})^T\right)\\
 &=\sum_{\pi} p^{n(\pi )},
 \end{align*}
 where the sum runs over all 3D partitions asymptotic to $(\lambda \mu
@@ -1689,37 +1679,42 @@ $\cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right)$, then
 \]
 \end{theorem}
 
-It follows that the pre-images of points under the map
+Define the following Cohen-Macaulay curve
+\[
+C_{\boldx, \boldy, \boldlambda, \boldmu}^{\fiber} := \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
+\bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right) . 
+\]
+Similar to equation \eqref{eqn: components of fibers of rho}, the previous theorem implies that the pre-images of points under the map
 $\rho^{\fiber}_{d}$ break into components
 \[
 \left(\rho_{d}^{\fiber} \right)^{-1}(\bolda \boldx +\boldb \boldy ) =
-\bigsqcup_{\boldlambda \vdash \bolda} \bigsqcup_{\boldmu \vdash
-\boldb} \Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu ),
+\sum_{\boldlambda \vdash \bolda} \sum_{\boldmu \vdash
+\boldb} p^{\chi(\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}})} \Quot_X^\bullet(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}}),
 \]
 where we have adopted the same notation as in Section~\ref{sec:
-pushforward to sym prod}. Note that the strata
-\[
- \Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu )
- \subset \Hilb^{dF, \bullet}(X)
-\]
-parameterize subschemes whose maximal Cohen-Macaulay subscheme is 
-\[
-C = \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
-\bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right) . 
-\]
-Since the only nodes of $C_{\red}$ are $z_{1},\dotsc ,z_{m}$ (adopting
+pushforward to sym prod}. 
+%Note that the strata
+%\[
+% \Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu )
+% \subset \Hilb^{dF, \bullet}(X)
+%\]
+%parameterize subschemes whose maximal Cohen-Macaulay subscheme is 
+%\[
+%C = \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
+%\bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right) . 
+%\]
+Since the only nodes of the reduced support of $C_{\boldx, \boldy, \boldlambda, \boldmu}^{\fiber}$ are $z_{1},\dotsc ,z_{m}$ (adopting
 the notation of Section~\ref{sec: restriction to formal nghds}) our
-fpqc cover is simpler in this case
+stratification is simpler in this case
 \[
-\mathfrak{U}_{\fiber} =\left\{ \Xhat_{z_{1}},\dotsc ,
-\Xhat_{z_{m}},\Xhat_{F^{\circ}_{y_{1}}},\dotsc ,
-\Xhat_{F^{\circ}_{y_{m}}}, \Xhat_{F_{x_{1}}},\dotsc ,
-\Xhat_{F_{x_{n}}}, W   \right\},
+\Sigma^{\fiber}_{\boldx, \boldy, \boldlambda, \boldmu} =\left\{ \{z_{1}\},\dotsc ,
+\{z_{m}\},F^{\circ}_{y_{1}},\dotsc ,
+F^{\circ}_{y_{m}}, F_{x_{1}},\dotsc ,
+F_{x_{n}}, W   \right\},
 \]
-where our notation is the same as in Definition~\ref{defn: the fpqc
-cover mathfrak U} except that
+where this time
 \[
-F^{\circ}_{y_{j}} = F_{y_{j}} - \{z_{j} \}, \quad W = X - C_{\red}. 
+F^{\circ}_{y_{j}} = F_{y_{j}} - \{z_{j} \}, \quad W = X - \big( \cup_i F_{x_i} \cup_j F_{y_j} \big). 
 \]
 
 With virtually the same proof, we obtain the following analog of
@@ -1727,12 +1722,12 @@ Lemma~\ref{lem: Sigma = product of local Hilbert schemes}:
 \begin{lemma}\label{lem: Sigmafiber = product of local Hilbert schemes}
 The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \begin{align*}
-\Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\boldlambda ,\boldmu ) &=
-p^{\chi (\O_{C})}\cdot \Hilb^{\bullet}(W) \cdot \prod_{i=1}^{n}
-\Hilb^{\bullet} \left(\Xhat_{F_{i}},\lambda^{(i)}F_{x_{i}} \right) \\
-&\quad \cdot \prod_{j=1}^{m} \Hilb^{\bullet}
-\left(\Xhat_{F^{\circ}_{y_{j}}}, \mu^{(j)} F^{\circ}_{y_{j}} \right)
-\cdot \Hilb^{\bullet}\left( \Xhat_{z_{j}}, \hat{C}_{z_{j}} \right). 
+\Quot_X^\bullet(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}}) &=
+\Quot_X^{\bullet}(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}}, W) \cdot \prod_{i=1}^{n}
+\Quot_X^{\bullet} \left( I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}},F_{x_{i}} \right) \\
+&\quad \cdot \prod_{j=1}^{m} \Quot_X^{\bullet}
+\left(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}}, F^{\circ}_{y_{j}} \right)
+\cdot \Quot_X^{\bullet}\left( I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}}, \{z_{j}\} \right). 
 \end{align*}
 \end{lemma}
 
@@ -1740,14 +1735,14 @@ We choose the same set of formal local coordinates at each point as we
 did in Section~\ref{sec: restriction to formal nghds} and by the same
 reasoning as in that section, we find
 \begin{align*}
-e\left(\Hilb^{\bullet}(\Xhat_{z_{j}},\hat{C}_{z_{j}}) \right)&= \sfVtilde_{ \mu^{(j)} \mujprime  \emptyset },\\
-e\left(\Hilb^{\bullet}(W) \right) & = \sfVtilde^{e(W)}_{\emptyset \emptyset \emptyset },\\
-e\left(\Hilb^{\bullet}(\Xhat_{F_{x_{i}}},\lambda^{(i)}F_{x_{i}}) \right)&= \sfVtilde^{e(F_{x_{i}})}_{\lambda^{(i)} \emptyset \emptyset },\\
-e\left(\Hilb^{\bullet}(\Xhat_{F^{\circ}_{y_{j}}}, \mu^{(j)}F^{\circ
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}},\{z_{j}\}) \right)&= \sfVtilde_{ \mu^{(j)} \mujprime  \emptyset },\\
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}},W) \right) & = \sfVtilde^{e(W)}_{\emptyset \emptyset \emptyset },\\
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}},F_{x_{i}}) \right)&= \sfVtilde^{e(F_{x_{i}})}_{\lambda^{(i)} \emptyset \emptyset },\\
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}}, F^{\circ
 }_{y_{j}} ) \right) & = \sfVtilde^{e(F^{\circ}_{y_{j}})}_{\mu^{(j)}
 \emptyset \emptyset}.
 \end{align*} 
-Now since $\chi (\O_{C})=0$, $e(F_{x_{i}})=e(F^{\circ}_{y_{j}})=0$,
+Now since $\chi (\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}})=0$, $e(F_{x_{i}})=e(F^{\circ}_{y_{j}})=0$,
 and 
 \[
 e(W) = e(S) - m,
@@ -1756,8 +1751,8 @@ we have that
 \begin{align*}
 f^{\fiber}_{d}(\bolda \boldx +\boldb \boldy ) & :=
 e\left(\left(\rho^{\fiber}_{d} \right)^{-1} (\bolda \boldx +\boldb \boldy ) \right)\\
-&= \sum_{\boldlambda \vdash \bolda} \sum_{\boldmu \vdash \boldb}
-e\left(\Sigma^{\bullet}_{\fiber}(\boldx ,\boldy ,\bolda ,\boldb)
+&= \sum_{\boldlambda \vdash \bolda} \sum_{\boldmu \vdash \boldb} p^{\chi(\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}})}
+e\left( \Quot_X^\bullet(I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}^{\fiber}})
 \right) \\
 &= \sum_{\boldlambda \vdash \bolda} \sum_{\boldmu \vdash \boldb}
 \sfVtilde_{\emptyset \emptyset \emptyset}^{e(S)} \prod_{j=1}^{m}
@@ -1892,42 +1887,36 @@ Recall that for the partition function $\DT (X)$, the variable
 tracking the holomorphic Euler characteristic is $y$ rather than $p$
 so $f_{d}^{\nu}(\bolda \boldx +\boldb \boldy )\in \ZZ (\!(y)\!)$.
 
-By equation~\eqref{eqn: components of fibers of rho} we have
+In Section \ref{sec: pushforward to sym prod}, at the level of $\CC$-valued points, we expressed $\rho^{-1}_{d}(\bolda \boldx +\boldb \boldy )$ as a disjoint union of closed subsets $\Hilb^\bullet(X,C_{\boldx ,\boldy ,\boldlambda ,\boldmu})$. We obtain
 \[
 f_{d}^{\nu}(\bolda \boldx +\boldb \boldy ) = \sum_{\boldlambda \vdash
-\bolda} \sum_{\boldmu \vdash \boldb} \,\, \int_{\Sigmaxylambdamu} \nu \, de.
+\bolda} \sum_{\boldmu \vdash \boldb} \,\, y^{\chi(\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}})+n}\int_{\Hilb^n(X,C_{\boldx ,\boldy ,\boldlambda ,\boldmu})} \nu \, de,
 \]
-Recall that $\Sigmaxylambdamu$ parameterizes subschemes $Z\subset X$
-such that the maximal Cohen-Macaulay subscheme of $Z$ is the partition
-thickened comb curve
+where $\nu$ is the Behrend function of $\Hilb^{\bullet,\bullet}(X)$ and $C_{\boldx, \boldy, \boldlambda, \boldmu}$ denotes the following Cohen-Macaulay curve 
 \[
-C=B \cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right) \cup_{j}\left(\mu^{(j)}F_{y_{j}} \right).
+C_{\boldx, \boldy, \boldlambda, \boldmu}:=B \cup_{i}\left(\lambda^{(i)}F_{x_{i}} \right) \cup_{j}\left(\mu^{(j)}F_{y_{j}} \right).
 \]
-In other words, $\Sigmaxylambdamu$ is essentially equal to the local
-Hilbert scheme $\Hilb^{\bullet}(X,C)$ (Definition~\ref{defn:
-Hilb(U,C)}) except that the latter is indexed by the length of
-$I_{C}/I_{Z}$ whereas $\Sigmaxylambdamu$ is indexed by $\chi
-(\O_{Z})$. Consequently
-\[
-\Sigmaxylambdamu  = y^{\chi (\O_{C})} \Hilb^{\bullet}(X,C)
-\]
-and so 
-\[
-f_{d}^{\nu}(\bolda \boldx +\boldb \boldy ) = \sum_{\boldlambda \vdash
-\bolda} \sum_{\boldmu \vdash \boldb} y^{\chi
-(\O_{C})}\sum_{n=0}^{\infty}y^{n} \int_{\Hilb^{n}(X,C)} \nu \, de.
-\]
+Recall that the factor $y^{\chi(\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}})}$ comes from the fact that $\Hilb^{\bullet,\bullet}(X)$ is indexed by $\chi(\O_Z)$ and $\Hilb^\bullet(X,C_{\boldx ,\boldy ,\boldlambda ,\boldmu})$ by the length of $I_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}} / I_Z$ (Definition \ref{defn: Hilb(U,C)}). 
+%We obtain
+%\[
+%f_{d}^{\nu}(\bolda \boldx +\boldb \boldy ) = \sum_{\boldlambda \vdash
+%\bolda} \sum_{\boldmu \vdash \boldb} y^{\chi
+%(\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}})}\sum_{n=0}^{\infty}y^{n} \int_{\Hilb^{n}(X,C_{\boldx ,\boldy ,\boldlambda ,\boldmu})} \nu \, de.
+%\]
 We apply Conjecture~\ref{conj: Behrend fnc conj} to the above and also
-use $\nu ([C]) = (-1)^{\chi (\O_{S})-\chi (\O_{C})}$, the highly
-non-trivial result given in Corollary~\ref{cor: value of Behrend
-function at comb curves} and proved in the next section. 
+use 
+\[
+\nu ([C_{\boldx ,\boldy ,\boldlambda ,\boldmu}]) = (-1)^{\chi (\O_{S})-\chi (\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}})}, 
+\]
+the highly non-trivial result given in Corollary~\ref{cor: value of Behrend
+function at comb curves} and proved in the next section. We find
 \begin{align*}
 f_{d}^{\nu}(\bolda \boldx +\boldb \boldy )& = \sum_{\boldlambda \vdash
 \bolda} \sum_{\boldmu \vdash \boldb} y^{\chi
-(\O_{C})}\sum_{n=0}^{\infty} y^{n}(-1)^{n}\nu ([C]) \int_{\Hilb^{n}(X,C)}  \, de\\
+(\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}})}\sum_{n=0}^{\infty} y^{n}(-1)^{n}\nu ([C_{\boldx ,\boldy ,\boldlambda ,\boldmu}]) \int_{\Hilb^{n}(X,C_{\boldx ,\boldy ,\boldlambda ,\boldmu})}  \, de\\
 &=(-1)^{\chi (\O_{S})} \sum_{\boldlambda \vdash \bolda} \sum_{\boldmu
-\vdash \boldb} \sum_{n=0}^{\infty} (-y)^{\chi (\O_{C})+n}
-\int_{\Hilb^{n}(X,C)} \, de.
+\vdash \boldb} \sum_{n=0}^{\infty} (-y)^{\chi (\O_{C_{\boldx ,\boldy ,\boldlambda ,\boldmu}})+n}
+\int_{\Hilb^{n}(X,C_{\boldx ,\boldy ,\boldlambda ,\boldmu})} \, de.
 \end{align*}
 After the substitution $-y=p$, we find that the above is equivalent to 
 \[

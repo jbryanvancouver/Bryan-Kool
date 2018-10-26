@@ -79,6 +79,12 @@ D.~Maulik, N.~Nekrasov, A.~Okounkov, and R.~Pandharipande.
 \newblock {\em Compos. Math.}, 142(5):1263--1285, 2006.
 \newblock arXiv:math.AG/0312059.
 
+\bibitem{Maulik-Pandharipande-Thomas}
+D.~Maulik, R.~Pandharipande, and R.~P. Thomas.
+\newblock Curves on {$K3$} surfaces and modular forms.
+\newblock {\em J. Topol.}, 3(4):937--996, 2010.
+\newblock With an appendix by A. Pixton.
+
 \bibitem{Miranda}
 Rick Miranda.
 \newblock {\em The basic theory of elliptic surfaces}.
@@ -99,23 +105,11 @@ R.~Pandharipande and R.~P. Thomas.
 \newblock {\em Forum Math. Pi}, 4:e4, 111, 2016.
 \newblock arXiv:math/1404.6698.
 
-\bibitem{stacks-project}
-The {Stacks Project Authors}.
-\newblock {\itshape Stacks Project}.
-\newblock {\tt http://stacks.math.columbia.edu}, 2016.
-
 \bibitem{Toda-2012-Kyoto}
 Yukinobu Toda.
 \newblock Stability conditions and curve counting invariants on {C}alabi-{Y}au
   3-folds.
 \newblock {\em Kyoto J. Math.}, 52(1):1--50, 2012.
 \newblock arXiv:math/1103.4229.
-
-\bibitem{Vis}
-Angelo Vistoli.
-\newblock Grothendieck topologies, fibered categories and descent theory.
-\newblock In {\em Fundamental algebraic geometry}, volume 123 of {\em Math.
-  Surveys Monogr.}, pages 1--104. Amer. Math. Soc., Providence, RI, 2005.
-\newblock arXiv:math/0412512.
 
 \end{thebibliography}

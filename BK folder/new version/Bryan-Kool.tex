@@ -227,12 +227,12 @@ the class of the fiber. We define the partition functions by
 We also consider the partition functions for the invariants for
 multiples of the fiber class
 \begin{align*}
-\DThat_{\fiber}(X)& = \sum_{d\geq 0} \sum_{n \in \ZZ} \DThat_{dF,n}(X) p^{n} q^{d} ,\\
-\DT_{\fiber}(X)& = \sum_{d\geq 0} \sum_{n \in \ZZ} \DT_{dF,n}(X) y^{n} q^{d} .
+\DThat_{\fiber}(X)& = \sum_{d= 0}^{\infty} \sum_{n \in \ZZ} \DThat_{dF,n}(X) p^{n} q^{d} ,\\
+\DT_{\fiber}(X)& = \sum_{d= 0}^{\infty} \sum_{n \in \ZZ} \DT_{dF,n}(X) y^{n} q^{d} .
 \end{align*}
 
 
-The main result of this paper are closed product formulas for the
+The main results of this paper are closed product formulas for the
 partition functions $\DThat (X)$ and $\DThat_{\fiber}(X)$. Assuming a
 general conjecture about the Behrend function, we also determine $\DT
 (X)$ and $\DT_{\fiber}(X)$.
@@ -332,17 +332,19 @@ A similar phenomenon to the above is known to hold when $X$ is a toric
 Calabi-Yau threefold.
 
 
-The method of computation that we have introduced in this paper has
+The method of computation that we introduce in this paper has
 been applied to other elliptically fibered geometries. Indeed, it has
 found applications to the calculation of DT generating functions on
 $\textrm{K3} \times E$, where $E$ is an elliptic curve \cite{Bryan-K3xE} and
 abelian threefolds \cite{BOPY}, and is expected to apply to $(\textrm{K3}\times
 E)/G$ where $G$ is a finite group acting symplectically on each
-factor. Even though the geometry under consideration is not toric, we
-combine $\CC^*$-localization, motivic methods, formal methods, and
+factor. 
+
+Although the geometry under consideration is not toric, we
+combine $\CC^*$-localization, motivic methods, and
 $(\CC^{*})^{3}$-localization to end up with expressions that only
 depend on the topological vertex $\sfV_{\lambda\mu\nu}$, and the
-topological Euler characteristics $e(B)$ and $e(S)$. The outline of
+topological Euler characteristics $e(B)$, $e(S)$. The outline of
 our method is as follows:
 \begin{itemize}
 \item The $\CC^{*}$-action on $X$ induces an action on $\Hilb (X)$
@@ -370,21 +372,25 @@ products}).
 must compute the Euler characteristics of the fibers of $\rho$. These
 fibers are strata in the Hilbert scheme parameterizing subschemes
 whose maximal Cohen-Macaulay subscheme is a fixed partition thickened
-comb curve $C$. The moduli of this stratum come solely from the ways
-in which embedded points and zero dimensional components can be added to
-$C$. We write this stratum as a product of ``local'' Hilbert schemes
-using an fpqc cover of $X$ which includes the formal neighborhoods of
-the nodal points of $C_{\red}$, the formal neighborhoods of the
-components of $C_{\red}$ (minus the nodes), and the complement of
-$C$. This is done in Section~\ref{sec: restriction
-to formal nghds}. 
-\item After further push-forwards to further symmetric products, we
-reduce our expression for $\rho_{*}(1)$ (and hence our expression for
-$\DThat (X)$) to an expression only involving the Euler
-characteristics of the local Hilbert schemes of formal neighborhoods
-of points. Since these formal neighborhoods are isomorphic to
-$\hat{\CC}^{3}_{0}=\Spec \CC [[r,s,t]]$, they admit a $T=\left(\CC^{*}
-\right)^{3}$-action. $T$-localization then allows us to write these
+comb curve $C$. 
+%The moduli of this stratum come solely from the ways
+%in which embedded points and zero dimensional components can be added to
+%$C$. 
+Here it is useful to switch from Hilbert schemes with fixed $C$ 
+to Quot schemes of its ideal sheaf $I_C$. We 
+introduce a further stratification of these Quot schemes by specifying the 
+set theoretic support of the quotients. This allows us to write these Quot 
+schemes as products (in $K$-theory) of Quot schemes 
+of $I_C$ where the quotient is supported \emph{only} on one of the nodes of $C_{\red}$, 
+or only on one of the components of $C_{\red}$ (minus the nodes) or only on the 
+complement of $C$. The Quot scheme of quotients supported at a node of 
+$C_{\red}$ can be expressed (in $K$-theory) as a Quot scheme of a partition 
+thickened comb curve (determined by $C$) on $\CC^3$. Similarly, after further 
+push-forwards to further symmetric products, we express the Euler characteristics 
+of all other Quot schemes in terms of Euler characteristics of Quot 
+schemes on $\CC^3$ as well (see Section~\ref{sec: restriction to formal nghds}). 
+\item The Quot schemes of $\CC^3$ of the previous step all carry a natural $T=\left(\CC^{*}
+\right)^{3}$-action. $T$-localization then allows us to write their
 Euler characteristics in terms of the topological vertex (see
 Section~\ref{sec: reduction to the vertex}). 
 \item Finally, using the trace formulas for the topological vertex
@@ -405,10 +411,16 @@ may be of independent interest to the experts.
 \subsection{Acknowledgments}
 \SubSecSpace
 
-The authors would like to thank Tom Graber, Paul Johnson, Manfred
+We would like to thank Tom Graber, Paul Johnson, Manfred
 Lehn, Oliver Leigh, Davesh Maulik, Georg Oberdieck, Rahul
 Pandharipande, J{\o}rgen Rennemo, Bal\'azs Szendr\H{o}i, Richard
 Thomas, Qizheng Yin, and Benjamin Young for helpful conversations.
+We particularly thank the anonymous referee, whose comments led us to 
+replace our previous approach (involving formal schemes and fpqc covers) 
+by a much clearer stratification technique, which simply keeps track of the 
+location of the embedded points with respect to $C_\red$ (Section \ref{sec: restriction to formal nghds}). 
+This improved the paper significantly.
+
 
 Part of this work was done during the semester \emph{Enumerative geometry 
 of moduli spaces of sheaves in low dimension} at CIB/EPFL, who 
@@ -946,7 +958,7 @@ following decomposition of the fibers of $\rho_{d}$ in $K_0(\Var_{\CC})(\!(p)\!)
 \begin{align} 
 \begin{split} \label{eqn: components of fibers of rho}
 \rho_{d}^{-1}(\bolda \boldx +\boldb \boldy ) &=  \sum_{\boldlambda
-\vdash \bolda}\, \sum_{\boldmu \vdash \boldb}  p^{\chi(\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \Hilb_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}) \\
+\vdash \bolda}\, \sum_{\boldmu \vdash \boldb}  p^{\chi(\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \Hilb^{\bullet}(X,C_{\boldx, \boldy, \boldlambda, \boldmu}) \\
 &=  \sum_{\boldlambda
 \vdash \bolda}\, \sum_{\boldmu \vdash \boldb}  p^{\chi(\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}),
 \end{split}
@@ -1336,7 +1348,7 @@ $S=\{s=0 \}$ and $R_{x_{i}}=\{r=0 \}$ or $R_{y_{j}}=\{r=0 \}$
 respectively. For each point in $W$, choose any formal local
 coordinates $(r,s,t)$.
 
-Consider the following constructible ``support'' morphisms
+Consider the following constructible support morphisms
 \begin{align*}
 \sigma_{W}:& \Quot^{\bullet}_X(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, W) \to \Sym^{\bullet}(W),\\
 \sigma_{B^{\circ }}:& \Quot^{\bullet}_X(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ}) \to \Sym^{\bullet}(B^{\circ })\\

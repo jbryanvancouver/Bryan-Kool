@@ -91,7 +91,6 @@ Room 502, Budapestlaan 6  \\
 \newcommand{\sfV}{\mathsf{V}}
 \newcommand{\sfVtilde}{\widetilde{\mathsf{V}}}
 \newcommand{\Pic}{\mathrm{Pic}}
-\newcommand{\Supp}{\mathrm{Supp}}
 
 \newcommand{\rt}[1]{\stackrel{#1\,}{\rightarrow}}
 \newcommand{\Rt}[1]{\stackrel{#1\,}{\longrightarrow}}
@@ -125,6 +124,7 @@ Room 502, Budapestlaan 6  \\
 \newcommand{\CM}{\operatorname{CM}}
 \newcommand{\Var}{\operatorname{Var}}
 \newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Supp}{\operatorname{Supp}}
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\sm}{\operatorname{sm}}
 \newcommand{\sing}{\operatorname{sing}}
@@ -382,7 +382,7 @@ introduce a further stratification of these Quot schemes by specifying the
 set theoretic support of the quotients. This allows us to write these Quot 
 schemes as products (in $K$-theory) of Quot schemes 
 of $I_C$ where the quotient is supported \emph{only} on one of the nodes of $C_{\red}$, 
-or only on one of the components of $C_{\red}$ (minus the nodes) or only on the 
+or only on one of the components of $C_{\red}$ (minus the nodes), or only on the 
 complement of $C$. The Quot scheme of quotients supported at a node of 
 $C_{\red}$ can be expressed (in $K$-theory) as a Quot scheme of a partition 
 thickened comb curve (determined by $C$) on $\CC^3$. Similarly, after further 
@@ -533,9 +533,7 @@ of subschemes $Z \subset X$ of class $[Z] = [C] \in H_2(X)$ and
 $\chi(\O_Z) = \chi(\O_C)+n$. Inside this Hilbert schemes, we define the 
 following closed subset
 \begin{align*}
-\Hilb^{n}(X,C) &= \{Z\subset X \text{ such that }C\subset Z\text{ and
-$\O_{Z}/\O_{C}$ has finite length $n$} \} \\
-&= \{Z\subset X \text{ such that }C\subset Z\text{ and
+\Hilb^{n}(X,C) = \{Z\subset X \text{ such that }C\subset Z\text{ and
 $I_{C}/I_{Z}$ has finite length $n$} \}.
 \end{align*}
 \end{definition}
@@ -555,7 +553,7 @@ The universal quotient $I_{C \times \Quot^n_X(I_C)} \twoheadrightarrow Q$ has fl
 $$
 n = \chi(Q) = \chi(I_C / I_Z) = \chi(\O_Z) - \chi(\O_C).
 $$
-Every $\CC$-valued point of $\Hilb^n(X,C)$ arises from a quotient $I_Z \twoheadrightarrow Q$ in this way. Hence we have a geometric bijection $\Quot^n_X(I_C) \rightarrow \Hilb^n(X,C)$ from which the lemma follows.
+Every $\CC$-valued point of $\Hilb^n(X,C)$ arises from a quotient $I_Z \twoheadrightarrow Q$ in this way. This gives a geometric bijection $\Quot^n_X(I_C) \rightarrow \Hilb^n(X,C)$ from which the lemma follows.
 \end{proof}
 
 
@@ -952,8 +950,8 @@ we define an associated Cohen-Macaulay curve
 C_{\boldx, \boldy, \boldlambda, \boldmu} = B \bigcup_{i=1}^{n}\left(\lambda^{(i)}F_{x_{i}} \right)
 \bigcup_{j=1}^{m}\left(\mu^{(j)}F_{y_{j}} \right).
 \]
-Theorem~\ref{thm: C* invariant curves are
-partition thickened comb curves with embedded points} gives the
+From Theorem~\ref{thm: C* invariant curves are
+partition thickened comb curves with embedded points} we obtain the
 following decomposition of the fibers of $\rho_{d}$ in $K_0(\Var_{\CC})(\!(p)\!)$:
 \begin{align} 
 \begin{split} \label{eqn: components of fibers of rho}
@@ -966,10 +964,10 @@ following decomposition of the fibers of $\rho_{d}$ in $K_0(\Var_{\CC})(\!(p)\!)
 where the second equality follows from Lemma \ref{HilbtoQuot}. Here 
 \begin{align*}
 \bolda =(a_{1},\dotsc ,a_{n}),&\quad \boldb =(b_{1},\dotsc
-,b_{m}),\\
-\boldx =(x_{1},\dotsc ,x_{n}),&\quad \boldy =(y_{1},\dotsc
-,y_{m}),\\
-\boldlambda =(\lambda^{(1)},\dotsc ,\lambda^{(n)}),&\quad \boldmu =(\mu^{(1)},\dotsc ,\mu^{(m)}),
+,b_{m})
+%\boldx =(x_{1},\dotsc ,x_{n}),&\quad \boldy =(y_{1},\dotsc
+%,y_{m}),\\
+%\boldlambda =(\lambda^{(1)},\dotsc ,\lambda^{(n)}),&\quad \boldmu =(\mu^{(1)},\dotsc ,\mu^{(m)}),
 \end{align*}
 and the meaning of $\boldlambda \vdash \bolda$ and $\boldmu \vdash
 \boldb$ is that $\lambda^{(i)}\vdash a_{i}$ and $\mu^{(j)}\vdash
@@ -1004,7 +1002,7 @@ lambda}). The lemma then follows from the exact sequence
 
 
 
-In the next section, we will see that the Euler characteristic of
+In the next section, we will see that the Euler characteristic of the Quot scheme
 $\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}})$ does not depend on the exact location of
 the points $x_i \in B^{\sm}$ and $y_j \in B^{\sing}$, but only on
 their number $n$ and $m$ and the partitions $\lambda^{(i)}$ and
@@ -1051,7 +1049,7 @@ This gives the following stratification of $X$ by locally closed subsets:
 \item $\cup_i \{x_i\} \cup_j \{y_j,z_j\}$,
 \item $B^\circ := B \setminus \cup_i \{x_i\} \cup_j \{y_j\}$,
 \item $F_{x_i}^{\circ} := F_{x_i} \setminus \{x_i\}$,
-\item $F_{y_j}^{\circ} := F_{y_i} \setminus \{y_j,z_j\}$,
+\item $F_{y_j}^{\circ} := F_{y_j} \setminus \{y_j,z_j\}$,
 \item $W:=X \setminus B\cup_{i}F_{x_{i}}\cup_{j}F_{y_{j}}$.
 \end{itemize}
 We denote the collection of these locally closed subsets by $\Sigma_{\boldx, \boldy, \boldlambda, \boldmu}$. 
@@ -1074,7 +1072,7 @@ on $\CC$-valued points.}
 \]
 \end{proposition}
 \begin{proof}
-Denote by $X_Z^{(N)}$ the $N$th order neighbourhood of $Z \subset X$. 
+Denote by $X_Z^{(N)}$ the $(N-1)$th order neighbourhood of $Z \subset X$. 
 I.e.~let $I_Z \subset \O_X$ be the ideal defining $Z \subset X$, then 
 $X_Z^{(N)} \subset X$ is the closed subscheme defined by 
 $I_Z^N \subset \O_X$. Denote the inclusion $X_Z^{(N)} \subset X$ 
@@ -1091,7 +1089,7 @@ $\F \twoheadrightarrow Q$ in $\Quot_X^n(\F,S)$, we obtain
 \F|_U &\twoheadrightarrow Q|_U \\
 \iota^* \F &\twoheadrightarrow \iota^* Q.
 \end{align*}
-The trivial quotient $\F|_{X \setminus \supp Q} \twoheadrightarrow 0$ 
+The trivial quotient $\F|_{X \setminus (\Supp Q \cap U)} \twoheadrightarrow 0$ 
 and $\F|_U \twoheadrightarrow Q|_U$ glue on the overlap, so we 
 obtain an element of $\Quot^{n_1}_X(\F,S \setminus Z)$ for some 
 $n_1 \leq n$. Moreover, push-forward along a closed embedding 
@@ -1106,7 +1104,7 @@ We have to show that this constructible morphism is a bijection on
 $\CC$-valued points. We start with injectivity. Suppose 
 $\F \twoheadrightarrow Q_i$, for $i=1,2$, map to the same element. 
 Then they agree on $U = X \setminus Z$. So it suffices to show that 
-they agree on $X \setminus (\supp Q_1 \cap U) = X \setminus (\supp 
+they agree on $X \setminus (\Supp Q_1 \cap U) = X \setminus (\Supp 
 Q_2 \cap U)$. By hypothesis, we know that there exists an isomorphism
 \[
 \begin{diagram}[h=0.9cm]
@@ -1116,19 +1114,19 @@ Q_2 \cap U)$. By hypothesis, we know that there exists an isomorphism
 \end{diagram}
 \]
 It suffices to show that pushing forward $\iota^* \F \twoheadrightarrow 
-\iota^* Q_i$ to $X \setminus (\supp Q_1 \cap U)$ and composing with 
-$\F|_{X \setminus (\supp Q_1 \cap U)} \twoheadrightarrow 
-\iota_* \iota^* \F|_{X \setminus (\supp Q_1 \cap U)}$ gives back 
-$\F|_{X \setminus (\supp Q_1 \cap U)} \twoheadrightarrow 
-Q_i|_{X \setminus (\supp Q_1 \cap U)}$. This can be checked on an 
+\iota^* Q_i$ to $X \setminus (\Supp Q_1 \cap U)$ and composing with 
+$\F|_{X \setminus (\Supp Q_1 \cap U)} \twoheadrightarrow 
+\iota_* \iota^* \F|_{X \setminus (\Supp Q_1 \cap U)}$ gives back 
+$\F|_{X \setminus (\Supp Q_1 \cap U)} \twoheadrightarrow 
+Q_i|_{X \setminus (\Supp Q_1 \cap U)}$. This can be checked on an 
 open affine cover.
 
 Suppose $R$ is a commutative ring (corresponding to an open affine 
-subset of $X \setminus (\supp Q_1 \cap U)$) and $I \subset R$ an ideal 
+subset of $X \setminus (\Supp Q_1 \cap U)$) and $I \subset R$ an ideal 
 (corresponding to $Z$). Let $M \twoheadrightarrow Q$ be a quotient of 
 finitely generated $R$-modules with $Q$ zero dimensional (corresponding 
-to either of $\F|_{X \setminus (\supp Q_1 \cap U)} \twoheadrightarrow 
-Q_i|_{X \setminus (\supp Q_1 \cap U)}$). By our choice of $N$, we have
+to either of $\F|_{X \setminus (\Supp Q_1 \cap U)} \twoheadrightarrow 
+Q_i|_{X \setminus (\Supp Q_1 \cap U)}$). By our choice of $N$, we have
 $$
 I^N \subset \Ann(Q) \subset I,
 $$
@@ -1150,8 +1148,8 @@ isomorphism gives back the original quotient $M \twoheadrightarrow Q$.
 For surjectivity, take two quotients $\F \twoheadrightarrow 
 Q_i$, with $Q_1$ of length $n_1$ supported on $S \setminus Z$ and $Q_2$ 
 of length $n-n_1$ supported on $Z$. Then $\F|_U \twoheadrightarrow 
-Q_1|_U$ and $\F|_{X \setminus \supp Q_1} \twoheadrightarrow 
-Q_2|_{X \setminus \supp Q_1}$ agree on the overlap. 
+Q_1|_U$ and $\F|_{X \setminus \Supp Q_1} \twoheadrightarrow 
+Q_2|_{X \setminus \Supp Q_1}$ agree on the overlap. 
 They glue to the required quotient $\F \twoheadrightarrow Q$, 
 with $Q$ of length $n$ supported on $S$.
 \end{proof}
@@ -1167,25 +1165,25 @@ The following equation holds in $K_{0}(\Var_{\CC})(\!(p)\!)$
 \Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{x_i}^\circ) \\
 &\cdot \prod_{j=1}^{m}
 \Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{y_j\}) \cdot
-\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{z_j\}) \cdot
-\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^\circ_{y_j}).
+\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{z_j\}) \\
+&\qquad \cdot \Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^\circ_{y_j}).
 \end{align*}
 \end{lemma}
 
 \begin{proof}
 Let $C:= C_{\boldx, \boldy, \boldlambda, \boldmu}$. First apply the previous proposition to $\Quot_X^{\bullet}(I_C)$ 
-with $S = X$ and $Z = C$ in order to obtain
+with $S = X$ and $Z = C_{\red}$ in order to obtain
 \begin{align*}
 \Quot_X^{\bullet}(I_C)  =&\Quot_X^{\bullet}(I_C,W) \cdot 
-\Quot_X^{\bullet}(I_C,C).
+\Quot_X^{\bullet}(I_C,C_{\red}).
 \end{align*}
-Next, apply the previous proposition to $\Quot_X^{\bullet}(I_C,C)$ 
-with $S = C$ and $Z = F_{x_1}$ in order to obtain
+Next, apply the previous proposition to $\Quot_X^{\bullet}(I_C,C_{\red})$ 
+with $S = C_{\red}$ and $Z = F_{x_1}$ in order to obtain
 \begin{align*}
 \Quot_X^{\bullet}(I_C)  =&\Quot_X^{\bullet}(I_C,W) \cdot 
-\Quot_X^{\bullet}(I_C,F_{x_1}) \cdot \Quot_X^{\bullet}(I_C,C\setminus F_{x_1}).
+\Quot_X^{\bullet}(I_C,C_{\red} \setminus F_{x_1}) \cdot \Quot_X^{\bullet}(I_C,F_{x_1}).
 \end{align*}
-Repeating this procedure, taking $S = C \setminus F_{x_1}$ and 
+Repeating this procedure, taking $S = C_{\red} \setminus F_{x_1}$ and 
 $Z = F_{x_2}$ et cetera, we obtain
 \begin{align*}
 \Quot_X^{\bullet}(I_C) =&\Quot_X^{\bullet}(I_C,W) \cdot
@@ -1200,7 +1198,7 @@ $S = F_{x_1}$, and $Z = \{x_1\}$. Then
 \begin{align*}
 \Quot_X^{\bullet}(I_C) =&\Quot_X^{\bullet}(I_C,W) \cdot
 \Quot_X^{\bullet}(I_C,B^\circ) \\
-& \cdot \Quot_X^\bullet(I_C,\{x_1\}) \cdot \Quot_X^\bullet(I_C,F_{x_1}^\circ) \\
+&\cdot \Quot_X^\bullet(I_C,F_{x_1}^\circ) \cdot \Quot_X^\bullet(I_C,\{x_1\}) \\
 &\cdot \prod_{i=2}^{n}
 \Quot_X^{\bullet}(I_C,F_{x_i}) \\
 &\cdot \prod_{j=1}^{m}
@@ -1294,7 +1292,7 @@ We have the following equalities in $K_0(\Var_{\CC})$
 \end{lemma}
 Here $\bx$ is the unique partition of size 1 (whose diagram is a
 single box) and $\emptyset$ is the empty partition. Recall that the
-kernels of the quotients on the RHS do not need to correspond to be monomial ideals: although their underlying maximal Cohen-Macaulay
+kernels of the quotients on the RHS do not need to be monomial ideals: although their underlying maximal Cohen-Macaulay
 subscheme is monomial, they may have arbitrary embedded points at the
 origin.
 \begin{proof}

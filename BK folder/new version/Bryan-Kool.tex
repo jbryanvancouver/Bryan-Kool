@@ -1383,15 +1383,15 @@ following formulas
 
 \begin{align}\label{eqn: e(Hilb(Xhat,Bcirc))=V^{e(Bcirc)}}
 e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},W) \right) & = \int_{\Sym^{\bullet}(W)}
-\left(\sigma_{W} \right)_{*}(1)\, de = \left(\sfVtilde_{\emptyset \emptyset \emptyset }\right)^{e(W)}\\
+\left(\sigma_{W} \right)_{*}(1)\, de = \left(\sfVtilde_{\emptyset \emptyset \emptyset }\right)^{e(W)},\\
 e\left(\Quot_X^{\bullet}\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(B^{\circ })}
-\left(\sigma_{B^{\circ }} \right)_{*}(1)\, de = \left(\sfVtilde_{\bx \emptyset \emptyset }\right)^{e(B^{\circ })}\nonumber \\
+\left(\sigma_{B^{\circ }} \right)_{*}(1)\, de = \left(\sfVtilde_{\bx \emptyset \emptyset }\right)^{e(B^{\circ })},\nonumber \\
 e\left(\Quot_X^{\bullet}\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{x_{i}}^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(F_{x_{i}}^{\circ })}
-\left(\sigma_{F_{x_{i}}^{\circ }} \right)_{*}(1)\, de = \left(\sfVtilde_{\lambda^{(i)} \emptyset  \emptyset }\right)^{e(F_{_{x_{i}}}^{\circ })}\nonumber \\
+\left(\sigma_{F_{x_{i}}^{\circ }} \right)_{*}(1)\, de = \left(\sfVtilde_{\lambda^{(i)} \emptyset  \emptyset }\right)^{e(F_{_{x_{i}}}^{\circ })},\nonumber \\
 e\left(\Quot_X^{\bullet}\left(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F_{y_{j}}^{\circ} \right) \right) & = \int_{\Sym^{\bullet}(F_{y_{j}}^{\circ })}
 \left(\sigma_{F_{y_{j}}^{\circ }} \right)_{*}(1)\, de =
 \left(\sfVtilde_{\mu^{(j)} \emptyset  \emptyset
-}\right)^{e(F_{_{y_{j}}}^{\circ })} \nonumber
+}\right)^{e(F_{_{y_{j}}}^{\circ })}. \nonumber
 \end{align}
 
 
@@ -1447,14 +1447,14 @@ f_{d}(\bolda \boldx +\boldb \boldy )&= e\left(\rho_{d}^{-1}(\bolda
 &= \sum_{\boldlambda \vdash \bolda}\sum_{\boldmu \vdash \boldb} p^{\chi (\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}) \right)\\
 &=\sum_{\boldlambda \vdash \bolda}\sum_{\boldmu
 \vdash \boldb} p^{\chi (\O_{C_{\boldx, \boldy, \boldlambda, \boldmu}})} \cdot e(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}}, W)) \cdot
-e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ} \right) \cdot \\
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},B^{\circ} \right) \\
 & \quad  \cdot \prod_{i=1}^{n}
 e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{x_{i}\}) \right) \cdot
 e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^{\circ}_{x_{i}}\right) \\
 & \quad  \cdot   \prod_{j=1}^{m}
 e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{y_{j}\}) \right) \cdot
-e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{z_{j}\}) \right) \cdot
-e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^{\circ}_{y_{j}}
+e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},\{z_{j}\}) \right) \\
+&\qquad \quad \cdot e\left(\Quot_X^{\bullet}(I_{C_{\boldx, \boldy, \boldlambda, \boldmu}},F^{\circ}_{y_{j}}
 \right)\\
 &=\sfVtilde_{\emptyset \emptyset
 \emptyset}^{e(W)} \cdot \sfVtilde^{e(B^{\circ})}_{\bx \emptyset
@@ -1605,7 +1605,7 @@ the following
 \emptyset}\sfV_{\mu \emptyset \emptyset}}q^{|\mu |} \right)^{e(S)}.
 \end{align*}
 From the Okounkov-Reshitikhin-Vafa formula for the topological vertex
-\cite{Ok-Re-Va}, \cite[eqn~5]{Bryan-Kool-Young} we get
+\cite{Ok-Re-Va}, \cite[eqn~(5)]{Bryan-Kool-Young} we get
 \[
 \sfV_{\emptyset \emptyset \emptyset} =M(p),\quad \sfV_{\bx \emptyset
 \emptyset} = \frac{M(p)}{1-p},
@@ -1677,7 +1677,7 @@ points. That is
 \Hilb^{dF,n}(X)^{\CC^{*}} \subset \Hilb^{dF,n}_{\PFP}(X) \subset \Hilb^{dF,n}(X).
 \]
 Moreover, $\CC^{*}$ acts on $\Hilb^{dF,n}_{\PFP}(X)$ and there exists
-a morphism
+a constructible morphism
 \[
 \rho^{\fiber}_{d}:\Hilb^{dF,\bullet}_{\PFP}(X) \to \Sym^{d}(B) 
 \]
@@ -1830,7 +1830,7 @@ given by $(x_{1},x_{2})$, $(x_{1},x_{2}x_{3})$, or
 $(x_{1}x_{2},x_{2}x_{3},x_{1}x_{3})$ for some isomorphism
 $\widehat{\mathcal{O}}_{Y,p}\cong \CC
 [[x_{1},x_{2},x_{3}]]$. }. Recall that by Definition~\ref{defn:
-Hilb(U,C)}, 
+Hilb(U,C)} 
 \[
 \Hilb^{n}(Y,C) = \{Z\subset Y \text{ such that $C\subset Z$ and
 $I_{C}/I_{Z}$ has finite length $n$} \}.
@@ -1979,7 +1979,7 @@ We begin by stating the three main results of this section.
 is smooth} Let $B\subset T$ be a smooth curve contained in a smooth
 surface $T$. Define $V_{l}\subset \Hilb^{d}(T)$ to be the locus of
 points parameterizing zero dimensional subschemes $Z\subset T$ of length
-$n$ such that the length of the scheme theoretic intersection $Z\cap
+$d$ such that the length of the scheme theoretic intersection $Z\cap
 B$ is $l$. Then $V_{l}$ is locally closed and smooth of dimension
 $2d-l$.
 \end{theorem}
@@ -2551,7 +2551,7 @@ For each $\phi :(\rho ,\sigma )\to (\rho ',\sigma ')$ let
 $I_{Z_{\lambda}}(\phi )$ be the corresponding deformed ideal and
 consider
 \[
-\dim \left(\frac{\CC [r,s] }{I_{Z_{\lambda}} + (s)} \right).
+\dim \left(\frac{\CC [r,s] }{I_{Z_{\lambda}}(\phi) + (s)} \right).
 \]
 If $\sigma '>0$ then $I_{Z_{\lambda}}(\phi ) + (s) =
 I_{Z_{\lambda}} + (s)$: Haiman arrows $(\rho ,\sigma )\to (\rho
@@ -2787,7 +2787,7 @@ given by
 \]
 where by convention, $B^{0}$ is a point, $\Delta $ is the large
 diagonal, and $\sigma _{m}$ is the $m$th symmetric group. Note that
-the function $f_{d}$ is constant on each stratum and has value $\prod
+the function $G$ is constant on each stratum and has value $\prod
 _{j=1}^{\infty }g (j)^{m_{j}}$. Note also that the action of $\prod
 _{j=1}^{\infty }\sigma _{m_{j}}$ on each stratum is free. 
 

@@ -2,41 +2,41 @@ Changes (referring to new version):
 
 We are very grateful to the referee for pushing us to abandon our use of the fpqc topology and descent. While we have not changed the underlying stratification of the Hilbert scheme that we employ, we have switched our perspective from viewing these strata as Hilbert schemes of subschemes on formal neighborhoods of fixed curves (which as the referee points out is certainly confusing and possibly problematic) to view them as Quot schemes of a fixed ideal sheaf . We then prove the general result about stratifications of such Quot schemes directly (Section 5, Prop 13, Lemma 14, Lemma 15). In hindsight, this is a much better framework for working with our stratification.  
 
-We have completely rewritten Section 5 accordingly (while the rest of the paper remains largely unchanged). Once the underlying CM curve C is fixed, the fpqc cover is replaced by stratifying the Hilbert scheme according to where the embedded points and zero dimensional components are set theoretically supported (i.e. at the nodes of C_red, or the components of C_red minus the nodes, or the complement of C). We also find it useful to switch from Hilb(X,C) to Quot_X(I_C) where I_C is the ideal sheaf of I_C. This allows us to write (in K-theory) the class of Quot_X(I_C) as a product of Quot schemes of I_C, where the set theoretic support of the quotient is specified. We then relate the Quot schemes of this product to Quot schemes on affine space C^3. E.g. the punctual Quot scheme of quotients of I_C supported at a fixed node of C_red is equal (in K-theory) to a corresponding punctual Quot on C^3. The proofs are added and use infinitesimal neighbourhoods of sufficiently high order (with respect to the lengths of the quotient), so we don’t need formal schemes. Once on Quot of affine spaces, we have torus actions and we can reduce to the topological vertex as before. 
+We have completely rewritten Section 5 accordingly (while the rest of the paper remains largely unchanged). Once the underlying CM curve C is fixed, the fpqc cover is replaced by stratifying the Hilbert scheme according to where the embedded points and zero dimensional components are set theoretically supported (i.e. at the nodes of C_red, or the components of C_red minus the nodes, or the complement of C). We also find it useful to switch from Hilb(X,C) to Quot_X(I_C) where I_C is the ideal sheaf of I_C. This allows us to write (in K-theory) the class of Quot_X(I_C) as a product of Quot schemes of I_C, where the set theoretic support of the quotient is specified. We then relate the Quot schemes of this product to Quot schemes on affine space \C^3. E.g. the punctual Quot scheme of quotients of I_C supported at a fixed node of C_red is equal (in K-theory) to a corresponding punctual Quot on \C^3. The proofs are added and use infinitesimal neighbourhoods of sufficiently high order (with respect to the lengths of the quotient), so we don’t need formal schemes. Once on Quot of affine spaces, we have torus actions and we can reduce to the topological vertex as before. 
 
 The main new results are: 
 
--Lemma 5: going from Hilb(X,C) to Quot(I_C) in K-theory.
+-Lemma 5: going from Hilb(X,C) to Quot(I_C) in K-theory (i.e. in the Grothendieck ring of varieties).
 
 -Prop 13: a geometric constructible morphism from Quot to a disjoint union of products of Quots, which records the location of the set theoretic support of the quotients.
 
 -Lemma 14: this replaces the problematic Lemma 11 of the old version.
 
--Lemma 15: reduction (in K-theory) to Quots of C^3.
+-Lemma 15: reduction (in K-theory) to Quots of \C^3.
 
 We believe our new version of Section 5 addresses the referees comments and significantly improves the readability of the paper:
 
 1-3 Addressed by removing fpqc cover and formal schemes completely. We now stratify according to the set theoretic support of the embedded points / zero dimensional components with respect to C_red. This is done in Section 5.1.
 
-4. As the referee pointed out, we don’t really need fpqc descent. The problematic Lemma 11 is replaced by Lemma 14 (a corollary of Prop 13), which records the set theoretic support of the quotients with respect to C_red. In Section 5.2 we construct geometric constructible morphisms to punctual Quots on C^3 (Lemma 15). The proofs go via (sufficiently high order) infinitesimal thickenings of C_red. (Note: We only require constructible morphisms that are bijective on the C-valued points. This is enough for Euler characteristic calculations.) 
+4. As the referee pointed out, we don’t really need fpqc descent. The problematic Lemma 11 is replaced by Lemma 14 (a corollary of Prop 13), which records the set theoretic support of the quotients with respect to C_red. In Section 5.2 we construct geometric constructible morphisms to punctual Quots on \C^3 (Lemma 15). The proofs go via (sufficiently high order) infinitesimal thickenings of C_red. (Note: We only require constructible morphisms which are bijective on the \C-valued points. This is enough for Euler characteristic calculations.) 
 
 ***
 
 List of changes:
 
--p. 3-4, bullets 3 and 4: Fpqc/formal schemes removed. New approach described.
+-p. 4-5, bullets 3 and 4: Fpqc/formal schemes removed. New approach described.
 
 -p. 6, Def 4: Fpqc part removed.
 
--p. 7: Lemma 5 + proof added (passing from Hilb(X,C) to Quot_X(I_C) in K theory)
+-p. 7: Lemma 5 + proof added (passing from Hilb(X,C) to Quot_X(I_C) in K theory).
 
 -p. 11 (bottom), p. 12: Better notation for CM curve introduced, i.e. C_{x,y,\lambda,\mu} (which we now use throughout the paper). Quot schemes added in equation (3). Lemma 11 (Lemma 12 of Section 5 in the old version) has been moved to this location.
 
 -p. 13-16: Section 5.1 completely rewritten. Prop 13 + proof is new. Lemma 14 (corollary of Prop 13) replaces the problematic Lemma 11 of the old version.
 
--p. 16-21: Section 5.2 substantially rewritten. Quot instead of Hilb. Passage to Quot of C^3 in Lemma 15 + proof (which are new).
+-p. 16-21: Section 5.2 substantially rewritten. Quot instead of Hilb. Passage to Quot of \C^3 in Lemma 15 + proof (which are new).
 
--Sections 6-9, Appendix: Largely unchanged except for replacing Hilb(X,C) by Quot(I_C) and adding the new notation C_{x,y,\lambda,\mu} for the fixed CM curve.
+-Sections 6-9, Appendix: Largely unchanged except for replacing Hilb(X,C) by Quot_X(I_C) and adding the new notation C_{x,y,\lambda,\mu} for the fixed CM curve.
 
 
 
